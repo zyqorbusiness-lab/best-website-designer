@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>(function(){if(/[?&]desktop=1/.test(location.search))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height;if(w<=860||(c&&h>w))location.replace('m.html'+location.search+location.hash);})();</script>
+<title>TALUS Ridge C1 &middot; Concept &middot; Zyqor Lab</title>
+<meta name="description" content="TALUS Ridge C1 is a fictional carbon trail bike: a 3D design concept by Zyqor Studio with a scroll-driven exploded view, colourways and a dusk mode.">
+<meta name="theme-color" content="#ECE6DC">
+<meta property="og:title" content="TALUS Ridge C1 · a Zyqor Lab concept">
+<meta property="og:description" content="Fictional carbon trail bike. Pull it apart on scroll, paint it, ride it at dusk.">
+<meta property="og:image" content="poster.webp">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../assets/font/bricolage-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../_kit/lab.css">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">{"imports":{"three":"../../vendor/three/three.module.min.js","three/addons/":"../../vendor/three/addons/"}}</script>
+<!-- liquid glass: demo body (helper 4f5eb13e) -->
+<link rel="stylesheet" href="../../assets/glass/liquid-glass.css">
+<script type="application/json" id="lg-map">{"header.brand": "lg lg-pill lg-rim", ".pills .pill.solid,.pill.solid.big": "lg lg-btn lg--ink", ".pills .pill:not(.solid)": "lg lg-btn", ".mode": "lg lg-seg", ".tagc": "lg lg-pill lg--ink"}</script>
+<script src="../../assets/glass/liquid-glass.js" defer></script>
+<link rel="canonical" href="https://zyqor-portfolio-v3.sites.tab.bot/lab/cadence/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Zyqor Studio">
+<meta property="og:url" content="https://zyqor-portfolio-v3.sites.tab.bot/lab/cadence/">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body data-slug="cadence" data-way="glacier" data-mode="studio">
+<canvas id="gl" aria-label="Interactive 3D model of the fictional TALUS Ridge C1 trail bike. Drag to turn it."></canvas>
+<div class="load" id="load" aria-hidden="true"><span class="load-bar"><i></i></span><span class="load-t">Truing the wheels</span></div>
+<header class="brand" aria-label="TALUS">
+  <a href="../../" class="back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg><span>Zyqor Studio</span></a>
+  <span class="mark"><svg viewBox="0 0 64 40" aria-hidden="true"><path d="M0 40 24 2l13 20 9-12 18 30z" fill="currentColor"/></svg>TALUS</span>
+  <span class="tagc">Concept</span>
+</header>
+<main id="main">
+  <section class="hero" id="hero">
+    <p class="kicker intro">Ridge C1 &middot; carbon trail &middot; 140 / 130 mm</p>
+    <h1 class="giant" aria-label="Ridge"><span>R</span><span>I</span><span>D</span><span>G</span><span>E</span></h1>
+    <div class="hero-foot">
+      <p class="lede intro">A trail bike drawn around one idea: every part you can see is a part you can reach with a 5 mm key.</p>
+      <div class="pills intro">
+        <a class="pill solid mag" href="#apart">Pull it apart <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
+        <a class="pill mag" href="#paint">Paint</a>
+      </div>
+    </div>
+    <p class="drag" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 12h8M5 9l-3 3 3 3M19 9l3 3-3 3"/></svg>Drag to turn</p>
+  </section>
+
+  <section class="apart" id="apart" aria-label="Exploded view">
+    <div class="apart-sticky">
+      <div class="apart-head">
+        <p class="num">01</p>
+        <h2>One frame.<br><em>Every</em> part.</h2>
+        <p class="apart-sub">Scroll and the C1 comes apart the way a mechanic would take it down: wheels, cockpit, drivetrain, suspension, frame.</p>
+      </div>
+      <ol class="stages" id="stages" aria-label="Teardown stages">
+        <li data-at="0"><b>00</b>Assembled<small>13.1 kg as drawn</small></li>
+        <li data-at=".25"><b>01</b>Wheels off<small>29 in, 30 mm inner rim</small></li>
+        <li data-at=".5"><b>02</b>Cockpit and brakes<small>4-piston, 203 / 180 mm</small></li>
+        <li data-at=".75"><b>03</b>Drivetrain and shock<small>1 x 12, 140 mm rear</small></li>
+        <li data-at="1"><b>04</b>Bare frame<small>unidirectional carbon</small></li>
+      </ol>
+      <div class="meter" aria-hidden="true"><i id="meterFill"></i><span id="meterN">0%</span></div>
+    </div>
+  </section>
+
+  <section class="paint" id="paint" aria-label="Colourways">
+    <div class="paint-copy">
+      <p class="num">02</p>
+      <h2 id="wayName" data-rv>Glacier</h2>
+      <p class="paint-sub" id="waySub" data-rv data-rv-d="1">Cold blue-grey under four coats of clear. Looks wet at the trailhead, looks wet after it.</p>
+      <div class="ways" role="radiogroup" aria-label="Frame colourway" data-rv data-rv-d="2">
+        <button class="way on" role="radio" aria-checked="true" data-way="glacier"><i style="--w:#8FB3C7"></i><span>Glacier</span></button>
+        <button class="way" role="radio" aria-checked="false" data-way="oxide"><i style="--w:#A4472A"></i><span>Oxide</span></button>
+        <button class="way" role="radio" aria-checked="false" data-way="chalk"><i style="--w:#E4DCCB"></i><span>Chalk</span></button>
+      </div>
+      <p class="paint-idx" aria-hidden="true"><span id="wayIdx">01</span> / 03</p>
+    </div>
+  </section>
+
+  <section class="spec" id="spec" aria-label="Specification">
+    <div class="spec-in">
+      <p class="num">03</p>
+      <h2 data-rv>The numbers we would hold it to.</h2>
+      <p class="spec-note" data-rv data-rv-d="1">Design targets for a fictional bike. Nothing here has been built or tested.</p>
+      <dl class="grid">
+        <div data-rv data-rv-d="1"><dt>Travel</dt><dd><span class="roll" data-to="140">0</span><small>mm front</small></dd><p>130 mm rear on a single-pivot linkage that keeps the shock out of the mud line.</p></div>
+        <div data-rv data-rv-d="2"><dt>Head angle</dt><dd><span class="roll" data-to="64.5" data-dec="1">0</span><small>deg</small></dd><p>Slack enough to stay calm when the trail tips, steep enough to climb back up it.</p></div>
+        <div data-rv data-rv-d="3"><dt>Gears</dt><dd><span class="roll" data-to="12">0</span><small>speed</small></dd><p>One ring up front, 10 to 52 out back. No front mech, nothing to tune.</p></div>
+        <div data-rv data-rv-d="4"><dt>Frame target</dt><dd><span class="roll" data-to="2.1" data-dec="1">0</span><small>kg</small></dd><p>Size M with hardware, paint and the stealth dropper routing included.</p></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="dusk" id="dusk" aria-label="Studio and dusk modes">
+    <div class="dusk-in">
+      <p class="num">04</p>
+      <h2 data-rv>Last light is<br>still riding light.</h2>
+      <p class="dusk-sub" data-rv data-rv-d="1">Flip the studio off. The lacquer picks up the low sun and the logo on the sidewall finally gets its moment.</p>
+      <div class="mode" role="group" aria-label="Light" data-rv data-rv-d="2">
+        <button class="mode-b on" data-mode="studio" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>Studio</button>
+        <button class="mode-b" data-mode="dusk" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18h18M6 18a6 6 0 0 1 12 0M12 6v3M5.6 9.6l1.6 1.6M18.4 9.6l-1.6 1.6"/></svg>Dusk</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="ride" aria-label="Test ride">
+    <h2 data-rv>Ride the<br>drawing.</h2>
+    <p data-rv data-rv-d="1">TALUS is a concept by Zyqor Studio. There is no bike to buy and no shop behind this button.</p>
+    <a class="pill solid big mag" id="ctaBtn" href="#ride" data-rv data-rv-d="2">Book a test ride <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <p class="toast" id="toast" role="status" aria-live="polite"></p>
+  </section>
+</main>
+<template id="credits">
+  <li>Code and design: Zyqor Studio (MIT licence for the code). TALUS and Ridge C1 are fictional; this is a concept, not a product for sale.</li>
+  <li>3D model: "Carbon Frame Bike" by Robert Schweier and <a href="https://prefrontalcortex.de" target="_blank" rel="noopener">prefrontal cortex</a> (realtime version and animation by Felix Herbst, with support from Needle), <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via the <a href="https://github.com/usd-wg/assets/tree/main/full_assets/CarbonFrameBike" target="_blank" rel="noopener">USD-WG assets</a> / <a href="https://github.com/KhronosGroup/glTF-Sample-Models/pull/357" target="_blank" rel="noopener">Khronos glTF sample</a>. Modified by Zyqor Studio: original builder and studio logos replaced with the fictional TALUS mark, frame paint recoloured, compressed (meshopt, WebP). The modified model is shared under the same CC BY-SA 4.0 licence.</li>
+  <li>Studio lighting: "Studio Small 09" HDRI by Sergej Majboroda, Poly Haven, CC0.</li>
+  <li>Type: Bricolage Grotesque (SIL Open Font Licence) and Satoshi by Indian Type Foundry (Fontshare free licence).</li>
+</template>
+<script src="../../vendor/gsap.min.js" defer></script>
+<script src="../../vendor/ScrollTrigger.min.js" defer></script>
+<script src="../../vendor/lenis.min.js" defer></script>
+<script type="module" src="../_kit/chrome.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

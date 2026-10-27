@@ -1,2 +1,231 @@
-# best-website-designer
-Zyqor Studio portfolio v3 by Sujon Hoque: 18 interactive 3D and motion concept sites, studio pages, liquid-glass UI, separate desktop and phone builds. Static site, no build step.
+<p align="center">
+  <img src="docs/screens/hero.jpg" alt="Zyqor Studio portfolio, desktop hero" width="100%">
+</p>
+
+<h1 align="center">Best Website Designer: Zyqor Studio portfolio</h1>
+
+<p align="center">
+  Hand-coded portfolio of <b>Sujon Hoque</b> (Zyqor Studio): scroll-driven 3D worlds, a lab of eighteen interactive concept sites, studio pages on colour, type, process and UI, a liquid-glass interface and a separate light build for phones.<br>
+  HTML &middot; CSS &middot; JavaScript &middot; three.js &middot; GSAP &middot; Lenis &mdash; no framework, no build step.
+</p>
+
+<p align="center">
+  <a href="https://zyqor-portfolio-v3.sites.tab.bot/"><b>Live preview</b></a> &nbsp;&middot;&nbsp;
+  <a href="#zyqor-lab">Lab concepts</a> &nbsp;&middot;&nbsp;
+  <a href="#run-it-locally">Run locally</a> &nbsp;&middot;&nbsp;
+  <a href="#deploy-on-vercel">Deploy</a> &nbsp;&middot;&nbsp;
+  <a href="mailto:zyqorbusiness@gmail.com">Hire me</a>
+</p>
+
+<p align="center"><img src="docs/scroll.gif" alt="Scrolling through the portfolio" width="80%"></p>
+
+<p align="center"><img src="docs/screens/phone.jpg" alt="The phone build: home, Lab and three concepts at 390 px" width="100%"></p>
+
+---
+
+## What's inside
+
+| Section | What it does |
+|---|---|
+| **Scroll-world intro** | A camera flight from the studio through concept brands to a main street, scrubbed frame-by-frame by scroll (custom scrub engine). |
+| **Worlds** | Five pinned scroll scenes around one live three.js product: colourway morph in a browser card, giant type behind the product, exploded callouts, orbit carousel, organic mask reveal. |
+| **Work** | Six real, live projects in a pinned horizontal gallery with hover video. |
+| **Zyqor Lab** | Eighteen complete concept sites for fictional brands, each built around one signature interaction (below). |
+| **Studio pages** | [Colour theory](site/color/), [Process](site/process/), [Services](site/services/), [Type specimen](site/studio/type/), [Case study](site/studio/case/) and a [UI micro-interaction gallery](site/studio/ui/), each with its own phone build. |
+| **Liquid glass** | One shared glass material (`site/assets/glass/`) on every screen: nav pills, buttons, mode switches, cards and the Lab chrome. Refraction and a cursor-following highlight on desktop, a lighter blur on phones. |
+| **About / Pricing / Contact** | Copy-to-clipboard email, WhatsApp and Gmail links, big footer wordmark. |
+
+Two builds, one site: the **desktop build** (`/`) is the heavy one (WebGL, Lenis smooth scroll, GSAP ScrollTrigger pins). The **phone build** (`/m/`) is a separate, lighter page (native scroll, smaller models and clips, no hover-only UI). A tiny inline script at the top of each page sends phones to `/m/` and desktops back to `/`; add `?desktop=1` to stay on the phone build on a laptop.
+
+## Zyqor Lab
+
+Every Lab brand is **fictional** and every page says so. Nothing is for sale, no real company is shown, and there are no invented reviews or clients.
+
+| # | Concept | Product | Signature interaction | Palette | Open |
+|---|---|---|---|---|---|
+| 01 | **Stride Aero** | Sneaker | Colourway morph in a browser card | `#E6E4DF` `#12313A` `#E8553B` | [desktop](site/lab/stride/) / [phone](site/lab/stride/m.html) |
+| 02 | **Meridian** | Watch | Giant type behind the product | `#EFE8D8` `#1F4D3A` `#C9A24A` | [desktop](site/lab/meridian/) / [phone](site/lab/meridian/m.html) |
+| 03 | **Hush One** | Headphones | 3D scroll spin, exploded view, callouts | `#E7ECEF` `#24364A` `#F0A23B` | [desktop](site/lab/hush/) / [phone](site/lab/hush/m.html) |
+| 04 | **Ember & Oak** | Coffee roasters | Paper-tear reveal, travelling cup | `#2B1A12` `#F2E6D3` `#C26A3D` | [desktop](site/lab/ember/) / [phone](site/lab/ember/m.html) |
+| 05 | **Verdant** | Plant studio | Organic mask reveal, arched window | `#EEF0E4` `#2F5D3A` `#C8643B` | [desktop](site/lab/verdant/) / [phone](site/lab/verdant/m.html) |
+| 06 | **Dew Theory** | Skincare | Cloud world, podium, ingredient orbit | `#F6E3DF` `#B85C5C` `#4A2E2A` | [desktop](site/lab/dew/) / [phone](site/lab/dew/m.html) |
+| 07 | **VOLT** | Sparkling energy | Can into wordmark, flavour flood | `#10243E` `#C6F432` `#FF9F1C` | [desktop](site/lab/volt/) / [phone](site/lab/volt/m.html) |
+| 08 | **Umami Ring** | Ramen bar | Orbit carousel menu | `#F4E9D8` `#C8342B` `#2E4A3B` | [desktop](site/lab/umami/) / [phone](site/lab/umami/m.html) |
+| 09 | **Signal Studio** | Creative agency | Radial card fan, bento, physics | `#F1EEE6` `#2340D8` `#FF7A2F` | [desktop](site/lab/signal/) / [phone](site/lab/signal/m.html) |
+| 10 | **Volta One** | Electric car | Giant name swap, night mode, spec track | `#E9EEF0` `#0F7C7A` `#F26B3A` | [desktop](site/lab/volta/) / [phone](site/lab/volta/m.html) |
+| 11 | **Nook** | Furniture | Accordion colour bars, odometer counter | `#EDE5D8` `#5B6B3A` `#B5512E` | [desktop](site/lab/nook/) / [phone](site/lab/nook/m.html) |
+| 12 | **Carmine No.7** | Fountain pen ink | Video flow: scroll-scrubbed real footage | `#F4EFE9` `#2B0A0E` `#D81E2C` | [desktop](site/lab/carmine/) / [phone](site/lab/carmine/m.html) |
+| 13 | **Longway** | Overland road trips | Video flow: scroll-scrubbed real footage | `#E9EDF0` `#16212D` `#F2B42F` | [desktop](site/lab/longway/) / [phone](site/lab/longway/m.html) |
+| 14 | **Rise No.3** | Sparkling strawberry water | Video flow: scroll-scrubbed real footage | `#F8EBCB` `#4A0F1E` `#E3343B` | [desktop](site/lab/rise/) / [phone](site/lab/rise/m.html) |
+| 15 | **Fumée** | Perfume house | WebGL smoke field, pinned liquid scent swap, kinetic type | `#EEE7DC` `#36302B` `#A44A3F` | [desktop](site/lab/fumee/) / [phone](site/lab/fumee/m.html) |
+| 16 | **Plinth** | Architecture quarterly | Editorial grid, variable-font type, clip reveals, horizontal gallery | `#EDE8DE` `#19233B` `#DA4A2A` | [desktop](site/lab/plinth/) / [phone](site/lab/plinth/m.html) |
+| 17 | **HALDE R1** | Rangefinder camera | Real scanned camera, finish switch, light modes, exploded lens | `#E9E2D6` `#20241F` `#A85537` | [desktop](site/lab/halde/) / [phone](site/lab/halde/m.html) |
+| 18 | **TALUS Ridge C1** | Carbon trail bike | Real scanned bike, scroll explode, colourway + dusk light modes | `#ECE6DC` `#3D2219` `#8FB3C7` | [desktop](site/lab/cadence/) / [phone](site/lab/cadence/m.html) |
+
+<p align="center"><img src="docs/screens/demos.jpg" alt="Hero screens of the eighteen Lab concepts" width="100%"></p>
+
+Each demo has its own three-colour palette, its own type pairing, a desktop page (`index.html`) and a phone page (`m.html`).
+
+## Studio pages
+
+| Page | What it shows |
+|---|---|
+| [`/color/`](site/color/) | How Zyqor picks a three-colour palette: live palette demos, contrast checks, the 60-30-10 split. |
+| [`/process/`](site/process/) | The five steps from first message to launch, with timelines. |
+| [`/services/`](site/services/) | What a project includes, from a one-page site to a full 3D build. |
+| [`/studio/type/`](site/studio/type/) | A type specimen and pairing system with a live tester. |
+| [`/studio/case/`](site/studio/case/) | One fictional project (Kilnfold, ceramics) told end to end, brief to launch. |
+| [`/studio/ui/`](site/studio/ui/) | A gallery of micro-interactions: magnetic buttons, toggles, sliders, cards. |
+
+## Liquid glass
+
+`site/assets/glass/liquid-glass.css` and `liquid-glass.js` are one reusable material. A page opts in with a link tag and a small JSON map of selectors (`<script type="application/json" id="lg-map">`), so markup stays clean. On desktop the glass refracts the page behind it (an SVG displacement filter) and catches a highlight that follows the cursor; on phones it switches to a lighter blur with no filter so scrolling stays at 60 fps. It tints itself from each page's own palette, falls back to solid surfaces when `backdrop-filter` is missing or the visitor asks for reduced transparency, and goes still for reduced motion. Details: [site/assets/glass/README.md](site/assets/glass/README.md).
+
+## Video Flow: drop a video, get a scroll site
+
+Not every site needs hand-coded visuals. `tools/video-flow/` turns any video (real footage, a product shoot, or a 3D/AI product render) into a finished scroll-scrubbed page with a light phone build.
+
+1. Put your video anywhere and copy an example config from `tools/video-flow/examples/`.
+2. Edit the copy beats, palette and fonts in the JSON.
+3. Run `npm run video-flow -- path/to/config.json` (Node 18+ and ffmpeg). The page appears in `site/lab/<slug>/`.
+
+Concepts 12-14 in the Lab were built exactly this way from free Mixkit footage. Full guide and config reference: [tools/video-flow/README.md](tools/video-flow/README.md).
+
+## Tech stack
+
+- **three.js r170** for WebGL: procedural products (lathe / extrude geometry, physical materials, custom shaders) plus a few CC0 / CC-BY glTF models, compressed with meshopt and WebP textures.
+- **GSAP 3 + ScrollTrigger** for pins, scrubs and timelines; **Lenis** for smooth scroll on desktop.
+- **Matter.js** for the physics playground in the Signal demo.
+- Plain HTML / CSS / ES modules. Fonts self-hosted as WOFF2 (OFL). No CDN at runtime, no tracking, no build step.
+
+Built-in rules the code follows:
+
+- `prefers-reduced-motion` is respected everywhere: no autoplay, no scroll pinning, instant state changes.
+- Below-the-fold content reveals lazily; heavy 3D starts only when it's near the viewport.
+- Icons are inline SVG. Zero console errors at 1440&times;900 and 390&times;844.
+- Real buttons with `aria-label`s, keyboard arrows on carousels, visible focus rings.
+
+## Folder structure
+
+```
+best-website-designer/
+  site/                  <- the whole website (this is what gets deployed)
+    index.html           desktop home
+    m/                   phone home (index.html, m.css, fx-m.js, config-mobile.js)
+    site.css fx.css worlds.css
+    app.js fx.js scrub-engine.js config-desktop.js
+    js/worlds.js         the five Worlds scenes
+    lab/
+      _kit/              shared Lab code: kit.js (renderer, loaders, reveals), chrome.js, lab.css, registry.js
+      _template/         starting point for a new concept
+      index.html m.html  the Lab index (desktop / phone)
+      stride/ meridian/ hush/ ember/ verdant/ dew/ volt/ umami/ signal/ volta/ nook/
+      carmine/ longway/ rise/ fumee/ plinth/ halde/ cadence/
+                         each: index.html, style.css, app.js (desktop) + m.html, m.css (phone) + poster.webp
+    color/ process/ services/   studio pages (index.html desktop + m.html phone)
+    studio/type/ studio/case/ studio/ui/
+    404.html privacy.html
+    assets/              fonts, 3D models, HDRI lighting, images, clips
+    assets/glass/        the liquid-glass material (CSS + JS + README)
+    vendor/              three.js, GSAP, ScrollTrigger, Lenis, Matter.js (self-hosted)
+  tools/video-flow/      video -> scroll-site generator (see above)
+  tools/check-links.mjs  checks every internal and external link before a deploy
+  docs/                  screenshots and GIF for this README, design notes, PROJECTS.md
+  vercel.json            tells Vercel to serve the site/ folder
+  CREDITS.md             every font, model, photo and library with its licence
+  LICENSE.md
+```
+
+## Run it locally
+
+Eight large 3D model files are stored as numbered parts (`*.glb.part1`, `*.glb.part2`). One command puts them back together (it checks every file's checksum and takes about a second):
+
+```bash
+node tools/join-parts.mjs
+```
+
+Then any static server works. From the repo folder:
+
+```bash
+npx serve site
+# or
+cd site && python3 -m http.server 8080
+```
+
+`npm run dev` does both steps for you.
+
+Then open `http://localhost:3000` (serve) or `http://localhost:8080`. In VS Code you can also right-click `site/index.html` and choose **Open with Live Server**.
+
+Note: open it through a server, not by double-clicking the file; ES modules and 3D models don't load from `file://`.
+
+To see the phone build on a laptop: `http://localhost:3000/m/?desktop=1`, or use Chrome DevTools device mode.
+
+## Deploy on Vercel
+
+It's a static site. The only build step is rebuilding the large model files, which Vercel runs for you.
+
+1. Run `npm run check:links` (or `node tools/check-links.mjs --all`) and fix anything it flags.
+2. Push this repo to GitHub.
+3. On vercel.com: **Add New &rarr; Project &rarr; Import** the repo.
+4. Framework preset: **Other**. Leave the build command empty. `vercel.json` already sets the output folder to `site`.
+5. **Deploy.**
+
+Or from the terminal: `npm i -g vercel` then `vercel --prod` in the repo folder.
+
+Netlify or Cloudflare Pages work the same way: build command `node tools/join-parts.mjs`, publish folder `site`. For GitHub Pages, run `node tools/join-parts.mjs` first and publish the `site` folder.
+
+## Add a new Lab concept
+
+1. Copy `site/lab/_template/` to `site/lab/<your-slug>/`.
+2. Build the desktop page in `index.html` / `style.css` / `app.js` and the phone page in `m.html` / `m.css`.
+3. Add an entry to `site/lab/_kit/registry.js` and a card in the Lab grid of `site/index.html` and `site/m/index.html`.
+4. Save `poster.webp` (1200&times;750) and `poster-m.webp` (720&times;450) for the grid.
+
+## Performance
+
+The whole `site/` folder is 103.5 MB, but a visitor only downloads the page they open. 3D models and videos start loading when their section comes near the screen, images use `loading="lazy"`, and the phone build loads compressed copies of the same models, so it looks the same at a fraction of the weight.
+
+| Concept | Page code + posters | 3D models / media (`assets/lab/<slug>/`) |
+|---|---|---|
+| stride | 135 KB | 4.0 MB |
+| meridian | 167 KB | built in code (procedural) |
+| hush | 149 KB | 3.2 MB |
+| ember | 177 KB | built in code (procedural) |
+| verdant | 189 KB | 5.4 MB |
+| dew | 133 KB | 243 KB |
+| volt | 152 KB | 1022 KB |
+| umami | 210 KB | 224 KB |
+| signal | 196 KB | 257 KB |
+| volta | 137 KB | 3.7 MB |
+| nook | 131 KB | 9.3 MB |
+| carmine | 83 KB | 2.9 MB |
+| longway | 112 KB | 5.7 MB |
+| rise | 111 KB | 6.3 MB |
+| fumee | 122 KB | 755 KB |
+| plinth | 106 KB | 1.7 MB |
+| halde | 98 KB | 4.8 MB |
+| cadence | 158 KB | 3.6 MB |
+
+Shared libraries in `site/vendor/` (three.js, GSAP, Lenis, Matter.js) are self-hosted and cached for a year by `vercel.json`.
+
+## His other work
+
+Sujon's live apps, game and lesson site, with links, source repos and APK sizes: [docs/PROJECTS.md](docs/PROJECTS.md) &middot; all code on [github.com/zyqorbusiness-lab](https://github.com/zyqorbusiness-lab).
+
+## Credits and licence
+
+Fonts, 3D models, photos and libraries are listed with their licences in [CREDITS.md](CREDITS.md). See [LICENSE.md](LICENSE.md) for what you may reuse.
+
+- The hand-written code is MIT-licensed. Every brand in the Lab is fictional and every page says so.
+- 3D models keep their own licences (CC0 or CC BY 4.0 from Khronos, Poly Haven and others; each is credited on its demo page and in CREDITS.md).
+- One exception to note: the bike in **TALUS Ridge C1** (`site/assets/lab/cadence/`) is "Carbon Frame Bike" by Robert Schweier and prefrontal cortex (realtime version by Felix Herbst), licensed **CC BY-SA 4.0**. Our modified version of that model file is shared under the same CC BY-SA 4.0 licence.
+- Photos are from Unsplash, Pexels and Mixkit under their own free licences; no AI-generated images are used in the Lab.
+
+---
+
+<p align="center">
+  <b>Zyqor Studio</b> &middot; Sujon Hoque &middot; West Bengal, India<br>
+  <a href="mailto:zyqorbusiness@gmail.com">zyqorbusiness@gmail.com</a> &middot;
+  <a href="https://wa.me/919547908593">WhatsApp</a> &middot;
+  <a href="https://www.instagram.com/zyqor_og/">Instagram @zyqor_og</a>
+</p>

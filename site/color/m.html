@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en" data-build="m" class="in-hero">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- desktop -> heavy build (./). ?m=1 keeps this page on a laptop. -->
+<script>(function(){if(/[?&]m=1/.test(location.search))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height;if(w>860&&!(c&&h>w))location.replace('./'+location.search+location.hash);})();</script>
+<title>Colour Theory, by Zyqor Studio</title>
+<meta name="description" content="How Zyqor Studio picks three-colour palettes: an interactive colour wheel, 60-30-10 proportions, a live WCAG contrast checker, warm vs cool, every Lab palette decoded and a palette generator.">
+<meta name="theme-color" content="#F3EDE1">
+<meta property="og:title" content="Colour Theory, by Zyqor Studio">
+<meta property="og:description" content="Three colours, every time. The maths and the taste behind the studio's palettes, live.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://zyqor-portfolio-v3.sites.tab.bot/assets/color/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preload" as="font" href="../assets/font/cabinetgrotesk-800.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="../assets/font/satoshi-400.woff2" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="color.css">
+<link rel="stylesheet" href="m.css">
+<link rel="stylesheet" href="../assets/glass/liquid-glass.css"><link rel="stylesheet" href="../assets/glass/glass-pages.css">
+<script type="application/json" id="lg-map">{".hd .logo": "lg lg-pill lg-rim", ".hd .nav": "lg lg-pill lg-rim", ".btn:not(.btn--ghost)": "lg lg-btn lg--ink", ".btn--ghost": "lg lg-btn", ".toast": "lg lg-menu"}</script>
+<script src="../assets/glass/liquid-glass.js" defer></script>
+  <link rel="canonical" href="https://zyqor-portfolio-v3.sites.tab.bot/color/m.html">
+</head>
+<body class="is-m">
+<a class="skip" href="#main">Skip to content</a>
+<div class="grain" aria-hidden="true"></div>
+<header class="hd">
+  <a class="logo" href="../" aria-label="Zyqor Studio home"><span class="logo-mark"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6.5h12L6 17.5h12" fill="none" stroke="#D9B56A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Zyqor Studio</a>
+  <nav class="nav" aria-label="Main"><a href="../lab/">Lab</a><a href="m.html" aria-current="page">Colour</a><a href="../#contact">Contact</a></nav>
+</header>
+<nav class="rail" aria-label="Sections">
+  <a href="#wheel"><span>Wheel</span><i></i></a><a href="#proportion"><span>60 30 10</span><i></i></a><a href="#contrast"><span>Contrast</span><i></i></a><a href="#temperature"><span>Warm / cool</span><i></i></a><a href="#lab"><span>The Lab</span><i></i></a><a href="#generator"><span>Generator</span><i></i></a>
+</nav>
+<main id="main">
+
+<section class="sec hero" id="top" data-theme="ivory" aria-labelledby="h1">
+  <div class="ring" id="ring" aria-hidden="true"><svg viewBox="-500 -500 1000 1000"></svg><div class="ring-c"><div><b>3</b><span>colours, every time</span></div></div><div class="ring-tip" id="ringTip"></div></div>
+  <div class="wrap">
+    <p class="kick"><b>Field notes</b>How the studio picks palettes</p>
+    <h1 class="h1" id="h1"><span class="ln"><span>Colour</span></span><span class="ln"><span>Theory<em>.</em></span></span><span class="by">by Zyqor Studio</span></h1>
+    <div class="hero-foot">
+      <p>Every site we make runs on exactly three colours: a light ground, a deep ink and one accent. This page shows the maths and the taste behind them, live. Drag things.</p>
+      <div class="hero-trio" aria-label="The studio palette: Ivory, Pine, Ochre">
+        <div style="height:96px;background:#F3EDE1;color:#17423C;box-shadow:0 0 0 1px rgba(23,66,60,.18)">IVORY</div>
+        <div style="height:72px;background:#17423C;color:#F3EDE1">PINE</div>
+        <div style="height:48px;background:#B5832F;color:#17423C">OCHRE</div>
+      </div>
+      <div class="scroll-cue" aria-hidden="true"><i></i>Scroll</div>
+    </div>
+  </div>
+</section>
+
+<section class="trio" id="trio" data-theme="ivory" aria-labelledby="trio-h">
+  <div class="trio-pin">
+    <div class="trio-bands">
+      <div class="tb" style="background:#F3EDE1;color:#17423C"><div class="tb-c"><b>Ivory</b><span class="mono">#F3EDE1</span><span>The ground</span></div><span class="tb-n" data-to="60">60</span></div>
+      <div class="tb" style="background:#17423C;color:#F3EDE1"><div class="tb-c"><b>Pine</b><span class="mono">#17423C</span><span>The ink</span></div><span class="tb-n" data-to="30">30</span></div>
+      <div class="tb" style="background:#B5832F;color:#17423C"><div class="tb-c"><b>Ochre</b><span class="mono">#B5832F</span><span>The spark</span></div><span class="tb-n" data-to="10">10</span></div>
+    </div>
+    <div class="trio-cap"><p class="kick"><b>00</b>The house palette</p><h2 class="h2" id="trio-h">Three colours. <em>Never four.</em></h2><p class="trio-sub">Equal thirds look like a flag. This is the split the whole site is painted in.</p></div>
+  </div>
+</section>
+
+<section class="sec" id="wheel" data-theme="pine" aria-labelledby="wheel-h">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <p class="kick" data-rv><b>01</b>The wheel</p>
+        <h2 class="h2" id="wheel-h" data-rv>Harmony is <em>geometry</em>.</h2>
+      </div>
+      <p class="lede" data-rv>Colours that work together sit in fixed shapes on the wheel: opposite, side by side, or on the points of a triangle. Drag the white handle to pick a base hue; the shape follows.</p>
+    </div>
+    <div class="wheel-stage" data-rv>
+      <div class="wheel-box" id="wheelBox">
+        <canvas id="wheelCv" aria-hidden="true"></canvas>
+        <svg id="wheelSvg" viewBox="-100 -100 200 200" role="slider" tabindex="0" aria-label="Base hue. Use the arrow keys to rotate." aria-valuemin="0" aria-valuemax="359" aria-valuenow="168"></svg>
+      </div>
+      <div class="wheel-side">
+        <div class="pills" role="group" aria-label="Harmony type" id="harmBtns">
+          <button class="pill" type="button" data-h="comp" aria-pressed="true">Complementary</button>
+          <button class="pill" type="button" data-h="ana" aria-pressed="false">Analogous</button>
+          <button class="pill" type="button" data-h="tri" aria-pressed="false">Triadic</button>
+          <button class="pill" type="button" data-h="split" aria-pressed="false">Split</button>
+        </div>
+        <div class="pills" role="group" aria-label="Colour model" id="modelBtns" style="margin-top:10px">
+          <button class="pill pill--s" type="button" data-m="hsl" aria-pressed="true">HSL wheel</button>
+          <button class="pill pill--s" type="button" data-m="ok" aria-pressed="false">OKLCH wheel</button>
+        </div>
+        <p class="note" id="modelNote" style="font-size:13px;margin:10px 0 0">HSL: the wheel everyone learns. Fast, but its yellows glow and its blues sink at the same 'lightness'.</p>
+        <div style="height:22px"></div>
+        <h3 id="harmT">Complementary</h3>
+        <p id="harmD">Two hues straight across the wheel. Maximum tension, so one of them has to be the quiet one.</p>
+        <label class="light" for="lightR">Lightness <input type="range" id="lightR" min="25" max="75" value="50" style="--track:linear-gradient(90deg,#222,#888,#eee)"></label>
+        <div class="chips" id="harmChips"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="proportion" data-theme="ivory" aria-labelledby="prop-h">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <p class="kick" data-rv><b>02</b>Proportion</p>
+        <h2 class="h2" id="prop-h" data-rv>60 <em>30</em> 10.</h2>
+      </div>
+      <p class="lede" data-rv>The same three colours can look expensive or loud. The difference is how much of each you use: most of the page in the ground, a third in the ink, a sliver of accent.</p>
+    </div>
+    <div class="prop">
+      <div class="mock" id="mock" data-rv aria-label="A sample landing page painted with the selected palette">
+        <div class="mk-nav" data-r="sec-nav"><i class="mk-logo"></i><span class="mk-links"><i></i><i></i><i></i></span><i class="mk-cta"></i></div>
+        <div class="mk-h">Three colours, one decision.</div>
+        <div class="mk-p"><i></i><i></i><i></i></div>
+        <i class="mk-btn"></i>
+        <div class="mk-art"><i class="orb"></i><i class="tag"></i></div>
+      </div>
+      <div data-rv>
+        <div class="pills" role="group" aria-label="Proportion" id="propBtns">
+          <button class="pill" type="button" data-p="good" aria-pressed="true">60 / 30 / 10</button>
+          <button class="pill" type="button" data-p="even" aria-pressed="false">Even split</button>
+          <button class="pill" type="button" data-p="flip" aria-pressed="false">Accent flood</button>
+        </div>
+        <div style="height:24px"></div>
+        <div class="bar" id="bar" aria-hidden="true"><div></div><div></div><div></div></div>
+        <p class="bar-cap" id="barCap">Measured live from the mock on the left.</p>
+        <div class="verdict" id="verdict" aria-live="polite"></div>
+        <div class="pal-pick" id="propPal" role="group" aria-label="Palette for the mock"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="contrast" data-theme="paper" aria-labelledby="cx-h">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <p class="kick" data-rv><b>03</b>Contrast</p>
+        <h2 class="h2" id="cx-h" data-rv>Pretty is not <em>readable</em>.</h2>
+      </div>
+      <p class="lede" data-rv>Every pair gets checked against WCAG 2.2 before it ships. Type a hex or use the pickers; the ratio and the pass marks update as you go.</p>
+    </div>
+    <div class="cx">
+      <div class="cx-pre" id="cxPre" data-rv>
+        <p class="small">Live preview</p>
+        <p class="big">Read me at a glance.</p>
+        <p class="body">Body copy is where weak contrast hurts most: sixteen pixels, long lines, read on a phone in the sun.</p>
+        <p class="small">Caption, 13px. The smallest thing on the page still has to work.</p>
+        <div class="ui"><span>Button</span><span>Outline</span></div>
+      </div>
+      <div class="cx-ctl" data-rv>
+        <div class="field"><label for="fgC">Text</label><input type="color" id="fgC" value="#17423c" aria-label="Text colour picker"><input type="text" id="fgT" value="#17423C" maxlength="7" spellcheck="false" aria-label="Text colour hex"></div>
+        <div class="field"><label for="bgC">Ground</label><input type="color" id="bgC" value="#f3ede1" aria-label="Ground colour picker"><input type="text" id="bgT" value="#F3EDE1" maxlength="7" spellcheck="false" aria-label="Ground colour hex"></div>
+        <div class="ratio" aria-live="polite"><b id="ratioN">9.58</b><span>: 1 contrast</span></div>
+        <div class="badges">
+          <div class="badge" id="bAA"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.6"/><path class="v" d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path class="x" d="M8.5 8.5l7 7M15.5 8.5l-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><div>AA body<small>4.5:1, under 24px</small></div></div>
+          <div class="badge" id="bAAL"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.6"/><path class="v" d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path class="x" d="M8.5 8.5l7 7M15.5 8.5l-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><div>AA large<small>3:1, 24px or 19px bold</small></div></div>
+          <div class="badge" id="bAAA"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.6"/><path class="v" d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path class="x" d="M8.5 8.5l7 7M15.5 8.5l-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><div>AAA body<small>7:1</small></div></div>
+          <div class="badge" id="bUI"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.6"/><path class="v" d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path class="x" d="M8.5 8.5l7 7M15.5 8.5l-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><div>UI and icons<small>3:1, borders and controls</small></div></div>
+        </div>
+        <div class="cx-row">
+          <button class="btn btn--ghost" type="button" id="cxSwap"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 4v14M7 18l-3-3M7 18l3-3M17 20V6M17 6l-3 3M17 6l3 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Swap</button>
+          <button class="btn" type="button" id="cxFix"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20 15 9M14 4v3M19 9h-3M18 5l-2 2M11 6l1 1M17 12l1 1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Nudge to pass AA</button>
+        </div>
+      </div>
+    </div>
+    <div class="cx-matrix" data-rv>
+      <h3>Our own palette, honestly measured</h3>
+      <p class="note">Ochre at full strength scores <strong id="mxO">2.88:1</strong> on Ivory: perfect for a 120px numeral, wrong for a caption. Darkened to <span class="mono">#8F6420</span> it reaches <strong id="mxOd">4.49:1</strong>, still a hair under the line for body text. So on Ivory, Pine does the reading.</p>
+      <div class="mx" id="mx"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="temperature" data-theme="ivory" aria-labelledby="t-h">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <p class="kick" data-rv><b>04</b>Temperature</p>
+        <h2 class="h2" id="t-h" data-rv>Warm sells <em>appetite</em>. Cool sells calm.</h2>
+      </div>
+      <p class="lede" data-rv>Same scene, same shapes, only the temperature moves. Watch what it does to the mood before you read a single word.</p>
+    </div>
+    <div class="temp">
+      <div class="scene" id="scene" data-rv></div>
+      <div data-rv>
+        <p class="mood" id="mood" aria-live="polite"></p>
+        <div class="tslider"><label class="sr" for="tempR">Colour temperature</label><input type="range" id="tempR" min="0" max="100" value="78"></div>
+        <div class="tlabels"><span>Cool</span><span>Neutral</span><span>Warm</span></div>
+        <p class="note" id="tnote" style="margin-top:22px"></p>
+      </div>
+    </div>
+    <div class="tgroups" data-rv>
+      <div><h4>Warm-accent concepts in the Lab</h4><div class="tlist" id="tWarm"></div></div>
+      <div><h4>Cool-accent concepts in the Lab</h4><div class="tlist" id="tCool"></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="lab" data-theme="ivory2" aria-labelledby="lab-h">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <p class="kick" data-rv><b>05</b>The Lab, decoded</p>
+        <h2 class="h2" id="lab-h" data-rv>Every concept, <em>three</em> colours.</h2>
+      </div>
+      <p class="lede" data-rv>Read straight from the Lab's own registry. Each card shows the palette at 60 / 30 / 10, the measured hue gap and contrast, and why it was picked. Tap one to open the demo.</p>
+    </div>
+    <div class="lab-grid" id="labGrid"></div>
+  </div>
+</section>
+
+<section class="sec" id="generator" data-theme="pine" aria-labelledby="g-h">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <p class="kick" data-rv><b>06</b>Generator</p>
+        <h2 class="h2" id="g-h" data-rv>Make <em>yours</em>.</h2>
+      </div>
+      <p class="lede" data-rv>The studio's rule as a machine: a light ground, a deep ink and one accent, spaced evenly in OKLCH so the lightness steps feel right. Lock what you like, regenerate the rest, tap a hex to copy it.</p>
+    </div>
+    <div class="gen" data-rv>
+      <div class="gen-sw" id="genSw"></div>
+      <div class="gen-ctl">
+        <div class="grp pills" role="group" aria-label="Accent rule" id="genMode">
+          <button class="pill" type="button" data-g="comp" aria-pressed="true">Complementary</button>
+          <button class="pill" type="button" data-g="split" aria-pressed="false">Split</button>
+          <button class="pill" type="button" data-g="tri" aria-pressed="false">Triadic</button>
+          <button class="pill" type="button" data-g="ana" aria-pressed="false">Analogous</button>
+        </div>
+        <div class="grp">
+          <span class="note" style="font-size:13px">or press <kbd>Space</kbd></span>
+          <button class="btn" type="button" id="genGo" style="background:var(--acc);color:var(--pine)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h3.5c4.5 0 4.5 10 9 10H20M4 17h3.5c1.6 0 2.6-1.2 3.4-2.8M13.1 9.8C13.9 8.2 14.9 7 16.5 7H20M17 4l3 3-3 3M17 14l3 3-3 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Generate</button>
+        </div>
+      </div>
+      <div class="gen-prev">
+        <div class="gp-card" id="gpCard"><h4>Your brand, in three colours.</h4><p>A preview of the palette at work: the ground carries the page, the ink does the reading, the accent asks for the click.</p><span class="gp-b" id="gpB">Start a project</span></div>
+        <div class="gp-code"><pre id="gpCode"></pre><div class="gp-chk" id="gpChk"></div><button class="btn" type="button" id="gpCopy"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="2"/></svg>Copy CSS variables</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec close" id="close" data-theme="ochre" aria-labelledby="c-h">
+  <div class="wrap">
+    <p class="kick" data-rv><b>07</b>The rule</p>
+    <h2 class="h2" id="c-h" data-rv>Pick three. <em>Commit.</em> Check the contrast.</h2>
+    <div class="close-row" data-rv>
+      <a class="btn" href="../lab/">See the Lab <svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a class="btn btn--ghost" href="../#contact">Start a project</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <span>Colour Theory, by Zyqor Studio. Code and words by the studio; palettes from the Lab's fictional concept brands.</span>
+  <details><summary>Credits</summary><ul>
+    <li>Type: Cabinet Grotesk, Satoshi and Zodiak by Indian Type Foundry via Fontshare, ITF Free Font Licence, self-hosted.</li>
+    <li>Film grain: generated noise texture by Zyqor Studio. No stock or AI imagery on this page.</li>
+    <li>Contrast maths: WCAG 2.2 relative luminance. Colour maths: OKLCH (Björn Ottosson's Oklab).</li>
+    <li>Phone build: native scroll and CSS motion only, no libraries.</li>
+  </ul></details>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"><i id="toastSw"></i><span id="toastT">Copied</span></div>
+<template id="ic-copy"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="12" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="2"/></svg></template><template id="ic-lock"><svg class="lk-on" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="11" width="14" height="9" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="2"/></svg><svg class="lk-off" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="11" width="14" height="9" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 7.6-1.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></template><template id="ic-arrow"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></template>
+
+<script type="module" src="color.js"></script>
+</body>
+</html>

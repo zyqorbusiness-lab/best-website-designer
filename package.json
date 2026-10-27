@@ -1,0 +1,17 @@
+{
+  "name": "best-website-designer",
+  "version": "3.0.0",
+  "private": true,
+  "description": "Zyqor Studio portfolio v3: scroll worlds, 18 Zyqor Lab concepts, studio pages, liquid glass UI, separate desktop + phone builds. Static site, no build step.",
+  "scripts": {
+    "dev": "node tools/join-parts.mjs && npx serve site",
+    "start": "node tools/join-parts.mjs && npx serve site",
+    "video-flow": "node tools/video-flow/build.mjs",
+    "video-flow:demos": "node tools/video-flow/build.mjs tools/video-flow/examples/carmine.json && node tools/video-flow/build.mjs tools/video-flow/examples/longway.json && node tools/video-flow/build.mjs tools/video-flow/examples/rise.json",
+    "check-links": "node tools/check-links.mjs --all",
+    "check:links": "node tools/check-links.mjs",
+    "check:links:all": "node tools/check-links.mjs --all",
+    "build": "node tools/join-parts.mjs"
+  },
+  "license": "SEE LICENSE IN LICENSE.md"
+}

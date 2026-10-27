@@ -1,0 +1,180 @@
+/* Zyqor Studio — Type Specimen. Shared tokens + components (desktop + phone). */
+@font-face{font-family:"Bricolage V";src:url(../../assets/font/bricolage-axes.woff2) format("woff2");font-weight:200 800;font-stretch:75% 100%;font-display:swap}
+@font-face{font-family:"Fraunces V";src:url(../../assets/font/fraunces-axes.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Satoshi V";src:url(../../assets/font/satoshi-var.woff2) format("woff2");font-weight:300 900;font-display:swap}
+@font-face{font-family:"Cabinet V";src:url(../../assets/font/cabinetgrotesk-var.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Zodiak V";src:url(../../assets/font/zodiak-var.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"General Sans V";src:url(../../assets/font/generalsans-var.woff2) format("woff2");font-weight:200 700;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url(../../assets/font/instrumentserif-400.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url(../../assets/font/instrumentserif-400-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+
+:root{
+  --paper:#F1ECE2; --ink:#1C2B26; --red:#E2532D;
+  --paper-2:#E9E2D4; --paper-3:#DFD6C5;
+  --ink-80:rgba(28,43,38,.8); --ink-60:rgba(28,43,38,.7);--red-txt:#B83A18; --ink-40:rgba(28,43,38,.4); --rule:rgba(28,43,38,.16); --rule-2:rgba(28,43,38,.08);
+  --red-12:rgba(226,83,45,.12);
+  --f-display:"Bricolage V",system-ui,sans-serif; --f-serif:"Fraunces V",Georgia,serif; --f-text:"Satoshi V",system-ui,sans-serif;
+  --ease:cubic-bezier(.2,.75,.15,1); --ease-io:cubic-bezier(.7,0,.2,1);
+  --pad:clamp(18px,3vw,44px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-text);font-size:16px;line-height:1.55;font-weight:420;font-feature-settings:"ss03" 0;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+::selection{background:var(--red);color:var(--paper)}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:4px}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:12px;top:-60px;z-index:99;background:var(--ink);color:var(--paper);padding:10px 14px;border-radius:999px;text-decoration:none}
+.skip:focus{top:12px}
+
+/* grain: real noise, tiny SVG, no image request */
+.grain{position:fixed;inset:-50%;pointer-events:none;z-index:60;opacity:.07;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.11  0 0 0 0 0.17  0 0 0 0 0.15  0 0 0 1.4 -0.2'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>")}
+
+/* labels */
+.lbl{font-family:var(--f-text);font-size:11.5px;line-height:1.2;letter-spacing:.09em;text-transform:uppercase;font-weight:600;font-variant-numeric:tabular-nums}
+.lbl--mute{color:var(--ink-60)}
+.tag{display:inline-flex;align-items:center;gap:6px;height:24px;padding:0 10px;border:1px solid currentColor;border-radius:999px;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:650;white-space:nowrap}
+.tag i{width:6px;height:6px;border-radius:50%;background:var(--red)}
+
+/* top bar */
+.bar{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px var(--pad);pointer-events:none}
+.bar>*{pointer-events:auto}
+.pill{display:inline-flex;align-items:center;gap:10px;height:40px;padding:0 16px 0 12px;border-radius:999px;background:rgba(241,236,226,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--rule);text-decoration:none;font-weight:600;font-size:14px;transition:background .4s var(--ease),color .4s var(--ease)}
+.pill:hover{background:var(--ink);color:var(--paper)}
+.pill svg{width:18px;height:18px}
+.bar nav{display:flex;gap:2px;height:40px;padding:4px;border-radius:999px;background:rgba(241,236,226,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--rule)}
+.bar nav a{display:flex;align-items:center;padding:0 13px;border-radius:999px;text-decoration:none;font-size:13.5px;font-weight:560;color:var(--ink-80);transition:background .35s var(--ease),color .35s var(--ease)}
+.bar nav a:hover,.bar nav a.on{background:var(--ink);color:var(--paper)}
+.bar nav a .n{font-size:10px;margin-right:6px;opacity:.55;font-variant-numeric:tabular-nums}
+
+/* section heads */
+.sec{position:relative;padding:clamp(80px,11vw,160px) var(--pad) 0}
+.sec-head{display:grid;grid-template-columns:repeat(12,1fr);gap:20px;align-items:end;margin-bottom:clamp(36px,5vw,64px);border-top:1px solid var(--ink);padding-top:16px}
+.sec-head .no{grid-column:1/3;font-family:var(--f-text);font-weight:600;font-size:13px;letter-spacing:.08em;font-variant-numeric:tabular-nums}
+.sec-head h2{grid-column:3/9;margin:0;font-family:var(--f-display);font-weight:760;font-stretch:84%;font-variation-settings:"opsz" 96;font-size:clamp(44px,6.4vw,104px);line-height:.9;letter-spacing:-.035em}
+.sec-head h2 em{font-family:var(--f-serif);font-style:normal;font-weight:330;font-variation-settings:"opsz" 144,"SOFT" 100,"WONK" 1;letter-spacing:-.02em;color:var(--red)}
+.sec-head p{grid-column:9/13;margin:0;max-width:38ch;color:var(--ink-80);font-size:15.5px;line-height:1.5}
+
+/* shared controls */
+.rng{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px}
+.rng label{font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:650;min-width:52px}
+.rng output{font-variant-numeric:tabular-nums;font-size:13px;font-weight:600;min-width:46px;text-align:right}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:28px;background:transparent;cursor:pointer;margin:0}
+input[type=range]::-webkit-slider-runnable-track{height:2px;background:linear-gradient(90deg,var(--ink) var(--p,50%),var(--rule) var(--p,50%))}
+input[type=range]::-moz-range-track{height:2px;background:var(--rule)}
+input[type=range]::-moz-range-progress{height:2px;background:var(--ink)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;margin-top:-8px;border-radius:50%;background:var(--paper);border:2px solid var(--ink);transition:transform .25s var(--ease),background .25s}
+input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--paper);border:2px solid var(--ink)}
+input[type=range]:active::-webkit-slider-thumb{transform:scale(1.25);background:var(--red);border-color:var(--red)}
+input[type=range]:focus-visible{outline:none}
+input[type=range]:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 4px var(--red-12);border-color:var(--red)}
+.seg{display:inline-flex;padding:3px;border:1px solid var(--rule);border-radius:999px;background:var(--paper)}
+.seg button{border:0;background:transparent;height:32px;padding:0 13px;border-radius:999px;font-size:13px;font-weight:600;cursor:pointer;color:var(--ink-80);transition:background .3s var(--ease),color .3s var(--ease)}
+.seg button[aria-pressed=true],.seg button[aria-selected=true]{background:var(--ink);color:var(--paper)}
+.btn{display:inline-flex;align-items:center;gap:10px;height:44px;padding:0 20px;border-radius:999px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);font-weight:620;font-size:14px;cursor:pointer;text-decoration:none;transition:background .35s var(--ease),color .35s var(--ease),transform .35s var(--ease)}
+.btn:hover{background:var(--red);border-color:var(--red)}
+.btn--ghost{background:transparent;color:var(--ink)}
+.btn--ghost:hover{color:var(--paper)}
+.btn svg{width:16px;height:16px}
+
+/* reveal */
+[data-rv]{opacity:0;transform:translateY(28px);transition:opacity 1s var(--ease),transform 1.1s var(--ease)}
+[data-rv].in{opacity:1;transform:none}
+[data-rv="2"]{transition-delay:.08s}[data-rv="3"]{transition-delay:.16s}[data-rv="4"]{transition-delay:.24s}
+
+/* pairings — the mini layouts are real HTML in both builds */
+.pc{position:relative;border-radius:22px;overflow:hidden;background:var(--paper-2);border:1px solid var(--rule)}
+.pc-cap{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:16px 18px;border-top:1px solid var(--rule);background:var(--paper)}
+.pc-cap b{display:block;font-size:13px;font-weight:700;letter-spacing:.02em}
+.pc-cap span{display:block;font-size:13.5px;color:var(--ink-80);line-height:1.45;max-width:52ch;margin-top:4px}
+.pc-cap .no{font-size:12px;font-weight:650;font-variant-numeric:tabular-nums;color:var(--red)}
+.pc .tag{position:absolute;top:14px;right:14px;z-index:2;background:rgba(241,236,226,.9);color:var(--ink);border-color:var(--rule)}
+.stage{position:relative;overflow:hidden}
+
+/* 1 product — Cabinet + Satoshi */
+.p1{background:#E3DCCD;padding:22px 24px 26px;min-height:100%;display:flex;flex-direction:column;justify-content:space-between;gap:28px}
+.p1 .top{display:flex;justify-content:space-between;align-items:center;font-family:"Satoshi V";font-size:12px;font-weight:600}
+.p1 .top b{font-family:"Cabinet V";font-weight:800;font-size:17px;letter-spacing:-.03em}
+.p1 h3{margin:0;font-family:"Cabinet V";font-weight:800;font-size:clamp(40px,4.6vw,74px);line-height:.88;letter-spacing:-.045em}
+.p1 h3 span{color:var(--red)}
+.p1 .spec{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;border-top:1px solid var(--ink);padding-top:12px;font-family:"Satoshi V";font-size:12.5px;line-height:1.35}
+.p1 .spec b{display:block;font-family:"Cabinet V";font-weight:700;font-size:22px;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.p1 .row{display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:"Satoshi V";font-size:13px}
+.p1 .row a{display:inline-flex;height:38px;align-items:center;padding:0 16px;border-radius:999px;background:var(--ink);color:var(--paper);text-decoration:none;font-weight:600}
+
+/* 2 menu — Fraunces + General Sans */
+.p2{background:#F5F0E6;padding:26px 28px;font-family:"General Sans V"}
+.p2 .m-h{text-align:center;border-bottom:1px solid var(--ink);padding-bottom:14px;margin-bottom:12px}
+.p2 .m-h small{display:block;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;font-weight:560}
+.p2 .m-h h3{margin:6px 0 2px;font-family:"Fraunces V";font-weight:560;font-variation-settings:"opsz" 144,"SOFT" 100,"WONK" 1;font-size:clamp(34px,3.3vw,50px);line-height:.95;letter-spacing:-.02em}
+.p2 .m-h h3 i{font-style:normal;font-weight:300;color:var(--red)}
+.p2 .m-h p{margin:0;font-size:12px;color:var(--ink-60)}
+.p2 ul{list-style:none;margin:0;padding:0}
+.p2 li{display:grid;grid-template-columns:1fr auto;column-gap:10px;padding:9px 0;border-bottom:1px dashed var(--rule)}
+.p2 li b{font-family:"Fraunces V";font-weight:520;font-variation-settings:"opsz" 30,"SOFT" 50;font-size:18px;letter-spacing:-.01em}
+.p2 li em{font-style:normal;font-size:15px;font-weight:560;font-variant-numeric:tabular-nums}
+.p2 li span{grid-column:1/-1;font-size:12px;color:var(--ink-60);line-height:1.4}
+
+/* 3 magazine — Instrument Serif + Satoshi */
+.p3{background:#EDE6D8;padding:24px 26px;display:grid;grid-template-columns:1.05fr 1fr;gap:22px;min-height:100%}
+.p3 .k{font-family:"Satoshi V";font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;display:flex;justify-content:space-between;grid-column:1/-1;border-bottom:1px solid var(--ink);padding-bottom:10px}
+.p3 h3{margin:0;font-family:"Instrument Serif";font-weight:400;font-size:clamp(46px,4.8vw,80px);line-height:.86;letter-spacing:-.025em}
+.p3 h3 i{color:var(--red)}
+.p3 .deck{font-family:"Instrument Serif";font-style:italic;font-size:19px;line-height:1.2;margin:14px 0 0}
+.p3 .by{font-family:"Satoshi V";font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:650;margin-top:14px}
+.p3 .body{font-family:"Satoshi V";font-size:12.5px;line-height:1.55;columns:2;column-gap:16px;color:var(--ink-80)}
+.p3 .body p{margin:0 0 8px}
+.p3 .body p:first-child::first-letter{float:left;font-family:"Instrument Serif";font-size:52px;line-height:.8;padding:4px 6px 0 0;color:var(--ink)}
+
+/* 4 app — Bricolage narrow + Satoshi tabular */
+.p4{background:#DCD3C1;display:grid;place-items:center;padding:26px 16px;min-height:100%}
+.phone{width:min(268px,100%);border-radius:34px;background:var(--ink);padding:9px;box-shadow:0 30px 60px -30px rgba(28,43,38,.55)}
+.phone .scr{border-radius:26px;background:var(--paper);overflow:hidden;font-family:"Satoshi V"}
+.phone .st{display:flex;justify-content:space-between;padding:10px 18px 4px;font-size:11px;font-weight:700;font-variant-numeric:tabular-nums}
+.phone .hd{padding:6px 18px 12px}
+.phone .hd small{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:650;color:var(--ink-60)}
+.phone .hd h3{margin:4px 0 0;font-family:"Bricolage V";font-weight:720;font-stretch:78%;font-variation-settings:"opsz" 24;font-size:30px;line-height:.95;letter-spacing:-.025em}
+.phone .nx{margin:0 12px;border-radius:16px;background:var(--red);color:var(--paper);padding:12px 14px;display:flex;justify-content:space-between;align-items:flex-end}
+.phone .nx b{font-size:34px;line-height:1;font-weight:760;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.phone .nx span{font-size:11.5px;font-weight:600;text-align:right;line-height:1.3}
+.phone ol{list-style:none;margin:8px 0 0;padding:0 18px 16px}
+.phone li{display:grid;grid-template-columns:52px 1fr auto;gap:8px;padding:9px 0;border-bottom:1px solid var(--rule);font-size:13px;align-items:baseline}
+.phone li b{font-weight:700;font-variant-numeric:tabular-nums}
+.phone li span{font-family:"Bricolage V";font-stretch:80%;font-variation-settings:"opsz" 14;font-weight:560}
+.phone li em{font-style:normal;color:var(--ink-60);font-size:12px;font-variant-numeric:tabular-nums}
+
+/* 5 poster — Zodiak + Bricolage condensed */
+.p5{background:var(--red);color:var(--paper);padding:22px 24px;display:flex;flex-direction:column;justify-content:space-between;min-height:100%;gap:18px}
+.p5 .t{display:flex;justify-content:space-between;font-family:"Bricolage V";font-stretch:75%;font-variation-settings:"opsz" 14;font-weight:620;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.p5 h3{margin:0;font-family:"Zodiak V";font-weight:880;font-size:clamp(60px,6vw,104px);line-height:.8;letter-spacing:-.045em}
+.p5 h3 i{font-style:normal;font-weight:200;display:block}
+.p5 .f{display:grid;grid-template-columns:repeat(3,auto);justify-content:space-between;gap:10px;font-family:"Bricolage V";font-stretch:75%;font-variation-settings:"opsz" 20;font-weight:700;font-size:20px;line-height:1;text-transform:uppercase;border-top:2px solid var(--paper);padding-top:10px}
+.p5 .f small{display:block;font-size:10px;font-weight:500;letter-spacing:.08em;margin-bottom:4px;opacity:.8}
+
+/* footer */
+.foot{margin-top:clamp(90px,12vw,170px);background:var(--ink);color:var(--paper);padding:clamp(48px,6vw,90px) var(--pad) 28px;border-radius:28px 28px 0 0}
+.foot h2{margin:0 0 36px;font-family:var(--f-display);font-weight:780;font-stretch:80%;font-variation-settings:"opsz" 96;font-size:clamp(46px,8.5vw,150px);line-height:.86;letter-spacing:-.045em;max-width:14ch}
+.foot h2 em{font-family:var(--f-serif);font-style:normal;font-weight:300;font-variation-settings:"opsz" 144,"SOFT" 100,"WONK" 1;color:var(--red)}
+.cred{list-style:none;margin:0;padding:0;border-top:1px solid rgba(241,236,226,.25)}
+.cred li{display:grid;grid-template-columns:1.1fr 1.6fr 1.6fr;gap:16px;padding:12px 0;border-bottom:1px solid rgba(241,236,226,.14);font-size:13.5px;line-height:1.45}
+.cred li b{font-weight:650}
+.cred a{color:var(--paper);text-decoration-color:rgba(241,236,226,.4);text-underline-offset:3px}
+.cred a:hover{color:var(--red)}
+.cred .mut{color:rgba(241,236,226,.66)}
+.foot-b{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;margin-top:34px;font-size:13px;color:rgba(241,236,226,.72)}
+.foot-b a{color:var(--paper)}
+.foot .btn{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.foot .btn:hover{background:var(--red);color:var(--paper);border-color:var(--red)}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important;transition-delay:0s!important;scroll-behavior:auto!important}
+  [data-rv]{opacity:1;transform:none}
+}
+
+.seg button{white-space:nowrap}
+
+/* small red text uses a deeper vermilion for 4.5:1 on paper; big display red stays bright */
+.rule h3 small,.measure .zone span,.cnt.bad,.pc-cap .no,.h-lines i.base::after,.sp-insp .ml.b span{color:var(--red-txt)}

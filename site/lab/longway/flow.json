@@ -1,0 +1,57 @@
+{
+ "v": 1,
+ "generator": "zyqor-video-flow",
+ "slug": "longway",
+ "brand": "Longway",
+ "focus": [
+  0.45,
+  0.55
+ ],
+ "frames": {
+  "d": {
+   "n": 200,
+   "w": 1440,
+   "h": 810,
+   "src": "../../assets/lab/longway/d/f{i}.webp"
+  },
+  "m": {
+   "n": 90,
+   "w": 596,
+   "h": 960,
+   "src": "../../assets/lab/longway/m/f{i}.webp"
+  }
+ },
+ "scroll": {
+  "desktop": 640,
+  "mobile": 500
+ },
+ "beats": [
+  {
+   "from": 0.11,
+   "to": 0.29
+  },
+  {
+   "from": 0.3,
+   "to": 0.48
+  },
+  {
+   "from": 0.5,
+   "to": 0.67
+  },
+  {
+   "from": 0.68,
+   "to": 0.85
+  },
+  {
+   "from": 0.86,
+   "to": 1
+  }
+ ],
+ "source": {
+  "file": "longway.mp4",
+  "trim": [
+   0.5,
+   28.5
+  ]
+ }
+}

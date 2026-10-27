@@ -1,0 +1,199 @@
+{
+ "slug": "longway",
+ "n": "13",
+ "brand": "Longway",
+ "kind": "Overland road trips",
+ "pattern": "Video flow: scroll-scrubbed real footage",
+ "description": "Longway is a fictional road-trip company: a Zyqor Studio design concept built with Video Flow, a scroll-scrubbed real-footage page where scrolling drives a mountain pass.",
+ "video": "../_work/longway.mp4",
+ "videoUrl": "https://assets.mixkit.co/videos/41576/41576-1080.mp4",
+ "trim": {
+  "in": 0.5,
+  "out": 28.5
+ },
+ "frames": {
+  "desktop": {
+   "count": 200,
+   "width": 1440,
+   "quality": 72,
+   "budgetKB": 7800
+  },
+  "mobile": {
+   "count": 90,
+   "crop": "portrait",
+   "height": 960,
+   "quality": 58,
+   "budgetKB": 2400
+  }
+ },
+ "focus": [
+  0.45,
+  0.55
+ ],
+ "scroll": {
+  "desktop": 640,
+  "mobile": 500
+ },
+ "scrim": 0.4,
+ "palette": {
+  "light": "#E9EDF0",
+  "dark": "#16212D",
+  "accent": "#F2B42F"
+ },
+ "fonts": {
+  "display": "bricolage-800",
+  "body": "intertight-normal"
+ },
+ "design": {
+  "tracking": "-0.035em"
+ },
+ "hero": {
+  "tags": [
+   "Overland road trips",
+   "Slow miles"
+  ],
+  "title": "Longway",
+  "sub": "Mountain passes, slow miles, no fixed itinerary. Scroll to drive the road.",
+  "cta": [
+   {
+    "label": "Plan a drive",
+    "href": "#"
+   },
+   {
+    "label": "See the route",
+    "href": "#"
+   }
+  ],
+  "to": 0.1,
+  "tone": "light",
+  "cue": "Scroll to drive"
+ },
+ "beats": [
+  {
+   "from": 0.11,
+   "to": 0.29,
+   "align": "left",
+   "v": "top",
+   "tone": "light",
+   "eyebrow": "Mile 0",
+   "title": "Take the / long way",
+   "body": "We plan road trips around the drive itself: the bends, the weather, the stops nobody puts on a list."
+  },
+  {
+   "from": 0.3,
+   "to": 0.48,
+   "align": "right",
+   "v": "top",
+   "tone": "light",
+   "eyebrow": "The pass",
+   "title": "Clouds / below you",
+   "body": "Our routes climb past the cloud line before breakfast, so the view does most of the talking."
+  },
+  {
+   "from": 0.5,
+   "to": 0.67,
+   "align": "left",
+   "v": "top",
+   "tone": "light",
+   "eyebrow": "The car",
+   "title": "Fuelled, / mapped, yours",
+   "body": "A prepped 4x4, offline maps, a stove in the back and someone on call if the road has other ideas."
+  },
+  {
+   "from": 0.68,
+   "to": 0.85,
+   "align": "right",
+   "v": "top",
+   "tone": "light",
+   "eyebrow": "The pace",
+   "title": "180 km / a day, max",
+   "body": "Short days on purpose. You arrive mid-afternoon, with time left to actually stop and look."
+  },
+  {
+   "from": 0.86,
+   "to": 1.0,
+   "align": "center",
+   "v": "top",
+   "tone": "light",
+   "wide": true,
+   "eyebrow": "Longway",
+   "title": "Go slow. / Go far.",
+   "body": "",
+   "cta": [
+    {
+     "label": "Plan a drive",
+     "href": "#"
+    }
+   ]
+  }
+ ],
+ "specs": {
+  "eyebrow": "Every trip",
+  "title": "Built for / the drive",
+  "body": "These are the specs of a concept trip, not a real booking. The whole page is generated from one config file and one video.",
+  "items": [
+   {
+    "value": "7",
+    "suffix": "days",
+    "label": "a typical loop, start to finish"
+   },
+   {
+    "value": "180",
+    "suffix": "km",
+    "label": "the most we drive in a day"
+   },
+   {
+    "value": "12",
+    "suffix": "stops",
+    "label": "pinned on your offline map"
+   },
+   {
+    "value": "1",
+    "suffix": "4x4",
+    "label": "prepped, with a roof tent"
+   }
+  ]
+ },
+ "strip": {
+  "eyebrow": "Video flow",
+  "title": "One drive. / {frames} frames.",
+  "body": "Real footage of a mountain pass, cut into {frames} frames and drawn to a canvas as you scroll. Tap a frame to drive back to it.",
+  "at": [
+   0,
+   0.2,
+   0.4,
+   0.6,
+   0.8,
+   1
+  ]
+ },
+ "cta": {
+  "eyebrow": "Longway",
+  "title": "The road / is open",
+  "body": "A concept for a fictional road-trip company. Nothing is for sale; the road is real.",
+  "primary": {
+   "label": "Plan a drive",
+   "href": "#"
+  },
+  "secondary": {
+   "label": "Back to mile 0",
+   "href": "#main"
+  },
+  "note": "Zyqor Lab concept. Fictional brand, real footage."
+ },
+ "poster": {
+  "at": 0.3,
+  "keep": true
+ },
+ "credits": [
+  {
+   "what": "Footage",
+   "title": "Going down a curved highway through a mountain range (clip 41576)",
+   "author": "Mixkit",
+   "url": "https://mixkit.co/free-stock-video/going-down-a-curved-highway-through-a-mountain-range-41576/",
+   "licence": "Mixkit Stock Video Free License",
+   "note": "trimmed and cut into frames"
+  },
+  "Fonts: Bricolage Grotesque and Inter Tight, SIL Open Font License."
+ ]
+}

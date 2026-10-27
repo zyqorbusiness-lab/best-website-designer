@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- phone -> light build (m.html). ?desktop=1 keeps this page. -->
+<script>(function(){if(/[?&]desktop=1/.test(location.search))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height;if(w<=860||(c&&h>w))location.replace('m.html'+location.search+location.hash);})();</script>
+<title>Nook &middot; Concept 11 &middot; Zyqor Lab</title>
+<meta name="description" content="Nook is a fictional furniture studio: a design concept by Zyqor Studio (accordion colour bars, odometer counter).">
+<meta name="theme-color" content="#EDE5D8">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../assets/font/instrumentserif-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../_kit/lab.css">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">{"imports":{"three":"../../vendor/three/three.module.min.js","three/addons/":"../../vendor/three/addons/"}}</script>
+<!-- liquid glass: demo body (helper 4f5eb13e) -->
+<link rel="stylesheet" href="../../assets/glass/liquid-glass.css">
+<script type="application/json" id="lg-map">{".topnav": "lg lg-pill lg-rim", ".tn-cta": "lg lg-btn lg--ink", ".chips": "lg-seg", ".chip": "lg lg-pill lg-btn", ".v-cta .pill-solid": "lg lg-btn lg--ink", ".v-cta .pill:not(.pill-solid)": "lg lg-btn"}</script>
+<script src="../../assets/glass/liquid-glass.js" defer></script>
+<link rel="canonical" href="https://zyqor-portfolio-v3.sites.tab.bot/lab/nook/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Zyqor Studio">
+<meta property="og:title" content="Nook &middot; Concept 11 &middot; Zyqor Lab">
+<meta property="og:description" content="Nook is a fictional furniture studio: a design concept by Zyqor Studio (accordion colour bars, odometer counter).">
+<meta property="og:url" content="https://zyqor-portfolio-v3.sites.tab.bot/lab/nook/">
+<meta property="og:image" content="https://zyqor-portfolio-v3.sites.tab.bot/lab/nook/poster.webp">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body data-slug="nook">
+<nav class="topnav" aria-label="Nook">
+  <a class="tn-logo" href="#top" aria-label="Nook, back to top">nook<i></i></a>
+  <a class="tn-link" href="#materials">Materials</a>
+  <a class="tn-link" href="#room">Room</a>
+  <a class="tn-link" href="#size">Size</a>
+  <a class="tn-link tn-cta" href="#visit">Visit</a>
+</nav>
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="h1">
+    <div class="hero-l">
+      <p class="eyebrow">The Lounge Chair &middot; Concept collection</p>
+      <h1 id="h1" class="hl1"><span class="ln"><span>Sit softly.</span></span><span class="ln"><span>Stay <em>longer.</em></span></span></h1>
+      <p class="lede">One chair, five rooms. Pick a colour and the whole corner follows.</p>
+      <div class="counter" aria-live="polite">
+        <span class="odo" id="odo" aria-label="01">01</span><span class="of">/ 05</span>
+        <div class="arrows"><button class="arr" id="prev" type="button" aria-label="Previous colour"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button class="arr" id="next" type="button" aria-label="Next colour"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+      </div>
+    </div>
+    <div class="stage" id="stage">
+      <canvas id="chairGl" aria-label="3D lounge chair, drag to turn" role="img"></canvas>
+      <p class="stage-tag"><span id="colName">Olive Grove</span><small>Drag to turn</small></p>
+    </div>
+    <div class="acc" id="acc" role="group" aria-label="Choose a colour collection">
+      <button class="bar on" type="button" data-i="0" aria-pressed="true" aria-label="Olive collection" style="--bc:#6B7440">
+        <span class="bar-n">01</span><span class="bar-v">Olive</span>
+        <span class="bar-body"><span class="bar-k">Collection 01</span><span class="bar-t">Olive Grove</span><span class="bar-p">A grounded green woven like a hedge after rain. Pairs with oak and stone.</span><span class="bar-cta">See the olive chair<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+      </button><button class="bar" type="button" data-i="1" aria-pressed="false" aria-label="Rust collection" style="--bc:#B5512E">
+        <span class="bar-n">02</span><span class="bar-v">Rust</span>
+        <span class="bar-body"><span class="bar-k">Collection 02</span><span class="bar-t">Rust Hour</span><span class="bar-p">Warm as the last hour of light. A bouclé that turns any corner into a fireplace.</span><span class="bar-cta">See the rust chair<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+      </button><button class="bar" type="button" data-i="2" aria-pressed="false" aria-label="Oat collection" style="--bc:#D6C3A0">
+        <span class="bar-n">03</span><span class="bar-v">Oat</span>
+        <span class="bar-body"><span class="bar-k">Collection 03</span><span class="bar-t">Oat Field</span><span class="bar-p">Our quietest weave. Undyed wool tones that let the room do the talking.</span><span class="bar-cta">See the oat chair<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+      </button><button class="bar" type="button" data-i="3" aria-pressed="false" aria-label="Moss collection" style="--bc:#3E5137">
+        <span class="bar-n">04</span><span class="bar-v">Moss</span>
+        <span class="bar-body"><span class="bar-k">Collection 04</span><span class="bar-t">Moss Room</span><span class="bar-p">Deep forest velvet with a soft sheen. Made for long books and longer evenings.</span><span class="bar-cta">See the moss chair<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+      </button><button class="bar" type="button" data-i="4" aria-pressed="false" aria-label="Clay collection" style="--bc:#C47E5A">
+        <span class="bar-n">05</span><span class="bar-v">Clay</span>
+        <span class="bar-body"><span class="bar-k">Collection 05</span><span class="bar-t">Clay Studio</span><span class="bar-p">A sun-baked terracotta with a dry hand. Calm, earthy, impossible to rush.</span><span class="bar-cta">See the clay chair<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+      </button>
+    </div>
+  </section>
+
+  <section class="materials" id="materials" aria-labelledby="matH">
+    <div class="m-head">
+      <p class="eyebrow">Materials</p>
+      <h2 id="matH">Touch <em>first,</em><br>choose later.</h2>
+      <p class="m-p">Every Nook fabric is woven in small runs and tested to the point of boredom. Tap a swatch.</p>
+    </div>
+    <div class="m-grid">
+      <div class="chips" role="radiogroup" aria-label="Fabric">
+        <button class="chip on" role="radio" aria-checked="true" data-m="0" style="--sw:#C9B48E"><span class="chip-sw sw-boucle"></span><span>Bouclé</span></button>
+        <button class="chip" role="radio" aria-checked="false" data-m="1" style="--sw:#8E9A6A"><span class="chip-sw sw-linen"></span><span>Linen</span></button>
+        <button class="chip" role="radio" aria-checked="false" data-m="2" style="--sw:#3E5137"><span class="chip-sw sw-velvet"></span><span>Velvet</span></button>
+        <button class="chip" role="radio" aria-checked="false" data-m="3" style="--sw:#B5512E"><span class="chip-sw sw-wool"></span><span>Wool</span></button>
+        <button class="chip" role="radio" aria-checked="false" data-m="4" style="--sw:#C47E5A"><span class="chip-sw sw-cord"></span><span>Cord</span></button>
+      </div>
+      <div class="m-view" id="mView">
+        <span class="ripple" id="ripple"></span>
+        <div class="m-swatch sw-boucle" id="mSwatch"></div>
+        <div class="m-info">
+          <p class="m-k" id="mK">01 &middot; Bouclé</p>
+          <h3 id="mT">Looped wool, cloud soft</h3>
+          <dl class="m-dl">
+            <div><dt>Blend</dt><dd id="mB">70% wool, 30% cotton</dd></div>
+            <div><dt>Rub test</dt><dd><b id="mR">60,000</b> cycles</dd></div>
+            <div><dt>Feel</dt><dd id="mF">Plush</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="room" id="room" aria-labelledby="roomH">
+    <div class="room-sticky">
+      <canvas id="roomGl" aria-label="3D room corner with the Nook chair, a side table and a pendant lamp" role="img"></canvas>
+      <div class="room-cap">
+        <p class="eyebrow">In the room</p>
+        <h2 id="roomH" class="rc-h"><span class="rc on">Morning light.</span><span class="rc">A corner that is yours.</span><span class="rc">Lamp on, <em>day off.</em></span></h2>
+        <div class="room-prog" aria-hidden="true"><i id="roomBar"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="size" id="size" aria-labelledby="sizeH">
+    <div class="s-head">
+      <p class="eyebrow">Dimensions</p>
+      <h2 id="sizeH">Generous,<br><em>not greedy.</em></h2>
+      <div class="units" role="radiogroup" aria-label="Units"><span class="u-ind" aria-hidden="true"></span><button class="u on" role="radio" aria-checked="true" data-u="cm">cm</button><button class="u" role="radio" aria-checked="false" data-u="in">in</button></div>
+    </div>
+    <svg class="dim" id="dim" viewBox="0 0 900 420" role="img" aria-label="Chair dimensions: width 78, depth 82, height 74, seat height 42 centimetres">
+      <g class="chair-l" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <!-- front view -->
+        <path d="M70 330V176c0-30 20-48 48-48h120c28 0 48 18 48 48v154" pathLength="1"/>
+        <path d="M70 250h216M96 250v-74c0-16 10-24 24-24h116c14 0 24 8 24 24v74" pathLength="1"/>
+        <path d="M78 250l-8 104M278 250l8 104" pathLength="1"/>
+        <!-- side view -->
+        <path d="M520 330l14-160c3-30 22-44 52-44h20c18 0 30 12 30 30l-14 120" pathLength="1"/>
+        <path d="M534 250h262c16 0 26-10 26-24v-10c0-12-10-20-22-20H640" pathLength="1"/>
+        <path d="M548 250l-14 104M790 250l14 104" pathLength="1"/>
+      </g>
+      <g class="dims">
+        <path class="dl" d="M70 384h216" pathLength="1"/><path class="dt" d="M70 376v16M286 376v16"/>
+        <text x="178" y="408" class="dv" data-cm="78">78 cm</text><text x="178" y="372" class="dk">Width</text>
+        <path class="dl" d="M526 384h278" pathLength="1"/><path class="dt" d="M526 376v16M804 376v16"/>
+        <text x="665" y="408" class="dv" data-cm="82">82 cm</text><text x="665" y="372" class="dk">Depth</text>
+        <path class="dl" d="M850 354V126" pathLength="1"/><path class="dt" d="M842 354h16M842 126h16"/>
+        <text x="866" y="244" class="dv dv-v" data-cm="74">74 cm</text><text x="866" y="222" class="dk dk-v">Height</text>
+        <path class="dl dl-a" d="M410 354V250" pathLength="1"/><path class="dt" d="M402 354h16M402 250h16"/>
+        <text x="426" y="308" class="dv dv-l" data-cm="42">42 cm</text><text x="426" y="286" class="dk dk-l">Seat</text>
+      </g>
+    </svg>
+  </section>
+
+  <section class="visit" id="visit" aria-labelledby="visitH">
+    <h2 id="visitH" class="v-h">Find your <em>nook.</em></h2>
+    <p class="v-p">Come and sit in all five. Bring a book, stay a while.</p>
+    <div class="v-cta"><a class="pill pill-solid mag" href="#visit" data-msg="Concept only: Nook is fictional and has no showroom.">Book a showroom visit<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="pill mag" href="#visit" data-msg="Concept only: no swatches are posted.">Order a swatch box</a></div>
+    <p class="v-note" id="vNote" aria-live="polite">Concept studio. No real products, prices or bookings.</p>
+  </section>
+</main>
+<template id="credits">
+  <li>Code and design: Zyqor Studio (MIT licence for the code). Swatches, books, artwork, window and curtains are made in code.</li>
+  <li>3D models: "Modern Arm Chair 01" (cushion texture converted to neutral grey and recoloured in code), "Side Table 01" and "Modern Ceiling Lamp 01", Poly Haven, CC0 (polyhaven.com).</li>
+  <li>Textures: "Herringbone Parquet", "Hessian 230", "Plastered Wall" and "Rough Linen", Poly Haven, CC0.</li>
+  <li>Studio lighting: "Studio Small 09" HDRI by Sergej Majboroda, Poly Haven, CC0.</li>
+  <li>Fonts: Instrument Serif (Instrument, SIL Open Font License 1.1) and Inter Tight (Tobias Whetton, SIL Open Font License 1.1).</li>
+  <li>Libraries: three.js (MIT), GSAP and ScrollTrigger (GreenSock standard licence), Lenis (MIT).</li>
+</template>
+<script src="../../vendor/gsap.min.js" defer></script>
+<script src="../../vendor/ScrollTrigger.min.js" defer></script>
+<script src="../../vendor/lenis.min.js" defer></script>
+<script type="module" src="../_kit/chrome.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

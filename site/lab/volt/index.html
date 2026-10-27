@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- phone -> light build (m.html). ?desktop=1 keeps this page. -->
+<script>(function(){if(/[?&]desktop=1/.test(location.search))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height;if(w<=860||(c&&h>w))location.replace('m.html'+location.search+location.hash);})();</script>
+<title>VOLT &middot; Concept 07 &middot; Zyqor Lab</title>
+<meta name="description" content="VOLT is a fictional sparkling energy drink: a design concept by Zyqor Studio (can into wordmark, flavour colour flood, kinetic type).">
+<meta name="theme-color" content="#10243E">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../assets/font/anton-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/font/cabinetgrotesk-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../_kit/lab.css">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">{"imports":{"three":"../../vendor/three/three.module.min.js","three/addons/":"../../vendor/three/addons/"}}</script>
+<!-- liquid glass: demo body (helper 4f5eb13e) -->
+<link rel="stylesheet" href="../../assets/glass/liquid-glass.css">
+<script type="application/json" id="lg-map">{".vbar": "lg lg-pill lg-rim", ".vbuy": "lg lg-btn lg--ink", ".charge": "lg lg-btn", ".arrow": "lg lg-round lg-btn"}</script>
+<script src="../../assets/glass/liquid-glass.js" defer></script>
+<link rel="canonical" href="https://zyqor-portfolio-v3.sites.tab.bot/lab/volt/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Zyqor Studio">
+<meta property="og:title" content="VOLT &middot; Concept 07 &middot; Zyqor Lab">
+<meta property="og:description" content="VOLT is a fictional sparkling energy drink: a design concept by Zyqor Studio (can into wordmark, flavour colour flood, kinetic type).">
+<meta property="og:url" content="https://zyqor-portfolio-v3.sites.tab.bot/lab/volt/">
+<meta property="og:image" content="https://zyqor-portfolio-v3.sites.tab.bot/lab/volt/poster.webp">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body data-slug="volt">
+<canvas id="gl" aria-hidden="true"></canvas>
+<div class="cursor" aria-hidden="true"><span>Drag</span></div>
+<header class="vbar">
+  <a class="vlogo" href="#top" aria-label="VOLT, back to top"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5H11L10 22l8.5-11.5H12L13 2Z"/></svg><span>VOLT</span></a>
+  <nav class="vnav" aria-label="Sections"><a href="#flavours">Flavours</a><a href="#why">Why</a><a href="#inside">Inside</a></nav>
+  <a class="vbuy pill-mag" href="#find" data-cursor="Concept">Find a can</a>
+</header>
+<main id="main">
+  <section class="hero" id="top">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <canvas class="arcs" aria-hidden="true"></canvas>
+    <svg class="zap" viewBox="0 0 400 900" aria-hidden="true" preserveAspectRatio="none"><path pathLength="1" d="M250 0 L170 300 L235 310 L120 610 L190 620 L90 900"/></svg>
+    <p class="kick"><span class="dot"></span>Sparkling energy &middot; 250 ml &middot; Concept 07</p>
+    <h1 class="word" aria-label="VOLT"><span class="lt lv" aria-hidden="true">V</span><span class="gap" id="gap" aria-hidden="true"></span><span class="lt llt" aria-hidden="true">LT</span></h1>
+    <div class="hero-foot">
+      <p class="lede">Clean caffeine, loud flavour.<br>Zero sugar. Zero crash.</p>
+      <div class="hero-cta">
+        <a class="pill pill-solid pill-mag" href="#flavours" data-cursor="Go">Pick your charge <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+        <button type="button" class="charge pill-mag" aria-pressed="false" aria-label="Charged mode" data-cursor="Zap"><span class="ck" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 2 5 13.5h6L9.5 22 19 9.5h-6.2L13.5 2z"/></svg></span><span class="cl">Charge it</span></button>
+        <span class="scroll-hint"><i></i>Scroll</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="flav" id="flavours" aria-label="Flavours">
+    <div class="flood" aria-hidden="true"></div>
+    <div class="ghost" aria-hidden="true"><span class="ghost-t">LIME BOLT</span></div>
+    <div class="stage" id="stage" data-cursor="Drag" role="group" aria-roledescription="carousel" aria-label="VOLT flavours. Use the arrow keys or the buttons to switch flavour." tabindex="0"></div>
+    <div class="flav-ui">
+      <div class="finfo" aria-live="polite">
+        <p class="fidx"><b class="fnum">01</b> / 03 &middot; Flavour</p>
+        <h2 class="fname"><span class="fname-t">Lime Bolt</span></h2>
+        <p class="fnotes">Key lime, yuzu zest and a sharp ginger finish.</p>
+        <ul class="chips"><li>Citrus</li><li>Ginger</li><li>Ice cold</li></ul>
+      </div>
+      <div class="fctrl">
+        <div class="dots" role="tablist" aria-label="Choose a flavour">
+          <button role="tab" class="fdot" aria-label="Lime Bolt" aria-selected="true"></button>
+          <button role="tab" class="fdot" aria-label="Mango Rush" aria-selected="false"></button>
+          <button role="tab" class="fdot" aria-label="Blue Surge" aria-selected="false"></button>
+        </div>
+        <div class="arrows">
+          <button class="arrow pill-mag" id="prev" aria-label="Previous flavour"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <button class="arrow pill-mag" id="next" aria-label="Next flavour"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+        </div>
+      </div>
+    </div>
+    <p class="drag-hint">Drag the can &middot; arrows to switch</p>
+  </section>
+
+  <section class="statement" id="why" aria-label="Why VOLT">
+    <div class="st-pin">
+      <p class="st-label">Why VOLT</p>
+      <p class="st" aria-label="No sugar. No crash. Just charge.">
+        <span class="ln"><span class="w">No</span> <span class="w">sugar.</span></span>
+        <span class="ln"><span class="w">No</span> <span class="w">crash.</span></span>
+        <span class="ln"><span class="w">Just</span> <span class="w hl"><i class="mark"></i><em>charge.</em></span></span>
+      </p>
+      <p class="st-sub">One can, a clean lift that lasts the afternoon, and a fizz that actually tastes like fruit.</p>
+    </div>
+  </section>
+
+  <section class="inside" id="inside" aria-labelledby="in-h">
+    <div class="in-head">
+      <p class="tag" data-rv>What's inside</p>
+      <h2 id="in-h" data-rv data-rv-d="1">Short list.<br>Loud can.</h2>
+      <p class="in-note" data-rv data-rv-d="2">Concept formula for a fictional drink. The numbers describe the made-up product, not a real one.</p>
+    </div>
+    <div class="cards">
+      <article class="card tilt" data-rv data-rv-d="1"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 5-13 15-14-1 10-6 15-14 15"/><path d="M5 19 13 11"/></svg><p class="num"><span class="odo" data-to="80">80</span><small>mg</small></p><h3>Green tea caffeine</h3><p>A steady lift from tea leaves, no jitter spike.</p></article>
+      <article class="card tilt" data-rv data-rv-d="2"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.4 6 11a6 6 0 0 1-12 0c0-4.6 6-11 6-11Z"/><path d="m8.5 14.5 7-3"/></svg><p class="num"><span class="odo" data-to="0">0</span><small>g</small></p><h3>Sugar</h3><p>Sweetened with monk fruit and a squeeze of real juice.</p></article>
+      <article class="card tilt" data-rv data-rv-d="3"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a6 6 0 0 0 6-6c0-4-3-5.5-4-9-2.5 2-3 4-3 5.5C9.8 10.5 9 9.5 9 8c-2 2-3 4.2-3 7a6 6 0 0 0 6 6Z"/></svg><p class="num"><span class="odo" data-to="12">12</span><small>kcal</small></p><h3>Per can</h3><p>Light enough for a second one. We won't judge.</p></article>
+      <article class="card tilt" data-rv data-rv-d="4"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="8.5" width="17" height="7" rx="3.5"/><path d="M12 8.5v7"/></svg><p class="num"><span class="odo" data-to="6">6</span><small>B-vits</small></p><h3>Vitamin blend</h3><p>B3, B5, B6, B7, B9 and B12 for the long day.</p></article>
+    </div>
+  </section>
+
+  <section class="cta" id="find" aria-labelledby="cta-h">
+    <div class="cta-in">
+      <p class="tag" data-rv>Three charges</p>
+      <h2 id="cta-h" class="cta-h" data-rv data-rv-d="1">Pick your<br>charge.</h2>
+      <div class="cta-row" data-rv data-rv-d="2">
+        <a class="pill pill-solid pill-mag concept" href="#find" data-cursor="Concept"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.3"/></svg> Find a fridge</a>
+        <a class="pill pill-line pill-mag" href="#flavours" data-cursor="Back">See the flavours</a>
+      </div>
+    </div>
+    <div class="cta-cans" id="ctaCans" aria-hidden="true"></div>
+  </section>
+</main>
+<div class="toast" role="status" aria-live="polite"></div>
+<template id="credits">
+  <li>Code, design and the 3D cans (procedural three.js lathe geometry, stamped tab, generated brushed-metal, print and condensation maps): Zyqor Studio (MIT licence for the code).</li>
+  <li>Studio lighting: "Studio Small 09" HDRI by Sergej Majboroda, Poly Haven, CC0.</li>
+  <li>Fonts: Anton by Vernon Adams and Inter Tight by Rasmus Andersson et al., both SIL Open Font Licence, via Google Fonts.</li>
+  <li>Libraries: three.js (MIT), GSAP (Standard licence), Lenis (MIT).</li>
+  <li>VOLT, its flavours and its formula are fictional. No real drink or company is shown.</li>
+</template>
+<script src="../../vendor/gsap.min.js" defer></script>
+<script src="../../vendor/ScrollTrigger.min.js" defer></script>
+<script src="../../vendor/lenis.min.js" defer></script>
+<script type="module" src="../_kit/chrome.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

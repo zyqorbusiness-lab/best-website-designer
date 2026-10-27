@@ -1,0 +1,198 @@
+{
+ "slug": "carmine",
+ "n": "12",
+ "brand": "Carmine No.7",
+ "kind": "Fountain pen ink",
+ "pattern": "Video flow: scroll-scrubbed real footage",
+ "description": "Carmine No.7 is a fictional ink house: a Zyqor Studio design concept built with Video Flow, a scroll-scrubbed real-footage page (one drop of red ink blooming in water).",
+ "video": "../_work/carmine.mp4",
+ "videoUrl": "https://assets.mixkit.co/videos/41999/41999-1080.mp4",
+ "trim": {
+  "in": 0.2,
+  "out": 14.6
+ },
+ "frames": {
+  "desktop": {
+   "count": 180,
+   "width": 1600,
+   "quality": 80,
+   "budgetKB": 7500
+  },
+  "mobile": {
+   "count": 90,
+   "crop": "portrait",
+   "height": 1040,
+   "quality": 66,
+   "budgetKB": 2300
+  }
+ },
+ "focus": [
+  0.32,
+  0.5
+ ],
+ "scroll": {
+  "desktop": 560,
+  "mobile": 460
+ },
+ "scrim": 0.42,
+ "palette": {
+  "light": "#F4EFE9",
+  "dark": "#2B0A0E",
+  "accent": "#D81E2C"
+ },
+ "fonts": {
+  "display": "anton-400",
+  "body": "spacegrotesk-300-700"
+ },
+ "design": {
+  "tracking": "-0.01em"
+ },
+ "hero": {
+  "tags": [
+   "Fountain pen ink",
+   "Small batch No.7"
+  ],
+  "title": "Carmine",
+  "sub": "One drop of No.7 in clear water. Keep scrolling and watch it take over the glass.",
+  "cta": [
+   {
+    "label": "Meet the colour",
+    "href": "#"
+   },
+   {
+    "label": "Scroll the drop",
+    "href": "#"
+   }
+  ],
+  "to": 0.11,
+  "tone": "light"
+ },
+ "beats": [
+  {
+   "from": 0.12,
+   "to": 0.31,
+   "align": "left",
+   "v": "bottom",
+   "tone": "light",
+   "eyebrow": "The drop",
+   "title": "One drop / is enough",
+   "body": "No.7 is milled three times, so a single drop blooms through the water instead of sinking like a stone."
+  },
+  {
+   "from": 0.31,
+   "to": 0.5,
+   "align": "right",
+   "v": "top",
+   "tone": "dark",
+   "eyebrow": "Pigment",
+   "title": "Saturated / on purpose",
+   "body": "Dense enough to stay red on cheap copy paper. Clean enough that it never clogs a nib."
+  },
+  {
+   "from": 0.5,
+   "to": 0.68,
+   "align": "left",
+   "v": "middle",
+   "tone": "light",
+   "eyebrow": "Flow",
+   "title": "It moves / like silk",
+   "body": "Watch the edges: soft, slow, unhurried. That is the flow you feel under the pen."
+  },
+  {
+   "from": 0.68,
+   "to": 0.85,
+   "align": "right",
+   "v": "bottom",
+   "tone": "light",
+   "eyebrow": "Finish",
+   "title": "Dry in / nine seconds",
+   "body": "A satin finish that sets fast enough for left-handers and keeps a hint of sheen when it catches the light."
+  },
+  {
+   "from": 0.86,
+   "to": 1.0,
+   "align": "center",
+   "v": "middle",
+   "tone": "light",
+   "wide": true,
+   "eyebrow": "No.7 Carmine",
+   "title": "Write red",
+   "body": "One colour, made properly.",
+   "cta": [
+    {
+     "label": "Request a sample",
+     "href": "#"
+    }
+   ]
+  }
+ ],
+ "specs": {
+  "eyebrow": "The bottle",
+  "title": "Made to be / written with",
+  "body": "Every number below is a spec of the concept ink, not a claim about a real product. The page around it is generated from one config file and one video.",
+  "items": [
+   {
+    "value": "9",
+    "suffix": "s",
+    "label": "dry time on 80 gsm paper"
+   },
+   {
+    "value": "3",
+    "suffix": "x",
+    "label": "milled, for a bloom and not a blot"
+   },
+   {
+    "value": "50",
+    "suffix": "ml",
+    "label": "glass bottle with a deep, wide well"
+   },
+   {
+    "value": "7",
+    "suffix": "pH",
+    "label": "neutral, kind to steel and gold nibs"
+   }
+  ]
+ },
+ "strip": {
+  "eyebrow": "Video flow",
+  "title": "One shot. / {frames} frames.",
+  "body": "The bloom is real footage, cut into {frames} webp frames and drawn to a canvas as you scroll. Tap any frame to scrub back to it.",
+  "at": [
+   0,
+   0.2,
+   0.4,
+   0.6,
+   0.8,
+   1
+  ]
+ },
+ "cta": {
+  "eyebrow": "No.7 Carmine",
+  "title": "Put some / red on it",
+  "body": "A concept bottle for a fictional ink house. Nothing is for sale; the red is real.",
+  "primary": {
+   "label": "Request a sample",
+   "href": "#"
+  },
+  "secondary": {
+   "label": "Back to the drop",
+   "href": "#main"
+  },
+  "note": "Zyqor Lab concept. Fictional brand, real footage."
+ },
+ "poster": {
+  "at": 0.42,
+  "keep": true
+ },
+ "credits": [
+  {
+   "what": "Footage",
+   "title": "Texture of red ink in water on a white background (clip 41999)",
+   "author": "Mixkit",
+   "url": "https://mixkit.co/free-stock-video/texture-of-red-ink-in-water-on-a-white-background-41999/",
+   "licence": "Mixkit Stock Video Free License",
+   "note": "trimmed and cut into frames"
+  },
+  "Fonts: Anton and Space Grotesk, SIL Open Font License."
+ ]
+}

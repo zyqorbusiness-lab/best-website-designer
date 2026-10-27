@@ -1,0 +1,57 @@
+{
+ "v": 1,
+ "generator": "zyqor-video-flow",
+ "slug": "carmine",
+ "brand": "Carmine No.7",
+ "focus": [
+  0.32,
+  0.5
+ ],
+ "frames": {
+  "d": {
+   "n": 180,
+   "w": 1600,
+   "h": 900,
+   "src": "../../assets/lab/carmine/d/f{i}.webp"
+  },
+  "m": {
+   "n": 90,
+   "w": 646,
+   "h": 1040,
+   "src": "../../assets/lab/carmine/m/f{i}.webp"
+  }
+ },
+ "scroll": {
+  "desktop": 560,
+  "mobile": 460
+ },
+ "beats": [
+  {
+   "from": 0.12,
+   "to": 0.31
+  },
+  {
+   "from": 0.31,
+   "to": 0.5
+  },
+  {
+   "from": 0.5,
+   "to": 0.68
+  },
+  {
+   "from": 0.68,
+   "to": 0.85
+  },
+  {
+   "from": 0.86,
+   "to": 1
+  }
+ ],
+ "source": {
+  "file": "carmine.mp4",
+  "trim": [
+   0.2,
+   14.6
+  ]
+ }
+}

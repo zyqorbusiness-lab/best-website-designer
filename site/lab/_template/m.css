@@ -1,0 +1,3 @@
+:root{--c1:#E6E4DF;--c2:#12313A;--c3:#E8553B}
+.hero{min-height:100svh;display:grid;place-items:center}
+.hero h1{font-size:18vw;margin:0}

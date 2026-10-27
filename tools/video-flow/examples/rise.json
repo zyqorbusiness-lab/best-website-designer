@@ -1,0 +1,198 @@
+{
+ "slug": "rise",
+ "n": "14",
+ "brand": "Rise No.3",
+ "kind": "Sparkling strawberry water",
+ "pattern": "Video flow: scroll-scrubbed real footage",
+ "description": "Rise No.3 is a fictional sparkling-water brand: a Zyqor Studio design concept built with Video Flow, a scroll-scrubbed real-footage page where whole strawberries rise through the water as you scroll.",
+ "video": "../_work/rise.mp4",
+ "videoUrl": "https://assets.mixkit.co/kp2jwfj3sglehyuuhi7mtnaptxf9",
+ "trim": {
+  "in": 0,
+  "out": 26.6
+ },
+ "frames": {
+  "desktop": {
+   "count": 200,
+   "width": 1600,
+   "quality": 76,
+   "budgetKB": 7000
+  },
+  "mobile": {
+   "count": 96,
+   "crop": "portrait",
+   "height": 1040,
+   "quality": 64,
+   "budgetKB": 2200
+  }
+ },
+ "focus": [
+  0.5,
+  0.5
+ ],
+ "scroll": {
+  "desktop": 600,
+  "mobile": 480
+ },
+ "scrim": 0.16,
+ "palette": {
+  "light": "#F8EBCB",
+  "dark": "#4A0F1E",
+  "accent": "#E3343B"
+ },
+ "fonts": {
+  "display": "archivo-800",
+  "body": "intertight-normal"
+ },
+ "design": {
+  "tracking": "-0.045em"
+ },
+ "hero": {
+  "tags": [
+   "Sparkling strawberry water",
+   "Zero added sugar"
+  ],
+  "title": "Rise",
+  "sub": "Whole strawberries, cold water and a lot of bubbles. Scroll, and watch them rise.",
+  "cta": [
+   {
+    "label": "Find a can",
+    "href": "#"
+   },
+   {
+    "label": "What's inside",
+    "href": "#"
+   }
+  ],
+  "to": 0.1,
+  "tone": "dark"
+ },
+ "beats": [
+  {
+   "from": 0.11,
+   "to": 0.29,
+   "align": "left",
+   "v": "bottom",
+   "tone": "dark",
+   "eyebrow": "Real fruit",
+   "title": "Whole / berries",
+   "body": "Whole strawberries steep in cold water for a full day. No syrup, no flavouring, nothing pretending to be fruit."
+  },
+  {
+   "from": 0.3,
+   "to": 0.48,
+   "align": "right",
+   "v": "bottom",
+   "tone": "dark",
+   "eyebrow": "Bubbles",
+   "title": "Fine, / slow fizz",
+   "body": "Small bubbles that lift the fruit instead of drowning it. You taste the berry first, then the sparkle."
+  },
+  {
+   "from": 0.5,
+   "to": 0.67,
+   "align": "left",
+   "v": "top",
+   "tone": "dark",
+   "eyebrow": "Sugar",
+   "title": "Zero / added",
+   "body": "The sweetness is the strawberry's own. Nothing else goes into the can."
+  },
+  {
+   "from": 0.68,
+   "to": 0.85,
+   "align": "right",
+   "v": "top",
+   "tone": "dark",
+   "eyebrow": "Serve",
+   "title": "Ice cold, / always",
+   "body": "Best at four degrees, straight from the can or poured over a glass of ice."
+  },
+  {
+   "from": 0.86,
+   "to": 1.0,
+   "align": "center",
+   "v": "middle",
+   "tone": "dark",
+   "wide": true,
+   "eyebrow": "Rise No.3",
+   "title": "Pop / the can",
+   "body": "",
+   "cta": [
+    {
+     "label": "Find a can",
+     "href": "#"
+    }
+   ]
+  }
+ ],
+ "specs": {
+  "eyebrow": "In every can",
+  "title": "Short list, / on purpose",
+  "body": "These are specs of a concept drink, not a real product. The page is generated from one config file and one clip of real footage.",
+  "items": [
+   {
+    "value": "0",
+    "suffix": "g",
+    "label": "added sugar per can"
+   },
+   {
+    "value": "24",
+    "suffix": "h",
+    "label": "cold steep with whole fruit"
+   },
+   {
+    "value": "330",
+    "suffix": "ml",
+    "label": "one can, one sitting"
+   },
+   {
+    "value": "4",
+    "suffix": "\u00b0C",
+    "label": "the right serving temperature"
+   }
+  ]
+ },
+ "strip": {
+  "eyebrow": "Video flow",
+  "title": "One take. / {frames} frames.",
+  "body": "Real slow-motion footage, cut into {frames} frames and drawn to a canvas as you scroll. Tap a frame to send the berries back.",
+  "at": [
+   0,
+   0.18,
+   0.36,
+   0.54,
+   0.72,
+   0.9
+  ]
+ },
+ "cta": {
+  "eyebrow": "Rise No.3",
+  "title": "Taste / the rise",
+  "body": "A concept can for a fictional drinks brand. Nothing is for sale; the strawberries are real.",
+  "primary": {
+   "label": "Find a can",
+   "href": "#"
+  },
+  "secondary": {
+   "label": "Watch them rise again",
+   "href": "#main"
+  },
+  "note": "Zyqor Lab concept. Fictional brand, real footage."
+ },
+ "poster": {
+  "at": 0.2,
+  "keep": true
+ },
+ "credits": [
+  {
+   "what": "Footage",
+   "title": "Strawberries Splashing With Yellow Backdrop (clip 101341)",
+   "author": "Mixkit",
+   "url": "https://mixkit.co/free-stock-video/strawberries-splashing-with-yellow-backdrop-101341/",
+   "licence": "Mixkit Stock Video Free License",
+   "note": "cut into frames"
+  },
+  "Fonts: Archivo and Inter Tight, SIL Open Font License."
+ ]
+}

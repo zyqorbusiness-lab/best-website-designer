@@ -1,0 +1,64 @@
+{
+ "anton-400": {
+  "family": "Anton",
+  "weight": "400",
+  "useWeight": 400
+ },
+ "archivo-800": {
+  "family": "Archivo",
+  "weight": "800",
+  "useWeight": 800
+ },
+ "archivo-var": {
+  "family": "Archivo",
+  "weight": "100 900",
+  "useWeight": 800
+ },
+ "bricolage-800": {
+  "family": "Bricolage Grotesque",
+  "weight": "800",
+  "useWeight": 800
+ },
+ "fraunces-normal": {
+  "family": "Fraunces",
+  "weight": "100 900",
+  "useWeight": 600
+ },
+ "fraunces-italic": {
+  "family": "Fraunces",
+  "weight": "100 900",
+  "style": "italic",
+  "useWeight": 600
+ },
+ "instrumentserif-400": {
+  "family": "Instrument Serif",
+  "weight": "400",
+  "useWeight": 400
+ },
+ "instrumentserif-400-italic": {
+  "family": "Instrument Serif",
+  "weight": "400",
+  "style": "italic",
+  "useWeight": 400
+ },
+ "intertight-normal": {
+  "family": "Inter Tight",
+  "weight": "100 900",
+  "useWeight": 800
+ },
+ "spacegrotesk-300-700": {
+  "family": "Space Grotesk",
+  "weight": "300 700",
+  "useWeight": 700
+ },
+ "unbounded-300-900": {
+  "family": "Unbounded",
+  "weight": "300 900",
+  "useWeight": 800
+ },
+ "unbounded-var": {
+  "family": "Unbounded",
+  "weight": "200 900",
+  "useWeight": 800
+ }
+}

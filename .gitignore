@@ -1,0 +1,16 @@
+node_modules/
+.DS_Store
+.vercel
+*.log
+tools/video-flow/_work/
+*.orig.*
+
+# rebuilt from .partN files by tools/join-parts.mjs
+site/assets/models/MaterialsVariantsShoe-hd.glb
+site/assets/models/AntiqueCamera-hd.glb
+site/assets/lab/halde/halde-d.glb
+site/assets/lab/stride/stride-d.glb
+site/assets/lab/volta/volta.glb
+site/assets/lab/verdant/verdant-plant-d.glb
+site/assets/lab/nook/chair-d.glb
+site/assets/lab/cadence/talus-d.glb

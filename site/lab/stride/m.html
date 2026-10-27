@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en" data-build="m">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- desktop -> heavy build (./). ?m=1 keeps this page on a laptop. -->
+<script>(function(){if(/[?&]m=1/.test(location.search))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height;if(w>860&&!(c&&h>w))location.replace('./'+location.search+location.hash);})();</script>
+<title>Stride Aero &middot; Concept 01 &middot; Zyqor Lab</title>
+<meta name="description" content="Stride Aero is a fictional running shoe: a design concept by Zyqor Studio (colourway morph in a browser card, feature callouts, giant type).">
+<meta name="theme-color" content="#E6E4DF">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../assets/font/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="modulepreload" href="../../vendor/three/three.module.min.js">
+<link rel="stylesheet" href="../_kit/lab.css">
+<link rel="stylesheet" href="m.css">
+<script type="importmap">{"imports":{"three":"../../vendor/three/three.module.min.js","three/addons/":"../../vendor/three/addons/"}}</script>
+<!-- liquid glass: demo body (helper 4f5eb13e) -->
+<link rel="stylesheet" href="../../assets/glass/liquid-glass.css">
+<script type="application/json" id="lg-map">{".cnav .bagbtn": "lg lg-round lg-btn lg--dark", ".mode": "lg lg-pill lg-btn", ".pill-a": "lg lg-btn lg--ink", ".pill-g": "lg lg-btn"}</script>
+<script src="../../assets/glass/liquid-glass.js" defer></script>
+<link rel="canonical" href="https://zyqor-portfolio-v3.sites.tab.bot/lab/stride/m.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Zyqor Studio">
+<meta property="og:title" content="Stride Aero &middot; Concept 01 &middot; Zyqor Lab">
+<meta property="og:description" content="Stride Aero is a fictional running shoe: a design concept by Zyqor Studio (colourway morph in a browser card, feature callouts, giant type).">
+<meta property="og:url" content="https://zyqor-portfolio-v3.sites.tab.bot/lab/stride/m.html">
+<meta property="og:image" content="https://zyqor-portfolio-v3.sites.tab.bot/lab/stride/poster.webp">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body data-slug="stride">
+<main id="main">
+<section class="m-hero" aria-label="Stride Aero colourways">
+  <div class="m-card stage">
+    <div class="card" aria-hidden="true"><div class="flood"></div><div class="lampfx"></div><div class="streaks"><i></i><i></i><i></i></div></div>
+    <div class="browser" aria-hidden="true"><span class="b-dots"><i></i><i></i><i></i></span><span class="b-url"><svg viewBox="0 0 24 24"><rect x="6" y="10" width="12" height="9" rx="2"/><path d="M9 10V8a3 3 0 0 1 6 0v2"/></svg>stride-aero.concept</span><span class="b-r"></span></div>
+    <nav class="cnav" aria-label="Concept site navigation">
+      <a href="#" class="brand" data-noop><svg class="mark" viewBox="0 0 40 24" aria-hidden="true"><path d="M3 20L13 4h7L10 20z"/><path d="M17 20L27 4h10L27 20z" opacity=".55"/></svg><span>STRIDE</span></a>
+      <button type="button" class="ic bagbtn" aria-label="Bag (concept), 0 items"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><b class="bagn">0</b></button>
+    </nav>
+    <p class="giant" aria-hidden="true"><span class="gw"><span>A</span><span>E</span><span>R</span><span>O</span></span><sup class="g3">03</sup></p>
+    <canvas class="gl" aria-label="3D model of the Stride Aero shoe. Swipe left or right to change colourway." role="img"></canvas>
+    <div class="m-bot">
+      <div class="cw-name" aria-live="polite"><small>Colourway</small><b class="cwn">Tide</b></div>
+      <div class="pager"><button type="button" class="arw prev" aria-label="Previous colourway"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button><span class="count"><b class="cnum">01</b>/03</span><button type="button" class="arw next" aria-label="Next colourway"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button></div>
+    </div>
+    <div class="dots"><button class="dot on" type="button" data-i="0" aria-label="Show colourway 1"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8"/></svg></button><button class="dot" type="button" data-i="1" aria-label="Show colourway 2"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8"/></svg></button><button class="dot" type="button" data-i="2" aria-label="Show colourway 3"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8"/></svg></button></div>
+  </div>
+  <div class="m-intro">
+    <div class="m-row"><p class="hint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5.3"/><path d="M18 3v4h-4"/><path d="M20 12a8 8 0 0 1-14 5.3"/><path d="M6 21v-4h4"/></svg><span>Swipe the card to change colourway</span></p><button type="button" class="mode" aria-pressed="false" aria-label="Night run mode" data-cur="Night"><span class="mk" aria-hidden="true"><svg class="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg><svg class="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></span><span class="ml">Day run</span></button></div>
+    <div class="sws" role="tablist" aria-label="Colourways"><button class="sw" type="button" role="tab" aria-selected="true" data-i="0" aria-label="Colourway Tide"><i style="--sw:#2D759A"></i><span>Tide</span></button><button class="sw" type="button" role="tab" aria-selected="false" data-i="1" aria-label="Colourway Dune"><i style="--sw:#D3AFA6"></i><span>Dune</span></button><button class="sw" type="button" role="tab" aria-selected="false" data-i="2" aria-label="Colourway Ember"><i style="--sw:#E8553B"></i><span>Ember</span></button></div>
+    <p class="eyebrow"><span class="live"></span>Concept drop &middot; Aero 3</p>
+    <h1 class="h-title">Built to bounce back.<span class="sr"> Stride Aero 3, a concept running shoe.</span></h1>
+    <p class="h-copy">Nitro foam, a 212 g knit upper and an 8 mm drop. A running shoe that feels like a head start.</p>
+    <div class="h-cta"><a href="#size" class="pill pill-a">Shop the drop <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a href="#tech" class="pill pill-g">The tech</a></div>
+  </div>
+</section>
+
+<section class="m-tech" id="tech" aria-label="Inside the Aero 3">
+  <p class="eyebrow" data-rv="up">Inside the Aero 3</p>
+  <h2 data-rv="up">Every gram earns its place.</h2>
+  <ol class="m-cos"><li data-rv="up" data-rv-d="1"><span class="co-n">01</span><span class="co-t"><b>Aero knit upper</b><small>Engineered mesh that breathes all the way round.</small></span></li><li data-rv="up" data-rv-d="2"><span class="co-n">02</span><span class="co-t"><b>Locked heel</b><small>A moulded counter that holds without pressing.</small></span></li><li data-rv="up" data-rv-d="3"><span class="co-n">03</span><span class="co-t"><b>Nitro foam</b><small>38 mm of springy midsole, light as it looks.</small></span></li><li data-rv="up" data-rv-d="4"><span class="co-n">04</span><span class="co-t"><b>Grip rail</b><small>Rubber lugs mapped to six pressure zones.</small></span></li></ol>
+</section>
+
+<section class="specs" aria-label="Specs">
+  <p class="eyebrow" data-rv="up">The numbers</p>
+  <ul class="sp"><li data-rv="up" data-rv-d="1"><span class="sp-v"><span class="sp-num" aria-label="212"><span class="od" data-v="2"><span class="od-r"><i>0</i><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i><i>9</i></span></span><span class="od" data-v="1"><span class="od-r"><i>0</i><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i><i>9</i></span></span><span class="od" data-v="2"><span class="od-r"><i>0</i><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i><i>9</i></span></span></span><em>g</em></span><b>Weight</b><small>men’s US 9</small></li><li data-rv="up" data-rv-d="2"><span class="sp-v"><span class="sp-num" aria-label="8"><span class="od" data-v="8"><span class="od-r"><i>0</i><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i><i>9</i></span></span></span><em>mm</em></span><b>Drop</b><small>heel to toe</small></li><li data-rv="up" data-rv-d="3"><span class="sp-v"><span class="sp-num" aria-label="38"><span class="od" data-v="3"><span class="od-r"><i>0</i><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i><i>9</i></span></span><span class="od" data-v="8"><span class="od-r"><i>0</i><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i><i>9</i></span></span></span><em>mm</em></span><b>Stack</b><small>at the heel</small></li><li data-rv="up" data-rv-d="4"><span class="sp-v"><span class="sp-num" aria-label="6"><span class="od" data-v="6"><span class="od-r"><i>0</i><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i><i>9</i></span></span></span><em>zones</em></span><b>Grip</b><small>mapped outsole</small></li></ul>
+</section>
+
+<section class="band" aria-hidden="true"><div class="band-row"><span>Run further &middot; Recover faster &middot; Run further &middot; Recover faster &middot;&nbsp;</span><span>Run further &middot; Recover faster &middot; Run further &middot; Recover faster &middot;&nbsp;</span></div></section>
+
+<section class="size" id="size" aria-label="Pick your size">
+  <div class="sz-card" data-rv="zoom">
+    <p class="eyebrow">Your pair</p>
+    <div class="sz-big"><small>US</small><span class="sz-roll" aria-live="polite"><b class="szv">9</b></span></div>
+    <p class="sz-meta"><span class="cwn">Tide</span> &middot; <span class="wdv">Regular</span> fit</p>
+    <span class="sz-mark"><svg class="mark" viewBox="0 0 40 24" aria-hidden="true"><path d="M3 20L13 4h7L10 20z"/><path d="M17 20L27 4h10L27 20z" opacity=".55"/></svg></span>
+  </div>
+  <h2 data-rv="up">Pick your size.</h2>
+  <p class="sz-lead" data-rv="up">True to size. Half sizes for the in-between days.</p>
+  <div class="szs" role="group" aria-label="US sizes"><button type="button" class="sz" aria-pressed="false" data-s="7">7</button><button type="button" class="sz" aria-pressed="false" data-s="7.5">7.5</button><button type="button" class="sz" aria-pressed="false" data-s="8">8</button><button type="button" class="sz" aria-pressed="false" data-s="8.5">8.5</button><button type="button" class="sz on" aria-pressed="true" data-s="9">9</button><button type="button" class="sz" aria-pressed="false" data-s="9.5">9.5</button><button type="button" class="sz" aria-pressed="false" data-s="10">10</button><button type="button" class="sz" aria-pressed="false" data-s="10.5">10.5</button><button type="button" class="sz" aria-pressed="false" data-s="11">11</button><button type="button" class="sz" aria-pressed="false" data-s="11.5">11.5</button><button type="button" class="sz" aria-pressed="false" data-s="12">12</button><button type="button" class="sz" aria-pressed="false" data-s="13">13</button></div>
+  <div class="wds" role="group" aria-label="Fit"><button type="button" class="wd on" aria-pressed="true">Regular</button><button type="button" class="wd" aria-pressed="false">Wide</button></div>
+  <div class="sz-act"><button type="button" class="pill pill-a addbag"><span class="ab-t">Add to bag</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button><small>Concept only. Nothing is sold or sent.</small></div>
+</section>
+
+<section class="cta" aria-label="Closing">
+  <p class="eyebrow" data-rv="up">Stride Aero 3</p>
+  <h2 class="cta-h" data-rv="up">Your next <em>personal best</em> starts here.</h2>
+  <a href="#main" class="round" data-rv="zoom"><span>Back to<br>the drop</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+</section>
+</main>
+<template id="credits">
+  <li>Code and design: Zyqor Studio (MIT licence for the code).</li>
+  <li>3D model: "Materials Variants Shoe" by Shopify, CC-BY 4.0, via the <a href="https://github.com/KhronosGroup/glTF-Sample-Assets" target="_blank" rel="noopener">Khronos glTF Sample Assets</a>, re-textured and recompressed by Zyqor Studio. Colourway names and the Stride Aero brand are fictional.</li>
+  <li>Fonts: Archivo by Omnibus-Type and Inter Tight by Rasmus Andersson et al., SIL Open Font License 1.1.</li>
+  <li>Product specs are part of the concept and describe no real shoe.</li>
+</template>
+<script src="../../vendor/gsap.min.js" defer></script>
+<script type="module" src="../_kit/chrome.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

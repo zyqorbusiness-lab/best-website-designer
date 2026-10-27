@@ -1,0 +1,8 @@
+.c3{grid-column:span 3}.c4{grid-column:span 4}.c5{grid-column:span 5}.c8{grid-column:span 8}
+.card.r2{grid-row:span 2}
+@media (max-width:1180px){.c3,.c5{grid-column:span 6}.c4{grid-column:span 6}.c8{grid-column:span 12}.hero{padding:130px 32px 60px}.gallery,.a11y{padding-left:32px;padding-right:32px}.a11y-g,.keys{grid-template-columns:repeat(2,1fr)}}
+
+.c12{grid-column:span 12}
+#c-palette{min-height:300px}
+#c-palette .card-b{margin:6px 0}
+#c-palette .stage-pal{flex-direction:row;justify-content:space-between;gap:40px;padding:0 4%}

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en" data-build="m">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- desktop -> heavy build (./). ?m=1 keeps this page on a laptop. -->
+<script>(function(){if(/[?&]m=1/.test(location.search))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height;if(w>860&&!(c&&h>w))location.replace('./'+location.search+location.hash);})();</script>
+<title>Umami Ring &middot; Concept 08 &middot; Zyqor Lab</title>
+<meta name="description" content="Umami Ring is a fictional ramen bar: a design concept by Zyqor Studio (orbit carousel menu, colour per dish).">
+<meta name="theme-color" content="#C8342B">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../assets/font/bricolage-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../_kit/lab.css">
+<link rel="stylesheet" href="m.css">
+<link rel="stylesheet" href="spice.css">
+<script type="importmap">{"imports":{"three":"../../vendor/three/three.module.min.js","three/addons/":"../../vendor/three/addons/"}}</script>
+<!-- liquid glass: demo body (helper 4f5eb13e) -->
+<link rel="stylesheet" href="../../assets/glass/liquid-glass.css">
+<script type="application/json" id="lg-map">{".ubar": "lg lg-pill lg-rim", ".ubook": "lg lg-btn lg--ink", ".chips": "lg lg-pill", ".arrow": "lg lg-round lg-btn"}</script>
+<script src="../../assets/glass/liquid-glass.js" defer></script>
+<link rel="canonical" href="https://zyqor-portfolio-v3.sites.tab.bot/lab/umami/m.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Zyqor Studio">
+<meta property="og:title" content="Umami Ring &middot; Concept 08 &middot; Zyqor Lab">
+<meta property="og:description" content="Umami Ring is a fictional ramen bar: a design concept by Zyqor Studio (orbit carousel menu, colour per dish).">
+<meta property="og:url" content="https://zyqor-portfolio-v3.sites.tab.bot/lab/umami/m.html">
+<meta property="og:image" content="https://zyqor-portfolio-v3.sites.tab.bot/lab/umami/poster.webp">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body data-slug="umami">
+<header class="ubar">
+  <a class="ulogo" href="#top" aria-label="Umami Ring, back to top"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4"/><path d="M4 3.5 20.5 20"/></svg><span>Umami Ring</span></a>
+  
+  <a class="ubook mag" href="#note">Book a seat</a>
+</header>
+<main id="main">
+  <section class="hero" id="top" aria-label="Umami Ring, choose a bowl">
+    <div class="spot" aria-hidden="true"></div>
+    <h1 class="dname" aria-live="polite"><span class="sr">Umami Ring ramen bar. Now showing: </span><span class="dn" id="dn">Tonkotsu</span></h1>
+    <canvas id="ring" aria-hidden="true"></canvas>
+    <div class="spicer" role="group" aria-label="Spice level">
+      <span class="sp-k" aria-hidden="true">Spice</span>
+      <button type="button" class="sp-b" data-h="0" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:16.0px"><g transform="translate(0 0)"><path d="M12 21a6 6 0 0 0 6-6c0-4-3-5.5-4-9-2.5 2-3 4-3 5.5C9.8 10.5 9 9.5 9 8c-2 2-3 4.2-3 7a6 6 0 0 0 6 6Z"/></g></svg>Mild</button>
+      <button type="button" class="sp-b" data-h="1" aria-pressed="false"><svg viewBox="0 0 37 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:24.7px"><g transform="translate(0 0)"><path d="M12 21a6 6 0 0 0 6-6c0-4-3-5.5-4-9-2.5 2-3 4-3 5.5C9.8 10.5 9 9.5 9 8c-2 2-3 4.2-3 7a6 6 0 0 0 6 6Z"/></g><g transform="translate(13 0)"><path d="M12 21a6 6 0 0 0 6-6c0-4-3-5.5-4-9-2.5 2-3 4-3 5.5C9.8 10.5 9 9.5 9 8c-2 2-3 4.2-3 7a6 6 0 0 0 6 6Z"/></g></svg>Hot</button>
+      <button type="button" class="sp-b" data-h="2" aria-pressed="false"><svg viewBox="0 0 50 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:33.4px"><g transform="translate(0 0)"><path d="M12 21a6 6 0 0 0 6-6c0-4-3-5.5-4-9-2.5 2-3 4-3 5.5C9.8 10.5 9 9.5 9 8c-2 2-3 4.2-3 7a6 6 0 0 0 6 6Z"/></g><g transform="translate(13 0)"><path d="M12 21a6 6 0 0 0 6-6c0-4-3-5.5-4-9-2.5 2-3 4-3 5.5C9.8 10.5 9 9.5 9 8c-2 2-3 4.2-3 7a6 6 0 0 0 6 6Z"/></g><g transform="translate(26 0)"><path d="M12 21a6 6 0 0 0 6-6c0-4-3-5.5-4-9-2.5 2-3 4-3 5.5C9.8 10.5 9 9.5 9 8c-2 2-3 4.2-3 7a6 6 0 0 0 6 6Z"/></g></svg>Fire</button>
+      <i class="sp-th" aria-hidden="true"></i>
+    </div>
+    <div class="hero-l">
+      <p class="eyebrow"><span class="pulse"></span>Ramen bar &middot; Concept 08</p>
+      <p class="hsub" id="hsub">Pork bone broth, slow and milky. Twelve hours on the fire, ninety seconds to your seat.</p>
+      <a class="pill pill-solid mag" href="#menu">See the menu <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+    </div>
+    <div class="hero-r">
+      <p class="count"><b id="cnum">01</b><span>/ 05</span></p>
+      <div class="arrows">
+        <button class="arrow mag" id="prev" aria-label="Previous bowl"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button class="arrow mag" id="next" aria-label="Next bowl"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="chips" role="group" aria-label="Choose a bowl"><button class="dchip" data-i="0" aria-pressed="true">Tonkotsu</button><button class="dchip" data-i="1" aria-pressed="false">Shoyu Classic</button><button class="dchip" data-i="2" aria-pressed="false">Miso Fire</button><button class="dchip" data-i="3" aria-pressed="false">Yuzu Shio</button><button class="dchip" data-i="4" aria-pressed="false">Black Garlic</button></div>
+    <p class="hint">Swipe the ring</p>
+  </section>
+
+  <section class="menu" id="menu" aria-labelledby="menu-h">
+    <div class="menu-l">
+      <p class="tag" data-rv>The menu</p>
+      <h2 id="menu-h" data-rv data-rv-d="1">Five bowls.<br>One ring.</h2>
+      <ul class="mlist" role="list"><li><button class="mrow" data-i="0" aria-pressed="true"><span class="mno">01</span><span class="mtxt"><b>Tonkotsu</b><small>Pork bone broth, slow and milky</small></span><span class="mtag">Rich</span><span class="spice" aria-label="Spice 1 of 3"><i class="on"></i><i class=""></i><i class=""></i></span></button></li><li><button class="mrow" data-i="1" aria-pressed="false"><span class="mno">02</span><span class="mtxt"><b>Shoyu Classic</b><small>Clear soy broth, chicken and dashi</small></span><span class="mtag">Clean</span><span class="spice" aria-label="Spice 0 of 3"><i class=""></i><i class=""></i><i class=""></i></span></button></li><li><button class="mrow" data-i="2" aria-pressed="false"><span class="mno">03</span><span class="mtxt"><b>Miso Fire</b><small>Red miso, chilli oil, sweet corn</small></span><span class="mtag">Hot</span><span class="spice" aria-label="Spice 3 of 3"><i class="on"></i><i class="on"></i><i class="on"></i></span></button></li><li><button class="mrow" data-i="3" aria-pressed="false"><span class="mno">04</span><span class="mtxt"><b>Yuzu Shio</b><small>Light salt broth, bright citrus</small></span><span class="mtag">Light</span><span class="spice" aria-label="Spice 0 of 3"><i class=""></i><i class=""></i><i class=""></i></span></button></li><li><button class="mrow" data-i="4" aria-pressed="false"><span class="mno">05</span><span class="mtxt"><b>Black Garlic</b><small>Burnt garlic oil over pork broth</small></span><span class="mtag">Deep</span><span class="spice" aria-label="Spice 1 of 3"><i class="on"></i><i class=""></i><i class=""></i></span></button></li><li class="mpill" aria-hidden="true"></li></ul>
+    </div>
+    <div class="menu-r" data-rv="zoom">
+      <div class="plate"><div class="plate-ring" aria-hidden="true"></div><img id="plateImg" alt="Top view of the Tonkotsu bowl" width="560" height="560"></div>
+      <p class="plate-cap"><b id="plateName">Tonkotsu</b><span id="plateNote">Chashu, soft egg, nori, scallion, sesame</span></p>
+    </div>
+  </section>
+
+  <section class="broth" id="broth" aria-labelledby="broth-h">
+    <div class="broth-head">
+      <p class="tag" data-rv>How we make the broth</p>
+      <h2 id="broth-h" data-rv data-rv-d="1">Twelve hours.<br>No shortcuts.</h2>
+    </div>
+    <ol class="steps">
+      <li class="step" data-rv data-rv-d="1"><span class="sic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 10.5 13.5 16.5"/><path d="M6 12a2.5 2.5 0 1 1-1.2-4.6A2.5 2.5 0 1 1 9.4 6.3L17.7 14.6a2.5 2.5 0 1 1 1.1 4.6 2.5 2.5 0 1 1-4.6 1.1L6 12Z"/></svg></span><b>01</b><h3>Roast three bones</h3><p>Pork, chicken and a little beef, roasted until they smell like Sunday.</p></li>
+      <li class="step" data-rv data-rv-d="2"><span class="sic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span><b>02</b><h3>Simmer 12 hours</h3><p>A rolling boil turns the broth milky. We skim every hour.</p></li>
+      <li class="step" data-rv data-rv-d="3"><span class="sic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a6 6 0 0 0 6-6c0-4-3-5.5-4-9-2.5 2-3 4-3 5.5C9.8 10.5 9 9.5 9 8c-2 2-3 4.2-3 7a6 6 0 0 0 6 6Z"/></svg></span><b>03</b><h3>Tare and oils</h3><p>Soy, salt or miso seasoning, plus a spoon of scallion oil.</p></li>
+      <li class="step" data-rv data-rv-d="4"><span class="sic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7c3-2 5 2 8 0s5 2 8 0"/><path d="M4 11c3-2 5 2 8 0s5 2 8 0"/><path d="M4 15c3-2 5 2 8 0s5 2 8 0"/></svg></span><b>04</b><h3>Noodles cut daily</h3><p>Wavy, springy, cooked for 70 seconds and not one more.</p></li>
+      <li class="step" data-rv data-rv-d="5"><span class="sic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 11h17a8.5 8.5 0 0 1-17 0Z"/><path d="M9 19.5h6"/><path d="M14 4l5-1.5M14 7.5l6-.5"/></svg></span><b>05</b><h3>Bowl in 90 seconds</h3><p>Built on the ring and spun straight to your stool.</p></li>
+    </ol>
+    <div class="line" aria-hidden="true"><i></i></div>
+  </section>
+
+  <section class="hours" id="hours" aria-labelledby="hours-h">
+    <div class="ticket" data-rv="zoom">
+      <div class="t-main">
+        <p class="tag">Opening hours</p>
+        <h2 id="hours-h">Fourteen stools<br>around the ring.</h2>
+        <dl class="times"><div><dt>Lunch</dt><dd>Tue to Sun &middot; 12:00 to 15:00</dd></div><div><dt>Dinner</dt><dd>Tue to Sun &middot; 18:00 to 23:00</dd></div><div><dt>Monday</dt><dd>Closed, broth day</dd></div></dl>
+      </div>
+      <div class="t-stub">
+        <div class="stamp" aria-hidden="true"><svg viewBox="0 0 120 120"><defs><path id="sc" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0"/></defs><text textLength="272" lengthAdjust="spacing"><textPath href="#sc" textLength="272" lengthAdjust="spacing">CONCEPT &#183; NOT A REAL BAR &#183; ZYQOR LAB &#183;</textPath></text></svg><span>08</span></div>
+        <p>No real address.<br>Walk-ins welcome in theory.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="note" aria-labelledby="cta-h">
+    <p class="tag" data-rv>Book a seat</p>
+    <h2 id="cta-h" data-rv data-rv-d="1">Pull up<br>a stool.</h2>
+    <div class="note" data-rv data-rv-d="2"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9h12"/><path d="M8 9l-1.5 11M16 9l1.5 11M8.5 15h7"/><ellipse cx="12" cy="7" rx="6" ry="2.5"/></svg><p><b>This is a concept.</b> Umami Ring is a fictional ramen bar designed by Zyqor Studio, so there's nothing to book (yet). The bowls are made in code, not in a kitchen.</p></div>
+    <a class="pill pill-solid mag" href="#top">Back to the ring <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4"/><path d="M4 3.5 20.5 20"/></svg></a>
+  </section>
+</main>
+<template id="credits">
+  <li>Code, design and the 3D bowls (procedural three.js geometry: lathe-turned bowls with foot ring and rolled rim, wavy tube noodles, extruded toppings, generated colour, roughness and normal maps, shader steam): Zyqor Studio (MIT licence for the code).</li>
+  <li>Studio lighting: "Studio Small 09" HDRI by Sergej Majboroda, Poly Haven, CC0 (desktop build).</li>
+  <li>Fonts: Bricolage Grotesque by Mathieu Triay and Inter Tight by Rasmus Andersson et al., both SIL Open Font Licence, via Google Fonts.</li>
+  <li>Libraries: three.js (MIT), GSAP (Standard licence).</li>
+  <li>Umami Ring, its dishes and its hours are fictional. No real restaurant is shown.</li>
+</template>
+<script src="../../vendor/gsap.min.js" defer></script>
+
+
+<script type="module" src="../_kit/chrome.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

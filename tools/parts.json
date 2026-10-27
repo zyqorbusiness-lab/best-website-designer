@@ -1,0 +1,52 @@
+{
+ "files": [
+  {
+   "path": "site/assets/models/MaterialsVariantsShoe-hd.glb",
+   "bytes": 3115616,
+   "parts": 2,
+   "sha256": "11a243b026d411f2a4474cec7eafc386fecf08daf0f255e35fb346a3b1c21b14"
+  },
+  {
+   "path": "site/assets/models/AntiqueCamera-hd.glb",
+   "bytes": 4584388,
+   "parts": 2,
+   "sha256": "d8daeb9a3851167948b2b3755301ca4b858937b290160f71b0be43b3166f0337"
+  },
+  {
+   "path": "site/assets/lab/halde/halde-d.glb",
+   "bytes": 4437892,
+   "parts": 2,
+   "sha256": "b8223c7877435085f08f018ca0f16c526171601338b1102f2381b08b9e2e179e"
+  },
+  {
+   "path": "site/assets/lab/stride/stride-d.glb",
+   "bytes": 3736500,
+   "parts": 2,
+   "sha256": "8bd047c3bd990881896c6534af73ba80d2e845c59b4d2dd0a7ae374dda3161fc"
+  },
+  {
+   "path": "site/assets/lab/volta/volta.glb",
+   "bytes": 3900368,
+   "parts": 2,
+   "sha256": "be35e8388c3a9c234832a4a0be8a977e8ed019cfff616535528ac7936e7d7d29"
+  },
+  {
+   "path": "site/assets/lab/verdant/verdant-plant-d.glb",
+   "bytes": 3862288,
+   "parts": 2,
+   "sha256": "3c712401ee2ebffed78633cd5c4eff72c0fdfe7ae2403d6a055ec40eed06124f"
+  },
+  {
+   "path": "site/assets/lab/nook/chair-d.glb",
+   "bytes": 3376324,
+   "parts": 2,
+   "sha256": "25448a0949c664de1cabb1700fb5efdd43dad0ba4a0fbd58d4becef3101b5b53"
+  },
+  {
+   "path": "site/assets/lab/cadence/talus-d.glb",
+   "bytes": 3270268,
+   "parts": 2,
+   "sha256": "d360c898eab491c9df2c053bfd0487129964258ef5b43e04c978f53403041272"
+  }
+ ]
+}

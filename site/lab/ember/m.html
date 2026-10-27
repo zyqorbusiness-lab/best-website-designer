@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en" data-build="m">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- desktop -> heavy build (./). ?m=1 keeps this page on a laptop. -->
+<script>(function(){if(/[?&]m=1/.test(location.search))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height;if(w>860&&!(c&&h>w))location.replace('./'+location.search+location.hash);})();</script>
+<title>Ember &amp; Oak &middot; Concept 04 &middot; Zyqor Lab</title>
+<meta name="description" content="Ember &amp; Oak is a fictional coffee roastery: a design concept by Zyqor Studio (paper-tear reveal, travelling cup, outline giant type).">
+<meta name="theme-color" content="#2B1A12">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../assets/font/zodiak-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../_kit/lab.css">
+<link rel="stylesheet" href="m.css">
+<script type="importmap">{"imports":{"three":"../../vendor/three/three.module.min.js","three/addons/":"../../vendor/three/addons/"}}</script>
+<!-- liquid glass: demo body (helper 4f5eb13e) -->
+<link rel="stylesheet" href="../../assets/glass/liquid-glass.css">
+<script type="application/json" id="lg-map">{"header.brand": "lg lg-pill lg-rim", ".seg": "lg lg-pill", ".rd-seg": "lg lg-pill", ".pill-k": "lg lg-pill"}</script>
+<script src="../../assets/glass/liquid-glass.js" defer></script>
+<link rel="canonical" href="https://zyqor-portfolio-v3.sites.tab.bot/lab/ember/m.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Zyqor Studio">
+<meta property="og:title" content="Ember &amp; Oak &middot; Concept 04 &middot; Zyqor Lab">
+<meta property="og:description" content="Ember &amp; Oak is a fictional coffee roastery: a design concept by Zyqor Studio (paper-tear reveal, travelling cup, outline giant type).">
+<meta property="og:url" content="https://zyqor-portfolio-v3.sites.tab.bot/lab/ember/m.html">
+<meta property="og:image" content="https://zyqor-portfolio-v3.sites.tab.bot/lab/ember/poster.webp">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body data-slug="ember">
+<a class="sr" href="#main">Skip to content</a>
+<header class="brand" aria-label="Ember and Oak">
+  <a class="logo" href="#top" aria-label="Ember and Oak, back to top"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.5c.6 3.2 4.8 5.3 4.8 10a4.8 4.8 0 0 1-9.6 0c0-2.2 1.1-3.6 2.2-4.6.2 1.6 1 2.6 2 2.9-.6-2.8-.2-5.6.6-8.3Z" fill="currentColor"/></svg><span>Ember <i>&amp;</i> Oak</span></a>
+  <nav class="nav" aria-label="Sections"><a href="#origin">Origin</a><a href="#roast">Roast</a><a href="#brew">Brew</a><a href="#order" class="nav-cta">Order</a></nav>
+</header>
+
+<!-- dark paper layer that tears open on scroll -->
+<div class="tear" id="tear">
+  <div class="tw tw-l"><div class="half"><div class="paper"><div class="paper-in">
+    <p class="k">Ember &amp; Oak &middot; small-batch roasters</p>
+    <h1 class="t-h1" id="top"><span>Roasted</span><span>over oak</span><span class="acc">embers.</span></h1>
+    <p class="t-sub">Every bean meets real fire, slow heat and a long rest before it meets your cup.</p>
+  </div></div></div><svg class="fib" aria-hidden="true"></svg></div>
+  <div class="tw tw-r" aria-hidden="true"><div class="half"><div class="paper"><div class="paper-in">
+    <p class="k">Ember &amp; Oak &middot; small-batch roasters</p>
+    <p class="t-h1"><span>Roasted</span><span>over oak</span><span class="acc">embers.</span></p>
+    <p class="t-sub">Every bean meets real fire, slow heat and a long rest before it meets your cup.</p>
+  </div></div></div><svg class="fib" aria-hidden="true"></svg></div>
+  <canvas class="beans" aria-hidden="true"></canvas>
+  <div class="t-cue" aria-hidden="true"><span>Scroll to tear it open</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+</div>
+
+<canvas class="cupgl" aria-hidden="true"></canvas>
+<div class="cursor" aria-hidden="true"><span></span></div>
+
+<main id="main">
+  <div class="stage" id="stage">
+    <div class="hero-back" aria-hidden="true"><p class="h-word">EMBER</p></div>
+    <section class="hero" aria-labelledby="hero-h">
+      <div class="cup-a h-cup" data-cup="hero" data-s="1" data-tilt="0.22"></div>
+      <div class="h-left">
+        <p class="pill-k"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.5c.6 3.2 4.8 5.3 4.8 10a4.8 4.8 0 0 1-9.6 0c0-2.2 1.1-3.6 2.2-4.6.2 1.6 1 2.6 2 2.9-.6-2.8-.2-5.6.6-8.3Z" fill="currentColor"/></svg><span>Roastery concept 04</span></p>
+        <h2 id="hero-h">Rich, slow <em>&amp;</em> wood-fired coffee.</h2>
+        <p>Twelve-kilo batches roasted over oak embers, rested 72 hours, sent out the week they leave the drum.</p>
+        <div class="btns"><a class="btn mag" href="#roast" data-cursor="Roast">Pick a roast <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn ghost mag" href="#brew" data-cursor="Brew">Brew guide</a></div>
+      </div>
+      <ul class="h-chips" aria-label="Roastery facts">
+        <li data-rv="up" data-rv-d="1"><b>12 kg</b><span>per batch</span></li>
+        <li data-rv="up" data-rv-d="2"><b>72 h</b><span>bean rest</span></li>
+        <li data-rv="up" data-rv-d="3"><b>Oak</b><span>fired drum</span></li>
+      </ul>
+    </section>
+  </div>
+
+  <section class="origin" id="origin" aria-labelledby="or-h">
+    <div class="o-type" aria-hidden="true"><p class="o-l1">SINGLE ORIGIN</p><p class="o-l2">SINGLE ORIGIN</p></div>
+    <div class="o-grid">
+      <div class="o-copy">
+        <p class="num" data-rv="up">01 <span>Origin</span></p>
+        <h2 id="or-h" data-rv="up" data-rv-d="1">One hillside. <em>One harvest.</em> One fire.</h2>
+        <p data-rv="up" data-rv-d="2">The house lot is a single washed coffee from one high hillside. No blends hiding behind it, so every cup tastes like the place it grew.</p>
+        <ul class="stats">
+          <li data-rv="up" data-rv-d="2"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 19 9.5 8l3.5 6 2-3 6 8H3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><b>1,850 m</b><span>Altitude</span></li>
+          <li data-rv="up" data-rv-d="3"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.5c3 4 5.5 7 5.5 10a5.5 5.5 0 0 1-11 0c0-3 2.5-6 5.5-10Z" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><b>Washed</b><span>Process</span></li>
+          <li data-rv="up" data-rv-d="4"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><b>Nov&ndash;Jan</b><span>Harvest</span></li>
+        </ul>
+      </div>
+      <div class="cup-a o-cup" data-cup="origin" data-s="1.05" data-tilt="0.12"></div>
+    </div>
+  </section>
+
+  <section class="roast" id="roast" aria-labelledby="ro-h">
+    <div class="r-head">
+      <p class="num" data-rv="up">02 <span>Roast level</span></p>
+      <h2 id="ro-h" data-rv="up" data-rv-d="1">Pick your <em>fire.</em></h2>
+    </div>
+    <div class="r-grid">
+      <div class="r-notes" data-rv="left">
+        <p class="r-name" aria-live="polite"><span id="r-name">Medium</span> roast</p>
+        <p class="r-tn" id="r-tn">Cocoa, toasted almond, dark honey</p>
+        <dl class="r-bars">
+          <div><dt>Acidity</dt><dd><span class="bar"><i id="b-acid"></i></span><span class="rv"><span class="roll" data-roll="06" aria-hidden="true"></span><span class="sr">06</span></span></dd></div>
+          <div><dt>Body</dt><dd><span class="bar"><i id="b-body"></i></span><span class="rv"><span class="roll" data-roll="07" aria-hidden="true"></span><span class="sr">07</span></span></dd></div>
+          <div><dt>Sweetness</dt><dd><span class="bar"><i id="b-sweet"></i></span><span class="rv"><span class="roll" data-roll="08" aria-hidden="true"></span><span class="sr">08</span></span></dd></div>
+        </dl>
+      </div>
+      <div class="cup-a r-cup" data-cup="roast" data-s="1.1" data-tilt="0.62"></div>
+      <div class="r-ctrl" data-rv="right">
+        <p class="r-temp"><span class="roll-wrap"><span class="roll" data-roll="218" aria-hidden="true"></span><span class="sr">218</span></span><small>&deg;C drop temp</small></p>
+        <div class="seg" role="radiogroup" aria-label="Roast level">
+          <button role="radio" aria-checked="false" data-roast="0" data-cursor="Light">Light</button>
+          <button role="radio" aria-checked="true" data-roast="1" data-cursor="Medium">Medium</button>
+          <button role="radio" aria-checked="false" data-roast="2" data-cursor="Dark">Dark</button>
+          <i class="seg-k" aria-hidden="true"></i>
+        </div>
+        <label class="r-range"><span class="sr">Roast level slider</span><input id="r-range" type="range" min="0" max="2" step="0.01" value="1" data-cursor="Drag"></label>
+        <p class="r-hint">Drag or use the arrow keys. The coffee, the beans and the page follow.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="brew" id="brew" aria-labelledby="br-h">
+    <div class="b-grid">
+      <div class="cup-a b-cup" data-cup="brew" data-s="0.9" data-tilt="0.3"></div>
+      <div class="b-copy">
+        <p class="num" data-rv="up">03 <span>Brew guide</span></p>
+        <h2 id="br-h" data-rv="up" data-rv-d="1">Four steps. <em>Three and a half</em> minutes.</h2>
+        <ol class="steps">
+          <li data-rv="up" data-rv-d="1" class="tilt" data-cursor="Step 1"><span class="sn">01</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9h12l-1.5 11h-9L6 9Z M9 9V6h6v3 M12 3v3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></svg><b>Grind</b><p>18 g, medium-fine, like coarse sand.</p></li>
+          <li data-rv="up" data-rv-d="2" class="tilt" data-cursor="Step 2"><span class="sn">02</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 20h12l-1-9a5 5 0 0 0-10 0l-1 9Zm11-7 4-3M9 4h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></svg><b>Bloom</b><p>40 g of water at 94&deg;C. Wait 30 seconds.</p></li>
+          <li data-rv="up" data-rv-d="3" class="tilt" data-cursor="Step 3"><span class="sn">03</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h10v4a5 5 0 0 1-10 0V8Zm10 1h2.5a2 2 0 0 1 0 4H14M6 20h6M19 3l-2 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></svg><b>Pour</b><p>Slow circles up to 300 g in total.</p></li>
+          <li data-rv="up" data-rv-d="4" class="tilt" data-cursor="Step 4"><span class="sn">04</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><b>Rest</b><p>Let it drain to 3:30, then sip slowly.</p></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="order" id="order" aria-labelledby="cta-h">
+    <svg class="edge" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 80V34l40 6 38-14 44 10 30-18 52 16 36-8 48 12 40-20 44 14 36-6 50 16 40-18 46 10 34-12 52 18 38-8 44 12 42-20 48 14 30-10 54 16 36-12 44 10 40-16 48 14 38-6 46 12 44-18 40 10 52-8 38 14 50-16 42 10 V80Z" fill="currentColor"/></svg>
+    <div class="cup-a c-cup" data-cup="order" data-s="0.95" data-tilt="0.28"></div>
+    <div class="c-copy">
+      <h2 id="cta-h" data-rv="up">Taste the <span class="acc">fire.</span></h2>
+      <p data-rv="up" data-rv-d="1">The first roast list opens soon. Leave your name at the counter and we will save you a bag.</p>
+      <a class="btn big mag" href="#order" id="cta" data-cursor="Join">Join the first roast <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <p class="toast" id="toast" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+</main>
+<div class="rdock" role="group" aria-label="Roast level, changes the whole page"><span class="rd-l"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.5c.6 3.2 4.8 5.3 4.8 10a4.8 4.8 0 0 1-9.6 0c0-2.2 1.1-3.6 2.2-4.6.2 1.6 1 2.6 2 2.9-.6-2.8-.2-5.6.6-8.3Z" fill="currentColor"/></svg>Roast</span><div class="rd-seg"><button type="button" data-rd="0" aria-pressed="false" data-cursor="Light">Light</button><button type="button" data-rd="1" aria-pressed="true" data-cursor="Medium">Medium</button><button type="button" data-rd="2" aria-pressed="false" data-cursor="Dark">Dark</button><i class="rd-k" aria-hidden="true"></i></div></div>
+
+
+<template id="credits">
+  <li>Code, design and every 3D object (stoneware cup and saucer, steel teaspoon, crema and latte art, coffee beans, steam): Zyqor Studio, modelled in code with three.js (MIT licence for the code).</li>
+  <li>Studio lighting: "Studio Small 09" HDRI by Sergej Majboroda, Poly Haven, CC0.</li>
+  <li>Fonts: Anton by Vernon Adams and Inter Tight by Rasmus Andersson et al., SIL Open Font Licence, via Google Fonts (self-hosted).</li>
+  <li>Inspiration: paper-tear and travelling-object patterns from Instagram design reels; no assets reused.</li>
+</template>
+<script type="module" src="../_kit/chrome.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

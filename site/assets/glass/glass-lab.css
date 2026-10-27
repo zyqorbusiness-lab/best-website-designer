@@ -1,0 +1,14 @@
+/* Zyqor liquid glass - Lab bindings (chrome v2 by bf54fb53 + the /lab/ index).
+   Loaded by _kit/chrome.js (see work/glass/chrome_patch.md) after lab-ui.css. Tints follow each demo's --c1/--c2/--c3. */
+.zl-bar .zl-pill.lg{border-color:transparent}
+.zl-bar .zl-home.lg{--lg-alpha:58%}
+.zl-bar .zl-tag.lg{--lg-alpha:64%;border-radius:6px}
+.zl-bar .zl-tag.lg b{box-shadow:inset 0 1px 0 rgba(255,255,255,.18)}
+/* footer: Previous / All concepts become small ink-glass pills; the big Next stays typographic */
+.zl-foot .zl-nav .zl-pill.lg{height:40px;padding:0 16px;border-radius:999px;color:var(--c1)}
+.zl-foot .zl-nav .zl-pill.lg:hover{color:var(--c1)}
+.zl-foot .zl-nav .zl-pill.lg svg{width:16px;height:16px}
+.zl-foot .zl-cred summary.lg{padding:7px 14px 7px 10px;border-radius:999px}
+@media (max-width:600px){.zl-foot .zl-nav .zl-pill.lg{height:36px;padding:0 13px}}
+/* demos whose own palette is dark at the top (Ember, Volt night modes): chrome stays legible */
+html[data-glass-dark] .zl-bar .lg:not(.lg--accent){--lg-tint:var(--c2);--lg-alpha:58%;color:var(--c1)}
