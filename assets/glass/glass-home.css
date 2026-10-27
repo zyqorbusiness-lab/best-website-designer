@@ -1,0 +1,50 @@
+/* Zyqor liquid glass - home bindings (desktop index.html + /m/). Loads after edit.css.
+   Only layout tweaks the material needs; the material itself is liquid-glass.css. */
+
+/* header: the bar disappears, the two capsules float as glass over every section */
+.hd.is-solid{background:transparent!important;box-shadow:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+.hd .nav.lg{border-radius:999px;padding:5px 5px 5px 20px}
+.hd .logo.lg{border-radius:999px;padding:5px 14px 5px 5px}
+.hd.on-dk .lg:not(.lg--accent){--lg-tint:#17423C;--lg-alpha:56%;--_spec:rgba(255,255,255,calc(.2*var(--lg-hl)));--_rim:rgba(255,255,255,.32);--_edge:rgba(255,255,255,.12)}
+.hd .nav .btn.lg{min-height:40px}
+html.lg-on .nav a:not(.btn){color:#24463F}
+.hd.on-dk .nav a:not(.btn){color:rgba(243,237,225,.86)!important}
+
+/* hero copy buttons + hint chip */
+.sw-btn.lg{border:0}
+.sw-btn--ghost.lg{color:#17423C}
+.sw-hint span.lg{box-shadow:none}
+
+/* back-to-top: dark glass lens */
+.btt.lg{--lg-alpha-dark:70%}
+.btt.lg:hover{background:none}
+
+/* Lab tiles: the screenshot sits in a glass tray (a lit bezel around the picture) */
+.lab-shot.lg{padding:7px;border-radius:18px!important;overflow:hidden;--lg-tint:#FFFFFF;--lg-alpha:34%;--lg-blur:12px}
+.lab-shot.lg .lab-img{border-radius:12px;overflow:hidden}
+.lab-shot.lg::before{left:22px;bottom:20px}
+.lab-shot.lg::after{inset:7px;border-radius:12px}
+
+/* Worlds UI: swatch rail + numbered dots become glass */
+.wd-sw.lg{padding:6px;gap:6px}
+.wd-dots.lg{padding:6px 12px}
+
+/* pricing (pine section): light glass button stays opaque enough for AA */
+.price .btn.lg:not(.lg--dark){--lg-alpha:92%;color:#17423C}
+.price .btn--ghost.lg{color:#F3EDE1}
+
+/* footer Studio index: dark glass columns over a soft light pool */
+.ft{position:relative;isolation:isolate}
+.ft .ft-index{position:relative}
+.ft .ft-index::before{content:"";position:absolute;inset:6% -4% 0;z-index:-1;pointer-events:none;
+ background:radial-gradient(38% 60% at 62% 40%,rgba(217,181,106,.30),transparent 70%),radial-gradient(30% 50% at 88% 70%,rgba(243,237,225,.14),transparent 70%)}
+.ft .ft-col.lg{padding:18px 18px 12px;--lg-alpha-dark:42%;--lg-radius:18px}
+.ft .ft-col.lg a:last-child{border-bottom:0}
+
+/* phone build */
+.is-mobile .hd .nav.lg{padding:4px}
+.is-mobile .hd .logo.lg{padding:4px 12px 4px 4px}
+.is-mobile .lab-shot.lg{padding:5px;border-radius:16px!important}
+.is-mobile .lab-shot.lg .lab-img{border-radius:11px}
+.is-mobile .ft .ft-col.lg{padding:14px 14px 8px}
+@media (prefers-reduced-transparency:reduce){.ft .ft-index::before{display:none}}

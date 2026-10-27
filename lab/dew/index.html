@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- phone -> light build (m.html). ?desktop=1 keeps this page. -->
+<script>(function(){if(/[?&]desktop=1/.test(location.search))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height;if(w<=860||(c&&h>w))location.replace('m.html'+location.search+location.hash);})();</script>
+<title>Dew Theory &middot; Concept 06 &middot; Zyqor Lab</title>
+<meta name="description" content="Dew Theory is a fictional skincare brand: a design concept by Zyqor Studio (cloud world, podium, ingredient orbit).">
+<meta name="theme-color" content="#F6E3DF" id="tc">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../assets/font/instrumentserif-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/font/satoshi-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../_kit/lab.css">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">{"imports":{"three":"../../vendor/three/three.module.min.js","three/addons/":"../../vendor/three/addons/"}}</script>
+<!-- liquid glass: demo body (helper 4f5eb13e) -->
+<link rel="stylesheet" href="../../assets/glass/liquid-glass.css">
+<script type="application/json" id="lg-map">{".dnav": "lg lg-pill lg-rim", ".d-cta": "lg lg-btn lg--ink", ".mode": "lg lg-pill", ".pill.solid": "lg lg-btn lg--ink", ".ing-card": "lg lg-card"}</script>
+<script src="../../assets/glass/liquid-glass.js" defer></script>
+<link rel="canonical" href="https://zyqor-portfolio-v3.sites.tab.bot/lab/dew/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Zyqor Studio">
+<meta property="og:title" content="Dew Theory &middot; Concept 06 &middot; Zyqor Lab">
+<meta property="og:description" content="Dew Theory is a fictional skincare brand: a design concept by Zyqor Studio (cloud world, podium, ingredient orbit).">
+<meta property="og:url" content="https://zyqor-portfolio-v3.sites.tab.bot/lab/dew/">
+<meta property="og:image" content="https://zyqor-portfolio-v3.sites.tab.bot/lab/dew/poster.webp">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body data-slug="dew">
+<header class="dnav" aria-label="Dew Theory">
+  <a class="d-logo" href="#top" aria-label="Dew Theory, back to top"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.5c3 4 5.5 7 5.5 10a5.5 5.5 0 0 1-11 0c0-3 2.5-6 5.5-10Z" fill="none" stroke="currentColor" stroke-width="1.7"/></svg><span>Dew <em>Theory</em></span></a>
+  <nav class="d-links" aria-label="Sections"><a href="#inside">Inside</a><a href="#ritual">Ritual</a><a href="#join" class="d-cta">Join</a></nav>
+</header>
+<canvas class="dewgl" aria-hidden="true"></canvas>
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="h1">
+    
+    <div class="cup-a h-anc" data-a="hero"></div>
+    <h1 id="h1" class="sr">Pure Dew: Serum 01 by Dew Theory</h1>
+    <div class="h-l" data-rv="up"><div class="mode" role="group" aria-label="Ritual time"><span class="mode-k" aria-hidden="true"></span><button type="button" class="mode-b" data-m="0" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>AM ritual</span></button><button type="button" class="mode-b" data-m="1" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span>PM ritual</span></button></div><p class="kick"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3c.6 4.6 3.4 7.4 8 8-4.6.6-7.4 3.4-8 8-.6-4.6-3.4-7.4-8-8 4.6-.6 7.4-3.4 8-8Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><span data-pm="Serum 02 · Night peptide">Serum 01 &middot; Rose clay</span></p><p class="h-p" data-pm="A slow overnight serum with peptides and squalane. Skin that wakes up rested.">A weightless dew serum with 2% hyaluronic acid. Skin that looks like morning.</p>
+      <div class="btns"><a class="pill solid mag" href="#inside">See what's inside <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="pill glass mag" href="#ritual">The ritual</a></div></div>
+    <ul class="h-r" aria-label="Product facts"><li data-rv="up" data-rv-d="1"><b>30 ml</b><span>glass dropper</span></li><li data-rv="up" data-rv-d="2"><b>pH 5.5</b><span>skin friendly</span></li><li data-rv="up" data-rv-d="3"><b>0%</b><span>added fragrance</span></li></ul>
+  </section>
+
+  <section class="inside" id="inside" aria-labelledby="in-h">
+    <div class="in-head"><p class="kick" data-rv="up"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.5c3 4 5.5 7 5.5 10a5.5 5.5 0 0 1-11 0c0-3 2.5-6 5.5-10Z" fill="none" stroke="currentColor" stroke-width="1.7"/></svg><span>What's inside</span></p><h2 id="in-h" data-rv="up" data-rv-d="1">Five things, <em>nothing else.</em></h2></div>
+    <div class="orbit">
+      <div class="cup-a o-anc" data-a="orbit"></div>
+      <div class="bubs" role="group" aria-label="Ingredients, choose one"><button class="bub" type="button" data-i="0" aria-pressed="true" aria-label="Hyaluronic acid, 2%" style="--bc:#F3C9C0"><span class="bub-s" aria-hidden="true"></span><span class="bub-l">Hyaluronic acid</span></button><button class="bub" type="button" data-i="1" aria-pressed="false" aria-label="Niacinamide, 4%" style="--bc:#F7DDB8"><span class="bub-s" aria-hidden="true"></span><span class="bub-l">Niacinamide</span></button><button class="bub" type="button" data-i="2" aria-pressed="false" aria-label="Rose clay, 1%" style="--bc:#E7A79E"><span class="bub-s" aria-hidden="true"></span><span class="bub-l">Rose clay</span></button><button class="bub" type="button" data-i="3" aria-pressed="false" aria-label="Squalane, 3%" style="--bc:#F4E6C9"><span class="bub-s" aria-hidden="true"></span><span class="bub-l">Squalane</span></button><button class="bub" type="button" data-i="4" aria-pressed="false" aria-label="Panthenol, 1.5%" style="--bc:#EBC1D0"><span class="bub-s" aria-hidden="true"></span><span class="bub-l">Panthenol</span></button></div>
+      <div class="ing-card" aria-live="polite"><p class="ic-n"><span id="ic-i">01</span> / 05</p><p class="ic-p" id="ic-p">2%</p><h3 id="ic-h">Hyaluronic acid</h3><p id="ic-d">Pulls water into the skin and holds it there, so it looks plump and dewy.</p>
+        <div class="ic-nav"><button type="button" class="rb" id="ic-prev" aria-label="Previous ingredient"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button type="button" class="rb" id="ic-next" aria-label="Next ingredient"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div>
+    </div>
+  </section>
+
+  <section class="podium" id="ritual" aria-labelledby="po-h">
+    <div class="p-stick">
+      <div class="p-head"><p class="kick"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3c.6 4.6 3.4 7.4 8 8-4.6.6-7.4 3.4-8 8-.6-4.6-3.4-7.4-8-8 4.6-.6 7.4-3.4 8-8Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><span>The ritual</span></p><h2 id="po-h">Three steps, <em data-pm="one rest.">one glow.</em></h2></div>
+      <div class="cup-a p-anc" data-a="podium"></div>
+      <ol class="p-tags">
+        <li class="pt pt1"><span>01</span><b>Cleanse</b><small data-pm="Moon Oil cleanser">Cloud Milk cleanser</small></li>
+        <li class="pt pt2"><span>02</span><b>Treat</b><small data-pm="Serum 02, night peptide">Serum 01, rose clay</small></li>
+        <li class="pt pt3"><span>03</span><b>Seal</b><small data-pm="Sleep Balm overnight mask">Dew Balm moisturiser</small></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="how" aria-labelledby="how-h">
+    <h2 id="how-h" data-rv="up">How to <em>use it.</em></h2>
+    <ol class="steps">
+      <li data-rv="up" data-rv-d="1"><span class="sn">1</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.5c3 4 5.5 7 5.5 10a5.5 5.5 0 0 1-11 0c0-3 2.5-6 5.5-10Z" fill="none" stroke="currentColor" stroke-width="1.7"/></svg><b>Three drops</b><p>On clean, slightly damp skin, morning and night.</p></li>
+      <li data-rv="up" data-rv-d="2"><span class="sn">2</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 20c-2-1.5-3-3.5-3-6V9a1.5 1.5 0 0 1 3 0v3M7 12V6.5a1.5 1.5 0 0 1 3 0V11m0-4.5V5a1.5 1.5 0 0 1 3 0v6m0-4a1.5 1.5 0 0 1 3 0v6c0 3-1.5 5.5-4 7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Press, don't rub</b><p>Warm it between your palms and press it in.</p></li>
+      <li data-rv="up" data-rv-d="3"><span class="sn">3</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 7 7M17 17l1.4 1.4M5.6 18.4 7 17M17 7l1.4-1.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><b>Seal and protect</b><p>Follow with the balm, and sunscreen in the day.</p></li>
+    </ol>
+  </section>
+
+  <section class="join" id="join" aria-labelledby="j-h">
+    <div class="j-in">
+      <h2 id="j-h" data-rv="up">Glow on your <em>own terms.</em></h2>
+      <p data-rv="up" data-rv-d="1">Serum 01 is a design concept, so there is nothing to buy yet. This page shows how its launch could feel.</p>
+      <a class="pill solid big mag" href="#join" id="cta" data-rv="up" data-rv-d="2">Join the waitlist <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <p class="toast" id="toast" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+</main>
+<template id="credits">
+  <li>Code, design and every 3D object (glass dropper bottle with serum, cleanser, balm jar, plinths, clouds) and every texture (printed labels, shadows, caustics): Zyqor Studio, modelled in code with three.js (MIT licence for the code).</li>
+  <li>Fonts: Instrument Serif by Rodrigo Fuenzalida and Jordan Egstad, and Inter Tight by Rasmus Andersson et al., SIL Open Font Licence (self-hosted).</li>
+  <li>Studio lighting on desktop: "Studio Small 09" HDRI by Sergej Majboroda, Poly Haven, CC0.</li>
+  <li>Ingredient percentages are part of the fictional product, not a real formula.</li>
+</template>
+<script src="../../vendor/lenis.min.js" defer></script>
+<script type="module" src="../_kit/chrome.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

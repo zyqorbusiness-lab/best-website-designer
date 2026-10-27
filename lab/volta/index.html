@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- phone -> light build (m.html). ?desktop=1 keeps this page. -->
+<script>(function(){if(/[?&]desktop=1/.test(location.search))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height;if(w<=860||(c&&h>w))location.replace('m.html'+location.search+location.hash);})();</script>
+<title>Volta One &middot; Concept 10 &middot; Zyqor Lab</title>
+<meta name="description" content="Volta One is a fictional electric car: a design concept by Zyqor Studio (giant name swap, night mode, spec track).">
+<meta name="theme-color" content="#E9EEF0">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../assets/font/cabinetgrotesk-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../_kit/lab.css">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">{"imports":{"three":"../../vendor/three/three.module.min.js","three/addons/":"../../vendor/three/addons/"}}</script>
+<!-- liquid glass: demo body (helper 4f5eb13e) -->
+<link rel="stylesheet" href="../../assets/glass/liquid-glass.css">
+<script type="application/json" id="lg-map">{".topnav": "lg lg-pill lg-rim", ".topnav .mode": "lg lg-pill lg-btn", ".pill-solid": "lg lg-btn lg--ink", ".specs li.card": "lg lg-card", ".d-card": "lg lg-card"}</script>
+<script src="../../assets/glass/liquid-glass.js" defer></script>
+<link rel="canonical" href="https://zyqor-portfolio-v3.sites.tab.bot/lab/volta/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Zyqor Studio">
+<meta property="og:title" content="Volta One &middot; Concept 10 &middot; Zyqor Lab">
+<meta property="og:description" content="Volta One is a fictional electric car: a design concept by Zyqor Studio (giant name swap, night mode, spec track).">
+<meta property="og:url" content="https://zyqor-portfolio-v3.sites.tab.bot/lab/volta/">
+<meta property="og:image" content="https://zyqor-portfolio-v3.sites.tab.bot/lab/volta/poster.webp">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body data-slug="volta">
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="ld-in"><span class="ld-mark">VOLTA</span><span class="ld-bar"><i></i></span><span class="ld-pc">Charging <b>0</b>%</span></div>
+</div>
+<div class="glow" id="glow" aria-hidden="true"></div>
+<div class="names" id="names" aria-hidden="true"></div>
+<canvas class="gl" id="gl" aria-hidden="true"></canvas>
+<div class="hs-layer" id="hsLayer"></div>
+<div class="cursor" id="cursor" aria-hidden="true"><span>Drag</span></div>
+
+<nav class="topnav" aria-label="Volta One">
+  <a class="tn-logo" href="#top" aria-label="Volta One, back to top"><svg viewBox="0 0 40 24" aria-hidden="true"><path d="M3 4l11 16L25 4" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M27 12h10" stroke="var(--c3)" stroke-width="3.2" stroke-linecap="round"/></svg><span>VOLTA</span></a>
+  <a class="tn-link" href="#specs">Specs</a>
+  <a class="tn-link" href="#design">Design</a>
+  <a class="tn-link" href="#reserve">Reserve</a>
+  <button class="mode" id="mode" type="button" role="switch" aria-checked="false" aria-label="Night mode">
+    <span class="mode-knob"></span>
+    <svg class="ic-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    <svg class="ic-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.6A8.3 8.3 0 0 1 9.4 4a8.3 8.3 0 1 0 10.6 10.6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+  </button>
+</nav>
+
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="h1">
+    <h1 id="h1" class="sr">Volta One, an electric car concept</h1>
+    <div class="hero-l">
+      <p class="eyebrow"><span class="dot"></span>Concept EV &middot; 2027</p>
+      <p class="hero-lede">Sculpted by air.<br><em>Quiet by nature.</em></p>
+      <div class="trims" role="radiogroup" aria-label="Choose a trim">
+        <span class="trim-ind" aria-hidden="true"></span>
+        <button class="trim on" role="radio" aria-checked="true" data-i="0"><i>01</i>One</button>
+        <button class="trim" role="radio" aria-checked="false" data-i="1"><i>02</i>One GT</button>
+        <button class="trim" role="radio" aria-checked="false" data-i="2"><i>03</i>One X</button>
+      </div>
+      <p class="paint"><span class="sw"></span><span class="paint-name">Tidal Teal</span></p>
+    </div>
+    <div class="hero-r">
+      <dl class="stats">
+        <div><dt>Range</dt><dd><b class="roll" data-k="range">540</b><small>km</small></dd></div>
+        <div><dt>0&ndash;100</dt><dd><b class="roll" data-k="acc">4.4</b><small>s</small></dd></div>
+        <div><dt>10&ndash;80%</dt><dd><b class="roll" data-k="chg">20</b><small>min</small></dd></div>
+      </dl>
+      <p class="fine">Concept figures</p>
+      <a class="pill pill-solid mag" href="#reserve">Reserve a test drive<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+    <p class="drag-hint" aria-hidden="true"><svg viewBox="0 0 48 16"><path d="M4 8h40M9 3L4 8l5 5M39 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Drag to turn</p>
+  </section>
+
+  <section class="statement" aria-label="Philosophy">
+    <p class="st-lines" id="stLines">Zero noise. Zero tailpipe. <span class="hl">All character.</span> A body pulled tight over two motors and a flat battery, drawn in one line from nose to tail.</p>
+  </section>
+
+  <section class="specs" id="specs" aria-labelledby="specsH">
+    <div class="specs-head">
+      <p class="eyebrow"><span class="dot"></span>The numbers</p>
+      <h2 id="specsH">Built to<br>move quiet.</h2>
+      <p class="fine">All figures are concept targets for a fictional car.</p>
+    </div>
+    <div class="track-wrap"><ol class="track" id="track">
+      <li class="card" data-rv="up"><span class="c-n">01</span><p class="c-k">Max range <em>One X</em></p><p class="c-v"><b class="cnt" data-to="690">0</b><small>km</small></p>
+        <svg class="viz viz-range" viewBox="0 0 220 40" aria-hidden="true"><rect x="2" y="16" width="216" height="8" rx="4" class="v-bg"/><rect x="2" y="16" width="216" height="8" rx="4" class="v-fg"/><circle cx="2" cy="20" r="6" class="v-dot"/></svg></li>
+      <li class="card" data-rv="up"><span class="c-n">02</span><p class="c-k">0&ndash;100 km/h <em>One GT</em></p><p class="c-v"><b class="cnt" data-to="2.9" data-dec="1">0</b><small>s</small></p>
+        <svg class="viz viz-arc" viewBox="0 0 220 70" aria-hidden="true"><path d="M30 64a80 80 0 0 1 160 0" class="v-bg" fill="none"/><path d="M30 64a80 80 0 0 1 160 0" class="v-fg" fill="none" pathLength="100"/></svg></li>
+      <li class="card" data-rv="up"><span class="c-n">03</span><p class="c-k">10&ndash;80% on 800 V</p><p class="c-v"><b class="cnt" data-to="18">0</b><small>min</small></p>
+        <svg class="viz viz-ring" viewBox="0 0 220 70" aria-hidden="true"><circle cx="110" cy="35" r="28" class="v-bg" fill="none"/><circle cx="110" cy="35" r="28" class="v-fg" fill="none" pathLength="100" transform="rotate(-90 110 35)"/><path d="M112 22l-8 15h7l-3 11 9-16h-7z" class="v-bolt"/></svg></li>
+      <li class="card" data-rv="up"><span class="c-n">04</span><p class="c-k">Drag coefficient</p><p class="c-v"><b class="cnt" data-to="0.198" data-dec="3">0</b><small>Cd</small></p>
+        <svg class="viz viz-air" viewBox="0 0 220 60" aria-hidden="true"><path d="M4 18c60 0 70-12 120-12s70 18 92 18" class="v-line"/><path d="M4 32c60 0 80-8 120-8s70 14 92 14" class="v-line"/><path d="M4 46c60 0 90-4 120-4s70 10 92 10" class="v-line"/></svg></li>
+      <li class="card" data-rv="up"><span class="c-n">05</span><p class="c-k">Dual motor peak <em>One GT</em></p><p class="c-v"><b class="cnt" data-to="520">0</b><small>kW</small></p>
+        <svg class="viz viz-bars" viewBox="0 0 220 50" aria-hidden="true"><rect x="10" y="30" width="22" height="18" rx="4"/><rect x="42" y="24" width="22" height="24" rx="4"/><rect x="74" y="18" width="22" height="30" rx="4"/><rect x="106" y="12" width="22" height="36" rx="4"/><rect x="138" y="6" width="22" height="42" rx="4"/><rect x="170" y="2" width="22" height="46" rx="4" class="hot"/></svg></li>
+      <li class="card" data-rv="up"><span class="c-n">06</span><p class="c-k">Glass canopy</p><p class="c-v"><b class="cnt" data-to="2.1" data-dec="1">0</b><small>m&sup2;</small></p>
+        <svg class="viz viz-glass" viewBox="0 0 220 60" aria-hidden="true"><path d="M20 50c18-26 50-40 96-40 40 0 70 14 84 40z" class="v-bg"/><path d="M20 50c18-26 50-40 96-40 40 0 70 14 84 40z" class="v-fg" pathLength="100" fill="none"/></svg></li>
+    </ol></div>
+    <div class="track-prog" aria-hidden="true"><i id="trackBar"></i></div>
+  </section>
+
+  <section class="design" id="design" aria-labelledby="designH">
+    <div class="d-panel">
+      <p class="eyebrow"><span class="dot"></span>Design details</p>
+      <h2 id="designH">Tap a light.</h2>
+      <div class="d-card" id="dCard" aria-live="polite">
+        <span class="d-n" id="dN">01</span>
+        <h3 id="dT">Signature light bar</h3>
+        <p id="dP">One unbroken LED line wraps the nose and fades into the shoulders. At night it is the first thing you see and the last you forget.</p>
+      </div>
+      <div class="d-nav"><button class="arr" id="dPrev" aria-label="Previous detail"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button class="arr" id="dNext" aria-label="Next detail"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+    </div>
+  </section>
+
+  <section class="cta" id="reserve" aria-labelledby="ctaH">
+    <div class="cta-in">
+      <p class="eyebrow"><span class="dot"></span>Reserve</p>
+      <h2 id="ctaH">Your quiet<br>hour starts<br><span class="hl">here.</span></h2>
+      <p class="cta-sum">Selected: <b id="ctaTrim">Volta One</b> in <b id="ctaPaint">Tidal Teal</b></p>
+      <a class="pill pill-solid pill-xl mag" href="#reserve" id="ctaBtn">Reserve a test drive<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <p class="fine" id="ctaNote">Concept only. Volta is a fictional brand and takes no bookings.</p>
+    </div>
+  </section>
+</main>
+<template id="credits">
+  <li>Code and design: Zyqor Studio (MIT licence for the code).</li>
+  <li>3D model: "Car Concept" from the Khronos glTF Sample Assets (github.com/KhronosGroup/glTF-Sample-Assets), CC-BY 4.0; recoloured, licence plate removed, compressed by Zyqor Studio. A fictional concept car, no real brand.</li>
+  <li>Studio lighting: "Studio Small 09" HDRI by Sergej Majboroda, Poly Haven, CC0.</li>
+  <li>Fonts: Unbounded (Google Fonts, SIL Open Font License 1.1) and Space Grotesk (Florian Karsten, SIL Open Font License 1.1).</li>
+  <li>Libraries: three.js (MIT), GSAP and ScrollTrigger (GreenSock standard licence), Lenis (MIT).</li>
+</template>
+<script src="../../vendor/gsap.min.js" defer></script>
+<script src="../../vendor/ScrollTrigger.min.js" defer></script>
+<script src="../../vendor/lenis.min.js" defer></script>
+<script type="module" src="../_kit/chrome.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- phone -> light build (m.html). ?desktop=1 keeps this page. -->
+<script>(function(){if(/[?&]desktop=1/.test(location.search))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height;if(w<=860||(c&&h>w))location.replace('m.html'+location.search+location.hash);})();</script>
+<title>Signal Studio &middot; Concept 09 &middot; Zyqor Lab</title>
+<meta name="description" content="Signal Studio is a fictional creative agency: a design concept by Zyqor Studio (radial card fan, bento grid, physics playground).">
+<meta name="theme-color" content="#F1EEE6">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../assets/font/cabinetgrotesk-800.woff2" as="font" type="font/woff2" crossorigin>
+<script type="importmap">{"imports":{"three":"../../vendor/three/three.module.min.js","three/addons/":"../../vendor/three/addons/"}}</script>
+<link rel="stylesheet" href="../_kit/lab.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="mode.css">
+<!-- liquid glass: demo body (helper 4f5eb13e) -->
+<link rel="stylesheet" href="../../assets/glass/liquid-glass.css">
+<script type="application/json" id="lg-map">{".sbar": "lg lg-pill lg-rim", ".mode": "lg lg-pill", ".pill-line": "lg lg-btn"}</script>
+<script src="../../assets/glass/liquid-glass.js" defer></script>
+<link rel="canonical" href="https://zyqor-portfolio-v3.sites.tab.bot/lab/signal/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Zyqor Studio">
+<meta property="og:title" content="Signal Studio &middot; Concept 09 &middot; Zyqor Lab">
+<meta property="og:description" content="Signal Studio is a fictional creative agency: a design concept by Zyqor Studio (radial card fan, bento grid, physics playground).">
+<meta property="og:url" content="https://zyqor-portfolio-v3.sites.tab.bot/lab/signal/">
+<meta property="og:image" content="https://zyqor-portfolio-v3.sites.tab.bot/lab/signal/poster.webp">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body data-slug="signal">
+<div class="cursor" aria-hidden="true"><span></span></div>
+<header class="sbar">
+  <a class="slogo" href="#top" aria-label="Signal Studio, back to top"><span class="sdot" aria-hidden="true"></span>Signal</a>
+  <nav class="snav" aria-label="Sections"><a href="#services">Services</a><a href="#play">Playground</a><a href="#process">Process</a></nav>
+  <a class="sgo mag concept" href="#talk" data-cursor="Hi">Start a project</a>
+</header>
+<div class="mode" role="group" aria-label="Page mode">
+  <span class="mode-k" aria-hidden="true">Mode</span>
+  <button type="button" class="mode-b" data-mode="calm" aria-pressed="true"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4h3l5 4V6L7 10H4Z"/></svg>Calm</button>
+  <button type="button" class="mode-b" data-mode="loud" aria-pressed="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4h3l5 4V6L7 10H4Z"/><path d="M15.5 9a4 4 0 0 1 0 6M18.5 6.5a7.5 7.5 0 0 1 0 11"/></svg>Loud</button>
+  <i class="mode-th" aria-hidden="true"></i>
+</div>
+<main id="main">
+  <section class="hero" id="top" aria-label="Signal Studio">
+    <div class="hero-pin">
+      <div class="rings" aria-hidden="true"><i></i><i></i><i></i></div>
+      <h1 class="hl"><span class="hl-l"><span>Make them</span></span><span class="hl-l"><span>stop</span></span><span class="hl-l"><span>scrolling.</span></span></h1>
+      <div class="deck" aria-hidden="true"><div class="card c-film" data-i="0"><div class="art" aria-hidden="true"></div><span class="clab"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5.5v13l11-6.5-11-6.5Z"/></svg>Brand film</span></div><div class="card c-dots" data-i="1"><div class="art" aria-hidden="true"></div><span class="clab"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M18 6l-2.5 2.5M8.5 15.5 6 18"/></svg>Launch reel</span></div><div class="card c-stripe" data-i="2"><div class="art" aria-hidden="true"></div><span class="clab"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="2.5"/><path d="M11 18h2"/></svg>Social kit</span></div><div class="card c-grid" data-i="3"><div class="art" aria-hidden="true"></div><span class="clab"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3 9h18M6 7h.01M8.5 7h.01"/></svg>Web drop</span></div><div class="card c-orb" data-i="4"><div class="art" aria-hidden="true"></div><span class="clab"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 20 7.5v9L12 21l-8-4.5v-9L12 3Z"/><path d="M12 12 20 7.5M12 12 4 7.5M12 12v9"/></svg>3D loop</span></div><div class="card c-type" data-i="5"><div class="art" aria-hidden="true"><b>Aa</b></div><span class="clab"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 6.5V5h14v1.5M12 5v14M9 19h6"/></svg>Type system</span></div><div class="card c-wave" data-i="6"><div class="art" aria-hidden="true"></div><span class="clab"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c2-4 4-4 6 0s4 4 6 0 4-4 6 0"/></svg>Motion pack</span></div><div class="card c-go" data-i="7"><div class="art" aria-hidden="true"><b>GO</b></div><span class="clab"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4h3l7 4V6L7 10H4Z"/><path d="M17.5 9a4 4 0 0 1 0 6"/></svg>Campaign</span></div></div>
+      <div class="hero-side">
+        <p class="eyebrow"><span class="live"></span>Creative studio &middot; Concept 09</p>
+        <p class="lede">Brand, web and motion for teams who want to be noticed. We make the thing people actually stop for.</p>
+        <div class="hero-cta"><a class="pill pill-solid mag" href="#services" data-cursor="Go">What we do <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a><a class="pill pill-line mag" href="#play" data-cursor="Play">Play with us</a></div>
+      </div>
+      <p class="scroll-cue"><i></i>Scroll to fold the deck</p>
+    </div>
+  </section>
+
+  <section class="services" id="services" aria-labelledby="svc-h">
+    <div class="sec-head"><p class="tag" data-rv>Services</p><h2 id="svc-h" data-rv data-rv-d="1">Six ways<br>to be loud.</h2></div>
+    <div class="bento">
+      <article class="tile t-brand" style="--i:0"><div class="tin"><svg class="sig" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="10"/><path d="M38 38a31 31 0 0 0 0 44M82 38a31 31 0 0 1 0 44"/><path d="M24 24a51 51 0 0 0 0 72M96 24a51 51 0 0 1 0 72"/></svg><p class="tno">01</p><h3>Branding</h3><p>Names, marks and the rules that keep them loud everywhere.</p></div></article>
+      <article class="tile t-web" style="--i:1"><div class="tin"><div class="mini" aria-hidden="true"><i></i><i></i><i></i><span class="mb"></span><span class="ml"></span><span class="ml s"></span><span class="mbtn"></span><svg class="mcur" viewBox="0 0 24 24"><path d="M5 3l14 8-6 1.5L10 19 5 3Z"/></svg></div><p class="tno">02</p><h3>Web design</h3><p>Fast, animated sites that feel built, not templated.</p></div></article>
+      <article class="tile t-motion" style="--i:2"><div class="tin"><div class="easebox" aria-hidden="true"><svg class="ease" viewBox="0 0 160 90" width="160" height="90"><path d="M8 82C70 82 70 8 152 8"/></svg><span class="edot"></span></div><p class="tno">03</p><h3>Motion</h3><p>Logos that move and reels that loop.</p></div></article>
+      <article class="tile t-3d" style="--i:3"><div class="tin"><div class="spk" aria-hidden="true"><img class="spk-still s-calm" src="../../assets/lab/signal/one-tile-calm.webp" alt="" width="360" height="460" loading="lazy" decoding="async"><img class="spk-still s-loud" src="../../assets/lab/signal/one-tile-loud.webp" alt="" width="360" height="460" loading="lazy" decoding="async"><i class="spk-wave"></i></div><p class="tno">04</p><h3>3D</h3><p>Products and worlds rendered in the browser.</p></div></article>
+      <article class="tile t-social" style="--i:4"><div class="tin"><div class="story" aria-hidden="true"><i></i><i></i><i></i></div><p class="tno">05</p><h3>Social</h3><p>Content kits sized for every feed.</p></div></article>
+      <article class="tile t-strat" style="--i:5"><div class="tin"><div class="bars" aria-hidden="true"><i style="--h:.35"></i><i style="--h:.55"></i><i style="--h:.42"></i><i style="--h:.78"></i><i style="--h:.62"></i><i style="--h:.95"></i></div><p class="tno">06</p><h3>Strategy</h3><p>The why before the wow: audience, message, plan.</p></div></article>
+    </div>
+  </section>
+
+  <section class="play" id="play" aria-labelledby="play-h">
+    <div class="play-head"><p class="tag" data-rv>Playground</p><h2 id="play-h" data-rv data-rv-d="1">Everything<br>we do, in a pile.</h2><p class="play-note" data-rv data-rv-d="2">Grab a pill and throw it. They bounce off the idea.</p></div>
+    <div class="arena" id="arena">
+      <button class="idea" id="idea" type="button" data-cursor="Drop"><span class="idea-k">Brief box</span><b>Drop your<br>idea here</b><small>Click to drop more</small></button>
+      <div class="pills" id="pills"><span class="ppill">Branding</span><span class="ppill alt">Web design</span><span class="ppill hot">Motion</span><span class="ppill">3D</span><span class="ppill alt">Strategy</span><span class="ppill">Social</span><span class="ppill">Type</span><span class="ppill alt">Packaging</span><span class="ppill">Campaigns</span><span class="ppill">UI / UX</span><span class="ppill alt">Copy</span><span class="ppill">Launch</span><span class="ppill hot">Video</span><span class="ppill alt">Identity</span><span class="ppill">Art direction</span><span class="ppill">Product</span></div>
+    </div>
+  </section>
+
+  <section class="process" id="process" aria-labelledby="pr-h">
+    <div class="sec-head"><p class="tag" data-rv>Process</p><h2 id="pr-h" data-rv data-rv-d="1">Four steps.<br>No mystery.</h2></div>
+    <ol class="steps">
+      <li data-rv data-rv-d="1"><b>01</b><span class="sic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M8 15c0-6 1.5-10 6-10a5 5 0 0 1 5 5c0 3-3 3.5-3 6s-1 4-3.5 4C10 20 8 18 8 15Z"/></svg></span><h3>Listen</h3><p>One call, one doc. What you sell, who it's for, what's in the way.</p></li>
+      <li data-rv data-rv-d="2"><b>02</b><span class="sic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16v4Z"/><path d="M13.5 6.5l4 4"/></svg></span><h3>Sketch</h3><p>Three directions on one board. You pick, we push it further.</p></li>
+      <li data-rv data-rv-d="3"><b>03</b><span class="sic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 7 3.5 12l5 5M15.5 7l5 5-5 5"/></svg></span><h3>Build</h3><p>Design and code in the same loop, with a live link every week.</p></li>
+      <li data-rv data-rv-d="4"><b>04</b><span class="sic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15c-2-2-2.5-5-1-8.5C12.5 3.5 15 2.5 20.5 3.5c1 5.5 0 8-3 9.5-3.5 1.5-5.5 1-5.5 2Z"/><path d="M9 12.5 6 13l-2.5 3.5 4-.5M11.5 15l-.5 3 3.5-2.5.5-4"/></svg></span><h3>Launch</h3><p>Ship it, film it, post it. Then we tune what people react to.</p></li>
+    </ol>
+    <div class="pline" aria-hidden="true"><i></i></div>
+  </section>
+
+  <section class="end" id="talk" aria-labelledby="end-h">
+    <div class="end-top">
+      <h2 id="end-h" data-rv>Got something<br>loud to say?</h2>
+      <a class="pill pill-solid mag concept" href="#talk" data-cursor="Hi">Start a project <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+    </div>
+    <p class="giant" aria-label="Signal"><span>S</span><span>I</span><span>G</span><span>N</span><span>A</span><span>L</span></p>
+  </section>
+</main>
+<div class="toast" role="status" aria-live="polite"></div>
+<template id="credits">
+  <li>Code and design: Zyqor Studio (MIT licence for the code). Cards, tiles and icons are drawn in CSS and SVG; no photos are used.</li>
+  <li>3D: the "One" speaker is modelled in code with three.js (MIT): lathe-turned aluminium, procedural woven fabric, rubber foot, LED ring. The card and phone stills are rendered from the same scene.</li>
+  <li>Studio lighting: "Studio Small 09" HDRI by Sergej Majboroda, Poly Haven, CC0.</li>
+  <li>Fonts: Unbounded by NORD ID and Inter Tight by Rasmus Andersson et al., both SIL Open Font Licence, via Google Fonts.</li>
+  <li>Libraries: GSAP (Standard licence), Matter.js (MIT), Lenis (MIT).</li>
+  <li>Signal Studio is a fictional agency: no real clients, work, reviews or results are shown.</li>
+</template>
+<script src="../../vendor/gsap.min.js" defer></script>
+<script src="../../vendor/matter.min.js" defer></script>
+<script src="../../vendor/lenis.min.js" defer></script>
+<script type="module" src="../_kit/chrome.js"></script>
+<script type="module" src="app.js"></script>
+<script type="module" src="spk-tile.js"></script>
+</body>
+</html>

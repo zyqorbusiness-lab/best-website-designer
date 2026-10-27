@@ -1,0 +1,139 @@
+/* =====================================================================
+   Zyqor liquid glass  v1  (Oct 27, 2026)  site/assets/glass/liquid-glass.css
+   One shared material for every screen: home, /m/, Lab chrome, studio pages.
+   Classes:  .lg  surface      .lg-pill  capsule     .lg-btn  pressable CTA
+             .lg-card tile     .lg-menu  modal/menu  .lg-seg  mode switch
+             .lg-dock phone bar .lg-round circle     .lg-rim  gradient rim (uses ::after)
+   Tints:    .lg--dark (ink glass)  .lg--accent (tinted CTA glass)  .lg--clear (thin)
+   Tokens (set on any ancestor, all optional):
+     --lg-tint   surface colour   default: var(--c1) on Lab pages, else Ivory #F3EDE1
+     --lg-ink    shadow/depth     default: var(--c2), else Pine #17423C
+     --lg-accent CTA tint         default: var(--c3), else Ochre #B5832F
+     --lg-alpha  tint strength (%)   --lg-blur (px)   --lg-sat (%)
+   The material owns background, backdrop-filter and box-shadow (marked !important so it
+   wins over older page rules); layout, padding, colour and type stay the page's own.
+   liquid-glass.js adds: edge refraction (Chromium desktop), pointer + scroll specular.
+   ===================================================================== */
+@property --lg-x{syntax:"<percentage>";inherits:true;initial-value:28%}
+@property --lg-y{syntax:"<percentage>";inherits:true;initial-value:-10%}
+@property --lg-hl{syntax:"<number>";inherits:true;initial-value:.6}
+@property --lg-a{syntax:"<angle>";inherits:true;initial-value:132deg}
+
+.lg{
+ --_t:var(--lg-tint,var(--c1,#F3EDE1));
+ --_i:var(--lg-ink,var(--c2,#17423C));
+ --_al:var(--lg-alpha,48%);
+ --_spec:rgba(255,255,255,calc(.5*var(--lg-hl)));
+ --_rim:rgba(255,255,255,.78);
+ --_rim2:rgba(255,255,255,.26);
+ --_edge:rgba(255,255,255,.30);
+ isolation:isolate;
+ background:
+  radial-gradient(110% 150% at var(--lg-x) var(--lg-y),var(--_spec),rgba(255,255,255,0) 48%),
+  linear-gradient(180deg,rgba(255,255,255,.30),rgba(255,255,255,.05) 42%,rgba(255,255,255,0) 64%,rgba(255,255,255,.10)),
+  color-mix(in srgb,var(--_t) var(--_al),transparent) !important;
+ -webkit-backdrop-filter:blur(var(--lg-blur,14px)) saturate(var(--lg-sat,175%)) brightness(1.04) !important;
+ backdrop-filter:var(--lg-filter,) blur(var(--lg-blur,14px)) saturate(var(--lg-sat,175%)) brightness(1.04) !important;
+ box-shadow:
+  inset 0 1px 0 0 var(--_rim),
+  inset 0 0 0 1px var(--_edge),
+  inset 0 -1px 1px 0 var(--_rim2),
+  inset 0 -14px 22px -18px color-mix(in srgb,var(--_i) 26%,transparent),
+  0 1px 2px color-mix(in srgb,var(--_i) 10%,transparent),
+  0 12px 32px -14px color-mix(in srgb,var(--_i) 38%,transparent) !important;
+ transition:--lg-hl .5s ease,--lg-x .25s ease,--lg-y .25s ease,transform .45s cubic-bezier(.3,1.5,.5,1),box-shadow .35s ease;
+}
+.lg-pill{border-radius:999px;--lg-alpha:62%}
+.lg-round{border-radius:50%;--lg-alpha:60%}
+.lg-card{border-radius:var(--lg-radius,22px);--lg-alpha:40%;--lg-blur:20px}
+.lg-menu{border-radius:var(--lg-radius,20px);--lg-alpha:72%;--lg-blur:28px;--lg-sat:180%}
+.lg-seg{border-radius:999px;--lg-alpha:52%}
+.lg-dock{border-radius:var(--lg-radius,24px);--lg-alpha:66%;--lg-blur:18px}
+.lg--clear{--lg-alpha:22%;--lg-blur:8px}
+
+/* ink glass, for dark sections (footer, pricing, night modes) */
+.lg--dark{
+ --_t:var(--lg-tint-dark,var(--lg-ink,var(--c2,#17423C)));
+ --_al:var(--lg-alpha-dark,58%);
+ --_spec:rgba(255,255,255,calc(.20*var(--lg-hl)));
+ --_rim:rgba(255,255,255,.30);--_rim2:rgba(255,255,255,.10);--_edge:rgba(255,255,255,.12);
+}
+/* tinted CTA glass: accent pushed dark enough that ivory text stays AA (>= 4.5:1) */
+.lg--accent{
+ --_t:color-mix(in srgb,var(--lg-accent,var(--c3,#B5832F)) 70%,#1d1307);
+ --_al:var(--lg-alpha-accent,93%);
+ --_spec:rgba(255,236,200,calc(.42*var(--lg-hl)));
+ --_rim:rgba(255,240,210,.62);--_edge:rgba(255,230,190,.22);
+}
+.lg--ink{ /* solid-ish dark CTA (Pine) */
+ --_t:var(--lg-ink,var(--c2,#17423C));--_al:90%;
+ --_spec:rgba(255,255,255,calc(.24*var(--lg-hl)));--_rim:rgba(255,255,255,.34);--_edge:rgba(255,255,255,.12);
+}
+
+/* tinted glass keeps a softer top sheen so its text contrast holds */
+.lg--accent,.lg--ink,.lg--dark{
+ background:
+  radial-gradient(110% 150% at var(--lg-x) var(--lg-y),var(--_spec),rgba(255,255,255,0) 48%),
+  linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,.02) 46%,rgba(0,0,0,0) 64%,rgba(255,255,255,.05)),
+  color-mix(in srgb,var(--_t) var(--_al),transparent) !important}
+
+/* pressable: spring lift, liquid squash on press */
+.lg-btn{border-radius:999px;cursor:pointer;will-change:transform}
+@media (hover:hover) and (pointer:fine){
+ .lg-btn:hover{transform:translateY(-1.5px);--lg-hl:1}
+}
+.lg-btn:active{transform:scale(.965,.94);--lg-hl:1.15;transition-duration:.12s}
+
+/* mode switch: active segment gets a brighter inner glass lens */
+.lg-seg>[aria-pressed="true"],.lg-seg>[aria-selected="true"],.lg-seg>[aria-checked="true"],.lg-seg>.is-active,.lg-seg>.on{
+ background:linear-gradient(180deg,rgba(255,255,255,.72),rgba(255,255,255,.38)) !important;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.95),inset 0 0 0 1px rgba(255,255,255,.4),0 4px 12px -6px color-mix(in srgb,var(--lg-ink,var(--c2,#17423C)) 45%,transparent) !important;
+ color:var(--lg-ink,var(--c2,#17423C)) !important;
+}
+.lg--dark.lg-seg>[aria-pressed="true"],.lg--dark.lg-seg>.is-active{background:rgba(255,255,255,.16) !important;color:inherit !important}
+
+/* gradient rim that turns with the light (opt-in: uses the element's ::after) */
+.lg-rim{position:relative}
+.lg-rim::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;pointer-events:none;z-index:1;
+ background:conic-gradient(from var(--lg-a),rgba(255,255,255,.95),rgba(255,255,255,.14) 22%,rgba(255,255,255,.05) 45%,rgba(255,255,255,.55) 62%,rgba(255,255,255,.12) 80%,rgba(255,255,255,.95));
+ -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;
+ mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);opacity:.9}
+.lg--dark.lg-rim::after{opacity:.45}
+
+/* keyboard focus reads on any backdrop */
+.lg:focus-visible{outline:2px solid var(--lg-accent,var(--c3,#B5832F));outline-offset:3px}
+
+/* ---------- phone / coarse pointer: lighter material, no refraction, no pointer work ---------- */
+html.lg-lite .lg,html[data-build="m"] .lg{
+ -webkit-backdrop-filter:blur(var(--lg-blur-lite,10px)) saturate(160%) !important;
+ backdrop-filter:blur(var(--lg-blur-lite,10px)) saturate(160%) !important;
+ box-shadow:
+  inset 0 1px 0 0 var(--_rim),
+  inset 0 0 0 1px var(--_edge),
+  0 8px 22px -12px color-mix(in srgb,var(--_i) 36%,transparent) !important;
+ transition:transform .3s cubic-bezier(.3,1.4,.5,1);
+}
+@media (hover:none) and (pointer:coarse){
+ .lg{-webkit-backdrop-filter:blur(10px) saturate(160%) !important;backdrop-filter:blur(10px) saturate(160%) !important}
+}
+
+/* ---------- no backdrop-filter: a solid, still premium surface ---------- */
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+ .lg{background:linear-gradient(180deg,rgba(255,255,255,.22),rgba(255,255,255,0) 60%),color-mix(in srgb,var(--_t) 94%,#fff) !important}
+ .lg--dark,.lg--accent,.lg--ink{background:color-mix(in srgb,var(--_t) 97%,transparent) !important}
+}
+/* ---------- user asked for less transparency: opaque surface, same shape and rim ---------- */
+@media (prefers-reduced-transparency:reduce){
+ .lg{-webkit-backdrop-filter:none !important;backdrop-filter:none !important;
+  background:color-mix(in srgb,var(--_t) 97%,#fff) !important}
+ .lg--dark,.lg--accent,.lg--ink{background:var(--_t) !important}
+}
+html.lg-solid .lg{-webkit-backdrop-filter:none !important;backdrop-filter:none !important;background:color-mix(in srgb,var(--_t) 97%,#fff) !important}
+html.lg-solid .lg--dark,html.lg-solid .lg--accent,html.lg-solid .lg--ink{background:var(--_t) !important}
+@media (prefers-reduced-motion:reduce){
+ .lg,.lg-btn,.lg-rim::after{transition:none !important}
+ .lg-btn:hover,.lg-btn:active{transform:none}
+}
+@media (forced-colors:active){
+ .lg{border:1px solid CanvasText;background:Canvas !important;backdrop-filter:none !important}
+}

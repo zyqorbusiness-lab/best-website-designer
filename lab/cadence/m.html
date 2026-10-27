@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en" data-build="m">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>(function(){if(/[?&]m=1/.test(location.search))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height;if(w>860&&!(c&&h>w))location.replace('./'+location.search+location.hash);})();</script>
+<title>TALUS Ridge C1 &middot; Concept &middot; Zyqor Lab</title>
+<meta name="description" content="TALUS Ridge C1 is a fictional carbon trail bike: a 3D design concept by Zyqor Studio with a scroll-driven exploded view, colourways and a dusk mode.">
+<meta name="theme-color" content="#ECE6DC">
+<meta property="og:title" content="TALUS Ridge C1 · a Zyqor Lab concept">
+<meta property="og:description" content="Fictional carbon trail bike. Pull it apart on scroll, paint it, ride it at dusk.">
+<meta property="og:image" content="poster.webp">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../assets/font/bricolage-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/lab/cadence/still-g0.webp" as="image" type="image/webp">
+<link rel="stylesheet" href="../_kit/lab.css">
+<link rel="stylesheet" href="m.css">
+<script type="importmap">{"imports":{"three":"../../vendor/three/three.module.min.js","three/addons/":"../../vendor/three/addons/"}}</script>
+<!-- liquid glass: demo body (helper 4f5eb13e) -->
+<link rel="stylesheet" href="../../assets/glass/liquid-glass.css">
+<script type="application/json" id="lg-map">{".pills .pill.solid,.pill.solid.big": "lg lg-btn lg--ink", ".pills .pill:not(.solid)": "lg lg-btn", ".mode": "lg lg-seg", ".tagc": "lg lg-pill lg--ink"}</script>
+<script src="../../assets/glass/liquid-glass.js" defer></script>
+<link rel="canonical" href="https://zyqor-portfolio-v3.sites.tab.bot/lab/cadence/m.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Zyqor Studio">
+<meta property="og:url" content="https://zyqor-portfolio-v3.sites.tab.bot/lab/cadence/m.html">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body data-slug="cadence" data-way="glacier" data-mode="studio">
+<header class="brand" aria-label="TALUS">
+  <span class="mark"><svg viewBox="0 0 64 40" aria-hidden="true"><path d="M0 40 24 2l13 20 9-12 18 30z" fill="currentColor"/></svg>TALUS</span>
+  <span class="tagc">Concept</span>
+</header>
+<main id="main">
+  <section class="hero" id="hero">
+    <p class="kicker intro">Ridge C1 &middot; carbon trail</p>
+    <h1 class="giant" aria-label="Ridge"><span>R</span><span>I</span><span>D</span><span>G</span><span>E</span></h1>
+    <figure class="bike hero-bike intro"><img src="../../assets/lab/cadence/still-g0.webp" width="780" height="534" alt="The fictional TALUS Ridge C1 trail bike in Glacier, side view" fetchpriority="high" decoding="async"></figure>
+    <p class="lede intro">A trail bike drawn around one idea: every part you can see is a part you can reach with a 5 mm key.</p>
+    <div class="pills intro">
+      <a class="pill solid" href="#apart">Pull it apart <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
+      <a class="pill" href="#paint">Paint</a>
+    </div>
+  </section>
+
+  <section class="apart" id="apart" aria-label="Exploded view">
+    <p class="num">01</p>
+    <h2 data-rv>One frame.<br><em>Every</em> part.</h2>
+    <p class="sub" data-rv>Slide to take the C1 down the way a mechanic would.</p>
+    <div class="tear" data-rv>
+      <img class="t0" src="../../assets/lab/cadence/still-g0.webp" width="780" height="534" alt="" loading="lazy" decoding="async">
+      <img class="t1" src="../../assets/lab/cadence/still-g5.webp" width="780" height="581" alt="" loading="lazy" decoding="async">
+      <img class="t2" src="../../assets/lab/cadence/still-g1.webp" width="780" height="450" alt="" loading="lazy" decoding="async">
+    </div>
+    <label class="slide"><span class="sr">Teardown amount</span><input id="tearR" type="range" min="0" max="100" value="0" step="50"></label>
+    <ol class="steps" id="tearSteps"><li class="on">Assembled</li><li>Wheels and cockpit off</li><li>Bare frame</li></ol>
+  </section>
+
+  <section class="paint" id="paint" aria-label="Colourways">
+    <p class="num">02</p>
+    <h2 id="wayName">Glacier</h2>
+    <p class="sub" id="waySub">Cold blue-grey under four coats of clear. Looks wet at the trailhead, looks wet after it.</p>
+    <figure class="bike paint-bike"><img id="wayImg" src="../../assets/lab/cadence/still-g0.webp" width="780" height="534" alt="TALUS Ridge C1 frame colourway" loading="lazy" decoding="async"></figure>
+    <div class="ways" role="radiogroup" aria-label="Frame colourway">
+      <button class="way on" role="radio" aria-checked="true" data-way="glacier"><i style="--w:#8FB3C7"></i><span>Glacier</span></button>
+      <button class="way" role="radio" aria-checked="false" data-way="oxide"><i style="--w:#A4472A"></i><span>Oxide</span></button>
+      <button class="way" role="radio" aria-checked="false" data-way="chalk"><i style="--w:#E4DCCB"></i><span>Chalk</span></button>
+    </div>
+  </section>
+
+  <section class="spec" id="spec" aria-label="Specification">
+    <div class="spec-in">
+      <p class="num">03</p>
+      <h2 data-rv>The numbers we would hold it to.</h2>
+      <p class="spec-note" data-rv data-rv-d="1">Design targets for a fictional bike. Nothing here has been built or tested.</p>
+      <dl class="grid">
+        <div data-rv data-rv-d="1"><dt>Travel</dt><dd><span class="roll" data-to="140">0</span><small>mm front</small></dd><p>130 mm rear on a single-pivot linkage that keeps the shock out of the mud line.</p></div>
+        <div data-rv data-rv-d="2"><dt>Head angle</dt><dd><span class="roll" data-to="64.5" data-dec="1">0</span><small>deg</small></dd><p>Slack enough to stay calm when the trail tips, steep enough to climb back up it.</p></div>
+        <div data-rv data-rv-d="3"><dt>Gears</dt><dd><span class="roll" data-to="12">0</span><small>speed</small></dd><p>One ring up front, 10 to 52 out back. No front mech, nothing to tune.</p></div>
+        <div data-rv data-rv-d="4"><dt>Frame target</dt><dd><span class="roll" data-to="2.1" data-dec="1">0</span><small>kg</small></dd><p>Size M with hardware, paint and the stealth dropper routing included.</p></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="dusk" id="dusk" aria-label="Studio and dusk modes">
+    <p class="num">04</p>
+    <h2 data-rv>Last light is<br>still riding light.</h2>
+    <p class="sub" data-rv>Flip the studio off. The lacquer picks up the low sun and the logo on the sidewall gets its moment.</p>
+    <figure class="bike dusk-bike"><img id="duskImg" src="../../assets/lab/cadence/still-g0.webp" width="780" height="534" alt="TALUS Ridge C1 under studio light" loading="lazy" decoding="async"></figure>
+    <div class="mode" role="group" aria-label="Light">
+      <button class="mode-b on" data-mode="studio" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg>Studio</button>
+      <button class="mode-b" data-mode="dusk" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18h18M6 18a6 6 0 0 1 12 0M12 6v3"/></svg>Dusk</button>
+    </div>
+  </section>
+
+  <section class="cta" id="ride" aria-label="Test ride">
+    <h2 data-rv>Ride the<br>drawing.</h2>
+    <p data-rv data-rv-d="1">TALUS is a concept by Zyqor Studio. There is no bike to buy and no shop behind this button.</p>
+    <a class="pill solid big" id="ctaBtn" href="#ride" data-rv data-rv-d="2">Book a test ride <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <p class="toast" id="toast" role="status" aria-live="polite"></p>
+  </section>
+</main>
+<footer class="mback"><a href="../../m/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>Back to Zyqor Studio</a></footer>
+<template id="credits">
+  <li>Code and design: Zyqor Studio (MIT licence for the code). TALUS and Ridge C1 are fictional; this is a concept, not a product for sale.</li>
+  <li>3D model: "Carbon Frame Bike" by Robert Schweier and <a href="https://prefrontalcortex.de" target="_blank" rel="noopener">prefrontal cortex</a> (realtime version and animation by Felix Herbst, with support from Needle), <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via the <a href="https://github.com/usd-wg/assets/tree/main/full_assets/CarbonFrameBike" target="_blank" rel="noopener">USD-WG assets</a> / <a href="https://github.com/KhronosGroup/glTF-Sample-Models/pull/357" target="_blank" rel="noopener">Khronos glTF sample</a>. Modified by Zyqor Studio: original builder and studio logos replaced with the fictional TALUS mark, frame paint recoloured, compressed (meshopt, WebP). The modified model is shared under the same CC BY-SA 4.0 licence.</li>
+  <li>Studio lighting: "Studio Small 09" HDRI by Sergej Majboroda, Poly Haven, CC0.</li>
+  <li>Type: Bricolage Grotesque (SIL Open Font Licence) and Satoshi by Indian Type Foundry (Fontshare free licence).</li>
+</template>
+<script type="module" src="../_kit/chrome.js"></script>
+<script type="module" src="m.js"></script>
+</body>
+</html>

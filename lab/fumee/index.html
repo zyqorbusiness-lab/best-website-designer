@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- phone -> light build (m.html). ?desktop=1 keeps this page. -->
+<script>(function(){if(/[?&]desktop=1/.test(location.search))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height;if(w<=860||(c&&h>w))location.replace('m.html'+location.search+location.hash);})();</script>
+<title>Fumée &middot; Scent, in motion &middot; Zyqor Lab concept</title>
+<meta name="description" content="Fumée is a fictional perfume house: a motion design concept by Zyqor Studio, with a WebGL smoke field, pinned scroll sequences, kinetic type and a liquid transition between three scents.">
+<meta name="theme-color" content="#36302B">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../assets/lab/fumee/boska-400i.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/lab/fumee/generalsans-500.woff2" as="font" type="font/woff2" crossorigin>
+<script>(function(d){d.classList.add(matchMedia('(prefers-reduced-motion: reduce)').matches?'rm':'js');setTimeout(function(){d.classList.add('ld-done')},12000)})(document.documentElement)</script>
+<link rel="stylesheet" href="../_kit/lab.css">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">{"imports":{"three":"../../vendor/three/three.module.min.js","three/addons/":"../../vendor/three/addons/"}}</script>
+<!-- liquid glass: demo body (helper 4f5eb13e) -->
+<link rel="stylesheet" href="../../assets/glass/liquid-glass.css">
+<script type="application/json" id="lg-map">{"header.brand": "lg lg-pill lg-rim lg--dark", ".btn-solid": "lg lg-btn lg--ink", ".btn-ghost": "lg lg-btn lg--dark", ".arrow": "lg lg-round lg-btn lg--dark"}</script>
+<script src="../../assets/glass/liquid-glass.js" defer></script>
+<link rel="canonical" href="https://zyqor-portfolio-v3.sites.tab.bot/lab/fumee/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Zyqor Studio">
+<meta property="og:title" content="Fumée &middot; Scent, in motion &middot; Zyqor Lab concept">
+<meta property="og:description" content="Fumée is a fictional perfume house: a motion design concept by Zyqor Studio, with a WebGL smoke field, pinned scroll sequences, kinetic type and a liquid transition between three scents.">
+<meta property="og:url" content="https://zyqor-portfolio-v3.sites.tab.bot/lab/fumee/">
+<meta property="og:image" content="https://zyqor-portfolio-v3.sites.tab.bot/lab/fumee/poster.webp">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body data-slug="fumee" class="is-loading">
+<div class="loader" aria-hidden="true">
+  <div class="ld-in">
+    <p class="ld-word"><span>F</span><span>u</span><span>m</span><span>é</span><span>e</span></p>
+    <div class="ld-row"><span class="ld-cap">Maison de parfum, a concept</span><span class="ld-num">000</span></div>
+    <div class="ld-bar"><i></i></div>
+  </div>
+</div>
+<canvas class="smoke" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><span class="cur-dot"></span><span class="cur-ring"><em>Stir</em></span></div>
+
+<header class="brand">
+  <a class="brand-mark" href="#top" aria-label="Fumée, back to top">Fumée</a>
+  <nav class="brand-nav" aria-label="Sections">
+    <a href="#collection">Collection</a><a href="#notes">Notes</a><a href="#flacon">Flacon</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <p class="eyebrow hero-eyebrow"><span class="ln"></span>Maison Fumée &middot; eaux de parfum &middot; a fictional house</p>
+    <h1 class="hero-title"><span class="ht-a">Scent,</span> <span class="ht-b">in motion.</span></h1>
+    <div class="hero-foot">
+      <p class="hero-copy">Three eaux de parfum built on one idea: a fragrance is not an object, it is a movement. Move your cursor. The smoke answers.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-solid mag" href="#collection"><span class="mag-in">Discover the three <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        <a class="btn btn-ghost mag" href="#flacon"><span class="mag-in">The flacon</span></a>
+      </div>
+    </div>
+    <div class="scroll-cue" aria-hidden="true"><span>Scroll</span><i></i></div>
+  </section>
+
+  <section class="manifesto" aria-labelledby="mfT">
+    <div class="mf-pin">
+      <p class="eyebrow"><span class="ln"></span>Manifesto</p>
+      <h2 id="mfT" class="mf-text">We bottle what moves. The warmth rising off a split fig. A thread of smoke leaving a cone. A jasmine that only opens after dark.</h2>
+      <p class="mf-sign">Nothing here sits still, so neither does the page.</p>
+    </div>
+  </section>
+
+  <section class="collection" id="collection" aria-labelledby="colT">
+    <div class="col-pin">
+      <div class="col-head">
+        <p class="eyebrow"><span class="ln"></span>The collection</p>
+        <h2 id="colT" class="col-title">Three trails</h2>
+      </div>
+      <figure class="liq">
+        <canvas class="liq-gl" aria-hidden="true"></canvas>
+        <img class="liq-img on" src="../../assets/lab/fumee/fig-d.webp" alt="Halved figs on dark wood" width="1200" height="1600"  data-i="0"><img class="liq-img" src="../../assets/lab/fumee/incense-d.webp" alt="An incense cone smoking beside a window" width="1200" height="1600" loading="lazy" data-i="1"><img class="liq-img" src="../../assets/lab/fumee/jasmine-d.webp" alt="White jasmine flowers against a dark background" width="1200" height="1600" loading="lazy" data-i="2">
+        <figcaption class="liq-cap"><span class="liq-no">01</span><span class="liq-bar"><i></i></span><span>03</span></figcaption>
+      </figure>
+      <ol class="col-list" aria-live="polite">
+        <li class="cs" data-i="0">
+      <p class="cs-no">No. 01 <span>/ 03</span></p>
+      <h3 class="cs-name">Figue Noire</h3>
+      <p class="cs-line">A split fig left on warm wood at the end of August.</p>
+      <dl class="cs-notes"><div><dt>Top</dt><dd>Fig leaf, bergamot</dd></div><div><dt>Heart</dt><dd>Fig milk, cassis bud</dd></div><div><dt>Base</dt><dd>Cedar, soft musk</dd></div></dl>
+      <p class="cs-fam">Green, milky, warm</p>
+    </li><li class="cs" data-i="1">
+      <p class="cs-no">No. 02 <span>/ 03</span></p>
+      <h3 class="cs-name">Encens Clair</h3>
+      <p class="cs-line">One cone of incense, a window open, the room going quiet.</p>
+      <dl class="cs-notes"><div><dt>Top</dt><dd>Pink pepper, elemi</dd></div><div><dt>Heart</dt><dd>Frankincense, iris</dd></div><div><dt>Base</dt><dd>Labdanum, papyrus</dd></div></dl>
+      <p class="cs-fam">Resinous, dry, luminous</p>
+    </li><li class="cs" data-i="2">
+      <p class="cs-no">No. 03 <span>/ 03</span></p>
+      <h3 class="cs-name">Jasmin de Nuit</h3>
+      <p class="cs-line">The flower that waits for dark before it says anything.</p>
+      <dl class="cs-notes"><div><dt>Top</dt><dd>Neroli, green tea</dd></div><div><dt>Heart</dt><dd>Night jasmine, tuberose</dd></div><div><dt>Base</dt><dd>Benzoin, ambrette</dd></div></dl>
+      <p class="cs-fam">White floral, indolic</p>
+    </li>
+      </ol>
+      <div class="col-ctrl" role="group" aria-label="Choose a scent">
+        <button class="arrow mag" type="button" data-step="-1" aria-label="Previous scent"><span class="mag-in"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+        <div class="dots"><button class="dot" type="button" data-go="0" aria-label="Show No. 01, Figue Noire" aria-current="true"><span>01</span></button><button class="dot" type="button" data-go="1" aria-label="Show No. 02, Encens Clair"><span>02</span></button><button class="dot" type="button" data-go="2" aria-label="Show No. 03, Jasmin de Nuit"><span>03</span></button></div>
+        <button class="arrow mag" type="button" data-step="1" aria-label="Next scent"><span class="mag-in"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="notes" id="notes" aria-labelledby="ntT">
+    <div class="nt-pin">
+      <div class="nt-track">
+        <div class="nt-intro">
+          <p class="eyebrow"><span class="ln"></span>How a trail is built</p>
+          <h2 id="ntT" class="nt-title">Top, heart, base. Then the part that follows you out of the room.</h2>
+        </div>
+        <article class="nt-card">
+          <span class="nt-k">I</span><h3>Top</h3><p>The first ten minutes. Bright, volatile, gone before you notice. Bergamot, pink pepper, neroli.</p>
+          <img src="../../assets/lab/fumee/figs-d.webp" alt="Fresh figs, halved and quartered" width="1200" height="1600" loading="lazy">
+        </article>
+        <article class="nt-card nt-card--dark">
+          <span class="nt-k">II</span><h3>Heart</h3><p>The hours in between. Fig milk, frankincense, night jasmine. The part people remember you by.</p>
+          <div class="nt-ring" aria-hidden="true"><svg viewBox="0 0 200 200"><defs><path id="ringP" d="M100 100 m-78 0 a78 78 0 1 1 156 0 a78 78 0 1 1 -156 0"/></defs><text><textPath href="#ringP">heart notes &middot; heart notes &middot; heart notes &middot; heart notes &middot;</textPath></text></svg></div>
+        </article>
+        <article class="nt-card">
+          <span class="nt-k">III</span><h3>Base</h3><p>What is still there at midnight. Cedar, labdanum, benzoin, a little musk.</p>
+          <img src="../../assets/lab/fumee/stick-d.webp" alt="A burning incense stick with a curl of smoke" width="1200" height="1600" loading="lazy">
+        </article>
+        <article class="nt-card nt-card--accent">
+          <span class="nt-k">IV</span><h3>Sillage</h3><p>The trail a perfume leaves behind you. We design for this first and work backwards.</p>
+          <p class="nt-big" aria-hidden="true">sillage</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="flacon-sec" id="flacon" aria-labelledby="flH">
+    <div class="fl-grid">
+      <div class="fl-art"><svg class="flacon" viewBox="0 0 400 560" role="img" aria-labelledby="flT">
+ <title id="flT">Technical drawing of the Fumée flacon: a heavy rectangular glass bottle with rounded shoulders and a tall cylindrical cap.</title>
+ <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+  <path class="dr" d="M150 40 h100 a8 8 0 0 1 8 8 v110 a8 8 0 0 1 -8 8 h-100 a8 8 0 0 1 -8 -8 v-110 a8 8 0 0 1 8 -8z"/>
+  <path class="dr" d="M150 70 h100 M150 140 h100"/>
+  <path class="dr" d="M172 166 v26 h56 v-26"/>
+  <path class="dr" d="M96 216 q0 -24 24 -24 h160 q24 0 24 24 v272 q0 28 -28 28 h-152 q-28 0 -28 -28z"/>
+  <path class="dr" d="M118 232 q0 -14 14 -14 h136 q14 0 14 14 v246 q0 16 -16 16 h-132 q-16 0 -16 -16z"/>
+  <path class="dr" d="M126 330 c40 -14 108 14 148 0"/>
+  <path class="dr dim" d="M70 192 v324 M64 192 h12 M64 516 h12"/>
+  <path class="dr dim" d="M96 540 h208 M96 534 v12 M304 534 v12"/>
+  <path class="dr dim" d="M330 40 v126 M324 40 h12 M324 166 h12"/>
+  <path class="dr dim" d="M282 300 l52 -40 h36"/>
+  <path class="dr dim" d="M258 104 l70 -50 h36"/>
+ </g>
+ <g class="lbl" fill="currentColor">
+  <text x="52" y="358" transform="rotate(-90 52 358)">132 mm</text>
+  <text x="200" y="556" text-anchor="middle">104 mm</text>
+  <text x="342" y="108">58</text>
+  <text x="340" y="254">8 mm base</text>
+  <text x="338" y="48">brass cap</text>
+ </g>
+</svg></div>
+      <div class="fl-copy">
+        <p class="eyebrow"><span class="ln"></span>The flacon</p>
+        <h2 id="flH" class="fl-title">Heavy glass, one gesture.</h2>
+        <ul class="fl-specs">
+          <li><b>50 ml</b><span>Eau de parfum, 18% concentration</span></li>
+          <li><b>8 mm</b><span>Solid glass base that holds the light</span></li>
+          <li><b>Brass</b><span>Brushed cap, weighted to close with a click</span></li>
+          <li><b>Refill</b><span>Unscrews at the neck. Keep the bottle, refill the scent</span></li>
+        </ul>
+        <p class="fl-note">Specs of a fictional product, drawn for this concept.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" aria-labelledby="ctaT">
+    <p class="eyebrow"><span class="ln"></span>Leave a trail</p>
+    <h2 id="ctaT" class="cta-title">Find the one that follows you.</h2>
+    <a class="btn btn-solid btn-xl mag" href="#" data-concept><span class="mag-in">Request a sample <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+    <p class="cta-toast" role="status" aria-live="polite"></p>
+  </section>
+</main>
+<template id="credits">
+  <li>Code, design, shaders and the flacon drawing: Zyqor Studio (MIT licence for the code). "Fumée" and its three scents are fictional.</li>
+  <li>Photos (Unsplash License, free to use; cropped, resized and converted to WebP): <a href="https://unsplash.com/photos/green-round-fruit-on-brown-wooden-table-vtP7PpYlzzQ" target="_blank" rel="noopener">figs on dark wood</a>, <a href="https://unsplash.com/photos/black-incense-burning-in-room-9M4asMDP7vQ" target="_blank" rel="noopener">incense cone by a window</a>, <a href="https://unsplash.com/photos/delicate-white-jasmine-flowers-bloom-against-dark-background-hp3SP0d5GTw" target="_blank" rel="noopener">jasmine against a dark background</a>, <a href="https://unsplash.com/photos/fresh-figs-halved-and-quartered-on-a-plate-sYTOxXNzLhs" target="_blank" rel="noopener">halved figs</a> and <a href="https://unsplash.com/photos/brown-wooden-stick-with-black-smoke-d_YI6RQdyoE" target="_blank" rel="noopener">incense stick with smoke</a>, all via Unsplash.</li>
+  <li>Fonts: Boska and General Sans by the Indian Type Foundry, via Fontshare (ITF Free Font License), self-hosted.</li>
+  <li>Animation: GSAP 3.15 with ScrollTrigger and SplitText (GreenSock standard licence), Lenis smooth scroll (MIT), three.js r170 (MIT).</li>
+</template>
+<script src="../../vendor/gsap.min.js" defer></script>
+<script src="../../vendor/ScrollTrigger.min.js" defer></script>
+<script src="../../assets/lab/fumee/SplitText.min.js" defer></script>
+<script src="../../vendor/lenis.min.js" defer></script>
+<script type="module" src="../_kit/chrome.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

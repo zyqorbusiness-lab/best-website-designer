@@ -1,0 +1,94 @@
+/* Zyqor Lab UI v2 (design pass, Oct 27 2026). Load AFTER lab.css:
+   <link rel="stylesheet" href="../_kit/lab-ui.css">
+   The frame around each concept speaks in the studio's own type (Satoshi for text, Cabinet Grotesk for numbers),
+   so the demo inside keeps its own fonts and palette. Uses the page's --c1 (light) --c2 (dark) --c3 (accent). */
+@font-face{font-family:"Satoshi";src:url("../../assets/font/satoshi-500.woff2") format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Satoshi";src:url("../../assets/font/satoshi-700.woff2") format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Cabinet Grotesk";src:url("../../assets/font/cabinetgrotesk-800.woff2") format("woff2");font-weight:800;font-display:swap}
+:root{--zl-ui:"Satoshi",system-ui,-apple-system,"Segoe UI",sans-serif;--zl-num:"Cabinet Grotesk","Satoshi",system-ui,sans-serif;--zl-ease:cubic-bezier(.2,.8,.2,1)}
+
+/* ---------- top chrome: a round back button + a squared spec tag (liquid glass added by chrome.js from assets/glass/) ---------- */
+.zl-bar{top:16px;left:16px;right:16px;align-items:flex-start}
+.zl-bar .zl-pill{height:38px;font:500 12px/1 var(--zl-ui);letter-spacing:.02em;
+ background:color-mix(in srgb,var(--c1) 90%,transparent);-webkit-backdrop-filter:none;backdrop-filter:none;
+ border:1px solid color-mix(in srgb,var(--c2) 18%,transparent);box-shadow:0 1px 0 color-mix(in srgb,var(--c2) 6%,transparent)}
+.zl-bar .zl-home{width:38px;padding:0;justify-content:center;gap:0;overflow:hidden;transition:width .45s var(--zl-ease),background .25s,transform .25s var(--zl-ease)}
+.zl-bar .zl-home span{max-width:0;opacity:0;white-space:nowrap;transition:max-width .45s var(--zl-ease),opacity .3s}
+.zl-bar .zl-home:hover,.zl-bar .zl-home:focus-visible{width:118px;gap:6px;transform:none}
+.zl-bar .zl-home:hover span,.zl-bar .zl-home:focus-visible span{max-width:80px;opacity:1}
+.zl-bar .zl-tag{border-radius:3px;padding:0 4px 0 10px;gap:9px;text-transform:uppercase;font-size:10.5px;letter-spacing:.14em}
+.zl-bar .zl-tag .zl-z{width:18px;height:18px;border-radius:2px}
+.zl-bar .zl-tag .zl-z svg{width:11px;height:11px}
+.zl-bar .zl-tag b{font:800 13px/1 var(--zl-num);letter-spacing:0;text-transform:none;font-variant-numeric:tabular-nums;
+ border-left:0;padding:6px 8px;margin-left:2px;border-radius:2px;background:var(--c2);color:var(--c1)}
+
+/* ---------- footer: an editorial "next concept" moment ---------- */
+.zl-foot{position:relative;padding:0 clamp(20px,4vw,56px) 36px;font-family:var(--zl-ui)}
+.zl-foot::before{content:"";display:block;height:8px;margin:0 calc(-1*clamp(20px,4vw,56px)) clamp(40px,6vw,80px);
+ background:linear-gradient(90deg,var(--c1) 0 33.3%,var(--c3) 33.3% 66.6%,color-mix(in srgb,var(--c1) 30%,var(--c2)) 66.6%)}
+.zl-foot-in{max-width:none;gap:0;grid-template-columns:minmax(0,1fr);}
+.zl-nav{order:-1;display:grid;grid-template-columns:auto auto 1fr;gap:0 28px;align-items:end;padding-bottom:clamp(36px,5vw,64px);
+ border-bottom:1px solid color-mix(in srgb,var(--c1) 18%,transparent)}
+.zl-foot .zl-nav .zl-pill{background:none;border:0;border-radius:0;height:auto;padding:0;font:500 13px/1.2 var(--zl-ui);
+ letter-spacing:.02em;color:color-mix(in srgb,var(--c1) 72%,transparent);gap:8px}
+.zl-foot .zl-nav .zl-pill:hover{background:none;color:var(--c1);transform:none}
+.zl-foot .zl-nav .zl-pill small{display:none}
+.zl-foot .zl-nav .zl-pill:first-child{grid-column:1;grid-row:2}
+.zl-foot .zl-nav .zl-all{grid-column:2;grid-row:2}
+.zl-foot .zl-nav .zl-pill:last-child{grid-column:1/-1;grid-row:1;display:flex;justify-content:space-between;align-items:flex-end;
+ width:100%;margin-bottom:28px;color:var(--c1);font:800 clamp(52px,9.5vw,152px)/.86 var(--zl-num);letter-spacing:-.045em;
+ padding-top:6px}
+.zl-foot .zl-nav .zl-pill:last-child span{display:block;position:relative}
+.zl-foot .zl-nav .zl-pill:last-child small{display:block;font:500 12px/1 var(--zl-ui);letter-spacing:.16em;text-transform:uppercase;
+ margin:0 0 18px;opacity:.6}
+.zl-foot .zl-nav .zl-pill:last-child svg{width:clamp(44px,6vw,92px);height:auto;flex:none;stroke-width:1.5;
+ transition:transform .5s var(--zl-ease);color:var(--c3)}
+.zl-foot .zl-nav .zl-pill:last-child:hover svg{transform:translateX(14px)}
+.zl-foot .zl-nav .zl-pill:last-child span::after{content:"";position:absolute;left:0;right:0;bottom:-10px;height:3px;background:var(--c3);
+ transform:scaleX(0);transform-origin:left;transition:transform .6s var(--zl-ease)}
+.zl-foot .zl-nav .zl-pill:last-child:hover span::after,.zl-foot .zl-nav .zl-pill:last-child:focus-visible span::after{transform:scaleX(1)}
+.zl-honest{padding-top:28px;font:400 14px/1.6 var(--zl-ui);max-width:62ch;opacity:.78}
+.zl-honest b{font-weight:700;opacity:1}
+.zl-cred{padding-top:14px;font:400 12.5px/1.55 var(--zl-ui);opacity:.66}
+.zl-cred summary{list-style:none;display:inline-flex;align-items:center;gap:8px;font-weight:500;letter-spacing:.02em}
+.zl-cred summary::-webkit-details-marker{display:none}
+.zl-cred summary::before{content:"+";display:inline-grid;place-items:center;width:18px;height:18px;border:1px solid currentColor;border-radius:2px;font-size:12px;line-height:1}
+.zl-cred[open] summary::before{content:"\2212"}
+.zl-cred ul{max-width:90ch}
+
+/* ---------- focus ---------- */
+:focus-visible{outline:2px solid var(--c3);outline-offset:3px;box-shadow:0 0 0 6px color-mix(in srgb,var(--c1) 70%,transparent)}
+
+/* ---------- grain: kills the "rendered flat fill" look on fine-pointer screens only (phones stay light) ---------- */
+@media (hover:hover) and (pointer:fine){
+ body::after{content:"";position:fixed;inset:-50%;z-index:88;pointer-events:none;opacity:.055;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.1 -.2'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:180px 180px}
+ html[data-grain="off"] body::after{content:none}
+}
+
+/* ---------- concept-to-concept page transition (cross-document View Transitions; ignored by browsers without it) ---------- */
+@view-transition{navigation:auto}
+.zl-bar{view-transition-name:zl-bar}
+::view-transition-group(zl-bar){animation-duration:.5s}
+::view-transition-old(root){animation:zl-out .45s var(--zl-ease) both}
+::view-transition-new(root){animation:zl-in .7s var(--zl-ease) both}
+@keyframes zl-out{to{opacity:0;transform:translateY(-3%) scale(.985)}}
+@keyframes zl-in{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0 0 0 0)}}
+
+@media (max-width:600px){
+ .zl-bar{top:10px;left:10px;right:10px}
+ .zl-bar .zl-pill{height:34px}
+ .zl-bar .zl-home{width:34px}
+ .zl-bar .zl-tag{font-size:9.5px;letter-spacing:.12em;padding-left:8px}
+ .zl-bar .zl-tag>span:not(.zl-z){display:none}
+ .zl-nav{grid-template-columns:auto auto 1fr;gap:0 20px}
+ .zl-foot .zl-nav .zl-pill:last-child{font-size:clamp(40px,13vw,64px)}
+}
+@media (prefers-reduced-motion:reduce){
+ @view-transition{navigation:none}
+ ::view-transition-old(root),::view-transition-new(root){animation:none}
+}
+
+/* audit fix (a073e146): the typographic Next link inherited the pill's backdrop blur, which drew a lighter band behind it */
+.zl-foot .zl-nav .zl-pill:last-child:not(.lg){backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:none}

@@ -1,0 +1,9 @@
+/* Zyqor liquid glass - bindings for studio pages (/lab/ index, /color/, later /process/, /services/, /studio/*).
+   Only padding/shape the material needs on elements that had none. */
+.hd .nav.lg,.hd .hd-n.lg{border-radius:999px;padding:6px 6px 6px 18px}
+.hd .logo.lg,.hd .mk.lg{border-radius:999px;padding:5px 14px 5px 5px}
+.hd .hd-cta.lg,.hd .hd-c.lg{border-radius:999px}
+.toast.lg{border-radius:16px}
+@media (max-width:860px){.hd .nav.lg,.hd .hd-n.lg{padding:4px 4px 4px 12px}.hd .logo.lg,.hd .mk.lg{padding:4px 10px 4px 4px}}
+/* header capsules sit over big display type on scroll: a touch more frost so their labels stay AA */
+.hd .lg:not(.lg--ink):not(.lg--accent){--lg-alpha:70%;--lg-blur:22px}

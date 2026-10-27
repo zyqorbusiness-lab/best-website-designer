@@ -1,0 +1,47 @@
+/* phone build overrides */
+body{font-size:16px}
+.hd{padding:12px 16px}
+.hd.is-solid{padding:10px 16px}
+.nav a:not(.btn){display:none}
+.nav .btn{min-height:38px;padding:0 14px;font-size:.84rem}
+.sec{padding:72px 0}
+.wrap{padding:0 20px}
+h2{font-size:2.2rem}
+.sec-head{margin-bottom:36px}
+.mproj{padding:34px 0;border-top:1px solid var(--line)}
+.mproj .phone{position:relative;right:auto;bottom:auto;width:62%;max-width:240px;margin:0 auto}
+.mproj .thumb{display:flex;gap:10px;align-items:center;margin:18px auto 0;width:max-content;max-width:100%;font-size:.78rem;color:var(--mut)}
+.mproj .thumb img{width:72px;height:45px;object-fit:cover;border-radius:6px;box-shadow:0 0 0 1px var(--line)}
+.mproj .info{margin-top:26px}
+.mproj .info h3{font-size:1.9rem}
+.mproj .info .btn{width:100%;justify-content:center}
+.cases{grid-template-columns:1fr;gap:16px}
+.about{grid-template-columns:1fr;gap:30px}
+.portrait{max-width:300px;margin:0 auto;width:100%}
+.steps{grid-template-columns:1fr;gap:10px;margin-top:24px}
+.step{display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:start;padding:16px}
+.step h4{margin:0 0 4px}
+.step .ic{grid-row:span 2}
+.price{grid-template-columns:1fr;padding:34px 24px;border-radius:24px;gap:24px}
+.price .side{width:100%}
+.price .btn{width:100%;justify-content:center}
+.contact h2{font-size:2.7rem}
+.ways{grid-template-columns:1fr;gap:12px;margin-top:30px}
+.way{padding:16px}
+.sw-copy{width:auto!important;right:20px}
+
+.hd:not(.is-solid) .nav{padding:4px}
+.hd:not(.is-solid) .logo{padding:4px 12px 4px 4px}
+.sw-copy__title{font-size:clamp(1.7rem,7.4vw,2.3rem)!important}
+
+.sw-stage{transform:translateY(-12vh)}
+.sw-copylayer::before{height:58%!important;background:linear-gradient(0deg,var(--sw-bg) 34%,color-mix(in srgb,var(--sw-bg) 82%,transparent) 62%,transparent 100%)!important}
+.sw-copy__eyebrow{color:#8F6420!important}
+
+.contact.fin .ways{grid-template-columns:1fr}
+.is-mobile .sw-gal>.mproj .info{margin-top:20px}
+.is-mobile .sw-gal>.mproj .info p{font-size:.95rem}
+.way.em strong{font-size:.9rem;letter-spacing:-.01em;overflow-wrap:normal}
+
+/* audit fix (a073e146): the fixed 'scroll to fly' hint sat on top of the hero CTAs on 360-390px phones; the hero copy already invites the scroll */
+.sw-hint{display:none!important}

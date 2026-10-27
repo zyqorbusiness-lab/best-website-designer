@@ -1,0 +1,72 @@
+/* phone build overrides (m.html) */
+:root{--pad:20px;--r:18px}
+body{font-size:16px}
+.hd{padding:12px 14px}
+.logo{font-size:0;gap:0;padding:6px}
+.logo-mark{width:28px;height:28px}
+.nav a{padding:9px 12px;font-size:13px}
+.rail{display:none}
+.sec{padding:84px var(--pad)}
+.split,.wheel-stage,.prop,.cx,.temp,.gen-prev{grid-template-columns:minmax(0,1fr)}
+.h2{font-size:clamp(40px,12vw,58px)}
+.lede{font-size:16px;margin-top:16px}
+.hero{display:block;min-height:0;padding-top:76px;padding-bottom:56px}
+.h1{font-size:clamp(70px,22vw,104px)}
+.h1 .by{font-size:24px}
+.ring{position:relative;right:auto;top:auto;transform:none;width:min(80vw,340px);margin:0 auto 26px}
+.ring-c b{font-size:72px}.ring-c span{font-size:14px}
+.ring-tip{display:none}
+.hero-foot{flex-direction:column;align-items:flex-start;gap:18px}
+.hero-foot .scroll-cue{display:none}
+.hero-trio{display:none}
+.kick{font-size:11px;letter-spacing:.14em;margin-bottom:18px}
+.kick::after{flex-basis:28px}
+.wheel-stage{margin-top:32px}
+.wheel-box{width:100%}
+.chips{grid-template-columns:repeat(3,1fr)}
+.chip i{height:64px}
+.pill{padding:10px 14px;font-size:13px}
+.mk-h{font-size:clamp(17px,5.4vw,24px)}
+.mk-p i{height:3px;margin-bottom:5px}
+.mk-links i{height:3px}
+.cx-pre{min-height:0}
+.badges{grid-template-columns:1fr 1fr}
+.badge{padding:10px;font-size:12px}
+.field label{width:62px;font-size:11px}
+.field input[type=text]{font-size:17px}
+.mx{grid-template-columns:1fr 1fr}
+.mx .mxb{min-height:110px;padding:14px}
+.mx .mxb b{font-size:26px}
+.tgroups{grid-template-columns:1fr}
+.lab-grid{grid-template-columns:minmax(0,1fr)}
+.lp-sw{height:112px}
+.lp-poster{width:92px}
+.lp-t{font-size:26px}
+.lp-go{opacity:1;transform:none;width:34px;height:34px}
+.gen-sw{grid-template-columns:minmax(0,1fr);height:auto}
+.gs{min-height:120px}
+.gs-hex{font-size:30px}
+.gen-ctl{flex-direction:column;align-items:stretch}
+.gen-ctl .grp:last-child .note{display:none}
+#genGo{justify-content:center}
+.close{min-height:70svh}
+.close .h2{font-size:clamp(46px,13vw,64px)}
+.toast{bottom:18px;max-width:calc(100% - 28px)}
+@media (max-width:370px){
+  .nav a{padding:8px 10px;font-size:12px}
+  .badges{grid-template-columns:1fr}
+  .mx{grid-template-columns:1fr}
+}
+
+.trio{height:auto}
+.trio-pin{position:relative;height:auto;display:flex;flex-direction:column}
+.trio-cap{position:relative;left:auto;top:auto;transform:none;max-width:none;padding:72px var(--pad) 28px}
+.trio-cap .h2{font-size:clamp(44px,13vw,60px)}
+.trio-sub{font-size:16px}
+.trio-bands{position:relative;inset:auto;flex-direction:column;height:150vw;max-height:640px}
+.trio .tb{flex:none;padding:16px 20px;flex-direction:row;align-items:flex-end}
+.trio .tb:nth-child(1){height:60%}.trio .tb:nth-child(2){height:30%}.trio .tb:nth-child(3){height:10%;align-items:center;padding:0 20px}
+.trio .tb:nth-child(3) .tb-c{flex-direction:row;gap:10px;align-items:baseline}
+.trio .tb:nth-child(3) .tb-c b{font-size:18px}
+.trio .tb:nth-child(3) .tb-n{font-size:30px}
+.tb-n{font-size:clamp(64px,22vw,110px)}
