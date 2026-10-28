@@ -47,6 +47,12 @@
    "bytes": 3270268,
    "parts": 2,
    "sha256": "d360c898eab491c9df2c053bfd0487129964258ef5b43e04c978f53403041272"
+  },
+  {
+   "path": "skills/model-optimisation-phone/example/models/flight-helmet.glb",
+   "bytes": 14426752,
+   "parts": 6,
+   "sha256": "8ae646737b3425bedcd6baa32721179ab95053768527771131d28479365d5336"
   }
  ]
 }

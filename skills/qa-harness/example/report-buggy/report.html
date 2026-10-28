@@ -1,0 +1,50 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>QA contact sheet · FAIL</title>
+<style>
+:root{--paper:#F4F1EA;--ink:#1E2A2B;--ok:#2F6B4F;--bad:#B3361B;--line:rgba(30,42,43,.14)}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.45 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+header{padding:28px 28px 8px}h1{font-size:28px;letter-spacing:-.02em;margin:0 0 6px}
+.v{display:inline-block;padding:6px 12px;border-radius:999px;color:var(--paper);background:var(--bad);font-weight:700;letter-spacing:.02em}
+.meta{opacity:.72;margin:8px 0 0}.wrap{overflow-x:auto;padding:12px 28px 40px}
+table{border-collapse:separate;border-spacing:14px 10px}th{font-weight:600;text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:.08em;opacity:.7}
+td{vertical-align:top}th.p{position:sticky;left:0;background:var(--paper);max-width:180px;text-transform:none;letter-spacing:0;font-size:13px;opacity:1;word-break:break-all}
+figure{margin:0;width:150px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}figure.wide{width:260px}
+figure img{display:block;width:100%;height:auto;max-height:320px;object-fit:cover;object-position:top}
+figure.ok{box-shadow:inset 0 3px 0 var(--ok)}figure.bad{box-shadow:inset 0 3px 0 var(--bad);border-color:var(--bad)}
+figcaption{padding:7px 9px;font-size:12px}figure.ok b{color:var(--ok)}figure.bad b{color:var(--bad)}
+details{padding:0 9px 8px;font-size:11px}pre{white-space:pre-wrap;margin:6px 0 0;max-height:180px;overflow:auto}
+.noimg{height:120px;display:grid;place-items:center;opacity:.5}ul{margin:6px 0 0 18px;padding:0}footer{padding:0 28px 40px;opacity:.75;max-width:900px}
+</style></head><body>
+<header><h1>QA contact sheet</h1><span class="v">VERDICT: FAIL — 6 of 12 page runs failed; 4 console/page error(s); horizontal overflow in 2 run(s)</span>
+<p class="meta">site-buggy (served locally) · Playwright Chromium · 2026-10-28 02:56 UTC · <a href="report.md">report.md</a> · <a href="results.json">results.json</a></p></header>
+<div class="wrap"><table><tr><th class="p">Page</th><th>Desktop 1440</th><th>Phone 390</th><th>Small 360</th><th>Reduced motion 1440</th></tr>
+<tr><th class="p">/</th><td><figure class="ok wide"><a href="shots/home__desktop__00top.jpg"><img loading="lazy" src="shots/home__desktop__00top.jpg" alt="/ Desktop 1440"></a>
+<figcaption><b>PASS</b>  · <a href="shots/home__desktop__s01.jpg">1</a></figcaption>
+</figure></td><td><figure class="ok"><a href="shots/home__phone__00top.jpg"><img loading="lazy" src="shots/home__phone__00top.jpg" alt="/ Phone 390"></a>
+<figcaption><b>PASS</b>  · <a href="shots/home__phone__s01.jpg">1</a> <a href="shots/home__phone__s02.jpg">2</a></figcaption>
+</figure></td><td><figure class="ok"><a href="shots/home__small__00top.jpg"><img loading="lazy" src="shots/home__small__00top.jpg" alt="/ Small 360"></a>
+<figcaption><b>PASS</b>  · <a href="shots/home__small__s01.jpg">1</a> <a href="shots/home__small__s02.jpg">2</a></figcaption>
+</figure></td><td><figure class="ok wide"><a href="shots/home__reduced__00top.jpg"><img loading="lazy" src="shots/home__reduced__00top.jpg" alt="/ Reduced motion 1440"></a>
+<figcaption><b>PASS</b>  · <a href="shots/home__reduced__s01.jpg">1</a></figcaption>
+</figure></td></tr>
+<tr><th class="p">about.html</th><td><figure class="bad wide"><a href="shots/about__desktop__00top.jpg"><img loading="lazy" src="shots/about__desktop__00top.jpg" alt="about.html Desktop 1440"></a>
+<figcaption><b>FAIL</b> 1 problem · <a href="shots/about__desktop__s01.jpg">1</a></figcaption>
+<details><summary>details</summary><pre>FAIL: uncaught error: Cannot read properties of null (reading 'addEventListener') (about.html:31)</pre></details></figure></td><td><figure class="bad"><a href="shots/about__phone__00top.jpg"><img loading="lazy" src="shots/about__phone__00top.jpg" alt="about.html Phone 390"></a>
+<figcaption><b>FAIL</b> 1 problem · <a href="shots/about__phone__s01.jpg">1</a></figcaption>
+<details><summary>details</summary><pre>FAIL: uncaught error: Cannot read properties of null (reading 'addEventListener') (about.html:31)</pre></details></figure></td><td><figure class="bad"><a href="shots/about__small__00top.jpg"><img loading="lazy" src="shots/about__small__00top.jpg" alt="about.html Small 360"></a>
+<figcaption><b>FAIL</b> 1 problem · <a href="shots/about__small__s01.jpg">1</a></figcaption>
+<details><summary>details</summary><pre>FAIL: uncaught error: Cannot read properties of null (reading 'addEventListener') (about.html:31)</pre></details></figure></td><td><figure class="bad wide"><a href="shots/about__reduced__00top.jpg"><img loading="lazy" src="shots/about__reduced__00top.jpg" alt="about.html Reduced motion 1440"></a>
+<figcaption><b>FAIL</b> 1 problem · <a href="shots/about__reduced__s01.jpg">1</a></figcaption>
+<details><summary>details</summary><pre>FAIL: uncaught error: Cannot read properties of null (reading 'addEventListener') (about.html:31)</pre></details></figure></td></tr>
+<tr><th class="p">gallery.html</th><td><figure class="ok wide"><a href="shots/gallery__desktop__00top.jpg"><img loading="lazy" src="shots/gallery__desktop__00top.jpg" alt="gallery.html Desktop 1440"></a>
+<figcaption><b>PASS</b>  · <a href="shots/gallery__desktop__s01.jpg">1</a></figcaption>
+</figure></td><td><figure class="bad"><a href="shots/gallery__phone__00top.jpg"><img loading="lazy" src="shots/gallery__phone__00top.jpg" alt="gallery.html Phone 390"></a>
+<figcaption><b>FAIL</b> 1 problem · <a href="shots/gallery__phone__overflow.jpg">overflow</a> · </figcaption>
+<details><summary>details</summary><pre>FAIL: horizontal overflow: page is 1200px wide in a 390px viewport — div.strip &gt; div.swatch.s3:nth-of-type(3) sticks out 810px; fix at section:nth-of-type(1) &gt; div.strip</pre></details></figure></td><td><figure class="bad"><a href="shots/gallery__small__00top.jpg"><img loading="lazy" src="shots/gallery__small__00top.jpg" alt="gallery.html Small 360"></a>
+<figcaption><b>FAIL</b> 1 problem · <a href="shots/gallery__small__overflow.jpg">overflow</a> · </figcaption>
+<details><summary>details</summary><pre>FAIL: horizontal overflow: page is 1200px wide in a 360px viewport — div.strip &gt; div.swatch.s3:nth-of-type(3) sticks out 840px; fix at section:nth-of-type(1) &gt; div.strip</pre></details></figure></td><td><figure class="ok wide"><a href="shots/gallery__reduced__00top.jpg"><img loading="lazy" src="shots/gallery__reduced__00top.jpg" alt="gallery.html Reduced motion 1440"></a>
+<figcaption><b>PASS</b>  · <a href="shots/gallery__reduced__s01.jpg">1</a></figcaption>
+</figure></td></tr>
+</table></div>
+<footer><b>Not verified:</b><ul><li>A real phone. Phone runs are desktop Chromium pretending to be a phone (size, pixel ratio, touch, user agent). iOS Safari is a different engine (WebKit; try --webkit): open the live URL on a real iPhone and a real Android before calling it done.</li><li>Real-device frame rate. 3D was drawn by &quot;ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)&quot; (software rendering on the CPU); the throttle numbers compare builds with each other, they are not a phone's fps.</li><li>Design quality. The harness proves the page loads clean and fits; whether it looks premium is a human call — read the contact sheet.</li><li>Lighthouse scores, keyboard-only use and screen readers (run Lighthouse in Chrome DevTools and record the real number).</li><li>Slow or flaky networks (the pages were served locally or from your server as-is, not over 4G).</li><li>External links were listed (1) but not fetched; run with --external to check them.</li><li>The no-WebGL fallback (poster) was not tested; add --profiles ...,nowebgl or --full.</li></ul></footer>
+</body></html>

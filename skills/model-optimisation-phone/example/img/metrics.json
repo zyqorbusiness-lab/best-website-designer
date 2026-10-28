@@ -1,0 +1,66 @@
+{
+ "skill": {
+  "bytes": 14426752,
+  "worst": {
+   "psnr": 42.23,
+   "changed_pct": 0.319
+  },
+  "per_view": {
+   "leather": {
+    "psnr": 42.23,
+    "changed_pct": 0.262
+   },
+   "goggles": {
+    "psnr": 43.25,
+    "changed_pct": 0.228
+   },
+   "stand": {
+    "psnr": 42.3,
+    "changed_pct": 0.319
+   }
+  }
+ },
+ "v3": {
+  "bytes": 10011628,
+  "worst": {
+   "psnr": 36.23,
+   "changed_pct": 2.531
+  },
+  "per_view": {
+   "leather": {
+    "psnr": 36.23,
+    "changed_pct": 2.531
+   },
+   "goggles": {
+    "psnr": 37.24,
+    "changed_pct": 1.666
+   },
+   "stand": {
+    "psnr": 36.85,
+    "changed_pct": 2.109
+   }
+  }
+ },
+ "r1": {
+  "bytes": 1946244,
+  "worst": {
+   "psnr": 30.4,
+   "changed_pct": 9.506
+  },
+  "per_view": {
+   "leather": {
+    "psnr": 30.4,
+    "changed_pct": 9.506
+   },
+   "goggles": {
+    "psnr": 31.01,
+    "changed_pct": 6.936
+   },
+   "stand": {
+    "psnr": 31.21,
+    "changed_pct": 8.325
+   }
+  }
+ },
+ "original_bytes": 48392569
+}

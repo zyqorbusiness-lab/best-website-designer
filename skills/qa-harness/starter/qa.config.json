@@ -1,0 +1,27 @@
+{
+  "_comment": "Put this file in your site folder (or the folder you run qa from). Every key is optional; command-line flags win.",
+  "pages": [
+    "",
+    "about.html",
+    "work/"
+  ],
+  "profiles": [
+    "desktop",
+    "phone",
+    "small",
+    "reduced"
+  ],
+  "phoneFile": "m.html",
+  "wait": 1500,
+  "stepWait": 650,
+  "shots": 4,
+  "throttle": "first",
+  "external": false,
+  "preset": null,
+  "strict": false,
+  "ignore": [
+    "Download the React DevTools",
+    "googletagmanager\\.com"
+  ],
+  "_ignore": "Regular expressions. A console message, request URL or error that matches one is not counted. Keep this list short and explain each entry in a comment in your repo."
+}

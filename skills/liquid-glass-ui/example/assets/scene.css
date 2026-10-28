@@ -1,0 +1,41 @@
+/* 3D scene example (desktop + phone builds share this file; html[data-build] picks the layout) */
+.scene-body{background:
+ radial-gradient(46% 58% at 58% 46%,color-mix(in oklab,var(--c3) 30%,var(--c1)) 0%,transparent 70%),
+ linear-gradient(180deg,var(--c1) 0%,var(--c1) 62%,color-mix(in oklab,var(--c2) 9%,var(--c1)) 100%)}
+.topbar{position:fixed;z-index:40;top:18px;left:0;right:0;display:flex;justify-content:center;pointer-events:none}
+.nav{pointer-events:auto;gap:4px;--lg-alpha:.3}
+.nav a{font-size:15px}
+.brand{display:flex!important;align-items:center;gap:8px;padding:0 12px 0 10px!important;font-size:16px}
+.brand svg{width:22px;height:22px;color:var(--c2)}
+.s-main{position:relative;height:max(100vh,760px);overflow:hidden}
+.s-stage{position:absolute;inset:0}
+.s-stage canvas{display:block;width:100%;height:100%}
+.s-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.s-copy{position:absolute;left:56px;bottom:150px;max-width:430px}
+.s-h1{font-size:clamp(48px,4.8vw,72px);line-height:.96;letter-spacing:-.045em;font-weight:640;margin:12px 0 14px}
+.s-copy p{font-size:16.5px;margin:0}
+.s-ctrl{position:absolute;left:calc(50% + 30px);top:54%;transform:translateY(-50%);width:300px;--lg-alpha:.42;--lg-blur:16px;display:grid;gap:14px;padding:20px}
+.s-ctrl .lg-seg{width:100%}
+.s-ctrl b{font-size:15px}
+.slider-row label{font-size:14px;font-weight:600}
+.s-dock{position:absolute;left:50%;bottom:36px;transform:translateX(-50%);gap:8px;padding:6px;--lg-alpha:.18}
+.s-dock .lg-btn--icon{color:var(--c2)}
+.s-credits{padding:28px 56px 40px;font-size:12.5px;line-height:1.6;color:color-mix(in oklab,var(--c2) 80%,transparent);border-top:1px solid color-mix(in oklab,var(--c2) 12%,transparent)}
+.s-credits p{margin:0;max-width:1100px}
+/* phone build */
+[data-build=phone] .mtop{position:fixed;z-index:40;top:calc(10px + env(safe-area-inset-top));left:12px;right:12px;display:flex;justify-content:center;pointer-events:none}
+[data-build=phone] .mtop>*{pointer-events:auto}
+[data-build=phone] .mbrand{min-height:44px;padding:0 6px;--lg-alpha:.34}
+[data-build=phone] .s-main{height:auto;min-height:100svh;display:flex;flex-direction:column}
+[data-build=phone] .s-stage{position:relative;inset:auto;height:60svh;min-height:420px;margin-top:8px;order:2}
+[data-build=phone] .s-copy{position:relative;left:auto;bottom:auto;padding:86px 20px 0;order:1;max-width:none}
+[data-build=phone] .s-h1{font-size:clamp(36px,10.5vw,44px)}
+[data-build=phone] .s-copy p{font-size:15px}
+[data-build=phone] .s-ctrl{position:relative;left:auto;right:auto;top:auto;transform:none;width:auto;margin:-88px 14px 0;order:3;z-index:2;--lg-alpha:.5;--lg-blur:18px}
+[data-build=phone] .s-dock{position:fixed;bottom:calc(14px + env(safe-area-inset-bottom));z-index:40;--lg-alpha:.4}
+[data-build=phone] .s-credits{padding:26px 20px 110px}
+.s-poster[hidden]{display:none}
+[data-build=phone] .scene-body,[data-build=phone] body.scene-body{background:var(--c1)}
+[data-build=phone] .s-stage::before,[data-build=phone] .s-stage::after{content:"";position:absolute;left:0;right:0;height:64px;z-index:1;pointer-events:none}
+[data-build=phone] .s-stage::before{top:0;background:linear-gradient(var(--c1),color-mix(in oklab,var(--c1) 0%,transparent))}
+[data-build=phone] .s-stage::after{bottom:0;background:linear-gradient(color-mix(in oklab,var(--c1) 0%,transparent),var(--c1))}

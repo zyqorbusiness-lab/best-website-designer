@@ -1,0 +1,38 @@
+/* phone build: same content and the same model file, re-laid out for touch and narrow screens */
+:root { --pad: 20px; }
+body { font-size: 16px; }
+.chrome { top: max(10px, env(safe-area-inset-top)); left: 12px; right: 12px; transform: none; justify-content: space-between; gap: 8px; padding: 6px 6px 6px 14px; font-size: 12.5px; }
+.chrome .sep, .chrome .tag, .chrome > span:nth-of-type(2) { display: none; }
+.chrome a.gh { padding: 8px 12px; }
+.hero { display: flex; flex-direction: column; align-items: stretch; gap: 0; min-height: 0; padding: 72px var(--pad) 8px; }
+.copyblock { display: contents; }
+.eyebrow { order: 1; margin-bottom: 12px; font-size: 11.5px; }
+h1 { order: 2; font-size: clamp(38px, 11.5vw, 50px); margin-bottom: 14px; }
+.lead { order: 3; font-size: 15.5px; margin-bottom: 18px; }
+.stage { order: 4; height: 62svh; min-height: 380px; max-height: 560px; border-radius: 22px; margin: 0 calc(var(--pad) * -0.4); }
+.chips { order: 5; flex-wrap: nowrap; overflow-x: auto; margin: 14px calc(var(--pad) * -1) 0; padding: 2px var(--pad) 6px; scrollbar-width: none; -webkit-overflow-scrolling: touch; scroll-snap-type: x proximity; }
+.chips::-webkit-scrollbar { display: none; }
+.chips li { scroll-snap-align: start; flex: none; }
+.chip { padding: 12px 15px 12px 12px; min-height: 44px; }
+.stats { order: 6; grid-template-columns: 1fr 1fr; margin-top: 18px; }
+.stats div { padding: 14px 0 14px 0; border-bottom: 1px solid var(--line); }
+.stats div + div { border-left: 0; padding-left: 0; }
+.stats div:nth-child(2n) { padding-left: 16px; border-left: 1px solid var(--line); }
+.stats dd { font-size: 20px; }
+section.block { padding: 64px var(--pad); }
+.head { grid-template-columns: 1fr; gap: 14px; margin-bottom: 26px; }
+.head p { font-size: 15.5px; }
+h2 { font-size: clamp(32px, 9.5vw, 42px); }
+.compare-ui { grid-template-columns: 1fr; gap: 0; }
+.compare-ui > div:first-child { display: contents; }
+.seg { order: 1; }
+.views { order: 2; flex-wrap: nowrap; overflow-x: auto; margin: 0 calc(var(--pad) * -1) 16px; padding: 2px var(--pad) 4px; scrollbar-width: none; }
+.views .chip { flex: none; }
+.slider { order: 3; border-radius: 18px; margin-bottom: 16px; width: 100%; justify-self: stretch; }
+.readout { order: 4; } .verdict { order: 5; justify-self: start; } .note { order: 6; }
+.seg button { padding: 13px 14px; }
+.steps { grid-template-columns: 1fr; }
+.rules { grid-template-columns: 1fr; }
+.code pre { font-size: 12px; }
+th, td { padding: 12px 14px; font-size: 14px; }
+footer { grid-template-columns: 1fr; padding: 40px var(--pad) calc(48px + env(safe-area-inset-bottom)); }

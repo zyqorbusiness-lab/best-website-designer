@@ -1,0 +1,438 @@
+{
+ "tool": "model-optimisation-phone/optimise.mjs",
+ "in": "FlightHelmet/glTF/FlightHelmet.gltf (Khronos glTF Sample Assets, CC0)",
+ "out": "models/flight-helmet.glb",
+ "options": {
+  "budget": 14680064,
+  "textures": "webp",
+  "geometry": "meshopt",
+  "max": 2048,
+  "maxFor": [],
+  "colourQ": 92,
+  "dataQ": 92,
+  "normalMode": "near-lossless",
+  "normalNL": 40,
+  "colourKtx": "uastc",
+  "ktxRdo": 1,
+  "posBits": 16,
+  "normBits": 12,
+  "uvBits": 14,
+  "simplify": null,
+  "report": "report.json"
+ },
+ "seconds": 27.1,
+ "before": {
+  "file_bytes": 48392569,
+  "triangles": 94722,
+  "vertices": 55392,
+  "draw_calls": 6,
+  "meshes": 6,
+  "materials": 6,
+  "animations": 0,
+  "extensions": [
+   "KHR_materials_transmission"
+  ],
+  "textures": [
+   {
+    "name": "FlightHelmet_Materials_RubberWoodMat_Normal",
+    "slots": [
+     "normalTexture"
+    ],
+    "kind": "normal",
+    "mime": "image/png",
+    "width": 2048,
+    "height": 2048,
+    "bytes": 3327566,
+    "gpu_bytes_est": 22369621
+   },
+   {
+    "name": "FlightHelmet_Materials_RubberWoodMat_OcclusionRoughMetal",
+    "slots": [
+     "occlusionTexture",
+     "metallicRoughnessTexture"
+    ],
+    "kind": "data",
+    "mime": "image/png",
+    "width": 2048,
+    "height": 2048,
+    "bytes": 3809284,
+    "gpu_bytes_est": 22369621
+   },
+   {
+    "name": "FlightHelmet_Materials_RubberWoodMat_BaseColor",
+    "slots": [
+     "baseColorTexture"
+    ],
+    "kind": "colour",
+    "mime": "image/png",
+    "width": 2048,
+    "height": 2048,
+    "bytes": 3594300,
+    "gpu_bytes_est": 22369621
+   },
+   {
+    "name": "FlightHelmet_Materials_GlassPlasticMat_Normal",
+    "slots": [
+     "normalTexture"
+    ],
+    "kind": "normal",
+    "mime": "image/png",
+    "width": 2048,
+    "height": 2048,
+    "bytes": 2648815,
+    "gpu_bytes_est": 22369621
+   },
+   {
+    "name": "FlightHelmet_Materials_GlassPlasticMat_OcclusionRoughMetal",
+    "slots": [
+     "occlusionTexture",
+     "metallicRoughnessTexture"
+    ],
+    "kind": "data",
+    "mime": "image/png",
+    "width": 2048,
+    "height": 2048,
+    "bytes": 3696183,
+    "gpu_bytes_est": 22369621
+   },
+   {
+    "name": "FlightHelmet_Materials_GlassPlasticMat_BaseColor",
+    "slots": [
+     "baseColorTexture"
+    ],
+    "kind": "colour",
+    "mime": "image/png",
+    "width": 2048,
+    "height": 2048,
+    "bytes": 2306649,
+    "gpu_bytes_est": 22369621
+   },
+   {
+    "name": "FlightHelmet_Materials_MetalPartsMat_Normal",
+    "slots": [
+     "normalTexture"
+    ],
+    "kind": "normal",
+    "mime": "image/png",
+    "width": 2048,
+    "height": 2048,
+    "bytes": 3273483,
+    "gpu_bytes_est": 22369621
+   },
+   {
+    "name": "FlightHelmet_Materials_MetalPartsMat_OcclusionRoughMetal",
+    "slots": [
+     "occlusionTexture",
+     "metallicRoughnessTexture"
+    ],
+    "kind": "data",
+    "mime": "image/png",
+    "width": 2048,
+    "height": 2048,
+    "bytes": 2976508,
+    "gpu_bytes_est": 22369621
+   },
+   {
+    "name": "FlightHelmet_Materials_MetalPartsMat_BaseColor",
+    "slots": [
+     "baseColorTexture"
+    ],
+    "kind": "colour",
+    "mime": "image/png",
+    "width": 2048,
+    "height": 2048,
+    "bytes": 2680488,
+    "gpu_bytes_est": 22369621
+   },
+   {
+    "name": "FlightHelmet_Materials_LeatherPartsMat_Normal",
+    "slots": [
+     "normalTexture"
+    ],
+    "kind": "normal",
+    "mime": "image/png",
+    "width": 2048,
+    "height": 2048,
+    "bytes": 5675531,
+    "gpu_bytes_est": 22369621
+   },
+   {
+    "name": "FlightHelmet_Materials_LeatherPartsMat_OcclusionRoughMetal",
+    "slots": [
+     "occlusionTexture",
+     "metallicRoughnessTexture"
+    ],
+    "kind": "data",
+    "mime": "image/png",
+    "width": 2048,
+    "height": 2048,
+    "bytes": 4375686,
+    "gpu_bytes_est": 22369621
+   },
+   {
+    "name": "FlightHelmet_Materials_LeatherPartsMat_BaseColor",
+    "slots": [
+     "baseColorTexture"
+    ],
+    "kind": "colour",
+    "mime": "image/png",
+    "width": 2048,
+    "height": 2048,
+    "bytes": 5478748,
+    "gpu_bytes_est": 22369621
+   },
+   {
+    "name": "FlightHelmet_Materials_LensesMat_Normal",
+    "slots": [
+     "normalTexture"
+    ],
+    "kind": "normal",
+    "mime": "image/png",
+    "width": 1024,
+    "height": 1024,
+    "bytes": 5575,
+    "gpu_bytes_est": 5592405
+   },
+   {
+    "name": "FlightHelmet_Materials_LensesMat_OcclusionRoughMetal",
+    "slots": [
+     "occlusionTexture",
+     "metallicRoughnessTexture"
+    ],
+    "kind": "data",
+    "mime": "image/png",
+    "width": 1024,
+    "height": 1024,
+    "bytes": 601603,
+    "gpu_bytes_est": 5592405
+   },
+   {
+    "name": "FlightHelmet_Materials_LensesMat_BaseColor",
+    "slots": [
+     "baseColorTexture"
+    ],
+    "kind": "colour",
+    "mime": "image/png",
+    "width": 1024,
+    "height": 1024,
+    "bytes": 696304,
+    "gpu_bytes_est": 5592405
+   }
+  ],
+  "texture_bytes": 45146723,
+  "gpu_texture_bytes_est": 285212667
+ },
+ "after": {
+  "file_bytes": 14426752,
+  "triangles": 94722,
+  "vertices": 55392,
+  "draw_calls": 6,
+  "meshes": 6,
+  "materials": 6,
+  "animations": 0,
+  "extensions": [
+   "EXT_meshopt_compression",
+   "EXT_texture_webp",
+   "KHR_materials_transmission",
+   "KHR_mesh_quantization"
+  ],
+  "textures": [
+   {
+    "name": "FlightHelmet_Materials_RubberWoodMat_Normal",
+    "slots": [
+     "normalTexture"
+    ],
+    "kind": "normal",
+    "mime": "image/webp",
+    "width": 2048,
+    "height": 2048,
+    "bytes": 1654644,
+    "gpu_bytes_est": 22369621
+   },
+   {
+    "name": "FlightHelmet_Materials_RubberWoodMat_OcclusionRoughMetal",
+    "slots": [
+     "occlusionTexture",
+     "metallicRoughnessTexture"
+    ],
+    "kind": "data",
+    "mime": "image/webp",
+    "width": 2048,
+    "height": 2048,
+    "bytes": 804098,
+    "gpu_bytes_est": 22369621
+   },
+   {
+    "name": "FlightHelmet_Materials_RubberWoodMat_BaseColor",
+    "slots": [
+     "baseColorTexture"
+    ],
+    "kind": "colour",
+    "mime": "image/webp",
+    "width": 2048,
+    "height": 2048,
+    "bytes": 544802,
+    "gpu_bytes_est": 22369621
+   },
+   {
+    "name": "FlightHelmet_Materials_GlassPlasticMat_Normal",
+    "slots": [
+     "normalTexture"
+    ],
+    "kind": "normal",
+    "mime": "image/webp",
+    "width": 2048,
+    "height": 2048,
+    "bytes": 1347200,
+    "gpu_bytes_est": 22369621
+   },
+   {
+    "name": "FlightHelmet_Materials_GlassPlasticMat_OcclusionRoughMetal",
+    "slots": [
+     "occlusionTexture",
+     "metallicRoughnessTexture"
+    ],
+    "kind": "data",
+    "mime": "image/webp",
+    "width": 2048,
+    "height": 2048,
+    "bytes": 639668,
+    "gpu_bytes_est": 22369621
+   },
+   {
+    "name": "FlightHelmet_Materials_GlassPlasticMat_BaseColor",
+    "slots": [
+     "baseColorTexture"
+    ],
+    "kind": "colour",
+    "mime": "image/webp",
+    "width": 2048,
+    "height": 2048,
+    "bytes": 343916,
+    "gpu_bytes_est": 22369621
+   },
+   {
+    "name": "FlightHelmet_Materials_MetalPartsMat_Normal",
+    "slots": [
+     "normalTexture"
+    ],
+    "kind": "normal",
+    "mime": "image/webp",
+    "width": 2048,
+    "height": 2048,
+    "bytes": 1673430,
+    "gpu_bytes_est": 22369621
+   },
+   {
+    "name": "FlightHelmet_Materials_MetalPartsMat_OcclusionRoughMetal",
+    "slots": [
+     "occlusionTexture",
+     "metallicRoughnessTexture"
+    ],
+    "kind": "data",
+    "mime": "image/webp",
+    "width": 2048,
+    "height": 2048,
+    "bytes": 755376,
+    "gpu_bytes_est": 22369621
+   },
+   {
+    "name": "FlightHelmet_Materials_MetalPartsMat_BaseColor",
+    "slots": [
+     "baseColorTexture"
+    ],
+    "kind": "colour",
+    "mime": "image/webp",
+    "width": 2048,
+    "height": 2048,
+    "bytes": 608570,
+    "gpu_bytes_est": 22369621
+   },
+   {
+    "name": "FlightHelmet_Materials_LeatherPartsMat_Normal",
+    "slots": [
+     "normalTexture"
+    ],
+    "kind": "normal",
+    "mime": "image/webp",
+    "width": 2048,
+    "height": 2048,
+    "bytes": 2276056,
+    "gpu_bytes_est": 22369621
+   },
+   {
+    "name": "FlightHelmet_Materials_LeatherPartsMat_OcclusionRoughMetal",
+    "slots": [
+     "occlusionTexture",
+     "metallicRoughnessTexture"
+    ],
+    "kind": "data",
+    "mime": "image/webp",
+    "width": 2048,
+    "height": 2048,
+    "bytes": 1219264,
+    "gpu_bytes_est": 22369621
+   },
+   {
+    "name": "FlightHelmet_Materials_LeatherPartsMat_BaseColor",
+    "slots": [
+     "baseColorTexture"
+    ],
+    "kind": "colour",
+    "mime": "image/webp",
+    "width": 2048,
+    "height": 2048,
+    "bytes": 922720,
+    "gpu_bytes_est": 22369621
+   },
+   {
+    "name": "FlightHelmet_Materials_LensesMat_Normal",
+    "slots": [
+     "normalTexture"
+    ],
+    "kind": "normal",
+    "mime": "image/webp",
+    "width": 1024,
+    "height": 1024,
+    "bytes": 352,
+    "gpu_bytes_est": 5592405
+   },
+   {
+    "name": "FlightHelmet_Materials_LensesMat_OcclusionRoughMetal",
+    "slots": [
+     "occlusionTexture",
+     "metallicRoughnessTexture"
+    ],
+    "kind": "data",
+    "mime": "image/webp",
+    "width": 1024,
+    "height": 1024,
+    "bytes": 138766,
+    "gpu_bytes_est": 5592405
+   },
+   {
+    "name": "FlightHelmet_Materials_LensesMat_BaseColor",
+    "slots": [
+     "baseColorTexture"
+    ],
+    "kind": "colour",
+    "mime": "image/webp",
+    "width": 1024,
+    "height": 1024,
+    "bytes": 335066,
+    "gpu_bytes_est": 5592405
+   }
+  ],
+  "texture_bytes": 13263928,
+  "gpu_texture_bytes_est": 285212667
+ },
+ "ratio": 0.298,
+ "budget": 14680064,
+ "budget_ok": true,
+ "validation": {
+  "errors": 0,
+  "warnings": 0,
+  "first": []
+ },
+ "same_file_for_desktop_and_phone": true
+}

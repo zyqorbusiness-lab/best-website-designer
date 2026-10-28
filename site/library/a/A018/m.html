@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" data-build="m">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- desktop -> phone build when ?m=1 is absent -->
+<script>document.documentElement.classList.add('js');(function(){var q=location.search;if(/[?&]m=1/.test(q))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height,phone=w<=860||(c&&h>w);if(!phone)location.replace('./'+q+location.hash);})();</script>
+<title>Tranquility Base &middot; Concept A018 &middot; Zyqor Library</title>
+<meta name="description" content="Tranquility Base is a fictional brand: a advanced 3D web concept by Zyqor Studio. Scroll to land on the Moon among three photo-scanned rocks, then lift the camera for an earthrise.">
+<meta name="theme-color" content="#232F43">
+<meta property="og:title" content="Tranquility Base &middot; Concept A018 &middot; Zyqor Library">
+<meta property="og:description" content="A fictional-brand 3D concept by Zyqor Studio.">
+<meta property="og:image" content="thumb.webp">
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../_kit/stage.js" as="script" crossorigin>
+<link rel="preload" href="../../_assets/models/moon_rock_01.glb" as="fetch" crossorigin>
+<link rel="stylesheet" href="../../_kit/concept.css">
+<link rel="stylesheet" href="m.css">
+<style>:root{--c1:#EEE0C4;--c2:#232F43;--c3:#D03037}</style>
+<script type="importmap">{"imports":{"three":"../../../vendor/three/three.module.min.js","three/addons/":"../../../vendor/three/addons/"}}</script>
+</head>
+<body class="dark grain" data-id="A018" data-tier="advanced" data-name="Tranquility Base">
+<a class="skip" href="#main">Skip to content</a>
+<main id="main">
+  <!-- Structure 03 (scroll-driven 3D showcase): one pinned WebGL scene, five chapters on one camera path. Brief: brief.md -->
+  <section class="journey" aria-label="A scroll journey from lunar orbit to the surface and an earthrise">
+    <div class="scene" data-stage>
+      <noscript><img class="poster" src="poster.webp" alt="The lunar surface with scanned rocks under a navy sky"></noscript>
+    </div>
+    <div class="rail" aria-hidden="true"><span class="rail-track"><span class="rail-fill"></span></span><ol role="list"><li data-i="0"><span class="mono">01</span><span class="rail-l">Approach</span></li><li data-i="1"><span class="mono">02</span><span class="rail-l">Descent</span></li><li data-i="2"><span class="mono">03</span><span class="rail-l">Surface</span></li><li data-i="3"><span class="mono">04</span><span class="rail-l">Footprints</span></li><li data-i="4"><span class="mono">05</span><span class="rail-l">Earthrise</span></li></ol></div>
+    <div class="chapters">
+    <article class="chapter ch-01" id="ch01" aria-labelledby="ch01-h" data-ch="0">
+      <div class="ch-card">
+        <p class="tag">01 &middot; Approach</p>
+        <h1 id="ch01-h" class="display">Tranquility <span class="serif">Base</span></h1>
+        <p class="lead">Scroll to land. One camera, one continuous shot, from orbit to the surface and back up.</p>
+      </div>
+    </article>
+    <article class="chapter ch-02" id="ch02" aria-labelledby="ch02-h" data-ch="1">
+      <div class="ch-card">
+        <p class="tag">02 &middot; Descent</p>
+        <h2 id="ch02-h" class="h2">A plain of <span class="serif">old lava.</span></h2>
+        <p class="lead">The Sea of Tranquility is dark, flat basalt. From up here the craters are the only landmarks.</p>
+      </div>
+    </article>
+    <article class="chapter ch-03" id="ch03" aria-labelledby="ch03-h" data-ch="2">
+      <div class="ch-card">
+        <p class="tag">03 &middot; Surface</p>
+        <h2 id="ch03-h" class="h2">Rock at <span class="serif">eye level.</span></h2>
+        <p class="lead">Three photo-scanned rocks from Poly Haven, lit by one low sun, so every shadow is long and sharp.</p>
+      </div>
+    </article>
+    <article class="chapter ch-04" id="ch04" aria-labelledby="ch04-h" data-ch="3">
+      <div class="ch-card">
+        <p class="tag">04 &middot; Footprints</p>
+        <h2 id="ch04-h" class="h2">Nothing here <span class="serif">fills them in.</span></h2>
+        <p class="lead">No wind and no rain. A footprint pressed into this dust stays exactly as it was made.</p>
+      </div>
+    </article>
+    <article class="chapter ch-05" id="ch05" aria-labelledby="ch05-h" data-ch="4">
+      <div class="ch-card">
+        <p class="tag">05 &middot; Earthrise</p>
+        <h2 id="ch05-h" class="h2">Home, <span class="serif">rising.</span></h2>
+        <p class="lead">Earthrise was first photographed by Bill Anders from Apollo 8 on 24 December 1968. Keep scrolling and it climbs.</p>
+      </div>
+    </article>
+    </div>
+  </section>
+  <section class="outro section" aria-labelledby="outro-h">
+    <div class="wrap outro-in">
+      <p class="tag" data-rv>Concept A018 &middot; Travel</p>
+      <h2 id="outro-h" class="h2" data-rv>A travel journal for a place <span class="serif">nobody can book.</span></h2>
+      <p class="body" data-rv>Tranquility Base is a fictional brand. The scene is one three.js camera on a spline, scrubbed by your scroll: real scanned rocks, a real lunar regolith texture and NASA&rsquo;s Blue Marble on the Earth. Phone and desktop load the same files.</p>
+      <a class="btn btn--accent" href="#ch01" data-press data-action="top">Fly it again
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
+    </div>
+  </section>
+</main>
+<script type="module" src="../../_kit/chrome.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

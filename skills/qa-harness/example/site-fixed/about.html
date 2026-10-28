@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About · Halden · Concept</title>
+<meta name="description" content="Halden is a fictional copper kettle: a design concept used to demo the qa-harness skill.">
+<meta name="theme-color" content="#F3EEE4">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="nav"><a class="brand" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="11" fill="none" stroke="#C2552D" stroke-width="5"/><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-opacity=".18"/></svg>Halden</a><nav class="links" aria-label="Main"><a href="index.html">Kettle</a><a href="gallery.html">Finishes</a><a href="about.html" aria-current="page">About</a></nav><span class="tag">Concept</span></header>
+<main>
+<section style="border-top:0">
+  <p class="kicker reveal">About this page</p>
+  <h2 class="reveal">A concept, honestly labelled.</h2>
+  <p class="lede reveal">Halden does not exist. The page is a small test site for the qa-harness skill: three pages, one live WebGL render, scroll reveals and a phone layout.</p>
+  <a class="btn reveal" target="_blank" rel="noopener" href="https://github.com/zyqorbusiness-lab/best-website-designer">Source on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</section>
+<section>
+  <h2 class="reveal">Press the kettle.</h2>
+  <p class="lede reveal">Tap the ring to hear it. (A small click effect, the kind every concept gets.)</p>
+  <button class="btn reveal" id="whistle" type="button">Whistle</button>
+</section>
+</main>
+<footer><span>Halden is a fictional brand. Concept by Zyqor Studio, built to demo qa-harness.</span><span>Ring rendered live in WebGL, written by hand. No images, no tracking.</span></footer>
+<script src="app.js" defer></script>
+<script>
+  // Click effect for the whistle button.
+  document.querySelector('#whistle')?.addEventListener('click', e => {
+    e.currentTarget.animate([{ transform: 'scale(1)' }, { transform: 'scale(.96)' }, { transform: 'scale(1)' }], { duration: 260, easing: 'cubic-bezier(.16,1,.3,1)' });
+  });
+</script>
+</body>
+</html>

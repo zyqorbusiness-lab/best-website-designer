@@ -1,0 +1,157 @@
+/* Zyqor Library kit: concept.css
+   Shared base for every /library/ concept page (desktop index.html and phone m.html).
+   Load order on a page:  _kit/concept.css  ->  your style.css (or m.css)
+   Every page sets its own three colours on :root (new-concept.mjs fills them from the catalogue):
+     --c1  light  (warm paper family, never pure white)
+     --c2  dark   (a coloured dark, never pure black)
+     --c3  accent (about 1% of the page: one CTA, one rule line, one focus ring)
+   Rules this file encodes (Sujon's Master Award system + chat rules): fluid clamp() type, one spacing
+   scale, hairlines + top specular edge instead of drop shadows, 2.8% grain, fast smooth reveals
+   (opacity + 20px rise, 480ms, expo-out, no bounce, no blur), visible focus, reduced motion. */
+
+/* ---------- fonts (self-hosted; licences in /CREDITS.md and _kit/font/) ---------- */
+@font-face{font-family:"Cabinet Grotesk";src:url("../../assets/font/cabinetgrotesk-var.woff2") format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Satoshi";src:url("../../assets/font/satoshi-var.woff2") format("woff2");font-weight:300 900;font-display:swap}
+@font-face{font-family:"Zodiak";src:url("../../assets/font/zodiak-var.woff2") format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url("../../assets/font/instrumentserif-400.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url("../../assets/font/instrumentserif-400-italic.woff2") format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"General Sans";src:url("../../assets/font/generalsans-var.woff2") format("woff2");font-weight:200 700;font-display:swap}
+@font-face{font-family:"JetBrains Mono";src:url("font/jetbrainsmono-400.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"JetBrains Mono";src:url("font/jetbrainsmono-500.woff2") format("woff2");font-weight:500;font-display:swap}
+
+/* ---------- tokens ---------- */
+:root{
+  --c1:#F3EDE1; --c2:#17423C; --c3:#B5832F;
+  /* derived tones: tints and shades of the three colours only */
+  --paper:var(--c1); --ink:var(--c2); --accent:var(--c3);
+  --paper-2:color-mix(in oklab,var(--c1) 93%,var(--c2));
+  --paper-3:color-mix(in oklab,var(--c1) 84%,var(--c2));
+  --ink-2:color-mix(in oklab,var(--c2) 72%,var(--c1));      /* secondary text on paper (>= 4.5:1 on most palettes) */
+  --ink-3:color-mix(in oklab,var(--c2) 55%,var(--c1));      /* captions, mono tags */
+  --line:color-mix(in oklab,var(--c2) 16%,transparent);     /* hairline */
+  --line-strong:color-mix(in oklab,var(--c2) 30%,transparent);
+  --on-dark:var(--c1); --on-dark-2:color-mix(in oklab,var(--c1) 72%,var(--c2));
+  --line-dark:color-mix(in oklab,var(--c1) 18%,transparent);
+  --spec:inset 0 1px 0 color-mix(in oklab,#fff 60%,transparent);           /* top specular edge */
+  --spec-dark:inset 0 1px 0 color-mix(in oklab,var(--c1) 22%,transparent);
+
+  /* type: fluid scale (display tracks -0.04em) */
+  --f-display:"Cabinet Grotesk","Satoshi",system-ui,sans-serif;
+  --f-body:"Satoshi","General Sans",system-ui,sans-serif;
+  --f-serif:"Instrument Serif","Zodiak",Georgia,serif;
+  --f-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --fs-xs:.75rem; --fs-sm:.875rem;
+  --fs-body:clamp(1rem,.96rem + .2vw,1.125rem);
+  --fs-lead:clamp(1.125rem,1rem + .6vw,1.5rem);
+  --fs-h3:clamp(1.5rem,1.2rem + 1.2vw,2.25rem);
+  --fs-h2:clamp(2.25rem,1.4rem + 3.4vw,4.75rem);
+  --fs-h1:clamp(3rem,1.4rem + 6.6vw,9rem);
+  --fs-mega:clamp(4rem,.6rem + 13vw,15rem);
+  --track-display:-.04em; --track-h:-.025em; --track-mono:.06em;
+  --measure:62ch;
+
+  /* space: one scale, no random margins */
+  --s1:8px; --s2:12px; --s3:16px; --s4:24px; --s5:32px; --s6:48px; --s7:64px; --s8:96px;
+  --section-y:clamp(6rem,12vw,11rem);
+  --container:1440px; --gutter:clamp(1.5rem,5vw,5rem); --grid-gap:clamp(1rem,2vw,1.5rem);
+  --radius:18px; --radius-sm:10px; --pill:999px;
+
+  /* motion: his taste. fast, smooth, no bounce, no blur */
+  --ease-out:cubic-bezier(.16,1,.3,1);        /* expo-out: reveals, UI */
+  --ease-io:cubic-bezier(.76,0,.24,1);        /* in-out-quart: scene changes, wipes */
+  --ease-spring:cubic-bezier(.34,1.32,.64,1); /* only where physics IS the concept */
+  --dur:480ms; --dur-fast:220ms; --dur-slow:900ms; --rise:20px; --stagger:70ms;
+  --tap:44px;
+  color-scheme:light;
+}
+
+/* ---------- reset ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:auto}
+body{margin:0;min-height:100svh;background:var(--paper);color:var(--ink);font:400 var(--fs-body)/1.55 var(--f-body);
+  font-feature-settings:"ss01","kern";-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:clip;text-rendering:optimizeLegibility}
+img,svg,video,canvas{display:block;max-width:100%}
+img,video{height:auto}
+h1,h2,h3,h4,p,figure,blockquote,ul,ol,dl{margin:0}
+ul[role=list],ol[role=list]{list-style:none;padding:0}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:.2em}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;background:none;border:0;padding:0}
+:where(button,[role=button],a,input,select,summary){-webkit-tap-highlight-color:transparent}
+::selection{background:color-mix(in oklab,var(--c3) 32%,transparent);color:var(--ink)}
+:focus-visible{outline:2px solid var(--c3);outline-offset:3px;border-radius:6px}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip{position:fixed;left:var(--s3);top:-100px;z-index:100;padding:var(--s2) var(--s3);background:var(--ink);color:var(--paper);border-radius:var(--pill)}
+.skip:focus{top:var(--s3)}
+
+/* ---------- type ---------- */
+.display,.h1{font:800 var(--fs-h1)/.88 var(--f-display);letter-spacing:var(--track-display);text-wrap:balance}
+.mega{font:800 var(--fs-mega)/.82 var(--f-display);letter-spacing:-.05em}
+.h2{font:750 var(--fs-h2)/.95 var(--f-display);letter-spacing:var(--track-h);text-wrap:balance}
+.h3{font:700 var(--fs-h3)/1.08 var(--f-display);letter-spacing:-.015em}
+.serif{font-family:var(--f-serif);font-weight:400;letter-spacing:-.01em}
+.lead{font-size:var(--fs-lead);line-height:1.45;color:var(--ink-2);max-width:42ch;text-wrap:pretty}
+.body,.prose p{max-width:var(--measure);color:var(--ink-2);text-wrap:pretty}
+.mono,.tag{font:500 var(--fs-xs)/1.3 var(--f-mono);letter-spacing:var(--track-mono);text-transform:uppercase}
+.tag{display:inline-flex;align-items:center;gap:.5em;color:var(--ink-3)}
+.tag::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--c3)}
+.num{font-variant-numeric:tabular-nums}
+
+/* ---------- layout ---------- */
+.wrap{width:min(100% - 2*var(--gutter),var(--container));margin-inline:auto}
+.section{padding-block:var(--section-y)}
+.grid12{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--grid-gap)}
+.hair{border:1px solid var(--line);box-shadow:var(--spec)}
+.rule{height:1px;background:var(--line);border:0;margin:0}
+.rule--accent{height:2px;width:56px;background:var(--c3)}
+.full{width:100%;height:100svh;min-height:560px}
+
+/* ---------- controls (every one has a press state; nothing hover-only) ---------- */
+.btn{--b-bg:var(--ink);--b-fg:var(--paper);display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:var(--tap);padding:0 1.35em;
+  border-radius:var(--pill);background:var(--b-bg);color:var(--b-fg);font:600 var(--fs-sm)/1 var(--f-body);letter-spacing:.01em;text-decoration:none;
+  box-shadow:var(--spec-dark);transition:transform var(--dur-fast) var(--ease-out),background-color var(--dur-fast) var(--ease-out),color var(--dur-fast) var(--ease-out);
+  touch-action:manipulation;user-select:none}
+.btn svg{width:1.1em;height:1.1em;flex:none}
+.btn:active,.btn.is-pressed{transform:scale(.97)}
+.btn--accent{--b-bg:var(--c3);--b-fg:var(--c1)}
+.btn--ghost{--b-bg:transparent;--b-fg:var(--ink);border:1px solid var(--line-strong);box-shadow:var(--spec)}
+@media (hover:hover) and (pointer:fine){.btn:hover{--b-bg:color-mix(in oklab,var(--ink) 86%,var(--c3))}.btn--accent:hover{--b-bg:color-mix(in oklab,var(--c3) 86%,var(--c2))}.btn--ghost:hover{--b-bg:var(--paper-2)}}
+.chip{display:inline-flex;align-items:center;gap:.45em;min-height:36px;padding:0 .95em;border-radius:var(--pill);border:1px solid var(--line);
+  background:color-mix(in oklab,var(--c1) 70%,transparent);font:500 var(--fs-sm)/1 var(--f-body);color:var(--ink-2);transition:background-color var(--dur-fast) var(--ease-out),color var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out)}
+.chip[aria-pressed=true],.chip.is-on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.icon{width:20px;height:20px;flex:none;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- 3D stage (stage.js) ---------- */
+.stage{position:relative;overflow:hidden;isolation:isolate}
+.stage canvas{width:100%!important;height:100%!important;display:block;outline:none}
+.stage canvas:focus-visible{outline:2px solid var(--c3);outline-offset:-4px}
+.stage[data-drag]{cursor:grab;touch-action:pan-y}
+.stage[data-drag].is-dragging{cursor:grabbing}
+.stage .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity var(--dur) var(--ease-out);pointer-events:none}
+.stage.is-fallback .poster,.stage.is-loading .poster{opacity:1}
+.stage.is-fallback canvas{display:none}
+.stage .stage-load{position:absolute;left:50%;bottom:var(--s5);translate:-50% 0;font:500 var(--fs-xs)/1 var(--f-mono);letter-spacing:var(--track-mono);text-transform:uppercase;color:var(--ink-3);opacity:0;transition:opacity var(--dur) var(--ease-out)}
+.stage.is-loading .stage-load{opacity:1}
+.stage-fallback-card{position:absolute;inset:0;display:grid;place-items:center;background:var(--paper-2);color:var(--ink-2);font:500 var(--fs-sm)/1.4 var(--f-mono);text-align:center;padding:var(--s5)}
+
+/* ---------- reveals (fx/reveal.js). Hidden only when JS is running ---------- */
+.js [data-rv]{opacity:0;transform:translate3d(0,var(--rise),0);transition:opacity var(--dur) var(--ease-out),transform var(--dur) var(--ease-out);transition-delay:calc(var(--rv-i,0) * var(--stagger))}
+.js [data-rv=left]{transform:translate3d(calc(var(--rise) * -1),0,0)}
+.js [data-rv=right]{transform:translate3d(var(--rise),0,0)}
+.js [data-rv=fade]{transform:none}
+.js [data-rv].rv-in{opacity:1;transform:none}
+.split-w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+.split-w>span{display:inline-block;transform:translate3d(0,105%,0);transition:transform var(--dur-slow) var(--ease-out);transition-delay:calc(var(--i,0) * 45ms)}
+.rv-in .split-w>span,.split-w.rv-in>span{transform:none}
+
+/* ---------- grain (add class "grain" to <body>) ---------- */
+body.grain::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;background:url("../../assets/color/grain.webp") repeat;background-size:180px;opacity:.028;mix-blend-mode:multiply}
+body.grain.dark::after{mix-blend-mode:screen;opacity:.035}
+
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;transition-delay:0ms!important;scroll-behavior:auto!important}
+  .js [data-rv]{opacity:1;transform:none}
+  .split-w>span{transform:none}
+}
+@media (forced-colors:active){.btn,.chip{border:1px solid CanvasText}}

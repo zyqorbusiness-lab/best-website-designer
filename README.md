@@ -12,6 +12,8 @@
 <p align="center">
   <a href="https://zyqor-portfolio-v3.sites.tab.bot/"><b>Live preview</b></a> &nbsp;&middot;&nbsp;
   <a href="#zyqor-lab">Lab concepts</a> &nbsp;&middot;&nbsp;
+  <a href="#zyqor-library-300-3d-concepts-in-progress">300-concept library</a> &nbsp;&middot;&nbsp;
+  <a href="skills/">Skills</a> &nbsp;&middot;&nbsp;
   <a href="#run-it-locally">Run locally</a> &nbsp;&middot;&nbsp;
   <a href="#deploy-on-vercel">Deploy</a> &nbsp;&middot;&nbsp;
   <a href="mailto:zyqorbusiness@gmail.com">Hire me</a>
@@ -27,7 +29,7 @@
 
 | Section | What it does |
 |---|---|
-| **Scroll-world intro** | A camera flight from the studio through concept brands to a main street, scrubbed frame-by-frame by scroll (custom scrub engine). |
+| **Scroll-world intro** | A camera flight from the studio through concept brands to a main street, scrubbed frame-by-frame by scroll (scrub engine adapted from the MIT-licensed scroll-world skill by cyw, extended for Zyqor Studio). |
 | **Worlds** | Five pinned scroll scenes around one live three.js product: colourway morph in a browser card, giant type behind the product, exploded callouts, orbit carousel, organic mask reveal. |
 | **Work** | Six real, live projects in a pinned horizontal gallery with hover video. |
 | **Zyqor Lab** | Eighteen complete concept sites for fictional brands, each built around one signature interaction (below). |
@@ -36,6 +38,29 @@
 | **About / Pricing / Contact** | Copy-to-clipboard email, WhatsApp and Gmail links, big footer wordmark. |
 
 Two builds, one site: the **desktop build** (`/`) is the heavy one (WebGL, Lenis smooth scroll, GSAP ScrollTrigger pins). The **phone build** (`/m/`) is a separate, lighter page (native scroll, smaller models and clips, no hover-only UI). A tiny inline script at the top of each page sends phones to `/m/` and desktops back to `/`; add `?desktop=1` to stay on the phone build on a laptop.
+
+## Zyqor Library: 300 3D concepts (in progress)
+
+A growing library of **300 interactive 3D concept pages**, each a complete mini landing page for a fictional brand with a 3D object at its heart, in three tiers:
+
+| Tier | What it shows | Count |
+|---|---|---|
+| **Normal** | One light three.js scene (a small real model or crafted geometry) plus one signature interaction | 100 |
+| **Advanced** | Scroll-driven 3D scenes, shaders, physics, particles, frame sequences from our own renders | 100 |
+| **Premium** | Detailed real CC0/CC-BY models, PBR materials, HDRI lighting, liquid glass, cinematic scroll | 100 |
+
+Open it at [`site/library/`](site/library/) (live preview: `/library/`). The index filters by tier, category and technique; concepts that are not built yet show as palette cards marked *Coming*. Concepts go live in batches of 25, each only after it passes QA at 1440 / 390 / 360 with 0 console errors, and each has a desktop page and a phone page that load the **same** models, textures and lighting.
+
+<p>
+  <img src="site/library/n/N002/thumb.webp" alt="N002 Kiln &amp; Quiet: a real ceramic vase on a potter's wheel" width="49%">
+  <img src="site/library/a/A018/thumb.webp" alt="A018 Tranquility Base: a scroll descent onto a moonscape" width="49%">
+</p>
+
+Built with a shared kit (`site/library/_kit/`: one-call three.js stage with HDRI, ACES, contact shadow, lazy loading, pause off-screen and poster fallback; concept chrome; interaction modules) and a batch QA harness (`tools/qa-library.mjs`). How to add a concept: [`site/library/README.md`](site/library/README.md). The rules every concept follows: [`docs/beast/DESIGN_RULES.md`](docs/beast/DESIGN_RULES.md).
+
+## Skills you can download
+
+[`skills/`](skills/) holds free, tested, MIT-licensed skills: a written method (`SKILL.md`), a working example and starter code each. Ready now: **qa-harness**, **liquid-glass-ui**, **model-optimisation-phone**. More are added with every batch; the full list is in [`skills/README.md`](skills/README.md).
 
 ## Zyqor Lab
 

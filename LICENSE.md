@@ -2,7 +2,7 @@
 
 Copyright (c) 2026 Sujon Hoque (Zyqor Studio).
 
-**Code** (HTML, CSS and JavaScript written for this site, including the Lab kit and demos) is released under the MIT licence below. You may study it, reuse it and adapt it in your own projects.
+**Code** (HTML, CSS and JavaScript written for this site, including the Lab kit and demos) is released under the MIT licence below. You may study it, reuse it and adapt it in your own projects. `site/scrub-engine.js` is adapted from scroll-world (MIT, Copyright (c) 2026 cyw); its notice is kept in the file.
 
 **Personal content is not covered by the MIT licence**: the name and logo "Zyqor" / "Zyqor Studio", Sujon's photo, the project copy, the intro scroll-world clips and the case-study videos. These stay all rights reserved.
 

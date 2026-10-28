@@ -1,6 +1,6 @@
 # Video Flow: drop a video, get a scroll site
 
-Video Flow turns one video into a finished scroll-scrubbed landing page. The video can be real footage or a 3D/AI product render. As the visitor scrolls, the page plays the shot frame by frame on a canvas, and your copy rises in at the scroll positions you choose. It builds a heavy desktop page and a light phone page, both inside the Zyqor Lab chrome.
+Video Flow turns one video into a finished scroll-scrubbed landing page. The video can be real footage or your own render of a real 3D model. As the visitor scrolls, the page plays the shot frame by frame on a canvas, and your copy rises in at the scroll positions you choose. It builds a desktop page and a phone page, both inside the Zyqor Lab chrome.
 
 It needs Node 18+ and ffmpeg. There are no npm packages to install.
 

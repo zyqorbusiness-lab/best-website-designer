@@ -1,0 +1,107 @@
+/* desktop build */
+.topbar{position:fixed;z-index:40;top:18px;left:0;right:0;display:flex;justify-content:center;pointer-events:none}
+.nav{pointer-events:auto;gap:6px;padding:6px;--lg-alpha:.5;--lg-blur:18px}
+.brand{display:flex!important;align-items:center;gap:8px;padding:0 12px 0 10px!important;font-size:17px}
+.brand svg{width:24px;height:24px;color:var(--c2)}
+.brand b{letter-spacing:-.02em}
+.navseg>button{min-height:38px;padding:0 18px;opacity:1}
+.hero{position:relative;isolation:isolate;min-height:max(100vh,780px);color:var(--c1);overflow:hidden}
+.hero .photo img{object-position:50% 40%}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+ background:linear-gradient(90deg,color-mix(in oklab,var(--c2) 82%,transparent) 0%,color-mix(in oklab,var(--c2) 62%,transparent) 34%,color-mix(in oklab,var(--c2) 18%,transparent) 56%,transparent 70%),
+ linear-gradient(0deg,color-mix(in oklab,var(--c2) 45%,transparent),transparent 40%)}
+.hero-in{max-width:1340px;margin:0 auto;min-height:inherit;padding:150px 56px 72px;display:grid;grid-template-columns:1fr 410px;gap:56px;align-items:end}
+.kicker{display:inline-flex;gap:10px;padding:8px 16px;font-size:13px;--lg-alpha:.34}
+.kicker .dot{width:4px;height:4px;border-radius:9px;background:var(--c3)}
+h1{font-size:clamp(60px,6.6vw,108px);line-height:.94;letter-spacing:-.048em;font-weight:640;margin:26px 0 22px;max-width:9.5ch}
+h1 .serif{font-weight:400;letter-spacing:-.02em;color:#FBD6BF}
+.lede{font-size:19px;line-height:1.5;max-width:44ch;margin:0 0 30px;color:color-mix(in oklab,var(--c1) 92%,transparent)}
+.cta{gap:12px}.cta .lg-btn{min-height:52px;padding:0 24px;font-size:16px}
+.widgets{display:grid;gap:18px}
+.widgets .lg-card{--lg-alpha:.62;--lg-blur:24px;padding:22px 22px 20px}
+.w-t{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:650;margin:0}
+.w-t svg{width:20px;height:20px;color:var(--c3)}
+.big{align-items:baseline;gap:6px;margin:12px 0 4px}
+.huge{font-size:68px;font-weight:600;line-height:1}
+.unit{font-size:22px;font-weight:600}
+.rise{margin-left:8px;font-size:14px}
+.tide svg{margin:6px 0 2px}
+.ticks{font-size:11.5px;margin:4px 2px 16px}
+.wseg{width:100%}
+.ctrl small.d{display:block;font-size:13px}
+.slider-row{margin:16px 0 4px}
+.slider-row label,.slider-row output{font-size:14px;font-weight:600}
+.icons{margin-top:12px;gap:10px}
+.icons .hint{font-size:12.5px;margin-left:auto}
+/* material */
+.material{position:relative;isolation:isolate;min-height:max(100vh,820px);overflow:hidden;display:flex;align-items:center;justify-content:flex-end;padding:96px 56px}
+.material .photo img{object-position:50% 50%}
+.spec-stage{position:absolute;inset:0}
+.spec{left:10%;top:38%;width:440px;height:156px;display:flex;align-items:center;justify-content:center;gap:18px;--lg-alpha:.06;--lg-blur:1.5px;--lg-sat:1.5}
+.spec .lbl{font-size:78px;line-height:1;color:var(--c2);letter-spacing:-.02em}
+.spec .dragi{width:26px;height:26px;opacity:.65;color:var(--c2)}
+.m-panel{position:relative;width:440px;--lg-alpha:.80;--lg-blur:26px;padding:30px}
+.m-panel h2{font-size:38px;line-height:1.02;letter-spacing:-.035em;font-weight:640;margin:12px 0 10px}
+.m-panel>p{margin:0 0 14px;font-size:15px}
+.layers{list-style:none;margin:0;padding:0;border-top:1px solid color-mix(in oklab,var(--c2) 12%,transparent)}
+.layers li{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid color-mix(in oklab,var(--c2) 12%,transparent)}
+.layers b{display:block;font-size:15px}.layers small{display:block;font-size:12.5px;opacity:.72;line-height:1.35}
+.support{font-size:12.5px;margin:12px 0 0}
+/* specimen layer switches */
+.spec.no-frost{--lg-blur:0px;--lg-sat:1}
+.spec.no-spec{--_spec:transparent;--_spec2:transparent;--_hair:transparent}.spec.no-spec::before{opacity:0}
+.spec.no-depth{box-shadow:inset 1.5px 1.5px 0 -.5px var(--_spec),inset -1px -1px 0 -.25px var(--_spec2),inset 0 0 0 .5px var(--_hair)}
+/* parts */
+.parts{position:relative;isolation:isolate;overflow:hidden;color:var(--c1)}
+.parts .photo img{object-position:50% 0;height:124%}
+.parts::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,color-mix(in oklab,var(--c2) 62%,transparent),color-mix(in oklab,var(--c2) 34%,transparent) 40%,color-mix(in oklab,var(--c2) 52%,transparent))}
+.parts-in{max-width:1340px;margin:0 auto;padding:120px 56px}
+.parts-head h2{font-size:clamp(44px,4.4vw,68px);line-height:1;letter-spacing:-.04em;font-weight:640;margin:12px 0 48px}
+.board{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.cell{margin:0;min-height:210px;display:grid;grid-template-rows:1fr auto;justify-items:center;align-items:center;gap:14px;padding:22px 16px 16px;border-radius:28px;
+ background:color-mix(in oklab,var(--c2) 14%,transparent);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
+.cell figcaption{font-size:12.5px;text-align:center;color:color-mix(in oklab,var(--c1) 90%,transparent)}
+.cell code{font-size:12px;background:rgba(255,255,255,.14);padding:2px 6px;border-radius:6px}
+.c-nav,.c-btn{grid-column:span 2}
+.wrap{flex-wrap:wrap;justify-content:center;gap:10px}
+.c-nav .lg-nav{color:var(--c2);--lg-alpha:.5}
+.lg-btn.sm{min-height:36px;padding:0 16px}
+.mini{--lg-alpha:.6;--lg-blur:22px;width:min(240px,100%);padding:14px 18px;font-weight:600}
+.c-seg .lg-seg,.c-sw .lg-card,.c-btn .lg-btn:not(.lg--dark){color:var(--c2)}
+.c-seg .lg-seg{--lg-alpha:.36}
+.demo-card{--lg-alpha:.5;--lg-blur:22px;width:200px;padding:18px 20px}
+.cbig{font-size:46px;font-weight:600;margin:4px 0 2px;line-height:1}
+.demo-card p{margin:0}.demo-card .muted{font-size:13px}
+.phone-tab{position:relative;width:300px;height:70px}
+.lg-tabbar.static{position:absolute;left:0;right:0;bottom:0;transform:none;width:auto;color:var(--c2);--lg-alpha:.5}
+/* install */
+.install{background:var(--c1);padding:120px 56px 48px}
+.i-grid{max-width:1340px;margin:0 auto;display:grid;grid-template-columns:.9fr 1.35fr 1fr;gap:44px;align-items:start}
+.install h2{font-size:clamp(40px,3.8vw,58px);line-height:1;letter-spacing:-.04em;font-weight:640;margin:12px 0 16px}
+.code{font-size:13px;background:var(--c2);color:var(--c1);border-radius:24px;padding:26px 28px;line-height:1.7;box-shadow:0 20px 40px -24px color-mix(in oklab,var(--c2) 70%,transparent)}
+.rules{list-style:none;margin:0;padding:0;display:grid;gap:14px;font-size:15px}
+.rules b{display:block}
+.rules code,.install p code{background:color-mix(in oklab,var(--c2) 9%,transparent);padding:1px 5px;border-radius:5px;font-size:12.5px}
+.credits{max-width:1340px;margin:96px auto 0;padding-top:28px;border-top:1px solid color-mix(in oklab,var(--c2) 14%,transparent);font-size:13px;line-height:1.55;color:color-mix(in oklab,var(--c2) 80%,transparent);columns:2;column-gap:48px}
+.credits p{margin:0 0 10px;break-inside:avoid}
+.credits .foot{font-weight:600;color:var(--c2)}
+/* sheet */
+.lg-sheet{--lg-alpha:.82;--lg-blur:30px}
+.sheet-t{font-size:24px;letter-spacing:-.02em;margin:0}
+.sheet-p{font-size:14px;margin:8px 0 16px}
+.sheet-list{display:grid;gap:8px;margin-bottom:16px}
+.sheet-item{display:flex;gap:12px;align-items:center;padding:12px 14px;border-radius:18px;background:color-mix(in oklab,var(--c2) 6%,transparent)}
+.sheet-item svg{width:22px;height:22px;color:var(--c3)}
+.sheet-item b{display:block;font-size:15px}.sheet-item small{display:block;font-size:12.5px;opacity:.7}
+.seg-wrap{margin-bottom:16px}.seg-wrap .lg-seg{width:100%}
+.sheet-go{width:100%;min-height:50px}
+.lg-sheet .lg-grabber{display:none}
+.c-tab{grid-column:span 2}
+.player{width:240px;padding:16px 18px;--lg-alpha:.6}
+.player .row{gap:12px}
+.player .art{width:46px;height:46px;border-radius:12px;flex:none;background:url(img/citrus-1200.webp) 30% 40%/260% auto}
+.player b{display:block;font-size:14.5px}.player small{display:block;font-size:12.5px;opacity:.9}
+.player .bar{height:4px;border-radius:9px;background:rgba(255,255,255,.22);margin-top:14px;overflow:hidden}
+.player .bar i{display:block;width:38%;height:100%;background:var(--c3)}
+.c-btn .lg--clear{color:var(--c1)!important}
+.cell figcaption{text-shadow:0 1px 2px color-mix(in oklab,var(--c2) 50%,transparent)}

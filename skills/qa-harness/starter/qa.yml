@@ -1,0 +1,22 @@
+# GitHub Actions: run the QA harness on every push and pull request.
+# Copy to .github/workflows/qa.yml. Assumes the harness lives in skills/qa-harness
+# and your static site in site/. The report is uploaded as a build artifact.
+name: qa
+on: [push, pull_request]
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - name: Install the harness and Chromium
+        working-directory: skills/qa-harness
+        run: npm install && npx playwright install --with-deps chromium
+      - name: QA
+        run: node skills/qa-harness/qa.mjs site --out qa-report
+      - name: Upload the report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with: { name: qa-report, path: qa-report }

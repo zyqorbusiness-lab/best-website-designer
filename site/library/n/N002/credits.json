@@ -1,0 +1,62 @@
+{
+  "brand": "Kiln & Quiet",
+  "id": "N002",
+  "items": [
+    {
+      "what": "3D model",
+      "title": "Ceramic Vase 01",
+      "author": "James Ray Cock",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/ceramic_vase_01",
+      "licence": "CC0 1.0",
+      "note": "Optimised for the web with gltf-transform (meshopt geometry, WebP textures, 2K). Same file on phone and desktop."
+    },
+    {
+      "what": "HDRI",
+      "title": "Studio Small 09",
+      "author": "Sergej Majboroda",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/studio_small_09",
+      "licence": "CC0 1.0",
+      "note": "Shared kit lighting."
+    },
+    {
+      "what": "Potter's wheel",
+      "title": "Wheel head and plinth",
+      "author": "Zyqor Studio",
+      "note": "Modelled in code (lathe geometry, turning marks drawn on a canvas)."
+    },
+    {
+      "what": "Type",
+      "title": "Cabinet Grotesk, Satoshi",
+      "author": "Indian Type Foundry",
+      "source": "Fontshare",
+      "url": "https://www.fontshare.com",
+      "licence": "ITF Free Font License"
+    },
+    {
+      "what": "Type",
+      "title": "Instrument Serif",
+      "author": "Rodrigo Fuenzalida, Jordan Egstad",
+      "source": "GitHub",
+      "url": "https://github.com/Instrument/instrument-serif",
+      "licence": "SIL OFL 1.1"
+    },
+    {
+      "what": "Type",
+      "title": "JetBrains Mono",
+      "author": "The JetBrains Mono Project Authors",
+      "source": "GitHub",
+      "url": "https://github.com/JetBrains/JetBrainsMono",
+      "licence": "SIL OFL 1.1"
+    },
+    {
+      "what": "Engine",
+      "title": "three.js r170, GSAP, Lenis",
+      "author": "their authors",
+      "source": "threejs.org",
+      "url": "https://threejs.org",
+      "licence": "MIT / GSAP Standard Licence"
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Model optimisation for phone · Zyqor Skills example</title>
+<meta name="description" content="One optimised GLB that desktop and phone both load and that looks identical: 46 MB in, 13.8 MB out, verified pixel by pixel.">
+<meta name="theme-color" content="#EFE7DA">
+<script src="route.js"></script>
+<link rel="preload" href="fonts/fraunces-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+<script type="importmap">{"imports":{"three":"./vendor/three/build/three.module.js","three/addons/":"./vendor/three/examples/jsm/"}}</script>
+<script type="module" src="app.js"></script>
+</head>
+<body class="is-desktop">
+<a class="skip" href="#main">Skip to content</a>
+<header class="chrome" aria-label="Skill">
+  <b>Zyqor Skills</b><span class="sep"></span><span>model-optimisation-phone</span><span class="sep"></span><span class="tag">Example</span>
+  <a class="gh" href="https://github.com/zyqorbusiness-lab/best-website-designer/tree/main/skills/model-optimisation-phone" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg><span>Get the skill</span></a>
+</header>
+<main id="main">
+<section class="hero">
+  <div class="copyblock">
+    <p class="eyebrow rv"><i></i>Same model on phone and desktop</p>
+    <h1 class="rv">46 MB in.<br>13.8 MB out.<br><em>Same helmet.</em></h1>
+    <p class="lead rv">One optimised GLB. This page and its phone build load the exact same file, textures and light. Drag to turn it, or tap a detail to look closer.</p>
+    <ul class="chips rv" aria-label="Look closer"><li><button class="chip" type="button" data-view="full" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>Whole helmet</button></li><li><button class="chip" type="button" data-view="goggles" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="7" cy="13" r="4"/><circle cx="17" cy="13" r="4"/><path d="M11 13h2M3 12 1.5 10M21 12l1.5-2"/></svg>Goggles</button></li><li><button class="chip" type="button" data-view="leather" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 14c0-5 3.6-9 8-9s8 4 8 9v3H4z"/><path d="M8 17v-3M16 17v-3M7 9.5c1.5.8 3 1.2 5 1.2s3.5-.4 5-1.2" stroke-dasharray="1.6 2.2"/></svg>Leather and stitching</button></li><li><button class="chip" type="button" data-view="stand" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 4v13M7 20h10M9 17h6"/><circle cx="12" cy="6" r="2"/></svg>Wood stand</button></li></ul>
+    <dl class="stats rv">
+      <div><dt>File</dt><dd>13.76 MB<small>from 46.15 MB</small></dd></div>
+      <div><dt>Triangles</dt><dd>94,722<small>unchanged</small></dd></div>
+      <div><dt>Loaded in</dt><dd data-load>…<small data-load-note>this visit</small></dd></div>
+      <div><dt>On phone</dt><dd>Same file<small>DPR capped at 2</small></dd></div>
+    </dl>
+  </div>
+  <div class="stage" data-stage aria-label="3D model of a 1940s flight helmet on a wooden stand. Drag to turn it.">
+    <p class="hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 12h18M6 9l-3 3 3 3M18 9l3 3-3 3"/></svg><span>Drag to turn</span></p>
+    <span class="badge" data-badge>flight-helmet.glb · 13.76 MB</span>
+    <p class="status" data-status>Loading the model…</p>
+    <div class="bar"><i data-bar></i></div>
+  </div>
+</section>
+
+<section class="block" id="proof">
+  <div class="head"><h2 class="rv">Is it really<br>the same?</h2>
+  <p class="rv">Both files are rendered with the same viewer, camera and light, then every pixel is compared. Drag the line to see the original on the left and the optimised file on the right. Try the two older recipes to see what the checker catches.</p></div>
+  <div class="compare-ui">
+    <div>
+      <div class="seg rv" role="group" aria-label="Recipe">
+        <button type="button" data-v="skill" aria-pressed="true"><b>This skill</b><span>2048 px, normals near-lossless</span><em>13.76 MB</em></button>
+        <button type="button" data-v="v3" aria-pressed="false"><b>v3 round-2 recipe</b><span>WebP q92 on every map</span><em>9.55 MB</em></button>
+        <button type="button" data-v="r1" aria-pressed="false"><b>v3 round-1 recipe</b><span>1024 px, q75, 8-bit normals</span><em>1.86 MB</em></button>
+      </div>
+      <div class="views rv" role="group" aria-label="Close-up">
+        <button class="chip" type="button" data-cv="leather" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 14c0-5 3.6-9 8-9s8 4 8 9v3H4z"/><path d="M8 17v-3M16 17v-3M7 9.5c1.5.8 3 1.2 5 1.2s3.5-.4 5-1.2" stroke-dasharray="1.6 2.2"/></svg>Leather</button>
+        <button class="chip" type="button" data-cv="goggles" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="7" cy="13" r="4"/><circle cx="17" cy="13" r="4"/><path d="M11 13h2M3 12 1.5 10M21 12l1.5-2"/></svg>Goggles</button>
+        <button class="chip" type="button" data-cv="stand" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 4v13M7 20h10M9 17h6"/><circle cx="12" cy="6" r="2"/></svg>Stand</button>
+      </div>
+      <dl class="readout rv"><div><dt>PSNR</dt><dd data-psnr>42.23 dB</dd></div><div><dt>Pixels changed</dt><dd data-chg>0.262%</dd></div></dl>
+      <p class="verdict ok rv" data-verdict><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Identical</span></p>
+      <p class="note rv">Pass mark: at least 38 dB and no more than 1% of pixels moved by more than 12/255, on every close-up, desktop and phone. Measured on lossless renders; the crops here are WebP.</p>
+    </div>
+    <div class="slider rv" data-slider style="--x:50%">
+      <img class="before" data-before src="img/leather_original.webp" alt="Original model, leather close-up" width="640" height="640">
+      <img class="after fade" data-after src="img/leather_skill.webp" alt="Optimised model, leather close-up" width="640" height="640">
+      <span class="lab l">Original</span><span class="lab r" data-rlab>This skill</span>
+      <div class="handle"><span class="knob"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></svg></span></div>
+      <input type="range" min="0" max="100" value="50" step="0.5" aria-label="Compare original and optimised">
+    </div>
+  </div>
+</section>
+
+<section class="block" id="recipe">
+  <div class="head"><h2 class="rv">The recipe</h2><p class="rv">Three commands. The optimiser refuses settings that would visibly change the model, and the checker proves it with numbers and side-by-side crops.</p></div>
+  <ol class="steps">
+    <li class="rv"><h3>Install</h3><p>glTF Transform, meshoptimizer and sharp. Add KTX-Software only if you want KTX2.</p><div class="code"><pre><code>npm i @gltf-transform/core @gltf-transform/extensions \
+  @gltf-transform/functions meshoptimizer sharp</code></pre><button class="copy" type="button" aria-label="Copy command"><svg class="cp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg><svg class="ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button></div></li>
+    <li class="rv"><h3>Optimise</h3><p>Before and after size, triangles, every texture, a budget, and a validator pass.</p><div class="code"><pre><code>node optimise.mjs helmet.gltf helmet.glb \
+  --budget 14MB</code></pre><button class="copy" type="button" aria-label="Copy command"><svg class="cp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg><svg class="ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button></div></li>
+    <li class="rv"><h3>Verify</h3><p>Desktop and 390 px renders, close-up crops, PSNR and a pass or fail verdict.</p><div class="code"><pre><code>node verify.mjs helmet.gltf helmet.glb \
+  --out verify/</code></pre><button class="copy" type="button" aria-label="Copy command"><svg class="cp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg><svg class="ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button></div></li>
+  </ol>
+  <ul class="rules">
+    <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Never simplify.</b> Triangle cuts wrinkled the v3 car body. Keep every triangle.</span></li>
+    <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Normal maps are never lossy.</b> Lossy WebP bends them up to 17 degrees. Near-lossless or UASTC only.</span></li>
+    <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Textures at least as big as the screen.</b> A hero model on a phone covers about 780 device pixels, so 2048 stays 2048.</span></li>
+    <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>meshopt at 16 / 12 / 14 bits.</b> Position, normal and UV. Below 10-bit normals the highlights band.</span></li>
+    <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>One file for both builds.</b> The phone gets the same GLB and HDRI. Only the pixel ratio is capped at 2.</span></li>
+    <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Lazy and idle.</b> Load near the viewport, render only when something moves, pause off-screen.</span></li>
+  </ul>
+</section>
+
+<section class="block" id="numbers">
+  <div class="head"><h2 class="rv">The numbers</h2><p class="rv">Worst case over 8 renders (whole helmet and three close-ups, on desktop at 1440 px and phone at 390 px). Same model, same 94,722 triangles in every row.</p></div>
+  <div class="tbl-wrap rv"><table><thead><tr><th>Recipe</th><th>File</th><th>Textures</th><th>Worst PSNR</th><th>Pixels changed</th><th>Verdict</th></tr></thead><tbody><tr class=""><td>Original glTF</td><td>46.15 MB</td><td>2048 px PNG, 15 maps</td><td>reference</td><td>—</td><td class="">—</td></tr><tr class="pick"><td>This skill (shipped)</td><td>13.76 MB</td><td>2048 px WebP, normals near-lossless, meshopt</td><td>42.23 dB</td><td>0.319%</td><td class="y">Identical</td></tr><tr class=""><td>v3 round-2 recipe</td><td>9.55 MB</td><td>2048 px WebP q92 incl. normals, meshopt</td><td>36.23 dB</td><td>2.531%</td><td class="n">Visible change</td></tr><tr class=""><td>v3 round-1 recipe</td><td>1.86 MB</td><td>1024 px WebP q75, 8-bit normals</td><td>30.4 dB</td><td>9.506%</td><td class="n">Visible change</td></tr></tbody></table></div>
+</section>
+</main>
+<footer>
+  <div><h4>Credits</h4>
+    <p>Flight Helmet by Gary Hsu, from the Khronos glTF Sample Assets. CC0 1.0.</p>
+    <p>Studio Small 09 HDRI by Sergej Majboroda, Poly Haven. CC0 1.0.</p>
+    <p>Fraunces (Undercase Type) and Inter Tight (Rasmus Andersson et al.), SIL Open Font License 1.1. three.js, MIT.</p></div>
+  <div><h4>About</h4>
+    <p>A Zyqor Studio skill example. Code and text MIT. Every image on this page is a render of the real model, made by the skill's own checker.</p></div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Liquid Glass UI · starter</title>
+<!-- 1. the kit (copy the kit/ folder next to this file and change ../kit/ to kit/) -->
+<link rel="stylesheet" href="../kit/liquid-glass.css">
+<script src="../kit/liquid-glass.js" defer></script>
+<style>
+ /* 2. your three colours: light, dark, accent */
+ :root{ --c1:#F4EEE3; --c2:#0A2F3A; --c3:#EC7E46 }
+ *{box-sizing:border-box}
+ body{margin:0;min-height:100vh;font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--c2);
+  /* 3. something worth bending: put your own photo, video or canvas here (credit it) */
+  background:var(--c2) url(../example/assets/img/coast-1280.webp) center/cover fixed}
+ main{max-width:520px;margin:0 auto;padding:110px 18px 120px;display:grid;gap:16px}
+ header{position:fixed;top:14px;left:0;right:0;display:flex;justify-content:center;z-index:10}
+ .lg-nav a{font-weight:600}
+ .lg-card{--lg-alpha:.6;--lg-blur:22px}
+ .row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+ h1{margin:0 0 6px;font-size:28px;letter-spacing:-.02em} p{margin:0}
+ svg{width:20px;height:20px}
+</style></head>
+<body>
+<header><nav class="lg lg-nav" data-lg-adapt aria-label="Primary"><a href="#">Home</a><a href="#">Work</a><a href="#">About</a>
+ <button class="lg lg-btn lg--accent" data-lg-open="sheet">Contact</button></nav></header>
+<main>
+ <article class="lg lg-card"><h1>A glass card</h1><p>Text on glass gets a thicker tint (about 0.6) so it keeps 4.5:1 over any photo.</p></article>
+ <div class="lg lg-card">
+  <div class="row"><span>Notifications</span><button class="lg-switch" aria-checked="true" aria-label="Notifications"></button></div>
+  <div class="lg-slider" style="margin-top:14px"><input type="range" value="40" aria-label="Volume"></div>
+  <div class="row" style="margin-top:14px">
+   <div class="lg lg-seg lg--clear" aria-label="View"><button aria-pressed="true">Day</button><button>Week</button></div>
+   <button class="lg lg-btn lg-btn--icon" data-lg-tip="Tooltips open on hover, focus and tap" aria-label="Info"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.5M12 7.6v.4"/></svg></button>
+  </div>
+ </div>
+ <div class="row" style="justify-content:flex-start"><button class="lg lg-btn">Regular</button><button class="lg lg-btn lg--dark">Dark</button><button class="lg lg-btn lg--clear" style="color:var(--c1)">Clear</button></div>
+</main>
+<nav class="lg lg-tabbar" role="tablist" data-lg-adapt aria-label="Tabs">
+ <button aria-selected="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 1 0 16 0 8 8 0 0 0-16 0Z"/><path d="M12 7v5l3 2"/></svg>Home</button><button><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg>Work</button><button><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.3"/></svg>Visit</button>
+</nav>
+<dialog class="lg lg-sheet" id="sheet" aria-label="Contact" style="--lg-alpha:.84">
+ <h2 style="margin:0 0 8px">Say hello</h2><p>Esc, a tap outside or the button closes this sheet.</p>
+ <button class="lg lg-btn lg--accent" data-lg-close style="width:100%;margin-top:16px">Done</button>
+</dialog>
+</body></html>

@@ -1,0 +1,7 @@
+{
+  "brand": "{{NAME}}",
+  "id": "{{ID}}",
+  "items": [
+{{CREDITS}}
+  ]
+}

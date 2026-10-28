@@ -1,0 +1,32 @@
+/* A018 Tranquility Base - phone build. Same rocks, regolith and Earth texture as desktop; native scroll, cards for legibility. */
+body{background:var(--c2);color:var(--c1)}
+.journey{position:relative;height:600svh}
+.scene{position:sticky;top:0;height:100svh;width:100%;background:linear-gradient(180deg,color-mix(in oklab,var(--c2) 70%,#0b1424) 0%,var(--c2) 70%,color-mix(in oklab,var(--c2) 88%,var(--c1)) 100%)}
+.chapters{position:absolute;inset:0;pointer-events:none}
+.chapter{height:120svh;display:flex;align-items:flex-end;padding:0 var(--s3) calc(var(--s6) + env(safe-area-inset-bottom))}
+.chapter:first-child{height:100svh}
+.ch-card{width:100%;display:grid;gap:var(--s2);pointer-events:auto;padding:var(--s4);border-radius:22px;
+  background:color-mix(in oklab,var(--c2) 80%,transparent);border:1px solid color-mix(in oklab,var(--c1) 14%,transparent);box-shadow:var(--spec-dark);
+  -webkit-backdrop-filter:blur(12px) saturate(1.3);backdrop-filter:blur(12px) saturate(1.3);
+  opacity:0;transform:translate3d(0,var(--rise),0);transition:opacity var(--dur) var(--ease-out),transform var(--dur) var(--ease-out)}
+.chapter.is-on .ch-card{opacity:1;transform:none}
+.ch-01 .ch-card{background:none;border:0;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none;padding:0 var(--s2)}
+.ch-card .tag{color:color-mix(in oklab,var(--c1) 70%,var(--c2))}
+.ch-card .tag::before{background:var(--c3)}
+.ch-card .display{font-size:clamp(3.2rem,16vw,4.6rem);line-height:.86;color:var(--c1);text-shadow:0 2px 30px color-mix(in oklab,var(--c2) 80%,transparent)}
+.ch-card .h2{font-size:clamp(2rem,9.4vw,2.6rem);color:var(--c1)}
+.ch-card .serif{font-style:italic;font-weight:400}
+.ch-card .lead{font-size:1rem;color:color-mix(in oklab,var(--c1) 86%,var(--c2))}
+.rail{position:fixed;left:var(--s3);right:var(--s3);top:calc(env(safe-area-inset-top) + 66px);z-index:20;opacity:0;transition:opacity var(--dur) var(--ease-out)}
+.rail.is-on{opacity:1}
+.rail-track{display:block;height:2px;border-radius:2px;background:color-mix(in oklab,var(--c1) 18%,transparent);position:relative}
+.rail-fill{position:absolute;inset:0 auto 0 0;width:calc(var(--p,0) * 100%);background:var(--c3);border-radius:2px}
+.rail ol{display:none}
+.outro{background:var(--c2);border-top:1px solid var(--line-dark);padding-block:clamp(4.5rem,18vw,6rem)}
+.outro-in{display:grid;gap:var(--s3)}
+.outro .tag{color:var(--on-dark-2)}
+.outro .h2{color:var(--c1);font-size:clamp(2rem,9vw,2.6rem)}
+.outro .serif{font-style:italic;font-weight:400}
+.outro .body{color:var(--on-dark-2)}
+.outro .btn{justify-self:stretch;min-height:52px}
+@media (prefers-reduced-motion:reduce){.ch-card{opacity:1;transform:none}}

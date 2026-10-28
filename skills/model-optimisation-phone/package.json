@@ -1,0 +1,32 @@
+{
+  "name": "model-optimisation-phone",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "description": "One glTF/GLB in, one optimised GLB out that desktop and phone both load and that looks identical, with pixel-measured proof.",
+  "scripts": {
+    "optimise": "node starter/optimise.mjs",
+    "verify": "node starter/verify.mjs",
+    "example": "echo 'Download FlightHelmet/glTF from github.com/KhronosGroup/glTF-Sample-Assets into example/source/, then:' && node starter/optimise.mjs example/source/FlightHelmet.gltf example/models/flight-helmet.glb --budget 14MB --report example/report.json"
+  },
+  "dependencies": {
+    "@gltf-transform/core": "^4.5.1",
+    "@gltf-transform/extensions": "^4.5.1",
+    "@gltf-transform/functions": "^4.5.1",
+    "meshoptimizer": "^1.2.0",
+    "sharp": "^0.35.5"
+  },
+  "optionalDependencies": {
+    "@gltf-transform/cli": "^4.5.1",
+    "draco3dgltf": "^1.5.9"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.63.0",
+    "three": "^0.170.0",
+    "gltf-validator": "^2.0.0-dev.3.10"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

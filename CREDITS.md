@@ -146,6 +146,13 @@ From the [Khronos glTF Sample Assets](https://github.com/KhronosGroup/glTF-Sampl
 - Studio lighting: "Studio Small 09" HDRI by Sergej Majboroda, Poly Haven, CC0.
 - Type: Bricolage Grotesque (SIL Open Font Licence) and Satoshi by Indian Type Foundry (Fontshare free licence).
 
+## Code from other projects
+
+- Scroll scrub engine (`site/scrub-engine.js`): adapted from
+  [scroll-world](https://github.com/oso95/scroll-world) by cyw, MIT License,
+  Copyright (c) 2026 cyw. Zyqor Studio's changes are MIT too. The full licence text is
+  at the top of the file.
+
 ## Home page
 
 - Intro scroll-world clips, case-study videos, photos and copy: made for Zyqor Studio, all rights reserved.
@@ -164,7 +171,7 @@ From the [Khronos glTF Sample Assets](https://github.com/KhronosGroup/glTF-Sampl
 ## Hush One (Concept 03)
 - Headphones: procedural three.js geometry made for this concept (v2 rebuild, Oct 27 2026): superellipse ear cups built with an offset-lathe, a swept spring-steel band with a padded leather pad and two rows of stitching, brushed-aluminium yokes, pivots and sliders with click marks, anodised concentric-turned outer caps, sheen leather cushions with gathered pleats and a stitched seam, a woven driver cloth. No model download. Code: Zyqor Studio (MIT).
 - Textures (leather pebble grain, cushion pleats, cloth weave, brushed-metal roughness, soft-touch micro grain): generated on a canvas in code at load. No image download, no photography, no AI renders.
-- Studio lighting: "Studio Small 09" HDRI by Sergej Majboroda, [Poly Haven](https://polyhaven.com/a/studio_small_09), CC0 1.0. Shared 512px map on desktop only; phones use three.js RoomEnvironment (no download).
+- Studio lighting: "Studio Small 09" HDRI by Sergej Majboroda, [Poly Haven](https://polyhaven.com/a/studio_small_09), CC0 1.0. Shared 512px map, loaded by desktop and phone alike (round 2).
 - Contact shadow: real-time depth capture + two-pass blur after the three.js "contact shadows" example (MIT); blur kernel from three/examples HorizontalBlurShader/VerticalBlurShader (MIT). Phones use a static code-drawn blob.
 - Fonts (unchanged): Unbounded by NORD ID, Inter Tight by Rasmus Andersson et al., SIL OFL 1.1.
 - "Hush" and "Hush One" are fictional; no real brand marks.
@@ -178,7 +185,7 @@ From the [Khronos glTF Sample Assets](https://github.com/KhronosGroup/glTF-Sampl
 - Rug: "Hessian 230" texture, [Poly Haven](https://polyhaven.com/a/hessian_230), CC0 1.0 (greyscale, tinted in code).
 - Walls: "Plastered Wall" normal map, [Poly Haven](https://polyhaven.com/a/plastered_wall), CC0 1.0.
 - Fabric weave detail (desktop): "Rough Linen" texture, [Poly Haven](https://polyhaven.com/a/rough_linen), CC0 1.0, tiled over the scanned cushions in a shader.
-- Studio lighting: "Studio Small 09" HDRI by Sergej Majboroda, [Poly Haven](https://polyhaven.com/a/studio_small_09), CC0 1.0. Desktop only; phones use three.js RoomEnvironment.
+- Studio lighting: "Studio Small 09" HDRI by Sergej Majboroda, [Poly Haven](https://polyhaven.com/a/studio_small_09), CC0 1.0. Desktop and phone (round 2: the phone loads the same HDRI).
 - Books, framed artwork, window, curtains and contact shadows are made in code. Replaces the earlier Khronos SheenChair and Lantern sample models. "Nook" is fictional; no real brand marks.
 - Round 2 detail (Oct 27 2026): armchair rebuilt from the 4K source of "Modern Arm Chair 01" ([Poly Haven](https://polyhaven.com/a/modern_arm_chair_01), CC0 1.0; upholstery diffuse greyscaled by Zyqor Studio so the fabric colour switch can tint it), with a fine linen weave height + roughness from "Rough Linen" ([Poly Haven](https://polyhaven.com/a/rough_linen), CC0 1.0).
 - Room props, all [Poly Haven](https://polyhaven.com/models), CC0 1.0: "Side Table 01" (4K source, https://polyhaven.com/a/side_table_01), "Modern Ceiling Lamp 01" (https://polyhaven.com/a/modern_ceiling_lamp_01), "Ceramic Vase 02" by James Ray Cock (https://polyhaven.com/a/ceramic_vase_02), "Potted Plant 02" by Rico Cilliers (https://polyhaven.com/a/potted_plant_02), "Throw Pillows 01" by Serhii Khromov (https://polyhaven.com/a/throw_pillows_01, recoloured cream), and three books from "Book Encyclopedia Set 01" by John Malcolm (https://polyhaven.com/a/book_encyclopedia_set_01).
@@ -187,7 +194,7 @@ From the [Khronos glTF Sample Assets](https://github.com/KhronosGroup/glTF-Sampl
 
 ## VOLT (Concept 07)
 - 3D cans: procedural three.js geometry by Zyqor Studio (MIT for the code). Lathe body with real 250 ml sleek-can proportions, necked shoulder, rolled seam, domed base; countersunk lid with bead, score line and rivet; extruded pull tab. Brushed-aluminium roughness, printed-wrap colour/ORM maps and condensation normal map are all generated in code at load time. No downloaded model, no AI renders.
-- Studio lighting (desktop only): "Studio Small 09" HDRI by Sergej Majboroda, Poly Haven, CC0 1.0 (https://polyhaven.com/a/studio_small_09), shared file site/assets/hdri/studio_512.hdr.
+- Studio lighting (desktop and phone): "Studio Small 09" HDRI by Sergej Majboroda, Poly Haven, CC0 1.0 (https://polyhaven.com/a/studio_small_09), shared file site/assets/hdri/studio_512.hdr.
 - Fonts: Anton (Vernon Adams) and Inter Tight (Rasmus Andersson et al.), SIL Open Font Licence, via Google Fonts.
 - VOLT, its flavours and formula are fictional.
 - Round 2 detail (Oct 27 2026, procedural, no downloaded model): baked condensation normal map (beads, mist, trickles), lid normal + roughness maps (stiffening bead, score lines, rivet, finger well, embossed rim text, spun rings) made in code by Zyqor Studio (files site/assets/lab/volt/drops_n.webp, lid_n.webp, lid_r.webp; source work/assets_upgrade2/volt/bake_src.py). Instanced 3D water beads, 3072 px printed wrap with micro-print. Same files on desktop and phone.
@@ -202,7 +209,7 @@ From the [Khronos glTF Sample Assets](https://github.com/KhronosGroup/glTF-Sampl
 
 ## Dew Theory (Concept 06)
 - Dropper bottle, cleanser pump bottle and balm jar: modelled in code by Zyqor Studio with three.js (MIT). Glass is a closed lathe profile with real wall thickness and a heavy base (MeshPhysicalMaterial transmission, IOR 1.5, light dispersion, rose attenuation); the serum is a separate mesh with a meniscus and a depth gradient; knurled champagne-gold collar, matte rubber bulb with grip rings, glass pipette. The printed label, paper labels, contact shadows and the caustic on the plinth are canvas textures drawn in code at load time. No downloaded model, no photos, no AI renders.
-- Studio lighting (desktop only): "Studio Small 09" HDRI by Sergej Majboroda, Poly Haven, CC0 1.0 (https://polyhaven.com/a/studio_small_09), shared file site/assets/hdri/studio_1k.hdr. Phones use three.js RoomEnvironment (code, MIT).
+- Studio lighting (desktop and phone): "Studio Small 09" HDRI by Sergej Majboroda, Poly Haven, CC0 1.0 (https://polyhaven.com/a/studio_small_09), shared file site/assets/hdri/studio_1k.hdr. Since round 2 the phone build loads the same file.
 - Fonts: Instrument Serif (Rodrigo Fuenzalida, Jordan Egstad) and Inter Tight (Rasmus Andersson et al.), SIL Open Font Licence, self-hosted.
 - Round 2 detail (Oct 27 2026): surface maps baked by Zyqor Studio with a Python script (numpy + Pillow), no third-party textures: glass normal + roughness (mould seams, stippled heel, embossed base ring text and a "30 ML" capacity mark, faint wall waviness, sandblasted base, very light handling smudges), matte rubber micro-texture with moulding seams for the bulb, brushed-gold collar maps, paper-fibre normal for the paper labels; files in site/assets/lab/dew/. Pipette graduations, label ink relief and micro-bubbles are drawn in code at load time.
 - Studio lighting on phones (round 2): the phone build now loads the same "Studio Small 09" HDRI (Poly Haven, CC0 1.0) as desktop, so both builds share the same lighting and glass.
@@ -210,7 +217,7 @@ From the [Khronos glTF Sample Assets](https://github.com/KhronosGroup/glTF-Sampl
 
 ## Meridian (Concept 02)
 - Watch, strap and presentation box: modelled in code by Zyqor Studio with three.js (MIT). Lathe-turned steel case (polished back, circular-grained flank with anisotropic reflections, polished chamfer and stepped bezel), inner flange, lacquered sunburst dial (radial anisotropy map), applied gold batons with lume inserts, applied date frame, sword hands with lume channels, needle seconds with counterweight, coin-edge knurled crown, curved chamfered lugs, padded tapered leather strap with a generated pebble-grain normal map, painted edges and 3D stitches, a domed sapphire-style crystal with a soft reflection and an anti-reflective (thin-film) tint. Every texture (dial print, sunburst direction map, leather grain, case graining) is drawn in code at load time. No downloaded model, no photos, no AI renders.
-- Studio lighting (desktop only): "Studio Small 09" HDRI by Sergej Majboroda, Poly Haven, CC0 1.0 (https://polyhaven.com/a/studio_small_09), shared file site/assets/hdri/studio_1k.hdr. Phones use three.js RoomEnvironment (code, MIT).
+- Studio lighting (desktop and phone): "Studio Small 09" HDRI by Sergej Majboroda, Poly Haven, CC0 1.0 (https://polyhaven.com/a/studio_small_09), shared file site/assets/hdri/studio_1k.hdr. Since round 2 the phone build loads the same file.
 - Fonts: Anton (Vernon Adams) and Inter Tight (Rasmus Andersson et al.), SIL Open Font Licence, self-hosted.
 - Meridian, its calibre and specs are fictional.
 - Round 2 detail pass (Oct 27, still modelled in code, no downloads): railroad minute track with five-minute numerals and small print, Instrument Serif "Automatic" on the dial (font: Instrument Serif by Rodrigo Fuenzalida / Jordan Egstad, SIL Open Font License 1.1, self-hosted), sunburst roughness map, faceted applied batons, faceted hands, crown guards, engraved satin caseback with screw-down notches, polished-steel smudge map, floating keeper and punched strap holes. The studio HDRI ("Studio Small 09", Sergej Majboroda, Poly Haven, CC0) is now used on the phone build too.
@@ -236,10 +243,10 @@ From the [Khronos glTF Sample Assets](https://github.com/KhronosGroup/glTF-Sampl
 ## Umami Ring (Concept 08)
 
 - 3D bowls, noodles and toppings: procedural three.js geometry by Zyqor Studio (MIT for the code). Lathe-turned donburi with a foot ring and rolled rim; generated glaze colour, roughness and normal maps (throwing rings, speckle, key-fret band, iron-brown rim, unglazed clay foot); wavy tube noodles; ajitama egg; extruded and bevelled chashu, chicken and naruto; fibrous nori; lacquered wooden chopsticks; walnut tray; shader steam. No third-party model and no AI image or video. A CC0 ramen model that can be downloaded without a login could not be found, so the bowls are code-made.
-- Studio lighting (desktop build only): "Studio Small 09" HDRI by Sergej Majboroda, Poly Haven, CC0 1.0, https://polyhaven.com/a/studio_small_09 (shared file site/assets/hdri/studio_512.hdr). The phone build uses the kit's procedural RoomEnvironment, which needs no download.
+- Studio lighting (desktop and phone builds): "Studio Small 09" HDRI by Sergej Majboroda, Poly Haven, CC0 1.0, https://polyhaven.com/a/studio_small_09 (shared file site/assets/hdri/studio_512.hdr). Since round 2 the phone build loads the same HDRI.
 - Fonts (unchanged): Bricolage Grotesque and Inter Tight, SIL Open Font Licence.
 - Round 2 detail pass (Oct 27, 2026): wood on the tray and chopsticks is now "Fine Grained Wood" by Rob Tuytel, Poly Haven, CC0 1.0, https://polyhaven.com/a/fine_grained_wood (1k colour, normal and roughness maps converted to webp: site/assets/lab/umami/wood_col.webp, wood_nor.webp, wood_rough.webp). Everything else stays procedural code by Zyqor Studio: 66 thin crimped noodle strands per bowl with a striation normal map, a halved ajitama with a domed jammy yolk and its own roughness map, rolled chashu with blurred fat layers and a caramelised bark, fibrous nori, fermented-bamboo menma, walled scallion rings, hand-thrown bowl wobble, crazing in the inner glaze and glaze drips on the foot. No AI images.
-- Round 2: the phone build now uses the same geometry, the same 1024 px generated textures, the same Poly Haven wood and the same "Studio Small 09" HDRI (studio_512.hdr) as desktop, so the line above saying the phone uses RoomEnvironment no longer applies.
+- Round 2: the phone build now uses the same geometry, the same 1024 px generated textures, the same Poly Haven wood and the same "Studio Small 09" HDRI (studio_512.hdr) as desktop.
 
 
 ## Ember & Oak (Concept 04, coffee)
@@ -436,3 +443,13 @@ All six models are Khronos glTF Sample Assets (https://github.com/KhronosGroup/g
 - GlassVaseFlowers: glass vase by Eric Chadwick, flowers by Rico Cilliers, 2023, CC0 1.0. Models/GlassVaseFlowers.
 - Lantern: sbtron / Microsoft, 2017 (Draco version Frank Galligan, 2018), CC0 1.0. Models/Lantern.
 - Lighting: "Studio Small 09" HDRI by Sergej Majboroda, Poly Haven, CC0 (https://polyhaven.com/a/studio_small_09); the 1k map now lights the phone build too.
+
+
+## Zyqor Library and skills
+
+- Every library concept lists its own assets with exact licences in its folder (`site/library/<n|a|p>/<ID>/credits.json`, shown in the page's credits sheet). Shared optimised models and textures live in `site/library/_assets/`.
+- N002 Kiln & Quiet: "Ceramic Vase 01" by James Ray Cock, [Poly Haven](https://polyhaven.com/a/ceramic_vase_01), CC0 1.0.
+- A018 Tranquility Base: Poly Haven "Moon Rock 01/05/07" models and "Moon Dusted 02" / "Moon Footprints 01" textures, CC0 1.0; NASA Blue Marble Earth imagery (Reto Stöckli, NASA GSFC), public domain.
+- Kit font: JetBrains Mono, SIL Open Font License 1.1 (licence text in `site/library/_kit/font/`).
+- three.js addons added for the library (DRACOLoader, KTX2Loader, OrbitControls, WorkerPool and their helper modules): MIT, from three.js r170. Draco decoder: Apache 2.0 (Google). Basis Universal transcoder: Apache 2.0 (Binomial).
+- Skills: code is MIT; each skill's README lists the third-party models, HDRIs, photos and fonts its example uses, with their licences.

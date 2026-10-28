@@ -1,0 +1,35 @@
+{
+  "name": "zyqor-qa-harness",
+  "version": "1.0.0",
+  "description": "One command that checks every page of a static site at 1440x900, 390x844 and 360x740 plus reduced motion: console errors, failed requests, horizontal overflow (and which element), WebGL, links, screenshots, a pass/fail report with a VERDICT.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Zyqor Studio (Sujon Hoque)",
+  "bin": {
+    "qa-harness": "qa.mjs"
+  },
+  "engines": {
+    "node": ">=18.17"
+  },
+  "scripts": {
+    "qa": "node qa.mjs",
+    "example:buggy": "node qa.mjs example/site-buggy --out example/report-buggy",
+    "example:fixed": "node qa.mjs example/site-fixed --out example/report-fixed --full --preset zyqor",
+    "compare": "node tools/compare.mjs",
+    "overflow": "node tools/overflow.mjs"
+  },
+  "dependencies": {
+    "playwright": "^1.48.0"
+  },
+  "files": [
+    "qa.mjs",
+    "lib/",
+    "tools/",
+    "adapters/",
+    "starter/",
+    "SKILL.md",
+    "README.md",
+    "checklist.md",
+    "LICENSE"
+  ]
+}

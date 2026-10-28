@@ -1,0 +1,66 @@
+/* Zyqor Library kit: chrome.css  (loaded by chrome.js; the concept page never needs to link it) */
+.zk-bar{position:fixed;inset:max(12px,env(safe-area-inset-top)) 0 auto;z-index:80;display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding-inline:clamp(12px,2.2vw,28px);pointer-events:none;transition:transform 520ms cubic-bezier(.16,1,.3,1),opacity 520ms cubic-bezier(.16,1,.3,1)}
+.zk-bar.is-tucked{transform:translate3d(0,-130%,0);opacity:0}
+.zk-bar>*{pointer-events:auto}
+.zk-pill{display:inline-flex;align-items:center;gap:.55em;min-height:40px;padding:0 15px;border-radius:999px;color:var(--c2);text-decoration:none;
+  font:500 13px/1 var(--f-body,system-ui);letter-spacing:.005em;background:color-mix(in oklab,var(--c1) 78%,transparent);
+  border:1px solid color-mix(in oklab,var(--c2) 12%,transparent);box-shadow:inset 0 1px 0 color-mix(in oklab,#fff 60%,transparent);
+  -webkit-backdrop-filter:blur(14px) saturate(1.4);backdrop-filter:blur(14px) saturate(1.4);transition:transform 220ms cubic-bezier(.16,1,.3,1)}
+.zk-dark .zk-bar .zk-pill{color:var(--c1);background:color-mix(in oklab,var(--c2) 62%,transparent);border-color:color-mix(in oklab,var(--c1) 16%,transparent)}
+.zk-pill:active{transform:scale(.96)}
+.zk-i{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.zk-tag{gap:.6em;font-size:12.5px;margin-inline:auto 0}
+.zk-brand{font-weight:700;letter-spacing:-.01em}
+.zk-dot{width:4px;height:4px;border-radius:50%;background:currentColor;opacity:.4}
+.zk-id{font:500 11.5px/1 var(--f-mono,ui-monospace);letter-spacing:.06em;text-transform:uppercase}
+.zk-tier{font:500 10.5px/1 var(--f-mono,ui-monospace);letter-spacing:.08em;text-transform:uppercase;padding:5px 8px;border-radius:999px;
+  background:color-mix(in oklab,var(--c3) 16%,transparent);color:color-mix(in oklab,var(--c3) 62%,var(--c2))}
+.zk-dark .zk-tier{color:color-mix(in oklab,var(--c3) 45%,var(--c1))}
+.zk-fict{opacity:.72}
+.zk-back{padding-left:11px}
+.zk-cred-btn{padding-left:12px}
+@media (max-width:860px){.zk-hide-m{display:none}.zk-tag{margin-inline:auto}}
+@media (max-width:420px){.zk-hide-s{display:none}.zk-back,.zk-cred-btn{width:42px;padding:0;justify-content:center}.zk-pill{min-height:42px}}
+@media (hover:hover) and (pointer:fine){.zk-pill:hover{transform:translateY(-1px)}}
+
+/* credits sheet */
+.zk-sheet{width:min(560px,calc(100vw - 24px));max-height:min(78vh,720px);margin:auto;padding:0;border:1px solid color-mix(in oklab,var(--c2) 14%,transparent);border-radius:22px;
+  color:var(--c2);background:color-mix(in oklab,var(--c1) 94%,transparent);box-shadow:0 30px 80px -30px color-mix(in oklab,var(--c2) 55%,transparent),inset 0 1px 0 color-mix(in oklab,#fff 60%,transparent);overflow:auto}
+.zk-sheet.lg--dark{color:var(--c1);background:color-mix(in oklab,var(--c2) 94%,transparent)}
+.zk-sheet::backdrop{background:color-mix(in oklab,var(--c2) 38%,transparent);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.zk-sheet[open]{animation:zk-in 480ms cubic-bezier(.16,1,.3,1)}
+@keyframes zk-in{from{opacity:0;transform:translate3d(0,20px,0)}to{opacity:1;transform:none}}
+.zk-sheet-in{padding:22px 24px 26px}
+.zk-sheet-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.zk-mono{font:500 11px/1.3 var(--f-mono,ui-monospace);letter-spacing:.06em;text-transform:uppercase;opacity:.7}
+.zk-x{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;border:1px solid color-mix(in oklab,currentColor 18%,transparent)}
+.zk-x:active{transform:scale(.94)}
+.zk-sheet-h{margin:14px 0 8px;font:750 clamp(1.6rem,1.2rem + 1.6vw,2.2rem)/1 var(--f-display,system-ui);letter-spacing:-.03em}
+.zk-sheet-h span{font-family:var(--f-serif,Georgia);font-style:italic;font-weight:400;letter-spacing:-.01em;opacity:.8}
+.zk-sheet-p{font-size:15px;line-height:1.5;opacity:.82;max-width:52ch}
+.zk-cred{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:0}
+.zk-cred li{display:grid;grid-template-columns:118px 1fr;gap:14px;padding:12px 0;border-top:1px solid color-mix(in oklab,currentColor 14%,transparent);font-size:14px;line-height:1.45}
+.zk-cred li .zk-mono{padding-top:3px}
+.zk-cred a{display:inline-flex;align-items:center;gap:3px}
+.zk-cred a .zk-i{width:13px;height:13px}
+.zk-cred i{font-style:normal;font:500 11px/1 var(--f-mono,ui-monospace);letter-spacing:.04em;padding:3px 6px;border-radius:6px;background:color-mix(in oklab,currentColor 9%,transparent);margin-left:4px;white-space:nowrap}
+.zk-cred small{display:block;opacity:.7;font-size:12.5px;margin-top:2px}
+@media (max-width:520px){.zk-cred li{grid-template-columns:1fr;gap:4px}}
+
+/* footer */
+.zk-foot{background:var(--c2);color:var(--c1);padding:clamp(56px,8vw,112px) 0 calc(28px + env(safe-area-inset-bottom))}
+.zk-foot-in{width:min(100% - 2*clamp(1.5rem,5vw,5rem),1440px);margin-inline:auto;display:grid;gap:28px}
+.zk-honest{font:500 clamp(1.15rem,1rem + .7vw,1.6rem)/1.35 var(--f-body,system-ui);max-width:46ch;color:color-mix(in oklab,var(--c1) 82%,var(--c2));text-wrap:pretty}
+.zk-honest b{color:var(--c1);font-weight:700}
+.zk-cred--foot{margin:0;max-width:880px}
+.zk-cred--foot li{border-color:color-mix(in oklab,var(--c1) 14%,transparent);color:color-mix(in oklab,var(--c1) 84%,var(--c2))}
+.zk-nav{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.zk-foot .zk-pill{min-height:52px;padding:0 18px;color:var(--c1);background:color-mix(in oklab,var(--c1) 7%,transparent);border-color:color-mix(in oklab,var(--c1) 16%,transparent);box-shadow:inset 0 1px 0 color-mix(in oklab,var(--c1) 16%,transparent)}
+.zk-foot .zk-pill span{display:grid;gap:3px;text-align:left}
+.zk-foot .zk-pill small{font:500 10.5px/1 var(--f-mono,ui-monospace);letter-spacing:.07em;text-transform:uppercase;opacity:.66}
+.zk-foot .zk-pill em{font-style:normal;font-weight:600;font-size:14px}
+.zk-foot .zk-next span{text-align:right}
+.zk-small{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:22px;border-top:1px solid color-mix(in oklab,var(--c1) 14%,transparent);font:500 11px/1 var(--f-mono,ui-monospace);letter-spacing:.07em;text-transform:uppercase;color:color-mix(in oklab,var(--c1) 60%,var(--c2))}
+@media (max-width:520px){.zk-nav{display:grid;grid-template-columns:1fr 1fr}.zk-all{grid-column:1/-1;order:3;justify-content:center}.zk-foot .zk-pill{min-width:0}.zk-foot .zk-pill em{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block;max-width:100%}}
+@media (prefers-reduced-motion:reduce){.zk-bar{transition:none}.zk-sheet[open]{animation:none}}

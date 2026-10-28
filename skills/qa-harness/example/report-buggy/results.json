@@ -1,0 +1,1470 @@
+{
+ "tool": "qa-harness",
+ "version": "1.0.0",
+ "target": "site-buggy",
+ "base": "site-buggy (served locally)",
+ "startedAt": "2026-10-28T02:56:57.360Z",
+ "browser": {
+  "how": "Playwright Chromium",
+  "version": "153.0.8010.12",
+  "webkit": null
+ },
+ "profiles": [
+  {
+   "id": "desktop",
+   "label": "Desktop 1440",
+   "w": 1440,
+   "h": 900,
+   "dpr": 1,
+   "mobile": false,
+   "build": "desktop"
+  },
+  {
+   "id": "phone",
+   "label": "Phone 390",
+   "w": 390,
+   "h": 844,
+   "dpr": 2,
+   "mobile": true,
+   "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1",
+   "build": "phone"
+  },
+  {
+   "id": "small",
+   "label": "Small 360",
+   "w": 360,
+   "h": 740,
+   "dpr": 2,
+   "mobile": true,
+   "ua": "Mozilla/5.0 (Linux; Android 14; SM-A146B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36",
+   "build": "phone"
+  },
+  {
+   "id": "reduced",
+   "label": "Reduced motion 1440",
+   "w": 1440,
+   "h": 900,
+   "dpr": 1,
+   "mobile": false,
+   "reduced": true,
+   "build": "desktop"
+  }
+ ],
+ "options": {
+  "profiles": [
+   "desktop",
+   "phone",
+   "small",
+   "reduced"
+  ],
+  "throttle": "first",
+  "shots": 4,
+  "wait": 1500,
+  "stepWait": 650,
+  "maxSteps": 40,
+  "timeout": 45000,
+  "external": false,
+  "ignore": [],
+  "preset": null,
+  "strict": false,
+  "remote": false,
+  "noNewtab": false,
+  "phoneFile": "m.html"
+ },
+ "pages": [
+  {
+   "path": "/",
+   "desktop": "",
+   "phone": "",
+   "runs": {
+    "desktop": {
+     "profile": "desktop",
+     "label": "Desktop 1440",
+     "viewport": "1440x900",
+     "url": "http://127.0.0.1:39313/",
+     "finalUrl": "http://127.0.0.1:39313/",
+     "status": 200,
+     "console": [],
+     "warnings": [],
+     "pageErrors": [],
+     "failedRequests": [],
+     "httpErrors": [],
+     "overflow": null,
+     "webgl": {
+      "webgl2": true,
+      "webgl1": true,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "pageRequests": [
+       {
+        "type": "webgl",
+        "ok": true
+       },
+       {
+        "type": "webgl2",
+        "ok": true
+       }
+      ],
+      "canvases": 1
+     },
+     "content": {
+      "broken": [],
+      "noAlt": [],
+      "noAltCount": 0,
+      "endless": [],
+      "emoji": [],
+      "lorem": false,
+      "links": [
+       {
+        "href": "http://127.0.0.1:39313/index.html",
+        "raw": "index.html",
+        "target": "",
+        "rel": "",
+        "text": "Halden"
+       },
+       {
+        "href": "http://127.0.0.1:39313/index.html",
+        "raw": "index.html",
+        "target": "",
+        "rel": "",
+        "text": "Kettle"
+       },
+       {
+        "href": "http://127.0.0.1:39313/gallery.html",
+        "raw": "gallery.html",
+        "target": "",
+        "rel": "",
+        "text": "Finishes"
+       },
+       {
+        "href": "http://127.0.0.1:39313/about.html",
+        "raw": "about.html",
+        "target": "",
+        "rel": "",
+        "text": "About"
+       },
+       {
+        "href": "http://127.0.0.1:39313/gallery.html",
+        "raw": "gallery.html",
+        "target": "",
+        "rel": "",
+        "text": "See the finishes"
+       }
+      ],
+      "ids": [],
+      "title": "Copper, slowly · Halden · Concept",
+      "reduced": false,
+      "timing": {
+       "domContentLoaded": 20,
+       "load": 23,
+       "transferKB": 12
+      },
+      "longtasks": [],
+      "cls": 0,
+      "scrollHeight": 1582
+     },
+     "stuck": [],
+     "idleMotion": null,
+     "shots": [
+      "shots/home__desktop__00top.jpg",
+      "shots/home__desktop__s01.jpg"
+     ],
+     "notes": [],
+     "loadMs": 25,
+     "steps": 1,
+     "fail": [],
+     "warn": [],
+     "verdict": "PASS",
+     "ms": 3470
+    },
+    "phone": {
+     "profile": "phone",
+     "label": "Phone 390",
+     "viewport": "390x844",
+     "url": "http://127.0.0.1:39313/",
+     "finalUrl": "http://127.0.0.1:39313/",
+     "status": 200,
+     "console": [],
+     "warnings": [],
+     "pageErrors": [],
+     "failedRequests": [],
+     "httpErrors": [],
+     "overflow": null,
+     "webgl": {
+      "webgl2": true,
+      "webgl1": true,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "pageRequests": [
+       {
+        "type": "webgl",
+        "ok": true
+       },
+       {
+        "type": "webgl2",
+        "ok": true
+       }
+      ],
+      "canvases": 1
+     },
+     "content": {
+      "broken": [],
+      "noAlt": [],
+      "noAltCount": 0,
+      "endless": [],
+      "emoji": [],
+      "lorem": false,
+      "links": [
+       {
+        "href": "http://127.0.0.1:39313/index.html",
+        "raw": "index.html",
+        "target": "",
+        "rel": "",
+        "text": "Halden"
+       },
+       {
+        "href": "http://127.0.0.1:39313/index.html",
+        "raw": "index.html",
+        "target": "",
+        "rel": "",
+        "text": "Kettle"
+       },
+       {
+        "href": "http://127.0.0.1:39313/gallery.html",
+        "raw": "gallery.html",
+        "target": "",
+        "rel": "",
+        "text": "Finishes"
+       },
+       {
+        "href": "http://127.0.0.1:39313/about.html",
+        "raw": "about.html",
+        "target": "",
+        "rel": "",
+        "text": "About"
+       },
+       {
+        "href": "http://127.0.0.1:39313/gallery.html",
+        "raw": "gallery.html",
+        "target": "",
+        "rel": "",
+        "text": "See the finishes"
+       }
+      ],
+      "ids": [],
+      "title": "Copper, slowly · Halden · Concept",
+      "reduced": false,
+      "timing": {
+       "domContentLoaded": 16,
+       "load": 18,
+       "transferKB": 12
+      },
+      "longtasks": [],
+      "cls": 0,
+      "scrollHeight": 1844
+     },
+     "stuck": [],
+     "idleMotion": null,
+     "shots": [
+      "shots/home__phone__00top.jpg",
+      "shots/home__phone__s01.jpg",
+      "shots/home__phone__s02.jpg"
+     ],
+     "notes": [],
+     "loadMs": 19,
+     "steps": 2,
+     "fail": [],
+     "warn": [],
+     "verdict": "PASS",
+     "ms": 3991
+    },
+    "small": {
+     "profile": "small",
+     "label": "Small 360",
+     "viewport": "360x740",
+     "url": "http://127.0.0.1:39313/",
+     "finalUrl": "http://127.0.0.1:39313/",
+     "status": 200,
+     "console": [],
+     "warnings": [],
+     "pageErrors": [],
+     "failedRequests": [],
+     "httpErrors": [],
+     "overflow": null,
+     "webgl": {
+      "webgl2": true,
+      "webgl1": true,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "pageRequests": [
+       {
+        "type": "webgl",
+        "ok": true
+       },
+       {
+        "type": "webgl2",
+        "ok": true
+       }
+      ],
+      "canvases": 1
+     },
+     "content": {
+      "broken": [],
+      "noAlt": [],
+      "noAltCount": 0,
+      "endless": [],
+      "emoji": [],
+      "lorem": false,
+      "links": [
+       {
+        "href": "http://127.0.0.1:39313/index.html",
+        "raw": "index.html",
+        "target": "",
+        "rel": "",
+        "text": "Halden"
+       },
+       {
+        "href": "http://127.0.0.1:39313/index.html",
+        "raw": "index.html",
+        "target": "",
+        "rel": "",
+        "text": "Kettle"
+       },
+       {
+        "href": "http://127.0.0.1:39313/gallery.html",
+        "raw": "gallery.html",
+        "target": "",
+        "rel": "",
+        "text": "Finishes"
+       },
+       {
+        "href": "http://127.0.0.1:39313/about.html",
+        "raw": "about.html",
+        "target": "",
+        "rel": "",
+        "text": "About"
+       },
+       {
+        "href": "http://127.0.0.1:39313/gallery.html",
+        "raw": "gallery.html",
+        "target": "",
+        "rel": "",
+        "text": "See the finishes"
+       }
+      ],
+      "ids": [],
+      "title": "Copper, slowly · Halden · Concept",
+      "reduced": false,
+      "timing": {
+       "domContentLoaded": 25,
+       "load": 25,
+       "transferKB": 12
+      },
+      "longtasks": [],
+      "cls": 0,
+      "scrollHeight": 1840
+     },
+     "stuck": [],
+     "idleMotion": null,
+     "shots": [
+      "shots/home__small__00top.jpg",
+      "shots/home__small__s01.jpg",
+      "shots/home__small__s02.jpg"
+     ],
+     "notes": [],
+     "loadMs": 27,
+     "steps": 2,
+     "fail": [],
+     "warn": [],
+     "verdict": "PASS",
+     "ms": 3947
+    },
+    "reduced": {
+     "profile": "reduced",
+     "label": "Reduced motion 1440",
+     "viewport": "1440x900",
+     "url": "http://127.0.0.1:39313/",
+     "finalUrl": "http://127.0.0.1:39313/",
+     "status": 200,
+     "console": [],
+     "warnings": [],
+     "pageErrors": [],
+     "failedRequests": [],
+     "httpErrors": [],
+     "overflow": null,
+     "webgl": {
+      "webgl2": true,
+      "webgl1": true,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "pageRequests": [
+       {
+        "type": "webgl",
+        "ok": true
+       },
+       {
+        "type": "webgl2",
+        "ok": true
+       }
+      ],
+      "canvases": 1
+     },
+     "content": {
+      "broken": [],
+      "noAlt": [],
+      "noAltCount": 0,
+      "endless": [],
+      "emoji": [],
+      "lorem": false,
+      "links": [
+       {
+        "href": "http://127.0.0.1:39313/index.html",
+        "raw": "index.html",
+        "target": "",
+        "rel": "",
+        "text": "Halden"
+       },
+       {
+        "href": "http://127.0.0.1:39313/index.html",
+        "raw": "index.html",
+        "target": "",
+        "rel": "",
+        "text": "Kettle"
+       },
+       {
+        "href": "http://127.0.0.1:39313/gallery.html",
+        "raw": "gallery.html",
+        "target": "",
+        "rel": "",
+        "text": "Finishes"
+       },
+       {
+        "href": "http://127.0.0.1:39313/about.html",
+        "raw": "about.html",
+        "target": "",
+        "rel": "",
+        "text": "About"
+       },
+       {
+        "href": "http://127.0.0.1:39313/gallery.html",
+        "raw": "gallery.html",
+        "target": "",
+        "rel": "",
+        "text": "See the finishes"
+       }
+      ],
+      "ids": [],
+      "title": "Copper, slowly · Halden · Concept",
+      "reduced": true,
+      "timing": {
+       "domContentLoaded": 37,
+       "load": 37,
+       "transferKB": 12
+      },
+      "longtasks": [],
+      "cls": 0,
+      "scrollHeight": 1582
+     },
+     "stuck": [],
+     "idleMotion": 0,
+     "shots": [
+      "shots/home__reduced__00top.jpg",
+      "shots/home__reduced__s01.jpg"
+     ],
+     "notes": [],
+     "loadMs": 39,
+     "idleBox": null,
+     "steps": 1,
+     "fail": [],
+     "warn": [],
+     "verdict": "PASS",
+     "ms": 4550
+    }
+   },
+   "verdict": "PASS"
+  },
+  {
+   "path": "about.html",
+   "desktop": "about.html",
+   "phone": "about.html",
+   "runs": {
+    "desktop": {
+     "profile": "desktop",
+     "label": "Desktop 1440",
+     "viewport": "1440x900",
+     "url": "http://127.0.0.1:39313/about.html",
+     "finalUrl": "http://127.0.0.1:39313/about.html",
+     "status": 200,
+     "console": [],
+     "warnings": [],
+     "pageErrors": [
+      "Cannot read properties of null (reading 'addEventListener') (about.html:31)"
+     ],
+     "failedRequests": [],
+     "httpErrors": [],
+     "overflow": null,
+     "webgl": {
+      "webgl2": true,
+      "webgl1": true,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "pageRequests": [
+       {
+        "type": "webgl2",
+        "ok": true
+       }
+      ],
+      "canvases": 0
+     },
+     "content": {
+      "broken": [],
+      "noAlt": [],
+      "noAltCount": 0,
+      "endless": [],
+      "emoji": [],
+      "lorem": false,
+      "links": [
+       {
+        "href": "http://127.0.0.1:39313/index.html",
+        "raw": "index.html",
+        "target": "",
+        "rel": "",
+        "text": "Halden"
+       },
+       {
+        "href": "http://127.0.0.1:39313/index.html",
+        "raw": "index.html",
+        "target": "",
+        "rel": "",
+        "text": "Kettle"
+       },
+       {
+        "href": "http://127.0.0.1:39313/gallery.html",
+        "raw": "gallery.html",
+        "target": "",
+        "rel": "",
+        "text": "Finishes"
+       },
+       {
+        "href": "http://127.0.0.1:39313/about.html",
+        "raw": "about.html",
+        "target": "",
+        "rel": "",
+        "text": "About"
+       },
+       {
+        "href": "https://github.com/zyqorbusiness-lab/best-website-designer",
+        "raw": "https://github.com/zyqorbusiness-lab/best-website-designer",
+        "target": "",
+        "rel": "",
+        "text": "Source on GitHub"
+       }
+      ],
+      "ids": [
+       "whistle"
+      ],
+      "title": "About · Halden · Concept",
+      "reduced": false,
+      "timing": {
+       "domContentLoaded": 19,
+       "load": 19,
+       "transferKB": 11
+      },
+      "longtasks": [],
+      "cls": 0,
+      "scrollHeight": 1322
+     },
+     "stuck": [],
+     "idleMotion": null,
+     "shots": [
+      "shots/about__desktop__00top.jpg",
+      "shots/about__desktop__s01.jpg"
+     ],
+     "notes": [],
+     "loadMs": 20,
+     "steps": 1,
+     "fail": [
+      "uncaught error: Cannot read properties of null (reading 'addEventListener') (about.html:31)"
+     ],
+     "warn": [],
+     "verdict": "FAIL",
+     "ms": 3340
+    },
+    "phone": {
+     "profile": "phone",
+     "label": "Phone 390",
+     "viewport": "390x844",
+     "url": "http://127.0.0.1:39313/about.html",
+     "finalUrl": "http://127.0.0.1:39313/about.html",
+     "status": 200,
+     "console": [],
+     "warnings": [],
+     "pageErrors": [
+      "Cannot read properties of null (reading 'addEventListener') (about.html:31)"
+     ],
+     "failedRequests": [],
+     "httpErrors": [],
+     "overflow": null,
+     "webgl": {
+      "webgl2": true,
+      "webgl1": true,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "pageRequests": [
+       {
+        "type": "webgl2",
+        "ok": true
+       }
+      ],
+      "canvases": 0
+     },
+     "content": {
+      "broken": [],
+      "noAlt": [],
+      "noAltCount": 0,
+      "endless": [],
+      "emoji": [],
+      "lorem": false,
+      "links": [
+       {
+        "href": "http://127.0.0.1:39313/index.html",
+        "raw": "index.html",
+        "target": "",
+        "rel": "",
+        "text": "Halden"
+       },
+       {
+        "href": "http://127.0.0.1:39313/index.html",
+        "raw": "index.html",
+        "target": "",
+        "rel": "",
+        "text": "Kettle"
+       },
+       {
+        "href": "http://127.0.0.1:39313/gallery.html",
+        "raw": "gallery.html",
+        "target": "",
+        "rel": "",
+        "text": "Finishes"
+       },
+       {
+        "href": "http://127.0.0.1:39313/about.html",
+        "raw": "about.html",
+        "target": "",
+        "rel": "",
+        "text": "About"
+       },
+       {
+        "href": "https://github.com/zyqorbusiness-lab/best-website-designer",
+        "raw": "https://github.com/zyqorbusiness-lab/best-website-designer",
+        "target": "",
+        "rel": "",
+        "text": "Source on GitHub"
+       }
+      ],
+      "ids": [
+       "whistle"
+      ],
+      "title": "About · Halden · Concept",
+      "reduced": false,
+      "timing": {
+       "domContentLoaded": 19,
+       "load": 19,
+       "transferKB": 11
+      },
+      "longtasks": [],
+      "cls": 0,
+      "scrollHeight": 976
+     },
+     "stuck": [],
+     "idleMotion": null,
+     "shots": [
+      "shots/about__phone__00top.jpg",
+      "shots/about__phone__s01.jpg"
+     ],
+     "notes": [],
+     "loadMs": 20,
+     "steps": 1,
+     "fail": [
+      "uncaught error: Cannot read properties of null (reading 'addEventListener') (about.html:31)"
+     ],
+     "warn": [],
+     "verdict": "FAIL",
+     "ms": 3239
+    },
+    "small": {
+     "profile": "small",
+     "label": "Small 360",
+     "viewport": "360x740",
+     "url": "http://127.0.0.1:39313/about.html",
+     "finalUrl": "http://127.0.0.1:39313/about.html",
+     "status": 200,
+     "console": [],
+     "warnings": [],
+     "pageErrors": [
+      "Cannot read properties of null (reading 'addEventListener') (about.html:31)"
+     ],
+     "failedRequests": [],
+     "httpErrors": [],
+     "overflow": null,
+     "webgl": {
+      "webgl2": true,
+      "webgl1": true,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "pageRequests": [
+       {
+        "type": "webgl2",
+        "ok": true
+       }
+      ],
+      "canvases": 0
+     },
+     "content": {
+      "broken": [],
+      "noAlt": [],
+      "noAltCount": 0,
+      "endless": [],
+      "emoji": [],
+      "lorem": false,
+      "links": [
+       {
+        "href": "http://127.0.0.1:39313/index.html",
+        "raw": "index.html",
+        "target": "",
+        "rel": "",
+        "text": "Halden"
+       },
+       {
+        "href": "http://127.0.0.1:39313/index.html",
+        "raw": "index.html",
+        "target": "",
+        "rel": "",
+        "text": "Kettle"
+       },
+       {
+        "href": "http://127.0.0.1:39313/gallery.html",
+        "raw": "gallery.html",
+        "target": "",
+        "rel": "",
+        "text": "Finishes"
+       },
+       {
+        "href": "http://127.0.0.1:39313/about.html",
+        "raw": "about.html",
+        "target": "",
+        "rel": "",
+        "text": "About"
+       },
+       {
+        "href": "https://github.com/zyqorbusiness-lab/best-website-designer",
+        "raw": "https://github.com/zyqorbusiness-lab/best-website-designer",
+        "target": "",
+        "rel": "",
+        "text": "Source on GitHub"
+       }
+      ],
+      "ids": [
+       "whistle"
+      ],
+      "title": "About · Halden · Concept",
+      "reduced": false,
+      "timing": {
+       "domContentLoaded": 22,
+       "load": 22,
+       "transferKB": 11
+      },
+      "longtasks": [],
+      "cls": 0,
+      "scrollHeight": 1002
+     },
+     "stuck": [],
+     "idleMotion": null,
+     "shots": [
+      "shots/about__small__00top.jpg",
+      "shots/about__small__s01.jpg"
+     ],
+     "notes": [],
+     "loadMs": 24,
+     "steps": 1,
+     "fail": [
+      "uncaught error: Cannot read properties of null (reading 'addEventListener') (about.html:31)"
+     ],
+     "warn": [],
+     "verdict": "FAIL",
+     "ms": 3218
+    },
+    "reduced": {
+     "profile": "reduced",
+     "label": "Reduced motion 1440",
+     "viewport": "1440x900",
+     "url": "http://127.0.0.1:39313/about.html",
+     "finalUrl": "http://127.0.0.1:39313/about.html",
+     "status": 200,
+     "console": [],
+     "warnings": [],
+     "pageErrors": [
+      "Cannot read properties of null (reading 'addEventListener') (about.html:31)"
+     ],
+     "failedRequests": [],
+     "httpErrors": [],
+     "overflow": null,
+     "webgl": {
+      "webgl2": true,
+      "webgl1": true,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "pageRequests": [
+       {
+        "type": "webgl2",
+        "ok": true
+       }
+      ],
+      "canvases": 0
+     },
+     "content": {
+      "broken": [],
+      "noAlt": [],
+      "noAltCount": 0,
+      "endless": [],
+      "emoji": [],
+      "lorem": false,
+      "links": [
+       {
+        "href": "http://127.0.0.1:39313/index.html",
+        "raw": "index.html",
+        "target": "",
+        "rel": "",
+        "text": "Halden"
+       },
+       {
+        "href": "http://127.0.0.1:39313/index.html",
+        "raw": "index.html",
+        "target": "",
+        "rel": "",
+        "text": "Kettle"
+       },
+       {
+        "href": "http://127.0.0.1:39313/gallery.html",
+        "raw": "gallery.html",
+        "target": "",
+        "rel": "",
+        "text": "Finishes"
+       },
+       {
+        "href": "http://127.0.0.1:39313/about.html",
+        "raw": "about.html",
+        "target": "",
+        "rel": "",
+        "text": "About"
+       },
+       {
+        "href": "https://github.com/zyqorbusiness-lab/best-website-designer",
+        "raw": "https://github.com/zyqorbusiness-lab/best-website-designer",
+        "target": "",
+        "rel": "",
+        "text": "Source on GitHub"
+       }
+      ],
+      "ids": [
+       "whistle"
+      ],
+      "title": "About · Halden · Concept",
+      "reduced": true,
+      "timing": {
+       "domContentLoaded": 20,
+       "load": 20,
+       "transferKB": 11
+      },
+      "longtasks": [],
+      "cls": 0,
+      "scrollHeight": 1322
+     },
+     "stuck": [],
+     "idleMotion": 0,
+     "shots": [
+      "shots/about__reduced__00top.jpg",
+      "shots/about__reduced__s01.jpg"
+     ],
+     "notes": [],
+     "loadMs": 22,
+     "idleBox": null,
+     "steps": 1,
+     "fail": [
+      "uncaught error: Cannot read properties of null (reading 'addEventListener') (about.html:31)"
+     ],
+     "warn": [],
+     "verdict": "FAIL",
+     "ms": 4526
+    }
+   },
+   "verdict": "FAIL"
+  },
+  {
+   "path": "gallery.html",
+   "desktop": "gallery.html",
+   "phone": "gallery.html",
+   "runs": {
+    "desktop": {
+     "profile": "desktop",
+     "label": "Desktop 1440",
+     "viewport": "1440x900",
+     "url": "http://127.0.0.1:39313/gallery.html",
+     "finalUrl": "http://127.0.0.1:39313/gallery.html",
+     "status": 200,
+     "console": [],
+     "warnings": [],
+     "pageErrors": [],
+     "failedRequests": [],
+     "httpErrors": [],
+     "overflow": null,
+     "webgl": {
+      "webgl2": true,
+      "webgl1": true,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "pageRequests": [
+       {
+        "type": "webgl2",
+        "ok": true
+       }
+      ],
+      "canvases": 0
+     },
+     "content": {
+      "broken": [],
+      "noAlt": [],
+      "noAltCount": 0,
+      "endless": [],
+      "emoji": [],
+      "lorem": false,
+      "links": [
+       {
+        "href": "http://127.0.0.1:39313/index.html",
+        "raw": "index.html",
+        "target": "",
+        "rel": "",
+        "text": "Halden"
+       },
+       {
+        "href": "http://127.0.0.1:39313/index.html",
+        "raw": "index.html",
+        "target": "",
+        "rel": "",
+        "text": "Kettle"
+       },
+       {
+        "href": "http://127.0.0.1:39313/gallery.html",
+        "raw": "gallery.html",
+        "target": "",
+        "rel": "",
+        "text": "Finishes"
+       },
+       {
+        "href": "http://127.0.0.1:39313/about.html",
+        "raw": "about.html",
+        "target": "",
+        "rel": "",
+        "text": "About"
+       }
+      ],
+      "ids": [],
+      "title": "Finishes · Halden · Concept",
+      "reduced": false,
+      "timing": {
+       "domContentLoaded": 20,
+       "load": 20,
+       "transferKB": 11
+      },
+      "longtasks": [],
+      "cls": 0,
+      "scrollHeight": 1546
+     },
+     "stuck": [],
+     "idleMotion": null,
+     "shots": [
+      "shots/gallery__desktop__00top.jpg",
+      "shots/gallery__desktop__s01.jpg"
+     ],
+     "notes": [],
+     "loadMs": 22,
+     "steps": 1,
+     "fail": [],
+     "warn": [],
+     "verdict": "PASS",
+     "ms": 3360
+    },
+    "phone": {
+     "profile": "phone",
+     "label": "Phone 390",
+     "viewport": "390x844",
+     "url": "http://127.0.0.1:39313/gallery.html",
+     "finalUrl": "http://127.0.0.1:39313/gallery.html",
+     "status": 200,
+     "console": [],
+     "warnings": [],
+     "pageErrors": [],
+     "failedRequests": [],
+     "httpErrors": [],
+     "overflow": {
+      "viewport": 390,
+      "scrollWidth": 1200,
+      "overflowing": true,
+      "masked": false,
+      "culprits": [
+       {
+        "selector": "main > section:nth-of-type(1) > div.strip > div.swatch.s3:nth-of-type(3)",
+        "left": 820,
+        "right": 1200,
+        "width": 380,
+        "top": 303,
+        "past": 810,
+        "css": {
+         "width": "380px",
+         "minWidth": "auto",
+         "position": "static",
+         "transform": "",
+         "whiteSpace": "normal"
+        },
+        "text": "Tin lined, brushed Pale, soft sheen"
+       },
+       {
+        "selector": "main > section:nth-of-type(1) > div.strip > div.swatch.s2:nth-of-type(2)",
+        "left": 420,
+        "right": 800,
+        "width": 380,
+        "top": 303,
+        "past": 410,
+        "css": {
+         "width": "380px",
+         "minWidth": "auto",
+         "position": "static",
+         "transform": "",
+         "whiteSpace": "normal"
+        },
+        "text": "Forest enamel Matte, stays as it is"
+       },
+       {
+        "selector": "main > section:nth-of-type(1) > div.strip > div.swatch.s1:nth-of-type(1)",
+        "left": 20,
+        "right": 400,
+        "width": 380,
+        "top": 303,
+        "past": 10,
+        "css": {
+         "width": "380px",
+         "minWidth": "auto",
+         "position": "static",
+         "transform": "",
+         "whiteSpace": "normal"
+        },
+        "text": "Raw copper Darkens to brown in a year"
+       }
+      ],
+      "totalCulprits": 3,
+      "fixAt": {
+       "selector": "main > section:nth-of-type(1) > div.strip",
+       "width": 350,
+       "display": "flex",
+       "flexWrap": "nowrap",
+       "overflowX": "visible",
+       "gridTemplateColumns": "",
+       "culpritsInside": 3,
+       "hint": "a flex row that does not wrap: let items shrink (flex: 1 1 auto; min-width: 0), wrap them, or make the row scroll (overflow-x: auto)"
+      },
+      "atScrollY": 0,
+      "evidence": "shots/gallery__phone__overflow.jpg"
+     },
+     "webgl": {
+      "webgl2": true,
+      "webgl1": true,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "pageRequests": [
+       {
+        "type": "webgl2",
+        "ok": true
+       }
+      ],
+      "canvases": 0
+     },
+     "content": {
+      "broken": [],
+      "noAlt": [],
+      "noAltCount": 0,
+      "endless": [],
+      "emoji": [],
+      "lorem": false,
+      "links": [
+       {
+        "href": "http://127.0.0.1:39313/index.html",
+        "raw": "index.html",
+        "target": "",
+        "rel": "",
+        "text": "Halden"
+       },
+       {
+        "href": "http://127.0.0.1:39313/index.html",
+        "raw": "index.html",
+        "target": "",
+        "rel": "",
+        "text": "Kettle"
+       },
+       {
+        "href": "http://127.0.0.1:39313/gallery.html",
+        "raw": "gallery.html",
+        "target": "",
+        "rel": "",
+        "text": "Finishes"
+       },
+       {
+        "href": "http://127.0.0.1:39313/about.html",
+        "raw": "about.html",
+        "target": "",
+        "rel": "",
+        "text": "About"
+       }
+      ],
+      "ids": [],
+      "title": "Finishes · Halden · Concept",
+      "reduced": false,
+      "timing": {
+       "domContentLoaded": 20,
+       "load": 20,
+       "transferKB": 11
+      },
+      "longtasks": [],
+      "cls": 0,
+      "scrollHeight": 2597
+     },
+     "stuck": [],
+     "idleMotion": null,
+     "shots": [
+      "shots/gallery__phone__00top.jpg",
+      "shots/gallery__phone__overflow.jpg"
+     ],
+     "notes": [],
+     "loadMs": 21,
+     "steps": 0,
+     "fail": [
+      "horizontal overflow: page is 1200px wide in a 390px viewport — div.strip > div.swatch.s3:nth-of-type(3) sticks out 810px; fix at section:nth-of-type(1) > div.strip"
+     ],
+     "warn": [],
+     "verdict": "FAIL",
+     "ms": 2901
+    },
+    "small": {
+     "profile": "small",
+     "label": "Small 360",
+     "viewport": "360x740",
+     "url": "http://127.0.0.1:39313/gallery.html",
+     "finalUrl": "http://127.0.0.1:39313/gallery.html",
+     "status": 200,
+     "console": [],
+     "warnings": [],
+     "pageErrors": [],
+     "failedRequests": [],
+     "httpErrors": [],
+     "overflow": {
+      "viewport": 360,
+      "scrollWidth": 1200,
+      "overflowing": true,
+      "masked": false,
+      "culprits": [
+       {
+        "selector": "main > section:nth-of-type(1) > div.strip > div.swatch.s3:nth-of-type(3)",
+        "left": 820,
+        "right": 1200,
+        "width": 380,
+        "top": 335,
+        "past": 840,
+        "css": {
+         "width": "380px",
+         "minWidth": "auto",
+         "position": "static",
+         "transform": "",
+         "whiteSpace": "normal"
+        },
+        "text": "Tin lined, brushed Pale, soft sheen"
+       },
+       {
+        "selector": "main > section:nth-of-type(1) > div.strip > div.swatch.s2:nth-of-type(2)",
+        "left": 420,
+        "right": 800,
+        "width": 380,
+        "top": 335,
+        "past": 440,
+        "css": {
+         "width": "380px",
+         "minWidth": "auto",
+         "position": "static",
+         "transform": "",
+         "whiteSpace": "normal"
+        },
+        "text": "Forest enamel Matte, stays as it is"
+       },
+       {
+        "selector": "main > section:nth-of-type(1) > div.strip > div.swatch.s1:nth-of-type(1)",
+        "left": 20,
+        "right": 400,
+        "width": 380,
+        "top": 335,
+        "past": 40,
+        "css": {
+         "width": "380px",
+         "minWidth": "auto",
+         "position": "static",
+         "transform": "",
+         "whiteSpace": "normal"
+        },
+        "text": "Raw copper Darkens to brown in a year"
+       }
+      ],
+      "totalCulprits": 3,
+      "fixAt": {
+       "selector": "main > section:nth-of-type(1) > div.strip",
+       "width": 320,
+       "display": "flex",
+       "flexWrap": "nowrap",
+       "overflowX": "visible",
+       "gridTemplateColumns": "",
+       "culpritsInside": 3,
+       "hint": "a flex row that does not wrap: let items shrink (flex: 1 1 auto; min-width: 0), wrap them, or make the row scroll (overflow-x: auto)"
+      },
+      "atScrollY": 0,
+      "evidence": "shots/gallery__small__overflow.jpg"
+     },
+     "webgl": {
+      "webgl2": true,
+      "webgl1": true,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "pageRequests": [
+       {
+        "type": "webgl2",
+        "ok": true
+       }
+      ],
+      "canvases": 0
+     },
+     "content": {
+      "broken": [],
+      "noAlt": [],
+      "noAltCount": 0,
+      "endless": [],
+      "emoji": [],
+      "lorem": false,
+      "links": [
+       {
+        "href": "http://127.0.0.1:39313/index.html",
+        "raw": "index.html",
+        "target": "",
+        "rel": "",
+        "text": "Halden"
+       },
+       {
+        "href": "http://127.0.0.1:39313/index.html",
+        "raw": "index.html",
+        "target": "",
+        "rel": "",
+        "text": "Kettle"
+       },
+       {
+        "href": "http://127.0.0.1:39313/gallery.html",
+        "raw": "gallery.html",
+        "target": "",
+        "rel": "",
+        "text": "Finishes"
+       },
+       {
+        "href": "http://127.0.0.1:39313/about.html",
+        "raw": "about.html",
+        "target": "",
+        "rel": "",
+        "text": "About"
+       }
+      ],
+      "ids": [],
+      "title": "Finishes · Halden · Concept",
+      "reduced": false,
+      "timing": {
+       "domContentLoaded": 19,
+       "load": 19,
+       "transferKB": 11
+      },
+      "longtasks": [],
+      "cls": 0,
+      "scrollHeight": 2467
+     },
+     "stuck": [],
+     "idleMotion": null,
+     "shots": [
+      "shots/gallery__small__00top.jpg",
+      "shots/gallery__small__overflow.jpg"
+     ],
+     "notes": [],
+     "loadMs": 21,
+     "steps": 0,
+     "fail": [
+      "horizontal overflow: page is 1200px wide in a 360px viewport — div.strip > div.swatch.s3:nth-of-type(3) sticks out 840px; fix at section:nth-of-type(1) > div.strip"
+     ],
+     "warn": [],
+     "verdict": "FAIL",
+     "ms": 2883
+    },
+    "reduced": {
+     "profile": "reduced",
+     "label": "Reduced motion 1440",
+     "viewport": "1440x900",
+     "url": "http://127.0.0.1:39313/gallery.html",
+     "finalUrl": "http://127.0.0.1:39313/gallery.html",
+     "status": 200,
+     "console": [],
+     "warnings": [],
+     "pageErrors": [],
+     "failedRequests": [],
+     "httpErrors": [],
+     "overflow": null,
+     "webgl": {
+      "webgl2": true,
+      "webgl1": true,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "pageRequests": [
+       {
+        "type": "webgl2",
+        "ok": true
+       }
+      ],
+      "canvases": 0
+     },
+     "content": {
+      "broken": [],
+      "noAlt": [],
+      "noAltCount": 0,
+      "endless": [],
+      "emoji": [],
+      "lorem": false,
+      "links": [
+       {
+        "href": "http://127.0.0.1:39313/index.html",
+        "raw": "index.html",
+        "target": "",
+        "rel": "",
+        "text": "Halden"
+       },
+       {
+        "href": "http://127.0.0.1:39313/index.html",
+        "raw": "index.html",
+        "target": "",
+        "rel": "",
+        "text": "Kettle"
+       },
+       {
+        "href": "http://127.0.0.1:39313/gallery.html",
+        "raw": "gallery.html",
+        "target": "",
+        "rel": "",
+        "text": "Finishes"
+       },
+       {
+        "href": "http://127.0.0.1:39313/about.html",
+        "raw": "about.html",
+        "target": "",
+        "rel": "",
+        "text": "About"
+       }
+      ],
+      "ids": [],
+      "title": "Finishes · Halden · Concept",
+      "reduced": true,
+      "timing": {
+       "domContentLoaded": 21,
+       "load": 21,
+       "transferKB": 11
+      },
+      "longtasks": [],
+      "cls": 0,
+      "scrollHeight": 1546
+     },
+     "stuck": [],
+     "idleMotion": 0,
+     "shots": [
+      "shots/gallery__reduced__00top.jpg",
+      "shots/gallery__reduced__s01.jpg"
+     ],
+     "notes": [],
+     "loadMs": 22,
+     "idleBox": null,
+     "steps": 1,
+     "fail": [],
+     "warn": [],
+     "verdict": "PASS",
+     "ms": 4623
+    }
+   },
+   "verdict": "FAIL"
+  }
+ ],
+ "throttle": [
+  {
+   "path": "/",
+   "url": "http://127.0.0.1:39313/",
+   "rate": 4,
+   "errors": 0,
+   "loadMs": 67,
+   "frames": {
+    "frames": 239,
+    "fps": 60,
+    "medianMs": 16.7,
+    "p95Ms": 16.8,
+    "over50ms": 0
+   },
+   "longTasks": {
+    "count": 0,
+    "totalMs": 0,
+    "worstMs": 0
+   },
+   "warn": []
+  }
+ ],
+ "links": {
+  "internal": {
+   "checked": 6,
+   "broken": []
+  },
+  "anchors": {
+   "checked": 0,
+   "missing": []
+  },
+  "external": {
+   "found": 1,
+   "checked": 0,
+   "broken": [],
+   "walled": [],
+   "ok": 0
+  },
+  "newTab": [
+   {
+    "from": "/about.html",
+    "href": "https://github.com/zyqorbusiness-lab/best-website-designer",
+    "text": "Source on GitHub"
+   }
+  ]
+ },
+ "webglEnv": {
+  "webgl2": true,
+  "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+ },
+ "finishedAt": "2026-10-28T02:57:47.088Z",
+ "summary": {
+  "pages": 3,
+  "runs": 12,
+  "runsPass": 6,
+  "consoleErrors": 4,
+  "httpErrors": 0,
+  "overflowRuns": 2,
+  "warnings": 0,
+  "linkProblems": 0,
+  "pass": false,
+  "line": "VERDICT: FAIL — 6 of 12 page runs failed; 4 console/page error(s); horizontal overflow in 2 run(s)"
+ },
+ "verdict": "FAIL",
+ "notVerified": [
+  "A real phone. Phone runs are desktop Chromium pretending to be a phone (size, pixel ratio, touch, user agent). iOS Safari is a different engine (WebKit; try --webkit): open the live URL on a real iPhone and a real Android before calling it done.",
+  "Real-device frame rate. 3D was drawn by \"ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)\" (software rendering on the CPU); the throttle numbers compare builds with each other, they are not a phone's fps.",
+  "Design quality. The harness proves the page loads clean and fits; whether it looks premium is a human call — read the contact sheet.",
+  "Lighthouse scores, keyboard-only use and screen readers (run Lighthouse in Chrome DevTools and record the real number).",
+  "Slow or flaky networks (the pages were served locally or from your server as-is, not over 4G).",
+  "External links were listed (1) but not fetched; run with --external to check them.",
+  "The no-WebGL fallback (poster) was not tested; add --profiles ...,nowebgl or --full."
+ ]
+}
