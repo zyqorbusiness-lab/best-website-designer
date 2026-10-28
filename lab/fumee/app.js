@@ -1,5 +1,5 @@
 /* Fumée (Concept) - desktop orchestration: loader, smoke field, kinetic type, pinned sequences, liquid swap, magnetic UI. */
-import { reveals, smooth, reduced } from '../_kit/kit.js';
+import { reveals, smooth, reduced, hasWebGL } from '../_kit/kit.js';
 import { createSmoke } from './smoke.js';
 import { createLiquid } from './liquid.js';
 
@@ -20,7 +20,7 @@ if (reduced || !gsap || !ST) {
   root.classList.add('rm'); document.body.classList.remove('is-loading');
   reveals();
   const c = $('.smoke');
-  if (c && !reduced) { /* GSAP missing but motion allowed: still show one smoke frame */
+  if (c && !reduced && hasWebGL()) { /* GSAP missing but motion allowed: still show one smoke frame */
     try { createSmoke(c, { still: true }).renderOnce(); } catch (e) { /* CSS gradient stays */ }
   }
 } else {
@@ -34,7 +34,7 @@ function run() {
 
   /* ---------- smoke field ---------- */
   let smoke = null;
-  try { smoke = createSmoke($('.smoke'), { scale: Math.min(0.62, 1100 / innerWidth), simScale: 0.25 }); smoke.start(); }
+  try { if (!hasWebGL()) throw 0; /* no WebGL: the still from nogl-map.js stays on the canvas */ smoke = createSmoke($('.smoke'), { scale: Math.min(0.62, 1100 / innerWidth), simScale: 0.25 }); smoke.start(); }
   catch (e) { smoke = null; }
   let lastY = scrollY;
   const onScroll = () => {
@@ -103,6 +103,7 @@ function run() {
   const nameSplits = items.map((li) => split($('.cs-name', li)));
   let cur = -1, liquid = null;
   try {
+    if (!hasWebGL()) throw 0; /* no WebGL: the photo swap below runs instead */
     liquid = createLiquid($('.liq-gl'), IMG);
     liquid.ready.then(() => liqEl.classList.add('gl-ready')).catch(() => {});
   } catch (e) { liquid = null; }

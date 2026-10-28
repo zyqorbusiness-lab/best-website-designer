@@ -1,6 +1,6 @@
 /* Nook - Zyqor Lab concept 11. Shared by index.html (desktop) and m.html (phone, isM). */
 import { useHDRI } from '../../assets/hdri/hdri.js';
-import { THREE, reduced, coarse, isM, Q, loadGLB, modelURL, makeRenderer, studioEnv, fitObject, reveals, smooth, whenVisible, clamp, lerp } from '../_kit/kit.js';
+import { THREE, reduced, coarse, isM, Q, loadGLB, modelURL, makeRenderer, glRenderer, studioEnv, fitObject, reveals, smooth, whenVisible, clamp, lerp } from '../_kit/kit.js';
 
 const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const gsap = window.gsap, ST = window.ScrollTrigger;
@@ -41,7 +41,7 @@ if (odo) roll(odo, '01');
 const ASSETS = '../../assets/lab/nook/', SUF = '-d.glb', WEAVE = 22, SH = true;
 // renderer with full quality on every screen (AA on, DPR up to 2, ACES, sRGB): no phone-only cuts
 function mkRenderer(canvas, opts = {}) {
-  const r = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: opts.alpha ?? true, powerPreference: 'high-performance' });
+  const r = glRenderer({ canvas, antialias: true, alpha: opts.alpha ?? true, powerPreference: 'high-performance' });
   r.setPixelRatio(Math.min(devicePixelRatio || 1, 2)); r.outputColorSpace = THREE.SRGBColorSpace;
   r.toneMapping = THREE.ACESFilmicToneMapping; r.toneMappingExposure = opts.exposure ?? 1; return r;
 }

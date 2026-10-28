@@ -1,10 +1,54 @@
 {
  "id": "N002",
- "date": "2026-10-28T02:56:59.251Z",
+ "date": "2026-10-28T20:46:33.168Z",
+ "kit": 2,
  "verdict": "PASS",
- "weightKB": 2102,
- "phoneWeightKB": 1974,
+ "tier": "normal",
+ "budgetKB": 1536,
+ "ownKB": 259,
+ "sharedKB": 1624,
+ "phoneOwnKB": 252,
+ "phoneSharedKB": 1491,
+ "weightKB": 1974,
+ "phoneWeightKB": 1835,
  "sameAssets": true,
+ "assetDiff": {
+  "desktopOnly": [],
+  "phoneOnly": []
+ },
+ "assets3d": [
+  "/assets/hdri/studio_512.hdr",
+  "/library/_assets/models/ceramic_vase_01.glb"
+ ],
+ "sameEffects": true,
+ "effectDiff": [],
+ "effects": {
+  "toneMapping": 4,
+  "exposure": 1.02,
+  "outputColorSpace": "srgb",
+  "shadows": false,
+  "shadowType": null,
+  "antialias": true,
+  "envIntensity": 0.9,
+  "background": null,
+  "passes": [],
+  "contactShadows": 1,
+  "demand": false,
+  "dprCap": [
+   2,
+   2
+  ]
+ },
+ "nowebgl": true,
+ "credit": {
+  "pass": true,
+  "files": 8,
+  "missing": [],
+  "incomplete": [],
+  "ccby": [],
+  "ccbyNotVisible": [],
+  "unlisted": []
+ },
  "runs": {
   "d1440": {
    "pass": true,
@@ -12,7 +56,9 @@
    "warnings": 0,
    "failed": 0,
    "overflow": 0,
-   "webgl": true
+   "webgl": true,
+   "ownKB": 259,
+   "sharedKB": 1624
   },
   "m390": {
    "pass": true,
@@ -20,7 +66,9 @@
    "warnings": 0,
    "failed": 0,
    "overflow": 0,
-   "webgl": true
+   "webgl": true,
+   "ownKB": 252,
+   "sharedKB": 1491
   },
   "m360": {
    "pass": true,
@@ -28,7 +76,9 @@
    "warnings": 0,
    "failed": 0,
    "overflow": 0,
-   "webgl": true
+   "webgl": true,
+   "ownKB": 258,
+   "sharedKB": 1491
   },
   "rd1440": {
    "pass": true,
@@ -36,7 +86,9 @@
    "warnings": 0,
    "failed": 0,
    "overflow": 0,
-   "webgl": true
+   "webgl": true,
+   "ownKB": 259,
+   "sharedKB": 1645
   },
   "rm390": {
    "pass": true,
@@ -44,7 +96,31 @@
    "warnings": 0,
    "failed": 0,
    "overflow": 0,
-   "webgl": true
+   "webgl": true,
+   "ownKB": 258,
+   "sharedKB": 1512
+  },
+  "nd1440": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": false,
+   "poster": true,
+   "ownKB": 268,
+   "sharedKB": 945
+  },
+  "nm390": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": false,
+   "poster": true,
+   "ownKB": 268,
+   "sharedKB": 812
   }
  }
 }

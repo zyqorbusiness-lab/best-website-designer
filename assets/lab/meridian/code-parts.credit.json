@@ -1,0 +1,11 @@
+{
+  "title": "Meridian code-made parts (printed dial, engraved caseback, lume glow, crystal light sweep, presentation case)",
+  "author": "Zyqor Studio",
+  "author_url": "https://zyqor-portfolio-v3.sites.tab.bot/",
+  "source_url": "https://zyqor-portfolio-v3.sites.tab.bot/lab/meridian/",
+  "licence": "MIT",
+  "licence_url": "https://opensource.org/licenses/MIT",
+  "attribution": "Code by Zyqor Studio (MIT).",
+  "changes": "made in code (site/lab/meridian/watch.js): canvas-printed sunburst dial + railroad track + fictional Meridian print, canvas bump/roughness caseback engraving, lume halo shader, sweep shader, felt presentation box geometry.",
+  "downloaded": "2026-10-28"
+}

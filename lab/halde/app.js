@@ -1,6 +1,6 @@
 /* HALDE R2 - Zyqor Lab concept (round 2: 4k scan textures, same model on phone, coated optics + iris). One WebGL renderer, one real scanned camera (Poly Haven "Camera 01", CC0),
    drawn into two hosts with scissor: the hero viewport and the studio. Studio: finish switch, light mode, exploded lens. */
-import { THREE, reduced, isM, Q, loadGLB, makeRenderer, studioEnv, damp, reveals } from '../_kit/kit.js';
+import { THREE, reduced, isM, Q, loadGLB, makeRenderer, glRenderer, studioEnv, damp, reveals } from '../_kit/kit.js';
 reveals();
 import { useHDRI } from '../../assets/hdri/hdri.js';
 
@@ -28,7 +28,7 @@ const canvas = document.createElement('canvas');
 canvas.id = 'gl'; canvas.setAttribute('aria-hidden', 'true');
 document.body.append(canvas);
 /* R2: own renderer so the phone gets the same antialiasing and DPR (capped at 2) as desktop */
-const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
+const renderer = glRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
 renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 2));
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.toneMapping = THREE.ACESFilmicToneMapping;

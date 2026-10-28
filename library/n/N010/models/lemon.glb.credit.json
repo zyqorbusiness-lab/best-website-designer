@@ -1,0 +1,11 @@
+{
+  "title": "Lemon",
+  "author": "Kuutti Siitonen",
+  "author_url": "https://polyhaven.com/all?a=Kuutti%20Siitonen",
+  "source_url": "https://polyhaven.com/a/lemon",
+  "licence": "CC0 1.0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution": "Lemon by Kuutti Siitonen, Poly Haven (CC0 1.0)",
+  "changes": "2K glTF from Poly Haven re-encoded with gltf-transform: meshopt geometry compression, base colour 1024 px WebP (q82), normal and ARM maps 768 px WebP (q80). Geometry not simplified. Mesh/material renamed 'lemon'.",
+  "downloaded": "2026-10-28"
+}

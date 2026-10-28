@@ -9,7 +9,12 @@
       "source": "Poly Haven",
       "url": "https://polyhaven.com/models?s=moon%20rock",
       "licence": "CC0 1.0",
-      "note": "Photo-scanned. Optimised with gltf-transform (meshopt, WebP 1K). Same files on phone and desktop."
+      "note": "Photo-scanned. Optimised with gltf-transform (meshopt, WebP 1K). Same files on phone and desktop.",
+      "files": [
+        "../../_assets/models/moon_rock_01.glb",
+        "../../_assets/models/moon_rock_05.glb",
+        "../../_assets/models/moon_rock_07.glb"
+      ]
     },
     {
       "what": "Textures",
@@ -18,21 +23,33 @@
       "source": "Poly Haven",
       "url": "https://polyhaven.com/a/moon_dusted_02",
       "licence": "CC0 1.0",
-      "note": "Colour, normal and ARM maps resized to 1K WebP; the footprint scan is feathered into a round decal."
+      "note": "Colour, normal and ARM maps resized to 1K WebP; the footprint scan is feathered into a round decal.",
+      "files": [
+        "../../_assets/tex/moon_dusted_02_arm_1k.webp",
+        "../../_assets/tex/moon_dusted_02_diff_1k.webp",
+        "../../_assets/tex/moon_dusted_02_nor_1k.webp",
+        "../../_assets/tex/moon_footprints_01_decal_1k.webp",
+        "../../_assets/tex/moon_footprints_01_nor_1k.webp"
+      ]
     },
     {
       "what": "Earth",
       "title": "Blue Marble: Land Surface, Shallow Water, and Shaded Topography",
-      "author": "NASA Goddard Space Flight Center (Reto St\u00f6ckli)",
+      "author": "NASA Goddard Space Flight Center (Reto Stöckli)",
       "source": "NASA Visible Earth",
       "url": "https://visibleearth.nasa.gov/images/57752",
-      "licence": "Public domain (NASA)"
+      "licence": "Public domain (NASA)",
+      "files": [
+        "../../_assets/tex/earth_bluemarble_2k.webp"
+      ]
     },
     {
       "what": "Scene",
       "title": "Crater terrain, starfield, sky dome, atmosphere",
       "author": "Zyqor Studio",
-      "note": "Made in code."
+      "note": "Made in code.",
+      "files": [],
+      "licence": "MIT"
     },
     {
       "what": "Type",
@@ -40,7 +57,8 @@
       "author": "Indian Type Foundry",
       "source": "Fontshare",
       "url": "https://www.fontshare.com",
-      "licence": "ITF Free Font License"
+      "licence": "ITF Free Font License 2.0",
+      "files": []
     },
     {
       "what": "Type",
@@ -48,7 +66,8 @@
       "author": "Rodrigo Fuenzalida, Jordan Egstad",
       "source": "GitHub",
       "url": "https://github.com/Instrument/instrument-serif",
-      "licence": "SIL OFL 1.1"
+      "licence": "SIL OFL 1.1",
+      "files": []
     },
     {
       "what": "Type",
@@ -56,7 +75,8 @@
       "author": "The JetBrains Mono Project Authors",
       "source": "GitHub",
       "url": "https://github.com/JetBrains/JetBrainsMono",
-      "licence": "SIL OFL 1.1"
+      "licence": "SIL OFL 1.1",
+      "files": []
     },
     {
       "what": "Engine",
@@ -64,7 +84,21 @@
       "author": "their authors",
       "source": "threejs.org",
       "url": "https://threejs.org",
-      "licence": "MIT / GSAP Standard Licence"
+      "licence": "MIT / GSAP Standard Licence",
+      "files": []
+    },
+    {
+      "what": "Images (code-made)",
+      "title": "Poster and library thumbnail",
+      "author": "Zyqor Studio",
+      "source": "frames of this page",
+      "url": "",
+      "licence": "MIT",
+      "note": "WebGL-fallback poster and index thumbnail, rendered from this page by tools/qa-library.mjs. No AI imagery.",
+      "files": [
+        "poster.webp",
+        "thumb.webp"
+      ]
     }
   ]
 }

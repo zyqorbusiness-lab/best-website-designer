@@ -11,7 +11,10 @@
    What you get, so no concept re-solves it:
    - WebGLRenderer: sRGB output, ACES Filmic, exposure, DPR capped at 2 (both builds), adaptive DPR if frames are slow.
    - Environment: instant RoomEnvironment, then the shared Poly Haven HDRI (Studio Small 09, CC0) swapped in after first paint.
-   - GLTFLoader with meshopt + Draco + KTX2 decoders (self-hosted under /vendor/three/addons/libs/).
+   - GLTFLoader with meshopt + Draco + KTX2 decoders (self-hosted under /vendor/three/addons/libs/), imported on the first
+     stage.load() only (kit v2), so code-only concepts never download them.
+   - window.__stage.info(): renderer settings + every model/texture/HDRI the stage loaded; QA compares desktop vs phone.
+     If you add post-processing, push each pass name into stage.passes (e.g. stage.passes.push('bloom')) so QA sees it.
    - Lazy: the WebGL context is created only when the stage comes near the viewport (opts.lazy, default true).
    - Pause: the loop stops while the stage is off screen or the tab is hidden.
    - Poster fallback: if WebGL is missing or the context is lost, <img class="poster" src="poster.webp"> is shown
@@ -21,12 +24,9 @@
    - Scroll hook: stage.scroll(sectionEl, p => ...) gives 0..1 progress (GSAP ScrollTrigger scrub when present).
    The same file runs the phone build (<html data-build="m">); the phone loads the SAME assets. */
 import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
-import { KTX2Loader } from 'three/addons/loaders/KTX2Loader.js';
-import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
-import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
+/* kit v2: the model loaders (GLTF + Draco + KTX2 + meshopt, ~230 KB) and the HDR parser are imported on first use,
+   so a code-only concept never downloads them. Static imports above are the only ones every page pays for. */
 
 export { THREE };
 export const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -42,26 +42,60 @@ const VENDOR = new URL('../../vendor/three/addons/libs/', import.meta.url);
 const HDRI = new URL('../../assets/hdri/', import.meta.url);
 const HDR_FILES = { 1024: 'studio_1k.hdr', 512: 'studio_512.hdr', 256: 'studio_256.hdr' };
 
-/* shared loader (one per page) */
-let _gltf = null, _ktx2 = null, _draco = null;
+/* shared loader (one per page), imported on first stage.load() */
+let _gltfP = null;
 function gltfLoader(renderer) {
-  if (_gltf) return _gltf;
-  _draco = new DRACOLoader().setDecoderPath(new URL('draco/gltf/', VENDOR).href);
-  _ktx2 = new KTX2Loader().setTranscoderPath(new URL('basis/', VENDOR).href);
-  if (renderer) _ktx2.detectSupport(renderer);
-  _gltf = new GLTFLoader().setDRACOLoader(_draco).setKTX2Loader(_ktx2).setMeshoptDecoder(MeshoptDecoder);
-  return _gltf;
-}
-const hdrCache = new Map();
-function loadHDR(renderer, src) {
-  const url = typeof src === 'number' ? new URL(HDR_FILES[src] || HDR_FILES[512], HDRI).href : src;
-  if (hdrCache.has(url)) return hdrCache.get(url);
-  const get = () => new RGBELoader().setDataType(THREE.HalfFloatType).loadAsync(url);
-  // one retry: phones drop requests on flaky networks, and a lost HDRI would silently leave the room fallback
-  const p = get().catch(() => new Promise((r) => setTimeout(r, 400)).then(get)).then((hdr) => {
-    hdr.mapping = THREE.EquirectangularReflectionMapping;
-    const pm = new THREE.PMREMGenerator(renderer); const env = pm.fromEquirectangular(hdr).texture; pm.dispose(); hdr.dispose(); return env;
+  if (_gltfP) return _gltfP;
+  _gltfP = Promise.all([
+    import('three/addons/loaders/GLTFLoader.js'), import('three/addons/loaders/DRACOLoader.js'),
+    import('three/addons/loaders/KTX2Loader.js'), import('three/addons/libs/meshopt_decoder.module.js')
+  ]).then(([{ GLTFLoader }, { DRACOLoader }, { KTX2Loader }, { MeshoptDecoder }]) => {
+    const draco = new DRACOLoader().setDecoderPath(new URL('draco/gltf/', VENDOR).href);
+    const ktx2 = new KTX2Loader().setTranscoderPath(new URL('basis/', VENDOR).href);
+    if (renderer) ktx2.detectSupport(renderer);
+    return new GLTFLoader().setDRACOLoader(draco).setKTX2Loader(ktx2).setMeshoptDecoder(MeshoptDecoder);
   });
+  _gltfP.catch(() => { _gltfP = null; });
+  return _gltfP;
+}
+
+/* HDRI. kit v2 fix for the "net::ERR_ABORTED studio_512.hdr" QA flake (work/beast/kit/NOTES_v2.md):
+   three's FileLoader reads bodies through response.body.getReader() and drops the original Response; when the read
+   hits EOF before the network's completion message (seen under CPU load), Chrome tears the loader down and logs the
+   request as cancelled although every byte arrived. Here the bytes come from one plain fetch() whose Response stays
+   referenced until arrayBuffer() resolves, then RGBELoader only parses them. One request per URL per page (cached
+   promise); a retry happens only if the fetch itself failed, never on a successful load. */
+const hdrCache = new Map();
+const hdrInfo = { url: null, state: 'none', bytes: 0, tries: 0 };
+async function fetchBytes(url, onProgress) {
+  const res = await fetch(url, { credentials: 'same-origin' });   // matches a <link rel="preload" as="fetch" crossorigin>
+  if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
+  if (!onProgress || !res.body || !res.body.getReader) return { buf: await res.arrayBuffer(), res };
+  // progress without dropping the Response: read the body here, with `res` alive in this frame until the end
+  const total = +(res.headers.get('Content-Length') || 0), reader = res.body.getReader(), parts = []; let loaded = 0;
+  for (;;) { const { done, value } = await reader.read(); if (done) break; parts.push(value); loaded += value.byteLength; try { onProgress({ loaded, total, lengthComputable: total > 0 }); } catch {} }
+  const out = new Uint8Array(loaded); let o = 0; for (const p of parts) { out.set(p, o); o += p.byteLength; }
+  return { buf: out.buffer, res };
+}
+function loadHDR(renderer, src) {
+  const url = typeof src === 'number' ? new URL(HDR_FILES[src] || HDR_FILES[512], HDRI).href : new URL(src, location.href).href;
+  if (hdrCache.has(url)) return hdrCache.get(url);
+  Object.assign(hdrInfo, { url, state: 'loading', bytes: 0, tries: 0 });
+  const get = () => { hdrInfo.tries++; return fetchBytes(url); };
+  const p = Promise.all([
+    get().catch(() => new Promise((r) => setTimeout(r, 600)).then(get)),   // a real network failure gets one more try
+    import('three/addons/loaders/RGBELoader.js')
+  ]).then(([{ buf }, { RGBELoader }]) => {
+    hdrInfo.bytes = buf.byteLength;
+    const d = new RGBELoader().setDataType(THREE.HalfFloatType).parse(buf);
+    const hdr = new THREE.DataTexture(d.data, d.width, d.height, THREE.RGBAFormat, d.type);
+    hdr.colorSpace = THREE.LinearSRGBColorSpace; hdr.minFilter = hdr.magFilter = THREE.LinearFilter;
+    hdr.generateMipmaps = false; hdr.flipY = true; hdr.needsUpdate = true;
+    hdr.mapping = THREE.EquirectangularReflectionMapping;
+    const pm = new THREE.PMREMGenerator(renderer); const env = pm.fromEquirectangular(hdr).texture; pm.dispose(); hdr.dispose();
+    hdrInfo.state = 'ready'; return env;
+  });
+  p.catch(() => { hdrInfo.state = 'failed'; });
   hdrCache.set(url, p); return p;
 }
 
@@ -84,16 +118,21 @@ function showFallback(el, opts, reason) {
   if (!img && posterUrl) { img = document.createElement('img'); img.className = 'poster'; img.alt = opts.posterAlt || ''; img.decoding = 'async'; img.src = posterUrl; el.append(img); }
   const card = () => { if (el.querySelector('.stage-fallback-card')) return; const d = document.createElement('div'); d.className = 'stage-fallback-card'; d.textContent = (document.body.dataset.name || 'Concept') + ' · 3D preview needs WebGL'; el.append(d); };
   if (img) img.addEventListener('error', () => { img.remove(); card(); }, { once: true }); else card();
-  window.__stage = Object.assign(window.__stage || {}, { ok: false, reason });
+  window.__stage = Object.assign(window.__stage || {}, { ok: false, reason, info: () => ({ ok: false, reason, build: isM ? 'm' : 'd', poster: !!el.querySelector('img.poster'), card: !!el.querySelector('.stage-fallback-card'), models: [], textures: [], passes: [] }) });
 }
 
 /* the no-op stage returned when WebGL is unavailable */
 function deadStage(el, reason) {
+  /* kit v2: scene + camera are real (cheap, no GL) and every stage method exists, so app code written for a live stage
+     (scene.add, camera.position, stage.loaded(), stage.passes.push) cannot throw when WebGL is missing. renderer stays null. */
   const noop = () => {}; const self = () => dead;
-  const dead = { failed: true, reason, el, THREE, reduced, isM, scene: null, camera: null, renderer: null, ready: Promise.resolve(),
+  const camera = new THREE.PerspectiveCamera(32, 1, 0.05, 200);
+  const dead = { failed: true, reason, el, THREE, reduced, isM, scene: new THREE.Scene(), camera, renderer: null, target: new THREE.Vector3(),
+    size: { w: 1, h: 1 }, dpr: 1, passes: [], ready: Promise.resolve(),
     load: () => new Promise(() => {}), loadTexture: () => new Promise(() => {}), asset: (p) => new URL('_assets/' + p, LIB).href, fit: (o) => o,
-    add: self, onFrame: noop, offFrame: noop, invalidate: noop, start: noop, stop: noop, contactShadow: () => null, spin: () => ({ angle: 0, velocity: 0, set: noop }),
-    scroll: noop, pointer: { x: 0, y: 0 }, setEnv: () => Promise.resolve(null), dispose: noop, render: noop };
+    add: self, onFrame: (fn) => fn, offFrame: noop, invalidate: noop, start: noop, stop: noop, loaded: noop, contactShadow: () => null, spin: () => ({ angle: 0, velocity: 0, set: noop }),
+    scroll: noop, pointer: { x: 0, y: 0, active: false }, setEnv: () => Promise.resolve(null), dispose: noop, render: noop,
+    info: () => (window.__stage && window.__stage.info ? window.__stage.info() : { ok: false, reason }) };
   return dead;
 }
 
@@ -183,13 +222,27 @@ export async function createStage(opts = {}) {
   el.addEventListener('pointermove', (e) => { const r = el.getBoundingClientRect(); pointer.x = ((e.clientX - r.left) / r.width) * 2 - 1; pointer.y = -(((e.clientY - r.top) / r.height) * 2 - 1); pointer.active = true; invalidate(); }, { passive: true });
   el.addEventListener('pointerleave', () => { pointer.active = false; }, { passive: true });
 
+  /* what this stage loaded and how it renders: window.__stage.info(), compared desktop vs phone by tools/qa-library.mjs */
+  const models = new Set(), textures = new Set(), passes = [];
+  const info = () => ({
+    ok: true, build: isM ? 'm' : 'd', webgl2: renderer.capabilities.isWebGL2,
+    toneMapping: renderer.toneMapping, exposure: +renderer.toneMappingExposure.toFixed(3), outputColorSpace: renderer.outputColorSpace,
+    shadows: renderer.shadowMap.enabled, shadowType: renderer.shadowMap.enabled ? renderer.shadowMap.type : null,
+    dprCap, dpr, antialias: !!(renderer.getContextAttributes() || {}).antialias, demand,
+    hdri: { ...hdrInfo }, envIntensity: scene.environmentIntensity, background: scene.background ? (scene.background.isColor ? 'color' : 'texture') : null,
+    passes: [...passes], models: [...models].sort(), textures: [...textures].sort(),
+    contactShadows: scene.children.filter((c) => c.userData && c.userData.zkContactShadow).length
+  });
   const stage = {
-    failed: false, el, THREE, scene, camera, renderer, target, reduced, isM, pointer, size,
+    failed: false, passes, info, el, THREE, scene, camera, renderer, target, reduced, isM, pointer, size,
     get dpr() { return dpr; },
     asset: (p) => new URL('_assets/' + p, LIB).href,     // site/library/_assets/<p>, shared by all concepts
-    load(url, onProgress) { return gltfLoader(renderer).loadAsync(url, onProgress).then((g) => { invalidate(); return g; }); },
+    load(url, onProgress) {                                   // same file on desktop and phone; bytes via fetchBytes (one request, never left dangling)
+      const u = new URL(url, location.href).href; models.add(u);
+      return Promise.all([gltfLoader(renderer), fetchBytes(u, onProgress)]).then(([l, { buf }]) => l.parseAsync(buf, u.slice(0, u.lastIndexOf('/') + 1))).then((g) => { invalidate(); return g; });
+    },
     loadTexture(url, { srgb = true, repeat, anisotropy = 8 } = {}) {
-      return new THREE.TextureLoader().loadAsync(url).then((tx) => { if (srgb) tx.colorSpace = THREE.SRGBColorSpace; tx.anisotropy = Math.min(anisotropy, renderer.capabilities.getMaxAnisotropy()); if (repeat) { tx.wrapS = tx.wrapT = THREE.RepeatWrapping; tx.repeat.set(...(Array.isArray(repeat) ? repeat : [repeat, repeat])); } invalidate(); return tx; });
+      return (textures.add(new URL(url, location.href).href), new THREE.TextureLoader()).loadAsync(url).then((tx) => { if (srgb) tx.colorSpace = THREE.SRGBColorSpace; tx.anisotropy = Math.min(anisotropy, renderer.capabilities.getMaxAnisotropy()); if (repeat) { tx.wrapS = tx.wrapT = THREE.RepeatWrapping; tx.repeat.set(...(Array.isArray(repeat) ? repeat : [repeat, repeat])); } invalidate(); return tx; });
     },
     fit(obj, maxSize = 1, sit = false) {                      // scale so the largest side == maxSize, centre on origin, optionally sit on y=0
       const b = new THREE.Box3().setFromObject(obj), s = b.getSize(new THREE.Vector3());
@@ -212,7 +265,7 @@ export async function createStage(opts = {}) {
   stage.ready = new Promise((r) => requestAnimationFrame(() => r()));
   /* remove the loading veil after the first frame that has content; apps may call stage.loaded() themselves */
   stage.loaded = () => { el.classList.remove('is-loading'); el.classList.add('is-ready'); invalidate(); };
-  window.__stage = { ok: true, webgl2: renderer.capabilities.isWebGL2, dpr, id: document.body.dataset.id };
+  window.__stage = { ok: true, webgl2: renderer.capabilities.isWebGL2, dpr, id: document.body.dataset.id, info };
   kick();
   return stage;
 }
@@ -224,7 +277,7 @@ export function contactShadow(stage, o = {}) {
   if (stage.failed) return null;
   const { THREE: T, scene, renderer } = stage;
   const size = o.size ?? 3, res = o.resolution ?? (isM ? 256 : 512), blur = o.blur ?? 2.6, darkness = o.darkness ?? 1.6, opacity = o.opacity ?? 0.6, height = o.height ?? 1.2, y = o.y ?? 0.001;
-  const group = new T.Group(); group.position.y = y; scene.add(group);
+  const group = new T.Group(); group.position.y = y; group.userData.zkContactShadow = true; scene.add(group);
   const rt = new T.WebGLRenderTarget(res, res); rt.texture.generateMipmaps = false;
   const rtB = new T.WebGLRenderTarget(res, res); rtB.texture.generateMipmaps = false;
   const planeGeo = new T.PlaneGeometry(size, size).rotateX(Math.PI / 2);

@@ -10,6 +10,7 @@
 <meta name="theme-color" content="#E6E4DF">
 <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
 <link rel="preload" href="../../assets/font/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/lab/stride/stride-still-m-0.webp" as="image" type="image/webp" fetchpriority="high">
 <link rel="modulepreload" href="../../vendor/three/three.module.min.js">
 <link rel="stylesheet" href="../_kit/lab.css">
 <link rel="stylesheet" href="m.css">
@@ -38,7 +39,9 @@
       <button type="button" class="ic bagbtn" aria-label="Bag (concept), 0 items"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><b class="bagn">0</b></button>
     </nav>
     <p class="giant" aria-hidden="true"><span class="gw"><span>A</span><span>E</span><span>R</span><span>O</span></span><sup class="g3">03</sup></p>
-    <canvas class="gl" aria-label="3D model of the Stride Aero shoe. Swipe left or right to change colourway." role="img"></canvas>
+    <img class="st-still" src="../../assets/lab/stride/stride-still-m-0.webp" width="676" height="409" alt="" aria-hidden="true" decoding="async" fetchpriority="high" draggable="false">
+    <canvas class="gl" data-nogl="self" aria-label="3D model of the Stride Aero shoe. Swipe left or right to change colourway." role="img"></canvas>
+    <div class="st-prog" role="progressbar" aria-label="Loading the 3D shoe" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" hidden><span class="st-prog-t">3D</span><i aria-hidden="true"></i><span class="st-prog-n">0%</span></div>
     <div class="m-bot">
       <div class="cw-name" aria-live="polite"><small>Colourway</small><b class="cwn">Tide</b></div>
       <div class="pager"><button type="button" class="arw prev" aria-label="Previous colourway"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button><span class="count"><b class="cnum">01</b>/03</span><button type="button" class="arw next" aria-label="Next colourway"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button></div>
@@ -90,7 +93,7 @@
 </main>
 <template id="credits">
   <li>Code and design: Zyqor Studio (MIT licence for the code).</li>
-  <li>3D model: "Materials Variants Shoe" by Shopify, CC-BY 4.0, via the <a href="https://github.com/KhronosGroup/glTF-Sample-Assets" target="_blank" rel="noopener">Khronos glTF Sample Assets</a>, re-textured and recompressed by Zyqor Studio. Colourway names and the Stride Aero brand are fictional.</li>
+  <li>3D model: "Materials Variants Shoe" by Shopify, CC-BY 4.0, via the <a href="https://github.com/KhronosGroup/glTF-Sample-Assets" target="_blank" rel="noopener">Khronos glTF Sample Assets</a>, re-textured and recompressed by Zyqor Studio; the still shown while the 3D loads (and when 3D is unavailable) is a render of the same model, same licence. Colourway names and the Stride Aero brand are fictional.</li>
   <li>Fonts: Archivo by Omnibus-Type and Inter Tight by Rasmus Andersson et al., SIL Open Font License 1.1.</li>
   <li>Product specs are part of the concept and describe no real shoe.</li>
 </template>

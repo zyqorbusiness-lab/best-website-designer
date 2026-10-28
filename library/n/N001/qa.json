@@ -1,0 +1,133 @@
+{
+ "id": "N001",
+ "date": "2026-10-28T20:27:19.518Z",
+ "kit": 2,
+ "verdict": "PASS",
+ "tier": "normal",
+ "budgetKB": 1536,
+ "ownKB": 723,
+ "sharedKB": 1360,
+ "phoneOwnKB": 711,
+ "phoneSharedKB": 1341,
+ "weightKB": 2082,
+ "phoneWeightKB": 2052,
+ "sameAssets": true,
+ "assetDiff": {
+  "desktopOnly": [],
+  "phoneOnly": []
+ },
+ "assets3d": [
+  "/assets/hdri/studio_512.hdr",
+  "/library/n/N001/tex/denim_diff.webp",
+  "/library/n/N001/tex/denim_nor.webp",
+  "/library/n/N001/tex/glen_diff.webp",
+  "/library/n/N001/tex/glen_nor.webp",
+  "/library/n/N001/tex/jacq_nor.webp",
+  "/library/n/N001/tex/jacq_rough.webp",
+  "/library/n/N001/tex/satin_nor.webp"
+ ],
+ "sameEffects": true,
+ "effectDiff": [],
+ "effects": {
+  "toneMapping": 4,
+  "exposure": 1.05,
+  "outputColorSpace": "srgb",
+  "shadows": false,
+  "shadowType": null,
+  "antialias": true,
+  "envIntensity": 0.4,
+  "background": null,
+  "passes": [],
+  "contactShadows": 0,
+  "demand": false,
+  "dprCap": [
+   2,
+   2
+  ]
+ },
+ "nowebgl": true,
+ "credit": {
+  "pass": true,
+  "files": 14,
+  "missing": [],
+  "incomplete": [],
+  "ccby": [],
+  "ccbyNotVisible": [],
+  "unlisted": []
+ },
+ "runs": {
+  "d1440": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": true,
+   "ownKB": 723,
+   "sharedKB": 1360
+  },
+  "m390": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": true,
+   "ownKB": 711,
+   "sharedKB": 1341
+  },
+  "m360": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": true,
+   "ownKB": 726,
+   "sharedKB": 1341
+  },
+  "rd1440": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": true,
+   "ownKB": 723,
+   "sharedKB": 1380
+  },
+  "rm390": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": true,
+   "ownKB": 726,
+   "sharedKB": 1362
+  },
+  "nd1440": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": false,
+   "poster": true,
+   "ownKB": 370,
+   "sharedKB": 945
+  },
+  "nm390": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": false,
+   "poster": true,
+   "ownKB": 374,
+   "sharedKB": 927
+  }
+ },
+ "weightNote": "own/shared recomputed from this run's network log with the final classifier (blob: URLs not counted, kit grain texture shared)"
+}

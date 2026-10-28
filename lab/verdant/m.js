@@ -1,11 +1,12 @@
 /* Verdant - phone build: the SAME live 3D plant as desktop (same GLB, 2K textures, HDRI, leaf shaders, mulch),
    lazy-loaded when the arched window nears the viewport and paused off-screen; the baked still shows only while it loads. */
 import { initUI, revealsLite, $ } from './ui.js';
+import { hasWebGL } from '../_kit/nogl.js';
 const M = { target: 0, n: 0, from: 0, t0: 0, dur: 2200, kick: null };
 initUI({ onMode: (on) => { M.from = M.n; M.target = on; M.t0 = performance.now(); M.kick && M.kick(); } });
 revealsLite();
 const arch = $('.arch');
-if (arch && window.WebGLRenderingContext) {
+if (arch && hasWebGL()) { /* no WebGL: the baked still simply stays */
   const imgs = [...arch.querySelectorAll('.plant-img')];
   const cv = document.createElement('canvas'); cv.className = 'plantgl'; cv.setAttribute('aria-hidden', 'true');
   const rim = arch.querySelector('.rim'); if (rim) arch.insertBefore(cv, rim); else arch.appendChild(cv);

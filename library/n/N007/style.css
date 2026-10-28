@@ -1,0 +1,133 @@
+/* N007 Brasswick Diya - desktop. Structure 04 (editorial maison, calm); the lantern hangs into the hero from the top edge. */
+
+/* ---------- shared rules (desktop + phone) ---------- */
+:root{--f-disp:"Zodiak",var(--f-serif);--lit:0;--gx:50%;--gy:40%}
+body{transition:background-color 900ms var(--ease-io),color 900ms var(--ease-io)}
+body.is-lit{background:color-mix(in oklab,var(--c1) 92%,var(--c3))}
+.h2{font-family:var(--f-disp);font-weight:500;letter-spacing:-.03em;line-height:1}
+.h2 em,.title em{font-style:italic;font-weight:400}
+.h3{font-family:var(--f-disp);font-weight:600;letter-spacing:-.02em}
+.btn--accent{--b-bg:color-mix(in oklab,var(--c3) 60%,var(--c2))}             /* 4.5:1 with linen text (raw ember is 2.6:1) */
+@media (hover:hover) and (pointer:fine){.btn--accent:hover{--b-bg:color-mix(in oklab,var(--c3) 50%,var(--c2))}}
+.site{display:flex;align-items:center;gap:var(--s4);padding:76px var(--gutter) 0;max-width:1600px;margin-inline:auto;position:relative;z-index:3}
+.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font:600 1.4rem/1 var(--f-disp);letter-spacing:-.02em;color:var(--ink)}
+.b-mark{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}
+.b-mark .b-flame{fill:var(--c3);stroke:none}
+.b-c{font-family:var(--f-mono);color:var(--ink-3);border:1px solid var(--line);border-radius:var(--pill);padding:4px 8px;font-size:.62rem}
+.nav{display:flex;gap:4px;margin-left:auto}
+.nav a,.foot-nav a{display:inline-flex;align-items:center;min-height:var(--tap);padding:0 14px;border-radius:var(--pill);text-decoration:none;color:var(--ink-2);font-weight:500;transition:background-color var(--dur-fast) var(--ease-out),color var(--dur-fast) var(--ease-out)}
+.nav a:active,.foot-nav a:active{background:var(--paper-3)}
+@media (hover:hover) and (pointer:fine){.nav a:hover,.foot-nav a:hover{background:var(--paper-2);color:var(--ink)}}
+.nav a.is-here{color:var(--ink);background:var(--paper-2)}
+
+/* hero: day linen -> olive evening when lit */
+.hero{position:relative;isolation:isolate}
+body{position:relative;z-index:0}
+body::before{content:"";position:absolute;left:0;right:0;top:0;height:var(--dusk-h,100svh);z-index:-1;background:var(--c2);opacity:var(--lit);pointer-events:none}   /* the evening: from the page top to the end of the hero, sized in app.js */
+.hero .title{font:500 var(--fs-h1)/.9 var(--f-disp);letter-spacing:-.045em;text-wrap:balance}
+.hero .title,.hero .lead,.hero .tag,.state{transition:color 900ms var(--ease-io)}
+body.is-lit .hero .title{color:var(--c1)}
+body.is-lit .hero .lead{color:color-mix(in oklab,var(--c1) 82%,var(--c2))}
+body.is-lit .hero .tag,body.is-lit .state dt{color:color-mix(in oklab,var(--c1) 66%,var(--c2))}
+body.is-lit .state dd{color:var(--c1)}
+body.is-lit .hero .btn--ghost{--b-fg:var(--c1);border-color:color-mix(in oklab,var(--c1) 34%,transparent)}
+@media (hover:hover) and (pointer:fine){body.is-lit .hero .btn--ghost:hover{--b-bg:color-mix(in oklab,var(--c1) 12%,transparent)}}
+body.is-lit .site .brand,body.is-lit .site .nav a{color:var(--c1)}
+body.is-lit .site .b-c{color:color-mix(in oklab,var(--c1) 66%,var(--c2));border-color:color-mix(in oklab,var(--c1) 24%,transparent)}
+body.is-lit .site .nav a.is-here{background:color-mix(in oklab,var(--c1) 14%,transparent)}
+@media (hover:hover) and (pointer:fine){body.is-lit .site .nav a:hover{background:color-mix(in oklab,var(--c1) 12%,transparent);color:var(--c1)}}
+body.is-lit .site .nav-cta{--b-bg:var(--c1);--b-fg:var(--c2)}
+body.is-lit .menu-btn{background:transparent;color:var(--c1);border-color:color-mix(in oklab,var(--c1) 34%,transparent)}
+.site .brand,.site .nav a,.menu-btn{transition:color 900ms var(--ease-io),background-color var(--dur-fast) var(--ease-out)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:var(--s2)}
+.light-btn[aria-pressed=true]{--b-bg:var(--c1);--b-fg:var(--c2)}
+.light-btn .icon{transition:transform var(--dur) var(--ease-out)}
+.light-btn[aria-pressed=true] .icon{fill:var(--c3);stroke:var(--c2)}
+.state{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s5);margin:0}
+.state div{display:grid;gap:4px}
+.state dt{color:var(--ink-3)}
+.state dd{margin:0;color:var(--ink);display:flex;align-items:center;gap:8px;font-variant-numeric:tabular-nums;min-width:6ch}
+.state #s-flame i{width:8px;height:8px;border-radius:50%;border:1.5px solid currentColor;transition:background-color var(--dur) var(--ease-out),border-color var(--dur) var(--ease-out)}
+body.is-lit .state #s-flame i{background:var(--c3);border-color:var(--c3)}
+.d-stage{position:relative;-webkit-mask-image:linear-gradient(to bottom,transparent 0,transparent var(--fade0,120px),#000 var(--fade,300px));mask-image:linear-gradient(to bottom,transparent 0,transparent var(--fade0,120px),#000 var(--fade,300px))}   /* the chain comes down out of the ceiling */
+.hero .glow{position:absolute;top:-160px;bottom:0;left:calc(50% - 50vw);width:100vw;z-index:-1;pointer-events:none;opacity:var(--lit);overflow:hidden;
+  background:radial-gradient(circle at var(--gx) var(--gy),color-mix(in oklab,var(--c3) 50%,transparent) 0,color-mix(in oklab,var(--c3) 20%,transparent) 9vw,transparent 30vw)}   /* full-bleed, so it is never cut at the stage edge */
+.d-stage .gesture{position:absolute;left:50%;bottom:var(--s4);translate:-50% 0;display:flex;align-items:center;gap:8px;color:var(--ink-3);white-space:nowrap;pointer-events:none;transition:opacity var(--dur) var(--ease-out),color 900ms var(--ease-io)}
+.d-stage .gesture .icon{width:16px;height:16px}
+body.is-lit .d-stage .gesture{color:color-mix(in oklab,var(--c1) 60%,var(--c2))}
+.d-stage.has-swung .gesture{opacity:0}
+.d-stage[data-drag]{cursor:pointer}
+.d-stage .stage-load{color:var(--ink-3)}
+
+/* craft */
+.steps{list-style:none;margin:var(--s6) 0 0;padding:0;border-top:1px solid var(--line)}
+.steps li{display:grid;grid-template-columns:80px minmax(0,1fr) minmax(0,1.4fr);gap:var(--s4);align-items:baseline;padding:var(--s5) 0;border-bottom:1px solid var(--line)}
+.steps .s-n{color:var(--ink-3)}
+.steps .h3{font-size:clamp(2rem,1.2rem + 2.4vw,3.4rem)}
+/* care */
+.care-in{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:var(--s7);align-items:start}
+.howto{list-style:none;counter-reset:h;margin:var(--s5) 0 0;padding:0;display:grid;gap:var(--s3)}
+.howto li{counter-increment:h;position:relative;padding-left:44px;color:var(--ink-2);max-width:52ch}
+.howto li::before{content:counter(h,decimal-leading-zero);position:absolute;left:0;top:0;font:500 var(--fs-xs)/1.9 var(--f-mono);color:var(--ink-3)}
+.howto b{color:var(--ink);font-weight:700}
+.spec{margin:0;border-top:1px solid var(--line)}
+.spec div{display:grid;grid-template-columns:120px 1fr;gap:var(--s3);padding:var(--s3) 0;border-bottom:1px solid var(--line)}
+.spec dt{color:var(--ink-3);padding-top:3px}
+.spec dd{margin:0;color:var(--ink)}
+/* reserve form */
+.res-in{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:var(--s7);align-items:start}
+.res-l{display:grid;gap:var(--s4);position:sticky;top:var(--s7)}
+.form{display:grid;gap:var(--s4);padding:var(--s5);border:1px solid var(--line);border-radius:var(--radius);background:color-mix(in oklab,var(--paper-2) 70%,transparent);box-shadow:var(--spec);position:relative}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4)}
+.field-g{display:grid;gap:8px;min-width:0;border:0;padding:0;margin:0;align-content:start}
+.field-g label,.field-g legend,.field-g .lbl{font:500 var(--fs-xs)/1.3 var(--f-mono);letter-spacing:var(--track-mono);text-transform:uppercase;color:var(--ink-2);padding:0}
+.field-g legend{margin-bottom:8px}
+input[type=text],input[type=email]{width:100%;min-height:var(--tap);padding:0 14px;border-radius:12px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink);font:400 1rem/1.2 var(--f-body);transition:border-color var(--dur-fast) var(--ease-out),box-shadow var(--dur-fast) var(--ease-out);appearance:none;-webkit-appearance:none}
+input:focus-visible{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px color-mix(in oklab,var(--c3) 45%,transparent)}
+input[aria-invalid=true]{border-color:#a3412a;box-shadow:0 0 0 3px color-mix(in oklab,#a3412a 22%,transparent)}
+.err{font-size:var(--fs-sm);color:color-mix(in oklab,var(--c2) 35%,#a3412a);margin:0}
+.seg{display:inline-grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:4px;padding:4px;border-radius:var(--pill);border:1px solid var(--line);background:var(--paper)}
+.seg label{position:relative;display:block;cursor:pointer}
+.seg input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.seg span{display:grid;place-items:center;min-height:40px;padding:0 18px;border-radius:var(--pill);color:var(--ink-2);font-weight:500;white-space:nowrap;transition:background-color var(--dur-fast) var(--ease-out),color var(--dur-fast) var(--ease-out)}
+.seg input:checked+span{background:var(--ink);color:var(--paper)}
+.seg input:focus-visible+span{outline:2px solid var(--c3);outline-offset:2px}
+.qty{display:inline-grid;grid-template-columns:var(--tap) 56px var(--tap);align-items:center;border:1px solid var(--line-strong);border-radius:var(--pill);background:var(--paper);width:max-content}
+.qty button{height:var(--tap);border-radius:var(--pill);font-size:1.25rem;color:var(--ink);transition:background-color var(--dur-fast) var(--ease-out)}
+.qty button:active{background:var(--paper-3)}
+.qty button:disabled{color:var(--ink-3);opacity:.5;cursor:not-allowed}
+.qty output{text-align:center;font-weight:700;font-variant-numeric:tabular-nums}
+.check{display:flex;gap:12px;align-items:flex-start;color:var(--ink-2);cursor:pointer;max-width:52ch}
+.check input{width:22px;height:22px;margin:1px 0 0;accent-color:var(--c2);flex:none}
+.submit{justify-self:start;min-width:220px}
+.submit .spin{display:none;width:16px;height:16px;border-radius:50%;border:2px solid color-mix(in oklab,var(--c1) 40%,transparent);border-top-color:var(--c1);animation:d-spin 700ms linear infinite}
+.submit[aria-busy=true] .spin{display:inline-block}
+.submit[aria-busy=true]{pointer-events:none;opacity:.86}
+@keyframes d-spin{to{transform:rotate(360deg)}}
+.done{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:var(--s3);padding:var(--s5);border-radius:inherit;background:var(--paper-2)}
+.done[hidden]{display:none}
+.done-h{font:500 clamp(2rem,1.2rem + 2.4vw,3rem)/1 var(--f-disp);letter-spacing:-.03em}
+.done-h::before{content:"";display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--c3);margin-right:14px;vertical-align:.2em}
+/* footer */
+.foot{padding:var(--section-y) var(--gutter) var(--s6);max-width:1600px;margin-inline:auto;overflow:hidden}
+.wordmark{font:500 clamp(4.5rem,1rem + 15vw,17rem)/.8 var(--f-disp);letter-spacing:-.05em;color:var(--ink);text-align:center;margin-bottom:var(--s6);white-space:nowrap}
+.foot-row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:var(--s3);border-top:1px solid var(--line);padding-top:var(--s4)}
+.foot-row .mono{color:var(--ink-3)}
+.foot-nav{display:flex;flex-wrap:wrap;gap:2px}
+@media (prefers-reduced-motion:reduce){body,.hero .title,.hero .lead,.hero .tag,.state{transition:none}}
+
+.hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--grid-gap);align-items:center;min-height:calc(100svh - 120px);padding:0 var(--gutter);max-width:1600px;margin:0 auto}
+.hero-copy{display:grid;gap:var(--s5);padding-block:var(--s6)}
+.hero .lead{max-width:34ch}
+.d-stage{height:calc(100svh + 20px);min-height:620px;margin-top:-140px;margin-right:calc(var(--gutter) * -1)}
+.craft .h2,.care .h2,.reserve .h2{max-width:14ch}
+@media (max-width:1100px){.care-in,.res-in{grid-template-columns:1fr}.res-l{position:static}}
+
+/* step details: our own close renders of the same model */
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s5);border-top:0}
+.steps li{display:block;padding:0;border:0}
+.s-fig{margin:0 0 var(--s3);aspect-ratio:4/5;overflow:hidden;border-radius:6px;background:color-mix(in oklab,var(--c2) 12%,var(--c1))}
+.s-fig img{display:block;width:100%;height:100%;object-fit:cover}
+.steps .s-n{display:block;margin-bottom:var(--s1)}
+.steps .h3{margin:0 0 var(--s2)}
+@media (max-width:1100px){.steps{grid-template-columns:1fr 1fr}}

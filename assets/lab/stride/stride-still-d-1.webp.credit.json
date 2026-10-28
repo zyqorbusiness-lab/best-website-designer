@@ -1,0 +1,13 @@
+{
+ "title": "Stride Aero still, Dune colourway (desktop; first-screen and no-WebGL still)",
+ "author": "Zyqor Studio (render); model: Shopify (Shopify, 2021, Everthing, CC-BY-4.0)",
+ "author_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/MaterialsVariantsShoe",
+ "source_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/MaterialsVariantsShoe",
+ "licence": "CC BY 4.0",
+ "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+ "attribution": "Render of \"Materials Variants Shoe\" © 2021 Shopify (artist Shopify), licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), via Khronos glTF Sample Assets (https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/MaterialsVariantsShoe). Changed by Zyqor Studio.",
+ "changes": "still render of the Materials Variants Shoe at its rest pose, cropped around the shoe with transparent background; rendered in the live demo (three.js) with the page hidden, captured by Zyqor Studio, WebP; the model's CC BY 4.0 terms apply to this render",
+ "downloaded": "2026-10-28",
+ "file": "stride-still-d-1.webp",
+ "credit_written_by": "v3 gaps 2026-10-28 (work/beast/v3gaps)"
+}

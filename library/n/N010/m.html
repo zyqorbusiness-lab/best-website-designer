@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en" data-build="m">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- desktop -> phone build when ?m=1 is absent -->
+<script>document.documentElement.classList.add('js');(function(){var q=location.search;if(/[?&]m=1/.test(q))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height,phone=w<=860||(c&&h>w);if(!phone)location.replace('./'+q+location.hash);})();</script>
+<title>Rootline Citrus &middot; Concept N010 &middot; Zyqor Library</title>
+<meta name="description" content="Rootline Citrus is a fictional brand: a normal 3D web concept by Zyqor Studio. Pick lemon, lime or mandarin: the real fruit rolls in and the page floods with its colour.">
+<meta name="theme-color" content="#E2E8C5">
+<meta property="og:title" content="Rootline Citrus &middot; Concept N010 &middot; Zyqor Library">
+<meta property="og:description" content="Pick a fruit, the page floods with its colour. A fictional-brand 3D concept by Zyqor Studio.">
+<meta property="og:image" content="thumb.webp">
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../_kit/stage.js" as="script" crossorigin>
+<link rel="stylesheet" href="../../_kit/concept.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="m.css">
+<link rel="preload" href="models/lime.glb" as="fetch" crossorigin>
+<style>:root{--c1:#E2E8C5;--c2:#1E2522;--c3:#2E74D9}</style>
+<script type="importmap">{"imports":{"three":"../../../vendor/three/three.module.min.js","three/addons/":"../../../vendor/three/addons/"}}</script>
+</head>
+<body class="grain" data-id="N010" data-tier="normal" data-name="Rootline Citrus" data-fruit="lime">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site" id="top">
+  <a class="brand" href="#top" aria-label="Rootline Citrus, concept, back to top"><svg class="b-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="15" cy="19" r="9"/><path d="M15 10c0-3 1.5-5 4-6"/><path d="M19 4c4 0 6.5 2 7 5-3.6.6-6-1-7-5z" class="b-leaf"/><path d="M15 13v12M9.8 16l10.4 6M9.8 22l10.4-6"/></svg>Rootline<span class="mono b-c">Concept</span></a>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu"><span>Menu</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg></button>
+</header>
+<div class="menu" id="menu" hidden>
+  <nav aria-label="Sections"><a href="#fruit">The fruit</a><a href="#process">Root to crate</a><a href="#crates">Crates</a><a href="#reserve">Reserve</a></nav>
+  <a class="btn btn--accent" href="#reserve">Reserve a crate</a>
+</div>
+<main id="main">
+  <!-- Structure 06 (live sandbox hero) + 02 (Swiss hairline grid). Pattern A: the background follows the product. Brief: brief.md -->
+  <section class="hero" id="pick" aria-labelledby="h1">
+    <div class="hero-copy">
+      <p class="tag" data-rv>Grove-direct citrus &middot; Concept N010</p>
+      <h1 id="h1" class="title" data-rv><span class="nw">Pick a fruit.</span><br><em class="serif" data-f="name">Lime</em><span class="dot">.</span></h1>
+      <p class="lead" data-rv>Three fruits from one root line, picked when the peel says so. Choose one and the whole page takes its colour.</p>
+      <div class="switch-dock" data-rv><div class="switch" role="radiogroup" aria-label="Choose a fruit"><button class="sw" type="button" role="radio" data-fruit="lemon" aria-checked="false" data-press><span class="sw-dot" aria-hidden="true"></span><span class="sw-n">Lemon</span><kbd class="sw-k mono" aria-hidden="true">1</kbd></button><button class="sw" type="button" role="radio" data-fruit="lime" aria-checked="true" data-press><span class="sw-dot" aria-hidden="true"></span><span class="sw-n">Lime</span><kbd class="sw-k mono" aria-hidden="true">2</kbd></button><button class="sw" type="button" role="radio" data-fruit="mandarin" aria-checked="false" data-press><span class="sw-dot" aria-hidden="true"></span><span class="sw-n">Mandarin</span><kbd class="sw-k mono" aria-hidden="true">3</kbd></button></div></div>
+      <div class="hero-cta" data-rv>
+        <a class="btn btn--accent" href="#reserve" data-press>Reserve a crate<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--ghost" href="#fruit" data-press>Meet the fruit</a>
+      </div>
+    </div>
+    <div class="hero-stage stage" data-stage>
+      <noscript><img class="poster" src="poster.webp" alt="A real scanned lime resting on its side on matcha-green paper"></noscript>
+      <svg class="ring" data-ring viewBox="-100 -100 200 200" aria-hidden="true"><circle r="97"/><circle class="inner" r="80"/><g class="ticks"></g></svg>
+      <p class="stage-load" data-load aria-hidden="true">Picking the lime</p>
+      <p class="gesture mono" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M4 12h16M8 8l-4 4 4 4M16 8l4 4-4 4"/></svg>Swipe the fruit to turn it</p>
+    </div>
+    <dl class="spec" data-rv>
+      <div><dt class="mono">Fruit</dt><dd><span data-f="name">Lime</span> <i class="serif" data-f="latin">Citrus × latifolia</i></dd></div>
+      <div><dt class="mono">Peel</dt><dd data-f="peel">Thin, glossy, deep green</dd></div>
+      <div><dt class="mono">Taste</dt><dd data-f="taste">Sour, floral, quick</dd></div>
+      <div><dt class="mono">Season</dt><dd data-f="season">High summer</dd></div>
+    </dl>
+  </section>
+  <section class="section fruit" id="fruit" aria-labelledby="h-fruit">
+    <div class="wrap fruit-in">
+      <figure class="xsec-fig" data-rv>
+        <svg class="xsec" data-section-svg viewBox="0 0 320 320" role="img" aria-label="Cross-section of a lime"></svg>
+        <figcaption class="mono"><span data-f="segs">About 10</span> segments &middot; drawn in code</figcaption>
+      </figure>
+      <div class="fruit-copy">
+        <p class="tag" data-rv>The fruit</p>
+        <h2 id="h-fruit" class="h2" data-rv><span class="nw">Cut one open.</span><br><em class="serif" data-f="name">Lime</em>.</h2>
+        <p class="lead" data-rv data-f="line">Seedless and thin skinned. Roll it under your palm before cutting and it gives up twice as easily.</p>
+        <div class="uses" data-rv>
+          <p class="mono">Best for</p>
+          <ul role="list" data-f="uses"><li>Tacos and ceviche</li><li>Cocktails and soda</li><li>Green curry</li></ul>
+        </div>
+        <p class="body small" data-rv>Typical segment counts vary fruit to fruit; the drawing shows a common one.</p>
+      </div>
+    </div>
+  </section>
+  <section class="section process" id="process" aria-labelledby="h-process">
+    <div class="wrap">
+      <div class="sec-head"><p class="tag" data-rv>Root to crate</p><h2 id="h-process" class="h2" data-rv>Four steps, <em class="serif">nothing added.</em></h2></div>
+      <ol class="steps" role="list"><li class="step" data-rv><span class="mono step-n">01</span><svg class="icon step-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v6"/><path d="M8 9h8l-1 12H9z"/></svg><h3 class="h3">Picked by hand</h3><p class="body">We pick to colour and scent, never to a date on a calendar.</p></li><li class="step" data-rv><span class="mono step-n">02</span><svg class="icon step-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h18"/><path d="M6 12V8a6 6 0 0 1 12 0v4"/><path d="M6 21v-9M18 21v-9"/></svg><h3 class="h3">Rested in shade</h3><p class="body">A day in the packhouse so the peel firms up before it travels.</p></li><li class="step" data-rv><span class="mono step-n">03</span><svg class="icon step-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7l8-4 8 4-8 4z"/><path d="M4 7v10l8 4 8-4V7"/><path d="M12 11v10"/></svg><h3 class="h3">Wrapped in paper</h3><p class="body">Each fruit in its own sheet. No wax, no plastic tray.</p></li><li class="step" data-rv><span class="mono step-n">04</span><svg class="icon step-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg><h3 class="h3">At your door</h3><p class="body">Out the next morning in a vented wooden crate.</p></li></ol>
+    </div>
+  </section>
+  <section class="section crates" id="crates" aria-labelledby="h-crates">
+    <div class="wrap">
+      <div class="sec-head"><p class="tag" data-rv>Crates</p><h2 id="h-crates" class="h2" data-rv>This season&rsquo;s crates.</h2>
+      <p class="body" data-rv>Concept prices. Rootline Citrus is a fictional brand; nothing here is for sale.</p></div>
+      <div class="ledger-wrap" data-rv><table class="ledger">
+        <caption class="sr-only">Crates, contents, weight and concept price</caption>
+        <thead><tr><th scope="col">Crate</th><th scope="col">Inside</th><th scope="col">Weight</th><th scope="col">Price</th><th scope="col"><span class="sr-only">Choose</span></th></tr></thead>
+        <tbody><tr><th scope="row"><span class="r-dot" data-k="lime" aria-hidden="true"></span>Lime crate</th><td>Limes only, for the bar and the kitchen</td><td class="num">3 kg</td><td class="num price">$28</td><td><button class="btn btn--ghost btn--sm" type="button" data-press data-crate="lime" data-fruit="lime" aria-label="Choose the Lime crate">Choose</button></td></tr><tr><th scope="row"><span class="r-dot" data-k="lemon" aria-hidden="true"></span>Lemon crate</th><td>Lemons with leaves left on where they hold</td><td class="num">3 kg</td><td class="num price">$26</td><td><button class="btn btn--ghost btn--sm" type="button" data-press data-crate="lemon" data-fruit="lemon" aria-label="Choose the Lemon crate">Choose</button></td></tr><tr><th scope="row"><span class="r-dot" data-k="mandarin" aria-hidden="true"></span>Mandarin crate</th><td>Loose-skinned, for eating on the move</td><td class="num">4 kg</td><td class="num price">$32</td><td><button class="btn btn--ghost btn--sm" type="button" data-press data-crate="mandarin" data-fruit="mandarin" aria-label="Choose the Mandarin crate">Choose</button></td></tr><tr><th scope="row"><span class="r-dot" data-k="mix" aria-hidden="true"></span>Grove mix</th><td>All three, in season, packed in layers</td><td class="num">4 kg</td><td class="num price">$34</td><td><button class="btn btn--ghost btn--sm" type="button" data-press data-crate="mix" aria-label="Choose the Grove mix">Choose</button></td></tr></tbody>
+      </table></div>
+    </div>
+  </section>
+  <section class="section reserve" id="reserve" aria-labelledby="h-reserve">
+    <div class="wrap reserve-in">
+      <div class="reserve-copy">
+        <p class="tag" data-rv>Reserve</p>
+        <h2 id="h-reserve" class="h2" data-rv>Hold a crate for <em class="serif">next week.</em></h2>
+        <p class="lead" data-rv>Tell us the fruit and the size. This is a concept form: it checks what you type, then stops. Nothing is sent anywhere.</p>
+      </div>
+      <form class="form" novalidate data-rv aria-describedby="form-note">
+        <p id="form-note" class="sr-only">Concept form. Nothing you type leaves this page.</p>
+        <div class="field"><label for="f-name">Name for the label</label><input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="e-name"><p class="err" id="e-name" aria-live="polite"></p></div>
+        <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="e-email"><p class="err" id="e-email" aria-live="polite"></p></div>
+        <fieldset class="field"><legend>Fruit</legend><div class="frs"><label class="fr"><input type="radio" name="fruit" value="lemon" data-fruit-radio><span>Lemon</span></label><label class="fr"><input type="radio" name="fruit" value="lime" data-fruit-radio checked><span>Lime</span></label><label class="fr"><input type="radio" name="fruit" value="mandarin" data-fruit-radio><span>Mandarin</span></label></div></fieldset>
+        <div class="row2">
+          <div class="field"><label for="f-crate">Crate</label><select id="f-crate" name="crate"><option value="lime">Lime crate, 3 kg</option><option value="lemon">Lemon crate, 3 kg</option><option value="mandarin">Mandarin crate, 4 kg</option><option value="mix">Grove mix, 4 kg</option></select></div>
+          <div class="field"><label for="f-week">Week</label><select id="f-week" name="week"><option>Next week</option><option>In two weeks</option><option>In three weeks</option></select></div>
+        </div>
+        <label class="check"><input type="checkbox" name="ok" aria-describedby="e-ok"><span>I know this is a concept and nothing will be sent.</span></label>
+        <p class="err" id="e-ok" aria-live="polite"></p>
+        <button class="btn btn--accent submit" type="submit" data-press><span class="b-label">Reserve a crate</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <div class="done" hidden>
+          <svg class="icon done-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+          <p><strong>Concept: not sent.</strong> Your <span data-done-what>crate</span> would be held for the week you picked. Nothing left this page.</p>
+          <button class="btn btn--ghost btn--sm" type="button" data-action="reset" data-press>Start again</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+<footer class="site-foot">
+  <div class="wrap foot-in">
+    <p class="foot-brand"><svg class="b-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="15" cy="19" r="9"/><path d="M15 10c0-3 1.5-5 4-6"/><path d="M19 4c4 0 6.5 2 7 5-3.6.6-6-1-7-5z" class="b-leaf"/><path d="M15 13v12M9.8 16l10.4 6M9.8 22l10.4-6"/></svg>Rootline Citrus <span class="mono b-c">Concept</span></p>
+    <nav class="foot-nav" aria-label="Footer"><a href="#fruit">The fruit</a><a href="#process">Root to crate</a><a href="#crates">Crates</a><a href="#reserve">Reserve</a><a href="#top">Back to top</a></nav>
+    <p class="attrib mono">Real scanned fruit. Mandarin: this work is based on &ldquo;Mandarin&rdquo; (<a href="https://sketchfab.com/3d-models/mandarin-a03df271d4ed445ca5e80e24ba72f6e7" rel="noopener noreferrer" target="_blank">Sketchfab</a>) by <a href="https://sketchfab.com/yaro.pro" rel="noopener noreferrer" target="_blank">yaro.pro</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener noreferrer license" target="_blank">CC BY 4.0</a>; textures resized and compressed by Zyqor Studio. Lemon by Kuutti Siitonen and Food Lime 01 by Oliver Harries (<a href="https://polyhaven.com" rel="noopener noreferrer" target="_blank">Poly Haven</a>, CC0), studio light Studio Small 09 by Sergej Majboroda (CC0). Full list under Credits.</p>
+  </div>
+</footer>
+<p class="sr-only" aria-live="polite" id="live"></p>
+<script src="../../../vendor/gsap.min.js" defer></script>
+<script src="../../../vendor/ScrollTrigger.min.js" defer></script>
+<script type="module" src="../../_kit/chrome.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,7 +1,10 @@
-/* Meridian - a procedural automatic watch (three.js). No model download: every part is geometry + physical materials.
+/* Meridian - the hero watch is a real 3D model: "Wrist watch" by a.aazhgirevich (Sketchfab, CC BY 4.0), cleaned and optimised into one GLB
+   (maker logo + dial text removed, re-scaled, meshopt). Code adds the printed dial (the fictional Meridian print), the PBR materials, lume and the light sweep.
    Built Y-up (dial faces +y, 12 o'clock = -z, 3 o'clock = +x); the returned group is turned so the dial faces the camera. */
 import { THREE, Q, isM } from '../_kit/kit.js';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
 
 export const DIALS = [
   { key: 'forest',   word: 'MERIDIAN', name: 'Forest',   note: 'Sunburst green, tan leather', dial: '#1F4D3A', dial2: '#2E6B52', strap: '#6E4426', stitch: '#E9DCC0', text: '#EFE8D8', word_c: '#1F4D3A', bg: '#EFE8D8' },
@@ -12,6 +15,7 @@ export const DIALS = [
 const GOLD = 0xC9A24A;
 
 function dialCanvas(d, size) {
+  /* canvas radius = the real dial's outer edge (0.836 page units); the model's applied batons cover 0.60-0.92 of it, its rehaut slope starts at 0.84 */
   const c = document.createElement('canvas'); c.width = c.height = size;
   const g = c.getContext('2d'), R = size / 2;
   g.translate(R, R);
@@ -24,37 +28,33 @@ function dialCanvas(d, size) {
     g.strokeStyle = `rgba(255,255,255,${0.012 + 0.05 * k * k})`; g.lineWidth = size / 900;
     g.beginPath(); g.moveTo(0, 0); g.lineTo(Math.cos(a) * R, Math.sin(a) * R); g.stroke();
   }
+  /* rehaut: the model's dial rises into a sloped flange from 0.84 R; print it a shade darker so the track reads as a separate ring */
+  { const rg = g.createRadialGradient(0, 0, R * 0.84, 0, 0, R);
+    rg.addColorStop(0, 'rgba(0,0,0,0)'); rg.addColorStop(0.08, shade(d.dial, -0.32)); rg.addColorStop(1, shade(d.dial, -0.42));
+    g.fillStyle = rg; g.beginPath(); g.arc(0, 0, R, 0, Math.PI * 2); g.arc(0, 0, R * 0.84, 0, Math.PI * 2, true); g.fill(); }
   /* railroad minute track: two hairline rails, 60 minute ticks, 240 quarter-second ticks between them */
   const ink = d.text;
   g.strokeStyle = ink; g.globalAlpha = 0.9;
   g.lineWidth = size * 0.0011;
-  for (const rr of [0.962, 0.912]) { g.beginPath(); g.arc(0, 0, R * rr, 0, Math.PI * 2); g.stroke(); }
+  for (const rr of [0.985, 0.94]) { g.beginPath(); g.arc(0, 0, R * rr, 0, Math.PI * 2); g.stroke(); }
   for (let i = 0; i < 240; i++) {
     if (i % 4 === 0) continue;
     const a = (i / 240) * Math.PI * 2; g.lineWidth = size * 0.0007; g.globalAlpha = 0.55;
-    g.beginPath(); g.moveTo(Math.sin(a) * R * 0.962, -Math.cos(a) * R * 0.962); g.lineTo(Math.sin(a) * R * 0.945, -Math.cos(a) * R * 0.945); g.stroke();
+    g.beginPath(); g.moveTo(Math.sin(a) * R * 0.985, -Math.cos(a) * R * 0.985); g.lineTo(Math.sin(a) * R * 0.97, -Math.cos(a) * R * 0.97); g.stroke();
   }
   g.globalAlpha = 0.92;
   for (let i = 0; i < 60; i++) {
     const a = (i / 60) * Math.PI * 2, big = i % 5 === 0;
     g.lineWidth = size * (big ? 0.0042 : 0.0019);
-    const r1 = R * 0.962, r2 = R * (big ? 0.9 : 0.912);
+    const r1 = R * 0.985, r2 = R * (big ? 0.93 : 0.94);
     g.beginPath(); g.moveTo(Math.sin(a) * r1, -Math.cos(a) * r1); g.lineTo(Math.sin(a) * r2, -Math.cos(a) * r2); g.stroke();
   }
-  /* five-minute numerals, printed upright just inside the track */
-  g.fillStyle = ink; g.globalAlpha = 0.78; g.textAlign = 'center'; g.textBaseline = 'middle';
-  g.font = `600 ${size * 0.0215}px "Inter Tight", sans-serif`;
-  for (let i = 1; i <= 12; i++) {
-    if (i === 3) continue;
-    const a = (i / 12) * Math.PI * 2, r = R * 0.862;
-    g.save(); g.translate(Math.sin(a) * r, -Math.cos(a) * r); g.rotate(a); g.fillText(String(i * 5).padStart(2, '0'), 0, 0); g.restore();
-  }
-  g.globalAlpha = 1;
+  /* hour marks are the model's applied batons, so no printed numerals */
   /* inner chapter ring + a fine circular-grain band under the indices */
   g.strokeStyle = ink; g.globalAlpha = 0.28; g.lineWidth = size * 0.0012;
-  g.beginPath(); g.arc(0, 0, R * 0.825, 0, Math.PI * 2); g.stroke();
+  g.beginPath(); g.arc(0, 0, R * 0.585, 0, Math.PI * 2); g.stroke();
   g.globalAlpha = 0.07;
-  for (let rr = 0.6; rr < 0.82; rr += 0.0035) { g.lineWidth = size * 0.0006; g.beginPath(); g.arc(0, 0, R * rr, 0, Math.PI * 2); g.stroke(); }
+  for (let rr = 0.6; rr < 0.9; rr += 0.0035) { g.lineWidth = size * 0.0006; g.beginPath(); g.arc(0, 0, R * rr, 0, Math.PI * 2); g.stroke(); }
   g.globalAlpha = 1;
   /* wordmark + small print (a fictional brand; the page labels it Concept) */
   g.fillStyle = ink; g.textAlign = 'center'; g.textBaseline = 'middle';
@@ -67,19 +67,19 @@ function dialCanvas(d, size) {
   g.fillText('Automatic', 0, R * 0.3);
   g.font = `600 ${size * 0.0165}px "Inter Tight", sans-serif`; g.globalAlpha = 0.72;
   spaced(g, 'CALIBRE ZQ-28  ·  72 H  ·  100 M', 0, R * 0.375, size * 0.0045);
-  /* tiny print either side of 6 o'clock, outside the track rails */
+  /* tiny print either side of 6 o'clock, just inside the batons */
   g.font = `600 ${size * 0.0118}px "Inter Tight", sans-serif`; g.globalAlpha = 0.6;
   for (const [txt, sgn] of [['CONCEPT', -1], ['NOT FOR SALE', 1]]) {
-    const a = Math.PI + sgn * 0.17; g.save(); g.rotate(a); g.translate(0, -R * 0.982); g.rotate(Math.PI);
+    const a = Math.PI + sgn * 0.3; g.save(); g.rotate(a); g.translate(0, -R * 0.55); g.rotate(Math.PI);
     spaced(g, txt, 0, 0, size * 0.003); g.restore();
   }
   g.globalAlpha = 1;
   /* date window at 3 o'clock */
-  const dw = size * 0.075, dh = size * 0.06, dx = R * 0.62;
+  const dw = size * 0.064, dh = size * 0.052, dx = R * 0.43;
   g.fillStyle = '#F4EEE1'; g.fillRect(dx - dw / 2, -dh / 2, dw, dh);
   { const sh = g.createLinearGradient(0, -dh / 2, 0, -dh / 2 + dh * 0.35); sh.addColorStop(0, 'rgba(0,0,0,.28)'); sh.addColorStop(1, 'rgba(0,0,0,0)'); g.fillStyle = sh; g.fillRect(dx - dw / 2, -dh / 2, dw, dh * 0.35); }
   g.strokeStyle = '#C9A24A'; g.lineWidth = size * 0.004; g.strokeRect(dx - dw / 2, -dh / 2, dw, dh);
-  g.fillStyle = '#1F2A26'; g.font = `600 ${size * 0.04}px "Inter Tight", sans-serif`;
+  g.fillStyle = '#1F2A26'; g.font = `600 ${size * 0.034}px "Inter Tight", sans-serif`;
   g.fillText(String(new Date().getDate()), dx, size * 0.002);
   const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8;
   return t;
@@ -265,197 +265,75 @@ function strapGeo(w0, w1, t, L, R, dir, pad) {
   return geo;
 }
 
+
+/* The real model, loaded once (desktop and phone fetch the same file). Parts are named by role in the GLB. */
+const MODEL_URL = new URL('../../assets/lab/meridian/meridian-watch.glb', import.meta.url).href;
+const LEATHER_N = new URL('../../assets/lab/meridian/leather_nor.webp', import.meta.url).href;
+const LEATHER_R = new URL('../../assets/lab/meridian/leather_rough.webp', import.meta.url).href;
+const DIAL_R = 0.836;   /* outer radius of the model's dial (page units, rehaut edge) = the printed canvas radius */
+
+/* GLB attributes are quantized (normalized ints + a node transform); copy one into plain floats in the watch's space */
+function bakeGeometry(mesh, keep = ['position', 'normal', 'uv']) {
+  const src = mesh.geometry, g = new THREE.BufferGeometry(), M = mesh.matrix, N = new THREE.Matrix3().getNormalMatrix(M);
+  const v = new THREE.Vector3();
+  for (const name of keep) {
+    const a = src.getAttribute(name); if (!a) continue;
+    const out = new Float32Array(a.count * a.itemSize);
+    for (let i = 0; i < a.count; i++) {
+      if (name === 'position') { v.fromBufferAttribute(a, i).applyMatrix4(M); out.set([v.x, v.y, v.z], i * 3); }
+      else if (name === 'normal') { v.fromBufferAttribute(a, i).applyMatrix3(N).normalize(); out.set([v.x, v.y, v.z], i * 3); }
+      else for (let k = 0; k < a.itemSize; k++) out[i * a.itemSize + k] = a.getComponent(i, k);
+    }
+    g.setAttribute(name, new THREE.BufferAttribute(out, a.itemSize));
+  }
+  if (src.index) g.setIndex(new THREE.BufferAttribute(Uint32Array.from(src.index.array), 1));
+  return g;
+}
+/* the source dial and crystal are modelled facing into the case: turn them out (normals + winding) */
+function flipFaces(g) {
+  const n = g.getAttribute('normal'); if (n) { for (let i = 0; i < n.array.length; i++) n.array[i] = -n.array[i]; n.needsUpdate = true; }
+  const ix = g.index.array; for (let i = 0; i < ix.length; i += 3) { const t = ix[i + 1]; ix[i + 1] = ix[i + 2]; ix[i + 2] = t; }
+  g.index.needsUpdate = true; return g;
+}
+
 export function buildWatch(renderer) {
   const root = new THREE.Group();   /* faces camera */
   const w = new THREE.Group();      /* Y-up watch */
   w.rotation.x = Math.PI / 2;
   root.add(w);
+  const aniso = Math.min(8, renderer.capabilities.getMaxAnisotropy ? renderer.capabilities.getMaxAnisotropy() : 4);
 
-  const SEG = 192;   /* one tier on every device */
-  const steel = new THREE.MeshPhysicalMaterial({ color: 0xE6E3DC, metalness: 1, roughness: 0.16, roughnessMap: smudgeRough(), envMapIntensity: 1.2 });
-  const brushed = new THREE.MeshPhysicalMaterial({ color: 0xCFCCC5, metalness: 1, roughness: 0.42, roughnessMap: brushTex(), anisotropy: 0.8, anisotropyRotation: Math.PI / 2 });
-  const gold = new THREE.MeshPhysicalMaterial({ color: GOLD, metalness: 1, roughness: 0.24 });
-  const handGold = new THREE.MeshPhysicalMaterial({ color: 0xD4B060, metalness: 1, roughness: 0.36 });
-  const lume = new THREE.MeshStandardMaterial({ color: 0xF2EAD6, roughness: 0.55, emissive: 0x23301f, emissiveIntensity: 0.2 });
-  const m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), e = new THREE.Euler(), one = new THREE.Vector3(1, 1, 1);
-  const seg = SEG;
-
-  /* case: polished back, circular-grained flank, polished chamfer, stepped polished bezel */
-  const lathe = (pts, mat, s = SEG) => { const m = new THREE.Mesh(new THREE.LatheGeometry(P2(pts), s), mat); w.add(m); return m; };
-  /* caseback: satin circular-grained back with a polished outer chamfer */
-  const backSatin = new THREE.MeshPhysicalMaterial({ color: 0xD9D6CF, metalness: 1, roughness: 0.34, roughnessMap: smudgeRough(), anisotropy: 0.6, anisotropyRotation: Math.PI / 2 });
-  lathe([[0, -0.195], [0.5, -0.195], [0.78, -0.183]], backSatin);
-  lathe([[0.78, -0.183], [0.92, -0.158], [0.965, -0.13]], steel);
-  lathe([[0.965, -0.13], [0.988, -0.095], [0.999, -0.04], [1.0, 0.02], [0.995, 0.065], [0.985, 0.082]], brushed);
-  lathe([[0.985, 0.082], [0.958, 0.122], [0.952, 0.126]], steel);
-  lathe([[0.952, 0.126], [0.948, 0.15], [0.936, 0.168], [0.912, 0.178], [0.892, 0.179], [0.886, 0.172], [0.884, 0.164]], steel);
-  /* engraved caseback medallion (seen during the dial-change twist) + a screw-down ring with six notches */
-  { const cb = casebackMaps();
-    const backMat = new THREE.MeshPhysicalMaterial({ color: 0xD6D3CC, metalness: 1, roughness: 1, roughnessMap: cb.rough, bumpMap: cb.bump, bumpScale: 1.6 });
-    const disc = new THREE.Mesh(new THREE.CircleGeometry(0.62, SEG), backMat); disc.rotation.x = Math.PI / 2; disc.position.y = -0.1965; w.add(disc);
-    const notchG = new RoundedBoxGeometry(0.07, 0.012, 0.03, 2, 0.005), notchMat = new THREE.MeshStandardMaterial({ color: 0x55534f, metalness: 1, roughness: 0.5 });
-    for (let i = 0; i < 6; i++) { const a = (i / 6) * Math.PI * 2 + 0.26, n = new THREE.Mesh(notchG, notchMat); n.position.set(Math.sin(a) * 0.7, -0.193, Math.cos(a) * 0.7); n.rotation.y = a; w.add(n); } }
-  /* rehaut (inner flange) */
-  const rehautMat = new THREE.MeshStandardMaterial({ color: 0x173a2c, roughness: 0.55, metalness: 0.2, side: THREE.DoubleSide });
-  lathe([[0.884, 0.164], [0.861, 0.1]], rehautMat, 96);
-
-  /* dial: lacquered sunburst (radial anisotropy) under the printed canvas */
-  const dialMat = new THREE.MeshPhysicalMaterial({ roughness: 0.42, roughnessMap: sunRough(), metalness: 0.55, clearcoat: 1, clearcoatRoughness: 0.05, anisotropy: 0.92, anisotropyMap: sunburstDir() });
-  const dial = new THREE.Mesh(new THREE.CircleGeometry(0.862, SEG), dialMat);
-  dial.rotation.x = -Math.PI / 2; dial.position.y = 0.1;
-  w.add(dial);
-
-  /* applied gold batons with chamfered edges and a lume insert each (12 o'clock is a double baton) */
-  const IR = 0.69, slots = [];
-  for (let i = 0; i < 12; i++) { if (i === 3) continue; const a = (i / 12) * Math.PI * 2; (i === 0 ? [-0.034, 0.034] : [0]).forEach((off) => slots.push({ a, off })); }
-  /* faceted baton: a cross-section with two polished slopes and a flat top that carries the lume strip, chamfered ends */
-  const bs = new THREE.Shape(); bs.moveTo(-0.022, 0); bs.lineTo(0.022, 0); bs.lineTo(0.022, 0.003); bs.lineTo(0.0125, 0.014); bs.lineTo(-0.0125, 0.014); bs.lineTo(-0.022, 0.003); bs.closePath();
-  const batonG = new THREE.ExtrudeGeometry(bs, { depth: 0.14, bevelEnabled: true, bevelThickness: 0.006, bevelSize: 0.0015, bevelSegments: 1, curveSegments: 1 });
-  batonG.translate(0, 0, -0.07); batonG.computeVertexNormals();
-  const idx = new THREE.InstancedMesh(batonG, gold, slots.length);
-  const slotPos = (s, y) => new THREE.Vector3(Math.sin(s.a) * IR + Math.cos(s.a) * s.off, y, -Math.cos(s.a) * IR + Math.sin(s.a) * s.off);
-  slots.forEach((s, k) => { q.setFromEuler(e.set(0, -s.a, 0)); m4.compose(slotPos(s, 0.1), q, one); idx.setMatrixAt(k, m4); });
-  w.add(idx);
-  /* date window frame (applied, gold) */
-  const fr = new THREE.Shape(); fr.moveTo(-0.072, -0.058); fr.lineTo(0.072, -0.058); fr.lineTo(0.072, 0.058); fr.lineTo(-0.072, 0.058); fr.closePath();
-  const fh = new THREE.Path(); fh.moveTo(-0.062, -0.049); fh.lineTo(-0.062, 0.049); fh.lineTo(0.062, 0.049); fh.lineTo(0.062, -0.049); fh.closePath(); fr.holes.push(fh);
-  const frG = new THREE.ExtrudeGeometry(fr, { depth: 0.006, bevelEnabled: true, bevelThickness: 0.003, bevelSize: 0.003, bevelSegments: 2 });
-  frG.rotateX(-Math.PI / 2);
-  const frame = new THREE.Mesh(frG, gold); frame.position.set(0.533, 0.103, 0); w.add(frame);
-
-  /* hands: polished gold sword hands with a lume channel, a needle seconds hand with counterweight */
-  function hand(len, wid, tail, mat, depth, y, withLume) {
-    const s = new THREE.Shape();
-    s.moveTo(-wid * 0.3, -tail); s.lineTo(wid * 0.3, -tail); s.lineTo(wid * 0.5, 0); s.lineTo(wid * 0.4, len * 0.8); s.lineTo(0, len); s.lineTo(-wid * 0.4, len * 0.8); s.lineTo(-wid * 0.5, 0); s.closePath();
-    const hp = [[-wid * 0.25, len * 0.17], [wid * 0.25, len * 0.17], [wid * 0.2, len * 0.79], [0, len * 0.9], [-wid * 0.2, len * 0.79]];
-    const hole = new THREE.Path(); hole.moveTo(...hp[0]); hp.slice(1).forEach((p) => hole.lineTo(...p)); hole.closePath(); s.holes.push(hole);
-    const geo = new THREE.ExtrudeGeometry(s, { depth, bevelEnabled: true, bevelThickness: 0.0025, bevelSize: 0.0025, bevelSegments: 2, curveSegments: 1 });
-    /* facet: top-face vertices rise toward the lume channel, so each flank of the frame is a sloped polished facet */
-    { const p = geo.attributes.position;
-      for (let i = 0; i < p.count; i++) { const zz = p.getZ(i); if (zz > depth * 0.5) { const xx = Math.abs(p.getX(i)), yy = p.getY(i);
-        const half = yy < 0 ? wid * 0.3 : yy < len * 0.8 ? wid * (0.5 - 0.1 * yy / (len * 0.8)) : wid * 0.4 * (len - yy) / (len * 0.2);
-        const k = 1 - Math.min(1, xx / Math.max(1e-4, half)); p.setZ(i, zz + depth * 0.9 * k); } }
-      geo.computeVertexNormals(); }
-    geo.rotateX(-Math.PI / 2);
-    const g = new THREE.Group(); g.add(new THREE.Mesh(geo, mat)); g.position.y = y;
-    const hub = new THREE.Mesh(new THREE.CylinderGeometry(wid * 0.52, wid * 0.52, depth + 0.004, 32), mat); hub.position.y = depth / 2; g.add(hub);
-    if (withLume) {
-      const ls = new THREE.Shape(); ls.moveTo(...hp[0]); hp.slice(1).forEach((p) => ls.lineTo(...p)); ls.closePath();
-      const lg = new THREE.ExtrudeGeometry(ls, { depth: depth * 0.8, bevelEnabled: false }); lg.rotateX(-Math.PI / 2);
-      const lm = new THREE.Mesh(lg, lume); lm.position.y = 0.0004; g.add(lm);
-    }
-    return g;
-  }
-  const hH = hand(0.46, 0.078, 0.08, handGold, 0.007, 0.126, true);
-  const hM = hand(0.71, 0.06, 0.1, handGold, 0.007, 0.139, true);
+  /* ---- materials (PBR; the GLB carries geometry + part names, the look is set here) ---- */
+  const steel = new THREE.MeshPhysicalMaterial({ color: 0xE4E1DA, metalness: 1, roughness: 0.15, envMapIntensity: 1.25, clearcoat: 0.3, clearcoatRoughness: 0.08 });
+  const bezelSteel = new THREE.MeshPhysicalMaterial({ color: 0xE9E6DF, metalness: 1, roughness: 0.1, envMapIntensity: 1.35 });
+  const crownSteel = new THREE.MeshPhysicalMaterial({ color: 0xDDDAD3, metalness: 1, roughness: 0.22, envMapIntensity: 1.2 });
+  const gold = new THREE.MeshPhysicalMaterial({ color: 0xD9B565, metalness: 1, roughness: 0.2, envMapIntensity: 1.3, emissive: 0x9DF7C4, emissiveIntensity: 0 });
   const secMat = new THREE.MeshPhysicalMaterial({ color: 0xE9DFC8, metalness: 0.7, roughness: 0.22 });
-  const hS = new THREE.Group(); hS.position.y = 0.152;
-  const ns = new THREE.Shape(); ns.moveTo(-0.0055, 0.19); ns.lineTo(0.0055, 0.19); ns.lineTo(0.0022, -0.78); ns.lineTo(-0.0022, -0.78); ns.closePath();
-  const nG = new THREE.ExtrudeGeometry(ns, { depth: 0.004, bevelEnabled: false }); nG.rotateX(Math.PI / 2); nG.translate(0, 0.004, 0);
-  hS.add(new THREE.Mesh(nG, secMat));
-  const cw = new THREE.Mesh(new THREE.CylinderGeometry(0.022, 0.022, 0.004, 32), secMat); cw.position.set(0, 0.002, 0.14); hS.add(cw);
-  const sTip = new THREE.Mesh(new THREE.BoxGeometry(0.016, 0.005, 0.06), lume); sTip.position.set(0, 0.004, -0.62); hS.add(sTip);
-  const cap = new THREE.Mesh(new THREE.LatheGeometry(P2([[0, 0.016], [0.018, 0.013], [0.03, 0.006], [0.034, 0]]), 32), gold); cap.position.y = 0.157;
-  w.add(hH, hM, hS, cap);
+  const tl = new THREE.TextureLoader();
+  const lN = tl.load(LEATHER_N), lR = tl.load(LEATHER_R);
+  for (const t of [lN, lR]) { t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(6, 6); t.anisotropy = aniso; }
+  const strapMat = new THREE.MeshPhysicalMaterial({ color: 0x6E4426, roughness: 1, roughnessMap: lR, metalness: 0, normalMap: lN, normalScale: new THREE.Vector2(1.4, 1.4),
+    sheen: 0.35, sheenRoughness: 0.6, sheenColor: new THREE.Color(0xd9c3a0), envMapIntensity: 0.6 });
+  const dialMat = new THREE.MeshPhysicalMaterial({ roughness: 0.42, roughnessMap: sunRough(), metalness: 0.5, clearcoat: 1, clearcoatRoughness: 0.05, anisotropy: 0.9, anisotropyMap: sunburstDir() });
+  const glassMat = new THREE.MeshPhysicalMaterial({ transparent: true, opacity: 0.1, roughness: 0.05, metalness: 0,
+    specularIntensity: 0.7, ior: 1.77, iridescence: 0.45, iridescenceIOR: 1.38, iridescenceThicknessRange: [250, 340],
+    envMapIntensity: 0.8, depthWrite: false, color: 0xf3f6ff, side: THREE.FrontSide });
 
-  /* crown at 3 o'clock: coin-edge knurling on the grip, polished end with an applied ring */
-  const crown = new THREE.Group();
-  const tube = new THREE.Mesh(new THREE.CylinderGeometry(0.048, 0.048, 0.08, 32), steel); tube.rotation.z = Math.PI / 2; tube.position.x = 1.02; crown.add(tube);
-  const cg = new THREE.LatheGeometry(P2([[0.001, 0], [0.084, 0], [0.1, 0.012], [0.104, 0.028], [0.104, 0.1], [0.1, 0.116], [0.086, 0.128], [0.04, 0.133], [0.001, 0.134]]), 240);
-  { const p = cg.attributes.position, v = new THREE.Vector3();
-    for (let i = 0; i < p.count; i++) { v.fromBufferAttribute(p, i); if (v.y > 0.024 && v.y < 0.104) {
-      const th = Math.atan2(v.x, v.z), f = (th / (Math.PI * 2)) * 40, tri = Math.abs(f - Math.floor(f) - 0.5) * 2, k = 1 - 0.07 * tri;
-      p.setXYZ(i, v.x * k, v.y, v.z * k); } }
-    cg.computeVertexNormals(); cg.rotateZ(-Math.PI / 2); }
-  const crw = new THREE.Mesh(cg, brushed); crw.position.x = 1.035; crown.add(crw);
-  const ring = new THREE.Mesh(new THREE.TorusGeometry(0.045, 0.006, 10, 48), gold); ring.rotation.y = Math.PI / 2; ring.position.x = 1.035 + 0.135; crown.add(ring);
-  crown.position.y = -0.02; w.add(crown);
-  /* crown guards: brushed shoulders either side of the crown, with polished chamfers */
-  { const gs = new THREE.Shape(); gs.moveTo(0, -0.11); gs.quadraticCurveTo(0.09, -0.1, 0.1, -0.03); gs.lineTo(0.1, 0.03); gs.quadraticCurveTo(0.09, 0.1, 0, 0.11); gs.closePath();
-    const gG = new THREE.ExtrudeGeometry(gs, { depth: 0.035, bevelEnabled: true, bevelThickness: 0.008, bevelSize: 0.008, bevelSegments: 3, curveSegments: 14 });
-    gG.rotateX(Math.PI / 2); gG.translate(0.975, 0.0, 0);
-    for (const sz of [-1, 1]) { const gm = new THREE.Mesh(gG, brushed); gm.position.set(0, -0.02 + 0.03 * 0, sz * 0.15); gm.scale.y = 1; gm.position.y = 0.03; w.add(gm); } }
-
-  /* lugs: curved, chamfered, extruded from a side profile */
-  const lp = new THREE.Shape();
-  lp.moveTo(0.7, -0.15); lp.lineTo(0.7, 0.066); lp.quadraticCurveTo(1.0, 0.08, 1.19, -0.03); lp.quadraticCurveTo(1.25, -0.065, 1.215, -0.12);
-  lp.quadraticCurveTo(1.12, -0.17, 0.95, -0.168); lp.lineTo(0.7, -0.15);
-  const lugMat = new THREE.MeshPhysicalMaterial({ color: 0xC2BFB8, metalness: 1, roughness: 0.3, roughnessMap: brushTex(), anisotropy: 0.5 });
-  const lugG = new THREE.ExtrudeGeometry(lp, { depth: 0.12, bevelEnabled: true, bevelThickness: 0.016, bevelSize: 0.014, bevelSegments: 3, curveSegments: 18 });
-  lugG.rotateY(-Math.PI / 2); lugG.translate(0.06, 0, 0);
-  { const p = lugG.attributes.position; for (let i = 0; i < p.count; i++) { const z = p.getZ(i), t = Math.min(1, Math.max(0, (z - 0.8) / 0.45)); p.setX(i, p.getX(i) * (1 - 0.3 * t)); } lugG.computeVertexNormals(); }
-  for (const sz of [-1, 1]) for (const sx of [-1, 1]) {
-    const l = new THREE.Mesh(lugG, lugMat); l.position.set(sx * 0.515, 0, 0); l.scale.z = sz; w.add(l);
-  }
-
-  /* strap: padded, tapered leather with a pebbled grain, painted edges and real stitches */
-  const strapMat = new THREE.MeshPhysicalMaterial({ roughness: 0.62, metalness: 0, vertexColors: true, normalMap: leatherNormal(), normalScale: new THREE.Vector2(0.38, 0.38),
-    sheen: 0.35, sheenRoughness: 0.55, sheenColor: new THREE.Color(0xd9c3a0), clearcoat: 0.12, clearcoatRoughness: 0.45, envMapIntensity: 0.8, side: THREE.DoubleSide });
-  const stitchMat = new THREE.MeshStandardMaterial({ color: 0xE9DCC0, roughness: 0.8 });
-  const keeperMat = strapMat.clone(); keeperMat.vertexColors = false; keeperMat.normalScale = new THREE.Vector2(0.15, 0.15);
-  const SW0 = 0.84, SW1 = 0.7, ST = 0.085, SL = 2.4, SR = 1.9, SPAD = 0.022;
-  const stG = new RoundedBoxGeometry(0.014, 0.01, 0.036, 2, 0.004);
-  const stitchList = [];
-  for (const dir of [-1, 1]) {
-    const s = new THREE.Mesh(strapGeo(SW0, SW1, ST, SL, SR, dir, SPAD), strapMat);
-    s.position.set(0, -0.04, dir * 1.07); w.add(s);
-    for (let sl = 0.09; sl < SL - 0.12; sl += 0.058) {
-      const f = sl / SL, wv = SW0 + (SW1 - SW0) * f * f, a = sl / SR;
-      for (const sx of [-1, 1]) {
-        const x = sx * (wv / 2 - 0.055), cx = x / (wv / 2), yt = ST / 2 + SPAD * (1 - cx * cx) * 0.9 + 0.001, rr = SR + yt;
-        stitchList.push({ p: new THREE.Vector3(x, -(SR - Math.cos(a) * rr) - 0.04, dir * Math.sin(a) * rr + dir * 1.07), r: dir * a });
-      }
-    }
-    if (dir === 1) {
-      const a = 0.62 / SR, k = new THREE.Mesh(new RoundedBoxGeometry(SW0 + 0.05, ST + 0.075, 0.11, 3, 0.035), keeperMat);
-      k.position.set(0, -(SR - Math.cos(a) * SR) - 0.04 + 0.01, Math.sin(a) * SR + 1.07); k.rotation.x = a; w.add(k);
-      const a2 = 0.84 / SR, k2 = new THREE.Mesh(new RoundedBoxGeometry(SW0 - 0.02 + 0.05, ST + 0.07, 0.085, 3, 0.03), keeperMat);
-      k2.position.set(0, -(SR - Math.cos(a2) * SR) - 0.04 + 0.01, Math.sin(a2) * SR + 1.07); k2.rotation.x = a2; w.add(k2);
-    } else {
-      /* punched holes with a darker burnished rim on the other strap */
-      const holeMat = new THREE.MeshStandardMaterial({ color: 0x120c08, roughness: 0.9 });
-      for (let hI = 0; hI < 5; hI++) {
-        const sl = 1.05 + hI * 0.17, f = sl / SL, a = sl / SR, yt = ST / 2 + SPAD + 0.0015, rr = SR + yt;
-        const hm = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.03, 0.004, 32), holeMat);
-        hm.position.set(0, -(SR - Math.cos(a) * rr) - 0.04, -Math.sin(a) * rr - 1.07); hm.rotation.x = -a; w.add(hm);
-      }
-    }
-  }
-  const stitches = new THREE.InstancedMesh(stG, stitchMat, stitchList.length);
-  stitchList.forEach((s, k) => { q.setFromEuler(e.set(s.r, 0, 0)); m4.compose(s.p, q, one); stitches.setMatrixAt(k, m4); });
-  w.add(stitches);
-
-  /* sapphire crystal: a shallow box-dome with an anti-reflective tint */
-  const crysG = new THREE.LatheGeometry(P2([[0, 0.2], [0.3, 0.198], [0.6, 0.192], [0.8, 0.182], [0.86, 0.172], [0.872, 0.165], [0.886, 0.165], [0.888, 0.176], [0.83, 0.19], [0.62, 0.203], [0.32, 0.21], [0, 0.212]]), SEG);
-  /* transmission sampling showed a checker artefact at the rim, so the crystal is a thin clear coat of glass with an AR (iridescent) tint */
-  const crysMat = new THREE.MeshPhysicalMaterial({ transparent: true, opacity: 0.1, roughness: 0.16, metalness: 0,
-    specularIntensity: 0.6, ior: 1.77, iridescence: 0.5, iridescenceIOR: 1.38, iridescenceThicknessRange: [250, 340],
-    envMapIntensity: 0.7, depthWrite: false, color: 0xf3f6ff });
-  const crys = new THREE.Mesh(crysG, crysMat); crys.renderOrder = 2; w.add(crys);
-  /* light sweep across the crystal */
+  /* ---- light sweep across the crystal (follows the real dome) ---- */
   const sweepMat = new THREE.ShaderMaterial({
     transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
     uniforms: { uT: { value: -1 }, uA: { value: 1 } },
-    vertexShader: 'varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }',
-    fragmentShader: 'varying vec2 vUv; uniform float uT; uniform float uA; void main(){ vec2 p = vUv - 0.5; float m = smoothstep(0.5, 0.47, length(p)); float d = (p.x + p.y) * 0.7 - uT; float b = exp(-d*d*90.0) * 0.55 + exp(-pow(d+0.09,2.0)*700.0) * 0.35; b *= uA; gl_FragColor = vec4(vec3(1.0, 0.97, 0.9) * b * m, b * m); }',
+    vertexShader: 'varying vec2 vP; void main(){ vP = position.xz / ' + (2 * 0.9).toFixed(3) + '; gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }',
+    fragmentShader: 'varying vec2 vP; uniform float uT; uniform float uA; void main(){ vec2 p = vP; float m = smoothstep(0.5, 0.44, length(p)); float d = (p.x - p.y) * 0.7 - uT; float b = exp(-d*d*90.0) * 0.5 + exp(-pow(d+0.09,2.0)*700.0) * 0.3; b *= uA; gl_FragColor = vec4(vec3(1.0, 0.97, 0.9) * b * m, b * m); }',
   });
-  const sweep = new THREE.Mesh(new THREE.CircleGeometry(0.87, 64), sweepMat);
-  sweep.rotation.x = -Math.PI / 2; sweep.position.y = 0.216; w.add(sweep);
 
-
-  /* ---- lume: pips + a glow layer that ignites clockwise, hand glows ---- */
-  const LUME_D = new THREE.Color(0xE9E1CC), LUME_N = new THREE.Color(0xC4FFDC);
-  const pipPos = slots.map((sl) => ({ a: sl.a, p: slotPos(sl, 0.1158) }));
-  const pips = new THREE.InstancedMesh(new THREE.BoxGeometry(0.017, 0.004, 0.11), new THREE.MeshBasicMaterial({ toneMapped: false }), pipPos.length);
-  pipPos.forEach((p, k) => { m4.compose(p.p, q.setFromEuler(e.set(0, -p.a, 0)), one); pips.setMatrixAt(k, m4); pips.setColorAt(k, LUME_D); });
-  w.add(pips);
+  /* ---- lume: the batons and hands glow, a halo layer ignites clockwise ---- */
   function glowTex() {
     const c = document.createElement('canvas'); c.width = c.height = 128; const g = c.getContext('2d');
     const gr = g.createRadialGradient(64, 64, 0, 64, 64, 64); gr.addColorStop(0, 'rgba(255,255,255,1)'); gr.addColorStop(0.25, 'rgba(255,255,255,.45)'); gr.addColorStop(1, 'rgba(255,255,255,0)');
-    g.fillStyle = gr; g.fillRect(0, 0, 128, 128); const t = new THREE.CanvasTexture(c); return t;
+    g.fillStyle = gr; g.fillRect(0, 0, 128, 128); return new THREE.CanvasTexture(c);
   }
   const gt = glowTex();
-  /* dial glow: one quad, a shader draws soft halos at the pips, revealed clockwise by uIgn */
   const glowMat = new THREE.ShaderMaterial({
     transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, toneMapped: false,
     uniforms: { uIgn: { value: 0 }, uN: { value: 0 }, uC: { value: new THREE.Color(0x9DF7C4) } },
@@ -463,40 +341,81 @@ export function buildWatch(renderer) {
     fragmentShader: `varying vec2 vUv; uniform float uIgn; uniform float uN; uniform vec3 uC;
       void main(){ vec2 p = (vUv - 0.5) * 2.0; float r = length(p); float ang = atan(p.x, p.y); ang = ang < 0.0 ? ang + 6.2831853 : ang;
         float rev = smoothstep(ang - 0.25, ang, uIgn * 6.6);
-        float k = floor(ang / 0.5235988 + 0.5); float ca = k * 0.5235988; vec2 c = vec2(sin(ca), cos(ca)) * 0.69 / 0.95;
-        float pip = (abs(k - 3.0) < 0.5) ? 0.0 : exp(-pow(length(p - c) * 10.5, 2.0)) * 1.15;
-        float ring = exp(-pow((r - 0.84) * 14.0, 2.0)) * 0.12;
+        float k = floor(ang / 0.5235988 + 0.5); float ca = k * 0.5235988; vec2 c = vec2(sin(ca), cos(ca)) * 0.7;
+        float pip = exp(-pow(length(p - c) * 9.0, 2.0)) * 1.1;
+        float ring = exp(-pow((r - 0.9) * 14.0, 2.0)) * 0.1;
         float a = (pip + ring) * rev * uN; gl_FragColor = vec4(uC * a, a); }`,
   });
   const dGlow = new THREE.Mesh(new THREE.PlaneGeometry(1.9, 1.9), glowMat);
-  dGlow.rotation.x = -Math.PI / 2; dGlow.position.y = 0.123; w.add(dGlow);
+  dGlow.rotation.x = -Math.PI / 2; dGlow.position.y = 0.114; w.add(dGlow);
   const hgMat = new THREE.MeshBasicMaterial({ map: gt, color: 0x9DF7C4, transparent: true, opacity: 0, blending: THREE.AdditiveBlending, depthWrite: false, toneMapped: false });
-  for (const [g, len] of [[hH, 0.46], [hM, 0.7]]) {
-    const gl = new THREE.Mesh(new THREE.PlaneGeometry(0.16, len * 0.95), hgMat);
-    gl.rotation.x = -Math.PI / 2; gl.position.set(0, 0.03, -len * 0.5); g.add(gl);
+
+  /* hands live in pivots at the dial centre (the GLB has them pointing at 12) */
+  const hH = new THREE.Group(), hM = new THREE.Group(), hS = new THREE.Group();
+  w.add(hH, hM, hS);
+  for (const [g, len] of [[hH, 0.5], [hM, 0.58]]) {
+    const gl = new THREE.Mesh(new THREE.PlaneGeometry(0.14, len * 0.95), hgMat);
+    gl.rotation.x = -Math.PI / 2; gl.position.set(0, 0.16, -len * 0.5); g.add(gl);
   }
+
+  /* flange ring between the dial's edge and the bezel (the source's printed ring was dropped with its maker text) */
+  const flangeMat = new THREE.MeshPhysicalMaterial({ color: 0x1F4D3A, metalness: 0.45, roughness: 0.42, side: THREE.DoubleSide });
+  { const pts = [[0.822, 0.116], [0.845, 0.128], [0.872, 0.165], [0.905, 0.236]].map(([r, y]) => new THREE.Vector2(r, y));
+    const fl = new THREE.Mesh(new THREE.LatheGeometry(pts, 160), flangeMat); w.add(fl); }
+
+  /* engraved caseback medallion (code-made, seen during the dial-change twist) on the model's flat back */
+  { const cb = casebackMaps();
+    const backMat = new THREE.MeshPhysicalMaterial({ color: 0xD6D3CC, metalness: 1, roughness: 1, roughnessMap: cb.rough, bumpMap: cb.bump, bumpScale: 1.6 });
+    const disc = new THREE.Mesh(new THREE.CircleGeometry(0.6, 128), backMat); disc.rotation.x = Math.PI / 2; disc.position.y = -0.0705; w.add(disc); }
+
+  const parts = {};
+  let ready = false, resolveReady;
+  const whenReady = new Promise((r) => (resolveReady = r));
+  const loader = new GLTFLoader(); loader.setMeshoptDecoder(MeshoptDecoder);
+  const onProgress = (e) => { if (e.lengthComputable || e.total) window.dispatchEvent(new CustomEvent('meridian:progress', { detail: Math.min(1, e.loaded / (e.total || 1)) })); };
+  function load() {
+    loader.load(MODEL_URL, (gltf) => {
+      gltf.scene.updateMatrixWorld(true);
+      gltf.scene.traverse((o) => { if (o.isMesh) parts[o.name] = o; });
+      const use = (name, mat, parent = w) => { const m = parts[name]; if (!m) return null; m.material = mat; parent.add(m); return m; };
+      use('case', steel); use('bezel', bezelSteel); use('crown', crownSteel); use('buckle', steel);
+      use('strap', strapMat); use('idx', gold); use('pin', gold); use('cap', gold);
+      use('hand_h', gold, hH); use('hand_m', gold, hM); use('hand_s', secMat, hS);
+      /* dial: planar UVs so the printed canvas lands on the real plate (12 o'clock = -z) */
+      if (parts.dial) {
+        const g = flipFaces(bakeGeometry(parts.dial, ['position', 'normal']));
+        const p = g.getAttribute('position'), uv = new Float32Array(p.count * 2);
+        for (let i = 0; i < p.count; i++) { uv[i * 2] = 0.5 + p.getX(i) / (2 * DIAL_R); uv[i * 2 + 1] = 0.5 - p.getZ(i) / (2 * DIAL_R); }
+        g.setAttribute('uv', new THREE.BufferAttribute(uv, 2));
+        const d = new THREE.Mesh(g, dialMat); d.name = 'dial'; w.add(d); parts.dialMesh = d;
+      }
+      if (parts.glass) {
+        const g = flipFaces(bakeGeometry(parts.glass, ['position', 'normal']));
+        const crys = new THREE.Mesh(g, glassMat); crys.renderOrder = 2; w.add(crys);
+        const sw = new THREE.Mesh(g, sweepMat); sw.renderOrder = 3; sw.scale.setScalar(1.002); w.add(sw);
+      }
+      ready = true; setVariant(curV); resolveReady(); window.dispatchEvent(new CustomEvent('meridian:ready'));
+    }, onProgress, (err) => { console.warn('Meridian model failed to load', err); window.dispatchEvent(new CustomEvent('meridian:failed')); });
+  }
+
+  const LUME_D = new THREE.Color(0xD9B565), LUME_N = new THREE.Color(0xC4FFDC);
   const dialDay = new THREE.Color(0xffffff), dialNight = new THREE.Color(0x7d9488), strapNight = new THREE.Color(0x5a5850);
-  const tmp = new THREE.Color();
+  const strapDay = new THREE.Color(0x6E4426);
   function setLume(n, ign) {
     glowMat.uniforms.uN.value = n; glowMat.uniforms.uIgn.value = ign;
-    lume.emissive.setHex(0x9DF7C4); lume.emissiveIntensity = 0.2 * (1 - n) + 2.6 * n * ign; lume.color.copy(LUME_D).lerp(LUME_N, n);
-    pipPos.forEach((p, k) => { const on = n * Math.min(1, Math.max(0, (ign * 6.6 - p.a) / 0.25)); tmp.copy(LUME_D).lerp(LUME_N, on).multiplyScalar(1 + on * 0.6); pips.setColorAt(k, tmp); });
-    pips.instanceColor.needsUpdate = true;
-    hgMat.opacity = 0.55 * n * ign;
+    gold.emissiveIntensity = 1.6 * n * ign; gold.color.copy(LUME_D).lerp(LUME_N, n * 0.35);
+    hgMat.opacity = 0.5 * n * ign;
     dialMat.color.copy(dialDay).lerp(dialNight, n);
-    strapMat.color.copy(dialDay).lerp(strapNight, n); keeperMat.color.copy(strapMat.color);
+    strapMat.color.copy(strapDay).lerp(strapNight, n * 0.6);
   }
   const dialTex = DIALS.map(() => null);
-  const strapTex = DIALS.map(() => null);
   function setVariant(i) {
     const d = DIALS[i]; curV = i;
     if (!dialTex[i]) dialTex[i] = dialCanvas(d, 2048);
-    if (!strapTex[i]) strapTex[i] = leatherColor(d);
     dialMat.map = dialTex[i]; dialMat.needsUpdate = true;
-    strapMat.map = strapTex[i]; strapMat.needsUpdate = true; keeperMat.map = strapTex[i]; keeperMat.needsUpdate = true;
+    strapDay.set(d.strap); strapMat.color.copy(strapDay);
+    flangeMat.color.set(d.dial).multiplyScalar(i === 2 ? 0.92 : 0.82);
     secMat.color.set(i === 2 ? 0x1F4D3A : 0xE9DFC8);
-    stitchMat.color.set(d.stitch);
-    rehautMat.color.set(shade(d.dial, -0.3));
   }
   let curV = 0;
   dialFonts.then(() => { for (let k = 0; k < dialTex.length; k++) if (dialTex[k]) { dialTex[k].dispose(); dialTex[k] = null; } setVariant(curV); });
@@ -509,7 +428,7 @@ export function buildWatch(renderer) {
     hM.rotation.y = -(m / 60) * Math.PI * 2;
     hH.rotation.y = -(h / 12) * Math.PI * 2;
   }
-  return { root, w, setVariant, setTime, setLume, sweepMat, dial };
+  return { root, w, setVariant, setTime, setLume, sweepMat, load, whenReady, get ready() { return ready; } };
 }
 
 /* presentation box: forest felt case, cream pillow, open lid */
@@ -518,14 +437,16 @@ export function buildBox() {
   const felt = new THREE.MeshPhysicalMaterial({ color: 0x1F4D3A, roughness: 0.92, sheen: 1, sheenRoughness: 0.5, sheenColor: new THREE.Color(0x5f8f78) });
   const lining = new THREE.MeshPhysicalMaterial({ color: 0xEDE3CC, roughness: 0.95, sheen: 1, sheenRoughness: 0.4, sheenColor: new THREE.Color(0xffffff) });
   const goldM = new THREE.MeshPhysicalMaterial({ color: 0xD6B467, metalness: 1, roughness: 0.5 });
-  const W = 3.4, D = 2.9, H = 0.95;
-  const base = new THREE.Mesh(new RoundedBoxGeometry(W, H, D, 4, 0.12), felt); base.position.y = -H / 2 - 0.25; g.add(base);
-  const well = new THREE.Mesh(new RoundedBoxGeometry(W - 0.3, 0.1, D - 0.3, 3, 0.04), lining); well.position.y = -0.22; g.add(well);
-  const pillow = new THREE.Mesh(new RoundedBoxGeometry(1.5, 0.5, 1.9, 6, 0.24), lining); pillow.position.y = -0.2; g.add(pillow);
-  const hinge = new THREE.Group(); hinge.position.set(0, -0.2, -D / 2); g.add(hinge);
-  const lid = new THREE.Mesh(new RoundedBoxGeometry(W, 0.32, D, 4, 0.12), felt); lid.position.set(0, 0, D / 2); hinge.add(lid);
-  const lidIn = new THREE.Mesh(new THREE.PlaneGeometry(W - 0.4, D - 0.4), lining); lidIn.rotation.x = Math.PI / 2; lidIn.position.set(0, -0.165, D / 2); hinge.add(lidIn);
-  const plaque = new THREE.Mesh(new RoundedBoxGeometry(0.9, 0.02, 0.22, 2, 0.01), goldM); plaque.position.set(0, -0.18, D / 2 + 0.6); hinge.add(plaque);
+  /* sized for the real watch: its strap is a closed worn loop, so the case is deep enough to take it (the loop drops into a slot in the lining) */
+  const W = 3.6, D = 4.4, H = 2.9, TOP = 0.1;
+  const base = new THREE.Mesh(new RoundedBoxGeometry(W, H, D, 4, 0.14), felt); base.position.y = TOP - H / 2; g.add(base);
+  const well = new THREE.Mesh(new RoundedBoxGeometry(W - 0.28, 0.08, D - 0.28, 3, 0.035), lining); well.position.y = TOP + 0.005; g.add(well);
+  const pillow = new THREE.Mesh(new RoundedBoxGeometry(2.5, 0.62, 2.9, 8, 0.28), lining); pillow.position.set(0, TOP - 0.02, 0.09); g.add(pillow);
+  const slot = new THREE.Mesh(new RoundedBoxGeometry(1.15, 0.02, 3.3, 2, 0.01), new THREE.MeshStandardMaterial({ color: 0x3a3226, roughness: 1 })); slot.position.set(0, TOP + 0.05, 0.09); g.add(slot);
+  const hinge = new THREE.Group(); hinge.position.set(0, TOP + 0.05, -D / 2); g.add(hinge);
+  const lid = new THREE.Mesh(new RoundedBoxGeometry(W, 0.36, D, 4, 0.14), felt); lid.position.set(0, 0.18, D / 2); hinge.add(lid);
+  const lidIn = new THREE.Mesh(new THREE.PlaneGeometry(W - 0.4, D - 0.4), lining); lidIn.rotation.x = Math.PI / 2; lidIn.position.set(0, -0.005, D / 2); hinge.add(lidIn);
+  const plaque = new THREE.Mesh(new RoundedBoxGeometry(0.9, 0.02, 0.22, 2, 0.01), goldM); plaque.position.set(0, -0.01, D / 2 + 1.1); hinge.add(plaque);
   hinge.rotation.x = -1.95;
   g.userData.hinge = hinge;
   return g;

@@ -1,6 +1,6 @@
 /* Stride Aero - Concept 01 - Zyqor Lab.  Colourway morph in a browser card + feature callouts.
    One module for both builds: the phone page (m.html) takes the light path (isM). */
-import { THREE, Q, isM, reduced, coarse, loadGLB, modelURL, makeRenderer, studioEnv, fitObject, variants, reveals, smooth, whenVisible, clamp, damp, lerp } from '../_kit/kit.js';
+import { THREE, Q, isM, reduced, coarse, loadGLB, modelURL, makeRenderer, glRenderer, studioEnv, fitObject, variants, reveals, smooth, whenVisible, clamp, damp, lerp } from '../_kit/kit.js';
 import { modeSwitch } from './mode.js';
 import { useHDRI } from '../../assets/hdri/hdri.js';
 
@@ -36,14 +36,16 @@ document.addEventListener('click', (e) => { const a = e.target.closest('[data-no
 const canvas = $('.gl');
 const stage = $('.stage') || $('.m-card');
 /* round 2: both builds get the same renderer (MSAA on, DPR up to 2) - the phone is no longer a cheaper render */
-const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
+/* v3 gaps: glRenderer never throws - with no WebGL the still below the canvas stays and the page keeps working */
+const renderer = glRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
+const GL = !renderer.isStub;
 renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 2));
 renderer.outputColorSpace = THREE.SRGBColorSpace; renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1;
 const scene = new THREE.Scene();
 scene.environment = studioEnv(renderer);
 /* desktop: real studio HDRI (Poly Haven, CC0) swapped in after first paint; phone keeps the free RoomEnvironment */
 const LV = { env: 1, key: 1.5 };
-useHDRI(renderer, scene, { size: 512, rotation: -0.6, onReady: () => { LV.env = 0.95; LV.key = 1.05; } });
+if (GL) useHDRI(renderer, scene, { size: 512, rotation: -0.6, onReady: () => { LV.env = 0.95; LV.key = 1.05; } });
 const cam = new THREE.PerspectiveCamera(28, 1, 0.1, 60);
 cam.position.set(0, 0, 9);
 const key = new THREE.DirectionalLight(0xffffff, 1.5); key.position.set(3, 6, 5); scene.add(key);
@@ -144,10 +146,12 @@ const BASE = { x: 0, y: 0, z: 0 };
    (same look at any DPR/zoom, so phone == desktop). Region masks: knit = the source ORM blue channel, sole = below the
    midsole line, panels = the rest. */
 const DET = { tex: null, len: { value: 1 } };
-const detailTex = new THREE.TextureLoader().loadAsync('../../assets/lab/stride/stride-detail.webp').then((t) => {
+/* v3 gaps: the detail map loads with the 3D (after first paint), not at module start */
+let detailTex = null;
+const loadDetail = () => detailTex || (detailTex = new THREE.TextureLoader().loadAsync('../../assets/lab/stride/stride-detail.webp').then((t) => {
   t.wrapS = t.wrapT = THREE.RepeatWrapping; t.colorSpace = THREE.NoColorSpace;
   t.anisotropy = Math.min(8, renderer.capabilities.getMaxAnisotropy()); DET.tex = t; return t;
-}).catch(() => null);
+}).catch(() => null));
 function addDetail(mat, bb) {
   const lenG = Math.max(bb.max.x - bb.min.x, bb.max.y - bb.min.y, bb.max.z - bb.min.z);
   const U = {
@@ -195,22 +199,11 @@ material.clearcoat *= dP;
   mat.customProgramCacheKey = () => 'stride-detail-r2';
 }
 
-async function initShoe() {
-  await detailTex;
-  const gltf = await loadGLB('../../assets/lab/stride/stride-d.glb') /* round 2: the phone loads the same full-detail model */;
+/* every colourway becomes a MeshPhysicalMaterial: knit sheen, deeper normal relief, softer spec (less plastic) */
+async function buildPhys(gltf) {
   const model = gltf.scene;
   model.traverse((o) => { if (o.isMesh) { o.castShadow = false; o.frustumCulled = false; } });
-  const holder = new THREE.Group(); holder.add(model);
-  model.rotation.set(BASE.x, BASE.y, BASE.z);
-  fitObject(holder, 1, false);
-  /* anchors from the bounding box, measured while the holder is still detached (x = heel->toe, y = sole->collar) */
-  holder.updateMatrixWorld(true);
-  const b = new THREE.Box3().setFromObject(holder), s = b.getSize(new THREE.Vector3());
-  const at = (u, v, w) => { const o = new THREE.Object3D(); o.position.set(b.min.x + s.x * u, b.min.y + s.y * v, b.min.z + s.z * w); bob.add(o); return o; };
-  anchors = [at(0.55, 0.62, 0.62), at(0.12, 0.55, 0.6), at(0.24, 0.16, 0.68), at(0.78, 0.04, 0.6)];
-  shadow.userData.y = b.min.y - 0.01;
   const VK = await variants(gltf);
-  /* every colourway becomes a MeshPhysicalMaterial: knit sheen, deeper normal relief, softer spec (less plastic) */
   const phys = {}, mesh = []; model.traverse((o) => { if (o.isMesh) mesh.push(o); });
   for (const n of VK.names) {
     await VK.select(n);
@@ -227,15 +220,48 @@ async function initShoe() {
       p.name = 'stride-' + n; return p;
     });
   }
-  V = { names: VK.names, select: async (n) => { const arr = phys[n]; if (arr) mesh.forEach((o, i) => { o.material = arr[i]; }); } };
+  return { names: VK.names, phys, mesh, model };
+}
+let PHYS = null, MESH = [], selV = null;
+async function initShoe(gltf) {
+  await loadDetail();
+  const model = gltf.scene;
+  const holder = new THREE.Group(); holder.add(model);
+  model.rotation.set(BASE.x, BASE.y, BASE.z);
+  fitObject(holder, 1, false);
+  /* anchors from the bounding box, measured while the holder is still detached (x = heel->toe, y = sole->collar) */
+  holder.updateMatrixWorld(true);
+  const b = new THREE.Box3().setFromObject(holder), s = b.getSize(new THREE.Vector3());
+  const at = (u, v, w) => { const o = new THREE.Object3D(); o.position.set(b.min.x + s.x * u, b.min.y + s.y * v, b.min.z + s.z * w); bob.add(o); return o; };
+  anchors = [at(0.55, 0.62, 0.62), at(0.12, 0.55, 0.6), at(0.24, 0.16, 0.68), at(0.78, 0.04, 0.6)];
+  shadow.userData.y = b.min.y - 0.01;
+  const B = await buildPhys(gltf);
+  PHYS = B.phys; MESH = B.mesh;
+  V = { names: B.names, select: async (n) => { const arr = PHYS[n]; selV = n; if (arr) MESH.forEach((o, i) => { o.material = arr[i]; }); } };
   for (const n of [V.names[1], V.names[2], V.names[0]]) await V.select(n); /* warm every variant once */
+  if (cur) await V.select(nv(CW[cur]).v); /* a colourway picked while the 3D was loading */
   bob.add(holder);
   shoe = model;
-  if (!reduced) {
+  /* the still already shows the shoe at rest, so the 3D takes its place without the fly-in (the fly-in stays when no still was seen) */
+  if (!reduced && !stillShown()) {
     sw.intro = 1;
     gsap.to(sw, { intro: 0, duration: 1.8, ease: 'expo.out', delay: 0.15 });
   }
   canvas.classList.add('ready');
+}
+/* HD step: same model, full-resolution textures (and its geometry) swapped in place; the light set is freed */
+async function upgradeShoe(gltf) {
+  const B = await buildPhys(gltf);
+  if (B.mesh.length !== MESH.length || !PHYS) { console.info('Stride: HD model layout differs, kept the first one'); return false; }
+  const old = PHYS, oldGeo = MESH.map((o) => o.geometry);
+  PHYS = B.phys;
+  MESH.forEach((o, i) => { o.geometry = B.mesh[i].geometry; });
+  await V.select(selV || V.names[0]);
+  if (renderer.initTexture) for (const n of V.names) for (const m of PHYS[n]) for (const k of ['map', 'normalMap', 'roughnessMap', 'metalnessMap', 'aoMap']) if (m[k]) renderer.initTexture(m[k]);
+  const seen = new Set();
+  for (const n in old) for (const m of old[n]) { for (const k of ['map', 'normalMap', 'roughnessMap', 'metalnessMap', 'aoMap', 'emissiveMap']) { const t = m[k]; if (t && !seen.has(t)) { seen.add(t); t.dispose(); } } m.dispose(); }
+  oldGeo.forEach((g) => g.dispose());
+  return true;
 }
 
 /* layout: world size of the view at z=0 */
@@ -257,6 +283,7 @@ function frame(now) {
   requestAnimationFrame(frame);
   const dt = Math.min(0.05, (now - last) / 1000); last = now;
   if (!running || !shoe) return;
+  if (!live && pT > 0.03) goLive(); /* scrolling on: the live shoe follows the scroll story */
   tClock += dt;
   p = isM ? 0 : damp(p, pT, 7, dt);
   const a = ease(clamp(p / 0.28));
@@ -356,11 +383,12 @@ async function go(i, from, user = true) {
   i = (i + CW.length) % CW.length;
   if (user) stopAuto();
   if (busy) { pending = { i, from }; return; }
-  if (i === cur || !V) return;
+  if (i === cur) return;
+  if (V) goLive(); /* a colourway pick while the still shows: the 3D (already loaded) takes over now */
   busy = true; const dir = i > cur || (cur === CW.length - 1 && i === 0) ? 1 : -1; cur = i;
   const c = nv(CW[i]);
   syncUI(i);
-  if (reduced || !gsap) { setVars(c); root.style.setProperty('--card', c.card); await V.select(c.v); done(); return; }
+  if (reduced || !gsap) { setVars(c); root.style.setProperty('--card', c.card); if (V) await V.select(c.v); else setStill(i); done(); return; }
   /* where the colour flood starts: the control that was used, else the card centre */
   const sr = stage.getBoundingClientRect();
   let ox = sr.width / 2, oy = sr.height / 2;
@@ -371,6 +399,7 @@ async function go(i, from, user = true) {
   const L = $$('.gw > span');
   if (L.length) gsap.timeline().to(L, { yPercent: -105, duration: 0.38, ease: 'power3.in', stagger: 0.045 * dir })
     .set(L, { yPercent: 105 }).to(L, { yPercent: 0, duration: 0.9, ease: 'expo.out', stagger: 0.05 * dir });
+  if (!V) { setStill(i); setTimeout(done, 650); return; } /* 3D not in yet, or no WebGL: the still follows the colourway */
   await new Promise((res) => gsap.to(sw, { yaw: 1.5 * dir, lift: 1, sc: 0.84, duration: 0.42, ease: 'power3.in', onComplete: res }));
   await V.select(c.v);
   sw.yaw = -1.9 * dir;
@@ -401,6 +430,7 @@ addEventListener('keydown', (e) => {
 /* drag: desktop spins the shoe; phone swipes change the colourway */
 let sx = 0, sy = 0, lx = 0, lt = 0, swipe = false;
 canvas.addEventListener('pointerdown', (e) => {
+  goLive();
   dragging = true; swipe = false; sx = lx = e.clientX; sy = e.clientY; lt = performance.now(); dragVel = 0;
   if (!isM) canvas.setPointerCapture(e.pointerId); stopAuto();
 });
@@ -520,15 +550,64 @@ requestAnimationFrame(frame);
 
 function bootScroll() {
   if (isM || !ST) return;
-  if (!reduced) {
+  if (!reduced && GL) {
     pinST = ST.create({ trigger: stage, start: 'top top', end: '+=240%', pin: true, anticipatePin: 1, onUpdate: (s) => { pT = s.progress; } });
     gsap.fromTo('.r1', { xPercent: 0 }, { xPercent: -18, ease: 'none', scrollTrigger: { trigger: '.band', start: 'top bottom', end: 'bottom top', scrub: true } });
     gsap.fromTo('.r2', { xPercent: -14 }, { xPercent: 4, ease: 'none', scrollTrigger: { trigger: '.band', start: 'top bottom', end: 'bottom top', scrub: true } });
   } else {
-    /* reduced motion: no pinning; show the callout state as a static block under the hero */
+    /* reduced motion (and no WebGL, where nothing would move while pinned): no pinning; the callouts become a static block under the hero */
     document.body.classList.add('rm');
     const tech = $('.tech'); if (tech) stage.after(tech);
   }
 }
 bootScroll();
-initShoe().then(() => { startAuto(); }).catch((e) => { console.info('3D model unavailable', e && e.message); canvas.style.display = 'none'; });
+/* ------------------------------------------------------- first screen (v3 gaps, Oct 28)
+   1. The still (a render of this same model at rest) is in the HTML, so the shoe is on screen at first paint.
+   2. After first paint + idle, the light copy of the model (same mesh, small textures, 0.3 MB) loads and is
+      built, ready for touch: a drag or a colourway pick swaps the still for live 3D at once.
+   3. The full model (3.7 MB, the same file on desktop and phone) streams in with real byte progress; when it
+      is in, its textures and geometry replace the light ones and the 3D takes the still's place.
+   No WebGL: nothing 3D is downloaded and the still stays (colourway picks swap it for that colourway's still). */
+const still = $('.st-still'), prog = $('.st-prog');
+const ASSET = '../../assets/lab/stride/', LIGHT = ASSET + 'stride-m.glb', FULL = ASSET + 'stride-d.glb';
+const BYTES = { light: 315728, full: 3736500 };
+const STILL = (i) => `${ASSET}stride-still-${isM ? 'm' : 'd'}-${i}.webp`;
+let live = false;
+function stillShown() { return !!(still && still.complete && still.naturalWidth && !live); }
+function setStill(i) { if (still && !live) still.src = STILL(i); }
+function goLive() {
+  if (live || !shoe) return;
+  live = true; stage.classList.add('st-live');
+}
+function setProg(f) {
+  if (!prog) return;
+  const pct = Math.round(clamp(f) * 100);
+  prog.hidden = false; prog.style.setProperty('--f', clamp(f).toFixed(3));
+  const n = prog.querySelector('.st-prog-n'); if (n) n.textContent = pct + '%';
+  prog.setAttribute('aria-valuenow', String(pct));
+}
+function endProg() { if (!prog) return; prog.classList.add('done'); setTimeout(() => { prog.hidden = true; }, 800); }
+const afterFirstPaint = () => new Promise((res) => {
+  const idle = () => ('requestIdleCallback' in window ? requestIdleCallback(res, { timeout: 500 }) : setTimeout(res, 60));
+  const paint = () => requestAnimationFrame(() => requestAnimationFrame(idle));
+  const ready = still && !still.complete ? still.decode().catch(() => {}) : Promise.resolve();
+  Promise.race([ready, new Promise((r) => setTimeout(r, 1500))]).then(paint);
+});
+async function load3D() {
+  if (!GL) { if (prog) prog.hidden = true; return; }
+  await afterFirstPaint();
+  const W8 = BYTES.light / (BYTES.light + BYTES.full);
+  setProg(0);
+  const light = await loadGLB(LIGHT, (e) => setProg(W8 * clamp(e.loaded / (e.total || BYTES.light))));
+  await initShoe(light);
+  startAuto();
+  try {
+    const full = await loadGLB(FULL, (e) => setProg(W8 + (1 - W8) * clamp(e.loaded / (e.total || BYTES.full))));
+    setProg(1);
+    await upgradeShoe(full);
+    root.classList.add('st-hd');
+  } catch (e) { console.info('Stride: full-resolution textures unavailable, kept the light set', e && e.message); }
+  requestAnimationFrame(() => requestAnimationFrame(goLive));
+  endProg();
+}
+load3D().catch((e) => { console.info('3D model unavailable', e && e.message); canvas.style.display = 'none'; endProg(); });

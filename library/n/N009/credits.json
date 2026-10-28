@@ -1,0 +1,79 @@
+{
+  "brand": "Glasskit Toggles",
+  "id": "N009",
+  "items": [
+    {
+      "what": "3D",
+      "title": "The room: torus, capsule, rounded blocks, spheres, cylinder",
+      "author": "Zyqor Studio",
+      "source": "code-made three.js",
+      "url": "",
+      "licence": "MIT",
+      "note": "No model files: the catalogue row asks for primitives so the refraction has clean edges to bend.",
+      "files": []
+    },
+    {
+      "what": "UI kit",
+      "title": "Liquid Glass UI v2 (skills/liquid-glass-ui)",
+      "author": "Zyqor Studio (Sujon Hoque)",
+      "source": "this repository",
+      "url": "",
+      "licence": "MIT",
+      "note": "Copied into ./kit with its LICENSE; the spring layer for lenses and switch thumbs is written in app.js.",
+      "files": []
+    },
+    {
+      "what": "HDRI",
+      "title": "Studio Small 09",
+      "author": "Sergej Majboroda",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/studio_small_09",
+      "licence": "CC0 1.0",
+      "note": "Shared kit lighting (site/assets/hdri).",
+      "files": [
+        "../../../assets/hdri/studio_1k.hdr",
+        "../../../assets/hdri/studio_512.hdr"
+      ]
+    },
+    {
+      "what": "Type",
+      "title": "Cabinet Grotesk, Satoshi",
+      "author": "Indian Type Foundry",
+      "source": "Fontshare",
+      "url": "https://www.fontshare.com",
+      "licence": "ITF Free Font License 2.0",
+      "files": []
+    },
+    {
+      "what": "Type",
+      "title": "JetBrains Mono",
+      "author": "The JetBrains Mono Project Authors",
+      "source": "GitHub",
+      "url": "https://github.com/JetBrains/JetBrainsMono",
+      "licence": "SIL OFL 1.1",
+      "files": []
+    },
+    {
+      "what": "Engine",
+      "title": "three.js r170, GSAP, Lenis",
+      "author": "their authors",
+      "source": "npm",
+      "url": "https://threejs.org",
+      "licence": "MIT / GSAP Standard Licence",
+      "files": []
+    },
+    {
+      "what": "Images (code-made)",
+      "title": "Poster and library thumbnail",
+      "author": "Zyqor Studio",
+      "source": "frames of this page",
+      "url": "",
+      "licence": "MIT",
+      "note": "WebGL-fallback poster and index thumbnail, rendered from this page by tools/qa-library.mjs. No AI imagery.",
+      "files": [
+        "poster.webp",
+        "thumb.webp"
+      ]
+    }
+  ]
+}

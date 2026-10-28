@@ -146,3 +146,18 @@ html,body{overflow-x:clip}
 .pill-a.lg{--lg-ink:#CC4128}
 .lg.lg--ink{--_al:96%}
 .pill-g.lg:hover{color:#12313A}
+
+/* v3 gaps (Oct 28): first screen. A still of this same model at rest holds the shoe's place from first paint;
+   the live 3D (the same file as desktop) fades in over it once loaded. Sized with the 3D rule:
+   length = min(86% of the card width, 95% of its height), centred, 2% low - so nothing moves. */
+.stage{--st-kx:1.0735}
+.st-still{position:absolute;z-index:2;left:50%;top:52%;width:min(calc(var(--st-kx) * 86%),calc(var(--st-kx) * .95 * clamp(440px,64svh,560px)));max-width:none;height:auto;transform:translate(-50%,-50%);pointer-events:none;user-select:none;-webkit-user-drag:none;transition:opacity .7s cubic-bezier(.2,.8,.2,1)}
+.gl{opacity:0;transition:opacity .7s cubic-bezier(.2,.8,.2,1)}
+.st-live .gl,html.no-webgl .gl{opacity:1}
+.st-live .st-still{opacity:0}
+.st-prog{position:absolute;z-index:6;left:50%;top:94px;transform:translateX(-50%);display:flex;align-items:center;gap:8px;margin:0;font:600 10.5px/1 var(--f-ui);letter-spacing:.12em;text-transform:uppercase;color:var(--ink);opacity:.72;pointer-events:none;transition:opacity .6s}
+.st-prog[hidden]{display:none}
+.st-prog i{position:relative;display:block;width:76px;height:2px;border-radius:2px;background:color-mix(in srgb,currentColor 22%,transparent);overflow:hidden}
+.st-prog i::after{content:"";position:absolute;inset:0;background:currentColor;transform-origin:0 50%;transform:scaleX(var(--f,0));transition:transform .25s linear}
+.st-prog-n{min-width:3.2em;font-variant-numeric:tabular-nums}
+.st-prog.done{opacity:0}

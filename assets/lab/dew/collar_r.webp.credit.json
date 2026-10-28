@@ -1,0 +1,11 @@
+{
+ "title": "Brushed-metal roughness map (Dew collar)",
+ "author": "Zyqor Studio",
+ "author_url": "https://zyqor-portfolio-v3.sites.tab.bot/",
+ "source_url": "https://zyqor-portfolio-v3.sites.tab.bot/lab/dew/",
+ "licence": "MIT",
+ "licence_url": "https://opensource.org/licenses/MIT",
+ "attribution": "Zyqor Studio (made in code)",
+ "changes": "made in code (baked by a Python script from procedural noise, round 2, 2026-10-27); used as the roughness map on the real collar",
+ "downloaded": "2026-10-28"
+}

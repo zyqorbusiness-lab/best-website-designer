@@ -1,0 +1,11 @@
+{
+  "title": "Misty Pines",
+  "author": "Greg Zaal",
+  "author_url": "https://polyhaven.com/all?a=Greg%20Zaal",
+  "source_url": "https://polyhaven.com/a/misty_pines",
+  "licence": "CC0 1.0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution": "\"Misty Pines\" by Greg Zaal, Poly Haven (https://polyhaven.com/a/misty_pines), CC0 1.0 (courtesy credit; no attribution required)",
+  "changes": "from the tonemapped 8K JPG of the HDRI: reprojected from equirectangular to an 88 degree rectilinear view (yaw .43, pitch +6), resized to 2048x1280, WebP",
+  "downloaded": "2026-10-28"
+}

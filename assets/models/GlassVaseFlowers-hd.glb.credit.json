@@ -1,0 +1,13 @@
+{
+ "title": "GlassVaseFlowers",
+ "author": "Eric Chadwick (Public, 2023, Glass vase, CC0-1.0); Rico Cilliers (Public, 2023, Flowers, CC0-1.0)",
+ "author_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/GlassVaseFlowers",
+ "source_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/GlassVaseFlowers",
+ "licence": "CC0 1.0",
+ "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+ "attribution": "\"GlassVaseFlowers\" by Eric Chadwick (Public), Khronos glTF Sample Assets (https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/GlassVaseFlowers), CC0 1.0 (courtesy credit)",
+ "changes": "re-encoded from the full-resolution original (textures up to 2048 px WebP q92, meshopt geometry, 12-bit normals); same file on desktop and phone",
+ "downloaded": "2026-10-27",
+ "file": "GlassVaseFlowers-hd.glb",
+ "credit_written_by": "credits backfill 2026-10-28 (work/beast/credits/backfill)"
+}

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en" data-build="m">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- desktop -> phone build when ?m=1 is absent -->
+<script>document.documentElement.classList.add('js');(function(){var q=location.search;if(/[?&]m=1/.test(q))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height,phone=w<=860||(c&&h>w);if(!phone)location.replace('./'+q+location.hash);})();</script>
+<!-- this page uses its own copy of skills/liquid-glass-ui; drop the portfolio's older glass sheet that chrome.js would add (it styles .lg with !important) -->
+<script>new MutationObserver(function(l){l.forEach(function(r){r.addedNodes.forEach(function(n){if(n.tagName==='LINK'&&/\/assets\/glass\/liquid-glass\.css/.test(n.href))n.remove();});});}).observe(document.documentElement,{childList:true,subtree:true});</script>
+<title>Glasskit Toggles &middot; Concept N009 &middot; Zyqor Library</title>
+<meta name="description" content="Glasskit Toggles is a fictional brand: a normal 3D web concept by Zyqor Studio. Liquid-glass switches, sliders and segmented controls that refract a live 3D room and change it as you use them.">
+<meta name="theme-color" content="#D8E1E4">
+<meta property="og:title" content="Glasskit Toggles &middot; Concept N009 &middot; Zyqor Library">
+<meta property="og:description" content="A fictional-brand 3D concept by Zyqor Studio.">
+<meta property="og:image" content="thumb.webp">
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../_kit/stage.js" as="script" crossorigin>
+<link rel="stylesheet" href="../../_kit/concept.css">
+<link rel="stylesheet" href="kit/liquid-glass.css">
+<link rel="stylesheet" href="m.css">
+<style>:root{--c1:#D8E1E4;--c2:#18333E;--c3:#AA4131}</style>
+<script src="kit/liquid-glass.js" defer></script>
+<script type="importmap">{"imports":{"three":"../../../vendor/three/three.module.min.js","three/addons/":"../../../vendor/three/addons/"}}</script>
+</head>
+<body class="grain gk" data-id="N009" data-tier="normal" data-name="Glasskit Toggles">
+<a class="skip" href="#main">Skip to content</a>
+<div class="room" aria-hidden="false">
+  <div class="room-bg" aria-hidden="true"></div>
+  <div class="room-stage" data-stage><noscript><img class="poster" src="poster.webp" alt="Softly lit fog, petrol and rust shapes floating in a pale room"></noscript></div>
+</div>
+<header class="top">
+  <nav class="lg lg-nav site-nav" data-lg-adapt aria-label="Glasskit">
+    <a class="brand" href="#top"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.5c3.2 4 5.5 7 5.5 10a5.5 5.5 0 0 1-11 0c0-3 2.3-6 5.5-10z"/></svg><b>Glasskit</b><span class="concept">Concept</span></a>
+    <button class="lg lg-btn menu-btn" type="button" data-lg-open="menu" aria-haspopup="dialog"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg><span>Menu</span></button>
+  </nav>
+  <dialog class="lg lg-sheet lg-sheet--bottom menu" id="menu" aria-label="Menu">
+    <div class="lg-grabber" aria-hidden="true"></div>
+    <ul class="menu-list" role="list" tabindex="-1" autofocus>
+      <li><a href="#top" data-lg-close><span class="mono">01</span>Control centre</a></li>
+      <li><a href="#controls" data-lg-close><span class="mono">02</span>Controls</a></li>
+      <li><a href="#anatomy" data-lg-close><span class="mono">03</span>Anatomy</a></li>
+      <li><a href="#install" data-lg-close><span class="mono">04</span>Install</a></li>
+    </ul>
+    <a class="lg lg-btn lg--accent menu-cta" href="#get" data-lg-close>Get the kit<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </dialog>
+</header>
+<main id="main">
+  <!-- Structure 09 (spatial glass) with a 06 live-sandbox hero. Brief: brief.md -->
+  <section class="hero" id="top" aria-labelledby="h1">
+    <div class="wrap hero-in">
+      <div class="hero-copy">
+        <p class="tag" data-rv>UI kit &middot; Concept N009</p>
+        <h1 id="h1" class="title" data-rv>Glass that bends what&rsquo;s behind it.</h1>
+        <p class="lead" data-rv>Switches, sliders and segmented controls made of liquid glass. The room behind this page is live 3D, and the controls below change it.</p>
+        <div class="cta-row" data-rv>
+          <a class="lg lg-btn lg--accent big" href="#get">Get the kit<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="lg lg-btn big" href="#controls">See every control</a>
+        </div>
+      </div>
+      <div class="cc" aria-label="Control centre: these controls change the room behind the page">
+        <div class="lg lg-card tile t-wide" data-lg-refract="on" data-rv><p class="t-label mono">Light</p><div class="lg lg-seg" data-ctl="light" aria-label="Light"><button type="button" aria-pressed="false" value="morning">Morning</button><button type="button" aria-pressed="true" value="noon">Noon</button><button type="button" aria-pressed="false" value="dusk">Dusk</button></div></div>
+        <div class="lg lg-card tile t-sw" data-lg-refract="on" data-rv><p class="t-label mono">Drift</p><div class="sw-row"><span class="sw-state" id="drift-state">On</span><button class="lg-switch" type="button" aria-checked="true" aria-label="Drift: the shapes float" data-ctl="drift"></button></div></div>
+        <div class="lg lg-card tile t-sw" data-lg-refract="on" data-rv><p class="t-label mono">Gloss</p><div class="sw-row"><span class="sw-state" id="gloss-state">Off</span><button class="lg-switch" type="button" aria-checked="false" aria-label="Gloss: a lacquer coat on the shapes" data-ctl="gloss"></button></div></div>
+        <div class="lg lg-card tile t-wide" data-lg-refract="on" data-rv><p class="t-label mono">Refraction <output class="val num" id="refr-val">1.0&times;</output></p><div class="lg-slider"><input type="range" min="0" max="16" value="10" step="1" aria-label="Refraction strength of every glass surface" data-ctl="refract"></div><p class=t-desc>Bends every glass surface on this page, this one included.</p></div>
+        <div class="lg lg-card tile t-wide" data-lg-refract="on" data-rv><p class="t-label mono">Depth <output class="val num" id="depth-val">Mid</output></p><div class="lg-slider"><input type="range" min="0" max="100" value="45" aria-label="How close the shapes come to the glass" data-ctl="depth"></div></div>
+      </div>
+    </div>
+    <p class="sr-only" aria-live="polite" id="live"></p>
+  </section>
+
+  <section class="section controls" id="controls" aria-labelledby="controls-h">
+    <div class="wrap">
+      <div class="sec-head"><p class="tag" data-rv>01 &middot; Controls</p><h2 id="controls-h" class="h2" data-rv>Every part, one material.</h2>
+        <p class="body" data-rv>Each part is a real button, input or dialog underneath, so the keyboard and screen readers work before any glass is added.</p></div>
+      <div class="specimens">
+        <div class="lg lg-card tile s-seg" data-lg-refract="on" data-rv><p class="t-label mono">Segmented control</p><div class="lg lg-seg" aria-label="Range"><button type="button" aria-pressed="true">Day</button><button type="button" aria-pressed="false">Week</button><button type="button" aria-pressed="false">Month</button><button type="button" aria-pressed="false">Year</button></div><p class=t-desc>A glass lens slides to the choice on a spring. Arrow keys move it.</p></div>
+        <div class="lg lg-card tile s-sw" data-lg-refract="on" data-rv><p class="t-label mono">Switch</p><div class="sw-list"><label class="sw-line"><span>Haptics</span><button class="lg-switch" type="button" aria-checked="true" aria-label="Haptics"></button></label><label class="sw-line"><span>Sounds</span><button class="lg-switch" type="button" aria-checked="false" aria-label="Sounds"></button></label></div><p class=t-desc>The thumb turns clear and stretches while you hold it.</p></div>
+        <div class="lg lg-card tile s-sl" data-lg-refract="on" data-rv><p class="t-label mono">Slider</p><div class="vol"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12c2 0 2-3 4.5-3S10 15 12.5 15 15 9 17.5 9 19 12 21 12"/></svg><div class="lg-slider"><input type="range" min="0" max="100" value="62" aria-label="Volume" id="vol"></div><output class="num" id="vol-val">62</output></div><p class=t-desc>A native range on top, a glass lens underneath.</p></div>
+        <div class="lg lg-card tile s-btn" data-lg-refract="on" data-rv><p class="t-label mono">Buttons</p><div class="btn-row"><button class="lg lg-btn lg--accent" type="button">Primary</button><button class="lg lg-btn" type="button">Regular</button><button class="lg lg-btn lg--dark" type="button">Dark</button><button class="lg lg-btn lg-btn--icon" type="button" aria-label="Notifications" data-lg-tip="Tooltips open on hover, focus and tap"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.5 16.5V11a5.5 5.5 0 0 1 11 0v5.5l1.5 2H5z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg></button></div><p class=t-desc>Press any of them: they compress, the sheen brightens, then they let go.</p></div>
+        <div class="lg lg-card tile s-sheet" data-lg-refract="on" data-rv><p class="t-label mono">Sheet</p><button class="lg lg-btn" type="button" data-lg-open="demo-sheet"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4l8.5 4.5L12 13 3.5 8.5z"/><path d="M3.5 12.5L12 17l8.5-4.5"/><path d="M3.5 16.5L12 21l8.5-4.5"/></svg>Open a sheet</button><p class=t-desc>Escape, a tap outside or Done closes it, and focus comes back here.</p></div>
+      </div>
+      <dialog class="lg lg-sheet lg-sheet--bottom" id="demo-sheet" data-lg-refract="on" aria-labelledby="sheet-h">
+        <div class="lg-grabber" aria-hidden="true"></div>
+        <p class="mono sheet-k">Sheet</p>
+        <h3 id="sheet-h" class="sheet-h">A sheet made of glass.</h3>
+        <p class="sheet-p">It frosts harder than a button because it carries text, and it keeps the room visible at its edges so you never lose your place.</p>
+        <button class="lg lg-btn lg--accent" type="button" data-lg-close>Done</button>
+      </dialog>
+    </div>
+  </section>
+
+  <section class="section anatomy" id="anatomy" aria-labelledby="anatomy-h">
+    <div class="wrap anatomy-in">
+      <div class="anat-copy">
+        <p class="tag" data-rv>02 &middot; Anatomy</p>
+        <h2 id="anatomy-h" class="h2" data-rv>Take one apart.</h2>
+        <p class="body" data-rv>Every glass surface here is five layers. Switch them off one at a time and watch the tile turn back into a grey box.</p>
+        <ul class="layers" role="list" data-rv>
+          <li><span><b>Refraction</b><small>The rim bends the room like a lens.</small></span><button class="lg-switch" type="button" aria-checked="true" aria-label="Refraction layer" data-layer="refract"></button></li>
+          <li><span><b>Colour split</b><small>Red, green and blue bend by different amounts.</small></span><button class="lg-switch" type="button" aria-checked="true" aria-label="Colour split layer" data-layer="chroma"></button></li>
+          <li><span><b>Frost</b><small>Blur and saturation behind a thin tint.</small></span><button class="lg-switch" type="button" aria-checked="true" aria-label="Frost layer" data-layer="frost"></button></li>
+          <li><span><b>Specular edge</b><small>A glint top left, a weaker one bottom right.</small></span><button class="lg-switch" type="button" aria-checked="true" aria-label="Specular edge layer" data-layer="spec"></button></li>
+          <li><span><b>Depth</b><small>An inner glow and a soft petrol shadow.</small></span><button class="lg-switch" type="button" aria-checked="true" aria-label="Depth layer" data-layer="depth"></button></li>
+        </ul>
+      </div>
+      <div class="specimen-wrap" data-rv>
+        <div class="lg specimen" data-lg-strength="1.2" role="img" aria-label="A large glass tile used to show the five layers">
+          <span class="spec-k mono">Specimen</span><span class="spec-word">Glass</span><span class="spec-n mono" id="layer-count">5 of 5 layers</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section install" id="install" aria-labelledby="install-h">
+    <div class="wrap install-in">
+      <div class="inst-copy">
+        <p class="tag" data-rv>03 &middot; Install</p>
+        <h2 id="install-h" class="h2" data-rv>Two tags. <span class="soft">No build step.</span></h2>
+        <ol class="steps" role="list" data-rv>
+          <li><span class="mono">01</span><p>Copy the <code>kit</code> folder into your site.</p></li>
+          <li><span class="mono">02</span><p>Add the stylesheet and the script.</p></li>
+          <li><span class="mono">03</span><p>Put <code>lg</code> classes on real buttons, inputs and dialogs.</p></li>
+        </ol>
+        <p class="fine" data-rv>Safari and Firefox get the frosted glass without the rim refraction. Reduced transparency gets solid surfaces. Reduced motion gets no springs.</p>
+      </div>
+      <div class="lg lg-card code-card" data-rv>
+        <div class="code-top"><span class="mono">index.html</span><button class="lg lg-btn lg--clear copy" type="button" data-copy><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8.5" y="8.5" width="11" height="11" rx="2.5"/><path d="M15.5 8.5V6a1.5 1.5 0 0 0-1.5-1.5H6A1.5 1.5 0 0 0 4.5 6v8A1.5 1.5 0 0 0 6 15.5h2.5"/></svg><span class="copy-l">Copy</span></button></div>
+<pre class="code" tabindex="0"><code id="code">&lt;link rel="stylesheet" href="kit/liquid-glass.css"&gt;
+&lt;script src="kit/liquid-glass.js" defer&gt;&lt;/script&gt;
+
+&lt;div class="lg lg-seg" aria-label="Light"&gt;
+  &lt;button aria-pressed="true"&gt;Noon&lt;/button&gt;
+  &lt;button&gt;Dusk&lt;/button&gt;
+&lt;/div&gt;
+&lt;button class="lg-switch" aria-checked="true"
+        aria-label="Drift"&gt;&lt;/button&gt;</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="section get" id="get" aria-labelledby="get-h">
+    <div class="wrap get-in">
+      <div class="get-copy">
+        <p class="tag" data-rv>04 &middot; Get the kit</p>
+        <h2 id="get-h" class="h2" data-rv>Free, and it already exists.</h2>
+        <p class="body" data-rv>Glasskit is a concept brand, but the kit on this page is real: it ships as <code>skills/liquid-glass-ui</code> in the Zyqor Studio repository under the MIT licence. The form below shows how a sign-up would work. It sends nothing.</p>
+      </div>
+      <form class="lg lg-card get-form" novalidate data-rv aria-labelledby="form-h">
+        <p id="form-h" class="form-h">Release notes <span class="mono">Concept, nothing is sent</span></p>
+        <div class="field"><label for="g-email">Email</label><input id="g-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="g-err"><p class="err" id="g-err"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.5v.01"/></svg><span>Please add an email address.</span></p></div>
+        <div class="field"><span class="flabel" id="use-l">Where will you use it?</span>
+          <div class="lg lg-seg use-seg" role="group" aria-labelledby="use-l"><button type="button" aria-pressed="true" value="site">Website</button><button type="button" aria-pressed="false" value="app">Web app</button><button type="button" aria-pressed="false" value="proto">Prototype</button></div></div>
+        <label class="check"><input type="checkbox" name="notes" checked><span class="box" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Only major releases, never more than once a month</label>
+        <button class="lg lg-btn lg--accent submit" type="submit"><span class="s-idle">Send me release notes</span><span class="s-busy" aria-hidden="true"><i class="spin"></i>Sending</span></button>
+        <div class="done" role="status" tabindex="-1" hidden>
+          <p class="done-h"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Concept: not sent.</p>
+          <p class="done-p">Nothing left this page. <span class="done-sum"></span></p>
+          <button class="lg lg-btn" type="button" data-reset>Start again</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+<script type="module" src="../../_kit/chrome.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

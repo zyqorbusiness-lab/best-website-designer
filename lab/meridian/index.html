@@ -28,9 +28,11 @@
 </head>
 <body data-slug="meridian">
 <div class="cursor" aria-hidden="true"><span></span></div>
-<canvas class="gl" aria-hidden="true"></canvas>
+<canvas class="gl" aria-hidden="true" data-nogl="self"></canvas>
 <main id="main">
 <section class="hero" aria-label="Meridian Automatic">
+  <img class="mer-poster" src="../../assets/lab/meridian/hero-poster.webp" width="900" height="900" alt="The Meridian Automatic: a steel dress watch with a fluted bezel, sunburst green dial and tan leather strap (concept)" decoding="async" fetchpriority="high">
+  <span class="mer-prog" aria-hidden="true"></span>
   <nav class="mnav" aria-label="Concept site navigation"><a href="#" data-noop class="on">Collection</a><a href="#" data-noop>Calibre</a><a href="#" data-noop>Atelier</a><a href="#" data-noop>Journal</a></nav>
   <h1 class="giant"><span class="sr">Meridian Automatic, a concept watch</span><span class="gw" aria-hidden="true"><span class="ls"><span>M</span></span><span class="ls"><span>E</span></span><span class="ls"><span>R</span></span><span class="ls"><span>I</span></span><span class="ls"><span>D</span></span><span class="ls"><span>I</span></span><span class="ls"><span>A</span></span><span class="ls"><span>N</span></span></span></h1>
   <div class="h-left ui">
@@ -80,14 +82,17 @@
     <div class="k-cta"><button type="button" class="pill pill-a mag book" data-cur="Book">Request a viewing <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button><a href="#main" class="pill pill-g mag" data-cur="Top">Back to top <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a></div>
     <p class="toast" role="status" aria-live="polite"></p>
   </div>
+  <p class="mer-attr" data-rv="up" data-rv-d="5">3D watch model: <a href="https://sketchfab.com/3d-models/wrist-watch-88a72f698eda415d8217de52c86a650a" rel="noopener" target="_blank">&ldquo;Wrist watch&rdquo;</a> by <a href="https://sketchfab.com/a.aazhgirevich" rel="noopener" target="_blank">a.aazhgirevich</a>, <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener" target="_blank">CC BY 4.0</a>, modified by Zyqor Studio (logo and dial text removed, new materials and dial print).</p>
 </section>
 </main>
 <template id="credits">
   <li>Code and design: Zyqor Studio (MIT licence for the code).</li>
-  <li>The watch, strap and case are procedural three.js geometry and textures made for this concept (lathe and extruded parts, generated leather grain and sunburst maps). There is no model download and no photography.</li>
+  <li>Watch model: "Wrist watch" by a.aazhgirevich, <a href="https://sketchfab.com/3d-models/wrist-watch-88a72f698eda415d8217de52c86a650a" rel="noopener" target="_blank">sketchfab.com/3d-models/wrist-watch-88a72f698eda415d8217de52c86a650a</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener" target="_blank">CC BY 4.0</a>. Changed by Zyqor Studio: maker logo and dial text removed, re-scaled, hands re-set to 12, meshes optimised (meshopt), new materials and a new printed dial.</li>
+  <li>Strap leather surface: "Leather Red 02" by Rob Tuytel, Poly Haven, CC0 (normal and roughness maps, recoloured in code).</li>
+  <li>Made in code for this concept: the printed Meridian dial, the engraved caseback, the lume glow, the light sweep on the crystal and the presentation case.</li>
   <li>Studio lighting: "Studio Small 09" HDRI by Sergej Majboroda, Poly Haven, CC0.</li>
-  <li>Fonts: Anton by Vernon Adams and Inter Tight by Rasmus Andersson et al., SIL Open Font License 1.1.</li>
-  <li>Meridian, the calibre name and every spec on this page are fictional.</li>
+  <li>Fonts: Anton by Vernon Adams, Inter Tight by Rasmus Andersson et al. and Instrument Serif by Rodrigo Fuenzalida and Jordan Egstad, SIL Open Font License 1.1.</li>
+  <li>Meridian, the calibre name and every spec on this page are fictional. The watch is not a real product and no maker is implied.</li>
 </template>
 <script src="../../vendor/gsap.min.js" defer></script>
 <script src="../../vendor/ScrollTrigger.min.js" defer></script>

@@ -5,6 +5,8 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { glRenderer, stubRenderer, hasWebGL, showPoster, hidePoster } from './gl.js';
+export { glRenderer, stubRenderer, hasWebGL, showPoster, hidePoster };
 
 export const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 export const coarse = matchMedia('(hover: none) and (pointer: coarse)').matches;
@@ -20,14 +22,16 @@ export const MODELS = '../../assets/models/';
 export const modelURL = (name) => MODELS + name + Q.model;
 
 let _loader;
-export function loadGLB(url) {
+/* onProgress (optional) gets the loader's ProgressEvent: e.loaded / e.total bytes (total is 0 when the server sends no length) */
+export function loadGLB(url, onProgress) {
   if (!_loader) { _loader = new GLTFLoader(); _loader.setMeshoptDecoder(MeshoptDecoder); }
-  return _loader.loadAsync(url);
+  return _loader.loadAsync(url, onProgress);
 }
 
-/* Renderer with sane defaults (sRGB, ACES, DPR capped by the quality profile). */
+/* Renderer with sane defaults (sRGB, ACES, DPR capped by the quality profile).
+   No WebGL / no context: never throws; the canvas shows its still and a no-op stand-in comes back (gl.js). */
 export function makeRenderer(canvas, opts = {}) {
-  const r = new THREE.WebGLRenderer({ canvas, antialias: Q.aa, alpha: opts.alpha ?? true, powerPreference: 'high-performance' });
+  const r = glRenderer({ canvas, antialias: Q.aa, alpha: opts.alpha ?? true, powerPreference: 'high-performance' });
   r.setPixelRatio(Q.dpr);
   r.outputColorSpace = THREE.SRGBColorSpace;
   r.toneMapping = THREE.ACESFilmicToneMapping;
@@ -36,6 +40,7 @@ export function makeRenderer(canvas, opts = {}) {
 }
 /* Soft studio reflections (no HDR download). */
 export function studioEnv(renderer, blur = 0.04) {
+  if (renderer && renderer.isStub) return null;
   const pm = new THREE.PMREMGenerator(renderer);
   const t = pm.fromScene(new RoomEnvironment(), blur).texture;
   pm.dispose();

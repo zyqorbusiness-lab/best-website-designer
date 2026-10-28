@@ -1,0 +1,11 @@
+{
+ "title": "Scan 2023-05-10T19:41:07.547Z",
+ "author": "EGFoodScans",
+ "author_url": "https://sketchfab.com/Exuberance1323",
+ "source_url": "https://sketchfab.com/3d-models/scan-2023-05-10t194107547z-e530e845fadc4b5297f2b114e96006ba",
+ "licence": "CC BY 4.0",
+ "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+ "attribution": "\"Scan 2023-05-10T19:41:07.547Z\" by EGFoodScans (https://sketchfab.com/3d-models/scan-2023-05-10t194107547z-e530e845fadc4b5297f2b114e96006ba), Sketchfab, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Modified: cropped, scaled, simplified and compressed.",
+ "changes": "re-centred and scaled (rim radius 1), table/ground cropped, decimated to ~45k triangles with meshoptimizer, colour map resized to 1536 px WebP, meshopt-compressed glTF (gltf-transform); used as the \"Shoyu Classic\" bowl",
+ "downloaded": "2026-10-28"
+}

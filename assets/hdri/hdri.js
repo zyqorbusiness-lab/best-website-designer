@@ -33,7 +33,7 @@ export function loadHDRI(renderer, size = 512) {
 
 export function useHDRI(renderer, scene, opts = {}) {
   const size = opts.size === undefined ? 512 : opts.size;
-  if (!size) return Promise.resolve(null);
+  if (!size || (renderer && renderer.isStub)) return Promise.resolve(null); /* no WebGL (kit stand-in renderer): nothing to light, nothing to download */
   const start = () => loadHDRI(renderer, size).then((env) => {
     const old = scene.environment;
     scene.environment = env;

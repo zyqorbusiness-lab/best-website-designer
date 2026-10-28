@@ -1,42 +1,23 @@
-/* VOLT can, rebuilt for the Lab model upgrade (Zyqor Studio).
-   Real 250 ml sleek-can proportions (53 x 134 mm): lathe body with a necked shoulder, rolled double seam,
-   domed base with a stand ring, a countersunk lid with a panel bead, score line, rivet and a stamped pull tab.
-   Materials: brushed aluminium (anisotropic, circumferential roughness streaks), a printed wrap with metallic
-   ink vs matte ink vs bare-metal areas (one ORM canvas: R clearcoat, G roughness, B metalness), and condensation
-   droplets as a baked normal map plus real instanced water beads (transmission).
-   Round 2 (Oct 27): ONE quality for desktop and phone; baked webp maps in site/assets/lab/volt/; 3072 px print with micro-print. */
+/* VOLT can, v3 real-model upgrade (Zyqor Studio, Oct 28 2026).
+   The can itself is a REAL 3D model: "Aluminium can 500ml" by YouniqueĪdeaStudio (Sketchfab, CC-BY 4.0,
+   https://sketchfab.com/3d-models/aluminium-can-500ml-510892f099614171bb6167ab88de03d4): its body, necked shoulder,
+   rolled double seam, domed base, countersunk lid with score line, rivet and stay-on pull tab are the author's geometry.
+   What Zyqor Studio changed: aligned and scaled it, rotated the opening to the front, split the straight wall out with a
+   cylindrical UV so the fictional VOLT print can sit on it, and compressed it (meshopt) into ONE file that desktop
+   and phone both load: assets/lab/volt/volt-can.glb.
+   Code-made on top (named as code in the credits): the VOLT print and its ink/varnish map (canvas), the brushed and
+   spun-metal roughness maps (canvas), the condensation normal map (baked webp) and the instanced water beads. */
 import * as THREE from 'three';
+import { loadGLB } from '../_kit/kit.js';
 
-export const CAN_H = 2.625, CAN_R = 0.5;
+/* real proportions of the model (66 x 162 mm), scaled so the can is CAN_H tall; the print covers the straight wall */
+export const CAN_H = 2.625, CAN_R = 0.5318;
+export const WALL_Y0 = -1.1688, WALL_Y1 = 1.0136;
 
 /* deterministic random so every load looks the same */
 function rng(seed) { let s = seed >>> 0; return () => ((s = (s * 1664525 + 1013904223) >>> 0) / 4294967296); }
 
-/* --------- profile (x = radius, y = height from the base) --------- */
-function bodyProfile() {
-  // sampled through a centripetal Catmull-Rom so the seams and shoulder read as rolled metal, not facets
-  const k = [
-    [0.0, 0.168], [0.12, 0.163], [0.24, 0.146], [0.32, 0.118], [0.368, 0.076], [0.39, 0.03], [0.398, 0.006], [0.408, 0.0],
-    [0.42, 0.004], [0.44, 0.022], [0.465, 0.058], [0.486, 0.106], [0.497, 0.16], [0.5, 0.215],
-    [0.5, 0.6], [0.5, 1.2], [0.5, 1.8], [0.5, 2.235],
-    [0.498, 2.285], [0.49, 2.335], [0.474, 2.39], [0.455, 2.443], [0.438, 2.49], [0.428, 2.525], [0.425, 2.548],
-    [0.428, 2.562], [0.438, 2.577], [0.4455, 2.594], [0.4465, 2.608], [0.441, 2.62], [0.43, 2.626], [0.419, 2.622],
-    [0.413, 2.606], [0.41, 2.585], [0.407, 2.565],
-  ];
-  const pts = k.map(([x, y]) => new THREE.Vector3(x, y, 0));
-  const cr = new THREE.CatmullRomCurve3(pts, false, 'centripetal');
-  return cr.getSpacedPoints(220).map((p) => new THREE.Vector2(Math.min(CAN_R, Math.max(0, p.x)), p.y - CAN_H / 2));
-}
-function lidProfile() {
-  const k = [
-    [0.0, 2.556], [0.05, 2.556], [0.2, 2.5555], [0.29, 2.556], [0.305, 2.5605], [0.322, 2.5615], [0.338, 2.557],
-    [0.37, 2.5555], [0.392, 2.5545], [0.401, 2.547], [0.405, 2.548], [0.408, 2.556], [0.409, 2.568],
-  ];
-  const cr = new THREE.CatmullRomCurve3(k.map(([x, y]) => new THREE.Vector3(x, y, 0)), false, 'centripetal');
-  return cr.getSpacedPoints(70).map((p) => new THREE.Vector2(Math.max(0, p.x), p.y - CAN_H / 2)).reverse(); // outer edge first so the faces point up
-}
 
-/* --------- generated textures --------- */
 function canvasTex(c, srgb) { const t = new THREE.CanvasTexture(c); if (srgb) t.colorSpace = THREE.SRGBColorSpace; return t; }
 
 /* circumferential brushing: rows of slightly different roughness (u runs around the can) */
@@ -77,67 +58,30 @@ export function dropletNormals(size, count, seed) {
 }
 
 /* lid: planar UVs so the score line, the bead and the stamping can be drawn as a bump map */
-function lidTextures(S) {
-  const mk = () => { const c = document.createElement('canvas'); c.width = c.height = S; return [c, c.getContext('2d')]; };
-  const [cc, g] = mk(), m = S / 2, r = rng(11);
-  // colour: aluminium with fine concentric tooling rings
-  const gr = g.createRadialGradient(m, m, 0, m, m, m); gr.addColorStop(0, '#eef0f2'); gr.addColorStop(0.8, '#d6dadf'); gr.addColorStop(1, '#c3c8ce');
-  g.fillStyle = gr; g.fillRect(0, 0, S, S);
-  for (let rad = 2; rad < m; rad += 0.9 * S / 1024) { g.strokeStyle = `rgba(${r() < 0.5 ? '255,255,255' : '70,76,84'},${(r() * 0.025).toFixed(3)})`; g.lineWidth = 0.8; g.beginPath(); g.arc(m, m, rad, 0, 7); g.stroke(); }
-  const col = canvasTex(cc, true);
-  return { col };
-}
-function planarLidUV(geo) {
-  const p = geo.attributes.position, uv = geo.attributes.uv;
-  for (let i = 0; i < p.count; i++) uv.setXY(i, p.getX(i) / 0.82 + 0.5, 0.5 - p.getZ(i) / 0.82);
-  uv.needsUpdate = true;
+/* spun lid: concentric tooling rings in the roughness channel (planar UV centred on the lid) */
+function spinTex(n, seed) {
+  const c = document.createElement('canvas'); c.width = c.height = n; const g = c.getContext('2d'); const r = rng(seed);
+  g.fillStyle = 'rgb(255,150,255)'; g.fillRect(0, 0, n, n);
+  for (let rad = n * 0.5; rad > 2; rad -= 1 + r() * 1.6) {
+    const v = 150 + (r() - 0.5) * 46 + (r() < 0.05 ? 30 : 0);
+    g.strokeStyle = `rgb(255,${v | 0},255)`; g.lineWidth = 1.2; g.beginPath(); g.arc(n / 2, n / 2, rad, 0, Math.PI * 2); g.stroke();
+  }
+  const t = canvasTex(c, false); return t;
 }
 
-/* the pull tab: stamped outline with a finger ring, a nose and the U-slot around the rivet */
-function tabGeometry() {
-  const sh = new THREE.Shape();
-  // outline in (x, y): y+ is the nose (over the opening), y- the finger ring
-  sh.moveTo(0, 0.135);
-  sh.bezierCurveTo(0.07, 0.135, 0.105, 0.1, 0.11, 0.04);
-  sh.bezierCurveTo(0.118, -0.04, 0.128, -0.1, 0.125, -0.16);
-  sh.bezierCurveTo(0.12, -0.25, 0.06, -0.29, 0, -0.29);
-  sh.bezierCurveTo(-0.06, -0.29, -0.12, -0.25, -0.125, -0.16);
-  sh.bezierCurveTo(-0.128, -0.1, -0.118, -0.04, -0.11, 0.04);
-  sh.bezierCurveTo(-0.105, 0.1, -0.07, 0.135, 0, 0.135);
-  const ring = new THREE.Path(); // finger hole
-  ring.moveTo(0, -0.105); ring.bezierCurveTo(0.075, -0.105, 0.085, -0.15, 0.083, -0.18); ring.bezierCurveTo(0.08, -0.235, 0.045, -0.252, 0, -0.252);
-  ring.bezierCurveTo(-0.045, -0.252, -0.08, -0.235, -0.083, -0.18); ring.bezierCurveTo(-0.085, -0.15, -0.075, -0.105, 0, -0.105);
-  sh.holes.push(ring);
-  const slot = new THREE.Path(); // U-shaped slot around the rivet tongue
-  slot.moveTo(-0.05, 0.035); slot.lineTo(-0.05, -0.03); slot.bezierCurveTo(-0.05, -0.068, 0.05, -0.068, 0.05, -0.03); slot.lineTo(0.05, 0.035);
-  slot.lineTo(0.036, 0.035); slot.lineTo(0.036, -0.026); slot.bezierCurveTo(0.036, -0.05, -0.036, -0.05, -0.036, -0.026); slot.lineTo(-0.036, 0.035); slot.lineTo(-0.05, 0.035);
-  sh.holes.push(slot);
-  const g = new THREE.ExtrudeGeometry(sh, { depth: 0.006, bevelEnabled: true, bevelSize: 0.0055, bevelThickness: 0.004, bevelSegments: 3, curveSegments: 18 });
-  // lie it on the lid: shape y -> -z? nose toward +z (the opening side), slight lift toward the ring
-  g.rotateX(-Math.PI / 2);
-  g.rotateY(Math.PI); // round 2: the nose sits over the scored opening (+z), the finger ring over the finger well (-z)
-  const p = g.attributes.position;
-  for (let i = 0; i < p.count; i++) { const z = p.getZ(i); if (z < 0) p.setY(i, p.getY(i) + Math.pow(-z / 0.29, 2) * 0.012); }
-  p.needsUpdate = true; g.computeVertexNormals();
-  g.translate(0, 2.5605 - CAN_H / 2, 0);
+/* quantized glTF nodes carry their dequantisation in the node transform: bake it into plain float geometry */
+function bakeGeo(mesh) {
+  mesh.updateWorldMatrix(true, false);
+  const g = mesh.geometry.clone();
+  for (const k of Object.keys(g.attributes)) {
+    const a = g.attributes[k], n = a.itemSize, f = new Float32Array(a.count * n);
+    for (let i = 0; i < a.count; i++) { f[i * n] = a.getX(i); if (n > 1) f[i * n + 1] = a.getY(i); if (n > 2) f[i * n + 2] = a.getZ(i); if (n > 3) f[i * n + 3] = a.getW(i); }
+    g.setAttribute(k, new THREE.BufferAttribute(f, n));
+  }
+  g.applyMatrix4(mesh.matrixWorld);
+  if (g.attributes.normal) g.normalizeNormals();
+  g.computeBoundingSphere();
   return g;
-}
-
-
-/* the tab's stamping: brushed grain along its length, a stiffening bead around the finger ring and up the spine, a small deboss */
-function tabBump() {
-  const Wc = 512, Hc = 848, c = document.createElement('canvas'); c.width = Wc; c.height = Hc; const g = c.getContext('2d'), r = rng(31);
-  g.fillStyle = '#808080'; g.fillRect(0, 0, Wc, Hc);
-  for (let x = 0; x < Wc; x += 1) { g.fillStyle = `rgba(${r() < 0.5 ? '255,255,255' : '0,0,0'},${(r() * 0.09).toFixed(3)})`; g.fillRect(x, 0, 1, Hc); }
-  // shape coords -> canvas: u = (x + 0.13) / 0.26, v = (y + 0.29) / 0.43 (canvas y grows downward, texture flipY)
-  const X = (x) => ((x + 0.13) / 0.26) * Wc, Y = (y) => (1 - (y + 0.29) / 0.43) * Hc;
-  g.filter = 'blur(3px)'; g.strokeStyle = '#d8d8d8'; g.lineWidth = 16;
-  g.beginPath(); g.ellipse(X(0), Y(-0.178), 0.104 / 0.26 * Wc, 0.092 / 0.43 * Hc, 0, 0, 7); g.stroke();
-  g.beginPath(); g.moveTo(X(-0.07), Y(-0.08)); g.lineTo(X(-0.075), Y(0.05)); g.moveTo(X(0.07), Y(-0.08)); g.lineTo(X(0.075), Y(0.05)); g.stroke();
-  g.filter = 'blur(1.5px)'; g.fillStyle = '#5a5a5a'; g.font = '800 46px "Inter Tight", Arial, sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle';
-  g.save(); g.translate(X(0), Y(0.095)); g.scale(-1, 1); g.fillText('VOLT', 0, 0); g.restore(); // mirrored: the tab is turned 180 deg
-  g.filter = 'none';
-  const t = new THREE.CanvasTexture(c); t.repeat.set(1 / 0.26, 1 / 0.43); t.offset.set(0.5, 0.29 / 0.43); t.anisotropy = 8; return t;
 }
 
 /* --------- baked maps (Python, see work/assets_upgrade2/volt/bake_src.py), the SAME files on desktop and phone --------- */
@@ -180,40 +124,39 @@ function beadMatrices(seed) {
   return out;
 }
 
-/* --------- shared geometry + materials, built once (one quality for every screen) --------- */
-export function canKit({ aniso = 8 } = {}) {
+/* --------- shared model + materials, built once (one quality for every screen) --------- */
+export function canKit({ aniso = 8, load = true } = {}) {
   const SEG = 128, ready = [];
-  const body = new THREE.LatheGeometry(bodyProfile(), SEG); body.computeTangents();
-  const lid = new THREE.LatheGeometry(lidProfile(), SEG); planarLidUV(lid);
-  // the printed wrap covers the straight wall only, a hair proud of the metal
-  const wrapH = 2.235 - 0.215;
-  const wrap = new THREE.CylinderGeometry(CAN_R * 1.0025, CAN_R * 1.0025, wrapH, SEG * 2, 1, true, Math.PI, Math.PI * 2);
-  wrap.translate(0, 0.215 + wrapH / 2 - CAN_H / 2, 0); wrap.computeTangents();
-  const tab = tabGeometry();
-  const rivet = new THREE.SphereGeometry(0.032, 24, 12, 0, Math.PI * 2, 0, Math.PI / 2); rivet.scale(1, 0.28, 1); rivet.translate(0, 2.5625 - CAN_H / 2, 0);
+  // the real model: one GLB, the same file on desktop and phone (not fetched at all without WebGL)
+  const geo = { wall: null, shell: null, lid: null, tab: null };
+  const model = !load ? Promise.resolve(geo) : loadGLB(ASSETS + 'volt-can.glb').then((gltf) => {
+    gltf.scene.updateMatrixWorld(true);
+    for (const k of Object.keys(geo)) { const m = gltf.scene.getObjectByName('volt_' + k); if (m && m.isMesh) geo[k] = bakeGeo(m); }
+    return geo;
+  });
+  ready.push(model.catch(() => geo));
 
   const brush = brushTex(1024, 5);
-  const drops = bakedTex('drops_n.webp', 'rgb(128,128,255)', false, ready); drops.wrapS = drops.wrapT = THREE.RepeatWrapping; drops.anisotropy = aniso;
+  const drops = load ? bakedTex('drops_n.webp', 'rgb(128,128,255)', false, ready) : new THREE.Texture(); drops.wrapS = drops.wrapT = THREE.RepeatWrapping; drops.anisotropy = aniso;
   const dropsBody = drops.clone(); dropsBody.repeat.set(5, 4.4);
+  // bare aluminium: foot, dome, shoulder, neck and double seam
   const alu = new THREE.MeshPhysicalMaterial({
     color: 0xdfe3e8, metalness: 1, roughness: 0.4, roughnessMap: brush, envMapIntensity: 0.8,
     clearcoat: 0.4, clearcoatRoughness: 0.1, anisotropy: 0.55, anisotropyRotation: 0,
     normalMap: dropsBody, normalScale: new THREE.Vector2(0.3, 0.3), clearcoatNormalMap: dropsBody, clearcoatNormalScale: new THREE.Vector2(0.9, 0.9),
   });
-  const lt = lidTextures(2048);
-  const lidN = bakedTex('lid_n.webp', 'rgb(128,128,255)', false, ready), lidR = bakedTex('lid_r.webp', 'rgb(77,77,77)', false, ready);
-  lidN.anisotropy = lidR.anisotropy = aniso;
-  const lidMat = new THREE.MeshPhysicalMaterial({ color: 0xeef0f3, map: lt.col, normalMap: lidN, normalScale: new THREE.Vector2(0.75, 0.75), roughnessMap: lidR,
-    metalness: 1, roughness: 1.1, clearcoat: 0.2, clearcoatRoughness: 0.2, envMapIntensity: 1.15 });
-  lt.col.anisotropy = aniso;
-  const tabMat = new THREE.MeshPhysicalMaterial({ color: 0xdde1e6, metalness: 1, roughness: 0.3, bumpMap: tabBump(), bumpScale: 1.4, clearcoat: 0.45, clearcoatRoughness: 0.12, envMapIntensity: 1.35, anisotropy: 0.4 });
-  const rivetMat = tabMat.clone(); rivetMat.bumpMap = null;
+  // lid and tab: the model's own embossing, a spun / brushed finish on top
+  const spin = spinTex(1024, 9); spin.anisotropy = aniso;
+  const lidMat = new THREE.MeshPhysicalMaterial({ color: 0xf1f3f6, metalness: 1, roughness: 0.62, roughnessMap: spin,
+    clearcoat: 0.2, clearcoatRoughness: 0.3, envMapIntensity: 1.45 });
+  const tabMat = new THREE.MeshPhysicalMaterial({ color: 0xe6e9ed, metalness: 1, roughness: 0.42, roughnessMap: brush,
+    clearcoat: 0.45, clearcoatRoughness: 0.12, envMapIntensity: 1.25 });
   // water: clear, refractive, very glossy
   const beadGeo = new THREE.SphereGeometry(1, 20, 10, 0, Math.PI * 2, 0, Math.PI / 2);
   const beadMat = new THREE.MeshPhysicalMaterial({ color: 0xffffff, metalness: 0, roughness: 0.04, transmission: 1, thickness: 0.05, ior: 1.33,
     specularIntensity: 0.85, envMapIntensity: 1.1, attenuationColor: new THREE.Color(0xf4fbff), attenuationDistance: 0.5 });
   const beads = beadMatrices(21);
-  return { SEG, body, lid, wrap, tab, rivet, alu, lidMat, tabMat, rivetMat, drops, aniso, beadGeo, beadMat, beads, ready: Promise.all(ready) };
+  return { SEG, geo, model, alu, lidMat, tabMat, drops, aniso, beadGeo, beadMat, beads, ready: Promise.all(ready) };
 }
 
 /* --------- the printed wrap: colour pass + ORM pass drawn by the same routine --------- */
@@ -268,7 +211,7 @@ export function drawWrap(f, W, pass) {
   g.fillStyle = P(f.txt, ORM.matteInk); g.font = `700 ${17 * s}px "Inter Tight", sans-serif`;
   g.fillText('SPARKLING ENERGY', fx, H * 0.43 + 128 * s); g.fillText('80 MG CAFFEINE  \u00B7  0 SUGAR', fx, H * 0.43 + 152 * s);
   // the back: volume, concept note, a made-up barcode on a white panel
-  g.font = `400 ${46 * s}px Anton, Impact, sans-serif`; g.fillText('250 ML', 40 * s, H * 0.3);
+  g.font = `400 ${46 * s}px Anton, Impact, sans-serif`; g.fillText('500 ML', 40 * s, H * 0.3);
   g.font = `700 ${14 * s}px "Inter Tight", sans-serif`;
   g.fillText('CONCEPT CAN  \u00B7  NOT FOR SALE', 40 * s, H * 0.3 + 30 * s); g.fillText('ZYQOR LAB 07', 40 * s, H * 0.3 + 52 * s);
   g.fillStyle = P('#F4F7FA', ORM.white); g.fillRect(W - 190 * s, H * 0.62, 150 * s, 92 * s);
@@ -293,7 +236,7 @@ export function drawWrap(f, W, pass) {
   // nutrition panel on the back-left
   { const x0 = 40 * s, y0 = H * 0.43, w = 205 * s; g.textAlign = 'left'; g.textBaseline = 'alphabetic';
     g.fillStyle = ink; g.font = `800 ${13 * s}px "Inter Tight", Arial, sans-serif`; g.fillText('NUTRITION', x0, y0);
-    g.font = `600 ${8.5 * s}px "Inter Tight", Arial, sans-serif`; g.fillText('TYPICAL VALUES PER 250 ML CAN', x0, y0 + 13 * s);
+    g.font = `600 ${8.5 * s}px "Inter Tight", Arial, sans-serif`; g.fillText('TYPICAL VALUES PER 500 ML CAN', x0, y0 + 13 * s);
     g.fillRect(x0, y0 + 18 * s, w, 2.2 * s);
     const rows = [['Energy', '46 kJ / 11 kcal'], ['Fat', '0 g'], ['  of which saturates', '0 g'], ['Carbohydrate', '2.8 g'], ['  of which sugars', '0 g'],
       ['Protein', '0 g'], ['Salt', '0.10 g'], ['Caffeine', '80 mg'], ['Vitamin B3', '8.0 mg (50%*)'], ['Vitamin B6', '1.0 mg (71%*)'], ['Vitamin B12', '1.0 \u00b5g (40%*)']];
@@ -339,13 +282,14 @@ export function wrapMaterial(kit) {
   m.clearcoatNormalMap = d; m.clearcoatNormalScale = new THREE.Vector2(1.0, 1.0);
   return m;
 }
-/* the print: 3072 px colour (about 18 px per mm on a 53 mm can) and a 2048 px ORM, the same on every screen */
+/* the print: 3072 px colour (about 15 px per mm around the 66 mm can) and a 2048 px ORM, the same on every screen */
 export function paintWrap(kit, mat, f) {
   const W = 3072;
   const col = canvasTex(drawWrap(f, W, 'col'), true); col.anisotropy = kit.aniso;
   const big = drawWrap(f, W, 'orm'), half = document.createElement('canvas'); half.width = 2048; half.height = Math.round(big.height * 2048 / W);
   const hg = half.getContext('2d'); hg.imageSmoothingQuality = 'high'; hg.drawImage(big, 0, 0, half.width, half.height);
   const orm = canvasTex(half, false); orm.anisotropy = kit.aniso;
+  col.wrapS = orm.wrapS = THREE.RepeatWrapping; // the wall UV runs a hair past 1.0 at the seam
   for (const k of ['map', 'roughnessMap', 'metalnessMap', 'clearcoatMap']) if (mat[k]) mat[k].dispose();
   mat.map = col; mat.roughnessMap = orm; mat.metalnessMap = orm; mat.clearcoatMap = orm;
   mat.needsUpdate = true;
@@ -353,8 +297,10 @@ export function paintWrap(kit, mat, f) {
 
 export function buildCan(kit, wrapMat) {
   const spin = new THREE.Group();
-  spin.add(new THREE.Mesh(kit.body, kit.alu), new THREE.Mesh(kit.wrap, wrapMat), new THREE.Mesh(kit.lid, kit.lidMat),
-    new THREE.Mesh(kit.tab, kit.tabMat), new THREE.Mesh(kit.rivet, kit.rivetMat));
+  const add = (g) => {
+    spin.add(new THREE.Mesh(g.wall, wrapMat), new THREE.Mesh(g.shell, kit.alu), new THREE.Mesh(g.lid, kit.lidMat), new THREE.Mesh(g.tab, kit.tabMat));
+  };
+  if (kit.geo.wall) add(kit.geo); else kit.model.then(add).catch(() => {});
   const beads = new THREE.InstancedMesh(kit.beadGeo, kit.beadMat, kit.beads.length);
   kit.beads.forEach((mx, i) => beads.setMatrixAt(i, mx)); beads.instanceMatrix.needsUpdate = true; beads.computeBoundingSphere();
   spin.add(beads); spin.userData.beads = beads;

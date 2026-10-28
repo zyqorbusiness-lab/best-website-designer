@@ -1,0 +1,13 @@
+{
+ "title": "Modern Arm Chair 01",
+ "author": "Vibrant Nordic",
+ "author_url": "https://polyhaven.com/all?a=Vibrant%20Nordic",
+ "source_url": "https://polyhaven.com/a/modern_arm_chair_01",
+ "licence": "CC0 1.0",
+ "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+ "attribution": "\"Modern Arm Chair 01\" by Vibrant Nordic, Poly Haven (https://polyhaven.com/a/modern_arm_chair_01), CC0 1.0 (courtesy credit; no attribution required)",
+ "changes": "rebuilt from 4K source; upholstery diffuse greyscaled so the fabric switch can tint it; meshopt + WebP",
+ "downloaded": "2026-10-27",
+ "file": "chair-d.glb",
+ "credit_written_by": "credits backfill 2026-10-28 (work/beast/credits/backfill)"
+}

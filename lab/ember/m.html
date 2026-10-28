@@ -45,7 +45,9 @@
     <p class="t-h1"><span>Roasted</span><span>over oak</span><span class="acc">embers.</span></p>
     <p class="t-sub">Every bean meets real fire, slow heat and a long rest before it meets your cup.</p>
   </div></div></div><svg class="fib" aria-hidden="true"></svg></div>
+  <img class="ep ep-beans" src="../../assets/lab/ember/poster-beans-m.webp" alt="" aria-hidden="true" decoding="async" fetchpriority="high">
   <canvas class="beans" aria-hidden="true"></canvas>
+  <div class="ep-load" aria-hidden="true"><i></i></div>
   <div class="t-cue" aria-hidden="true"><span>Scroll to tear it open</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
 </div>
 
@@ -54,7 +56,7 @@
 
 <main id="main">
   <div class="stage" id="stage">
-    <div class="hero-back" aria-hidden="true"><p class="h-word">EMBER</p></div>
+    <div class="hero-back" aria-hidden="true"><p class="h-word">EMBER</p><img class="ep ep-cups" src="../../assets/lab/ember/poster-cups-m.webp" alt="" decoding="async" loading="lazy"></div>
     <section class="hero" aria-labelledby="hero-h">
       <div class="cup-a h-cup" data-cup="hero" data-s="1" data-tilt="0.22"></div>
       <div class="h-left">
@@ -142,6 +144,7 @@
       <p data-rv="up" data-rv-d="1">The first roast list opens soon. Leave your name at the counter and we will save you a bag.</p>
       <a class="btn big mag" href="#order" id="cta" data-cursor="Join">Join the first roast <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <p class="toast" id="toast" role="status" aria-live="polite"></p>
+      <p class="attr">3D models: <a href="https://sketchfab.com/3d-models/cup-of-cappuccino-2beccb20ab744cabaeaddb36487f5cd7" target="_blank" rel="noopener">&ldquo;Cup of Cappuccino&rdquo;</a> by Krzysztof Mazia and <a href="https://sketchfab.com/3d-models/coffee-beans-8146e99925fb4b49839e4fa7ace83f0f" target="_blank" rel="noopener">&ldquo;Coffee beans&rdquo;</a> by kouitimizuno, both <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>, modified by Zyqor Studio.</p>
     </div>
   </section>
 </main>
@@ -149,9 +152,11 @@
 
 
 <template id="credits">
-  <li>Code, design and every 3D object (stoneware cup and saucer, steel teaspoon, crema and latte art, coffee beans, steam): Zyqor Studio, modelled in code with three.js (MIT licence for the code).</li>
-  <li>Studio lighting: "Studio Small 09" HDRI by Sergej Majboroda, Poly Haven, CC0.</li>
-  <li>Fonts: Anton by Vernon Adams and Inter Tight by Rasmus Andersson et al., SIL Open Font Licence, via Google Fonts (self-hosted).</li>
+  <li>3D cup and saucer: <a href="https://sketchfab.com/3d-models/cup-of-cappuccino-2beccb20ab744cabaeaddb36487f5cd7" target="_blank" rel="noopener">"Cup of Cappuccino"</a> by <a href="https://sketchfab.com/mazia" target="_blank" rel="noopener">Krzysztof Mazia</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>. Modified: coffee and foam removed, re-glazed in the Ember roast colours, compressed.</li>
+  <li>3D coffee bean: <a href="https://sketchfab.com/3d-models/coffee-beans-8146e99925fb4b49839e4fa7ace83f0f" target="_blank" rel="noopener">"Coffee beans"</a> photogrammetry scan by <a href="https://sketchfab.com/kouitimizuno" target="_blank" rel="noopener">kouitimizuno</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>. Modified: recoloured per roast, maps resized, compressed.</li>
+  <li>Code and design (crema and latte art, steam, ember sparks, glaze shading): Zyqor Studio, three.js (MIT licence for the code).</li>
+  <li>Studio lighting: <a href="https://polyhaven.com/a/studio_small_09" target="_blank" rel="noopener">"Studio Small 09"</a> HDRI by Sergej Majboroda, Poly Haven, CC0 1.0.</li>
+  <li>Fonts: Zodiak, Satoshi and Cabinet Grotesk by Indian Type Foundry, via Fontshare, ITF Free Font License (FFL) 2.0 (self-hosted).</li>
   <li>Inspiration: paper-tear and travelling-object patterns from Instagram design reels; no assets reused.</li>
 </template>
 <script type="module" src="../_kit/chrome.js"></script>

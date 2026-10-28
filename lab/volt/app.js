@@ -1,4 +1,4 @@
-/* VOLT - Concept 07, Zyqor Lab. One fixed WebGL canvas; three procedural cans travel
+/* VOLT - Concept 07, Zyqor Lab. One fixed WebGL canvas; three cans (a real CC-BY can model, see can.js) travel
    hero (inside the wordmark) -> flavour carousel (colour flood) -> CTA fan. Shared by index.html and m.html. */
 import { THREE, Q, isM, reduced, coarse, makeRenderer, studioEnv, reveals, smooth, clamp, damp, lerp } from '../_kit/kit.js';
 import { modeSwitch } from './mode.js';
@@ -82,15 +82,23 @@ function pointerFX() {
 /* ---------- WebGL cans ---------- */
 const canvas = $('#gl');
 /* one renderer for every screen (round 2): antialiased, DPR capped at 2 on desktop AND phone, ACES */
-const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
-renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 2));
-renderer.outputColorSpace = THREE.SRGBColorSpace;
-renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 0.95;
-if ('transmissionResolutionScale' in renderer) renderer.transmissionResolutionScale = 0.6; // the water beads' refraction pass
+/* no WebGL (blocked, very old GPU, failed context): the page still works, with real stills of the model in the cans' places */
+const HAS_GL = (() => { try { const c = document.createElement('canvas'); return !!(window.WebGLRenderingContext && (c.getContext('webgl2') || c.getContext('webgl'))); } catch (e) { return false; } })();
+let renderer = null;
+if (HAS_GL) { try { renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' }); } catch (e) { renderer = null; } }
+let GL = !!renderer;
+if (!GL) root.classList.add('no-gl');
 const scene = new THREE.Scene();
-scene.environment = studioEnv(renderer, 0.035);
-/* the shared Poly Haven studio HDRI (CC0, 1k) replaces the procedural room once it has loaded: same file on desktop and phone */
-useHDRI(renderer, scene, { size: 1024, intensity: 1.25, rotation: 1.6 });
+if (GL) {
+  renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 2));
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 0.95;
+  if ('transmissionResolutionScale' in renderer) renderer.transmissionResolutionScale = 0.6; // the water beads' refraction pass
+  scene.environment = studioEnv(renderer, 0.035);
+  /* the shared Poly Haven studio HDRI (CC0, 1k) replaces the procedural room once it has loaded: same file on desktop and phone */
+  useHDRI(renderer, scene, { size: 1024, intensity: 1.25, rotation: 1.6 });
+  canvas.addEventListener('webglcontextlost', (e) => { e.preventDefault(); GL = false; root.classList.add('no-gl'); root.classList.remove('gl-ready'); });
+}
 const cam = new THREE.PerspectiveCamera(30, 1, 0.1, 100);
 const CAMZ = 12; cam.position.set(0, 0, CAMZ);
 const key = new THREE.DirectionalLight(0xffffff, 1.3); key.position.set(-4, 6, 8); scene.add(key);
@@ -100,7 +108,18 @@ const rimL = new THREE.PointLight(FL[0].rim, 30, 20, 2); rimL.position.set(-4, 1
 const rimR = new THREE.PointLight(0xFF9F1C, 24, 20, 2); rimR.position.set(4, -1, -2); scene.add(rimR);
 const flash = new THREE.PointLight(0xF4FFD0, 0, 30, 2); flash.position.set(0, 3, 5); scene.add(flash);
 
-const kit = canKit({ aniso: Math.min(8, renderer.capabilities.getMaxAnisotropy()) });
+const kit = canKit({ aniso: GL ? Math.min(8, renderer.capabilities.getMaxAnisotropy()) : 1, load: GL });
+/* poster first: a real still of each can (rendered from the same model) holds the can's place until the 3D model is in,
+   and stays as the picture when there is no WebGL */
+const stillBox = document.createElement('div'); stillBox.className = 'can-stills'; stillBox.setAttribute('aria-hidden', 'true');
+document.body.appendChild(stillBox);
+const stills = FL.map((f, i) => { const im = new Image(); im.alt = ''; im.decoding = 'async'; stillBox.appendChild(im); return im; });
+const stillSrc = (i) => { if (!stills[i].src) stills[i].src = `../../assets/lab/volt/still-${i}.webp`; };
+/* the hero still always; the other two only without WebGL, or if the model is slow (they cost nothing once the 3D is in) */
+stillSrc(0); if (!GL) { stillSrc(1); stillSrc(2); } else setTimeout(() => { if (!modelIn) { stillSrc(1); stillSrc(2); } }, 2500);
+let modelIn = false, labelsIn = false;
+function modelReady() { if (!modelIn && labelsIn && GL && kit.geo.wall) { modelIn = true; root.classList.add('gl-ready'); } }
+kit.model.then(modelReady);
 const SEG = kit.SEG;
 const shTex = contactShadowTex();
 const cans = FL.map((f, i) => {
@@ -131,7 +150,7 @@ function measureHero() {
 let HM = null;
 function resize() {
   VW = innerWidth; VH = innerHeight;
-  renderer.setSize(VW, VH, false); canvas.style.height = VH + 'px';
+  if (renderer) renderer.setSize(VW, VH, false); canvas.style.height = VH + 'px';
   cam.aspect = VW / VH; cam.updateProjectionMatrix();
   WPP = (2 * CAMZ * Math.tan(THREE.MathUtils.degToRad(15))) / VH;
   HM = measureHero(); applyGap();
@@ -258,7 +277,7 @@ function frame(now) {
   const hr = hero.getBoundingClientRect(), cr = flav.getBoundingClientRect(), tr = ctaCans.getBoundingClientRect();
   const heroVis = hr.bottom > 0, carVis = cr.top < VH && cr.bottom > 0, ctaVis = tr.top < VH && tr.bottom > 0;
   const vis = heroVis || carVis || ctaVis;
-  if (vis !== shown) { shown = vis; canvas.style.visibility = vis ? 'visible' : 'hidden'; }
+  if (vis !== shown) { shown = vis; canvas.style.visibility = vis ? 'visible' : 'hidden'; stillBox.style.visibility = vis ? '' : 'hidden'; }
   if (!vis) return;
   const ctaMode = cr.bottom < 0;
   // hero anchor from the gap in the wordmark
@@ -304,9 +323,15 @@ function frame(now) {
     // contact shadow under the can
     const bottom = wy - (CAN_H / 2) * s * Math.cos(rz);
     c.sh.position.set(wx, bottom - 0.02, z); c.sh.scale.set(s * 1.5, s * 0.62, 1); c.sh.material.opacity = shOp * (1 - Math.abs(rz));
+    if (!modelIn || !GL) { // the still stands exactly where the 3D can will be (same anchor, height and tilt)
+      const im = stills[c.i], k2 = CAMZ / Math.max(1, CAMZ - z), hpx2 = sh * k2;
+      im.style.height = hpx2.toFixed(1) + 'px';
+      im.style.transform = `translate(${(sx + hum / WPP).toFixed(1)}px,${sy.toFixed(1)}px) translate(-50%,-50%) rotate(${(-rz).toFixed(4)}rad)`;
+      im.style.zIndex = String(Math.round(10 + z * 2));
+    }
   });
   flash.intensity = (now < flashUntil ? 60 * (flashUntil - now) / 500 : 0) + (now < arcFlash ? 22 * (arcFlash - now) / 140 : 0);
-  renderer.render(scene, cam);
+  if (GL) renderer.render(scene, cam);
   if (heroVis) arcs(now, hcx, hcy, hpx); else if (arcOn) { actx.clearRect(0, 0, arcC.width, arcC.height); arcOn = false; }
 }
 
@@ -383,6 +408,8 @@ async function boot() {
   odometers(); pointerFX(); reveals();
   applyVars(FL[0]);
   await paintLabels();
+  if (GL) await Promise.race([kit.model, new Promise((r) => setTimeout(r, 6000))]);
+  labelsIn = true; modelReady();
   resize();
   startIntro();
   requestAnimationFrame(frame);
