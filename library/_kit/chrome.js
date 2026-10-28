@@ -1,0 +1,121 @@
+/* Zyqor Library kit: chrome.js  (ES module, one line per page)
+     <script type="module" src="../../_kit/chrome.js"></script>
+   Reads the page's <body> attributes, filled by tools/new-concept.mjs:
+     data-id="N002"  data-tier="normal|advanced|premium"  data-name="Kiln & Quiet"  [class="dark" on dark-led pages]
+   Draws: top glass bar (back to library, "Zyqor Library · Concept N002 · fictional brand", tier badge, credits button),
+          a credits sheet (<dialog>) read from ./credits.json, and the honest footer with previous / next built concept.
+   Also loads the shared liquid-glass material from /assets/glass/ (quiet no-op if missing).
+   The phone/desktop redirect is NOT here: it must run before first paint, so it is inline in the template <head>. */
+const KIT = new URL('./', import.meta.url);
+const ROOT = new URL('../', import.meta.url);                 // site/library/
+const GLASS = new URL('../../assets/glass/', import.meta.url);
+const html = document.documentElement, body = document.body;
+const isM = html.dataset.build === 'm';
+const id = body.dataset.id || 'N000';
+const tier = (body.dataset.tier || 'normal').toLowerCase();
+const name = body.dataset.name || 'Concept';
+const dark = body.classList.contains('dark');
+const TIER = { normal: 'Normal', advanced: 'Advanced', premium: 'Premium' }[tier] || 'Normal';
+const libHome = isM ? new URL('m.html', ROOT).href : ROOT.href;
+const pageOf = (it) => new URL(it.path + (isM ? 'm.html' : ''), ROOT).href;
+
+const css = (href, cb) => { if (document.querySelector(`link[href="${href}"]`)) return; const l = document.createElement('link'); l.rel = 'stylesheet'; l.href = href; l.onerror = () => l.remove(); if (cb) l.onload = cb; document.head.append(l); };
+css(new URL('chrome.css', KIT).href);
+css(new URL('liquid-glass.css', GLASS).href);
+if (!window.ZyqorGlass && !document.querySelector('script[src$="liquid-glass.js"]')) {
+  const s = document.createElement('script'); s.src = new URL('liquid-glass.js', GLASS).href; s.defer = true; s.onerror = () => s.remove(); document.head.append(s);
+}
+
+const ico = {
+  back: '<path d="M15 18l-6-6 6-6"/>',
+  next: '<path d="M9 18l6-6-6-6"/>',
+  info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/>',
+  close: '<path d="M6 6l12 12M18 6L6 18"/>',
+  grid: '<rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"/>',
+  ext: '<path d="M14 5h5v5M19 5l-8 8M18 14v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4"/>'
+};
+const svg = (k) => `<svg class="zk-i" viewBox="0 0 24 24" aria-hidden="true" focusable="false">${ico[k]}</svg>`;
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const gl = dark ? 'lg lg--dark' : 'lg';
+
+/* ---- top bar ---- */
+const bar = document.createElement('header');
+bar.className = 'zk-bar';
+bar.setAttribute('aria-label', 'Zyqor Library');
+bar.innerHTML = `
+  <a class="zk-pill zk-back ${gl} lg-pill lg-btn" href="${libHome}" aria-label="Back to the Zyqor Library">${svg('back')}<span class="zk-hide-s">Library</span></a>
+  <div class="zk-pill zk-tag ${gl} lg-pill" role="note" aria-label="Concept ${id}, ${TIER} tier, fictional brand">
+    <span class="zk-brand zk-hide-m">Zyqor Library</span><span class="zk-dot zk-hide-m" aria-hidden="true"></span>
+    <b class="zk-id">Concept&nbsp;${id}</b><span class="zk-tier" data-tier="${tier}">${TIER}</span>
+    <span class="zk-fict zk-hide-m">fictional brand</span>
+  </div>
+  <button class="zk-pill zk-cred-btn ${gl} lg-pill lg-btn" type="button" aria-haspopup="dialog" aria-label="Credits and licences">${svg('info')}<span class="zk-hide-s">Credits</span></button>`;
+body.prepend(bar);
+if (dark) html.classList.add('zk-dark');
+
+/* ---- credits sheet ---- */
+const dlg = document.createElement('dialog');
+dlg.className = `zk-sheet ${dark ? 'lg lg-menu lg--dark' : 'lg lg-menu'}`;
+dlg.setAttribute('aria-labelledby', 'zk-sheet-h');
+dlg.innerHTML = `<div class="zk-sheet-in">
+  <div class="zk-sheet-top"><p class="zk-mono">Concept ${id} &middot; ${TIER}</p><button class="zk-x" type="button" aria-label="Close credits">${svg('close')}</button></div>
+  <h2 id="zk-sheet-h" class="zk-sheet-h">${esc(name)} <span>is a fictional brand.</span></h2>
+  <p class="zk-sheet-p">Designed and hand-coded by Sujon Hoque at Zyqor Studio to test one idea. Not a real company, not a client, nothing for sale. Code: MIT licence.</p>
+  <ul class="zk-cred" role="list"><li class="zk-cred-wait">Loading credits</li></ul></div>`;
+body.append(dlg);
+const open = () => { if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open', ''); };
+const close = () => { if (dlg.open && typeof dlg.close === 'function') dlg.close(); else dlg.removeAttribute('open'); };
+bar.querySelector('.zk-cred-btn').addEventListener('click', open);
+dlg.querySelector('.zk-x').addEventListener('click', close);
+dlg.addEventListener('click', (e) => { if (e.target === dlg) close(); });
+
+/* ---- footer ---- */
+const foot = document.createElement('footer');
+foot.className = 'zk-foot';
+foot.innerHTML = `<div class="zk-foot-in">
+  <p class="zk-honest"><b>${esc(name)}</b> is not a real company. Concept ${id} is ${TIER === 'Advanced' ? 'an' : 'a'} ${TIER.toLowerCase()} study from the Zyqor Library, designed and coded by Sujon Hoque at Zyqor Studio. Real 3D assets, credited below; no AI imagery.</p>
+  <ul class="zk-cred zk-cred--foot" role="list"></ul>
+  <nav class="zk-nav" aria-label="More concepts">
+    <a class="zk-pill zk-prev lg lg--dark lg-pill lg-btn" href="${libHome}" hidden>${svg('back')}<span><small>Previous</small><em></em></span></a>
+    <a class="zk-pill zk-all lg lg--dark lg-pill lg-btn" href="${libHome}">${svg('grid')}<span>All concepts</span></a>
+    <a class="zk-pill zk-next lg lg--dark lg-pill lg-btn" href="${libHome}" hidden><span><small>Next</small><em></em></span>${svg('next')}</a>
+  </nav>
+  <p class="zk-small"><span>Zyqor Studio &middot; Library</span><span>Concept ${id}</span></p>
+</div>`;
+body.append(foot);
+
+/* credits: one file for both builds */
+function credLine(c) {
+  const who = [c.title && `<b>${esc(c.title)}</b>`, c.author && `by ${esc(c.author)}`].filter(Boolean).join(' ');
+  const src = c.url ? `<a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.source || 'source')}${svg('ext')}</a>` : esc(c.source || '');
+  return `<li><span class="zk-mono">${esc(c.what || 'Asset')}</span><span>${who}${src ? ', ' + src : ''}${c.licence ? ` <i>${esc(c.licence)}</i>` : ''}${c.note ? `<small>${esc(c.note)}</small>` : ''}</span></li>`;
+}
+fetch(new URL('credits.json', location.href)).then((r) => (r.ok ? r.json() : null)).then((j) => {
+  const items = (j && j.items) || [];
+  const codeLine = { what: 'Design + code', title: 'Zyqor Studio', author: 'Sujon Hoque', licence: 'MIT' };
+  const htmlList = [codeLine, ...items].map(credLine).join('');
+  document.querySelectorAll('.zk-cred').forEach((ul) => { ul.innerHTML = htmlList; });
+}).catch(() => { document.querySelectorAll('.zk-cred').forEach((ul) => { ul.innerHTML = '<li><span class="zk-mono">Credits</span><span>See credits.json in this folder.</span></li>'; }); });
+
+/* previous / next among BUILT concepts (library.json is fetched when the browser is idle) */
+const idle = window.requestIdleCallback || ((f) => setTimeout(f, 900));
+idle(() => {
+  fetch(new URL('library.json', ROOT)).then((r) => (r.ok ? r.json() : null)).then((lib) => {
+    if (!lib || !lib.items) return;
+    const built = lib.items.filter((it) => it.status === 'built' || it.id === id);
+    const i = built.findIndex((it) => it.id === id);
+    if (i < 0 || built.length < 2) return;
+    const set = (sel, it) => { const a = foot.querySelector(sel); a.href = pageOf(it); a.querySelector('em').textContent = `${it.id} · ${it.name}`; a.hidden = false; };
+    set('.zk-prev', built[(i - 1 + built.length) % built.length]);
+    set('.zk-next', built[(i + 1) % built.length]);
+  }).catch(() => {});
+});
+
+/* the bar tucks away while scrolling down a long page, returns on scroll up (desktop + phone) */
+let lastY = scrollY, ticking = false;
+addEventListener('scroll', () => {
+  if (ticking) return; ticking = true;
+  requestAnimationFrame(() => { const y = scrollY; bar.classList.toggle('is-tucked', y > 240 && y > lastY + 4); if (y < lastY - 4 || y < 240) bar.classList.remove('is-tucked'); lastY = y; ticking = false; });
+}, { passive: true });
+
+window.ZL = Object.assign(window.ZL || {}, { id, tier, name, isM, root: ROOT.href, openCredits: open });

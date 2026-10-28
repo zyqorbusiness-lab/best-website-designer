@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- phone -> m.html (separate phone build). ?desktop=1 keeps this page -->
+<script>document.documentElement.classList.add('js');(function(){var q=location.search;if(/[?&]desktop=1/.test(q))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height,phone=w<=860||(c&&h>w);if(phone)location.replace('m.html'+q+location.hash);})();</script>
+<title>Zyqor Library &middot; 300 concepts in 3D &middot; Zyqor Studio</title>
+<meta name="description" content="Zyqor Library: 300 web and 3D concepts by Zyqor Studio in three tiers, Normal, Advanced and Premium. Every concept is a fictional brand built with real CC0 and CC-BY assets, on desktop and phone.">
+<meta name="theme-color" content="#EFE7D6">
+<meta property="og:title" content="Zyqor Library &middot; 300 concepts in 3D">
+<meta property="og:description" content="300 fictional-brand 3D web concepts by Zyqor Studio. Normal, Advanced, Premium.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="library.json" as="fetch" crossorigin>
+<link rel="stylesheet" href="_kit/concept.css">
+<link rel="stylesheet" href="lib.css">
+
+</head>
+<body class="grain lib">
+<a class="skip" href="#index">Skip to the concepts</a>
+<header class="lib-top">
+  <a class="brand" href="../" aria-label="Zyqor Studio home"><span class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h12L6 18h12"/></svg></span>Zyqor <span class="mono">Library</span></a>
+  <nav class="top-links" aria-label="Site">
+    <a class="top-link" href="../"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>Back to portfolio</a>
+    <a class="top-link" href="https://github.com/zyqorbusiness-lab/best-website-designer" rel="noopener">Source on GitHub</a>
+  </nav>
+</header>
+<main>
+  <section class="hero" aria-labelledby="h1">
+    <div class="hero-copy">
+      <p class="tag">Zyqor Studio &middot; the library</p>
+      <h1 id="h1">Three hundred <span class="serif">ways</span> to build in 3D.</h1>
+      <p class="lead">A hundred Normal, a hundred Advanced and a hundred Premium concepts. Each is a real page with a real 3D object, built for desktop and for phone with the same models. <span id="n-built">0</span> are live; the rest are on their way.</p>
+    </div>
+    <div class="hero-side">
+      <p class="big-n" aria-label="Concepts live"><b id="big-n">0</b><span>of 300<br>live now</span></p>
+      <div class="ledger" id="ledger" aria-label="Progress by tier"></div>
+    </div>
+  </section>
+
+  <section class="feat" id="feat" aria-labelledby="feat-h">
+    <div class="sec-head"><h2 id="feat-h">Live <span class="serif">now</span></h2><span class="mono">Passed QA at 1440 / 390 / 360</span></div>
+    <div class="feat-grid" id="feat-grid"></div>
+  </section>
+
+  <div class="filters" role="search" aria-label="Filter concepts">
+    <div class="f-row">
+      <div class="seg" id="seg" role="group" aria-label="Tier"></div>
+      <label class="search"><span class="sr-only">Search concepts</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="q" type="search" placeholder="Search name, idea, technique" autocomplete="off" enterkeyhint="search"></label>
+      <button class="f-btn" type="button" id="f-btn" aria-expanded="false" aria-controls="f-panel"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg>Filters<span class="badge" id="f-badge"></span></button>
+      <span class="f-count" id="count" aria-live="polite"></span>
+    </div>
+    <div class="f-panel" id="f-panel" hidden>
+      <div class="f-group"><span class="mono">Category</span><div class="chips" id="f-cat"></div></div>
+      <div class="f-group"><span class="mono">Technique</span><div class="chips" id="f-tech"></div></div>
+      <div class="f-group"><span class="mono">Status</span><div class="chips"><label class="switch"><input type="checkbox" id="coming" checked><span class="tr" aria-hidden="true"></span>Show concepts that are still coming</label></div></div>
+      <button class="f-clear" type="button" id="f-clear">Clear all filters</button>
+    </div>
+  </div>
+
+  <section class="index" id="index" aria-label="All concepts">
+    <div class="grid-i" id="grid"></div>
+    <div class="empty" id="empty" hidden><h3>Nothing matches that.</h3><p>Try another tier, or clear the filters.</p></div>
+    <div class="more"><button class="btn btn--ghost" type="button" id="more" data-press>Show more <small></small></button></div>
+  </section>
+</main>
+<footer class="lib-foot">
+  <div>
+    <h2>Honest by default.</h2>
+    <p>Every concept here is a fictional brand, labelled Concept. No clients, reviews or numbers are invented. 3D models, textures and HDRIs are real CC0 or CC-BY assets, credited on each page.</p>
+  </div>
+  <div class="foot-links">
+    <a class="top-link" href="../">Zyqor Studio</a>
+    <a class="top-link" href="https://github.com/zyqorbusiness-lab/best-website-designer/tree/main/site/library" rel="noopener">How a concept is built</a>
+  </div>
+</footer>
+<script type="module" src="lib.js"></script>
+</body>
+</html>

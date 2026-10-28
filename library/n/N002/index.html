@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- phone -> m.html (separate phone build). ?desktop=1 keeps this page -->
+<script>document.documentElement.classList.add('js');(function(){var q=location.search;if(/[?&]desktop=1/.test(q))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height,phone=w<=860||(c&&h>w);if(phone)location.replace('m.html'+q+location.hash);})();</script>
+<title>Kiln &amp; Quiet &middot; Concept N002 &middot; Zyqor Library</title>
+<meta name="description" content="Kiln &amp; Quiet is a fictional brand: a normal 3D web concept by Zyqor Studio. A glazed vase on a potter's wheel: spin it, let go, and it coasts to a stop.">
+<meta name="theme-color" content="#F7EDD7">
+<meta property="og:title" content="Kiln &amp; Quiet &middot; Concept N002 &middot; Zyqor Library">
+<meta property="og:description" content="A fictional-brand 3D concept by Zyqor Studio.">
+<meta property="og:image" content="thumb.webp">
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../_kit/stage.js" as="script" crossorigin>
+<link rel="preload" href="../../_assets/models/ceramic_vase_01.glb" as="fetch" crossorigin>
+<link rel="stylesheet" href="../../_kit/concept.css">
+<link rel="stylesheet" href="style.css">
+<style>:root{--c1:#F7EDD7;--c2:#1E264C;--c3:#D74A4D}</style>
+<script type="importmap">{"imports":{"three":"../../../vendor/three/three.module.min.js","three/addons/":"../../../vendor/three/addons/"}}</script>
+</head>
+<body class="grain" data-id="N002" data-tier="normal" data-name="Kiln &amp; Quiet">
+<a class="skip" href="#main">Skip to content</a>
+<main id="main">
+  <!-- Structure 06 (live sandbox hero) inside 12 (whisper-quiet zen). Brief: brief.md -->
+  <section class="hero" aria-labelledby="h1">
+    <div class="hero-copy">
+      <p class="tag" data-rv>Home goods &middot; Concept N002</p>
+      <h1 id="h1" class="title" data-rv><span class="t1">Kiln &amp;</span> <span class="t2 serif">Quiet</span></h1>
+      <p class="lead" data-rv>One glazed vase on a potter&rsquo;s wheel. Spin it, let go, and watch it settle on its own.</p>
+      <div class="controls" data-rv>
+        <button class="btn btn--accent spin-btn" type="button" data-press data-action="spin">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.34-5.66M20 4v4h-4"/></svg>Spin the wheel</button>
+        <div class="glaze-wrap"><span class="mono">Glaze</span>
+          <div class="glaze" role="radiogroup" aria-label="Glaze">
+            <button class="sw" type="button" role="radio" aria-checked="true" data-glaze="natural" style="--sw:#F4EEE6"><span class="sr-only">Natural</span></button>
+            <button class="sw" type="button" role="radio" aria-checked="false" data-glaze="indigo" style="--sw:#4A5A98"><span class="sr-only">Indigo</span></button>
+            <button class="sw" type="button" role="radio" aria-checked="false" data-glaze="tomato" style="--sw:#D65A50"><span class="sr-only">Tomato</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-stage" data-stage>
+      <noscript><img class="poster" src="poster.webp" alt="A round, wheel-thrown ceramic vase standing on an aluminium potter's wheel"></noscript>
+      <p class="still serif" aria-hidden="true">Still.</p>
+      <p class="gesture mono" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M4 12h16M8 8l-4 4 4 4M16 8l4 4-4 4"/></svg>Drag sideways to turn</p>
+    </div>
+    <dl class="ledger" data-rv>
+      <div class="cell cell-speed"><dt class="mono">Wheel speed</dt><dd>
+          <svg class="dial" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+            <circle cx="60" cy="60" r="54" class="dial-ring"/>
+            <g class="dial-ticks"></g>
+            <path class="dial-needle" d="M60 10v14"/>
+          </svg>
+          <span class="rpm num"><b id="rpm">0</b><small>rpm</small></span></dd></div>
+      <div class="cell"><dt class="mono">Glaze</dt><dd class="v" id="glaze-name">Natural</dd></div>
+      <div class="cell"><dt class="mono">Object</dt><dd class="v">Ceramic Vase 01<small>40.1 cm tall, 20.4 cm wide</small></dd></div>
+      <div class="cell"><dt class="mono">Source</dt><dd class="v">Poly Haven, CC0<small>Modelled by James Ray Cock</small></dd></div>
+    </dl>
+    <p class="sr-only" aria-live="polite" id="live"></p>
+  </section>
+  <section class="section note" aria-labelledby="note-h">
+    <div class="wrap note-in">
+      <p class="tag" data-rv>How the wheel behaves</p>
+      <h2 id="note-h" class="h2 note-quote" data-rv>Every wheel slows the same way: <span class="serif">a little less each turn.</span></h2>
+      <div class="note-body" data-rv>
+        <p class="body">Your drag sets the speed. When you let go, the wheel keeps six percent less of its speed every sixtieth of a second, so a hard flick runs for a few seconds and a nudge stops almost at once. The readout is that number, live, not an animation.</p>
+        <p class="body">The arrow keys turn it too. With reduced motion on, it never moves unless you move it.</p>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="../../../vendor/gsap.min.js" defer></script>
+<script src="../../../vendor/ScrollTrigger.min.js" defer></script>
+<script src="../../../vendor/lenis.min.js" defer></script>
+<script type="module" src="../../_kit/chrome.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

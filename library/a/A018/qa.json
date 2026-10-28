@@ -1,0 +1,50 @@
+{
+ "id": "A018",
+ "date": "2026-10-28T02:56:59.251Z",
+ "verdict": "PASS",
+ "weightKB": 3350,
+ "phoneWeightKB": 3260,
+ "sameAssets": true,
+ "runs": {
+  "d1440": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": true
+  },
+  "m390": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": true
+  },
+  "m360": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": true
+  },
+  "rd1440": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": true
+  },
+  "rm390": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": true
+  }
+ }
+}

@@ -1,0 +1,38 @@
+/* A018 Tranquility Base - desktop build. Palette: sand #EEE0C4 / navy #232F43 / tomato #D03037 (dark-led page). */
+body{background:var(--c2);color:var(--c1)}
+.journey{position:relative;height:620svh}
+.scene{position:sticky;top:0;height:100svh;width:100%;background:linear-gradient(180deg,color-mix(in oklab,var(--c2) 70%,#0b1424) 0%,var(--c2) 70%,color-mix(in oklab,var(--c2) 88%,var(--c1)) 100%)}
+.scene .stage-load{color:color-mix(in oklab,var(--c1) 60%,var(--c2))}
+.chapters{position:absolute;inset:0;pointer-events:none}
+.chapter{height:124svh;display:flex;align-items:center;padding:0 var(--gutter)}
+.chapter:first-child{height:100svh;align-items:flex-end;padding-bottom:clamp(4rem,10vh,8rem)}
+.ch-card{max-width:560px;display:grid;gap:var(--s3);pointer-events:auto;opacity:0;transform:translate3d(0,var(--rise),0);transition:opacity var(--dur) var(--ease-out),transform var(--dur) var(--ease-out)}
+.chapter.is-on .ch-card{opacity:1;transform:none}
+.ch-02,.ch-04{justify-content:flex-end;padding-right:calc(var(--gutter) + 210px)}
+.ch-card .tag{color:color-mix(in oklab,var(--c1) 70%,var(--c2))}
+.ch-card .tag::before{background:var(--c3)}
+.ch-card .display{font-size:clamp(4rem,1rem + 8vw,10.5rem);line-height:.84;color:var(--c1);text-shadow:0 2px 40px color-mix(in oklab,var(--c2) 70%,transparent)}
+.ch-card .h2{color:var(--c1);text-shadow:0 2px 30px color-mix(in oklab,var(--c2) 80%,transparent)}
+.ch-card .serif{font-style:italic;font-weight:400;letter-spacing:-.02em}
+.ch-card .lead{color:color-mix(in oklab,var(--c1) 84%,var(--c2));max-width:38ch;text-shadow:0 1px 18px color-mix(in oklab,var(--c2) 90%,transparent)}
+.ch-01 .ch-card{max-width:none}
+.ch-01 .lead{max-width:34ch}
+
+.rail{position:fixed;right:clamp(16px,2.6vw,40px);top:50%;translate:0 -50%;z-index:20;display:flex;gap:14px;color:var(--c1);opacity:0;transition:opacity var(--dur) var(--ease-out)}
+.rail.is-on{opacity:1}
+.rail-track{position:relative;width:2px;border-radius:2px;background:color-mix(in oklab,var(--c1) 18%,transparent)}
+.rail-fill{position:absolute;inset:0 0 auto;height:calc(var(--p,0) * 100%);background:var(--c3);border-radius:2px}
+.rail ol{margin:0;padding:0;list-style:none;display:grid;gap:22px}
+.rail li{display:flex;align-items:center;gap:10px;opacity:.48;transition:opacity var(--dur-fast) var(--ease-out)}
+.rail li.is-on{opacity:1}
+.rail .mono{font-size:11px}
+.rail-l{font:600 13px/1 var(--f-body)}
+
+.outro{position:relative;background:var(--c2);border-top:1px solid var(--line-dark)}
+.outro-in{display:grid;gap:var(--s4);max-width:900px;margin-left:var(--gutter)}
+.outro .tag{color:var(--on-dark-2)}
+.outro .h2{color:var(--c1)}
+.outro .serif{font-style:italic;font-weight:400}
+.outro .body{color:var(--on-dark-2)}
+.outro .btn{justify-self:start;margin-top:var(--s2)}
+@media (prefers-reduced-motion:reduce){.ch-card{opacity:1;transform:none}}
