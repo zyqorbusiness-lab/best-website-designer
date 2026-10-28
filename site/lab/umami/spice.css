@@ -59,3 +59,15 @@ body,.menu,.broth,.hours,.cta,.ubar,.mrow,.note{transition:background-color .9s 
 html[data-build="m"].fire .dname{filter:drop-shadow(0 0 18px rgba(255,90,30,.5))}
 @media (prefers-reduced-motion:reduce){.fire .dname .ch i{animation:none}html.fire .dname{filter:drop-shadow(0 0 18px rgba(255,90,30,.5))}}
 .menu{overflow-x:clip}
+
+/* v3: real scanned bowls. Poster first (also the no-WebGL view), the 3D ring fades in over it once the front bowl is loaded. */
+.u-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none;transition:opacity .9s cubic-bezier(.2,.8,.2,1)}
+html.gl-on .u-poster{opacity:0}
+html.nogl #ring{display:none}
+.u-load{position:absolute;left:50%;bottom:clamp(14px,3.2vh,30px);transform:translateX(-50%);z-index:6;display:flex;align-items:center;gap:10px;padding:7px 12px 7px 14px;border-radius:999px;
+  background:color-mix(in srgb,var(--ink,#F4E9D8) 14%,transparent);color:var(--ink,#F4E9D8);font:600 11px/1 "General Sans","Inter Tight",system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:opacity .6s ease,transform .6s ease;pointer-events:none}
+.u-load-b{display:block;width:64px;height:3px;border-radius:3px;background:color-mix(in srgb,var(--ink,#F4E9D8) 25%,transparent);overflow:hidden}
+.u-load-b i{display:block;height:100%;width:100%;background:currentColor;transform-origin:0 50%;transform:scaleX(var(--p,0));transition:transform .3s ease}
+.u-load.done{opacity:0;transform:translate(-50%,8px)}
+@media (prefers-reduced-motion:reduce){.u-poster,.u-load,.u-load-b i{transition:none}}

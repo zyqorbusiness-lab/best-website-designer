@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- phone -> m.html (separate phone build). ?desktop=1 keeps this page -->
+<script>document.documentElement.classList.add('js');(function(){var q=location.search;if(/[?&]desktop=1/.test(q))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height,phone=w<=860||(c&&h>w);if(phone)location.replace('m.html'+q+location.hash);})();</script>
+<title>Brasswick Diya &middot; Concept N007 &middot; Zyqor Library</title>
+<meta name="description" content="Brasswick Diya is a fictional brand: a normal 3D web concept by Zyqor Studio. A hanging brass diya you light with a hover or a tap; the flame flickers and the page turns to evening.">
+<meta name="theme-color" content="#EBE9DD">
+<meta property="og:title" content="Brasswick Diya &middot; Concept N007 &middot; Zyqor Library">
+<meta property="og:description" content="A fictional-brand 3D concept by Zyqor Studio.">
+<meta property="og:image" content="thumb.webp">
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../_assets/models/brass_diya_lantern.glb" as="fetch" crossorigin>
+<link rel="preload" href="../../_kit/stage.js" as="script" crossorigin>
+<link rel="stylesheet" href="../../_kit/concept.css">
+<link rel="stylesheet" href="style.css">
+<style>:root{--c1:#EBE9DD;--c2:#303419;--c3:#EF663A}</style>
+<script type="importmap">{"imports":{"three":"../../../vendor/three/three.module.min.js","three/addons/":"../../../vendor/three/addons/"}}</script>
+</head>
+<body class="grain" data-id="N007" data-tier="normal" data-name="Brasswick Diya">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site" id="top">
+  <a class="brand" href="#top" aria-label="Brasswick Diya, concept, back to top"><svg class="b-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2v5"/><path d="M10 9h12l-1.5 4h-9z"/><path d="M10.5 13h11v10l-5.5 4-5.5-4z"/><path d="M16 17.5c1 1.2 1.6 2 1.6 3a1.6 1.6 0 0 1-3.2 0c0-1 .6-1.8 1.6-3z" class="b-flame"/></svg>Brasswick<span class="mono b-c">Concept</span></a>
+  <nav class="nav" aria-label="Sections"><a href="#lantern">The lantern</a><a href="#craft">Craft</a><a href="#care">Care</a><a href="#reserve">Reserve</a></nav>
+  <a class="btn nav-cta" href="#reserve">Reserve one</a>
+</header>
+<main id="main">
+  <!-- Structure 04 (editorial maison, calm) with the product hanging in its world (ayzz H). Brief: brief.md -->
+  <section class="hero" id="lantern" aria-labelledby="h1">
+    <div class="glow" aria-hidden="true"></div>
+    <div class="hero-copy">
+      <p class="tag" data-rv>Home goods &middot; Concept N007</p>
+      <h1 id="h1" class="title" data-rv>Light it <em>by hand.</em></h1>
+      <p class="lead" data-rv>A brass diya on a chain, six panes of glass around one small flame. Hover over it, or press the button, and it lights.</p>
+      <div class="hero-cta" data-rv>
+        <button class="btn btn--accent light-btn" type="button" data-press data-action="light" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c2.6 3.2 5 5.9 5 9.6A5 5 0 0 1 12 17.6a5 5 0 0 1-5-5c0-2.4 1.4-4 2.6-5.4.2 1.7.9 2.9 2.1 3.6C11.4 8.4 11.3 5.6 12 3z"/><path d="M8 21h8"/></svg><span class="lb-t">Light the diya</span></button>
+        <a class="btn btn--ghost" href="#reserve">Reserve one</a>
+      </div>
+      <dl class="state mono" data-rv aria-hidden="true"><div><dt>Flame</dt><dd id="s-flame"><i></i><span>Out</span></dd></div><div><dt>Swing</dt><dd id="s-swing">0&deg;</dd></div><div><dt>Finish</dt><dd id="s-finish">Aged brass</dd></div></dl>
+    </div>
+    <div class="d-stage" data-stage>
+        <noscript><img class="poster" src="poster.webp" alt="A hexagonal brass diya lantern with glass panes, hanging from a chain"></noscript>
+        <p class="gesture mono" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M4 12h16M8 8l-4 4 4 4M16 8l4 4-4 4"/></svg>Hover to light &middot; drag to swing</p>
+      </div>
+  </section>
+  <section class="craft section" id="craft" aria-labelledby="craft-h">
+    <div class="wrap">
+      <p class="tag" data-rv>How it is made</p>
+      <h2 id="craft-h" class="h2" data-rv>Three steps, <em>one lantern.</em></h2>
+      <ol class="steps" role="list" data-rv-group>
+        <li data-rv><figure class="s-fig"><img src="detail_cast.webp" alt="Close render of the brass oil bowl on its stem, inside the lantern frame." width="560" height="700" loading="lazy" decoding="async"></figure><span class="mono s-n">01</span><h3 class="h3">Cast</h3><p class="body">The six-sided body is cast in brass and left to darken, so the patina settles into every corner and edge.</p></li>
+        <li data-rv><figure class="s-fig"><img src="detail_glazed.webp" alt="Close render of the lit wick in the bowl, seen through the glass frame." width="560" height="700" loading="lazy" decoding="async"></figure><span class="mono s-n">02</span><h3 class="h3">Glazed</h3><p class="body">One pane of glass goes into each side of the frame, so the flame shows from wherever you stand.</p></li>
+        <li data-rv><figure class="s-fig"><img src="detail_pierced.webp" alt="Close render of the cap, with a star-shaped vent and the hanging ring." width="560" height="700" loading="lazy" decoding="async"></figure><span class="mono s-n">03</span><h3 class="h3">Pierced</h3><p class="body">Star-shaped vents are punched through the cap. Heat leaves through them and the light spills up the chain.</p></li>
+      </ol>
+    </div>
+  </section>
+  <section class="care section" id="care" aria-labelledby="care-h">
+    <div class="wrap care-in">
+      <div class="care-l">
+        <p class="tag" data-rv>Lighting and care</p>
+        <h2 id="care-h" class="h2" data-rv>Oil, wick, <em>a match.</em></h2>
+        <ol class="howto" role="list" data-rv-group>
+          <li data-rv><b>Fill the bowl</b> with ghee or sesame oil, about two thirds full.</li>
+          <li data-rv><b>Set a cotton wick</b> and trim it to a few millimetres so the flame stays small and steady.</li>
+          <li data-rv><b>Light it and close the glass.</b> Hang it away from curtains and out of a draught.</li>
+          <li data-rv><b>Look after the brass</b> with lemon and salt for a shine, or leave it to age.</li>
+        </ol>
+      </div>
+      <dl class="spec" data-rv-group>
+        <div data-rv><dt class="mono">Body</dt><dd>Brass, aged patina</dd></div>
+        <div data-rv><dt class="mono">Panes</dt><dd>Glass, one per side, six sides</dd></div>
+        <div data-rv><dt class="mono">Cap</dt><dd>Star-pierced vents</dd></div>
+        <div data-rv><dt class="mono">Hangs from</dt><dd>Brass chain and ring</dd></div>
+        <div data-rv><dt class="mono">Burns</dt><dd>Ghee or vegetable oil, cotton wick</dd></div>
+        <div data-rv><dt class="mono">Note</dt><dd>A concept product: no sizes or prices are given.</dd></div>
+      </dl>
+    </div>
+  </section>
+  <section class="reserve section" id="reserve" aria-labelledby="res-h">
+    <div class="wrap res-in">
+      <div class="res-l">
+        <p class="tag" data-rv>Reserve</p>
+        <h2 id="res-h" class="h2" data-rv>Hold one <em>for Diwali.</em></h2>
+        <p class="body" data-rv>Choose a finish and the lantern above changes to match. Reservations on this page are a concept: nothing is sent and nothing is charged.</p>
+      </div>
+      <form class="form" novalidate data-rv>
+        <fieldset class="field-g"><legend>Finish</legend>
+          <div class="seg"><label><input type="radio" name="finish" value="aged" checked><span>Aged brass</span></label><label><input type="radio" name="finish" value="polished"><span>Polished brass</span></label></div>
+        </fieldset>
+        <div class="f-row">
+          <div class="field-g"><label for="r-name">Your name</label><input id="r-name" name="name" type="text" autocomplete="name" required aria-describedby="e-name"><p class="err" id="e-name" hidden>Add your name.</p></div>
+          <div class="field-g"><label for="r-mail">Email</label><input id="r-mail" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="e-mail"><p class="err" id="e-mail" hidden>Add an email for the reply.</p></div>
+        </div>
+        <div class="f-row">
+          <div class="field-g"><span class="lbl" id="q-l">How many</span>
+            <div class="qty" role="group" aria-labelledby="q-l"><button type="button" data-q="-1" aria-label="One fewer">&minus;</button><output id="qty" aria-live="polite">1</output><button type="button" data-q="1" aria-label="One more">+</button></div></div>
+          <div class="field-g"><label for="r-city">Delivery city</label><input id="r-city" name="city" type="text" autocomplete="address-level2"></div>
+        </div>
+        <label class="check"><input type="checkbox" name="ok" required aria-describedby="e-ok"><span>I understand Brasswick is a concept and nothing is sent.</span></label>
+        <p class="err" id="e-ok" hidden>Tick the box to continue.</p>
+        <button class="btn btn--accent submit" type="submit" data-press><span class="b-label">Reserve a lantern</span><span class="spin" aria-hidden="true"></span></button>
+        <div class="done" role="status" hidden>
+          <p class="done-h">Concept, not sent.</p>
+          <p class="body">Brasswick is fictional, so nothing left this page and nothing was charged. The lantern itself is a free CC0 model from Poly Haven.</p>
+          <button class="btn btn--ghost" type="button" data-action="reset">Start again</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+<footer class="foot">
+  <p class="wordmark" aria-hidden="true">Brasswick</p>
+  <div class="foot-row">
+    <p class="mono">Brasswick Diya &middot; Concept N007 &middot; fictional brand</p>
+    <nav class="foot-nav" aria-label="Footer"><a href="#lantern">The lantern</a><a href="#craft">Craft</a><a href="#care">Care</a><a href="#reserve">Reserve</a><a href="#top">Back to top</a></nav>
+  </div>
+</footer>
+<p class="sr-only" aria-live="polite" id="live"></p>
+<script src="../../../vendor/gsap.min.js" defer></script>
+<script src="../../../vendor/ScrollTrigger.min.js" defer></script>
+<script src="../../../vendor/lenis.min.js" defer></script>
+<script type="module" src="../../_kit/chrome.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

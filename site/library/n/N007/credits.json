@@ -1,0 +1,84 @@
+{
+  "brand": "Brasswick Diya",
+  "id": "N007",
+  "items": [
+    {
+      "what": "3D model",
+      "title": "Brass Diya Lantern",
+      "author": "Bhargav Kubal",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/brass_diya_lantern",
+      "licence": "CC0 1.0",
+      "note": "2K textures, optimised with gltf-transform (meshopt geometry, WebP textures, no simplification): 642 KB. The same file on phone and desktop. Flame, glow and swing are animated in code.",
+      "files": [
+        "detail_cast.webp",
+        "detail_pierced.webp",
+        "detail_glazed.webp",
+        "../../_assets/models/brass_diya_lantern.glb"
+      ]
+    },
+    {
+      "what": "HDRI",
+      "title": "Studio Small 09",
+      "author": "Sergej Majboroda",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/studio_small_09",
+      "licence": "CC0 1.0",
+      "note": "Shared kit lighting (site/assets/hdri).",
+      "files": [
+        "../../../assets/hdri/studio_1k.hdr",
+        "../../../assets/hdri/studio_512.hdr"
+      ]
+    },
+    {
+      "what": "Type",
+      "title": "Zodiak, Satoshi",
+      "author": "Indian Type Foundry",
+      "source": "Fontshare",
+      "url": "https://www.fontshare.com",
+      "licence": "ITF Free Font License 2.0",
+      "files": []
+    },
+    {
+      "what": "Type",
+      "title": "JetBrains Mono",
+      "author": "The JetBrains Mono Project Authors",
+      "source": "GitHub",
+      "url": "https://github.com/JetBrains/JetBrainsMono",
+      "licence": "SIL OFL 1.1",
+      "files": []
+    },
+    {
+      "what": "Engine",
+      "title": "three.js r170, GSAP, Lenis",
+      "author": "their authors",
+      "source": "npm",
+      "url": "https://threejs.org",
+      "licence": "MIT / GSAP Standard Licence",
+      "files": []
+    },
+    {
+      "what": "Detail images",
+      "title": "Close renders of the Brass Diya Lantern",
+      "author": "Rendered for this concept from Bhargav Kubal's model",
+      "source": "This page's own 3D scene",
+      "url": "https://polyhaven.com/a/brass_diya_lantern",
+      "licence": "CC0 1.0 (from the model)",
+      "note": "Three close camera views of the same model, saved as 560 x 700 WebP (33 KB together). Not AI imagery.",
+      "files": []
+    },
+    {
+      "what": "Images (code-made)",
+      "title": "Poster and library thumbnail",
+      "author": "Zyqor Studio",
+      "source": "frames of this page",
+      "url": "",
+      "licence": "MIT",
+      "note": "WebGL-fallback poster and index thumbnail, rendered from this page by tools/qa-library.mjs. No AI imagery.",
+      "files": [
+        "poster.webp",
+        "thumb.webp"
+      ]
+    }
+  ]
+}

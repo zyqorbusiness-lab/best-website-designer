@@ -18,6 +18,12 @@ Reference concepts (copy these, they pass QA):
 4. **Get the real asset.** Only verified CC0 / CC-BY (Poly Haven, Khronos samples, NASA public domain, ...). No AI images.
    Optimise once with gltf-transform (meshopt + webp, 1k-2k textures) into `_assets/models/` or `_assets/tex/`,
    and add the author + licence + URL to `credits.json`. Phone and desktop use this one file.
+   **Credit file next to every asset** (models, textures, HDRI, photos, fonts, video, audio, and code-made assets too):
+   `<asset>.credit.json` (or one `credit.json` for a folder that holds one asset) with exactly
+   `title, author, author_url, source_url, licence, licence_url, attribution, changes, downloaded`
+   (licence with its version, e.g. "CC BY 4.0"; `source_url` is the asset's own page; code-made: author "Zyqor Studio",
+   licence "MIT", changes "made in code"). A CC-BY asset must show its title, author and licence in the page footer
+   (the chrome renders it from `credits.json`). QA fails without these.
 5. **Set up the scene with one call.**
    ```js
    import { createStage, THREE, isM, reduced } from '../../_kit/stage.js';
@@ -27,6 +33,13 @@ Reference concepts (copy these, they pass QA):
    ```
    You get ACES + sRGB, the shared studio HDRI, DPR cap 2, meshopt/Draco/KTX2 decoders, resize, lazy start when the
    stage scrolls into view, pause off-screen, reduced-motion handling and the poster fallback if WebGL fails.
+   Kit v2: the model loaders are imported on the first `stage.load()`, so a code-only concept never downloads them
+   (don't import GLTFLoader yourself). Load models and the HDRI only through `stage.load()` / `stage.setEnv()` (one
+   request each, never left dangling). Add `<link rel="preload" href="../../_assets/models/x.glb" as="fetch" crossorigin>`
+   for your hero model. If you add post-processing, push each pass name into `stage.passes` so QA can compare builds.
+   Never branch effects on `isM` (shadows, tone mapping, antialias, env, passes): only pixel ratio and render-target
+   size may differ on phone. When WebGL is off, `createStage()` returns a safe no-op stage (`stage.failed === true`,
+   `scene`/`renderer` are null): guard your own scene code with `if (stage.failed) return;` and ship a `poster.webp`.
    Interaction: `stage.spin(obj)` (drag/swipe/keys with inertia), `stage.scroll(section, p => ...)` (ScrollTrigger + Lenis
    on desktop, native on phone), `stage.onFrame(fn)` (return `true` while animating; the loop sleeps when nothing changes).
 6. **Build the page around it.** Structure from your brief, never hero + 3 cards + about + contact. Use the kit classes
@@ -37,10 +50,21 @@ Reference concepts (copy these, they pass QA):
 8. **Build the phone page properly.** `m.html` + `m.css`: same `app.js` (it sees `isM === true`), same files, a layout
    designed for a 390px thumb (48px targets, native scroll, the touch gesture shown on screen), not a squeezed desktop.
 9. **QA it.** `node tools/qa-library.mjs N014` runs desktop 1440x900, phone 390x844 (must redirect to `m.html`), phone
-   360x740 and reduced motion; it fails on any console error or warning, failed request, horizontal overflow, missing
-   chrome/credits, or phone loading different asset files. It writes `thumb.webp` + `poster.webp` + `qa.json`. Fix, re-run, look at
-   the screenshots yourself against the brief, improve, repeat (at least an hour of iteration).
-10. **Publish it to the index.** `node tools/library-build.mjs` regenerates `library.json`; the concept appears on
+   360x740, reduced motion, and (kit v2) desktop + phone with WebGL switched off (`nd1440`, `nm390`: the poster must show,
+   no blank canvas, no uncaught error). It fails on any console error or warning, failed request, horizontal overflow,
+   missing chrome/credits, and on the kit v2 gates:
+   - **Weight:** `ownKB` = your concept's own files (its folder + the `_assets/` it uses) must be within the tier budget
+     (Normal 1.5 MB, Advanced 3 MB, Premium 6 MB, the larger of desktop and phone). `sharedKB` (three.js, kit, shared
+     HDRI) is reported, not budgeted: it is cached across concepts.
+   - **Phone = PC:** the phone must load the same model, texture and HDRI URLs as desktop, and `window.__stage.info()`
+     must report the same effects (tone mapping, exposure, shadows, antialias, env, passes, contact shadows); only pixel
+     ratio and size may differ.
+   - **Credits:** every asset file the page used has a complete credit file, and every CC-BY credit is visible in the
+     footer on desktop and phone.
+   It writes `thumb.webp` + `poster.webp` + `qa.json`. Fix, re-run, look at the screenshots yourself against the brief,
+   improve, repeat (at least an hour of iteration). One Chrome at a time: QA takes the shared lock `/tmp/beast-chrome.lock`.
+10. **Publish it to the index.** `node tools/library-build.mjs` regenerates `library.json` and the slim
+    `_data/nav.json` that concept pages read for previous / next; the concept appears on
     `/library/` as Live only when its `qa.json` says PASS. Everything else stays a palette card marked Coming.
 
 ## What is in the kit
@@ -49,16 +73,18 @@ Reference concepts (copy these, they pass QA):
 |---|---|
 | `_kit/concept.css` | reset, fluid type scale, spacing scale, palette tokens, hairlines + specular edges, grain, glass tokens, focus, reduced motion |
 | `_kit/chrome.js` + `chrome.css` | the top glass bar (back to library, "Zyqor Library · Concept N002 · fictional brand", tier badge), credits sheet from `credits.json`, honest footer with previous / next |
-| `_kit/stage.js` | `createStage()` and helpers: `load, fit, add, asset, loadTexture, contactShadow, spin, scroll, smooth, onFrame, invalidate, loaded` |
+| `_kit/stage.js` | `createStage()` and helpers: `load, fit, add, asset, loadTexture, setEnv, contactShadow, spin, scroll, smooth, onFrame, invalidate, loaded, passes, info` |
 | `_kit/fx/*.js` | reveal, split-text, magnetic, tilt, cursor follower, press ripple, marquee, SVG morph |
 | `_kit/font/` | JetBrains Mono (OFL) for index tags; display/body fonts come from the portfolio's licensed set |
 | `_template/` | the page template the scaffold copies (index.html, m.html, style.css, m.css, app.js, credits.json, brief.md) |
 | `_assets/` | shared optimised models and textures (one copy, used by desktop and phone) |
 | `library.json` | the catalogue the index reads, generated from the plan + each concept's `qa.json` |
+| `_data/nav.json` | built concepts only (`[id, name, path]`), for the concept footer's previous / next; generated with `library.json` |
 | `index.html`, `m.html`, `lib.*` | the filterable library index (tier, category, technique, search, show/hide Coming) |
 
 ## Rules that fail review
 
 Real assets only, credited. No emoji (inline SVG icons). Fictional brands say Concept. No invented clients, reviews or
 numbers. Three colours per page, warm paper instead of white, coloured darks instead of black, no purple AI gradients.
-Nothing hover-only. Phone loads the same assets as desktop. 0 console errors and no horizontal overflow at 1440, 390 and 360.
+Nothing hover-only. Phone loads the same assets and runs the same effects as desktop. A credit file next to every asset.
+Poster shows when WebGL is off. Own files within the tier budget. 0 console errors and no horizontal overflow at 1440, 390 and 360.

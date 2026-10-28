@@ -2,7 +2,7 @@
    Signature: the plant unfurls as the window opens, and the Sunlit / Dusk switch re-lights the room:
    the sun light swings low behind the leaves (gold, then ember), fireflies wake up with their own little lights,
    the leaves fold up for the night and the plant turns after the light. */
-import { reveals, smooth } from '../_kit/kit.js';
+import { reveals, smooth, hasWebGL } from '../_kit/kit.js';
 import { startPlant } from './plant3d.js';
 import { initUI, $ } from './ui.js';
 
@@ -14,7 +14,7 @@ reveals(); lenis = smooth();
 const cv = $('.plantgl'), ph = $('.plant-img.ph'), arch = $('.arch');
 
 const shownD = () => { cv.classList.add('on'); ph.classList.add('off'); };
-const boot = () => startPlant({ cv, arch, M, onShown: shownD }).then(() => { window.__plantReady = true; }).catch(() => { ph.classList.add('fb'); });
+const boot = () => !hasWebGL() ? ph.classList.add('fb') /* no WebGL: the plant poster stays */ : startPlant({ cv, arch, M, onShown: shownD }).then(() => { window.__plantReady = true; }).catch(() => { ph.classList.add('fb'); });
 setTimeout(() => { if (!window.__plantReady) ph.classList.add('fb'); }, 15000);
 const ready = () => { window.__vReady = performance.now(); setTimeout(boot, 120); };
 if (document.readyState === 'complete') ready(); else addEventListener('load', ready);

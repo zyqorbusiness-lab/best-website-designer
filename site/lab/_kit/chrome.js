@@ -55,3 +55,7 @@ foot.innerHTML = `<div class="zl-foot-in">
  </nav>
 </div>`;
 document.body.append(foot);
+
+/* no-WebGL fallback: stills instead of blank canvases (v3 gaps, Oct 28). Loaded without blocking this file, so the
+   chrome is built exactly when it was before (a static import here delayed it by two requests and moved the pill after first paint). */
+import('./nogl.js').catch(() => {});

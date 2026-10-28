@@ -1,0 +1,14 @@
+{
+ "title": "General Sans",
+ "author": "Indian Type Foundry",
+ "author_url": "https://www.fontshare.com/fonts/general-sans",
+ "source_url": "https://www.fontshare.com/fonts/general-sans",
+ "licence": "ITF Free Font License 2.0",
+ "licence_url": "https://www.fontshare.com/licenses/itf-ffl",
+ "attribution": "General Sans by Indian Type Foundry, via Fontshare, ITF Free Font License (credit optional)",
+ "changes": "self-hosted woff2 as downloaded from Fontshare (per CREDITS.md)",
+ "downloaded": "2026-10-27",
+ "licence_flag": "ITF FFL is not on Sujon's allow-list; FFL v2.0 s.02 forbids subsetting/format conversion and s.01-02 forbid redistribution through a public repository. Needs a decision before push.",
+ "file": "generalsans-400.woff2",
+ "credit_written_by": "credits backfill 2026-10-28 (work/beast/credits/backfill)"
+}

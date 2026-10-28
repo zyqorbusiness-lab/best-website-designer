@@ -38,6 +38,7 @@
   <section class="hero" id="top" aria-label="Umami Ring, choose a bowl">
     <div class="spot" aria-hidden="true"></div>
     <h1 class="dname" aria-live="polite"><span class="sr">Umami Ring ramen bar. Now showing: </span><span class="dn" id="dn">Tonkotsu</span></h1>
+    <img class="u-poster" src="poster.webp" alt="" aria-hidden="true" decoding="async" fetchpriority="high">
     <canvas id="ring" aria-hidden="true"></canvas>
     <div class="spicer" role="group" aria-label="Spice level">
       <span class="sp-k" aria-hidden="true">Spice</span>
@@ -48,7 +49,7 @@
     </div>
     <div class="hero-l">
       <p class="eyebrow"><span class="pulse"></span>Ramen bar &middot; Concept 08</p>
-      <p class="hsub" id="hsub">Pork bone broth, slow and milky. Twelve hours on the fire, ninety seconds to your seat.</p>
+      <p class="hsub" id="hsub">Bone broth, slow and milky. Twelve hours on the fire, ninety seconds to your seat.</p>
       <a class="pill pill-solid mag" href="#menu">See the menu <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
     </div>
     <div class="hero-r">
@@ -66,11 +67,11 @@
     <div class="menu-l">
       <p class="tag" data-rv>The menu</p>
       <h2 id="menu-h" data-rv data-rv-d="1">Five bowls.<br>One ring.</h2>
-      <ul class="mlist" role="list"><li><button class="mrow" data-i="0" aria-pressed="true"><span class="mno">01</span><span class="mtxt"><b>Tonkotsu</b><small>Pork bone broth, slow and milky</small></span><span class="mtag">Rich</span><span class="spice" aria-label="Spice 1 of 3"><i class="on"></i><i class=""></i><i class=""></i></span></button></li><li><button class="mrow" data-i="1" aria-pressed="false"><span class="mno">02</span><span class="mtxt"><b>Shoyu Classic</b><small>Clear soy broth, chicken and dashi</small></span><span class="mtag">Clean</span><span class="spice" aria-label="Spice 0 of 3"><i class=""></i><i class=""></i><i class=""></i></span></button></li><li><button class="mrow" data-i="2" aria-pressed="false"><span class="mno">03</span><span class="mtxt"><b>Miso Fire</b><small>Red miso, chilli oil, sweet corn</small></span><span class="mtag">Hot</span><span class="spice" aria-label="Spice 3 of 3"><i class="on"></i><i class="on"></i><i class="on"></i></span></button></li><li><button class="mrow" data-i="3" aria-pressed="false"><span class="mno">04</span><span class="mtxt"><b>Yuzu Shio</b><small>Light salt broth, bright citrus</small></span><span class="mtag">Light</span><span class="spice" aria-label="Spice 0 of 3"><i class=""></i><i class=""></i><i class=""></i></span></button></li><li><button class="mrow" data-i="4" aria-pressed="false"><span class="mno">05</span><span class="mtxt"><b>Black Garlic</b><small>Burnt garlic oil over pork broth</small></span><span class="mtag">Deep</span><span class="spice" aria-label="Spice 1 of 3"><i class="on"></i><i class=""></i><i class=""></i></span></button></li><li class="mpill" aria-hidden="true"></li></ul>
+      <ul class="mlist" role="list"><li><button class="mrow" data-i="0" aria-pressed="true"><span class="mno">01</span><span class="mtxt"><b>Tonkotsu</b><small>Bone broth, slow and milky</small></span><span class="mtag">Rich</span><span class="spice" aria-label="Spice 1 of 3"><i class="on"></i><i class=""></i><i class=""></i></span></button></li><li><button class="mrow" data-i="1" aria-pressed="false"><span class="mno">02</span><span class="mtxt"><b>Shoyu Classic</b><small>Clear soy broth, chicken and dashi</small></span><span class="mtag">Clean</span><span class="spice" aria-label="Spice 0 of 3"><i class=""></i><i class=""></i><i class=""></i></span></button></li><li><button class="mrow" data-i="2" aria-pressed="false"><span class="mno">03</span><span class="mtxt"><b>Miso Fire</b><small>Red miso, chilli oil, sweet corn</small></span><span class="mtag">Hot</span><span class="spice" aria-label="Spice 3 of 3"><i class="on"></i><i class="on"></i><i class="on"></i></span></button></li><li><button class="mrow" data-i="3" aria-pressed="false"><span class="mno">04</span><span class="mtxt"><b>Yuzu Shio</b><small>Light salt broth, bright citrus</small></span><span class="mtag">Light</span><span class="spice" aria-label="Spice 0 of 3"><i class=""></i><i class=""></i><i class=""></i></span></button></li><li><button class="mrow" data-i="4" aria-pressed="false"><span class="mno">05</span><span class="mtxt"><b>Black Garlic</b><small>Burnt garlic oil over pork broth</small></span><span class="mtag">Deep</span><span class="spice" aria-label="Spice 1 of 3"><i class="on"></i><i class=""></i><i class=""></i></span></button></li><li class="mpill" aria-hidden="true"></li></ul>
     </div>
     <div class="menu-r" data-rv="zoom">
-      <div class="plate"><div class="plate-ring" aria-hidden="true"></div><img id="plateImg" alt="Top view of the Tonkotsu bowl" width="560" height="560"></div>
-      <p class="plate-cap"><b id="plateName">Tonkotsu</b><span id="plateNote">Chashu, soft egg, nori, scallion, sesame</span></p>
+      <div class="plate"><div class="plate-ring" aria-hidden="true"></div><img id="plateImg" src="../../assets/lab/umami/plate-tonkotsu.webp" alt="Top view of the Tonkotsu bowl" width="560" height="560" loading="lazy" decoding="async"></div>
+      <p class="plate-cap"><b id="plateName">Tonkotsu</b><span id="plateNote">Sliced brisket, tendon, scallion, milky broth</span></p>
     </div>
   </section>
 
@@ -106,16 +107,22 @@
   <section class="cta" id="note" aria-labelledby="cta-h">
     <p class="tag" data-rv>Book a seat</p>
     <h2 id="cta-h" data-rv data-rv-d="1">Pull up<br>a stool.</h2>
-    <div class="note" data-rv data-rv-d="2"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9h12"/><path d="M8 9l-1.5 11M16 9l1.5 11M8.5 15h7"/><ellipse cx="12" cy="7" rx="6" ry="2.5"/></svg><p><b>This is a concept.</b> Umami Ring is a fictional ramen bar designed by Zyqor Studio, so there's nothing to book (yet). The bowls are made in code, not in a kitchen.</p></div>
+    <div class="note" data-rv data-rv-d="2"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9h12"/><path d="M8 9l-1.5 11M16 9l1.5 11M8.5 15h7"/><ellipse cx="12" cy="7" rx="6" ry="2.5"/></svg><p><b>This is a concept.</b> Umami Ring is a fictional ramen bar designed by Zyqor Studio, so there's nothing to book (yet). The bowls are real ramen, scanned by the photographers credited below.</p></div>
     <a class="pill pill-solid mag" href="#top">Back to the ring <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4"/><path d="M4 3.5 20.5 20"/></svg></a>
   </section>
 </main>
 <template id="credits">
-  <li>Code, design and the 3D bowls (procedural three.js geometry: lathe-turned bowls with foot ring and rolled rim, wavy tube noodles, extruded toppings, generated colour, roughness and normal maps, shader steam): Zyqor Studio (MIT licence for the code).</li>
-  <li>Studio lighting: "Studio Small 09" HDRI by Sergej Majboroda, Poly Haven, CC0 (desktop build).</li>
-  <li>Fonts: Bricolage Grotesque by Mathieu Triay and Inter Tight by Rasmus Andersson et al., both SIL Open Font Licence, via Google Fonts.</li>
+  <li>Tonkotsu bowl: <a href="https://poly.cam/explore/capture/8a1ea644-15d2-4e99-9857-9defb4344140" rel="noopener">&#8220;三寶河 Beef tendon, beef brisket, beef stomach, pho noodle.&#8221;</a> by <a href="https://poly.cam/@Somnia" rel="noopener">Somnia</a> (Polycam), licensed under <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>. Photogrammetry scan, cropped, scaled, simplified and compressed by Zyqor Studio.</li>
+  <li>Shoyu Classic bowl: <a href="https://sketchfab.com/3d-models/scan-2023-05-10t194107547z-e530e845fadc4b5297f2b114e96006ba" rel="noopener">&#8220;Scan 2023-05-10T19:41:07.547Z&#8221;</a> by <a href="https://sketchfab.com/Exuberance1323" rel="noopener">EGFoodScans</a> (Sketchfab), licensed under <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>. Photogrammetry scan, cropped, scaled, simplified and compressed by Zyqor Studio.</li>
+  <li>Miso Fire bowl: <a href="https://poly.cam/explore/capture/FD04EBD2-D88C-47BE-B546-A3E9D796942E" rel="noopener">&#8220;Kashiwa Ramen / Spicy Miso&#8221;</a> by <a href="https://poly.cam/@UniconeDesign" rel="noopener">UniconeDesign</a> (Polycam), licensed under <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>. Photogrammetry scan, cropped, scaled, simplified and compressed by Zyqor Studio; the restaurant crest and lettering on the bowl were painted out.</li>
+  <li>Yuzu Shio bowl: <a href="https://poly.cam/explore/capture/c0033d55-c7ae-4627-9285-b897bf0e7785" rel="noopener">&#8220;Wonton noodle &amp; NICE BOWL!&#8221;</a> by <a href="https://poly.cam/@Somnia" rel="noopener">Somnia</a> (Polycam), licensed under <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>. Photogrammetry scan, cropped, scaled, simplified and compressed by Zyqor Studio.</li>
+  <li>Black Garlic bowl: <a href="https://sketchfab.com/3d-models/scan-2023-05-08t182929661z-db8cbb282c044c4ca0b3c910158f3ec7" rel="noopener">&#8220;Scan 2023-05-08T18:29:29.661Z&#8221;</a> by <a href="https://sketchfab.com/Exuberance1323" rel="noopener">EGFoodScans</a> (Sketchfab), licensed under <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>. Photogrammetry scan, cropped, scaled, simplified and compressed by Zyqor Studio.</li>
+  <li>Trays: &#8220;Fine Grained Wood&#8221; texture by Rob Tuytel, Poly Haven, CC0 1.0.</li>
+  <li>Studio lighting: &#8220;Studio Small 09&#8221; HDRI by Sergej Majboroda, Poly Haven, CC0 1.0.</li>
+  <li>Made in code by Zyqor Studio (MIT): the ring, trays, chilli-oil layer, steam, embers, drop and ripple shaders, the menu plates (rendered from the scans) and the poster.</li>
+  <li>Fonts: Bricolage Grotesque by Mathieu Triay and Inter Tight by Rasmus Andersson et al., both SIL Open Font Licence 1.1, via Google Fonts.</li>
   <li>Libraries: three.js (MIT), GSAP (Standard licence), Lenis (MIT).</li>
-  <li>Umami Ring, its dishes and its hours are fictional. No real restaurant is shown.</li>
+  <li>Umami Ring, its dishes and its hours are fictional. No real restaurant is shown; the scanned bowls are real ramen photographed by the people credited above.</li>
 </template>
 <script src="../../vendor/gsap.min.js" defer></script>
 <script src="../../vendor/ScrollTrigger.min.js" defer></script>

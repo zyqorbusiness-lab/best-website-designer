@@ -1,0 +1,13 @@
+{
+ "title": "Fraunces",
+ "author": "Undercase Type, Phaedra Charles, Flavia Zimbardi",
+ "author_url": "https://github.com/undercasetype/Fraunces",
+ "source_url": "https://fonts.google.com/specimen/Fraunces",
+ "licence": "SIL OFL 1.1",
+ "licence_url": "https://openfontlicense.org/open-font-license-official-text/",
+ "attribution": "Fraunces by Undercase Type, Phaedra Charles, Flavia Zimbardi, SIL Open Font License 1.1 (https://github.com/undercasetype/Fraunces)",
+ "changes": "self-hosted woff2 (Latin subset where named in CREDITS.md); OFL permits subsetting and conversion; Reserved Font Name rules respected (family name unchanged where unmodified)",
+ "downloaded": "2026-10-27",
+ "file": "fraunces-italic.woff2",
+ "credit_written_by": "credits backfill 2026-10-28 (work/beast/credits/backfill)"
+}

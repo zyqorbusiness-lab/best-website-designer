@@ -1,0 +1,223 @@
+/* =====================================================================
+   Liquid Glass UI  v2  ·  Zyqor Studio  ·  MIT
+   kit/liquid-glass.css  (pair with kit/liquid-glass.js for refraction,
+   pointer light and the interactive parts; the CSS alone already gives
+   blur, saturation, specular rim, hairline, inner glow and depth)
+
+   Surface   .lg                     any element becomes glass
+   Variants  .lg--clear  thin, Apple "clear" glass (needs a busy backdrop)
+             .lg--dark   ink glass for bright backdrops (text turns light)
+             .lg--accent tinted glass for the one main action
+   Parts     .lg-nav  .lg-btn  .lg-btn--icon  .lg-card  .lg-seg  .lg-switch
+             .lg-slider  .lg-sheet  .lg-tabbar  [data-lg-tip]
+   Tokens    --c1 light · --c2 dark · --c3 accent (your 3-colour palette)
+             --lg-blur --lg-sat --lg-alpha --lg-radius (all optional)
+   Motion    expo-out, 460 ms, opacity + small rise. No bounce, no blur-in.
+   ===================================================================== */
+@property --lg-x{syntax:"<percentage>";inherits:true;initial-value:30%}
+@property --lg-y{syntax:"<percentage>";inherits:true;initial-value:0%}
+@property --lg-a{syntax:"<angle>";inherits:true;initial-value:135deg}
+@property --lg-glow{syntax:"<number>";inherits:true;initial-value:0}
+/* the public tokens do not inherit: a value set on a container (a nav, a dock, a card) does not leak
+   into the glass buttons inside it. Browsers without @property simply inherit (harmless). */
+@property --lg-alpha{syntax:"*";inherits:false}
+@property --lg-blur{syntax:"*";inherits:false}
+@property --lg-sat{syntax:"*";inherits:false}
+@property --lg-radius{syntax:"*";inherits:false}
+@property --lg-tint{syntax:"*";inherits:false}
+@property --lg-ink{syntax:"*";inherits:false}
+
+:root{
+ --lg-ease:cubic-bezier(.16,1,.3,1);          /* expo-out */
+ --lg-dur:460ms;
+}
+
+.lg{
+ --_c1:var(--c1,#F4EEE3); --_c2:var(--c2,#0A2F3A); --_c3:var(--c3,#EC7E46);
+ --_tint:var(--lg-tint,var(--_c1));
+ --_ink:var(--lg-ink,var(--_c2));
+ --_a:var(--lg-alpha,.16);
+ --_blur:var(--lg-blur,12px);
+ --_sat:var(--lg-sat,1.8);
+ --_r:var(--lg-radius,22px);
+ --_spec:rgba(255,255,255,.78);       /* top-left glint */
+ --_spec2:rgba(255,255,255,.34);      /* bottom-right glint */
+ --_hair:rgba(255,255,255,.26);
+ --_depth:color-mix(in oklab,var(--_c2) 38%,transparent);
+ position:relative; isolation:isolate;
+ color:var(--_ink);
+ border-radius:var(--_r);
+ background:
+   linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,0) 46%),
+   color-mix(in oklab,var(--_tint) calc(var(--_a)*100%),transparent);
+ -webkit-backdrop-filter:blur(var(--_blur)) saturate(var(--_sat)) brightness(1.04);
+         backdrop-filter:blur(var(--_blur)) saturate(var(--_sat)) brightness(1.04);
+ box-shadow:
+   inset 1.5px 1.5px 0 -.5px var(--_spec),          /* specular edge, light from top-left */
+   inset -1px -1px 0 -.25px var(--_spec2),          /* counter glint */
+   inset 0 0 0 .5px var(--_hair),                   /* hairline */
+   inset 0 0 22px -8px rgba(255,255,255,.55),       /* inner glow = thickness */
+   0 1px 2px -1px color-mix(in oklab,var(--_c2) 30%,transparent),
+   0 14px 34px -14px var(--_depth);                 /* depth, never a hard drop shadow */
+ transition:transform var(--lg-dur) var(--lg-ease),box-shadow var(--lg-dur) var(--lg-ease),
+            background-color var(--lg-dur) var(--lg-ease),--lg-glow 300ms var(--lg-ease);
+}
+/* rim: a 1px gradient ring that is bright where the light hits and on the opposite edge */
+.lg::before{
+ content:""; position:absolute; inset:0; border-radius:inherit; padding:1px; pointer-events:none; z-index:-1;
+ background:conic-gradient(from var(--lg-a),
+   rgba(255,255,255,.95) 0deg, rgba(255,255,255,.18) 55deg, rgba(255,255,255,.06) 120deg,
+   rgba(255,255,255,.55) 180deg, rgba(255,255,255,.08) 240deg, rgba(255,255,255,.2) 305deg, rgba(255,255,255,.95) 360deg);
+ -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+ -webkit-mask-composite:xor; mask-composite:exclude;
+ opacity:.85;
+}
+/* sheen: soft light pool that follows the pointer and brightens on press */
+.lg::after{
+ content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none; z-index:-1;
+ background:radial-gradient(120% 90% at var(--lg-x) var(--lg-y),rgba(255,255,255,calc(.20 + var(--lg-glow)*.28)),rgba(255,255,255,0) 60%);
+ mix-blend-mode:soft-light;
+}
+
+/* ---------- variants ---------- */
+.lg--clear{ --_a:var(--lg-alpha,.04); --_blur:var(--lg-blur,2px); --_sat:var(--lg-sat,1.5) }
+.lg--dark{
+ --_tint:var(--lg-tint,var(--_c2)); --_ink:var(--lg-ink,var(--_c1)); --_a:var(--lg-alpha,.42);
+ --_spec:rgba(255,255,255,.42); --_spec2:rgba(255,255,255,.16); --_hair:rgba(255,255,255,.14);
+}
+.lg--accent{ --_tint:var(--_c3); --_a:var(--lg-alpha,.98); --_sat:var(--lg-sat,1.4); --_ink:var(--lg-ink,var(--_c2)); --_spec:rgba(255,255,255,.7) }
+
+/* text-bearing buttons get a thicker tint than bare surfaces, so labels hold 4.5:1 over dark photos */
+.lg-btn:not(.lg--clear):not(.lg--accent):not(.lg--dark){ --_a:var(--lg-alpha,.56) }
+/* .lg--dim: Apple's dimming layer under clear glass, for light labels over bright or busy backdrops */
+.lg--dim{ background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,0) 46%),color-mix(in oklab,var(--_c2) 34%,transparent); --_ink:var(--lg-ink,var(--_c1)) }
+
+/* ---------- press state (everything pressable) ---------- */
+.lg-btn,.lg-seg>button,.lg-tabbar>button,.lg-switch{ -webkit-tap-highlight-color:transparent; cursor:pointer; -webkit-user-select:none; user-select:none; touch-action:manipulation }
+.lg-btn:active,.lg-btn.is-press{ transform:scale(.965); --lg-glow:1 }
+.lg-btn:focus-visible,.lg-seg>button:focus-visible,.lg-tabbar>button:focus-visible,.lg-switch:focus-visible,.lg-slider input:focus-visible+.lg-slider__track{
+ outline:2px solid var(--_c3,#EC7E46); outline-offset:3px }
+
+/* ---------- nav pill ---------- */
+.lg-nav{ --_r:var(--lg-radius,999px); display:flex; align-items:center; gap:4px; padding:6px }
+.lg-nav a{ color:inherit; text-decoration:none; padding:9px 14px; border-radius:999px; font-weight:560;
+ transition:background-color 300ms var(--lg-ease) }
+.lg-nav a:hover,.lg-nav a:focus-visible{ background:rgba(255,255,255,.22) }
+/* narrow screens: the pill never grows past the viewport */
+.lg-nav{ max-width:calc(100vw - 24px) }
+@media (max-width:480px){ .lg-nav{ gap:0; padding:4px } .lg-nav a{ padding:8px 10px } .lg-nav .lg-btn{ padding-inline:14px } }
+
+/* ---------- buttons ---------- */
+.lg-btn{ --_r:var(--lg-radius,999px); display:inline-flex; align-items:center; justify-content:center; gap:8px;
+ min-height:44px; padding:0 20px; border:0; font:inherit; font-weight:600; letter-spacing:-.01em; white-space:nowrap; text-decoration:none; color:var(--_ink) }
+.lg-btn--icon{ width:44px; padding:0; flex:none }
+.lg-btn svg{ width:20px; height:20px; flex:none }
+
+/* ---------- card ---------- */
+.lg-card{ --_r:var(--lg-radius,28px); padding:22px }
+
+/* ---------- segmented control (JS adds the sliding lens) ---------- */
+.lg-seg{ --_r:var(--lg-radius,999px); display:inline-grid; grid-auto-flow:column; grid-auto-columns:1fr; padding:4px; gap:0 }
+.lg-seg>button{ position:relative; z-index:2; border:0; background:none; color:inherit; font:inherit; font-weight:600;
+ min-height:36px; padding:0 16px; border-radius:999px; opacity:.84; transition:opacity 300ms var(--lg-ease) }
+.lg-seg>button[aria-pressed="true"],.lg-seg>button[aria-selected="true"]{ opacity:1 }
+.lg-lens{ position:absolute; z-index:1; top:4px; bottom:4px; left:0; border-radius:999px; pointer-events:none;
+ background:rgba(255,255,255,.52);
+ -webkit-backdrop-filter:blur(2px) saturate(1.6) brightness(1.08); backdrop-filter:blur(2px) saturate(1.6) brightness(1.08);
+ box-shadow:inset 1px 1px 0 -.25px rgba(255,255,255,.9),inset -1px -1px 0 -.25px rgba(255,255,255,.4),
+   0 6px 16px -8px color-mix(in oklab,var(--c2,#0A2F3A) 50%,transparent);
+ transition:transform var(--lg-dur) var(--lg-ease),width var(--lg-dur) var(--lg-ease) }
+.lg--dark .lg-lens{ background:rgba(255,255,255,.16) }
+
+/* ---------- switch ---------- */
+.lg-switch{ --_r:999px; position:relative; width:58px; height:34px; flex:none; border:0; padding:0;
+ background:color-mix(in oklab,var(--c2,#0A2F3A) 22%,transparent); border-radius:999px;
+ box-shadow:inset 0 1px 3px color-mix(in oklab,var(--c2,#0A2F3A) 35%,transparent),inset 0 0 0 .5px rgba(255,255,255,.25);
+ transition:background-color var(--lg-dur) var(--lg-ease) }
+.lg-switch[aria-checked="true"]{ background:var(--c3,#EC7E46) }
+.lg-switch__thumb{ position:absolute; top:3px; left:3px; width:28px; height:28px; border-radius:999px;
+ background:rgba(255,255,255,.92);
+ box-shadow:inset 1px 1px 0 -.25px #fff,inset 0 -2px 4px color-mix(in oklab,var(--c2,#0A2F3A) 8%,transparent),0 3px 8px -2px color-mix(in oklab,var(--c2,#0A2F3A) 45%,transparent);
+ transition:transform var(--lg-dur) var(--lg-ease),width 300ms var(--lg-ease),background-color 300ms var(--lg-ease) }
+.lg-switch[aria-checked="true"] .lg-switch__thumb{ transform:translateX(24px) }
+/* while pressed the thumb turns into a clear lens and stretches, like a drop of water */
+.lg-switch:active .lg-switch__thumb,.lg-switch.is-press .lg-switch__thumb{ width:36px; background:rgba(255,255,255,.28);
+ -webkit-backdrop-filter:blur(1px) saturate(1.8) brightness(1.1); backdrop-filter:blur(1px) saturate(1.8) brightness(1.1) }
+.lg-switch[aria-checked="true"]:active .lg-switch__thumb,.lg-switch[aria-checked="true"].is-press .lg-switch__thumb{ transform:translateX(16px) }
+
+/* ---------- slider (native range on top for a11y, glass thumb under it) ---------- */
+.lg-slider{ --v:50%; position:relative; height:40px; display:flex; align-items:center }
+.lg-slider input{ position:absolute; inset:0; width:100%; height:100%; margin:0; opacity:0; cursor:pointer; z-index:3 }
+.lg-slider__track{ position:relative; width:100%; height:6px; border-radius:99px;
+ background:color-mix(in oklab,var(--c2,#0A2F3A) 20%,transparent); box-shadow:inset 0 1px 2px color-mix(in oklab,var(--c2,#0A2F3A) 30%,transparent) }
+.lg-slider__fill{ position:absolute; inset:0 auto 0 0; width:var(--v); border-radius:inherit; background:var(--c3,#EC7E46) }
+.lg-slider__thumb{ position:absolute; top:50%; left:var(--v); width:30px; height:22px; margin:-11px 0 0 -15px; border-radius:99px; z-index:2;
+ background:rgba(255,255,255,.94); pointer-events:none;
+ box-shadow:inset 1px 1px 0 -.25px #fff,0 3px 10px -2px color-mix(in oklab,var(--c2,#0A2F3A) 45%,transparent);
+ transition:transform 360ms var(--lg-ease),background-color 300ms var(--lg-ease) }
+/* dragging: the thumb becomes a magnifying lens over the track */
+.lg-slider.is-drag .lg-slider__thumb{ transform:scale(1.5,1.6); background:rgba(255,255,255,.18);
+ -webkit-backdrop-filter:saturate(1.8) brightness(1.08); backdrop-filter:saturate(1.8) brightness(1.08) }
+
+/* ---------- sheet / modal (a <dialog>) ---------- */
+.lg-sheet{ --_r:var(--lg-radius,34px); border:0; padding:26px; max-width:min(440px,calc(100vw - 32px)); width:100%;
+ color:var(--_ink); margin:auto; overflow:visible }
+.lg-sheet::backdrop{ background:color-mix(in oklab,var(--c2,#0A2F3A) 28%,transparent);
+ -webkit-backdrop-filter:blur(2px); backdrop-filter:blur(2px) }
+.lg-sheet[open]{ animation:lg-rise var(--lg-dur) var(--lg-ease) both }
+.lg-sheet.is-closing{ animation:lg-fall 260ms var(--lg-ease) both }
+.lg-sheet--bottom{ margin:auto auto 10px; max-width:calc(100vw - 16px) }
+.lg-grabber{ width:38px; height:5px; border-radius:9px; margin:-12px auto 16px; background:currentColor; opacity:.25 }
+@keyframes lg-rise{ from{ opacity:0; transform:translateY(22px) } to{ opacity:1; transform:none } }
+@keyframes lg-fall{ to{ opacity:0; transform:translateY(16px) } }
+
+/* ---------- phone tab bar ---------- */
+.lg-tabbar{ --_r:999px; position:fixed; z-index:50; left:50%; bottom:calc(14px + env(safe-area-inset-bottom));
+ transform:translateX(-50%); display:grid; grid-auto-flow:column; grid-auto-columns:1fr; padding:5px; width:min(calc(100vw - 28px),420px) }
+.lg-tabbar>button{ position:relative; z-index:2; display:grid; justify-items:center; gap:2px; border:0; background:none; color:inherit;
+ font:inherit; font-size:11px; font-weight:600; padding:7px 0 6px; border-radius:999px; opacity:.8; transition:opacity 300ms var(--lg-ease) }
+.lg-tabbar>button svg{ width:23px; height:23px }
+.lg-tabbar>button[aria-selected="true"]{ opacity:1; color:var(--lg-active,inherit) }
+.lg-tabbar .lg-lens{ top:5px; bottom:5px }
+
+/* ---------- tooltip: hover, keyboard focus AND tap (JS toggles .is-tip) ---------- */
+[data-lg-tip]{ position:relative }
+[data-lg-tip]:hover,[data-lg-tip]:focus-visible,[data-lg-tip].is-tip{ z-index:70 }
+.lg-tip{ position:absolute; z-index:60; left:50%; bottom:calc(100% + 10px); transform:translate(calc(-50% + var(--lg-tip-dx,0px)),6px); width:max-content; max-width:min(260px,calc(100vw - 16px)); --lg-alpha:.86;
+ padding:8px 12px; border-radius:12px; font-size:13px; line-height:1.35; font-weight:560; pointer-events:none; opacity:0;
+ /* closed tips are display:none so they never widen the page on phones; the fade still runs (allow-discrete + @starting-style) */
+ display:none; transition:opacity 300ms var(--lg-ease),transform 300ms var(--lg-ease),display 300ms allow-discrete }
+[data-lg-tip]:hover>.lg-tip,[data-lg-tip]:focus-visible>.lg-tip,[data-lg-tip].is-tip>.lg-tip{ display:block; opacity:1; transform:translate(calc(-50% + var(--lg-tip-dx,0px)),0) }
+@starting-style{ [data-lg-tip]:hover>.lg-tip,[data-lg-tip]:focus-visible>.lg-tip,[data-lg-tip].is-tip>.lg-tip{ opacity:0; transform:translate(calc(-50% + var(--lg-tip-dx,0px)),6px) } }
+.lg-tip.lg-tip--below{ bottom:auto; top:calc(100% + 10px) }
+
+/* ---------- adaptive tint for floating glass (JS sets these from data-lg-backdrop) ---------- */
+.lg.lg-on-paper{ --_a:var(--lg-alpha-paper,.74); --_blur:20px; --_depth:color-mix(in oklab,var(--_c2) 24%,transparent) }
+.lg.lg-on-ink{ --_tint:var(--_c2); --_ink:var(--_c1); --_a:.5; --_spec:rgba(255,255,255,.4); --_hair:rgba(255,255,255,.14) }
+
+/* =====================================================================
+   Fallbacks
+   ===================================================================== */
+/* 1. no backdrop-filter at all: raise opacity so text still reads */
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+ .lg{ background:color-mix(in oklab,var(--_tint) 88%,transparent) }
+ .lg--clear{ background:color-mix(in oklab,var(--_tint) 70%,transparent) }
+}
+/* 2. user asked for less transparency (macOS / iOS setting): solid surfaces */
+@media (prefers-reduced-transparency:reduce){
+ .lg,.lg--clear{ background:var(--_tint); -webkit-backdrop-filter:none; backdrop-filter:none }
+ .lg--dark{ background:var(--_c2) } .lg--accent{ background:var(--_c3) }
+}
+html.lg-solid .lg{ background:var(--_tint) !important; -webkit-backdrop-filter:none !important; backdrop-filter:none !important }
+html.lg-solid .lg--dark{ background:var(--_c2) !important } html.lg-solid .lg--accent{ background:var(--_c3) !important }
+/* 3. high contrast / forced colours: real borders */
+@media (prefers-contrast:more){ .lg{ --_a:.82; box-shadow:inset 0 0 0 1.5px currentColor } }
+@media (forced-colors:active){ .lg{ border:1px solid CanvasText; background:Canvas } .lg::before,.lg::after{ display:none } }
+/* 4. reduced motion: no movement, state changes are instant fades */
+@media (prefers-reduced-motion:reduce){
+ .lg,.lg *,.lg-lens,.lg-switch__thumb,.lg-slider__thumb{ transition-duration:1ms !important }
+ .lg-sheet[open],.lg-sheet.is-closing{ animation-duration:1ms !important }
+ .lg-btn:active,.lg-btn.is-press{ transform:none }
+}
+/* 5. phones (set by JS, or add html.lg-lite yourself): lighter blur, one shadow */
+html.lg-lite .lg{ --_blur:var(--lg-blur-lite,10px) }

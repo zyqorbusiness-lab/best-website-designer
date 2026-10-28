@@ -1,0 +1,13 @@
+{
+ "title": "Inter Tight",
+ "author": "Rasmus Andersson",
+ "author_url": "https://github.com/rsms/inter-gf-tight",
+ "source_url": "https://fonts.google.com/specimen/Inter+Tight",
+ "licence": "SIL OFL 1.1",
+ "licence_url": "https://openfontlicense.org/open-font-license-official-text/",
+ "attribution": "Inter Tight by Rasmus Andersson, SIL Open Font License 1.1 (https://github.com/rsms/inter-gf-tight)",
+ "changes": "self-hosted woff2 (Latin subset where named in CREDITS.md); OFL permits subsetting and conversion; Reserved Font Name rules respected (family name unchanged where unmodified)",
+ "downloaded": "2026-10-28",
+ "file": "intertight-normal.woff2",
+ "credit_written_by": "credits backfill 2026-10-28 (work/beast/credits/backfill)"
+}

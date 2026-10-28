@@ -49,7 +49,7 @@ A growing library of **300 interactive 3D concept pages**, each a complete mini 
 | **Advanced** | Scroll-driven 3D scenes, shaders, physics, particles, frame sequences from our own renders | 100 |
 | **Premium** | Detailed real CC0/CC-BY models, PBR materials, HDRI lighting, liquid glass, cinematic scroll | 100 |
 
-Open it at [`site/library/`](site/library/) (live preview: `/library/`). The index filters by tier, category and technique; concepts that are not built yet show as palette cards marked *Coming*. Concepts go live in batches of 25, each only after it passes QA at 1440 / 390 / 360 with 0 console errors, and each has a desktop page and a phone page that load the **same** models, textures and lighting.
+Open it at [`site/library/`](site/library/) (live preview: `/library/`). The index filters by tier, category and technique; concepts that are not built yet show as palette cards marked *Coming*, and concepts in review show *In QA*. **Live now: 8** (N001 Loomhouse Tailors, N002 Kiln & Quiet, N005 Fieldnote Optics, N006 Quarry Type Foundry, N007 Brasswick Diya, N009 Glasskit Toggles, N010 Rootline Citrus, A018 Tranquility Base); 3 more are in QA fixes. Concepts go live in batches of 25, each only after it passes QA at 1440 / 390 / 360 with 0 console errors, and each has a desktop page and a phone page that load the **same** models, textures and lighting. Every concept is also checked by a separate reviewer against a 118-point requirements list, and every asset ships with a credit file next to it (`<asset>.credit.json`: exact licence and version, source page, required attribution, changes), gated by `node tools/credits-check.mjs`.
 
 <p>
   <img src="site/library/n/N002/thumb.webp" alt="N002 Kiln &amp; Quiet: a real ceramic vase on a potter's wheel" width="49%">
@@ -65,6 +65,8 @@ Built with a shared kit (`site/library/_kit/`: one-call three.js stage with HDRI
 ## Zyqor Lab
 
 Every Lab brand is **fictional** and every page says so. Nothing is for sale, no real company is shown, and there are no invented reviews or clients.
+
+**Real models (Oct 28):** the Ember, Umami, Volt, Dew and Meridian demos now use real CC0/CC-BY models and scans instead of code-built objects (credited in [CREDITS.md](CREDITS.md)); Signal and Hush are next. Every Lab demo shows a poster still when WebGL is unavailable.
 
 | # | Concept | Product | Signature interaction | Palette | Open |
 |---|---|---|---|---|---|

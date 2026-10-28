@@ -1,0 +1,12 @@
+{
+ "title": "Wonton noodle & NICE BOWL!",
+ "author": "Somnia",
+ "author_url": "https://poly.cam/@Somnia",
+ "source_url": "https://poly.cam/explore/capture/c0033d55-c7ae-4627-9285-b897bf0e7785",
+ "licence": "CC BY 4.0",
+ "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+ "attribution": "\"Wonton noodle & NICE BOWL!\" by Somnia (https://poly.cam/explore/capture/c0033d55-c7ae-4627-9285-b897bf0e7785), Polycam, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Modified: cropped, scaled, simplified and compressed.",
+ "changes": "re-centred and scaled (rim radius 1), table/ground cropped, decimated to ~45k triangles with meshoptimizer, colour map resized to 1536 px WebP, meshopt-compressed glTF (gltf-transform); used as the \"Yuzu Shio\" bowl",
+ "downloaded": "2026-10-28",
+ "licence_note": "Polycam Explore captures marked downloadable are CC BY 4.0 per Polycam Usage Rights and Ownership: https://learn.poly.cam/hc/en-us/articles/27646853145748-Usage-Rights-and-Ownership"
+}

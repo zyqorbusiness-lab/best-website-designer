@@ -1,0 +1,12 @@
+{
+ "title": "Kashiwa Ramen / Spicy Miso",
+ "author": "UniconeDesign",
+ "author_url": "https://poly.cam/@UniconeDesign",
+ "source_url": "https://poly.cam/explore/capture/FD04EBD2-D88C-47BE-B546-A3E9D796942E",
+ "licence": "CC BY 4.0",
+ "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+ "attribution": "\"Kashiwa Ramen / Spicy Miso\" by UniconeDesign (https://poly.cam/explore/capture/FD04EBD2-D88C-47BE-B546-A3E9D796942E), Polycam, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Modified: cropped, scaled, simplified and compressed, logo painted out.",
+ "changes": "restaurant crest and calligraphy painted out of the bowl texture (logo removal); serving board cropped away; re-centred and scaled (rim radius 1), table/ground cropped, decimated to ~45k triangles with meshoptimizer, colour map resized to 1536 px WebP, meshopt-compressed glTF (gltf-transform); used as the \"Miso Fire\" bowl",
+ "downloaded": "2026-10-28",
+ "licence_note": "Polycam Explore captures marked downloadable are CC BY 4.0 per Polycam Usage Rights and Ownership: https://learn.poly.cam/hc/en-us/articles/27646853145748-Usage-Rights-and-Ownership"
+}

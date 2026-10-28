@@ -1,0 +1,13 @@
+{
+ "title": "Wooden Axe",
+ "author": "Ulan Cabanilla",
+ "author_url": "https://polyhaven.com/all?a=Ulan%20Cabanilla",
+ "source_url": "https://polyhaven.com/a/wooden_axe",
+ "licence": "CC0 1.0",
+ "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+ "attribution": "\"Wooden Axe\" by Ulan Cabanilla, Poly Haven (https://polyhaven.com/a/wooden_axe), CC0 1.0 (courtesy credit; no attribution required)",
+ "changes": "glTF optimised with gltf-transform (meshopt geometry, WebP textures 1K-2K) and packed as one GLB; same file on desktop and phone",
+ "downloaded": "2026-10-28",
+ "file": "wooden_axe.glb",
+ "credit_written_by": "credits backfill 2026-10-28 (work/beast/credits/backfill)"
+}

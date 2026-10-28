@@ -1,0 +1,11 @@
+{
+  "title": "Food Lime 01",
+  "author": "Oliver Harries",
+  "author_url": "https://polyhaven.com/all?a=Oliver%20Harries",
+  "source_url": "https://polyhaven.com/a/food_lime_01",
+  "licence": "CC0 1.0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution": "Food Lime 01 by Oliver Harries, Poly Haven (CC0 1.0)",
+  "changes": "2K glTF from Poly Haven re-encoded with gltf-transform: meshopt geometry compression, base colour 1024 px WebP (q82), normal and roughness maps 768 px WebP (q80). Geometry not simplified. Mesh/material renamed 'lime'.",
+  "downloaded": "2026-10-28"
+}

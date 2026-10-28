@@ -1,7 +1,7 @@
 /* Dew Theory - Zyqor Lab concept 06.
    Cloud world (shader sky + layered cloud puffs, clouds in front of AND behind the bottle), giant soft type,
    procedural glass dropper bottle that travels to an ingredient orbit and lands on a 3D podium with the routine. */
-import { THREE, Q, isM, reduced, coarse, makeRenderer, studioEnv, reveals, smooth, clamp, lerp } from '../_kit/kit.js';
+import { THREE, Q, isM, reduced, coarse, makeRenderer, studioEnv, reveals, smooth, clamp, lerp, loadGLB } from '../_kit/kit.js';
 import { mergeVertices } from 'three/addons/utils/BufferGeometryUtils.js';
 import { useHDRI } from '../../assets/hdri/hdri.js';
 
@@ -27,18 +27,21 @@ float nightAt(vec2 fc){float f=swF(fc);return mix(uFrom,uTo,smoothstep(uW+.012,u
 float edgeAt(vec2 fc){float d=swF(fc)-uW+.03;return exp(-d*d*700.)*step(uW,1.5)*abs(uTo-uFrom);}`;
 const cv = $('.dewgl');
 let W = innerWidth, H = innerHeight;
-const r = makeRenderer(cv, { exposure: 1.0 });
-r.setPixelRatio(Math.min(devicePixelRatio || 1, 2)); // round 2: phone renders at the same density as desktop (cap 2)
+/* no WebGL (blocked, old GPU, --disable-3d-apis): the page keeps working and the poster render shows instead of a blank canvas */
+const NOGL = (() => { try { const c = document.createElement('canvas'); return !(c.getContext('webgl2') || c.getContext('webgl')); } catch (e) { return true; } })();
+if (NOGL) document.documentElement.classList.add('nogl');
+const r = NOGL ? null : makeRenderer(cv, { exposure: 1.0 });
+if (r) r.setPixelRatio(Math.min(devicePixelRatio || 1, 2)); // round 2: phone renders at the same density as desktop (cap 2)
 /* round 2: baked surface maps (same files on desktop and phone) */
 const AS = '../../assets/lab/dew/';
 const TL = new THREE.TextureLoader();
 const mapTex = (f, rep) => { const t = TL.load(AS + f); t.flipY = false; t.wrapS = THREE.RepeatWrapping; t.wrapT = rep ? THREE.RepeatWrapping : THREE.ClampToEdgeWrapping; t.anisotropy = 8; if (rep) t.repeat.set(rep[0], rep[1]); return t; };
 const scene = new THREE.Scene();
 const cam = new THREE.PerspectiveCamera(30, W / H, 0.1, 80); cam.position.set(0, 0, 14);
-scene.environment = studioEnv(r); scene.environmentIntensity = 0.95;
+if (r) scene.environment = studioEnv(r); scene.environmentIntensity = 0.95;
 // studio HDRI (Poly Haven, CC0) swaps in after first paint on desktop; phones keep the free procedural room
 let envK = 1, lightK = 1;
-useHDRI(r, scene, { size: 1024, rotation: -0.6, onReady: () => { envK = 0.85; lightK = 0.7; } });
+if (r) useHDRI(r, scene, { size: 1024, rotation: -0.6, onReady: () => { envK = 0.85; lightK = 0.7; } });
 const key = new THREE.DirectionalLight('#fff1ea', 2.2); key.position.set(-3, 6, 6); scene.add(key);
 const rim = new THREE.DirectionalLight('#ffc2b5', 1.4); rim.position.set(4, 2, -5); scene.add(rim);
 scene.add(new THREE.HemisphereLight('#fff4f0', '#d89a90', 0.5));
@@ -223,38 +226,20 @@ function knurl(geo, y0, y1, n, amp) {
   g.computeVertexNormals(); return g;
 }
 function dropper() {
+  /* v3: the bottle itself is a real model - "Treatment serum dropper bottle" by Ideekay_012 (Sketchfab, CC-BY 4.0),
+     optimised to one meshopt GLB that desktop and phone both load. Code adds only the serum, its micro-bubbles and
+     the screen print (named as code in the credits). Model frame: bottom y=-0.83, top 0.84 (1.67 tall, like before). */
   const g = new THREE.Group();
-  /* glass: one closed lathe profile with real wall thickness and a heavy base (outer up, inner down) */
-  const body = prof((p) => {
-    p.moveTo(0, 0.016); p.quadraticCurveTo(0.2, 0.002, 0.34, 0.0);
-    p.absarc(0.38, 0.04, 0.04, -Math.PI / 2, 0, false);
-    p.lineTo(0.42, 0.835);
-    p.bezierCurveTo(0.42, 0.975, 0.3, 1.02, 0.19, 1.034);
-    p.quadraticCurveTo(0.172, 1.04, 0.172, 1.07);
-    p.lineTo(0.172, 1.168); p.absarc(0.172, 1.184, 0.016, -Math.PI / 2, Math.PI / 2, false);
-    p.lineTo(0.14, 1.2); p.quadraticCurveTo(0.134, 1.2, 0.134, 1.19);
-    p.lineTo(0.134, 1.06);
-    p.bezierCurveTo(0.134, 1.0, 0.384, 0.97, 0.384, 0.83);
-    p.lineTo(0.384, 0.205); p.absarc(0.322, 0.205, 0.062, 0, -Math.PI / 2, true);
-    p.quadraticCurveTo(0.12, 0.138, 0, 0.152);
-  });
-  // round 2: the phone gets the same transmission glass and the full double wall as desktop
-  const gN = mapTex('glass_n.webp'), gR = mapTex('glass_r.webp');
-  const glass = new THREE.MeshPhysicalMaterial({ color: '#ffffff', roughness: 1, roughnessMap: gR, normalMap: gN, normalScale: new THREE.Vector2(0.55, 0.55), transmission: 1, thickness: 0.18, ior: 1.5, dispersion: 0.35, attenuationColor: C('#f6cdc4'), attenuationDistance: 0.9, specularIntensity: 1, specularColor: C('#ffffff'), envMapIntensity: 1.25, clearcoat: 0.0 });
-  const glG = new THREE.LatheGeometry(body, 160);
-  { // uv for the baked maps: u = angle; v 0-.06 base disk (by radius), .06-.5 outer wall (by height), .5-1 inner wall
-    const top = body.findIndex((v, i) => i > 4 && v.y >= 1.199), baseEnd = body.findIndex((v) => v.x >= 0.3399), n = body.length, uv = glG.attributes.uv;
-    const vOf = body.map((pt, j) => j > top ? 0.5 + Math.max(0, pt.y) / 1.25 * 0.5 : j <= baseEnd ? Math.min(pt.x, 0.34) / 0.34 * 0.06 : 0.06 + Math.min(1.2, pt.y) / 1.2 * 0.44);
-    for (let i = 0; i < uv.count; i++) uv.setY(i, vOf[i % n]);
-  }
-  const gm = new THREE.Mesh(glG, glass); gm.renderOrder = 2; g.add(gm);
-  /* liquid: its own mesh, sits on the dome of the heavy base, meniscus climbs the wall */
-  const F = 0.64;
+  const glass = new THREE.MeshPhysicalMaterial({ color: '#ffffff', roughness: 0.035, transmission: 1, thickness: 0.16, ior: 1.5, dispersion: 0.35, attenuationColor: C('#f6cdc4'), attenuationDistance: 1.1, specularIntensity: 1, specularColor: C('#ffffff'), envMapIntensity: 1.3, side: THREE.DoubleSide });
+  const glassIn = new THREE.MeshPhysicalMaterial({ color: '#fff6f3', roughness: 0.02, metalness: 0, transparent: true, opacity: 0.16, depthWrite: false, envMapIntensity: 1.2, side: THREE.BackSide, specularIntensity: 1 });
+  const frost = new THREE.MeshPhysicalMaterial({ color: '#fff3ef', roughness: 0.42, transmission: 1, thickness: 0.05, ior: 1.5, envMapIntensity: 1 });
+  /* serum: its own mesh on the inner floor of the real bottle, meniscus climbs the wall */
+  const F = 0.736, RI = 0.265;
   const liq = prof((p) => {
-    p.moveTo(0, 0.016); p.quadraticCurveTo(0.12, 0.002, 0.322, 0.004);
-    p.absarc(0.322, 0.066, 0.058, -Math.PI / 2, 0, false);
-    p.lineTo(0.38, F + 0.004);
-    p.quadraticCurveTo(0.38, F + 0.026, 0.372, F + 0.02); p.quadraticCurveTo(0.35, F + 0.004, 0.3, F + 0.001); p.lineTo(0, F);
+    p.moveTo(0, 0.004); p.lineTo(RI - 0.05, 0.004);
+    p.absarc(RI - 0.05, 0.054, 0.05, -Math.PI / 2, 0, false);
+    p.lineTo(RI, F + 0.004);
+    p.quadraticCurveTo(RI, F + 0.024, RI - 0.008, F + 0.018); p.quadraticCurveTo(RI - 0.03, F + 0.004, RI - 0.08, F + 0.001); p.lineTo(0, F);
   });
   const lg = new THREE.LatheGeometry(liq, 128);
   { // depth gradient: deeper colour low in the bottle, lighter under the meniscus
@@ -263,13 +248,12 @@ function dropper() {
     lg.setAttribute('color', new THREE.BufferAttribute(col, 3));
   }
   const lm = new THREE.MeshPhysicalMaterial({ color: '#D9897B', vertexColors: true, roughness: 0.1, clearcoat: 1, clearcoatRoughness: 0.06, sheen: 0.7, sheenRoughness: 0.45, sheenColor: C('#ffd8cd'), ior: 1.36, specularIntensity: 0.7 });
-  // volume cue: a longer light path at the grazing edges reads deeper and more saturated, the core glows lighter
   lm.onBeforeCompile = (sh) => {
     sh.fragmentShader = sh.fragmentShader.replace('#include <color_fragment>', `#include <color_fragment>
       { float fv = 1.0 - abs(dot(normalize(vNormal), normalize(vViewPosition))); diffuseColor.rgb *= mix(1.1, 0.62, pow(fv, 1.6)); }`);
   };
-  const liqM = new THREE.Mesh(lg, lm); liqM.position.y = 0.136; g.add(liqM);
-  /* suspended micro-bubbles: clinging to the inner wall and gathered under the meniscus (opaque, so the glass refracts them) */
+  const liqM = new THREE.Mesh(lg, lm); liqM.position.y = -0.79; g.add(liqM);
+  /* suspended micro-bubbles: clinging to the inner wall and gathered under the meniscus */
   const bubU = { uC: { value: C('#D9897B') } };
   const bubMat = new THREE.ShaderMaterial({ uniforms: bubU,
     vertexShader: `varying vec3 vN; varying vec3 vV;
@@ -286,44 +270,41 @@ function dropper() {
   seed = 61; const NB = 110, bub = new THREE.InstancedMesh(new THREE.SphereGeometry(1, 16, 12), bubMat, NB);
   { const m = new THREE.Matrix4(), q = new THREE.Quaternion(), sc = new THREE.Vector3(), ps = new THREE.Vector3();
     for (let i = 0; i < NB; i++) {
-      const a = rnd() * 6.283, wall = i < 84, rr = wall ? 0.3815 : 0.06 + rnd() * 0.29, sz = wall ? 0.0022 + Math.pow(rnd(), 3) * 0.009 : 0.0025 + rnd() * 0.004;
-      const y = wall ? 0.07 + Math.pow(rnd(), 0.8) * (F - 0.1) : F + 0.0005;
+      const a = rnd() * 6.283, wall = i < 84, rr = wall ? RI + 0.0005 : 0.05 + rnd() * 0.2, sz = wall ? 0.0018 + Math.pow(rnd(), 3) * 0.007 : 0.002 + rnd() * 0.0035;
+      const y = wall ? 0.06 + Math.pow(rnd(), 0.8) * (F - 0.1) : F + 0.0005;
       ps.set(Math.sin(a) * rr, y, Math.cos(a) * rr); sc.setScalar(sz); m.compose(ps, q, sc); bub.setMatrixAt(i, m);
     } }
   liqM.add(bub);
-
-  /* screen-printed label on the glass */
+  /* screen print on the straight wall of the real glass */
   const labDay = printTex(false), labNight = printTex(true), labBump = printTex(false, true);
-  const lab = new THREE.Mesh(new THREE.CylinderGeometry(0.4218, 0.4218, 0.58, 160, 1, true, -0.95, 1.9),
+  const lab = new THREE.Mesh(new THREE.CylinderGeometry(0.3022, 0.3022, 0.5, 160, 1, true, -1.08, 2.16),
     new THREE.MeshPhysicalMaterial({ map: labDay, bumpMap: labBump, bumpScale: 1.6, transparent: true, depthWrite: false, roughness: 0.42, clearcoat: 0.55, clearcoatRoughness: 0.22, specularIntensity: 0.7 }));
-  lab.position.y = 0.47; lab.renderOrder = 3; g.add(lab);
-  /* pipette (glass rod look; opaque so it reads through the transmissive bottle) */
-  const pp = prof((p) => { p.moveTo(0, 0.2); p.quadraticCurveTo(0.016, 0.2, 0.02, 0.24); p.lineTo(0.03, 0.36); p.lineTo(0.03, 1.18); p.lineTo(0, 1.18); }, 10);
-  const ppG = new THREE.LatheGeometry(pp, 48); { const uv = ppG.attributes.uv, n = pp.length; for (let i = 0; i < uv.count; i++) uv.setY(i, (pp[i % n].y - 0.2) / 0.98); }
+  lab.position.y = -0.4; lab.renderOrder = 3; g.add(lab);
+  /* the real model's parts get the demo's materials once the GLB arrives (pipette keeps its printed graduations) */
   const pipDay = pipetteTex(false), pipNight = pipetteTex(true); pipDay.flipY = pipNight.flipY = false;
   const pipM = new THREE.MeshPhysicalMaterial({ map: pipDay, roughness: 0.04, clearcoat: 1, clearcoatRoughness: 0.03, specularIntensity: 1, envMapIntensity: 1.1 });
-  const pip = new THREE.Mesh(ppG, pipM); g.add(pip);
-  /* knurled champagne-gold collar with bevels, polished ring, matte rubber bulb */
-  const gold = new THREE.MeshPhysicalMaterial({ color: '#DDB088', metalness: 1, roughness: 1, roughnessMap: mapTex('collar_r.webp'), normalMap: mapTex('collar_n.webp'), normalScale: new THREE.Vector2(0.08, 0.08), anisotropy: 0.35, anisotropyRotation: Math.PI / 2, clearcoat: 0.25, clearcoatRoughness: 0.25 });
-  const polished = new THREE.MeshPhysicalMaterial({ color: '#E7C29C', metalness: 1, roughness: 0.12 });
-  const colP = prof((p) => {
-    p.moveTo(0.15, 1.056); p.lineTo(0.2, 1.056); p.quadraticCurveTo(0.214, 1.056, 0.216, 1.072);
-    p.lineTo(0.216, 1.28); p.quadraticCurveTo(0.215, 1.298, 0.198, 1.3); p.lineTo(0.128, 1.3);
-  }, 8);
-  let colG = knurl(new THREE.LatheGeometry(colP, 288), 1.1, 1.258, 72, 0.03);
-  { const p = colG.attributes.position, uv = new Float32Array(p.count * 2); // knurl drops uv: rebuild (u = angle, v = height)
-    for (let i = 0; i < p.count; i++) { uv[i * 2] = Math.atan2(p.getX(i), p.getZ(i)) / 6.2832 + 0.5; uv[i * 2 + 1] = (p.getY(i) - 1.056) / 0.244; }
-    colG.setAttribute('uv', new THREE.BufferAttribute(uv, 2)); }
-  const col = new THREE.Mesh(colG, gold); g.add(col);
-  const ring = new THREE.Mesh(new THREE.TorusGeometry(0.205, 0.012, 16, 160), polished); ring.rotation.x = Math.PI / 2; ring.position.y = 1.068; g.add(ring);
-  const ring2 = ring.clone(); ring2.scale.setScalar(0.985); ring2.position.y = 1.289; g.add(ring2);
-  const bulbPts = new THREE.SplineCurve([V2(0, 0), V2(0.128, 0), V2(0.134, 0.02), V2(0.126, 0.05), V2(0.15, 0.11), V2(0.164, 0.18), V2(0.156, 0.26), V2(0.118, 0.33), V2(0.06, 0.366), V2(0, 0.374)]).getPoints(64);
-  bulbPts[bulbPts.length - 1].x = 0;
-  const bulbM = new THREE.Mesh(new THREE.LatheGeometry(bulbPts, 128), new THREE.MeshPhysicalMaterial({ color: '#4E2F2B', roughness: 0.66, normalMap: mapTex('bulb_n.webp'), normalScale: new THREE.Vector2(0.7, 0.7), sheen: 0.8, sheenRoughness: 0.5, sheenColor: C('#b98479'), clearcoat: 0.12, clearcoatRoughness: 0.6 }));
-  bulbM.position.y = 1.296; g.add(bulbM);
-  for (let k = 0; k < 3; k++) { const gr = new THREE.Mesh(new THREE.TorusGeometry(0.131 - k * 0.002, 0.0055, 10, 96), bulbM.material); gr.rotation.x = Math.PI / 2; gr.position.y = 1.322 + k * 0.016; g.add(gr); }
-  g.children.forEach((c) => (c.position.y -= 0.83));
-  const p = new THREE.Group(); p.add(g); p.userData = { h: 1.67, glass, liq: liqM, lm, lab: lab.material, labDay, labNight, bulb: bulbM, inner: g, bubU, pipM, pipDay, pipNight }; return p;
+  const gold = new THREE.MeshPhysicalMaterial({ color: '#DDB088', metalness: 1, roughness: 0.3, roughnessMap: mapTex('collar_r.webp'), clearcoat: 0.25, clearcoatRoughness: 0.25, envMapIntensity: 1.1 });
+  const polished = new THREE.MeshPhysicalMaterial({ color: '#E7C29C', metalness: 1, roughness: 0.14 });
+  const bulbMat = new THREE.MeshPhysicalMaterial({ color: '#4E2F2B', roughness: 0.62, sheen: 0.8, sheenRoughness: 0.5, sheenColor: C('#b98479'), clearcoat: 0.14, clearcoatRoughness: 0.55 });
+  const bulbPivot = new THREE.Group(); bulbPivot.position.y = 0.503; g.add(bulbPivot); // squeeze from the collar line
+  // cylindrical uv in model units (the GLB is quantised: node scale/offset carry the real size)
+  const cylUV = (m, y0, y1) => { const geo = m.geometry, p = geo.attributes.position, uv = new Float32Array(p.count * 2), k = m.scale.y, o = m.position.y;
+    for (let i = 0; i < p.count; i++) { uv[i * 2] = Math.atan2(p.getX(i), p.getZ(i)) / 6.2832 + 0.5; uv[i * 2 + 1] = (p.getY(i) * k + o - y0) / (y1 - y0); }
+    geo.setAttribute('uv', new THREE.BufferAttribute(uv, 2)); };
+  const p = new THREE.Group(); p.add(g); p.visible = false;
+  p.userData = { h: 1.67, glass, liq: liqM, lm, lab: lab.material, labDay, labNight, bulb: bulbPivot, inner: g, bubU, pipM, pipDay, pipNight, ready: -1 };
+  const go = () => loadGLB(AS + 'dew-bottle.glb').then((gl) => {
+    const parts = {}; gl.scene.traverse((o) => { if (o.isMesh) parts[o.name] = o; });
+    const put = (n, mat, ro, parent = g) => { const m = parts[n]; if (!m) return null; m.material = mat; if (ro !== undefined) m.renderOrder = ro; parent.add(m); return m; };
+    put('glass', glass, 2); put('glass_in', glassIn, 1); put('glass_base', frost, 2);
+    const pp = put('pipette', pipM); if (pp) cylUV(pp, -0.645, 0.348);
+    const cl = put('collar', gold); if (cl) cylUV(cl, 0.294, 0.507);
+    put('neck', polished);
+    const bm = put('bulb', bulbMat, undefined, bulbPivot); if (bm) bm.position.y -= 0.503;
+    p.visible = true; p.userData.ready = performance.now();
+  }).catch((e) => { console.warn('dew bottle model', e); });
+  if (!NOGL) { if (document.readyState === 'complete') go(); else addEventListener('load', go, { once: true }); }
+  return p;
 }
 const paperN = (a, b) => mapTex('paper_n.webp', [a, b]);
 function cleanser() {
@@ -429,8 +410,8 @@ function causticTex() {
   x.lineWidth = 2; x.beginPath(); x.ellipse(128, 128, 30, 19, 0, -0.6, Math.PI * 1.2); x.stroke();
   const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
 }
-const bsh = shadowMesh(0.95); bsh.material.opacity = 0; bsh.scale.set(1, 0.85, 1); pod.add(bsh);
-const caus = new THREE.Mesh(new THREE.PlaneGeometry(1.0, 1.0), new THREE.MeshBasicMaterial({ map: causticTex(), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: 0, toneMapped: false }));
+const bsh = shadowMesh(0.72); bsh.material.opacity = 0; bsh.scale.set(1, 0.85, 1); pod.add(bsh);
+const caus = new THREE.Mesh(new THREE.PlaneGeometry(0.76, 0.76), new THREE.MeshBasicMaterial({ map: causticTex(), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: 0, toneMapped: false }));
 caus.rotation.x = -Math.PI / 2; pod.add(caus);
 bsh.position.set(0.06, PL[1].h + 0.007, -0.3); caus.position.set(0.33, PL[1].h + 0.009, -0.12); bsh.renderOrder = caus.renderOrder = 1;
 const floorSh = shadowMesh(6.5); floorSh.position.y = 0.002; floorSh.scale.set(1, 0.5, 1); pod.add(floorSh);
@@ -506,7 +487,8 @@ function frame(t) {
   const bx = lerp(t0.x, t1.x, e), by = lerp(t0.y, t1.y, e), bs = lerp(t0.s, t1.s, e);
   const onPod = a0.a.key === 'podium' || (a1.a.key === 'podium' && e > 0.98);
   const bob = reduced || onPod ? 0 : Math.sin(t * 0.9) * 0.08 * bs;
-  const intro = reduced ? 1 : eob(clamp((t - 0.15) / 1.5));
+  const rdy = bottle.userData.ready; // the real bottle drops in once its model has arrived
+  const intro = rdy < 0 ? 0 : reduced ? 1 : eob(clamp((performance.now() - rdy) / 1500));
   bottle.position.set(bx, by + bob + (1 - intro) * 4 * bs, 0.4); bottle.scale.setScalar(bs);
   bottle.rotation.set((reduced ? 0 : ptr.y * 0.1) + Math.sin(e * Math.PI) * 0.2, (reduced ? 0.3 : t * 0.25 + ptr.x * 0.4) + e * Math.PI * 2 * (k > 0 && k < 1 ? 1 : 0) + spin, Math.sin(e * Math.PI) * -0.25 + (onPod ? 0 : Math.sin(t * 0.6) * 0.04));
   podTags[1].classList.toggle('on', onPod && pb.top < H * 0.2 || reduced);
@@ -662,12 +644,12 @@ function initUI() {
   }
 }
 function size() {
-  const w = innerWidth, h = innerHeight;
+  const w = innerWidth, h = innerHeight; if (!r) return;
   if (isM && w === W && Math.abs(h - H) < 140 && r.domElement.width) return;
   W = w; H = h; r.setSize(W, H, false); cam.aspect = W / H; cam.updateProjectionMatrix(); setRes();
 }
-function setRes() { r.getDrawingBufferSize(SW.uRes.value); if (hero.sky) hero.sky.material.uniforms.uAsp.value = W / H; }
-r.setSize(W, H, false); setRes();
+function setRes() { if (!r) return; r.getDrawingBufferSize(SW.uRes.value); if (hero.sky) hero.sky.material.uniforms.uAsp.value = W / H; }
+if (r) r.setSize(W, H, false); setRes();
 addEventListener('resize', size);
 initUI(); initMode(); reveals(); lenis = smooth();
 let T = 0, last = performance.now();
@@ -677,4 +659,5 @@ function loop(now) {
   frame(T);
   requestAnimationFrame(loop);
 }
-requestAnimationFrame(loop);
+if (NOGL) { podTags.forEach((t) => t.classList.add('on')); if (!isM) { orb.a = orb.target; const tick = (n) => { orbitFrame(0.016); requestAnimationFrame(tick); }; requestAnimationFrame(tick); } }
+else requestAnimationFrame(loop);

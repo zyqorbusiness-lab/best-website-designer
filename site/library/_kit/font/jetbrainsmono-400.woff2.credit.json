@@ -1,0 +1,13 @@
+{
+ "title": "JetBrains Mono",
+ "author": "JetBrains, Philipp Nurullin, Konstantin Bulenkov",
+ "author_url": "https://github.com/JetBrains/JetBrainsMono",
+ "source_url": "https://fonts.google.com/specimen/JetBrains+Mono",
+ "licence": "SIL OFL 1.1",
+ "licence_url": "https://openfontlicense.org/open-font-license-official-text/",
+ "attribution": "JetBrains Mono by JetBrains, Philipp Nurullin, Konstantin Bulenkov, SIL Open Font License 1.1 (https://github.com/JetBrains/JetBrainsMono)",
+ "changes": "self-hosted woff2 (Latin subset where named in CREDITS.md); OFL permits subsetting and conversion; Reserved Font Name rules respected (family name unchanged where unmodified)",
+ "downloaded": "2026-10-28",
+ "file": "jetbrainsmono-400.woff2",
+ "credit_written_by": "credits backfill 2026-10-28 (work/beast/credits/backfill)"
+}

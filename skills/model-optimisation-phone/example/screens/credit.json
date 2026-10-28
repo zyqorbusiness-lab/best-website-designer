@@ -1,0 +1,25 @@
+{
+ "title": "Skill screenshot set: model-optimisation-phone",
+ "author": "Zyqor Studio",
+ "author_url": "https://zyqor-portfolio-v3.sites.tab.bot/",
+ "source_url": "https://zyqor-portfolio-v3.sites.tab.bot/",
+ "licence": "MIT",
+ "licence_url": "https://opensource.org/licenses/MIT",
+ "attribution": "Zyqor Studio (screenshot / render of its own page)",
+ "changes": "screenshot or real-time render of a Zyqor Studio page, re-encoded; no AI imagery",
+ "downloaded": "2026-10-28",
+ "files": [
+  "compare_closeup_desktop_phone.jpg",
+  "compare_closeups.jpg",
+  "compare_desktop_phone.jpg",
+  "compare_recipes_leather.jpg",
+  "page_desktop_1440.jpg",
+  "page_desktop_goggles.jpg",
+  "page_desktop_proof.jpg",
+  "page_phone_360.jpg",
+  "page_phone_390.jpg",
+  "page_phone_proof.jpg"
+ ],
+ "scope": "one asset: every file in this folder (10 files)",
+ "credit_written_by": "credits backfill 2026-10-28"
+}

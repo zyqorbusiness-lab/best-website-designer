@@ -1,10 +1,61 @@
 {
  "id": "A018",
- "date": "2026-10-28T02:56:59.251Z",
+ "date": "2026-10-28T20:27:19.518Z",
+ "kit": 2,
  "verdict": "PASS",
- "weightKB": 3350,
- "phoneWeightKB": 3260,
+ "tier": "advanced",
+ "budgetKB": 3072,
+ "ownKB": 1596,
+ "sharedKB": 1210,
+ "phoneOwnKB": 1590,
+ "phoneSharedKB": 1077,
+ "weightKB": 3211,
+ "phoneWeightKB": 3072,
  "sameAssets": true,
+ "assetDiff": {
+  "desktopOnly": [],
+  "phoneOnly": []
+ },
+ "assets3d": [
+  "/library/_assets/models/moon_rock_01.glb",
+  "/library/_assets/models/moon_rock_05.glb",
+  "/library/_assets/models/moon_rock_07.glb",
+  "/library/_assets/tex/earth_bluemarble_2k.webp",
+  "/library/_assets/tex/moon_dusted_02_arm_1k.webp",
+  "/library/_assets/tex/moon_dusted_02_diff_1k.webp",
+  "/library/_assets/tex/moon_dusted_02_nor_1k.webp",
+  "/library/_assets/tex/moon_footprints_01_decal_1k.webp",
+  "/library/_assets/tex/moon_footprints_01_nor_1k.webp"
+ ],
+ "sameEffects": true,
+ "effectDiff": [],
+ "effects": {
+  "toneMapping": 4,
+  "exposure": 1.08,
+  "outputColorSpace": "srgb",
+  "shadows": true,
+  "shadowType": 2,
+  "antialias": true,
+  "envIntensity": 0.1,
+  "background": null,
+  "passes": [],
+  "contactShadows": 0,
+  "demand": false,
+  "dprCap": [
+   2,
+   2
+  ]
+ },
+ "nowebgl": true,
+ "credit": {
+  "pass": true,
+  "files": 15,
+  "missing": [],
+  "incomplete": [],
+  "ccby": [],
+  "ccbyNotVisible": [],
+  "unlisted": []
+ },
  "runs": {
   "d1440": {
    "pass": true,
@@ -12,7 +63,9 @@
    "warnings": 0,
    "failed": 0,
    "overflow": 0,
-   "webgl": true
+   "webgl": true,
+   "ownKB": 1596,
+   "sharedKB": 1210
   },
   "m390": {
    "pass": true,
@@ -20,7 +73,9 @@
    "warnings": 0,
    "failed": 0,
    "overflow": 0,
-   "webgl": true
+   "webgl": true,
+   "ownKB": 1590,
+   "sharedKB": 1077
   },
   "m360": {
    "pass": true,
@@ -28,7 +83,9 @@
    "warnings": 0,
    "failed": 0,
    "overflow": 0,
-   "webgl": true
+   "webgl": true,
+   "ownKB": 1595,
+   "sharedKB": 1077
   },
   "rd1440": {
    "pass": true,
@@ -36,7 +93,9 @@
    "warnings": 0,
    "failed": 0,
    "overflow": 0,
-   "webgl": true
+   "webgl": true,
+   "ownKB": 1596,
+   "sharedKB": 1230
   },
   "rm390": {
    "pass": true,
@@ -44,7 +103,32 @@
    "warnings": 0,
    "failed": 0,
    "overflow": 0,
-   "webgl": true
+   "webgl": true,
+   "ownKB": 1595,
+   "sharedKB": 1097
+  },
+  "nd1440": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": false,
+   "poster": true,
+   "ownKB": 399,
+   "sharedKB": 945
+  },
+  "nm390": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": false,
+   "poster": true,
+   "ownKB": 398,
+   "sharedKB": 812
   }
- }
+ },
+ "weightNote": "own/shared recomputed from this run's network log with the final classifier (blob: URLs not counted, kit grain texture shared)"
 }

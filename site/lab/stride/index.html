@@ -10,6 +10,7 @@
 <meta name="theme-color" content="#E6E4DF">
 <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
 <link rel="preload" href="../../assets/font/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/lab/stride/stride-still-d-0.webp" as="image" type="image/webp" fetchpriority="high">
 <link rel="modulepreload" href="../../vendor/three/three.module.min.js">
 <link rel="stylesheet" href="../_kit/lab.css">
 <link rel="stylesheet" href="style.css">
@@ -44,7 +45,9 @@
     <span class="cnav-r"><button type="button" class="mode mag" aria-pressed="false" aria-label="Night run mode" data-cur="Night"><span class="mk" aria-hidden="true"><svg class="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg><svg class="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></span><span class="ml">Day run</span></button><button type="button" class="ic" aria-label="Search (concept)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg></button><button type="button" class="ic bagbtn" aria-label="Bag (concept), 0 items"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><b class="bagn">0</b></button></span>
   </nav>
   <h1 class="giant"><span class="sr">Stride Aero 3, a concept running shoe</span><span class="gw" aria-hidden="true"><span>A</span><span>E</span><span>R</span><span>O</span></span><sup class="g3" aria-hidden="true">03</sup></h1>
-  <canvas class="gl" aria-label="Rotatable 3D model of the Stride Aero shoe" role="img"></canvas>
+  <img class="st-still" src="../../assets/lab/stride/stride-still-d-0.webp" width="1244" height="752" alt="" aria-hidden="true" decoding="async" fetchpriority="high" draggable="false">
+  <canvas class="gl" data-nogl="self" aria-label="Rotatable 3D model of the Stride Aero shoe" role="img"></canvas>
+  <div class="st-prog" role="progressbar" aria-label="Loading the 3D shoe" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" hidden><span class="st-prog-t">3D</span><i aria-hidden="true"></i><span class="st-prog-n">0%</span></div>
   <div class="hero-ui">
     <div class="h-left">
       <p class="eyebrow"><span class="live"></span>Concept drop &middot; Aero 3</p>
@@ -112,7 +115,7 @@
 </main>
 <template id="credits">
   <li>Code and design: Zyqor Studio (MIT licence for the code).</li>
-  <li>3D model: "Materials Variants Shoe" by Shopify, CC-BY 4.0, via the <a href="https://github.com/KhronosGroup/glTF-Sample-Assets" target="_blank" rel="noopener">Khronos glTF Sample Assets</a>, re-textured and recompressed by Zyqor Studio. Colourway names and the Stride Aero brand are fictional.</li>
+  <li>3D model: "Materials Variants Shoe" by Shopify, CC-BY 4.0, via the <a href="https://github.com/KhronosGroup/glTF-Sample-Assets" target="_blank" rel="noopener">Khronos glTF Sample Assets</a>, re-textured and recompressed by Zyqor Studio; the still shown while the 3D loads (and when 3D is unavailable) is a render of the same model, same licence. Colourway names and the Stride Aero brand are fictional.</li>
   <li>Studio lighting: "Studio Small 09" HDRI by Sergej Majboroda, Poly Haven, CC0 (desktop build).</li>
   <li>Fonts: Archivo by Omnibus-Type and Inter Tight by Rasmus Andersson et al., SIL Open Font License 1.1.</li>
   <li>Product specs are part of the concept and describe no real shoe.</li>

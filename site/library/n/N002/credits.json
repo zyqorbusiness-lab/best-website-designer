@@ -9,7 +9,10 @@
       "source": "Poly Haven",
       "url": "https://polyhaven.com/a/ceramic_vase_01",
       "licence": "CC0 1.0",
-      "note": "Optimised for the web with gltf-transform (meshopt geometry, WebP textures, 2K). Same file on phone and desktop."
+      "note": "Optimised for the web with gltf-transform (meshopt geometry, WebP textures, 2K). Same file on phone and desktop.",
+      "files": [
+        "../../_assets/models/ceramic_vase_01.glb"
+      ]
     },
     {
       "what": "HDRI",
@@ -18,13 +21,19 @@
       "source": "Poly Haven",
       "url": "https://polyhaven.com/a/studio_small_09",
       "licence": "CC0 1.0",
-      "note": "Shared kit lighting."
+      "note": "Shared kit lighting.",
+      "files": [
+        "../../../assets/hdri/studio_1k.hdr",
+        "../../../assets/hdri/studio_512.hdr"
+      ]
     },
     {
       "what": "Potter's wheel",
       "title": "Wheel head and plinth",
       "author": "Zyqor Studio",
-      "note": "Modelled in code (lathe geometry, turning marks drawn on a canvas)."
+      "note": "Modelled in code (lathe geometry, turning marks drawn on a canvas).",
+      "files": [],
+      "licence": "MIT"
     },
     {
       "what": "Type",
@@ -32,7 +41,8 @@
       "author": "Indian Type Foundry",
       "source": "Fontshare",
       "url": "https://www.fontshare.com",
-      "licence": "ITF Free Font License"
+      "licence": "ITF Free Font License 2.0",
+      "files": []
     },
     {
       "what": "Type",
@@ -40,7 +50,8 @@
       "author": "Rodrigo Fuenzalida, Jordan Egstad",
       "source": "GitHub",
       "url": "https://github.com/Instrument/instrument-serif",
-      "licence": "SIL OFL 1.1"
+      "licence": "SIL OFL 1.1",
+      "files": []
     },
     {
       "what": "Type",
@@ -48,7 +59,8 @@
       "author": "The JetBrains Mono Project Authors",
       "source": "GitHub",
       "url": "https://github.com/JetBrains/JetBrainsMono",
-      "licence": "SIL OFL 1.1"
+      "licence": "SIL OFL 1.1",
+      "files": []
     },
     {
       "what": "Engine",
@@ -56,7 +68,21 @@
       "author": "their authors",
       "source": "threejs.org",
       "url": "https://threejs.org",
-      "licence": "MIT / GSAP Standard Licence"
+      "licence": "MIT / GSAP Standard Licence",
+      "files": []
+    },
+    {
+      "what": "Images (code-made)",
+      "title": "Poster and library thumbnail",
+      "author": "Zyqor Studio",
+      "source": "frames of this page",
+      "url": "",
+      "licence": "MIT",
+      "note": "WebGL-fallback poster and index thumbnail, rendered from this page by tools/qa-library.mjs. No AI imagery.",
+      "files": [
+        "poster.webp",
+        "thumb.webp"
+      ]
     }
   ]
 }

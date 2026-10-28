@@ -1,0 +1,13 @@
+{
+ "title": "Flight Helmet — render leather_original.webp",
+ "author": "Gary Hsu (Public, 2018, Conversion from Maya, CC0-1.0)",
+ "author_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/FlightHelmet",
+ "source_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/FlightHelmet",
+ "licence": "CC0 1.0",
+ "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+ "attribution": "\"Flight Helmet — render leather_original.webp\" by Gary Hsu (Public), Khronos glTF Sample Assets (https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/FlightHelmet), CC0 1.0 (courtesy credit)",
+ "changes": "render of the optimised Flight Helmet made by the skill's verify.mjs (no AI imagery)",
+ "downloaded": "2026-10-28",
+ "file": "leather_original.webp",
+ "credit_written_by": "credits backfill 2026-10-28 (work/beast/credits/backfill)"
+}

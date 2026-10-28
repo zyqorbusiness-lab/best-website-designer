@@ -1,0 +1,14 @@
+{
+ "title": "Carbon Frame Bike",
+ "author": "Robert Schweier and prefrontal cortex; realtime version and animation by Felix Herbst (Needle)",
+ "author_url": "https://github.com/hybridherbst",
+ "source_url": "https://github.com/KhronosGroup/glTF-Sample-Models/pull/357",
+ "licence": "CC BY-SA 4.0",
+ "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+ "attribution": "\"Carbon Frame Bike\" by Robert Schweier and prefrontal cortex, realtime version by Felix Herbst (Needle), licensed under CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/). Modified by Zyqor Studio (logos replaced with fictional TALUS marks, simplified, recoloured); the modified model is shared under CC BY-SA 4.0.",
+ "changes": "render of the modified model (same CC BY-SA 4.0 licence applies); tyre sidewall text and maker logo replaced with fictional TALUS marks; AR shadow planes and tangents removed; pruned, deduplicated, welded, simplified; textures re-encoded (2048 px WebP), meshopt; recoloured at runtime",
+ "downloaded": "2026-10-27",
+ "licence_flag": "CC BY-SA 4.0 (share-alike) is not on Sujon's allow-list; the derivative must stay CC BY-SA. Needs a decision (keep with exception or replace).",
+ "file": "still-g1.webp",
+ "credit_written_by": "credits backfill 2026-10-28 (work/beast/credits/backfill)"
+}

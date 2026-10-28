@@ -97,12 +97,19 @@ fetch(new URL('credits.json', location.href)).then((r) => (r.ok ? r.json() : nul
   document.querySelectorAll('.zk-cred').forEach((ul) => { ul.innerHTML = htmlList; });
 }).catch(() => { document.querySelectorAll('.zk-cred').forEach((ul) => { ul.innerHTML = '<li><span class="zk-mono">Credits</span><span>See credits.json in this folder.</span></li>'; }); });
 
-/* previous / next among BUILT concepts (library.json is fetched when the browser is idle) */
+/* previous / next among BUILT concepts. kit v2: reads the slim _data/nav.json ([id, name, path] of built concepts, a few KB)
+   that tools/library-build.mjs writes, instead of the ~135 KB library.json; falls back to library.json if nav.json is missing. */
 const idle = window.requestIdleCallback || ((f) => setTimeout(f, 900));
+const getNav = () => fetch(new URL('_data/nav.json', ROOT)).then((r) => (r.ok ? r.json() : Promise.reject(new Error('no nav.json'))))
+  .then((n) => n.built.map(([i, nm, p]) => ({ id: i, name: nm, path: p })))
+  .catch(() => fetch(new URL('library.json', ROOT)).then((r) => (r.ok ? r.json() : null)).then((lib) => (lib && lib.items ? lib.items.filter((it) => it.status === 'built').map((it) => ({ id: it.id, name: it.name, path: it.path })) : [])));
 idle(() => {
-  fetch(new URL('library.json', ROOT)).then((r) => (r.ok ? r.json() : null)).then((lib) => {
-    if (!lib || !lib.items) return;
-    const built = lib.items.filter((it) => it.status === 'built' || it.id === id);
+  getNav().then((list) => {
+    let built = list.slice();
+    if (!built.some((it) => it.id === id)) {          // a concept still building sits between its id neighbours
+      const self = { id, name, path: location.pathname.replace(/^.*\/library\//, '').replace(/[^/]*$/, '') };
+      const at = built.findIndex((it) => it.id > id); built.splice(at < 0 ? built.length : at, 0, self);
+    }
     const i = built.findIndex((it) => it.id === id);
     if (i < 0 || built.length < 2) return;
     const set = (sel, it) => { const a = foot.querySelector(sel); a.href = pageOf(it); a.querySelector('em').textContent = `${it.id} · ${it.name}`; a.hidden = false; };

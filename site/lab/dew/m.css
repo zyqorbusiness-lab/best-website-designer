@@ -227,3 +227,6 @@ html.pm .pill.glass:hover{background:#F6E3DF;color:#3A2326}
 .ing-card.lg{--lg-tint:#FFFAF8;--lg-alpha:68%}
 .mode-k{background-image:linear-gradient(180deg,rgba(255,255,255,.3),rgba(255,255,255,.05) 52%,rgba(255,255,255,0))!important}
 .lg.lg--ink{--_al:96%}
+
+/* v3: no WebGL -> the canvas keeps its place (hero only, no longer fixed) and shows the poster render of the 3D scene instead of a blank area */
+html.nogl .dewgl{position:absolute;top:0;left:0;background:url(poster-m.webp) center/cover no-repeat}

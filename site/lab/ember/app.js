@@ -1,11 +1,12 @@
 /* Ember & Oak - Zyqor Lab concept 04.
-   Paper-tear reveal (dark roast layer tears open), travelling 3D cup (procedural three.js),
+   Paper-tear reveal (dark roast layer tears open), travelling 3D cup (real CC BY models: cup + saucer and scanned beans, see model.js),
    outline giant type, roast-level control that recolours the coffee, the beans and the page. */
 import { THREE, Q, isM, reduced, coarse, makeRenderer, studioEnv, reveals, smooth, clamp, lerp } from '../_kit/kit.js';
 import { modeSwitch } from './mode.js';
-import { beanGeometry, beanMaterial, cremaMaterial, cremaGeometry, glazeMaterial, glazeNormal, speckleMap, cupGeometry, handleGeometry,
-  saucerGeometry, SAUCER, CUP, spoonGroup, steelMaterial, shadowTex as softShadow } from './assets.js';
+import { cremaMaterial, cremaGeometry, glazeMaterial, glazeNormal, speckleMap, spoonGroup, steelMaterial, shadowTex as softShadow } from './assets.js';
 import { useHDRI } from '../../assets/hdri/hdri.js';
+import { loadEmber, realBeanMaterial } from './model.js';
+let REAL = null, READY = false; // the loaded real models (one file for phone and desktop)
 
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -47,27 +48,31 @@ void main(){vec2 uv=vUv;float t=uT*.35+uS;
   });
 }
 
-let GLAZE_N = null;
+let GLAZE_N = null, INNER = null;
 function buildCup(glaze, opts = {}) {
   const seg = 160;
   GLAZE_N = GLAZE_N || glazeNormal();
+  const R = REAL;
   const root = new THREE.Group();
   const cup = new THREE.Group(); root.add(cup);
-  const geo = cupGeometry(seg);
-  const gm = glazeMaterial(glaze, { map: speckleMap(glaze, 0.6), normal: GLAZE_N, clay: opts.clay || '#EAD7B9', roughness: opts.rough ?? 0.17, footLine: !!opts.footLine, pool: 0.55 });
-  const im = glazeMaterial('#F7F0E4', { map: speckleMap('#F7F0E4', 0.2, 4), normal: GLAZE_N, clay: '#E3CFAE', roughness: 0.12, stainY: CUP.coffeeY + 0.012 });
-  const bisque = new THREE.MeshPhysicalMaterial({ color: '#D8C1A0', roughness: 0.88, map: speckleMap('#D8C1A0') });
-  cup.add(new THREE.Mesh(geo.outer, gm), new THREE.Mesh(geo.inner, im), new THREE.Mesh(geo.foot, bisque));
-  cup.add(new THREE.Mesh(handleGeometry(), gm));
-  // coffee: a lit, glossy crema surface with a meniscus at the wall
-  const coffee = new THREE.Mesh(cremaGeometry(CUP.coffeeR, seg), opts.coffee || coffeeMat());
-  coffee.rotation.x = -Math.PI / 2; coffee.position.y = CUP.coffeeY; cup.add(coffee);
-  cup.position.y = SAUCER.well;
-  // saucer (same white stoneware as the cup interior) + the cup's own soft occlusion on it
-  const sm = glazeMaterial(opts.saucer || '#F3EADB', { map: speckleMap(opts.saucer || '#F3EADB', 0.35, 1), normal: GLAZE_N, clay: '#DCC5A2', roughness: 0.15 });
-  root.add(new THREE.Mesh(saucerGeometry(seg), sm));
-  const ao = new THREE.Mesh(new THREE.PlaneGeometry(0.95, 0.95), new THREE.MeshBasicMaterial({ map: AO, transparent: true, depthWrite: false, opacity: 0.85 }));
-  ao.rotation.x = -Math.PI / 2; ao.position.y = SAUCER.well + 0.0025; root.add(ao);
+  // real cup: outer shell + handle take the roast glaze, the lip and well stay white, the inner wall keeps the scan's coffee-stained texture
+  const gm = glazeMaterial(glaze, { map: speckleMap(glaze, 0.6), normal: GLAZE_N, clay: opts.clay || '#EAD7B9', roughness: opts.rough ?? 0.17, footLine: !!opts.footLine, pool: 0.32 });
+  gm.color.setScalar(1.16); // the real bowl is deeper than the old lathe one and sits in more of its own shadow
+  const wm = glazeMaterial('#F7F0E4', { map: speckleMap('#F7F0E4', 0.2, 4), normal: GLAZE_N, clay: '#E3CFAE', roughness: 0.12 });
+  INNER = INNER || new THREE.MeshPhysicalMaterial({ color: '#FFFFFF', map: R.innerMap, roughness: 0.16, normalMap: GLAZE_N, normalScale: new THREE.Vector2(0.15, 0.15),
+    clearcoat: 1, clearcoatRoughness: 0.1, ior: 1.52, specularIntensity: 0.9 });
+  cup.add(new THREE.Mesh(R.cup.outer, gm), new THREE.Mesh(R.cup.handle, gm), new THREE.Mesh(R.cup.body, wm), new THREE.Mesh(R.cup.inner, INNER));
+  // coffee: our lit, glossy crema surface (code) with a meniscus at the wall, sized to the real cup's inner wall
+  const coffee = new THREE.Mesh(cremaGeometry(R.coffeeR, seg), opts.coffee || coffeeMat());
+  coffee.rotation.x = -Math.PI / 2; coffee.position.y = R.coffeeY; cup.add(coffee);
+  cup.position.y = R.cupBase;
+  // real saucer, same white stoneware glaze as the cup lip; the scan's throwing-ring texture rides in as the colour map
+  const sm = glazeMaterial(opts.saucer || '#F6F0E6', { normal: GLAZE_N, clay: '#DCC5A2', roughness: 0.13 });
+  sm.map = null; sm.roughnessMap = null; sm.clearcoatRoughnessMap = null; sm.color.set(opts.saucer || '#F6F0E6'); sm.roughness = 0.24;
+  sm.normalScale.set(0.05, 0.05); sm.envMapIntensity = 1.35; // the flatter real saucer: an even glossy white glaze (the lathe speckle and roughness prints read as blotches on its wide flat top)
+  root.add(new THREE.Mesh(R.saucer.body, sm), new THREE.Mesh(R.saucer.top, sm));
+  const ao = new THREE.Mesh(new THREE.PlaneGeometry(R.foot * 3.4, R.foot * 3.4), new THREE.MeshBasicMaterial({ map: AO, transparent: true, depthWrite: false, opacity: 0.85 }));
+  ao.rotation.x = -Math.PI / 2; ao.position.y = R.cupBase + 0.0025; root.add(ao);
   if (opts.spoon) {
     const sp = spoonGroup(STEEL); sp.rotation.y = -Math.PI / 2 + 0.35; sp.position.set(-0.1, 0.1, 0.6); root.add(sp);
   }
@@ -79,7 +84,7 @@ function buildCup(glaze, opts = {}) {
   root.children.forEach((c) => (c.position.y -= 0.55));
   root.scale.setScalar(1.1);
   const pivot = new THREE.Group(); pivot.add(root);
-  pivot.userData = { coffee, rimY: (SAUCER.well + CUP.top - 0.55) * 1.1 };
+  pivot.userData = { coffee, rimY: (R.cupBase + R.cupTop - 0.55) * 1.1 };
   return pivot;
 }
 const AO = softShadow(0.75, 0.45, '60,30,14');
@@ -90,7 +95,7 @@ const SHADOW = softShadow(0.42, 0.2);
 /* ------------------------------------------------------------------ DOM bits */
 const tear = $('#tear'), stage = $('#stage');
 const halves = $$('.tw .half'), wraps = $$('.tw'), fibs = $$('.fib'), cue = $('.t-cue');
-const beansCv = $('.beans'), cupCv = $('.cupgl');
+const beansCv = $('.beans'), cupCv = $('.cupgl'), EPB = $('.ep-beans');
 let W = innerWidth, H = innerHeight;
 
 function tearPaths() {
@@ -126,12 +131,13 @@ function initBeans() {
   const rim = new THREE.DirectionalLight('#ffd2a6', 2.6); rim.position.set(-4, 5, -6); sc.add(rim);
   sc.add(new THREE.AmbientLight('#5a3020', 0.45));
   // dark-roast beans: oily, a pale silverskin line in the cleft
-  const mat = beanMaterial('#3D2216', { clearcoat: 0.25, clearcoatRoughness: 0.32, roughness: 0.56, chaff: '#9C7650' });
-  const heroMat = mat.clone(); heroMat.onBeforeCompile = mat.onBeforeCompile; heroMat.customProgramCacheKey = mat.customProgramCacheKey; heroMat.normalScale.set(0.8, 0.8);
-  const hero = new THREE.Mesh(beanGeometry(140, 0), heroMat); sc.add(hero);
+  // the real scanned bean (same file on phone and desktop), recoloured to the dark roast
+  const mat = realBeanMaterial(REAL.bean, '#3D2216', { clearcoat: 0.25, clearcoatRoughness: 0.32, roughness: 0.56 });
+  const heroMat = realBeanMaterial(REAL.bean, '#3D2216', { clearcoat: 0.3, clearcoatRoughness: 0.3, roughness: 0.52 });
+  const hero = new THREE.Mesh(REAL.bean.geo, heroMat); sc.add(hero);
   const N = Math.round(46 * Q.particles), NV = 3;
   const insts = Array.from({ length: NV }, (_, k) => {
-    const im = new THREE.InstancedMesh(beanGeometry(64, k + 1), mat, Math.ceil(N / NV)); sc.add(im); return im;
+    const im = new THREE.InstancedMesh(REAL.bean.geo, mat, Math.ceil(N / NV)); sc.add(im); return im;
   });
   seed = 5;
   const tint = new THREE.Color();
@@ -209,8 +215,8 @@ function initCups() {
     m.position.set((i - 1) * 0.16, 1.05, i * 0.02); steam.add(m); return m;
   });
   // bean ring (roast section): same bean, its oil and colour follow the roast
-  const bmat = beanMaterial(RC[1].bean.clone(), { clearcoat: 0.6, clearcoatRoughness: 0.25 });
-  const NB = 22; const ring = new THREE.InstancedMesh(beanGeometry(72, 2), bmat, NB); sc.add(ring);
+  const bmat = realBeanMaterial(REAL.bean, RC[1].bean.clone(), { clearcoat: 0.6, clearcoatRoughness: 0.25 });
+  const NB = 22; const ring = new THREE.InstancedMesh(REAL.bean.geo, bmat, NB); sc.add(ring);
   seed = 9; const rb = Array.from({ length: NB }, (_, i) => ({ a: (i / NB) * Math.PI * 2, rr: 1.55 + rnd() * 0.35, y: (rnd() - 0.5) * 0.5, sp: rnd() * 6, s: 0.13 + rnd() * 0.05, sx: 0.9 + rnd() * 0.2 }));
   const tc = new THREE.Color(); rb.forEach((b, j) => { const l = 0.78 + rnd() * 0.22; ring.setColorAt(j, tc.setRGB(l, l * 0.96, l * 0.9)); });
   ring.instanceColor.needsUpdate = true;
@@ -220,7 +226,13 @@ function initCups() {
   }
   size();
   Object.assign(S, { r, sc, cam, main, sides, steam, sm, ring, rb, bmat, coffee, size });
-  if (/[?&]shot=1/.test(location.search)) window.__ember = { S, B }; // QA close-up hook (camera view offset), inert otherwise
+  if (/[?&]shot=1/.test(location.search)) { // QA close-up + poster-render hook, inert otherwise
+    window.__ember = { S, B, REAL, snap(which) {
+      if (which === 'beans') { B.frame(0, 0, 0, 0); return B.r.domElement.toDataURL('image/png'); }
+      cupFrame(0, 1, 0, 0); S.r.render(S.sc, S.cam);
+      const b = document.querySelector('.h-cup').getBoundingClientRect(); return { url: S.r.domElement.toDataURL('image/png'), rect: [b.left, b.top, b.width, b.height], dpr: S.r.getPixelRatio() };
+    } };
+  }
 }
 
 const anchors = $$('.cup-a').map((el) => ({ el, s: +el.dataset.s || 1, tilt: +el.dataset.tilt || 0.2, key: el.dataset.cup }));
@@ -335,9 +347,11 @@ let lastAcc = -1;
 function roastFrame(dt) {
   roast.v = reduced ? roast.target : lerp(roast.v, roast.target, 1 - Math.exp(-dt * 5));
   const v = roast.v;
-  mixRoast('coffee', v, S.coffee.uniforms.uA.value); mixRoast('crema', v, S.coffee.uniforms.uB.value);
-  mixRoast('bean', v, S.bmat.color);
-  S.bmat.clearcoat = 0.1 + 0.26 * v; S.bmat.clearcoatRoughness = 0.42 - 0.1 * v; S.bmat.roughness = 0.64 - 0.08 * v;
+  if (READY) {
+    mixRoast('coffee', v, S.coffee.uniforms.uA.value); mixRoast('crema', v, S.coffee.uniforms.uB.value);
+    mixRoast('bean', v, S.bmat.color);
+    S.bmat.clearcoat = 0.1 + 0.26 * v; S.bmat.clearcoatRoughness = 0.42 - 0.1 * v; S.bmat.roughness = 0.64 - 0.08 * v;
+  }
   if (Math.abs(v - lastAcc) > 0.004) { lastAcc = v; document.documentElement.style.setProperty('--acc', '#' + mixRoast('acc', v, tmpC).getHexString()); }
 }
 function initRoast() {
@@ -438,6 +452,7 @@ function applyTear(p) {
   wraps[0].style.transform = `translate(${-e * 64}vw,${e * 7}vh) rotate(${-e * 9}deg)`;
   wraps[1].style.transform = `translate(${e * 66}vw,${-e * 5}vh) rotate(${e * 8}deg)`;
   beansCv.style.opacity = 1 - ss(0.05, 0.55, p);
+  if (!READY && EPB) EPB.style.opacity = beansCv.style.opacity; // the poster fades with the tear like the live beans would
   cue.style.opacity = 1 - ss(0, 0.12, p);
   const done = p >= 0.999;
   if (done !== tearDone) { tearDone = done; tear.classList.toggle('gone', done); }
@@ -447,9 +462,9 @@ function frame(now) {
   const p = tearProgress();
   applyTear(p);
   const mx = reduced ? 0 : ptr.mx, my = reduced ? 0 : ptr.my;
-  if (!tearDone) B.frame(T, p, mx, my);
+  if (READY && !tearDone) B.frame(T, p, mx, my);
   roastFrame(dt);
-  cupFrame(T, p, mx, my);
+  if (READY) cupFrame(T, p, mx, my);
   if (!reduced) {
     const b = origin.getBoundingClientRect(); const k = (H - b.top) / (H + b.height);
     oL1.style.transform = `translateX(${(-k * 32 + 6)}vw)`; oL2.style.transform = `translateX(${(k * 32 - 38)}vw)`;
@@ -459,11 +474,28 @@ function frame(now) {
 function onResize() {
   const w = innerWidth, h = innerHeight;
   if (isM && w === lastW && Math.abs(h - H) < 140) return; // phone URL bar: ignore
-  W = w; H = h; lastW = w; tearPaths(); B.size(); S.size();
+  W = w; H = h; lastW = w; tearPaths(); if (READY) { B.size(); S.size(); }
 }
 
-initBeans(); initCups(); tearPaths(); initRoast(); initMicro(); initNav();
+/* poster first: the page, its copy and the poster images paint straight away; the real 3D loads after first paint.
+   No WebGL (or the model fails): the posters simply stay, nothing blank. */
+const de = document.documentElement;
+const hasGL = (() => { try { const c = document.createElement('canvas'); return !!(window.WebGLRenderingContext && (c.getContext('webgl2') || c.getContext('webgl'))); } catch (e) { return false; } })();
+function noGL() { de.classList.remove('gl-wait'); de.classList.add('no-gl'); beansCv.hidden = true; cupCv.hidden = true; }
+tearPaths(); initRoast(); initMicro(); initNav();
 reveals(); lenis = smooth();
 addEventListener('resize', onResize);
-if (reduced) { applyTear(0); B.frame(0, 0, 0, 0); }
+if (reduced) applyTear(0);
 requestAnimationFrame(frame);
+if (!hasGL) noGL();
+else {
+  de.classList.add('gl-wait');
+  const bar = $('.ep-load i');
+  const start = () => loadEmber((f) => { if (bar) bar.style.transform = `scaleX(${f})`; }).then((m) => {
+    REAL = m; initBeans(); initCups(); READY = true;
+    if (reduced) B.frame(0, 0, 0, 0);
+    if (EPB) EPB.style.opacity = '';
+    de.classList.remove('gl-wait'); de.classList.add('gl-on');
+  }).catch(noGL);
+  requestAnimationFrame(() => setTimeout(start, 0));
+}

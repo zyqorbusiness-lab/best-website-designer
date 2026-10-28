@@ -1,0 +1,11 @@
+{
+  "title": "Wrist watch",
+  "author": "a.aazhgirevich",
+  "author_url": "https://sketchfab.com/a.aazhgirevich",
+  "source_url": "https://sketchfab.com/3d-models/wrist-watch-88a72f698eda415d8217de52c86a650a",
+  "licence": "CC BY 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "\"Wrist watch\" by a.aazhgirevich (https://sketchfab.com/3d-models/wrist-watch-88a72f698eda415d8217de52c86a650a), licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Changed by Zyqor Studio.",
+  "changes": "Maker logo mesh and all dial text meshes removed (unbranded); dial printed ring removed; 5 exporter-split bezel pieces joined; re-scaled (bezel radius 0.98) and re-centred; hour/minute/seconds hands rotated to 12 for live time; parts renamed by role; original materials replaced in code (steel, gold, leather, glass, printed dial); case/strap/crown/buckle/glass simplified with meshoptimizer (bezel kept full); quantized + meshopt-compressed GLB (1.88 MB). Same file on desktop and phone.",
+  "downloaded": "2026-10-28"
+}

@@ -1,0 +1,101 @@
+{
+  "brand": "Rootline Citrus",
+  "id": "N010",
+  "items": [
+    {
+      "what": "3D model",
+      "title": "Lemon",
+      "author": "Kuutti Siitonen",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/lemon",
+      "licence": "CC0 1.0",
+      "note": "Lemon by Kuutti Siitonen, Poly Haven (CC0 1.0). 2K glTF re-encoded (meshopt, WebP 1024/768 px), 225 KB. Same file on phone and desktop. models/lemon.glb",
+      "files": [
+        "models/lemon.glb"
+      ]
+    },
+    {
+      "what": "3D model",
+      "title": "Food Lime 01",
+      "author": "Oliver Harries",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/food_lime_01",
+      "licence": "CC0 1.0",
+      "note": "Food Lime 01 by Oliver Harries, Poly Haven (CC0 1.0). 2K glTF re-encoded (meshopt, WebP 1024/768 px), 232 KB. Same file on phone and desktop. models/lime.glb",
+      "files": [
+        "models/lime.glb"
+      ]
+    },
+    {
+      "what": "3D model",
+      "title": "Mandarin",
+      "author": "yaro.pro",
+      "source": "Sketchfab",
+      "url": "https://sketchfab.com/3d-models/mandarin-a03df271d4ed445ca5e80e24ba72f6e7",
+      "licence": "CC BY 4.0",
+      "files": [
+        "models/mandarin.glb"
+      ],
+      "note": "This work is based on \"Mandarin\" by yaro.pro (sketchfab.com/yaro.pro), licensed under CC BY 4.0 (creativecommons.org/licenses/by/4.0). Photogrammetry scan, full geometry; textures resized to 1024/768 px WebP, meshopt: 299 KB. Same file on phone and desktop."
+    },
+    {
+      "what": "Poster and thumbnail",
+      "title": "Rootline Citrus poster (WebGL fallback still) and thumbnail",
+      "author": "Zyqor Studio",
+      "licence": "MIT",
+      "files": [
+        "poster.webp",
+        "thumb.webp"
+      ],
+      "note": "Screenshots of this page's own real-time render of the CC0 lime scan. Not AI imagery."
+    },
+    {
+      "what": "HDRI",
+      "title": "Studio Small 09",
+      "author": "Sergej Majboroda",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/studio_small_09",
+      "licence": "CC0 1.0",
+      "note": "Shared kit lighting (site/assets/hdri)."
+    },
+    {
+      "what": "Cross-section drawing",
+      "title": "Citrus cross-section",
+      "author": "Zyqor Studio",
+      "licence": "MIT",
+      "note": "Drawn in code (SVG) in app.js; segment counts are typical for each fruit."
+    },
+    {
+      "what": "Type",
+      "title": "Cabinet Grotesk, Satoshi",
+      "author": "Indian Type Foundry",
+      "source": "Fontshare",
+      "url": "https://www.fontshare.com",
+      "licence": "ITF Free Font License"
+    },
+    {
+      "what": "Type",
+      "title": "Instrument Serif",
+      "author": "Rodrigo Fuenzalida, Jordan Egstad",
+      "source": "GitHub",
+      "url": "https://github.com/Instrument/instrument-serif",
+      "licence": "SIL OFL 1.1"
+    },
+    {
+      "what": "Type",
+      "title": "JetBrains Mono",
+      "author": "The JetBrains Mono Project Authors",
+      "source": "GitHub",
+      "url": "https://github.com/JetBrains/JetBrainsMono",
+      "licence": "SIL OFL 1.1"
+    },
+    {
+      "what": "Engine",
+      "title": "three.js r170, GSAP, Lenis",
+      "author": "their authors",
+      "source": "npm",
+      "url": "https://threejs.org",
+      "licence": "MIT / GSAP Standard Licence"
+    }
+  ]
+}

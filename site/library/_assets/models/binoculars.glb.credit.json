@@ -1,0 +1,11 @@
+{
+  "title": "Binoculars",
+  "author": "Derek Wight",
+  "author_url": "https://polyhaven.com/all?a=Derek%20Wight",
+  "source_url": "https://polyhaven.com/a/binoculars",
+  "licence": "CC0 1.0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution": "\"Binoculars\" by Derek Wight, Poly Haven (https://polyhaven.com/a/binoculars), CC0 1.0 (courtesy credit; no attribution required)",
+  "changes": "2K glTF optimised for phone and desktop: textures resized to 1024 px (metal/rough 512 px), WebP textures, meshopt compression, all 19,248 triangles kept; packed as one GLB",
+  "downloaded": "2026-10-28"
+}

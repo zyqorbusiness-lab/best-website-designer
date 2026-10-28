@@ -1,5 +1,5 @@
 /* Volta One - Zyqor Lab concept 10. Shared by index.html (desktop) and m.html (phone, isM). */
-import { THREE, reduced, coarse, isM, Q, makeRenderer, studioEnv, reveals, smooth, clamp, damp, lerp } from '../_kit/kit.js';
+import { THREE, reduced, coarse, isM, Q, makeRenderer, glRenderer, studioEnv, reveals, smooth, clamp, damp, lerp } from '../_kit/kit.js';
 import { buildCar } from './car_model.js';
 import { useHDRI } from '../../assets/hdri/hdri.js';
 
@@ -26,7 +26,7 @@ const DAY = new THREE.Color('#E9EEF0'), NIGHT = new THREE.Color('#0C2A2D');
 /* ---------- renderer ---------- */
 const canvas = $('#gl');
 /* round 2: phone renders exactly like desktop (antialiased, DPR up to 2) instead of the kit's lighter phone profile */
-const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
+const renderer = glRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
 renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 2));
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.toneMapping = THREE.ACESFilmicToneMapping;

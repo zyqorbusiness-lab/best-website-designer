@@ -1,6 +1,6 @@
 /* Meridian - Concept 02 - Zyqor Lab.  Giant type behind the product + a watch that travels through the page.
    One fixed WebGL canvas; the watch's pose is keyed to scroll positions of the sections (no pinning, no scroll-jacking). */
-import { THREE, Q, isM, reduced, coarse, makeRenderer, studioEnv, reveals, smooth, whenVisible, clamp, damp, lerp } from '../_kit/kit.js';
+import { THREE, Q, isM, reduced, coarse, makeRenderer, glRenderer, studioEnv, reveals, smooth, whenVisible, clamp, damp, lerp } from '../_kit/kit.js';
 import { buildWatch, buildBox, DIALS } from './watch.js';
 import { modeSwitch } from './mode.js';
 import { useHDRI } from '../../assets/hdri/hdri.js';
@@ -16,7 +16,7 @@ document.addEventListener('click', (e) => { if (e.target.closest('[data-noop]'))
 /* ---------------------------------------------------------------- scene */
 const canvas = $('.gl');
 /* one quality tier on every device (Sujon, Oct 27: the phone gets the same premium as desktop): antialias on, DPR capped at 2 */
-const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
+const renderer = glRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
 renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 2));
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
@@ -45,6 +45,21 @@ function resize() {
 }
 
 const watch = buildWatch(renderer);
+/* the real model (one GLB, the same file on desktop and phone) loads after first paint; the poster holds the hero until it is in, with real progress.
+   No WebGL (stand-in renderer from the kit): nothing is fetched and the poster stays (canvas data-nogl="self"). */
+const GL = !renderer.isStub;
+const prog = $('.mer-prog');
+addEventListener('meridian:progress', (e) => { if (prog) prog.style.setProperty('--p', e.detail.toFixed(3)); });
+addEventListener('meridian:ready', () => {
+  root.classList.add('mer-ready');
+  if (!reduced && gsap) gsap.to(tw, { intro: 0, duration: 2, ease: 'expo.out', delay: 0.05 }); else tw.intro = 0;
+});
+addEventListener('meridian:failed', () => root.classList.add('mer-failed'));
+if (GL) {
+  const go = () => watch.load();
+  const idle = window.requestIdleCallback || ((f) => setTimeout(f, 120));
+  if (document.readyState === 'complete') idle(go, { timeout: 900 }); else addEventListener('load', () => idle(go, { timeout: 900 }), { once: true });
+}
 const rig = new THREE.Group(), twist = new THREE.Group(), floatG = new THREE.Group();
 rig.add(twist); twist.add(floatG); floatG.add(watch.root); scene.add(rig);
 const box = buildBox(); const boxRig = new THREE.Group(); boxRig.add(box); scene.add(boxRig);
@@ -155,6 +170,7 @@ const now = () => new Date();
 /* pause the renderer when the tab is hidden (the canvas is fixed, so it is otherwise always on screen) */
 document.addEventListener('visibilitychange', () => { running = !document.hidden; });
 function frame(t) {
+  if (!GL) return;
   requestAnimationFrame(frame);
   const dt = Math.min(0.05, (t - last) / 1000); last = t;
   if (!running) return;
@@ -286,5 +302,4 @@ const kept = $('.kept');
 let keptVisible = false;
 new IntersectionObserver(([e]) => { keptVisible = e.intersectionRatio > 0.9; running = !keptVisible && !document.hidden; }, { threshold: [0, 0.9, 1] }).observe(kept);
 document.addEventListener('visibilitychange', () => { running = !keptVisible && !document.hidden; if (running) last = performance.now(); });
-if (!reduced && gsap) gsap.to(tw, { intro: 0, duration: 2, ease: 'expo.out', delay: 0.1 });
 requestAnimationFrame(frame);

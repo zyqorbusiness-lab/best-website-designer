@@ -1,0 +1,13 @@
+{
+ "title": "Ceramic Vase 01",
+ "author": "James Ray Cock",
+ "author_url": "https://polyhaven.com/all?a=James%20Ray%20Cock",
+ "source_url": "https://polyhaven.com/a/ceramic_vase_01",
+ "licence": "CC0 1.0",
+ "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+ "attribution": "\"Ceramic Vase 01\" by James Ray Cock, Poly Haven (https://polyhaven.com/a/ceramic_vase_01), CC0 1.0 (courtesy credit; no attribution required)",
+ "changes": "glTF optimised with gltf-transform (meshopt geometry, WebP textures 1K-2K) and packed as one GLB; same file on desktop and phone",
+ "downloaded": "2026-10-28",
+ "file": "ceramic_vase_01.glb",
+ "credit_written_by": "credits backfill 2026-10-28 (work/beast/credits/backfill)"
+}

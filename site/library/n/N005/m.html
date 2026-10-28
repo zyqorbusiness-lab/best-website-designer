@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en" data-build="m">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- desktop -> phone build when ?m=1 is absent -->
+<script>document.documentElement.classList.add('js');(function(){var q=location.search;if(/[?&]m=1/.test(q))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height,phone=w<=860||(c&&h>w);if(!phone)location.replace('./'+q+location.hash);})();</script>
+<title>Fieldnote Optics &middot; Concept N005 &middot; Zyqor Library</title>
+<meta name="description" content="Fieldnote Optics is a fictional brand: a normal 3D web concept by Zyqor Studio. A misty pine forest you can only see properly through a pair of binoculars that follow your pointer.">
+<meta name="theme-color" content="#E4EAC9">
+<meta property="og:title" content="Fieldnote Optics &middot; Concept N005 &middot; Zyqor Library">
+<meta property="og:description" content="A fictional-brand 3D concept by Zyqor Studio.">
+<meta property="og:image" content="thumb.webp">
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../_kit/stage.js" as="script" crossorigin>
+<link rel="preload" href="pines.webp" as="image" fetchpriority="high">
+<link rel="preload" href="../../_assets/models/binoculars.glb" as="fetch" crossorigin>
+<link rel="stylesheet" href="../../_kit/concept.css">
+<link rel="stylesheet" href="m.css">
+<style>:root{--c1:#E4EAC9;--c2:#1C2120;--c3:#D7597E}</style>
+<script type="importmap">{"imports":{"three":"../../../vendor/three/three.module.min.js","three/addons/":"../../../vendor/three/addons/"}}</script>
+</head>
+<body class="grain" data-id="N005" data-tier="normal" data-name="Fieldnote Optics">
+<a class="skip" href="#main">Skip to content</a>
+<nav class="bnav" aria-label="Fieldnote Optics">
+  <div class="bnav-in">
+    <a class="logo" href="#top" aria-label="Fieldnote Optics, back to top"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="11.5" cy="16" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="20.5" cy="16" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="20.5" cy="16" r="2" fill="var(--c3)"/></svg><span>Fieldnote Optics</span></a>
+    <ul class="bnav-links">
+        <li><a href="#look">Look</a></li>
+        <li><a href="#glasses">Glasses</a></li>
+        <li><a href="#journal">Field notes</a></li>
+        <li><a href="#how">How it works</a></li>
+    </ul>
+    <a class="btn btn--accent bnav-cta" href="#book" data-press>Book a field morning</a>
+    <button class="menu-btn" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="msheet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>Menu</button>
+  </div>
+</nav>
+<dialog class="msheet" id="msheet" aria-label="Menu">
+  <div class="msheet-in">
+    <div class="msheet-top"><span class="logo"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="11.5" cy="16" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="20.5" cy="16" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="20.5" cy="16" r="2" fill="var(--c3)"/></svg><span>Fieldnote Optics</span></span><button class="msheet-x" type="button" aria-label="Close menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+    <ul>
+      <li><a href="#look">Look<span>01</span></a></li>
+      <li><a href="#glasses">Glasses<span>02</span></a></li>
+      <li><a href="#journal">Field notes<span>03</span></a></li>
+      <li><a href="#how">How it works<span>04</span></a></li>
+    </ul>
+    <a class="btn btn--accent" href="#book">Book a field morning</a>
+  </div>
+</dialog>
+<main id="main">
+  <span id="top"></span>
+  <!-- Structure 06 (live sandbox hero) + 02 (exposed hairline grid) for the content. Brief: brief.md -->
+  <section class="hero" id="look" aria-labelledby="h1">
+      <div class="hero-copy">
+        <p class="tag" data-rv>Nature &middot; Concept N005</p>
+        <h1 class="title" data-rv><span class="t1">Fieldnote</span> <span class="t2 serif">Optics</span></h1>
+        <p class="lead" data-rv>A forest in fog, and one pair of glasses. The mist only clears where you look.</p>
+        <p class="found mono" data-rv><span class="found-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span><b id="found">0</b> of 4 field notes found</span></p>
+      </div>
+    <div class="viewer" data-viewer tabindex="0" role="application" aria-roledescription="binocular viewer" aria-label="Misty pine forest. Move the pointer, drag the lens, or use the arrow keys to look around. Plus and minus change magnification.">
+      <img class="ph ph-out" src="pines.webp" alt="" width="2048" height="1280" decoding="async" fetchpriority="high">
+      <div class="mist" aria-hidden="true"></div>
+      <div class="lens-layer" aria-hidden="true">
+        <img class="ph ph-in" src="pines.webp" alt="" width="2048" height="1280" decoding="async">
+        <div class="vign"></div>
+        <div class="notes">
+        <div class="fn fn--right" data-x="0.615" data-y="0.4" id="n1">
+          <svg class="fn-ring" viewBox="0 0 64 64" aria-hidden="true"><path pathLength="1" d="M33 6c14 1 25 11 25 25 0 15-12 27-27 27C17 58 6 47 6 33 6 19 17 7 31 6c3 0 6 1 8 2"/></svg>
+          <p class="fn-t"><span class="fn-n mono">01</span>Nearest trunk. Bark in long vertical plates; everything behind it is mist.</p>
+        </div>
+        <div class="fn fn--left" data-x="0.8" data-y="0.52" id="n2">
+          <svg class="fn-ring" viewBox="0 0 64 64" aria-hidden="true"><path pathLength="1" d="M33 6c14 1 25 11 25 25 0 15-12 27-27 27C17 58 6 47 6 33 6 19 17 7 31 6c3 0 6 1 8 2"/></svg>
+          <p class="fn-t"><span class="fn-n mono">02</span>Fog line. By the fourth row of trunks the forest is gone.</p>
+        </div>
+        <div class="fn fn--right" data-x="0.3" data-y="0.3" id="n3">
+          <svg class="fn-ring" viewBox="0 0 64 64" aria-hidden="true"><path pathLength="1" d="M33 6c14 1 25 11 25 25 0 15-12 27-27 27C17 58 6 47 6 33 6 19 17 7 31 6c3 0 6 1 8 2"/></svg>
+          <p class="fn-t"><span class="fn-n mono">03</span>Light from straight above. Overcast morning, no shadows on the bark.</p>
+        </div>
+        <div class="fn fn--right" data-x="0.17" data-y="0.86" id="n4">
+          <svg class="fn-ring" viewBox="0 0 64 64" aria-hidden="true"><path pathLength="1" d="M33 6c14 1 25 11 25 25 0 15-12 27-27 27C17 58 6 47 6 33 6 19 17 7 31 6c3 0 6 1 8 2"/></svg>
+          <p class="fn-t"><span class="fn-n mono">04</span>Green undergrowth only where the canopy opens.</p>
+        </div>
+        </div>
+      </div>
+      <svg class="lens-ring" aria-hidden="true">
+        <circle class="ring ring-l" r="10"/><circle class="ring ring-r" r="10"/>
+        <circle class="ring-in ring-in-l" r="10"/><circle class="ring-in ring-in-r" r="10"/>
+        <g class="reticle"><path class="ret" d="M-60 0h44M16 0h44M0 -60v44M0 16v44"/><path class="ret-t" d="M-48 -4v8M-36 -3v6M-24 -4v8M24 -4v8M36 -3v6M48 -4v8"/><circle class="ret-dot" r="3"/></g>
+      </svg>
+      <span class="drag-chip mono" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16M9 7l3-3 3 3M9 17l3 3 3-3M7 9l-3 3 3 3M17 9l3 3-3 3"/></svg>Drag the lens</span>
+      <figure class="bino bino--m">
+        <div class="bino-stage" data-stage><noscript><img class="poster" src="poster.webp" alt="A pair of vintage leather binoculars"></noscript></div>
+        <figcaption><span class="mono">Aiming where you look</span><span class="bino-src">Binoculars &middot; Poly Haven, CC0</span></figcaption>
+      </figure>
+      <button class="lens-handle" type="button" aria-label="Drag the lens" tabindex="-1"></button>
+      <p class="sr-only" aria-live="polite" id="live"></p>
+    </div>
+      <div class="ctl" data-rv>
+        <div class="ctl-g"><span class="mono ctl-l">Magnification</span>
+          <div class="seg" role="radiogroup" aria-label="Magnification">
+            <button type="button" role="radio" aria-checked="false" data-mag="6">6&times;</button>
+            <button type="button" role="radio" aria-checked="true" data-mag="8">8&times;</button>
+            <button type="button" role="radio" aria-checked="false" data-mag="10">10&times;</button>
+          </div></div>
+        <div class="ctl-g"><span class="mono ctl-l">Focus <b class="focus-state" id="focus-state">Sharp</b></span>
+          <div class="wheel" role="slider" tabindex="0" aria-label="Focus wheel" aria-valuemin="0" aria-valuemax="100" aria-valuenow="62" aria-valuetext="Sharp" data-wheel>
+            <span class="wheel-knurl" aria-hidden="true"></span><span class="wheel-mark" aria-hidden="true"></span></div></div>
+      </div>
+  </section>
+  <section class="section glasses" id="glasses" aria-labelledby="gl-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="tag" data-rv>The glasses</p>
+        <h2 id="gl-h" class="h2" data-rv>Three ways <span class="serif">to look.</span></h2>
+        <p class="body" data-rv>More magnification brings things closer and makes the view narrower. Pick one and try it in the lens above.</p>
+      </div>
+      <ol class="mags" role="list">
+        <li class="mag" data-rv>
+          <span class="mag-x num">6&times;</span>
+          <div class="mag-t"><h3 class="h3">Wide</h3><p class="body">For forest and low light. The widest view and the brightest image, and the easiest to hold still.</p></div>
+          <svg class="fov" viewBox="0 0 140 90" aria-hidden="true"><circle cx="40.9" cy="45" r="39.3"/><circle cx="99.1" cy="45" r="39.3"/><circle class="fov-dot" cx="99.1" cy="45" r="2.5"/></svg>
+          <button class="btn btn--ghost" type="button" data-try="6" data-press>Try 6&times; in the lens</button>
+        </li>
+        <li class="mag" data-rv>
+          <span class="mag-x num">8&times;</span>
+          <div class="mag-t"><h3 class="h3">Field</h3><p class="body">The all-rounder. Enough reach to read the bark across a clearing, still steady in one hand.</p></div>
+          <svg class="fov" viewBox="0 0 140 90" aria-hidden="true"><circle cx="44.8" cy="45" r="34.0"/><circle cx="95.2" cy="45" r="34.0"/><circle class="fov-dot" cx="95.2" cy="45" r="2.5"/></svg>
+          <button class="btn btn--ghost" type="button" data-try="8" data-press>Try 8&times; in the lens</button>
+        </li>
+        <li class="mag" data-rv>
+          <span class="mag-x num">10&times;</span>
+          <div class="mag-t"><h3 class="h3">Reach</h3><p class="body">For open valleys and far ridges. The narrowest view of the three; brace your elbows.</p></div>
+          <svg class="fov" viewBox="0 0 140 90" aria-hidden="true"><circle cx="47.5" cy="45" r="30.4"/><circle cx="92.5" cy="45" r="30.4"/><circle class="fov-dot" cx="92.5" cy="45" r="2.5"/></svg>
+          <button class="btn btn--ghost" type="button" data-try="10" data-press>Try 10&times; in the lens</button>
+        </li>
+      </ol>
+    </div>
+  </section>
+  <section class="section journal" id="journal" aria-labelledby="jr-h">
+    <div class="wrap jr-in">
+      <div class="sec-head">
+        <p class="tag" data-rv>Field notes</p>
+        <h2 id="jr-h" class="h2" data-rv>Four notes, <span class="serif">hidden in the fog.</span></h2>
+        <p class="body" data-rv>Each one is pencilled onto the photo and only shows through the lens. Find them yourself, or ask for a hint.</p>
+      </div>
+      <ol class="jr" role="list">
+        <li class="jr-i" data-note="n1" data-rv>
+          <span class="jr-n num">01</span>
+          <p class="jr-t"><span class="jr-lock">Not found yet. Keep looking.</span><span class="jr-txt">Nearest trunk. Bark in long vertical plates; everything behind it is mist.</span></p>
+          <button class="btn btn--ghost jr-btn" type="button" data-show="n1" data-press><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="12" r="5"/><circle cx="15" cy="12" r="5"/></svg>Show me</button>
+        </li>
+        <li class="jr-i" data-note="n2" data-rv>
+          <span class="jr-n num">02</span>
+          <p class="jr-t"><span class="jr-lock">Not found yet. Keep looking.</span><span class="jr-txt">Fog line. By the fourth row of trunks the forest is gone.</span></p>
+          <button class="btn btn--ghost jr-btn" type="button" data-show="n2" data-press><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="12" r="5"/><circle cx="15" cy="12" r="5"/></svg>Show me</button>
+        </li>
+        <li class="jr-i" data-note="n3" data-rv>
+          <span class="jr-n num">03</span>
+          <p class="jr-t"><span class="jr-lock">Not found yet. Keep looking.</span><span class="jr-txt">Light from straight above. Overcast morning, no shadows on the bark.</span></p>
+          <button class="btn btn--ghost jr-btn" type="button" data-show="n3" data-press><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="12" r="5"/><circle cx="15" cy="12" r="5"/></svg>Show me</button>
+        </li>
+        <li class="jr-i" data-note="n4" data-rv>
+          <span class="jr-n num">04</span>
+          <p class="jr-t"><span class="jr-lock">Not found yet. Keep looking.</span><span class="jr-txt">Green undergrowth only where the canopy opens.</span></p>
+          <button class="btn btn--ghost jr-btn" type="button" data-show="n4" data-press><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="12" r="5"/><circle cx="15" cy="12" r="5"/></svg>Show me</button>
+        </li>
+      </ol>
+    </div>
+  </section>
+  <section class="section how" id="how" aria-labelledby="how-h">
+    <div class="wrap how-in">
+      <div class="how-copy">
+        <p class="tag" data-rv>How the glasses work</p>
+        <h2 id="how-h" class="h2" data-rv>Two circles, <span class="serif">one mask.</span></h2>
+        <p class="body" data-rv>The view outside the lens is the photo under a wash of mist. Inside, the same photo is shown sharp and scaled around the lens centre, cut out by two overlapping circles that chase your pointer. Raise the magnification and the circles shrink, the way a real field of view does.</p>
+      </div>
+      <svg class="diagram" viewBox="0 0 360 200" aria-hidden="true" data-rv>
+        <circle class="dg-c dg-l" cx="140" cy="100" r="70"/><circle class="dg-c dg-r" cx="220" cy="100" r="70"/>
+        <path class="dg-o" d=""/>
+        <path class="dg-dim" d="M140 186h80M140 180v12M220 180v12"/><text class="dg-txt" x="180" y="176" text-anchor="middle" id="dg-gap">offset</text>
+        <circle class="dg-dot" cx="220" cy="100" r="3"/>
+      </svg>
+      <dl class="ledger" data-rv>
+        <div class="cell"><dt class="mono">Magnification</dt><dd class="v num"><b id="lg-mag">8</b>&times;<small id="lg-fov">lens radius 100%</small></dd></div>
+        <div class="cell"><dt class="mono">Focus</dt><dd class="v" id="lg-focus">Sharp<small>wheel at 62 of 100</small></dd></div>
+        <div class="cell"><dt class="mono">Photo</dt><dd class="v">Misty Pines<small>Greg Zaal &middot; Poly Haven, CC0 &middot; Mpumalanga, South Africa</small></dd></div>
+        <div class="cell"><dt class="mono">Object</dt><dd class="v">Binoculars<small>Derek Wight &middot; Poly Haven, CC0 &middot; 19,248 triangles</small></dd></div>
+      </dl>
+    </div>
+  </section>
+  <section class="section book" id="book" aria-labelledby="bk-h">
+    <div class="wrap bk-in">
+      <div class="sec-head bk-copy">
+        <p class="tag" data-rv>Book a field morning</p>
+        <h2 id="bk-h" class="h2" data-rv>Two hours, <span class="serif">one misty wood.</span></h2>
+        <p class="body" data-rv>Walk slowly with a guide and try all three glasses before you choose. This is a concept booking: the form works, but nothing is sent anywhere.</p>
+      </div>
+      <div class="bk-form" data-rv>
+        <form class="form" data-honest data-success="bk-ok" data-echo="Thanks, {name}. This is a concept page, so nothing left your browser. On a real Fieldnote site a confirmation for {day} would go to {email}." novalidate>
+          <div class="row2">
+            <div class="field"><label for="bk-name">Your name</label><input class="input" id="bk-name" name="name" autocomplete="name" required minlength="2" data-req="Tell us what to call you." placeholder="Asha Rao" aria-describedby="bk-name-err"><p class="err" id="bk-name-err" aria-live="polite"></p></div>
+            <div class="field"><label for="bk-email">Email</label><input class="input" id="bk-email" name="email" type="email" autocomplete="email" required data-req="We need an email to confirm." placeholder="you@example.com" aria-describedby="bk-email-err"><p class="err" id="bk-email-err" aria-live="polite"></p></div>
+          </div>
+          <div class="field"><label for="bk-day">Which morning</label><select class="input" id="bk-day" name="day" required data-req="Pick a morning." aria-describedby="bk-day-err"><option value="">Choose a morning</option><option>Saturday, first light</option><option>Sunday, first light</option><option>Either works</option></select><p class="err" id="bk-day-err" aria-live="polite"></p></div>
+          <div class="field"><fieldset><legend>How many of you</legend><div class="chips">
+            <label><input type="radio" name="group" value="1" checked><span>Just me</span></label><label><input type="radio" name="group" value="2"><span>Two</span></label><label><input type="radio" name="group" value="3"><span>Three</span></label><label><input type="radio" name="group" value="4"><span>Four</span></label></div></fieldset></div>
+          <div class="submit-row"><button class="btn btn--accent" type="submit" data-press><span class="spin" aria-hidden="true"></span>Request a place</button><p class="form-note">Concept form. Nothing leaves this page.</p></div>
+        </form>
+        <div class="success" id="bk-ok" tabindex="-1" role="status">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="14" cy="20" r="9"/><circle cx="26" cy="20" r="9"/><path d="M14 20l3 3 6-6"/></svg>
+          <p class="tag">Concept &middot; not sent</p>
+          <h3>Thanks. Nothing was sent.</h3>
+          <p class="body" data-echo></p>
+          <button class="btn btn--ghost" type="button" data-again>Fill it in again</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="bfoot" aria-label="Fieldnote Optics footer">
+    <div class="wrap bfoot-in">
+      <div><span class="logo"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="11.5" cy="16" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="20.5" cy="16" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="20.5" cy="16" r="2" fill="var(--c3)"/></svg><span>Fieldnote Optics</span></span><p>Binoculars for slow walks and early mornings. A concept brand, designed around one honest interaction: you only see what you look at.</p></div>
+      <div><h4>On this page</h4><ul>
+          <li><a href="#look">Look</a></li>
+          <li><a href="#glasses">Glasses</a></li>
+          <li><a href="#journal">Field notes</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#book">Book a field morning</a></li>
+        </ul></div>
+      <div><h4>Sources</h4><ul>
+          <li><a href="https://polyhaven.com/a/misty_pines" target="_blank" rel="noopener noreferrer">Photo: Misty Pines, Poly Haven</a></li>
+          <li><a href="https://polyhaven.com/a/binoculars" target="_blank" rel="noopener noreferrer">Model: Binoculars, Poly Haven</a></li>
+          <li><span class="lic mono">Both CC0 1.0</span></li>
+        </ul></div>
+      <p class="bfoot-legal">Fieldnote Optics is a fictional brand: Concept N005 in the Zyqor Library by Zyqor Studio. No product is for sale, nothing on this page is sent anywhere, and no customer, review or number on it is real unless its source is named.</p>
+    </div>
+  </footer>
+</main>
+
+<script src="../../../vendor/gsap.min.js" defer></script>
+<script src="../../../vendor/ScrollTrigger.min.js" defer></script>
+<script type="module" src="../../_kit/chrome.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

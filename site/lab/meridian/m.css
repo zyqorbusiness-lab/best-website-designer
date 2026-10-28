@@ -109,3 +109,14 @@ html,body{overflow-x:clip}
 @media (prefers-reduced-motion:reduce){.pill::after{transition:none}}
 .h-cta .pill{text-transform:none;letter-spacing:.01em;font-size:13.5px}
 .pill::after{display:none}
+
+/* real-model loading: the poster holds the hero (same framing as the 3D: sized by the view height, centred) until the GLB is in; no WebGL = it stays */
+.mer-poster{position:absolute;z-index:1;top:0;left:50%;height:100vh;height:100lvh;width:auto;max-width:none;transform:translateX(-50%);pointer-events:none;opacity:1;transition:opacity .9s var(--e-out,ease)}
+html.mer-ready .mer-poster{opacity:0}
+html.no-webgl .mer-poster,html.mer-failed .mer-poster{opacity:1}
+.mer-prog{position:absolute;z-index:4;left:50%;bottom:12px;width:120px;height:1px;margin-left:-60px;background:color-mix(in srgb,currentColor 18%,transparent);overflow:hidden;opacity:.8;transition:opacity .6s}
+.mer-prog::after{content:"";position:absolute;inset:0;background:#C9A24A;transform-origin:0 50%;transform:scaleX(var(--p,0));transition:transform .25s}
+html.mer-ready .mer-prog,html.no-webgl .mer-prog,html.mer-failed .mer-prog{opacity:0}
+
+.mer-attr{position:relative;margin:28px auto 0;max-width:640px;font-size:12px;line-height:1.5;opacity:.72}
+.mer-attr a{color:inherit;text-decoration:underline;text-underline-offset:2px}

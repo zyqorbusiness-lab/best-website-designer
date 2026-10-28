@@ -1,0 +1,108 @@
+{
+  "brand": "Fieldnote Optics",
+  "id": "N005",
+  "items": [
+    {
+      "what": "3D model",
+      "title": "Binoculars",
+      "author": "Derek Wight",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/binoculars",
+      "licence": "CC0 1.0",
+      "note": "Optimised once with skills/model-optimisation-phone (1024 px maps, 512 px metal/rough, meshopt, all 19,248 triangles kept): _assets/models/binoculars.glb, 547 KB, same file on phone and desktop. Strap hidden in this concept.",
+      "credit_file": "../../_assets/models/binoculars.glb.credit.json",
+      "files": [
+        "../../_assets/models/binoculars.glb"
+      ]
+    },
+    {
+      "what": "Photo",
+      "title": "Misty Pines (HDRI, tonemapped JPG)",
+      "author": "Greg Zaal",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/misty_pines",
+      "licence": "CC0 1.0",
+      "note": "Reprojected by Zyqor Studio from the 8K equirectangular tonemapped JPG into an 88 degree rectilinear view (pines.webp, 2048x1280). Photographed in Mpumalanga, South Africa.",
+      "credit_file": "pines.webp.credit.json",
+      "files": [
+        "pines.webp"
+      ]
+    },
+    {
+      "what": "HDRI",
+      "title": "Studio Small 09",
+      "author": "Sergej Majboroda",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/studio_small_09",
+      "licence": "CC0 1.0",
+      "note": "Shared kit lighting (site/assets/hdri).",
+      "credit_file": "shared kit asset (site/assets/hdri), credited by the kit",
+      "files": [
+        "../../../assets/hdri/studio_1k.hdr",
+        "../../../assets/hdri/studio_512.hdr"
+      ]
+    },
+    {
+      "what": "Type",
+      "title": "Cabinet Grotesk, Satoshi",
+      "author": "Indian Type Foundry",
+      "source": "Fontshare",
+      "url": "https://www.fontshare.com",
+      "licence": "ITF Free Font License 2.0",
+      "files": []
+    },
+    {
+      "what": "Type",
+      "title": "JetBrains Mono",
+      "author": "The JetBrains Mono Project Authors",
+      "source": "GitHub",
+      "url": "https://github.com/JetBrains/JetBrainsMono",
+      "licence": "SIL OFL 1.1",
+      "files": []
+    },
+    {
+      "what": "Engine",
+      "title": "three.js r170, GSAP, Lenis",
+      "author": "their authors",
+      "source": "npm",
+      "url": "https://threejs.org",
+      "licence": "MIT / GSAP Standard Licence",
+      "files": []
+    },
+    {
+      "what": "Image (code-made)",
+      "title": "Fieldnote Optics poster (WebGL fallback still)",
+      "author": "Zyqor Studio",
+      "source": "made in code",
+      "url": "",
+      "licence": "MIT",
+      "note": "made in code: a screenshot of this concept's 3D card rendering the CC0 Binoculars model (credited separately), WebP",
+      "credit_file": "poster.webp.credit.json",
+      "files": []
+    },
+    {
+      "what": "Image (code-made)",
+      "title": "Fieldnote Optics library thumbnail",
+      "author": "Zyqor Studio",
+      "source": "made in code",
+      "url": "",
+      "licence": "MIT",
+      "note": "made in code: 640 px screenshot of this page (shows the CC0 Misty Pines photo and Binoculars model, credited separately), written by tools/qa-library.mjs, WebP",
+      "credit_file": "thumb.webp.credit.json",
+      "files": []
+    },
+    {
+      "what": "Images (code-made)",
+      "title": "Poster and library thumbnail",
+      "author": "Zyqor Studio",
+      "source": "frames of this page",
+      "url": "",
+      "licence": "MIT",
+      "note": "WebGL-fallback poster and index thumbnail, rendered from this page by tools/qa-library.mjs. No AI imagery.",
+      "files": [
+        "poster.webp",
+        "thumb.webp"
+      ]
+    }
+  ]
+}
