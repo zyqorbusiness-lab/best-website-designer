@@ -187,7 +187,12 @@ async function runOne(browser, id, run, R) {
     try { const buf = await page.screenshot({ type: 'png' }); await sharp(buf).resize(640).webp({ quality: 78 }).toFile(path.join(dirOf(id), 'thumb.webp')); r.notes.push('thumb.webp written'); } catch (e) { r.notes.push('thumb failed ' + e.message.slice(0, 80)); }
     const posterPath = path.join(dirOf(id), 'poster.webp');
     if ((has('--poster') || !fs.existsSync(posterPath)) && r.stage && r.stage.ok) {
-      try { const el = await page.$('[data-stage]'); const buf = await el.screenshot({ type: 'png' }); await sharp(buf).resize({ width: 1440, withoutEnlargement: true }).webp({ quality: 80 }).toFile(posterPath); r.notes.push('poster.webp written'); } catch (e) { r.notes.push('poster failed ' + e.message.slice(0, 80)); }
+      try { const el = await page.$('[data-stage]');
+        // hide every overlay (nav, captions, controls) so the poster is the render alone: siblings of each ancestor of the stage go invisible
+        await page.evaluate(() => { const st = document.querySelector('[data-stage]'); let n = st; while (n && n.parentElement && n !== document.body) { for (const s of n.parentElement.children) if (s !== n) s.style.setProperty('visibility', 'hidden', 'important'); n = n.parentElement; } for (const c of st.children) if (c.tagName !== 'CANVAS') c.style.setProperty('visibility', 'hidden', 'important'); });
+        await new Promise((r) => setTimeout(r, 150));
+        const buf = await el.screenshot({ type: 'png' });
+        await page.evaluate(() => { for (const e of document.querySelectorAll('[style*="visibility"]')) e.style.removeProperty('visibility'); }); await sharp(buf).resize({ width: 1440, withoutEnlargement: true }).webp({ quality: 80 }).toFile(posterPath); r.notes.push('poster.webp written'); } catch (e) { r.notes.push('poster failed ' + e.message.slice(0, 80)); }
     }
   }
   // interaction smoke test: press the first control, drag across the stage

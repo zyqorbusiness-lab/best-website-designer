@@ -1,0 +1,29 @@
+/* A027 Cut & Grain Knives - desktop. Structure 03, scroll-driven 3D showcase: one pinned scene, one camera, four chapters. Palette: linen #EFEEDA / olive #353F21 / amber #EAA21C. */
+body{background:var(--c1)}
+.intro-in{padding-top:var(--s8)}.lead{max-width:36ch}
+.chaps{left:var(--gutter);bottom:var(--s7);width:min(32rem,40vw);height:12rem}
+.prog{left:var(--gutter);right:var(--gutter);bottom:var(--s5)}
+
+.intro{min-height:88svh;display:grid;align-items:end;padding-bottom:var(--s7)}
+.intro-in{display:grid;gap:var(--s4)}
+.title{font:800 clamp(4.4rem,1.6rem + 8vw,11rem)/.82 var(--f-display);letter-spacing:var(--track-display);color:var(--ink)}
+.title .amp{font-weight:400;font-style:italic;color:var(--c3)}
+.scroll-cue{display:flex;align-items:center;gap:8px;color:var(--ink-3)}.scroll-cue .icon{width:16px;height:16px}
+.edge{position:relative;height:440svh;background:var(--c2)}
+.pin{position:sticky;top:0;height:100svh;overflow:hidden}
+.pin .hero-stage{position:absolute;inset:0}
+.chaps{position:absolute;z-index:2;pointer-events:none}
+.chap{position:absolute;left:0;bottom:0;display:grid;gap:8px;max-width:30rem;color:var(--c1);opacity:0;transform:translateY(16px);transition:opacity var(--dur) var(--ease-out),transform var(--dur) var(--ease-out)}
+.chap.is-on{opacity:1;transform:none}
+.chap .mono{color:var(--c3)}
+.chap-h{font:700 clamp(2rem,1rem + 2.4vw,3.4rem)/1 var(--f-display);letter-spacing:var(--track-h);color:var(--c1)}
+.chap .body{color:var(--on-dark-2)}
+.chap span[id]{color:var(--c1);font-weight:600}
+.prog{position:absolute;z-index:2;height:2px;background:var(--line-dark)}
+.prog span{display:block;height:100%;width:100%;background:var(--c3);transform-origin:left;transform:scaleX(0)}
+.st-list{margin:0;display:grid}
+.st-list div{padding:var(--s4) 0;border-top:1px solid var(--line-strong);display:grid;gap:8px}
+.st-list dt{color:var(--c3)}.st-list dd{margin:0}
+
+.st-in{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--grid-gap)}
+.st-head{grid-column:1 / span 5;display:grid;gap:var(--s3);align-content:start}.st-list{grid-column:7 / span 6}

@@ -8,6 +8,7 @@ Each folder here is one self-contained skill you can download and use on your ow
 |---|---|
 | [`qa-harness`](qa-harness/) | One command that checks every page of a site at desktop and two phone sizes plus reduced motion: console errors, failed requests, horizontal overflow (and which element causes it), WebGL, broken links, screenshots, and a pass/fail report that ends in a verdict. |
 | [`liquid-glass-ui`](liquid-glass-ui/) | A drop-in liquid-glass UI kit (nav pill, cards, buttons, segmented control, switch, slider, sheet, phone tab bar) with edge refraction, specular rim, hairline and fallbacks. Plain CSS + one small JS file. |
+| [`unique-concepts`](unique-concepts/) | A method for concept ideas that do not look like templates: an idea matrix, constraint cards, category inversion, a filter, a brief to fill before code, a palette checker, and the seven mistakes Tab made building this library with the check that prevents each (`tools/preflight.mjs`). |
 | [`model-optimisation-phone`](model-optimisation-phone/) | Turn one glTF/GLB into one optimised file that desktop and phone both load and that looks identical, then prove it with side-by-side renders. |
 
 ## Coming next

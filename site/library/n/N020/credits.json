@@ -1,0 +1,84 @@
+{
+  "brand": "Chordline Music School",
+  "id": "N020",
+  "items": [
+    {
+      "what": "3D model",
+      "title": "Ukulele 01",
+      "author": "Joseph Burgan",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/Ukulele_01",
+      "licence": "CC0 1.0",
+      "note": "Ukulele 01 by Joseph Burgan, Poly Haven (CC0 1.0). 2K glTF re-encoded once (meshopt, WebP 1024 px, all 8,912 triangles kept), 317 KB. Same file on phone and desktop.",
+      "files": [
+        "../../_assets/models/ukulele_01.glb"
+      ]
+    },
+    {
+      "what": "Poster and thumbnail",
+      "title": "Chordline Music School poster (WebGL fallback still) and thumbnail",
+      "author": "Zyqor Studio",
+      "licence": "MIT",
+      "files": [
+        "poster.webp",
+        "thumb.webp"
+      ],
+      "note": "Screenshots of this page's own real-time render of the CC0 model. Not AI imagery."
+    },
+    {
+      "what": "Sound",
+      "title": "Plucked-string synthesis",
+      "author": "Zyqor Studio",
+      "licence": "MIT",
+      "note": "Karplus-Strong string synthesis written in app.js; no audio files. Pitches: standard G C E A ukulele tuning."
+    },
+    {
+      "what": "Chord diagrams and string drawing",
+      "title": "Ukulele chord diagrams",
+      "author": "Zyqor Studio",
+      "licence": "MIT",
+      "note": "Drawn in code (SVG). Fingerings are the standard shapes: C 0003, Am 2000, F 2010, G7 0212."
+    },
+    {
+      "what": "HDRI",
+      "title": "Studio Small 09",
+      "author": "Sergej Majboroda",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/studio_small_09",
+      "licence": "CC0 1.0",
+      "note": "Shared kit lighting (site/assets/hdri)."
+    },
+    {
+      "what": "Type",
+      "title": "Cabinet Grotesk, Satoshi",
+      "author": "Indian Type Foundry",
+      "source": "Fontshare",
+      "url": "https://www.fontshare.com",
+      "licence": "ITF Free Font License"
+    },
+    {
+      "what": "Type",
+      "title": "Instrument Serif",
+      "author": "Rodrigo Fuenzalida, Jordan Egstad",
+      "source": "GitHub",
+      "url": "https://github.com/Instrument/instrument-serif",
+      "licence": "SIL OFL 1.1"
+    },
+    {
+      "what": "Type",
+      "title": "JetBrains Mono",
+      "author": "The JetBrains Mono Project Authors",
+      "source": "GitHub",
+      "url": "https://github.com/JetBrains/JetBrainsMono",
+      "licence": "SIL OFL 1.1"
+    },
+    {
+      "what": "Engine",
+      "title": "three.js r170, GSAP, Lenis",
+      "author": "their authors",
+      "source": "npm",
+      "url": "https://threejs.org",
+      "licence": "MIT / GSAP Standard Licence"
+    }
+  ]
+}

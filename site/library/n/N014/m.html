@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en" data-build="m">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- desktop -> phone build when ?m=1 is absent -->
+<script>document.documentElement.classList.add('js');(function(){var q=location.search;if(/[?&]m=1/.test(q))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height,phone=w<=860||(c&&h>w);if(!phone)location.replace('./'+q+location.hash);})();</script>
+<title>Glint Eyewear &middot; Concept N014 &middot; Zyqor Library</title>
+<meta name="description" content="Glint Eyewear is a fictional brand: a normal 3D web concept by Zyqor Studio. An optician where real round spectacles hover over an eye chart: slide them and the lenses bend the letters behind.">
+<meta name="theme-color" content="#E2EAEE">
+<meta property="og:title" content="Glint Eyewear &middot; Concept N014 &middot; Zyqor Library">
+<meta property="og:description" content="A fictional-brand 3D concept by Zyqor Studio.">
+<meta property="og:image" content="thumb.webp">
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../_kit/stage.js" as="script" crossorigin>
+<link rel="preload" href="../../_assets/models/round_spectacles.glb" as="fetch" crossorigin>
+<link rel="stylesheet" href="../../_kit/concept.css">
+<link rel="stylesheet" href="../../_kit/landing.css">
+<link rel="stylesheet" href="m.css">
+<style>:root{--c1:#E2EAEE;--c2:#3B2A1E;--c3:#2F58DE}</style>
+<script type="importmap">{"imports":{"three":"../../../vendor/three/three.module.min.js","three/addons/":"../../../vendor/three/addons/"}}</script>
+</head>
+<body class="grain" data-id="N014" data-tier="normal" data-name="Glint Eyewear">
+<a class="skip" href="#main">Skip to content</a>
+<nav class="bnav" aria-label="Glint Eyewear">
+  <div class="bnav-in">
+    <a class="logo" href="#main" aria-label="Glint Eyewear, back to top"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="9.5" cy="17" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="22.5" cy="17" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 16.5q1-1.5 2 0" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="22.5" cy="17" r="1.6" fill="var(--c3)"/></svg><span>Glint Eyewear</span></a>
+    <ul class="bnav-links"><li><a href="#frames">Frames</a></li><li><a href="#lenses">Lenses</a></li><li><a href="#fit">Fit</a></li><li><a href="#fitting">Book a fitting</a></li></ul>
+    <a class="btn btn--accent bnav-cta" href="#fitting" data-press>Book a fitting</a>
+    <button class="menu-btn" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="msheet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>Menu</button>
+  </div>
+</nav>
+<dialog class="msheet" id="msheet" aria-label="Menu">
+  <div class="msheet-in">
+    <div class="msheet-top"><span class="logo"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="9.5" cy="17" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="22.5" cy="17" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 16.5q1-1.5 2 0" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="22.5" cy="17" r="1.6" fill="var(--c3)"/></svg><span>Glint Eyewear</span></span><button class="msheet-x" type="button" aria-label="Close menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+    <ul><li><a href="#frames">Frames<span>01</span></a></li><li><a href="#lenses">Lenses<span>02</span></a></li><li><a href="#fit">Fit<span>03</span></a></li><li><a href="#fitting">Book a fitting<span>04</span></a></li></ul>
+    <a class="btn btn--accent" href="#fitting">Book a fitting</a>
+  </div>
+</dialog>
+<main id="main">
+  <section class="hero" id="frames" aria-labelledby="h1">
+    <div class="hero-copy">
+      <p class="tag" data-rv>Eyewear &middot; Concept N014</p>
+      <h1 id="h1" class="title" data-rv>Glint</h1>
+      <p class="lead" data-rv>Round wire frames, tested where it matters: in front of the chart. Slide them across and look through the lenses.</p>
+      <div class="rx" data-rv role="group" aria-label="Lens strength">
+        <span class="mono rx-k">Lens</span>
+        <button class="rx-b" type="button" data-rx="-1" aria-label="Weaker lens"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12"/></svg></button>
+        <output class="rx-v num" id="rx-v" aria-live="polite">+1.50</output>
+        <button class="rx-b" type="button" data-rx="1" data-press aria-label="Stronger lens"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12M12 6v12"/></svg></button>
+        <span class="mono rx-u">dioptres</span>
+      </div>
+    </div>
+    <div class="hero-stage" data-stage>
+      <noscript><img class="poster" src="poster.webp" alt="Round wire spectacles in front of an eye chart"></noscript>
+      <p class="gesture mono" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M4 12h16M8 8l-4 4 4 4M16 8l4 4-4 4"/></svg>Drag to slide the frames</p>
+    </div>
+    <dl class="spec" data-rv>
+      <div><dt class="mono">Frame</dt><dd>Round Spectacles<small>scan by Sean Buckley, Poly Haven CC0</small></dd></div>
+      <div><dt class="mono">Lens</dt><dd id="sp-lens">Reading, +1.50</dd></div>
+      <div><dt class="mono">Through the lens</dt><dd id="sp-mag">Letters look larger</dd></div>
+    </dl>
+  </section>
+  <section class="section lenses" id="lenses" aria-labelledby="ln-h">
+    <div class="wrap ln-in">
+      <div class="ln-head"><p class="tag" data-rv>Lenses</p><h2 id="ln-h" class="h2" data-rv>Three kinds of glass, <span class="serif">one frame.</span></h2>
+        <p class="body" data-rv>Try the strength control above: plus lenses make the chart larger, minus lenses make it smaller, exactly the way a real lens bends light.</p></div>
+      <ol class="ln-list" role="list"><li class="ln-row" data-rv><span class="ln-lens" aria-hidden="true" style="--k:1"><span>Aa</span></span><div><h3>Plain glass</h3><span class="mono">0.00</span><p class="body">For the frame alone. Anti-glare coated on both sides.</p></div></li><li class="ln-row" data-rv><span class="ln-lens" aria-hidden="true" style="--k:1.25"><span>Aa</span></span><div><h3>Reading</h3><span class="mono">+1.00 to +3.00</span><p class="body">Magnifies close work. The chart above shows +1.50 by default.</p></div></li><li class="ln-row" data-rv><span class="ln-lens" aria-hidden="true" style="--k:0.8"><span>Aa</span></span><div><h3>Distance</h3><span class="mono">-0.50 to -6.00</span><p class="body">Makes far things sharp; through it, the chart letters shrink.</p></div></li></ol>
+    </div>
+  </section>
+  <section class="section fit" id="fit" aria-labelledby="ft-h">
+    <div class="wrap ft-in">
+      <div class="ft-head"><p class="tag" data-rv>Fit</p><h2 id="ft-h" class="h2" data-rv>Three numbers <span class="serif">on the temple.</span></h2>
+        <p class="body" data-rv>Every frame carries its size inside the arm. These are the numbers a fitting checks.</p></div>
+      <svg class="ft-draw" viewBox="0 0 520 200" role="img" aria-label="Frame measurements: lens width 46 millimetres, bridge 20 millimetres, temple 140 millimetres" data-rv>
+        <circle cx="140" cy="100" r="62" class="fr"/><circle cx="380" cy="100" r="62" class="fr"/><path d="M202 92q58-30 116 0" class="fr"/>
+        <path d="M78 178h124M78 172v12M202 172v12" class="dim"/><text x="140" y="196" class="dt">46 lens</text>
+        <path d="M202 30h116M202 24v12M318 24v12" class="dim"/><text x="260" y="20" class="dt">20 bridge</text>
+        <path d="M442 92h70" class="fr"/><text x="478" y="84" class="dt">140 temple</text>
+      </svg>
+    </div>
+  </section>
+  <section class="section pn-sec form-sec" id="fitting" aria-labelledby="ft-h">
+    <div class="wrap pn-book">
+      <div class="pn-head"><p class="tag" data-rv>Book a fitting</p><h2 id="ft-h" class="h2" data-rv>Twenty minutes, <span class="serif">one chair, one chart.</span></h2>
+        <p class="body" data-rv>A fitting checks the three numbers and your prescription. Glint is a fictional optician. This is a concept form: it checks what you type, but nothing is sent anywhere.</p></div>
+      <div data-rv>
+        <form class="form" data-honest data-success="ft-ok" data-echo="Thanks, {name}. Glint is fictional, so nothing left this page. A real optician would write to {email} about {lens} lenses." novalidate>
+          <div class="row2">
+            <div class="field"><label for="ft-name">Your name</label><input class="input" id="ft-name" name="name" type="text" autocomplete="name" required minlength="2" data-req="Tell us what to call you." placeholder="Lena Hoff" aria-describedby="ft-name-err"><p class="err" id="ft-name-err" aria-live="polite"></p></div>
+            <div class="field"><label for="ft-email">Email</label><input class="input" id="ft-email" name="email" type="email" autocomplete="email" required data-req="We need an email to reply." placeholder="you@example.com" aria-describedby="ft-email-err"><p class="err" id="ft-email-err" aria-live="polite"></p></div>
+          </div>
+          <div class="field"><label for="ft-lens">Lenses</label><select class="input" id="ft-lens" name="lens" required data-req="Pick one." aria-describedby="ft-lens-err"><option value="">Choose</option><option>Plain glass</option><option>Reading</option><option>Distance</option><option>Not sure yet</option></select><p class="err" id="ft-lens-err" aria-live="polite"></p></div>
+          <div class="field"><fieldset><legend>Bring</legend><div class="chips"><label><input type="radio" name="bring" value="rx" checked><span>My prescription</span></label><label><input type="radio" name="bring" value="test"><span>I need an eye test</span></label></div></fieldset></div>
+          <div class="submit-row"><button class="btn btn--accent" type="submit" data-press><span class="spin" aria-hidden="true"></span>Book a fitting</button><p class="form-note">Concept form. Nothing leaves this page.</p></div>
+        </form>
+        <div class="success" id="ft-ok" tabindex="-1" role="status">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="15"/><path d="M13 20l5 5 9-10"/></svg>
+          <p class="tag">Concept: not sent</p>
+          <h3>Thanks. Nothing was sent.</h3>
+          <p class="body" data-echo></p>
+          <button class="btn btn--ghost" type="button" data-again>Fill it in again</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<script type="module" src="../../_kit/chrome.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

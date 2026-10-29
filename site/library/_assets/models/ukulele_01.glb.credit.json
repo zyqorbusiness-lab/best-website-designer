@@ -1,0 +1,11 @@
+{
+  "title": "Ukulele 01",
+  "author": "Joseph Burgan",
+  "author_url": "https://polyhaven.com/all?a=Joseph%20Burgan",
+  "source_url": "https://polyhaven.com/a/Ukulele_01",
+  "licence": "CC0 1.0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution": "\"Ukulele 01\" by Joseph Burgan, Poly Haven (https://polyhaven.com/a/Ukulele_01), CC0 1.0 (courtesy credit; no attribution required)",
+  "changes": "2K glTF from Poly Haven optimised once for phone and desktop: textures WebP at 1024 px max, meshopt compression, all 8,912 triangles kept (no simplification), packed as one GLB",
+  "downloaded": "2026-10-29"
+}

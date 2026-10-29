@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" data-build="m">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- desktop -> phone build when ?m=1 is absent -->
+<script>document.documentElement.classList.add('js');(function(){var q=location.search;if(/[?&]m=1/.test(q))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height,phone=w<=860||(c&&h>w);if(!phone)location.replace('./'+q+location.hash);})();</script>
+<title>Cut &amp; Grain Knives &middot; Concept A027 &middot; Zyqor Library</title>
+<meta name="description" content="Cut &amp; Grain Knives is a fictional brand: a advanced 3D web concept by Zyqor Studio. A knife maker told in one scroll: the camera runs along the real edge, the blade slides out of the handle, then it comes back together.">
+<meta name="theme-color" content="#EFEEDA">
+<meta property="og:title" content="Cut &amp; Grain Knives &middot; Concept A027 &middot; Zyqor Library">
+<meta property="og:description" content="A fictional-brand 3D concept by Zyqor Studio.">
+<meta property="og:image" content="thumb.webp">
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../_kit/stage.js" as="script" crossorigin>
+<link rel="preload" href="../../_assets/models/fish_knife.glb" as="fetch" crossorigin>
+<link rel="stylesheet" href="../../_kit/concept.css">
+<link rel="stylesheet" href="../../_kit/landing.css">
+<link rel="stylesheet" href="m.css">
+<style>:root{--c1:#EFEEDA;--c2:#353F21;--c3:#EAA21C}</style>
+<script type="importmap">{"imports":{"three":"../../../vendor/three/three.module.min.js","three/addons/":"../../../vendor/three/addons/"}}</script>
+</head>
+<body class="grain" data-id="A027" data-tier="advanced" data-name="Cut &amp; Grain Knives">
+<a class="skip" href="#main">Skip to content</a>
+<nav class="bnav" aria-label="Cut &amp; Grain Knives">
+  <div class="bnav-in">
+    <a class="logo" href="#main" aria-label="Cut &amp; Grain Knives, back to top"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M5 22L22 5c2 0 3 1 3 3L11 22z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M11 22l-4 5-3-3 5-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="20" cy="9" r="1.6" fill="var(--c3)"/></svg><span>Cut &amp; Grain Knives</span></a>
+    <ul class="bnav-links"><li><a href="#edge">The knife</a></li><li><a href="#steel">Steel</a></li><li><a href="#care">Care</a></li><li><a href="#order">Order</a></li></ul>
+    <a class="btn btn--accent bnav-cta" href="#order" data-press>Order a knife</a>
+    <button class="menu-btn" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="msheet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>Menu</button>
+  </div>
+</nav>
+<dialog class="msheet" id="msheet" aria-label="Menu">
+  <div class="msheet-in">
+    <div class="msheet-top"><span class="logo"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M5 22L22 5c2 0 3 1 3 3L11 22z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M11 22l-4 5-3-3 5-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="20" cy="9" r="1.6" fill="var(--c3)"/></svg><span>Cut &amp; Grain Knives</span></span><button class="msheet-x" type="button" aria-label="Close menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+    <ul><li><a href="#edge">The knife<span>01</span></a></li><li><a href="#steel">Steel<span>02</span></a></li><li><a href="#care">Care<span>03</span></a></li><li><a href="#order">Order<span>04</span></a></li></ul>
+    <a class="btn btn--accent" href="#order">Order a knife</a>
+  </div>
+</dialog>
+<main id="main">
+  <section class="intro" aria-labelledby="h1">
+    <div class="wrap intro-in">
+      <p class="tag" data-rv>Knives &middot; Concept A027</p>
+      <h1 id="h1" class="title" data-rv>Cut <span class="amp serif">&amp;</span> Grain</h1>
+      <p class="lead" data-rv>One knife, in one scroll. Keep going: the camera runs down the edge, the blade slides out of the handle, and it comes back together.</p>
+      <p class="mono scroll-cue" data-rv><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>Scroll</p>
+    </div>
+  </section>
+  <section class="edge" id="edge" aria-label="The knife, in four steps">
+    <div class="pin">
+      <div class="hero-stage" data-stage>
+        <noscript><img class="poster" src="poster.webp" alt="A fish knife with a wooden handle and a polished steel blade"></noscript>
+      </div>
+      <div class="chaps" aria-live="polite"><div class="chap" data-c="0"><span class="mono">01 / 04</span><h2 class="chap-h">The edge</h2><p class="body">Ground by hand to a fine edge, then honed until it reflects a straight line.</p></div><div class="chap" data-c="1"><span class="mono">02 / 04</span><h2 class="chap-h">Two parts</h2><p class="body">From above, the blade and the handle, apart. <span id="m-blade">—</span> of steel, <span id="m-handle">—</span> of handle, measured from the scan.</p></div><div class="chap" data-c="2"><span class="mono">03 / 04</span><h2 class="chap-h">The spine</h2><p class="body">Side on, the blade is thinnest at the edge and thickest at the spine, so it glides through and stays stiff.</p></div><div class="chap" data-c="3"><span class="mono">04 / 04</span><h2 class="chap-h">Together</h2><p class="body">One knife, for fish and for everything else on the board.</p></div></div>
+      <div class="prog" aria-hidden="true"><span></span></div>
+    </div>
+  </section>
+  <section class="section steel" id="steel" aria-labelledby="st-h">
+    <div class="wrap st-in">
+      <div class="st-head"><p class="tag" data-rv>Steel and grain</p><h2 id="st-h" class="h2" data-rv>Three things <span class="serif">you can feel.</span></h2></div>
+      <dl class="st-list"><div data-rv><dt class="mono">01 &middot; Blade</dt><dd class="body">Polished stainless steel, ground thin behind the edge.</dd></div><div data-rv><dt class="mono">02 &middot; Handle</dt><dd class="body">Hardwood, oiled, fixed with two brass rivets you can see on the scan.</dd></div><div data-rv><dt class="mono">03 &middot; Balance</dt><dd class="body">The point where it rests on one finger sits just in front of the handle.</dd></div></dl>
+    </div>
+  </section>
+  <section class="section pn-sec care" id="care" aria-labelledby="cr-h">
+    <div class="wrap pn-book">
+      <div class="pn-head"><p class="tag" data-rv>Care</p><h2 id="cr-h" class="h2" data-rv>Four habits, <span class="serif">a knife for years.</span></h2>
+        <p class="body" data-rv>Cut &amp; Grain is a fictional maker; this is how any good knife is looked after.</p></div>
+      <ol class="pn-steps" data-rv-group><li data-rv><div><h3>Wash by hand</h3><p class="body">Warm water, a soft sponge, never the dishwasher.</p></div></li><li data-rv><div><h3>Dry at once</h3><p class="body">Wipe from spine to edge, then let the handle air-dry.</p></div></li><li data-rv><div><h3>Hone weekly</h3><p class="body">A few strokes on a ceramic rod keep the edge straight.</p></div></li><li data-rv><div><h3>Oil the handle</h3><p class="body">A drop of food-safe oil once a month.</p></div></li></ol>
+    </div>
+  </section>
+  <section class="section pn-sec form-sec" id="order" aria-labelledby="or-h">
+    <div class="wrap pn-book">
+      <div class="pn-head"><p class="tag" data-rv>Order</p><h2 id="or-h" class="h2" data-rv>Made to order, <span class="serif">one at a time.</span></h2>
+        <p class="body" data-rv>Pick a handle wood. Cut &amp; Grain is fictional. This is a concept form: it checks what you type, but nothing is sent anywhere.</p></div>
+      <div data-rv>
+        <form class="form" data-honest data-success="or-ok" data-echo="Thanks, {name}. Cut &amp; Grain is fictional, so nothing left this page. A real maker would write to {email} about a knife in {wood}." novalidate>
+          <div class="row2">
+            <div class="field"><label for="or-name">Your name</label><input class="input" id="or-name" name="name" type="text" autocomplete="name" required minlength="2" data-req="Tell us what to call you." placeholder="Noor Haddad" aria-describedby="or-name-err"><p class="err" id="or-name-err" aria-live="polite"></p></div>
+            <div class="field"><label for="or-email">Email</label><input class="input" id="or-email" name="email" type="email" autocomplete="email" required data-req="We need an email to reply." placeholder="you@example.com" aria-describedby="or-email-err"><p class="err" id="or-email-err" aria-live="polite"></p></div>
+          </div>
+          <div class="field"><label for="or-wood">Handle wood</label><select class="input" id="or-wood" name="wood" required data-req="Pick one." aria-describedby="or-wood-err"><option value="">Choose</option><option>Walnut</option><option>Olive</option><option>Ash</option></select><p class="err" id="or-wood-err" aria-live="polite"></p></div>
+          <div class="field"><fieldset><legend>Engraving</legend><div class="chips"><label><input type="radio" name="engrave" value="none" checked><span>No engraving</span></label><label><input type="radio" name="engrave" value="initials"><span>Initials on the blade</span></label></div></fieldset></div>
+          <div class="submit-row"><button class="btn btn--accent" type="submit" data-press><span class="spin" aria-hidden="true"></span>Order a knife</button><p class="form-note">Concept form. Nothing leaves this page.</p></div>
+        </form>
+        <div class="success" id="or-ok" tabindex="-1" role="status">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="15"/><path d="M13 20l5 5 9-10"/></svg>
+          <p class="tag">Concept: not sent</p>
+          <h3>Thanks. Nothing was sent.</h3>
+          <p class="body" data-echo></p>
+          <button class="btn btn--ghost" type="button" data-again>Fill it in again</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<script type="module" src="../../_kit/chrome.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

@@ -12,13 +12,12 @@ const stage = await createStage({
   label: '{{NAME}}: drag to turn the object'
 });
 
-/* Replace this placeholder with the concept's real asset:
-     const g = await stage.load(stage.asset('models/<slug>.glb'));  stage.fit(g.scene, 1.6, true);  stage.add(g.scene);  */
-const obj = new THREE.Mesh(
-  new THREE.LatheGeometry(Array.from({ length: 24 }, (_, i) => { const t = i / 23; return new THREE.Vector2(0.35 + Math.sin(t * Math.PI) * 0.32 - t * 0.12, t * 1.5); }), 96),
-  new THREE.MeshPhysicalMaterial({ color: getComputedStyle(document.documentElement).getPropertyValue('--c3').trim() || '#B5832F', roughness: 0.32, clearcoat: 0.8, clearcoatRoughness: 0.2, side: THREE.DoubleSide })
-);
-stage.add(obj);
+/* The hero is ALWAYS a real credited CC0 / CC-BY model (unique-concepts skill, mistake 9.2: code-made stand-ins shipped
+   as the product and had to be redone). Set MODEL to the optimised GLB in _assets/models/ and add its .credit.json. */
+const MODEL = '';   // e.g. 'models/rubber_duck_toy.glb'
+if (!MODEL) throw new Error('{{ID}}: set MODEL to a real CC0/CC-BY model before building (no code-made placeholder)');
+const g = await stage.load(stage.asset(MODEL));
+const obj = g.scene; stage.fit(obj, 1.6, true); stage.add(obj);
 stage.contactShadow({ size: 3, opacity: 0.5 });
 const turn = stage.spin(obj, { auto: 0.2 });
 stage.loaded();

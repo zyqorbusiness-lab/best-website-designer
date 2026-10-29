@@ -1,0 +1,131 @@
+{
+ "id": "A013",
+ "date": "2026-10-29T20:45:03.614Z",
+ "kit": 2,
+ "verdict": "PASS",
+ "tier": "advanced",
+ "budgetKB": 3072,
+ "ownKB": 986,
+ "sharedKB": 1640,
+ "phoneOwnKB": 976,
+ "phoneSharedKB": 1507,
+ "weightKB": 3201,
+ "phoneWeightKB": 3058,
+ "sameAssets": true,
+ "assetDiff": {
+  "desktopOnly": [],
+  "phoneOnly": []
+ },
+ "assets3d": [
+  "/assets/hdri/studio_512.hdr",
+  "/library/_assets/models/antique_ceramic_vase_01.glb",
+  "/library/_assets/models/ceramic_vase_01.glb",
+  "/library/_assets/models/ceramic_vase_02.glb",
+  "/library/_assets/models/ceramic_vase_04.glb",
+  "/library/_assets/tex/dark_planks_diff_512.webp",
+  "/library/_assets/tex/dark_planks_nor_512.webp"
+ ],
+ "sameEffects": true,
+ "effectDiff": [],
+ "effects": {
+  "toneMapping": 4,
+  "exposure": 1,
+  "outputColorSpace": "srgb",
+  "shadows": true,
+  "shadowType": 2,
+  "antialias": true,
+  "envIntensity": 0.55,
+  "background": null,
+  "passes": [],
+  "contactShadows": 0,
+  "demand": false,
+  "dprCap": [
+   2,
+   2
+  ]
+ },
+ "nowebgl": true,
+ "credit": {
+  "pass": true,
+  "files": 14,
+  "missing": [],
+  "incomplete": [],
+  "ccby": [],
+  "ccbyNotVisible": [],
+  "unlisted": []
+ },
+ "runs": {
+  "d1440": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": true,
+   "ownKB": 986,
+   "sharedKB": 1640
+  },
+  "m390": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": true,
+   "ownKB": 976,
+   "sharedKB": 1507
+  },
+  "m360": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": true,
+   "ownKB": 986,
+   "sharedKB": 1507
+  },
+  "rd1440": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": true,
+   "ownKB": 986,
+   "sharedKB": 1660
+  },
+  "rm390": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": true,
+   "ownKB": 986,
+   "sharedKB": 1527
+  },
+  "nd1440": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": false,
+   "poster": true,
+   "ownKB": 974,
+   "sharedKB": 960
+  },
+  "nm390": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": false,
+   "poster": true,
+   "ownKB": 974,
+   "sharedKB": 827
+  }
+ }
+}

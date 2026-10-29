@@ -1,0 +1,26 @@
+/* A013 Shelfline Ceramics - phone build. Same four models, shelf texture, HDRI and camera walk as desktop on native scroll; one vase per screen. */
+body{background:var(--c1)}
+.intro{min-height:76svh;padding-top:calc(env(safe-area-inset-top) + 90px)}
+.title{font-size:clamp(3.6rem,19vw,5.4rem)}
+.vcaps{left:var(--gutter);right:var(--gutter);bottom:calc(var(--s7) + env(safe-area-inset-bottom));height:11rem}
+.ticks{left:var(--gutter);bottom:calc(var(--s4) + env(safe-area-inset-bottom))}
+
+.intro{min-height:86svh;display:grid;align-items:end;padding-bottom:var(--s7)}
+.intro-in{display:grid;gap:var(--s4)}
+.title{font:800 clamp(4.4rem,1.6rem + 8vw,11rem)/.82 var(--f-display);letter-spacing:var(--track-display);color:var(--ink)}
+.title .serif{font-weight:400;font-style:italic;letter-spacing:-.03em;color:color-mix(in oklab,var(--c2) 70%,var(--c3))}
+.scroll-cue{display:flex;align-items:center;gap:8px;color:var(--ink-3)}.scroll-cue .icon{width:16px;height:16px}
+.shelf{position:relative;height:460svh;background:linear-gradient(var(--paper-2),var(--c1))}
+.pin{position:sticky;top:0;height:100svh;overflow:hidden}
+.pin .hero-stage{position:absolute;inset:0}
+.vcaps{position:absolute;z-index:2;pointer-events:none}
+.vcap{position:absolute;left:0;bottom:0;display:grid;gap:8px;opacity:0;transform:translateY(14px);transition:opacity var(--dur) var(--ease-out),transform var(--dur) var(--ease-out)}
+.vcap.is-on{opacity:1;transform:none}
+.vcap .mono{color:var(--ink-3)}.vcap .vh{color:var(--c3)}
+.vcap-h{font:700 clamp(2rem,1rem + 2.2vw,3.2rem)/1 var(--f-display);letter-spacing:var(--track-h)}
+.vsrc{font-size:var(--fs-xs)}
+.ticks{position:absolute;z-index:2;list-style:none;margin:0;padding:0;display:flex;gap:var(--s3)}
+.ticks li{font:500 var(--fs-xs)/1 var(--f-mono);color:var(--ink-3);padding-top:10px;border-top:2px solid var(--line);min-width:3rem;transition:color var(--dur-fast),border-color var(--dur-fast)}
+.ticks li.is-on{color:var(--ink);border-color:var(--c3)}
+.vcap-h{font-size:2.1rem}
+.pin::after{content:"";position:absolute;left:0;right:0;bottom:0;height:46%;z-index:1;pointer-events:none;background:linear-gradient(to top,color-mix(in oklab,var(--c1) 92%,transparent) 55%,transparent)}

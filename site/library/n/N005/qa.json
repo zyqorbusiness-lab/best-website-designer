@@ -1,12 +1,12 @@
 {
  "id": "N005",
- "date": "2026-10-29T11:07:23.440Z",
+ "date": "2026-10-29T20:19:08.817Z",
  "kit": 2,
  "verdict": "PASS",
  "tier": "normal",
  "budgetKB": 1536,
  "ownKB": 958,
- "sharedKB": 1647,
+ "sharedKB": 1648,
  "phoneOwnKB": 939,
  "phoneSharedKB": 1629,
  "weightKB": 2945,
@@ -58,7 +58,7 @@
    "overflow": 0,
    "webgl": true,
    "ownKB": 958,
-   "sharedKB": 1647
+   "sharedKB": 1648
   },
   "m390": {
    "pass": true,
@@ -88,7 +88,7 @@
    "overflow": 0,
    "webgl": true,
    "ownKB": 958,
-   "sharedKB": 1647
+   "sharedKB": 1648
   },
   "rm390": {
    "pass": true,

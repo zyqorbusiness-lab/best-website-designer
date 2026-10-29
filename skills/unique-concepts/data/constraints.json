@@ -1,0 +1,82 @@
+[
+ {
+  "title": "One object",
+  "rule": "Only one 3D object on the page. Every section must be about it."
+ },
+ {
+  "title": "No hero headline",
+  "rule": "The object is the headline. Text starts only after the first scroll."
+ },
+ {
+  "title": "Thumb only",
+  "rule": "Design the phone first. Every interaction must work with one thumb in the bottom 40% of the screen."
+ },
+ {
+  "title": "Three colours",
+  "rule": "Exactly three colours: paper, ink, one accent used at about 1%."
+ },
+ {
+  "title": "One verb",
+  "rule": "The whole page is one verb (pour, fold, wind, open). Every interaction is that verb."
+ },
+ {
+  "title": "Real scale",
+  "rule": "Show the object at real size somewhere (a ruler, a hand-width, a coin)."
+ },
+ {
+  "title": "Sound off",
+  "rule": "The page must make sense with no sound and no hover."
+ },
+ {
+  "title": "Ten seconds",
+  "rule": "A visitor must understand the brand in ten seconds without reading."
+ },
+ {
+  "title": "Cut a section",
+  "rule": "Write the page, then delete the weakest section. Nothing else is allowed to grow to fill it."
+ },
+ {
+  "title": "Wrong category",
+  "rule": "Borrow the layout of a totally different category (a museum label for a barber, a train timetable for a bakery)."
+ },
+ {
+  "title": "Macro first",
+  "rule": "Open on an extreme close-up of the material; pull back only on scroll."
+ },
+ {
+  "title": "One camera move",
+  "rule": "The whole 3D scene uses one continuous camera move. No cuts."
+ },
+ {
+  "title": "Data as decoration",
+  "rule": "Every decorative element is a real number about the product (weight, temperature, minutes)."
+ },
+ {
+  "title": "Night mode is the story",
+  "rule": "The light switch is not a setting, it is the plot."
+ },
+ {
+  "title": "No cards",
+  "rule": "No card grids anywhere. Lists, tables, rails, drawers or a single column only."
+ },
+ {
+  "title": "Hand-made detail x3",
+  "rule": "Name three details a template would never have before you write code."
+ },
+ {
+  "title": "Credit visible",
+  "rule": "Every outside asset is credited on screen, and the credit looks designed, not hidden."
+ },
+ {
+  "title": "Phone = PC",
+  "rule": "The phone build loads the same model, textures and lighting. Plan the composition so nothing has to be cut."
+ },
+ {
+  "title": "Slow down",
+  "rule": "Every motion is 400-700 ms, expo-out, no bounce. If it needs bounce to be fun, the idea is weak."
+ },
+ {
+  "title": "Honest form",
+  "rule": "The form must tell the truth: 'Concept: not sent'."
+ }
+]

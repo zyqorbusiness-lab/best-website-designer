@@ -1,6 +1,6 @@
 {
  "id": "N008",
- "date": "2026-10-29T11:07:23.440Z",
+ "date": "2026-10-29T20:19:08.817Z",
  "kit": 2,
  "verdict": "PASS",
  "tier": "normal",
@@ -96,7 +96,7 @@
    "overflow": 0,
    "webgl": true,
    "ownKB": 1377,
-   "sharedKB": 1514
+   "sharedKB": 1515
   },
   "rm390": {
    "pass": true,
@@ -106,7 +106,7 @@
    "overflow": 0,
    "webgl": true,
    "ownKB": 1380,
-   "sharedKB": 1514
+   "sharedKB": 1515
   },
   "nd1440": {
    "pass": true,
@@ -117,7 +117,7 @@
    "webgl": false,
    "poster": true,
    "ownKB": 320,
-   "sharedKB": 814
+   "sharedKB": 815
   },
   "nm390": {
    "pass": true,
@@ -128,7 +128,7 @@
    "webgl": false,
    "poster": true,
    "ownKB": 323,
-   "sharedKB": 814
+   "sharedKB": 815
   }
  }
 }

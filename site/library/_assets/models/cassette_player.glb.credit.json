@@ -1,0 +1,11 @@
+{
+  "title": "Cassette Player",
+  "author": "Oday Abuzaeed",
+  "author_url": "https://polyhaven.com/all?a=Oday%20Abuzaeed",
+  "source_url": "https://polyhaven.com/a/cassette_player",
+  "licence": "CC0 1.0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution": "\"Cassette Player\" by Oday Abuzaeed, Poly Haven (https://polyhaven.com/a/cassette_player), CC0 1.0 (courtesy credit; no attribution required)",
+  "changes": "2K glTF from Poly Haven optimised once for phone and desktop: textures WebP at 2048 px max, meshopt compression, all 4,830 triangles kept (no simplification), packed as one GLB",
+  "downloaded": "2026-10-29"
+}

@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generated": "2026-10-29T11:38:28.791Z",
+ "generated": "2026-10-29T20:58:23.396Z",
  "source": "work/beast/concepts_300.json",
  "concepts": {
   "N001": {
@@ -330,21 +330,20 @@
    "name": "Glint Eyewear",
    "label": "Glint Eyewear (Concept)",
    "category": "fashion",
-   "idea": "Round spectacles turn slowly; four frame finishes swap material and background",
-   "technique": "one CC0 model, material swatches, colour flood",
-   "asset_source": "Poly Haven model 'Round Spectacles' (CC0); Poly Haven HDRI 'Studio Small 08' (CC0)",
+   "idea": "Real spectacles over a live eye chart; the lenses refract the chart and a dioptre stepper changes it",
+   "technique": "one CC0 model + transmission glass lenses over a canvas 2D eye chart",
+   "asset_source": "Poly Haven model 'Round Spectacles' (CC0)",
    "assets": [
-    "ph:round_spectacles",
-    "hdri:studio_small_08"
+    "ph:round_spectacles"
    ],
    "palette": [
-    "#EED9DE",
-    "#22311E",
+    "#E2EAEE",
+    "#3B2A1E",
     "#2F58DE"
    ],
    "pattern": "A",
    "pattern_name": "Product-colourway morph (background follows the product)",
-   "three_d": "real model: Poly Haven model 'Round Spectacles' (CC0)",
+   "three_d": "real model + scene: Poly Haven model 'Round Spectacles' (CC0)",
    "hero_source": "real",
    "structure": null,
    "batch": 1,
@@ -477,21 +476,20 @@
    "name": "Chordline Music School",
    "label": "Chordline Music School (Concept)",
    "category": "music",
-   "idea": "Hover the strings of a ukulele and each one plucks a note",
-   "technique": "one CC0 model + Web Audio tones + string vibration",
-   "asset_source": "Poly Haven model 'Ukulele 01' (CC0); Poly Haven HDRI 'Studio Small 09' (CC0)",
+   "idea": "The four strings of a real ukulele scan are the menu: hover or tap to pluck a note, chord diagrams beside",
+   "technique": "one CC0 model + Karplus-Strong Web Audio pluck + SVG string vibration",
+   "asset_source": "Poly Haven model 'Ukulele 01' (CC0)",
    "assets": [
-    "ph:Ukulele_01",
-    "hdri:studio_small_09"
+    "ph:ukulele_01"
    ],
    "palette": [
-    "#F3D9E0",
-    "#26341C",
+    "#F3E6CF",
+    "#2B2118",
     "#2E9E5E"
    ],
    "pattern": "I",
    "pattern_name": "Micro-interactions and UI patterns",
-   "three_d": "real model: Poly Haven model 'Ukulele 01' (CC0)",
+   "three_d": "real model + scene: Poly Haven model 'Ukulele 01' (CC0)",
    "hero_source": "real",
    "structure": null,
    "batch": 1,
@@ -600,12 +598,11 @@
    "name": "Bathtime Duck",
    "label": "Bathtime Duck (Concept)",
    "category": "play",
-   "idea": "A rubber duck bobbing in a bath; click to make it waddle and squeak",
-   "technique": "one CC0 model + bob animation + optional sound",
-   "asset_source": "Poly Haven model 'Rubber Duck Toy' (CC0); Poly Haven HDRI 'Studio Small 09' (CC0)",
+   "idea": "A rubber duck floating on a ripple water shader; tap the water to send a ripple under it",
+   "technique": "one CC0 model + ripple shader plane + bob physics readout",
+   "asset_source": "Poly Haven model 'Rubber Duck Toy' (CC0)",
    "assets": [
-    "ph:rubber_duck_toy",
-    "hdri:studio_small_09"
+    "ph:rubber_duck_toy"
    ],
    "palette": [
     "#FBE7DA",
@@ -614,7 +611,7 @@
    ],
    "pattern": "I",
    "pattern_name": "Micro-interactions and UI patterns",
-   "three_d": "real model: Poly Haven model 'Rubber Duck Toy' (CC0)",
+   "three_d": "real model + scene: Poly Haven model 'Rubber Duck Toy' (CC0)",
    "hero_source": "real",
    "structure": null,
    "batch": 1,
@@ -1155,21 +1152,20 @@
    "name": "Ironbark Barbers",
    "label": "Ironbark Barbers (Concept)",
    "category": "beauty",
-   "idea": "A barber chair hero with a spinning pole loader and a booking pill",
-   "technique": "one CC0 model + CSS stripe loader",
-   "asset_source": "Poly Haven model 'Barber Shop Chair 01' (CC0); Poly Haven HDRI 'Studio Small 03' (CC0)",
+   "idea": "A real barber chair turns on a compass ring of six services; pump the seat from 48 to 58 cm",
+   "technique": "one CC0 model + SVG compass ring with detents + seat height control",
+   "asset_source": "Poly Haven model 'Barbershop Chair 01' (CC0)",
    "assets": [
-    "ph:BarberShopChair_01",
-    "hdri:studio_small_03"
+    "ph:barbershopchair_01"
    ],
    "palette": [
-    "#F4E4E9",
-    "#294124",
-    "#D84642"
+    "#EFE7DA",
+    "#17303A",
+    "#C8402F"
    ],
    "pattern": "I",
    "pattern_name": "Micro-interactions and UI patterns",
-   "three_d": "real model: Poly Haven model 'Barber Shop Chair 01' (CC0)",
+   "three_d": "real model + scene: Poly Haven model 'Barbershop Chair 01' (CC0)",
    "hero_source": "real",
    "structure": null,
    "batch": 2,
@@ -2736,24 +2732,23 @@
    "name": "Shelfline Ceramics",
    "label": "Shelfline Ceramics (Concept)",
    "category": "home-goods",
-   "idea": "A pinned horizontal track where each card holds a real vase turning as you pass",
-   "technique": "pinned horizontal scroll + per-card three.js views (one renderer, scissor)",
-   "asset_source": "Poly Haven model 'Ceramic Vase 01' (CC0); Poly Haven model 'Ceramic Vase 02' (CC0); Poly Haven model 'Ceramic Vase 04' (CC0); Poly Haven model 'Antique Ceramic Vase 01' (CC0); Poly Haven HDRI 'Studio Small 09' (CC0)",
+   "idea": "One long shelf: scroll walks the camera past four real scanned vases, each lit by a moving spot",
+   "technique": "pinned scroll dolly + four CC0 models + spotlight shadows + CC0 wood texture",
+   "asset_source": "Poly Haven models 'Ceramic Vase 01', 'Ceramic Vase 02', 'Ceramic Vase 04', 'Antique Ceramic Vase 01' (CC0)",
    "assets": [
     "ph:ceramic_vase_01",
     "ph:ceramic_vase_02",
     "ph:ceramic_vase_04",
-    "ph:antique_ceramic_vase_01",
-    "hdri:studio_small_09"
+    "ph:antique_ceramic_vase_01"
    ],
    "palette": [
     "#ECD6CE",
     "#2F2316",
     "#E64B76"
    ],
-   "pattern": "K",
+   "pattern": "05",
    "pattern_name": "Physics, 3D scroll and horizontal scroll",
-   "three_d": "real model + scene: Poly Haven model 'Ceramic Vase 01' (CC0); Poly Haven model 'Ceramic Vase 02' (CC0); Poly Haven model 'Ceramic Vase 04' (CC0); Poly Haven model 'Antique Ceramic Vase 01' (CC0)",
+   "three_d": "real model + scene: Poly Haven models 'Ceramic Vase 01', 'Ceramic Vase 02', 'Ceramic Vase 04', 'Antique Ceramic Vase 01' (CC0)",
    "hero_source": "real",
    "structure": null,
    "batch": 5,
@@ -3086,12 +3081,11 @@
    "name": "Cut & Grain Knives",
    "label": "Cut & Grain Knives (Concept)",
    "category": "home-goods",
-   "idea": "A chef's knife turns and catches light in a frame sequence you scrub with scroll",
-   "technique": "rendered frame-sequence (video-to-scroll) from a CC0 model + canvas playback",
-   "asset_source": "Poly Haven model 'Fish Knife' (CC0); Poly Haven HDRI 'Studio Small 03' (CC0)",
+   "idea": "A pinned scroll runs the camera along a real knife edge, slides the blade out of the handle and closes it",
+   "technique": "pinned scroll camera path + exploded view of a CC0 scan + measured lengths",
+   "asset_source": "Poly Haven model 'Fish Knife' (CC0)",
    "assets": [
-    "ph:fish_knife",
-    "hdri:studio_small_03"
+    "ph:fish_knife"
    ],
    "palette": [
     "#EFEEDA",
@@ -5300,21 +5294,21 @@
    "name": "Tapehead Hi-Fi",
    "label": "Tapehead Hi-Fi (Concept)",
    "category": "music",
-   "idea": "A cassette deck with turning reels, live VU meters and liquid-glass track controls",
-   "technique": "animated reels + audio meters + PBR deck",
+   "idea": "A real cassette deck: press play and a VU meter reads the live sound; scroll and the tape flies out and turns to side B",
+   "technique": "PBR deck + concert-hall HDRI + Web Audio analyser VU meter + liquid-glass controls + scroll flight",
    "asset_source": "Poly Haven model 'Cassette Player' (CC0); Poly Haven HDRI 'Music Hall 01' (CC0)",
    "assets": [
     "ph:cassette_player",
-    "hdri:music_hall_01"
+    "ph:music_hall_01"
    ],
    "palette": [
-    "#F5E1E7",
-    "#293F24",
+    "#F2EBDD",
+    "#3A1F1A",
     "#E5C61A"
    ],
    "pattern": "I",
    "pattern_name": "Micro-interactions and UI patterns",
-   "three_d": "real model(s): Poly Haven model 'Cassette Player' (CC0)",
+   "three_d": "real model + scene: Poly Haven model 'Cassette Player' (CC0); Poly Haven HDRI 'Music Hall 01' (CC0)",
    "hero_source": "real",
    "structure": null,
    "batch": 9,

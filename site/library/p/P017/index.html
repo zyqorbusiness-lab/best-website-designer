@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- phone -> m.html (separate phone build). ?desktop=1 keeps this page -->
+<script>document.documentElement.classList.add('js');(function(){var q=location.search;if(/[?&]desktop=1/.test(q))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height,phone=w<=860||(c&&h>w);if(phone)location.replace('m.html'+q+location.hash);})();</script>
+<title>Tapehead Hi-Fi &middot; Concept P017 &middot; Zyqor Library</title>
+<meta name="description" content="Tapehead Hi-Fi is a fictional brand: a premium 3D web concept by Zyqor Studio. A hi-fi shop around one real cassette player: press play and a VU meter reads the live sound; scroll and the tape flies out and turns over.">
+<meta name="theme-color" content="#F2EBDD">
+<meta property="og:title" content="Tapehead Hi-Fi &middot; Concept P017 &middot; Zyqor Library">
+<meta property="og:description" content="A fictional-brand 3D concept by Zyqor Studio.">
+<meta property="og:image" content="thumb.webp">
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../_kit/stage.js" as="script" crossorigin>
+<link rel="preload" href="../../_assets/models/cassette_player.glb" as="fetch" crossorigin>
+<link rel="stylesheet" href="../../_kit/concept.css">
+<link rel="stylesheet" href="../../_kit/landing.css">
+<link rel="stylesheet" href="style.css">
+<style>:root{--c1:#F2EBDD;--c2:#3A1F1A;--c3:#E5C61A}</style>
+<script type="importmap">{"imports":{"three":"../../../vendor/three/three.module.min.js","three/addons/":"../../../vendor/three/addons/"}}</script>
+</head>
+<body class="grain" data-id="P017" data-tier="premium" data-name="Tapehead Hi-Fi">
+<a class="skip" href="#main">Skip to content</a>
+<nav class="bnav" aria-label="Tapehead Hi-Fi">
+  <div class="bnav-in">
+    <a class="logo" href="#main" aria-label="Tapehead Hi-Fi, back to top"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect x="4" y="8" width="24" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="11" cy="16" r="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="21" cy="16" r="3" fill="none" stroke="var(--c3)" stroke-width="2"/><path d="M11 19h10" stroke="currentColor" stroke-width="2"/></svg><span>Tapehead Hi-Fi</span></a>
+    <ul class="bnav-links"><li><a href="#deck">The deck</a></li><li><a href="#tape">Side B</a></li><li><a href="#inside">Inside</a></li><li><a href="#order">Order</a></li></ul>
+    <a class="btn btn--accent bnav-cta" href="#order" data-press>Order the deck</a>
+    <button class="menu-btn" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="msheet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>Menu</button>
+  </div>
+</nav>
+<dialog class="msheet" id="msheet" aria-label="Menu">
+  <div class="msheet-in">
+    <div class="msheet-top"><span class="logo"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect x="4" y="8" width="24" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="11" cy="16" r="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="21" cy="16" r="3" fill="none" stroke="var(--c3)" stroke-width="2"/><path d="M11 19h10" stroke="currentColor" stroke-width="2"/></svg><span>Tapehead Hi-Fi</span></span><button class="msheet-x" type="button" aria-label="Close menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+    <ul><li><a href="#deck">The deck<span>01</span></a></li><li><a href="#tape">Side B<span>02</span></a></li><li><a href="#inside">Inside<span>03</span></a></li><li><a href="#order">Order<span>04</span></a></li></ul>
+    <a class="btn btn--accent" href="#order">Order the deck</a>
+  </div>
+</dialog>
+<main id="main">
+  <section class="hero" id="deck" aria-labelledby="h1">
+    <div class="hero-stage" data-stage>
+      <noscript><img class="poster" src="poster.webp" alt="A portable cassette player with a tape inside, on a dark stage"></noscript>
+    </div>
+    <div class="hero-copy">
+      <p class="tag" data-rv>Hi-fi &middot; Concept P017</p>
+      <h1 id="h1" class="title" data-rv>Tape<span class="serif">head</span></h1>
+      <p class="lead" data-rv>One portable deck, scanned down to the screws. Press play: the meter reads the sound your browser is making, live.</p>
+    </div>
+    <div class="deck glass" role="group" aria-label="Deck controls" data-rv>
+      <div class="vu" aria-hidden="true">
+        <svg viewBox="0 0 200 110"><path class="vu-arc" d="M20 96a84 84 0 0 1 160 0"/><path class="vu-red" d="M150 40a84 84 0 0 1 30 56"/>
+          <g class="vu-ticks"></g><text x="22" y="108" class="vu-t">-20</text><text x="96" y="30" class="vu-t">-3</text><text x="166" y="108" class="vu-t">+3</text><text x="100" y="80" class="vu-l">VU</text>
+          <line class="vu-needle" x1="100" y1="104" x2="100" y2="22"/></svg>
+      </div>
+      <div class="keys">
+        <button class="key" type="button" data-key="play" data-press aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l11 7-11 7z"/></svg><span>Play</span></button>
+        <button class="key" type="button" data-key="stop"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="1"/></svg><span>Stop</span></button>
+        <button class="key" type="button" data-key="eject" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 15l7-9 7 9zM5 19h14"/></svg><span>Eject</span></button>
+      </div>
+      <p class="mono deck-s" id="deck-s" aria-live="polite">Stopped &middot; tape in</p>
+    </div>
+  </section>
+  <section class="tape" id="tape" aria-label="Side B">
+    <div class="pin">
+      <div class="tape-copy">
+        <p class="tag">Side B</p>
+        <h2 class="h2 tp-h" id="tp-h">The tape comes out.</h2>
+        <p class="body tp-b" id="tp-b">Scroll: the cassette leaves the deck, turns over in the air, and goes back in on side B.</p>
+      </div>
+      <div class="tp-steps" aria-hidden="true"><span data-s="0">Out</span><span data-s="1">Over</span><span data-s="2">Back in</span></div>
+    </div>
+  </section>
+  <section class="section inside" id="inside" aria-labelledby="in-h">
+    <div class="wrap in-in">
+      <div class="in-head"><p class="tag" data-rv>Inside the scan</p><h2 id="in-h" class="h2" data-rv>Measured, <span class="serif">not described.</span></h2>
+        <p class="body" data-rv>These numbers are read from the 3D scan on this page, which is built in real-world units.</p></div>
+      <dl class="in-list">
+        <div data-rv><dt class="mono">Deck width</dt><dd><b class="num" id="dm-w">—</b> cm</dd></div>
+        <div data-rv><dt class="mono">Deck height</dt><dd><b class="num" id="dm-h">—</b> cm</dd></div>
+        <div data-rv><dt class="mono">Cassette width</dt><dd><b class="num" id="dm-c">—</b> cm</dd></div>
+        <div data-rv><dt class="mono">Triangles</dt><dd><b class="num" id="dm-t">—</b></dd></div>
+      </dl>
+    </div>
+  </section>
+  <section class="section pn-sec form-sec" id="order" aria-labelledby="od-h">
+    <div class="wrap pn-book">
+      <div class="pn-head"><p class="tag" data-rv>Order</p><h2 id="od-h" class="h2" data-rv>Bring a tape <span class="serif">back to life.</span></h2>
+        <p class="body" data-rv>Choose a finish. Tapehead is a fictional shop. This is a concept form: it checks what you type, but nothing is sent anywhere.</p></div>
+      <div data-rv>
+        <form class="form" data-honest data-success="od-ok" data-echo="Thanks, {name}. Tapehead is fictional, so nothing left this page. A real shop would write to {email} about the {finish} deck." novalidate>
+          <div class="row2">
+            <div class="field"><label for="od-name">Your name</label><input class="input" id="od-name" name="name" type="text" autocomplete="name" required minlength="2" data-req="Tell us what to call you." placeholder="Kofi Mensah" aria-describedby="od-name-err"><p class="err" id="od-name-err" aria-live="polite"></p></div>
+            <div class="field"><label for="od-email">Email</label><input class="input" id="od-email" name="email" type="email" autocomplete="email" required data-req="We need an email to reply." placeholder="you@example.com" aria-describedby="od-email-err"><p class="err" id="od-email-err" aria-live="polite"></p></div>
+          </div>
+          <div class="field"><label for="od-finish">Finish</label><select class="input" id="od-finish" name="finish" required data-req="Pick one." aria-describedby="od-finish-err"><option value="">Choose</option><option>Original grey</option><option>Restored silver</option></select><p class="err" id="od-finish-err" aria-live="polite"></p></div>
+          <div class="field"><fieldset><legend>With it</legend><div class="chips"><label><input type="radio" name="extra" value="tape" checked><span>A blank tape</span></label><label><input type="radio" name="extra" value="none"><span>Just the deck</span></label></div></fieldset></div>
+          <div class="submit-row"><button class="btn btn--accent" type="submit" data-press><span class="spin" aria-hidden="true"></span>Order the deck</button><p class="form-note">Concept form. Nothing leaves this page.</p></div>
+        </form>
+        <div class="success" id="od-ok" tabindex="-1" role="status">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="15"/><path d="M13 20l5 5 9-10"/></svg>
+          <p class="tag">Concept: not sent</p>
+          <h3>Thanks. Nothing was sent.</h3>
+          <p class="body" data-echo></p>
+          <button class="btn btn--ghost" type="button" data-again>Fill it in again</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<script src="../../../vendor/gsap.min.js" defer></script>
+<script src="../../../vendor/ScrollTrigger.min.js" defer></script>
+<script src="../../../vendor/lenis.min.js" defer></script>
+<script type="module" src="../../_kit/chrome.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>
