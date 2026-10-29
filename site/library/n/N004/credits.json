@@ -1,0 +1,105 @@
+{
+  "brand": "Morrow Light",
+  "id": "N004",
+  "items": [
+    {
+      "what": "Texture",
+      "title": "Walnut Veneer (diffuse, 1K)",
+      "author": "Jenelle van Heerden",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/walnut_veneer",
+      "licence": "CC0 1.0",
+      "note": "Wrapped on the code-made turned base (walnut_veneer_diff.webp, 40 KB). Same file on phone and desktop.",
+      "credit_file": "walnut_veneer_diff.webp.credit.json",
+      "files": [
+        "walnut_veneer_diff.webp"
+      ]
+    },
+    {
+      "what": "3D model",
+      "title": "Morrow lamp (base, frosted orb, LED core)",
+      "author": "Zyqor Studio",
+      "source": "code-made three.js geometry in app.js",
+      "url": "",
+      "licence": "MIT (this repo)",
+      "note": "Lathe-turned base, transmission-glass sphere, emissive core and point light on a 1800-3200 K ramp.",
+      "files": []
+    },
+    {
+      "what": "HDRI",
+      "title": "Studio Small 09",
+      "author": "Sergej Majboroda",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/studio_small_09",
+      "licence": "CC0 1.0",
+      "note": "Shared kit lighting (site/assets/hdri).",
+      "credit_file": "shared kit asset (site/assets/hdri), credited by the kit",
+      "files": [
+        "../../../assets/hdri/studio_1k.hdr",
+        "../../../assets/hdri/studio_512.hdr"
+      ]
+    },
+    {
+      "what": "Type",
+      "title": "Cabinet Grotesk, Satoshi",
+      "author": "Indian Type Foundry",
+      "source": "Fontshare",
+      "url": "https://www.fontshare.com",
+      "licence": "ITF Free Font License 2.0",
+      "files": []
+    },
+    {
+      "what": "Type",
+      "title": "JetBrains Mono",
+      "author": "The JetBrains Mono Project Authors",
+      "source": "GitHub",
+      "url": "https://github.com/JetBrains/JetBrainsMono",
+      "licence": "SIL OFL 1.1",
+      "files": []
+    },
+    {
+      "what": "Engine",
+      "title": "three.js r170, GSAP, Lenis",
+      "author": "their authors",
+      "source": "npm",
+      "url": "https://threejs.org",
+      "licence": "MIT / GSAP Standard Licence",
+      "files": []
+    },
+    {
+      "what": "Image (code-made)",
+      "title": "Morrow Light poster (WebGL fallback still)",
+      "author": "Zyqor Studio",
+      "source": "made in code",
+      "url": "",
+      "licence": "MIT",
+      "note": "made in code: a screenshot of this concept's own code-made 3D lamp, WebP",
+      "credit_file": "poster.webp.credit.json",
+      "files": []
+    },
+    {
+      "what": "Image (code-made)",
+      "title": "Morrow Light library thumbnail",
+      "author": "Zyqor Studio",
+      "source": "made in code",
+      "url": "",
+      "licence": "MIT",
+      "note": "made in code: 640 px screenshot of this page written by tools/qa-library.mjs, WebP",
+      "credit_file": "thumb.webp.credit.json",
+      "files": []
+    },
+    {
+      "what": "Images (code-made)",
+      "title": "Poster and library thumbnail",
+      "author": "Zyqor Studio",
+      "source": "frames of this page",
+      "url": "",
+      "licence": "MIT",
+      "note": "WebGL-fallback poster and index thumbnail, rendered from this page by tools/qa-library.mjs. No AI imagery.",
+      "files": [
+        "poster.webp",
+        "thumb.webp"
+      ]
+    }
+  ]
+}

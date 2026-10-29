@@ -5,6 +5,8 @@
    (2) the speed dial's ticks rotate with the wheel itself, (3) when it stops, the page says "Still." */
 import { createStage, THREE, isM, reduced, damp } from '../../_kit/stage.js';
 import { reveals, press } from '../../_kit/fx/index.js';
+import { landing } from '../../_kit/landing.js';
+landing();
 
 reveals(); press('[data-press]');
 const css = getComputedStyle(document.documentElement);

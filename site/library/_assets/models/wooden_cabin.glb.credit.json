@@ -1,0 +1,11 @@
+{
+  "title": "Wooden Cabin",
+  "author": "donnichols",
+  "author_url": "https://sketchfab.com/donnichols",
+  "source_url": "https://sketchfab.com/3d-models/wooden-cabin-c90674a377864ac1b8fd141ad1917ee3",
+  "licence": "CC BY 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "\"Wooden Cabin\" by donnichols (https://sketchfab.com/3d-models/wooden-cabin-c90674a377864ac1b8fd141ad1917ee3), licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Changes: Optimised for web (base colour 1024 px, normal + metal/rough 512 px WebP, meshopt, all 4,404 triangles kept), packed as one GLB; snow is added by a shader in the page.",
+  "changes": "Optimised for web (base colour 1024 px, normal + metal/rough 512 px WebP, meshopt, all 4,404 triangles kept), packed as one GLB; snow is added by a shader in the page.",
+  "downloaded": "2026-10-29"
+}

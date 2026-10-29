@@ -15,12 +15,28 @@
 <link rel="preload" href="../../_kit/stage.js" as="script" crossorigin>
 <link rel="preload" href="../../_assets/models/moon_rock_01.glb" as="fetch" crossorigin>
 <link rel="stylesheet" href="../../_kit/concept.css">
+<link rel="stylesheet" href="../../_kit/landing.css">
 <link rel="stylesheet" href="style.css">
 <style>:root{--c1:#EEE0C4;--c2:#232F43;--c3:#D03037}</style>
 <script type="importmap">{"imports":{"three":"../../../vendor/three/three.module.min.js","three/addons/":"../../../vendor/three/addons/"}}</script>
 </head>
 <body class="dark grain" data-id="A018" data-tier="advanced" data-name="Tranquility Base">
 <a class="skip" href="#main">Skip to content</a>
+<nav class="bnav" aria-label="Tranquility Base">
+  <div class="bnav-in">
+    <a class="logo" href="#main" aria-label="Tranquility Base, back to top"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 20c4-2 10-2 14 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="20" cy="11" r="2" fill="var(--c3)"/></svg><span>Tranquility Base</span></a>
+    <ul class="bnav-links"><li><a href="#ch01">Approach</a></li><li><a href="#ch03">Surface</a></li><li><a href="#mission">Mission</a></li><li><a href="#visit">Visit</a></li></ul>
+    <a class="btn btn--accent bnav-cta" href="#visit" data-press>Request a viewing</a>
+    <button class="menu-btn" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="msheet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>Menu</button>
+  </div>
+</nav>
+<dialog class="msheet" id="msheet" aria-label="Menu">
+  <div class="msheet-in">
+    <div class="msheet-top"><span class="logo"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 20c4-2 10-2 14 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="20" cy="11" r="2" fill="var(--c3)"/></svg><span>Tranquility Base</span></span><button class="msheet-x" type="button" aria-label="Close menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+    <ul><li><a href="#ch01">Approach<span>01</span></a></li><li><a href="#ch03">Surface<span>02</span></a></li><li><a href="#mission">Mission<span>03</span></a></li><li><a href="#visit">Visit<span>04</span></a></li></ul>
+    <a class="btn btn--accent" href="#visit">Request a viewing</a>
+  </div>
+</dialog>
 <main id="main">
   <!-- Structure 03 (scroll-driven 3D showcase): one pinned WebGL scene, five chapters on one camera path. Brief: brief.md -->
   <section class="journey" aria-label="A scroll journey from lunar orbit to the surface and an earthrise">
@@ -73,6 +89,51 @@
       <p class="body" data-rv>Tranquility Base is a fictional brand. The scene is one three.js camera on a spline, scrubbed by your scroll: real scanned rocks, a real lunar regolith texture and NASA&rsquo;s Blue Marble on the Earth. Phone and desktop load the same files.</p>
       <a class="btn btn--accent" href="#ch01" data-press data-action="top">Fly it again
         <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
+    </div>
+  </section>
+  <section class="section pn-sec" id="mission" aria-labelledby="ms-h">
+    <div class="wrap">
+      <div class="pn-head"><p class="tag" data-rv>The mission</p><h2 id="ms-h" class="h2" data-rv>Three days, <span class="serif">one quiet plain.</span></h2>
+        <p class="body" data-rv>A fictional itinerary, written the way a real expedition journal would be. Nothing here can be booked; the journey above is the whole trip.</p></div>
+      <ul class="pn-grid" role="list">
+        <li class="pn-card" data-rv><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M4 12h16"/></svg><span class="mono">Day 01 &middot; Orbit</span><h3>Approach</h3><p class="body">Two low passes over the Sea of Tranquility before the descent window opens.</p></li>
+        <li class="pn-card" data-rv><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18l6-8 4 5 3-3 5 6z"/></svg><span class="mono">Day 02 &middot; Surface</span><h3>The plain</h3><p class="body">Walk the old lava field at eye level with the scanned boulders from the scroll.</p></li>
+        <li class="pn-card" data-rv><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="14" r="5"/><path d="M4 9c3-4 13-4 16 0"/></svg><span class="mono">Day 03 &middot; Earthrise</span><h3>Home, rising</h3><p class="body">The last chapter: the Earth lifts over the horizon, lit by NASA&rsquo;s Blue Marble.</p></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section pn-sec" id="faq" aria-labelledby="fq-h">
+    <div class="wrap pn-book">
+      <div class="pn-head"><p class="tag" data-rv>Questions</p><h2 id="fq-h" class="h2" data-rv>Plainly <span class="serif">answered.</span></h2></div>
+      <div class="pn-faq" data-rv>
+        <details><summary>Is this a real company?</summary><p class="body">No. Tranquility Base is a fictional brand made as a design concept by Zyqor Studio. There are no flights and no prices.</p></details>
+        <details><summary>Are the rocks and textures real?</summary><p class="body">Yes. The boulders are photo-scanned Poly Haven models, the ground is a real regolith texture and the Earth uses NASA imagery. The credits list every file.</p></details>
+        <details><summary>Does the phone get a lighter scene?</summary><p class="body">No. Phone and desktop load the same files and draw the same rocks, stars, terrain and shadows; only the layout changes.</p></details>
+      </div>
+    </div>
+  </section>
+  <section class="section pn-sec" id="visit" aria-labelledby="vs-h">
+    <div class="wrap pn-book">
+      <div class="pn-head"><p class="tag" data-rv>Request a viewing</p><h2 id="vs-h" class="h2" data-rv>See the journey <span class="serif">on a big screen.</span></h2>
+        <p class="body" data-rv>This is a concept form: it checks what you type and shows the next step, but nothing is sent anywhere.</p></div>
+      <div data-rv>
+        <form class="form" data-honest data-success="vs-ok" data-echo="Thanks, {name}. Tranquility Base is fictional, so nothing left this page. A real studio would write to {email} about a {slot} viewing." novalidate>
+          <div class="row2">
+            <div class="field"><label for="vs-name">Your name</label><input class="input" id="vs-name" name="name" autocomplete="name" required minlength="2" data-req="Tell us what to call you." placeholder="Leo Park" aria-describedby="vs-name-err"><p class="err" id="vs-name-err" aria-live="polite"></p></div>
+            <div class="field"><label for="vs-email">Email</label><input class="input" id="vs-email" name="email" type="email" autocomplete="email" required data-req="We need an email to reply." placeholder="you@example.com" aria-describedby="vs-email-err"><p class="err" id="vs-email-err" aria-live="polite"></p></div>
+          </div>
+          <div class="field"><label for="vs-slot">When</label><select class="input" id="vs-slot" name="slot" required data-req="Pick a time." aria-describedby="vs-slot-err"><option value="">Choose a time</option><option>weekday evening</option><option>Saturday morning</option><option>Sunday afternoon</option></select><p class="err" id="vs-slot-err" aria-live="polite"></p></div>
+          <div class="field"><fieldset><legend>Group size</legend><div class="chips"><label><input type="radio" name="group" value="1" checked><span>Just me</span></label><label><input type="radio" name="group" value="2"><span>Two</span></label><label><input type="radio" name="group" value="4"><span>Up to four</span></label></div></fieldset></div>
+          <div class="submit-row"><button class="btn btn--accent" type="submit" data-press><span class="spin" aria-hidden="true"></span>Request a viewing</button><p class="form-note">Concept form. Nothing leaves this page.</p></div>
+        </form>
+        <div class="success" id="vs-ok" tabindex="-1" role="status">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="15"/><path d="M13 20l5 5 9-10"/></svg>
+          <p class="tag">Concept: not sent</p>
+          <h3>Thanks. Nothing was sent.</h3>
+          <p class="body" data-echo></p>
+          <button class="btn btn--ghost" type="button" data-again>Fill it in again</button>
+        </div>
+      </div>
     </div>
   </section>
 </main>

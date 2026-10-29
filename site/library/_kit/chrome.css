@@ -64,3 +64,11 @@
 .zk-small{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:22px;border-top:1px solid color-mix(in oklab,var(--c1) 14%,transparent);font:500 11px/1 var(--f-mono,ui-monospace);letter-spacing:.07em;text-transform:uppercase;color:color-mix(in oklab,var(--c1) 60%,var(--c2))}
 @media (max-width:520px){.zk-nav{display:grid;grid-template-columns:1fr 1fr}.zk-all{grid-column:1/-1;order:3;justify-content:center}.zk-foot .zk-pill{min-width:0}.zk-foot .zk-pill em{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block;max-width:100%}}
 @media (prefers-reduced-motion:reduce){.zk-bar{transition:none}.zk-sheet[open]{animation:none}}
+
+/* contact (nb1b) */
+.zk-contact{display:grid;gap:12px}
+.zk-contact-list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.zk-contact-list li{min-width:0}
+.zk-contact .zk-pill{display:inline-flex;align-items:center;gap:10px;text-decoration:none;max-width:100%}
+.zk-contact .zk-pill em{overflow-wrap:anywhere}
+@media (max-width:520px){.zk-contact-list{display:grid;grid-template-columns:1fr}.zk-contact .zk-pill{width:100%}}

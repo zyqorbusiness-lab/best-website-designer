@@ -45,3 +45,9 @@ Write this BEFORE any code (Sujon's Master Award system, Drive point Q1/W5). Kee
 
 ## QA (node tools/qa-library.mjs A018)
 - 0 console errors/warnings, 0 failed requests, 0 overflow at 1440x900 / 390x844 / 360x740, reduced motion pass.
+
+
+## nb1b fix (2026-10-29)
+- Production shell: glass nav (Approach, Surface, Mission, Visit) + phone menu sheet, a Mission section (3-day fictional itinerary), FAQ, and a 'Request a viewing' form with validation, loading and an honest 'Concept: not sent' state. Footer carries Zyqor Studio's contact (kit).
+- Phone = PC: the isM reductions are gone. m.html now draws 12 rocks, 3200 stars, 240x240 terrain and a 2048 shadow map, the same as desktop.
+- Credits: one line per moon rock pointing at its exact Poly Haven page; the code-made scene is marked own work (MIT).

@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en" data-build="m">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- desktop -> phone build when ?m=1 is absent -->
+<script>document.documentElement.classList.add('js');(function(){var q=location.search;if(/[?&]m=1/.test(q))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height,phone=w<=860||(c&&h>w);if(!phone)location.replace('./'+q+location.hash);})();</script>
+<title>Morrow Light &middot; Concept N004 &middot; Zyqor Library</title>
+<meta name="description" content="Morrow Light is a fictional brand: a normal 3D web concept by Zyqor Studio. A sunrise alarm lamp: one switch sweeps the page from night to dawn while the lamp warms up.">
+<meta name="theme-color" content="#F2E5D7">
+<meta property="og:title" content="Morrow Light &middot; Concept N004 &middot; Zyqor Library">
+<meta property="og:description" content="A fictional-brand 3D concept by Zyqor Studio.">
+<meta property="og:image" content="thumb.webp">
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../_kit/stage.js" as="script" crossorigin>
+<link rel="stylesheet" href="../../_kit/concept.css">
+<link rel="stylesheet" href="m.css">
+<style>:root{--c1:#F2E5D7;--c2:#37221B;--c3:#2E63D8}</style>
+<style>@property --dawn{syntax:"<number>";inherits:true;initial-value:0}</style>
+<script type="importmap">{"imports":{"three":"../../../vendor/three/three.module.min.js","three/addons/":"../../../vendor/three/addons/"}}</script>
+</head>
+<body class="grain" data-id="N004" data-tier="normal" data-name="Morrow Light">
+<a class="skip" href="#main">Skip to content</a>
+<nav class="bnav" aria-label="Morrow Light">
+  <div class="bnav-in">
+    <a class="logo" href="#top" aria-label="Morrow Light, back to top"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M4 22h24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M8.5 22a7.5 7.5 0 0 1 15 0" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="22" r="3.2" fill="var(--c3)"/><path d="M16 9v3M7 13l2 2M25 13l-2 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Morrow Light</span></a>
+    <ul class="bnav-links">
+        <li><a href="#dawn">Dawn</a></li>
+        <li><a href="#ramp">The 30 minutes</a></li>
+        <li><a href="#lamp">Materials</a></li>
+        <li><a href="#details">Details</a></li>
+    </ul>
+    <a class="btn btn--accent bnav-cta" href="#reserve" data-press>Reserve one</a>
+    <button class="menu-btn" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="msheet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>Menu</button>
+  </div>
+</nav>
+<dialog class="msheet" id="msheet" aria-label="Menu">
+  <div class="msheet-in">
+    <div class="msheet-top"><span class="logo"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M4 22h24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M8.5 22a7.5 7.5 0 0 1 15 0" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="22" r="3.2" fill="var(--c3)"/><path d="M16 9v3M7 13l2 2M25 13l-2 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Morrow Light</span></span><button class="msheet-x" type="button" aria-label="Close menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+    <ul>
+      <li><a href="#dawn">Dawn<span>01</span></a></li>
+      <li><a href="#ramp">The 30 minutes<span>02</span></a></li>
+      <li><a href="#lamp">Materials<span>03</span></a></li>
+      <li><a href="#details">Details<span>04</span></a></li>
+    </ul>
+    <a class="btn btn--accent" href="#reserve">Reserve one</a>
+  </div>
+</dialog>
+<main id="main">
+  <span id="top"></span>
+  <!-- Structure 06 (live sandbox hero), 07 (sticky narrative ramp), 02 (hairline grid), 13 (one form). Brief: brief.md -->
+  <section class="hero" id="dawn" aria-labelledby="h1">
+    <div class="sky" aria-hidden="true">
+      <div class="stars"><i style="left:24.7%;top:8.7%;--s:1.6px;--th:0.361;--d:2.8s"></i><i style="left:3.9%;top:33.2%;--s:1.3px;--th:0.3;--d:5.2s"></i><i style="left:23.3%;top:32.5%;--s:1.3px;--th:0.294;--d:5.4s"></i><i style="left:27.1%;top:54.9%;--s:0.9px;--th:0.309;--d:5.3s"></i><i style="left:78.8%;top:13.6%;--s:1.3px;--th:0.147;--d:5.5s"></i><i style="left:94.2%;top:49.7%;--s:1.3px;--th:0.086;--d:4.6s"></i><i style="left:66.5%;top:30.8%;--s:1.1px;--th:0.134;--d:3.5s"></i><i style="left:92.7%;top:48.0%;--s:2.0px;--th:0.513;--d:2.5s"></i><i style="left:30.0%;top:41.8%;--s:1.3px;--th:0.314;--d:4.3s"></i><i style="left:41.7%;top:35.9%;--s:1.6px;--th:0.35;--d:3.3s"></i><i style="left:26.9%;top:46.9%;--s:0.9px;--th:0.074;--d:4.7s"></i><i style="left:28.9%;top:32.4%;--s:1.6px;--th:0.454;--d:3.0s"></i><i style="left:66.7%;top:6.7%;--s:1.1px;--th:0.251;--d:4.0s"></i><i style="left:19.6%;top:27.0%;--s:2.0px;--th:0.295;--d:4.5s"></i><i style="left:88.8%;top:8.6%;--s:0.9px;--th:0.272;--d:3.5s"></i><i style="left:57.9%;top:50.4%;--s:0.9px;--th:0.159;--d:3.1s"></i><i style="left:46.1%;top:5.4%;--s:0.9px;--th:0.329;--d:5.8s"></i><i style="left:72.5%;top:55.8%;--s:0.9px;--th:0.157;--d:3.6s"></i><i style="left:16.7%;top:38.9%;--s:2.0px;--th:0.446;--d:2.8s"></i><i style="left:61.3%;top:52.2%;--s:1.3px;--th:0.101;--d:3.8s"></i><i style="left:94.3%;top:21.2%;--s:0.9px;--th:0.169;--d:4.1s"></i><i style="left:37.1%;top:47.2%;--s:1.3px;--th:0.231;--d:4.0s"></i><i style="left:21.9%;top:53.4%;--s:0.9px;--th:0.078;--d:2.7s"></i><i style="left:18.2%;top:40.2%;--s:1.1px;--th:0.242;--d:4.4s"></i><i style="left:57.9%;top:20.7%;--s:0.9px;--th:0.097;--d:4.4s"></i><i style="left:76.3%;top:25.5%;--s:1.1px;--th:0.203;--d:3.3s"></i><i style="left:41.4%;top:5.0%;--s:1.6px;--th:0.346;--d:4.8s"></i><i style="left:43.1%;top:14.9%;--s:1.1px;--th:0.069;--d:3.4s"></i><i style="left:25.3%;top:14.4%;--s:1.1px;--th:0.185;--d:3.4s"></i><i style="left:33.2%;top:52.0%;--s:1.3px;--th:0.23;--d:6.0s"></i><i style="left:40.7%;top:52.6%;--s:0.9px;--th:0.208;--d:2.8s"></i><i style="left:22.2%;top:51.1%;--s:1.1px;--th:0.161;--d:4.8s"></i><i style="left:78.8%;top:38.3%;--s:1.6px;--th:0.382;--d:4.8s"></i><i style="left:67.9%;top:17.8%;--s:1.6px;--th:0.562;--d:2.8s"></i><i style="left:95.2%;top:55.9%;--s:1.1px;--th:0.073;--d:5.6s"></i><i style="left:14.3%;top:56.3%;--s:0.9px;--th:0.321;--d:4.9s"></i><i style="left:46.6%;top:29.0%;--s:1.6px;--th:0.55;--d:3.3s"></i><i style="left:2.3%;top:53.7%;--s:0.9px;--th:0.243;--d:3.4s"></i><i style="left:40.0%;top:45.3%;--s:1.6px;--th:0.529;--d:4.4s"></i><i style="left:86.4%;top:14.1%;--s:2.0px;--th:0.299;--d:5.6s"></i><i style="left:76.3%;top:28.9%;--s:2.0px;--th:0.345;--d:2.8s"></i><i style="left:68.8%;top:9.2%;--s:2.0px;--th:0.523;--d:4.6s"></i></div>
+      <svg class="sunpath" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice"><path id="arc" class="arc" d="M690 1000 C 705 760 740 560 790 360"/><g class="sun"><circle class="sun-halo" r="120"/><circle class="sun-core" r="34"/></g></svg>
+      <svg class="hills" viewBox="0 0 1440 220" preserveAspectRatio="none"><path class="hill-b" d="M0 120 C 220 60 420 70 640 110 S 1040 150 1240 90 S 1400 70 1440 80 V220 H0Z"/><path class="hill-f" d="M0 170 C 260 120 520 150 760 160 S 1180 120 1440 150 V220 H0Z"/></svg>
+    </div>
+    <div class="hero-in wrap">
+      <div class="hero-copy">
+        <p class="tag" data-rv>Home goods &middot; Concept N004</p>
+        <h1 id="h1" class="title" data-rv><span class="t1">Morrow</span> <span class="t2 serif">Light</span></h1>
+        <p class="lead" data-rv>A lamp that wakes you the way the morning does. Flip the switch and watch thirty minutes of sunrise happen here.</p>
+        <div class="ctrls" data-rv>
+          <div class="sw-wrap"><span class="sw-l mono" aria-hidden="true">Night</span>
+            <button class="switch" type="button" role="switch" aria-checked="false" aria-label="Sunrise: night or dawn" data-switch><span class="knob" aria-hidden="true"><svg viewBox="0 0 24 24"><path class="moon" d="M15.5 4.5a7.5 7.5 0 1 0 4 13.6A8 8 0 0 1 15.5 4.5z"/><g class="rays"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4L7 17M17 7l1.4-1.4"/></g></svg></span></button>
+            <span class="sw-l mono" aria-hidden="true">Dawn</span></div>
+          <div class="scrub"><label class="mono scrub-l" for="scrub">Minute of the sunrise <b id="clock">06:00</b></label>
+            <input id="scrub" class="range" type="range" min="0" max="30" step="1" value="0" aria-valuetext="06:00, lamp off">
+            <div class="scrub-ticks mono" aria-hidden="true"><span id="t0">06:00</span><span id="t1">06:15</span><span id="t2">06:30</span></div></div>
+        </div>
+        <p class="readout mono" data-rv aria-live="polite"><span><i class="dot" aria-hidden="true"></i><b id="ro-light">0%</b> light</span><span><b id="ro-k">off</b></span><span class="alarm">alarm <b id="ro-alarm">06:30</b><button class="step" type="button" data-step="-15" aria-label="Alarm 15 minutes earlier"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12"/></svg></button><button class="step" type="button" data-step="15" aria-label="Alarm 15 minutes later"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12M12 6v12"/></svg></button></span></p>
+      </div>
+      <div class="lamp-stage" data-stage><noscript><img class="poster" src="poster.webp" alt="A frosted glass orb lamp on a turned walnut base"></noscript>
+        <p class="gesture mono" aria-hidden="true">Tap the lamp &middot; drag to turn it</p></div>
+    </div>
+  </section>
+  <section class="section ramp" id="ramp" aria-labelledby="rp-h">
+    <div class="wrap rp-in">
+      <div class="rp-side">
+        <div class="sec-head">
+          <p class="tag" data-rv>The thirty minutes</p>
+          <h2 id="rp-h" class="h2" data-rv>Sunrise, <span class="serif">one minute at a time.</span></h2>
+          <p class="body" data-rv>Pick a minute. The whole page, the lamp and the sky above move to it.</p>
+        </div>
+        <figure class="swatch" data-rv><span class="sw-disc" aria-hidden="true"></span><figcaption class="mono"><b id="sw-k">Lamp off</b><span id="sw-t">06:00</span></figcaption></figure>
+      </div>
+      <ol class="stops" role="list">
+        <li data-rv><button class="stop" type="button" data-min="0" aria-pressed="false"><span class="stop-m mono">+00 min</span><span class="stop-n h3">First red</span><span class="stop-t body">The lamp starts at the dimmest ember it can make, about 1800&nbsp;K. You will not notice it, and that is the point.</span></button></li>
+        <li data-rv><button class="stop" type="button" data-min="10" aria-pressed="false"><span class="stop-m mono">+10 min</span><span class="stop-n h3">Amber</span><span class="stop-t body">Ten minutes in, the room is the colour of a candle. Your eyes are still closed, your body is already counting.</span></button></li>
+        <li data-rv><button class="stop" type="button" data-min="20" aria-pressed="false"><span class="stop-m mono">+20 min</span><span class="stop-n h3">Gold</span><span class="stop-t body">Bright enough to read by. Most people are awake here, before any sound.</span></button></li>
+        <li data-rv><button class="stop" type="button" data-min="30" aria-pressed="false"><span class="stop-m mono">+30 min</span><span class="stop-n h3">Alarm</span><span class="stop-t body">Full warm white at 3200&nbsp;K, right on your alarm. If you are still asleep, a soft chime follows.</span></button></li>
+      </ol>
+      <svg class="curve" viewBox="0 0 600 160" aria-hidden="true" data-rv><path class="curve-grid" d="M0 150H600M0 100H600M0 50H600"/><path class="curve-line" d="M0 150 C 200 148 330 120 420 70 S 560 12 600 10"/><circle class="curve-dot" r="6" cx="0" cy="150"/></svg>
+    </div>
+  </section>
+  <section class="section lamp" id="lamp" aria-labelledby="lm-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="tag" data-rv>Materials</p>
+        <h2 id="lm-h" class="h2" data-rv>Three things, <span class="serif">nothing else.</span></h2>
+      </div>
+      <ul class="mats" role="list">
+        <li class="mat" data-rv><svg class="mat-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18h16M6 18c0-4 2.7-6 6-6s6 2 6 6"/><path d="M9 15c1-1 2-1.4 3-1.4"/></svg><h3 class="h3">Walnut base</h3><p class="body">Turned from a single block, oiled, never lacquered. The grain on this page is a real walnut veneer scan.</p></li>
+        <li class="mat" data-rv><svg class="mat-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="11" r="7"/><path d="M8 9a4.5 4.5 0 0 1 3-2.5"/></svg><h3 class="h3">Frosted glass orb</h3><p class="body">Hand-blown and acid-frosted so the light has no hot spot, only a glow.</p></li>
+        <li class="mat" data-rv><svg class="mat-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9V16h7v-2.1A6 6 0 0 0 12 3z"/></svg><h3 class="h3">One warm LED</h3><p class="body">A single dimmable source from 1800&nbsp;K to 3200&nbsp;K. No blue light before the alarm, by design.</p></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section details" id="details" aria-labelledby="dt-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="tag" data-rv>Details &middot; concept spec</p>
+        <h2 id="dt-h" class="h2" data-rv>The short list.</h2>
+        <p class="body" data-rv>A design spec for a lamp that does not exist yet. Nothing here is a measured or tested figure.</p>
+      </div>
+      <dl class="spec" data-rv>
+        <div class="cell"><dt class="mono">Sunrise</dt><dd>30 minutes<small>15 and 45 in settings</small></dd></div>
+        <div class="cell"><dt class="mono">Colour</dt><dd><span style="white-space:nowrap">1800&nbsp;K</span> to <span style="white-space:nowrap">3200&nbsp;K</span><small>warm only</small></dd></div>
+        <div class="cell"><dt class="mono">Sound</dt><dd>Optional chime<small>after the light, never before</small></dd></div>
+        <div class="cell"><dt class="mono">Orb</dt><dd>14 cm<small>frosted glass</small></dd></div>
+        <div class="cell"><dt class="mono">Base</dt><dd>Walnut or ash<small>oiled</small></dd></div>
+        <div class="cell"><dt class="mono">Power</dt><dd>USB-C<small>cable included</small></dd></div>
+      </dl>
+    </div>
+  </section>
+  <section class="section reserve" id="reserve" aria-labelledby="rs-h">
+    <div class="wrap rs-in">
+      <div class="sec-head">
+        <p class="tag" data-rv>Reserve one</p>
+        <h2 id="rs-h" class="h2" data-rv>Wake up <span class="serif">before the alarm.</span></h2>
+        <p class="body" data-rv>Put your name down for the first batch. No payment, and because this is a concept, nothing you type here is sent anywhere.</p>
+      </div>
+      <div class="rs-form" data-rv>
+        <form class="form" data-honest data-success="rs-ok" data-echo="Thanks, {name}. This is a concept page, so nothing left your browser. A real Morrow page would email {email} when the {finish} batch opens." novalidate>
+          <div class="row2">
+            <div class="field"><label for="rs-name">Your name</label><input class="input" id="rs-name" name="name" autocomplete="name" required minlength="2" data-req="Tell us what to call you." placeholder="Meera Das" aria-describedby="rs-name-err"><p class="err" id="rs-name-err" aria-live="polite"></p></div>
+            <div class="field"><label for="rs-email">Email</label><input class="input" id="rs-email" name="email" type="email" autocomplete="email" required data-req="We need an email to reach you." placeholder="you@example.com" aria-describedby="rs-email-err"><p class="err" id="rs-email-err" aria-live="polite"></p></div>
+          </div>
+          <div class="field"><label for="rs-wake">Usual wake time</label><select class="input" id="rs-wake" name="wake" required data-req="Pick a wake time." aria-describedby="rs-wake-err"><option value="">Choose a time</option><option>Before 6:00</option><option>6:00 to 7:00</option><option>7:00 to 8:00</option><option>After 8:00</option></select><p class="err" id="rs-wake-err" aria-live="polite"></p></div>
+          <div class="field"><fieldset><legend>Base</legend><div class="chips"><label><input type="radio" name="finish" value="walnut" checked><span>Walnut</span></label><label><input type="radio" name="finish" value="ash"><span>Ash</span></label></div></fieldset></div>
+          <div class="submit-row"><button class="btn btn--accent" type="submit" data-press><span class="spin" aria-hidden="true"></span>Reserve, no payment</button><p class="form-note">Concept form. Nothing leaves this page.</p></div>
+        </form>
+        <div class="success" id="rs-ok" tabindex="-1" role="status">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M6 28h28"/><path d="M11 28a9 9 0 0 1 18 0"/><path d="M15 21l4 4 7-8"/></svg>
+          <p class="tag">Concept &middot; not sent</p>
+          <h3>You are on the list. Nothing was sent.</h3>
+          <p class="body" data-echo></p>
+          <button class="btn btn--ghost" type="button" data-again>Fill it in again</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="bfoot" aria-label="Morrow Light footer">
+    <div class="wrap bfoot-in">
+      <div><span class="logo"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M4 22h24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M8.5 22a7.5 7.5 0 0 1 15 0" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="22" r="3.2" fill="var(--c3)"/><path d="M16 9v3M7 13l2 2M25 13l-2 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Morrow Light</span></span><p>A lamp that wakes you the way the morning does: slowly, and in colour. A concept brand, built around one switch.</p></div>
+      <div><h4>On this page</h4><ul>
+          <li><a href="#dawn">Dawn</a></li>
+          <li><a href="#ramp">The 30 minutes</a></li>
+          <li><a href="#lamp">Materials</a></li>
+          <li><a href="#details">Details</a></li>
+          <li><a href="#reserve">Reserve one</a></li>
+        </ul></div>
+      <div><h4>Sources</h4><ul>
+          <li><a href="https://polyhaven.com/a/walnut_veneer" target="_blank" rel="noopener noreferrer">Walnut Veneer scan, Poly Haven</a></li>
+          <li><span class="lic mono">CC0 1.0</span></li>
+          <li><span class="lic mono">Lamp, sky and sun: drawn in code</span></li>
+        </ul></div>
+      <p class="bfoot-legal">Morrow Light is a fictional brand: Concept N004 in the Zyqor Library by Zyqor Studio. No product is for sale, nothing on this page is sent anywhere, and no customer, review or number on it is real unless its source is named.</p>
+    </div>
+  </footer>
+</main>
+<script src="../../../vendor/gsap.min.js" defer></script>
+<script src="../../../vendor/ScrollTrigger.min.js" defer></script>
+<script type="module" src="../../_kit/chrome.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "title": "Walnut Veneer",
+  "author": "Jenelle van Heerden",
+  "author_url": "https://polyhaven.com/all?a=Jenelle%20van%20Heerden",
+  "source_url": "https://polyhaven.com/a/walnut_veneer",
+  "licence": "CC0 1.0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution": "\"Walnut Veneer\" by Jenelle van Heerden, Poly Haven (https://polyhaven.com/a/walnut_veneer), CC0 1.0 (courtesy credit; no attribution required)",
+  "changes": "1K diffuse map only, converted PNG to WebP (q80), roughness map dropped (constant roughness in code)",
+  "downloaded": "2026-10-28"
+}

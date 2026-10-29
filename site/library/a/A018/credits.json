@@ -3,16 +3,41 @@
   "id": "A018",
   "items": [
     {
-      "what": "3D models",
-      "title": "Moon Rock 01, 05, 07",
-      "author": "Greg Zaal, Rico Cilliers (photography); Jenelle van Heerden, Dario Barresi (processing)",
+      "what": "3D model",
+      "title": "Moon Rock 01",
+      "author": "Greg Zaal, Rico Cilliers, Jenelle van Heerden, Dario Barresi",
       "source": "Poly Haven",
-      "url": "https://polyhaven.com/models?s=moon%20rock",
+      "url": "https://polyhaven.com/a/moon_rock_01",
       "licence": "CC0 1.0",
-      "note": "Photo-scanned. Optimised with gltf-transform (meshopt, WebP 1K). Same files on phone and desktop.",
+      "note": "Photo-scanned. Optimised with gltf-transform (meshopt, WebP 1K). Same file on phone and desktop.",
+      "credit_file": "../../_assets/models/moon_rock_01.glb.credit.json",
       "files": [
-        "../../_assets/models/moon_rock_01.glb",
-        "../../_assets/models/moon_rock_05.glb",
+        "../../_assets/models/moon_rock_01.glb"
+      ]
+    },
+    {
+      "what": "3D model",
+      "title": "Moon Rock 05",
+      "author": "Greg Zaal, Rico Cilliers, Jenelle van Heerden",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/moon_rock_05",
+      "licence": "CC0 1.0",
+      "note": "Photo-scanned. Optimised with gltf-transform (meshopt, WebP 1K). Same file on phone and desktop.",
+      "credit_file": "../../_assets/models/moon_rock_05.glb.credit.json",
+      "files": [
+        "../../_assets/models/moon_rock_05.glb"
+      ]
+    },
+    {
+      "what": "3D model",
+      "title": "Moon Rock 07",
+      "author": "Greg Zaal, Rico Cilliers, Jenelle van Heerden",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/moon_rock_07",
+      "licence": "CC0 1.0",
+      "note": "Photo-scanned. Optimised with gltf-transform (meshopt, WebP 1K). Same file on phone and desktop.",
+      "credit_file": "../../_assets/models/moon_rock_07.glb.credit.json",
+      "files": [
         "../../_assets/models/moon_rock_07.glb"
       ]
     },
@@ -35,7 +60,7 @@
     {
       "what": "Earth",
       "title": "Blue Marble: Land Surface, Shallow Water, and Shaded Topography",
-      "author": "NASA Goddard Space Flight Center (Reto Stöckli)",
+      "author": "NASA Goddard Space Flight Center (Reto St\u00f6ckli)",
       "source": "NASA Visible Earth",
       "url": "https://visibleearth.nasa.gov/images/57752",
       "licence": "Public domain (NASA)",
@@ -47,9 +72,10 @@
       "what": "Scene",
       "title": "Crater terrain, starfield, sky dome, atmosphere",
       "author": "Zyqor Studio",
-      "note": "Made in code.",
+      "note": "Made in code. Own work, made in code (MIT).",
       "files": [],
-      "licence": "MIT"
+      "licence": "MIT",
+      "source": "Zyqor Studio (code)"
     },
     {
       "what": "Type",
