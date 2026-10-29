@@ -155,3 +155,8 @@ body.grain.dark::after{mix-blend-mode:screen;opacity:.035}
   .split-w>span{transform:none}
 }
 @media (forced-colors:active){.btn,.chip{border:1px solid CanvasText}}
+
+/* nb1b: visible CC BY attribution for real models */
+.cc-attr{width:min(100% - 2*clamp(1.5rem,5vw,5rem),1440px);margin:clamp(32px,5vw,64px) auto 0;padding:16px 0;border-top:1px solid color-mix(in oklab,currentColor 18%,transparent);font:500 13px/1.55 var(--f-mono,ui-monospace,monospace);opacity:.82;overflow-wrap:anywhere}
+.cc-attr span{text-transform:uppercase;letter-spacing:.06em;margin-right:.4em}
+.cc-attr a{color:inherit;text-underline-offset:3px}

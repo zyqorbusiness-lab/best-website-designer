@@ -1,0 +1,95 @@
+/* Zyqor Library kit: landing.css (nb1b, 2026-10-29) - production shell for concepts: glass nav + phone menu sheet,
+   honest concept form (validation, loading, "Concept: not sent" success), simple section blocks. From N005, generalised. */
+.bnav{position:fixed;left:0;right:0;top:calc(max(12px,env(safe-area-inset-top)) + 52px);z-index:70;display:flex;justify-content:center;padding:0 var(--gutter);pointer-events:none;transition:top var(--dur) var(--ease-out)}
+html.bar-tucked .bnav{top:max(12px,env(safe-area-inset-top))}
+.bnav-in{pointer-events:auto;width:min(100%,1180px);display:flex;align-items:center;justify-content:space-between;gap:var(--s4);min-height:52px;padding:6px 6px 6px 18px;border-radius:999px;
+  background:color-mix(in oklab,var(--c1) 74%,transparent);border:1px solid color-mix(in oklab,var(--c2) 12%,transparent);box-shadow:var(--spec);-webkit-backdrop-filter:blur(18px) saturate(1.2);backdrop-filter:blur(18px) saturate(1.2)}
+.logo{display:inline-flex;align-items:center;gap:.55em;color:var(--c2);text-decoration:none;font:700 1.02rem/1 var(--f-display);letter-spacing:-.02em;white-space:nowrap;min-height:44px}
+.logo svg{width:28px;height:28px;flex:none}
+.bnav-links{display:flex;align-items:center;gap:2px;list-style:none;margin:0;padding:0}
+.bnav-links a{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border-radius:999px;color:var(--ink-2);text-decoration:none;font:500 var(--fs-sm)/1 var(--f-body);transition:background-color var(--dur-fast) var(--ease-out),color var(--dur-fast) var(--ease-out)}
+.bnav-links a[aria-current=true]{color:var(--c2);background:color-mix(in oklab,var(--c2) 8%,transparent)}
+.bnav .btn{min-height:40px}
+.bnav a:focus-visible,.bnav button:focus-visible,.msheet a:focus-visible,.msheet button:focus-visible{outline:2px solid var(--c3);outline-offset:2px}
+.menu-btn{display:none;align-items:center;gap:.5em;min-height:44px;padding:0 16px;border-radius:999px;background:var(--c2);color:var(--c1);font:600 var(--fs-sm)/1 var(--f-body);box-shadow:var(--spec-dark)}
+.menu-btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round}
+.msheet{width:min(560px,calc(100vw - 16px));max-width:none;margin:auto auto 8px;padding:0;border:1px solid var(--line);border-radius:24px;background:var(--c1);color:var(--c2);box-shadow:var(--spec)}
+.msheet::backdrop{background:color-mix(in oklab,var(--c2) 40%,transparent);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.msheet[open]{animation:ms-in var(--dur) var(--ease-out) both}
+.msheet-in{padding:var(--s3) var(--s4) var(--s4)}
+.msheet-top{display:flex;justify-content:space-between;align-items:center;padding-bottom:var(--s2);border-bottom:1px solid var(--line)}
+.msheet-x{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;border:1px solid var(--line)}
+.msheet-x svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round}
+.msheet ul{list-style:none;margin:0;padding:var(--s2) 0;display:grid}
+.msheet li a{display:flex;justify-content:space-between;align-items:center;min-height:56px;color:var(--c2);text-decoration:none;font:600 1.5rem/1 var(--f-display);letter-spacing:-.02em;border-bottom:1px solid var(--line)}
+.msheet li a span{font:400 var(--fs-xs)/1 var(--f-mono);letter-spacing:var(--track-mono);color:var(--ink-3)}
+.msheet .btn{width:100%;margin-top:var(--s3);min-height:52px}
+.form{display:grid;gap:var(--s4)}
+.field{display:grid;gap:var(--s1);min-width:0}
+.field fieldset{border:0;margin:0;padding:0;min-width:0}
+.input{width:100%;min-height:52px;padding:0 16px;border-radius:14px;border:1px solid var(--line-strong);background:color-mix(in oklab,var(--c1) 70%,#fff 30%);color:var(--c2);font:400 var(--fs-body)/1.3 var(--f-body);
+  box-shadow:var(--spec);transition:border-color var(--dur-fast) var(--ease-out),box-shadow var(--dur-fast) var(--ease-out)}
+select.input{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);background-position:calc(100% - 22px) 50%,calc(100% - 16px) 50%;background-size:6px 6px;background-repeat:no-repeat;padding-right:44px}
+.input::placeholder{color:var(--ink-3)}
+.input:focus-visible{outline:none;border-color:var(--c2);box-shadow:0 0 0 3px color-mix(in oklab,var(--c3) 45%,transparent)}
+.input[aria-invalid=true]{border-color:var(--c3)}
+.err{min-height:1.2em;font:400 var(--fs-sm)/1.3 var(--f-body);color:color-mix(in oklab,var(--c3) 62%,var(--c2))}
+.chips{display:flex;flex-wrap:wrap;gap:var(--s1)}
+.chips label{position:relative;display:inline-flex}
+.chips input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.chips span{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--line-strong);font:500 var(--fs-sm)/1 var(--f-body);color:var(--ink-2);transition:background-color var(--dur-fast) var(--ease-out),color var(--dur-fast) var(--ease-out)}
+.chips input:checked+span{background:var(--c2);border-color:var(--c2);color:var(--c1)}
+.chips input:focus-visible+span{outline:2px solid var(--c3);outline-offset:2px}
+.form .btn[disabled]{opacity:.55;cursor:not-allowed}
+.form .btn.is-loading{pointer-events:none}
+.form .btn .spin{width:16px;height:16px;border-radius:50%;border:2px solid currentColor;border-right-color:transparent;animation:fspin .7s linear infinite;display:none}
+.form .btn.is-loading .spin{display:inline-block}
+.form-note{font-size:var(--fs-sm);color:var(--ink-3)}
+.success{display:none;gap:var(--s3);padding:var(--s5);border-radius:var(--radius);border:1px solid var(--line-strong);background:var(--paper-2);box-shadow:var(--spec)}
+.success.is-on{display:grid;animation:ms-in var(--dur) var(--ease-out) both}
+.success .tag{color:var(--ink-2)}
+.success h3{font:600 var(--fs-h3)/1.1 var(--f-display);letter-spacing:var(--track-h)}
+.success svg{width:40px;height:40px;stroke:var(--c2);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.success .btn{justify-self:start}
+.bfoot .logo{color:var(--c1)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:var(--s3)}
+.submit-row{display:flex;align-items:center;gap:var(--s4);flex-wrap:wrap}
+.field>label,.field legend{font:500 var(--fs-xs)/1.2 var(--f-mono);letter-spacing:var(--track-mono);text-transform:uppercase;color:var(--ink-2);padding:0}
+.form[hidden]{display:none}
+@keyframes ms-in{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes fspin{to{transform:rotate(360deg)}}
+/* phone + narrow: menu button instead of links */
+.menu-btn{display:none}
+@media (max-width:860px){
+  .bnav{padding:0 8px}
+  .bnav-in{padding:4px 4px 4px 14px;min-height:52px}
+  .bnav-links,.bnav .bnav-cta{display:none}
+  .menu-btn{display:inline-flex}
+  .row2{grid-template-columns:1fr}
+}
+/* production sections shared by nb1b fixes */
+.pn-sec{padding:clamp(72px,10vw,150px) 0}
+.pn-head{display:grid;gap:var(--s3);max-width:62ch;margin-bottom:clamp(28px,4vw,56px)}
+.pn-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:clamp(16px,2vw,28px)}
+.pn-card{border:1px solid var(--line);border-radius:var(--radius,18px);padding:clamp(20px,2.4vw,32px);background:color-mix(in oklab,var(--c1) 88%,#fff 12%);box-shadow:var(--spec);display:grid;gap:var(--s2);align-content:start;min-width:0}
+.pn-card h3{font:700 var(--fs-h3,1.4rem)/1.15 var(--f-display);letter-spacing:-.02em;color:var(--c2)}
+.pn-card .mono{color:var(--ink-3)}
+.pn-card svg{width:28px;height:28px;stroke:var(--c2);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.pn-steps{counter-reset:pn;list-style:none;padding:0;margin:0;display:grid;gap:clamp(14px,2vw,22px)}
+.pn-steps li{display:grid;grid-template-columns:auto 1fr;gap:var(--s4);align-items:start;padding-top:var(--s4);border-top:1px solid var(--line)}
+.pn-steps li::before{counter-increment:pn;content:counter(pn,decimal-leading-zero);font:500 13px/1.6 var(--f-mono);color:var(--c3)}
+.pn-steps h3{font:700 1.15rem/1.2 var(--f-display);color:var(--c2);margin-bottom:6px}
+.pn-faq{display:grid;gap:10px}
+.pn-faq details{border:1px solid var(--line);border-radius:14px;padding:16px 20px;background:color-mix(in oklab,var(--c1) 90%,#fff 10%)}
+.pn-faq summary{cursor:pointer;font:600 1.05rem/1.3 var(--f-body);color:var(--c2);min-height:28px;list-style-position:outside}
+.pn-faq p{margin-top:10px}
+.pn-book{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(28px,5vw,80px);align-items:start}
+@media (max-width:860px){.pn-book{grid-template-columns:1fr}}
+
+/* dark pages (body.dark): same blocks, light ink */
+.dark .pn-card,.dark .pn-faq details{background:color-mix(in oklab,var(--c2) 84%,var(--c1) 16%);border-color:color-mix(in oklab,var(--c1) 16%,transparent)}
+.dark .pn-card h3,.dark .pn-steps h3,.dark .pn-faq summary,.dark .field label,.dark legend,.dark .success h3,.dark .form-note,.dark .err{color:var(--c1)}
+.dark .pn-card svg,.dark .success svg{stroke:var(--c1)}
+.dark .pn-card .mono{color:color-mix(in oklab,var(--c1) 70%,var(--c2))}
+.dark .success{background:color-mix(in oklab,var(--c2) 84%,var(--c1) 16%)}
+.dark .chips span{color:var(--c1);border-color:color-mix(in oklab,var(--c1) 30%,transparent)}

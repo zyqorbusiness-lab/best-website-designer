@@ -15,15 +15,31 @@
 <link rel="preload" href="../../_kit/stage.js" as="script" crossorigin>
 <link rel="preload" href="../../_assets/models/ceramic_vase_01.glb" as="fetch" crossorigin>
 <link rel="stylesheet" href="../../_kit/concept.css">
+<link rel="stylesheet" href="../../_kit/landing.css">
 <link rel="stylesheet" href="style.css">
 <style>:root{--c1:#F7EDD7;--c2:#1E264C;--c3:#D74A4D}</style>
 <script type="importmap">{"imports":{"three":"../../../vendor/three/three.module.min.js","three/addons/":"../../../vendor/three/addons/"}}</script>
 </head>
 <body class="grain" data-id="N002" data-tier="normal" data-name="Kiln &amp; Quiet">
 <a class="skip" href="#main">Skip to content</a>
+<nav class="bnav" aria-label="Kiln &amp; Quiet">
+  <div class="bnav-in">
+    <a class="logo" href="#main" aria-label="Kiln &amp; Quiet, back to top"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M11 6h10M12.5 6c0 3-4.5 5-4.5 11a8 8 0 0 0 16 0c0-6-4.5-8-4.5-11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="19" r="2" fill="var(--c3)"/></svg><span>Kiln &amp; Quiet</span></a>
+    <ul class="bnav-links"><li><a href="#vase">The vase</a></li><li><a href="#glazes">Glazes</a></li><li><a href="#studio">Studio</a></li><li><a href="#reserve">Reserve</a></li></ul>
+    <a class="btn btn--accent bnav-cta" href="#reserve" data-press>Reserve a piece</a>
+    <button class="menu-btn" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="msheet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>Menu</button>
+  </div>
+</nav>
+<dialog class="msheet" id="msheet" aria-label="Menu">
+  <div class="msheet-in">
+    <div class="msheet-top"><span class="logo"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M11 6h10M12.5 6c0 3-4.5 5-4.5 11a8 8 0 0 0 16 0c0-6-4.5-8-4.5-11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="19" r="2" fill="var(--c3)"/></svg><span>Kiln &amp; Quiet</span></span><button class="msheet-x" type="button" aria-label="Close menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+    <ul><li><a href="#vase">The vase<span>01</span></a></li><li><a href="#glazes">Glazes<span>02</span></a></li><li><a href="#studio">Studio<span>03</span></a></li><li><a href="#reserve">Reserve<span>04</span></a></li></ul>
+    <a class="btn btn--accent" href="#reserve">Reserve a piece</a>
+  </div>
+</dialog>
 <main id="main">
   <!-- Structure 06 (live sandbox hero) inside 12 (whisper-quiet zen). Brief: brief.md -->
-  <section class="hero" aria-labelledby="h1">
+  <section class="hero" id="vase" aria-labelledby="h1">
     <div class="hero-copy">
       <p class="tag" data-rv>Home goods &middot; Concept N002</p>
       <h1 id="h1" class="title" data-rv><span class="t1">Kiln &amp;</span> <span class="t2 serif">Quiet</span></h1>
@@ -66,6 +82,54 @@
       <div class="note-body" data-rv>
         <p class="body">Your drag sets the speed. When you let go, the wheel keeps six percent less of its speed every sixtieth of a second, so a hard flick runs for a few seconds and a nudge stops almost at once. The readout is that number, live, not an animation.</p>
         <p class="body">The arrow keys turn it too. With reduced motion on, it never moves unless you move it.</p>
+      </div>
+    </div>
+  </section>
+  <section class="section pn-sec" id="glazes" aria-labelledby="gz-h">
+    <div class="wrap">
+      <div class="pn-head"><p class="tag" data-rv>Glazes</p><h2 id="gz-h" class="h2" data-rv>Three glazes, <span class="serif">fired once each.</span></h2>
+        <p class="body" data-rv>Every vase is thrown from the same stoneware body and dipped in one of three glazes. Try them on the wheel above: the swatches change the real model&rsquo;s glaze.</p></div>
+      <ul class="pn-grid" role="list">
+        <li class="pn-card" data-rv><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="11" style="fill:#F4EEE6;stroke:var(--c2);stroke-width:1"/></svg><span class="mono">01 &middot; Natural</span><h3>Bone satin</h3><p class="body">A soft white that lets the throwing lines show through at the shoulder.</p></li>
+        <li class="pn-card" data-rv><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="11" style="fill:#4A5A98;stroke:var(--c2);stroke-width:1"/></svg><span class="mono">02 &middot; Indigo</span><h3>Night indigo</h3><p class="body">Pools darker in every groove, so the spiral of the wheel stays visible.</p></li>
+        <li class="pn-card" data-rv><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="11" style="fill:#D65A50;stroke:var(--c2);stroke-width:1"/></svg><span class="mono">03 &middot; Tomato</span><h3>Kitchen tomato</h3><p class="body">A warm red that breaks to brown on the rim, where the glaze runs thin.</p></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section pn-sec" id="studio" aria-labelledby="st-h">
+    <div class="wrap pn-book">
+      <div class="pn-head"><p class="tag" data-rv>The studio</p><h2 id="st-h" class="h2" data-rv>Five slow steps, <span class="serif">about three weeks.</span></h2>
+        <p class="body" data-rv>A small fictional studio with one wheel and one kiln. Visits are on Saturday mornings, by request.</p></div>
+      <ol class="pn-steps" data-rv-group>
+        <li data-rv><div><h3>Throw</h3><p class="body">Centred and pulled on the wheel in one sitting.</p></div></li>
+        <li data-rv><div><h3>Trim</h3><p class="body">Turned leather-hard to thin the foot and sharpen the shoulder.</p></div></li>
+        <li data-rv><div><h3>Bisque</h3><p class="body">A first firing, so the clay can take the glaze.</p></div></li>
+        <li data-rv><div><h3>Glaze</h3><p class="body">Dipped once, wiped clean at the foot.</p></div></li>
+        <li data-rv><div><h3>Fire</h3><p class="body">A long glaze firing and a slow cool, then it is yours.</p></div></li>
+      </ol>
+    </div>
+  </section>
+  <section class="section pn-sec" id="reserve" aria-labelledby="rs-h">
+    <div class="wrap pn-book">
+      <div class="pn-head"><p class="tag" data-rv>Reserve a piece</p><h2 id="rs-h" class="h2" data-rv>Hold the next one <span class="serif">off the wheel.</span></h2>
+        <p class="body" data-rv>This is a concept form: it checks what you type and shows the next step, but nothing is sent anywhere.</p></div>
+      <div data-rv>
+        <form class="form" data-honest data-success="rs-ok" data-echo="Thanks, {name}. Kiln &amp; Quiet is fictional, so nothing left this page. A real studio would write to {email} about a {glaze} vase." novalidate>
+          <div class="row2">
+            <div class="field"><label for="rs-name">Your name</label><input class="input" id="rs-name" name="name" autocomplete="name" required minlength="2" data-req="Tell us what to call you." placeholder="Mira Sen" aria-describedby="rs-name-err"><p class="err" id="rs-name-err" aria-live="polite"></p></div>
+            <div class="field"><label for="rs-email">Email</label><input class="input" id="rs-email" name="email" type="email" autocomplete="email" required data-req="We need an email to reply." placeholder="you@example.com" aria-describedby="rs-email-err"><p class="err" id="rs-email-err" aria-live="polite"></p></div>
+          </div>
+          <div class="field"><label for="rs-glaze">Glaze</label><select class="input" id="rs-glaze" name="glaze" required data-req="Pick a glaze." aria-describedby="rs-glaze-err"><option value="">Choose a glaze</option><option>Bone satin</option><option>Night indigo</option><option>Kitchen tomato</option></select><p class="err" id="rs-glaze-err" aria-live="polite"></p></div>
+          <div class="field"><fieldset><legend>Collect or ship</legend><div class="chips"><label><input type="radio" name="how" value="collect" checked><span>Collect at the studio</span></label><label><input type="radio" name="how" value="ship"><span>Ship it, wrapped</span></label></div></fieldset></div>
+          <div class="submit-row"><button class="btn btn--accent" type="submit" data-press><span class="spin" aria-hidden="true"></span>Reserve a piece</button><p class="form-note">Concept form. Nothing leaves this page.</p></div>
+        </form>
+        <div class="success" id="rs-ok" tabindex="-1" role="status">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="15"/><path d="M13 20l5 5 9-10"/></svg>
+          <p class="tag">Concept: not sent</p>
+          <h3>Thanks. Nothing was sent.</h3>
+          <p class="body" data-echo></p>
+          <button class="btn btn--ghost" type="button" data-again>Fill it in again</button>
+        </div>
       </div>
     </div>
   </section>

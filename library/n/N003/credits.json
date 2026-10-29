@@ -1,0 +1,94 @@
+{
+  "brand": "Tidewell Salt",
+  "id": "N003",
+  "items": [
+    {
+      "what": "3D model",
+      "title": "Glass Jar with Marble Lid 2.0",
+      "author": "InGameStudio",
+      "source": "Sketchfab",
+      "url": "https://sketchfab.com/3d-models/glass-jar-with-marble-lid-20-f5383b6b32eb4439b874473b6d52df0c",
+      "licence": "CC BY 4.0",
+      "note": "The middle jar of the set, re-materialed in the palette (transmission glass, coral-tinted marble lid); geometry untouched. Licence: https://creativecommons.org/licenses/by/4.0/",
+      "credit_file": "../../_assets/models/glass_jar_marble_lid.glb.credit.json",
+      "files": [
+        "../../_assets/models/glass_jar_marble_lid.glb"
+      ]
+    },
+    {
+      "what": "Photo",
+      "title": "Salt-crystals.jpg",
+      "author": "Nate Steiner",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Salt-crystals.jpg",
+      "licence": "CC0 1.0 (public domain dedication)",
+      "note": "Cropped to 3:4 and colour-graded toward the page palette. Used as the arch card in the 3D scene and in The flake section (same file).",
+      "files": [
+        "img/salt-flakes.webp"
+      ]
+    },
+    {
+      "what": "HDRI",
+      "title": "Studio Small 09",
+      "author": "Sergej Majboroda",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/studio_small_09",
+      "licence": "CC0 1.0",
+      "note": "Shared kit lighting (site/assets/hdri).",
+      "files": [
+        "../../../assets/hdri/studio_1k.hdr",
+        "../../../assets/hdri/studio_512.hdr"
+      ]
+    },
+    {
+      "what": "Type",
+      "title": "Cabinet Grotesk, Satoshi",
+      "author": "Indian Type Foundry",
+      "source": "Fontshare",
+      "url": "https://www.fontshare.com",
+      "licence": "ITF Free Font License 2.0",
+      "files": []
+    },
+    {
+      "what": "Type",
+      "title": "JetBrains Mono",
+      "author": "The JetBrains Mono Project Authors",
+      "source": "GitHub",
+      "url": "https://github.com/JetBrains/JetBrainsMono",
+      "licence": "SIL OFL 1.1",
+      "files": []
+    },
+    {
+      "what": "Engine",
+      "title": "three.js r170, GSAP, Lenis",
+      "author": "their authors",
+      "source": "npm",
+      "url": "https://threejs.org",
+      "licence": "MIT / GSAP Standard Licence",
+      "files": []
+    },
+    {
+      "what": "3D",
+      "title": "Wrap label, salt flakes, plinth, wordmark band",
+      "author": "Zyqor Studio",
+      "source": "code-made three.js",
+      "url": "",
+      "licence": "MIT",
+      "note": "No AI imagery anywhere on this page.",
+      "files": []
+    },
+    {
+      "what": "Images (code-made)",
+      "title": "Poster and library thumbnail",
+      "author": "Zyqor Studio",
+      "source": "frames of this page",
+      "url": "",
+      "licence": "MIT",
+      "note": "WebGL-fallback poster and index thumbnail, rendered from this page by tools/qa-library.mjs. No AI imagery.",
+      "files": [
+        "poster.webp",
+        "thumb.webp"
+      ]
+    }
+  ]
+}

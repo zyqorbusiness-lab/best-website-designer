@@ -5,6 +5,8 @@
    starfield, sky dome, atmosphere rim. The phone loads the same files and runs the same path. */
 import { createStage, THREE, isM, reduced, damp, clamp, smoothstep, smooth } from '../../_kit/stage.js';
 import { reveals, press } from '../../_kit/fx/index.js';
+import { landing } from '../../_kit/landing.js';
+landing();
 
 reveals(); press('[data-press]');
 const css = getComputedStyle(document.documentElement);
@@ -31,7 +33,7 @@ const sky = new THREE.Mesh(new THREE.SphereGeometry(1000, 32, 16), new THREE.Sha
   fragmentShader: 'uniform vec3 top; uniform vec3 horizon; varying vec3 vP; void main(){ float h = smoothstep(-0.05, 0.55, vP.y); gl_FragColor = vec4(mix(horizon, top, h), 1.0);\n#include <colorspace_fragment>\n}'
 }));
 scene.add(sky);
-const N = isM ? 2200 : 3200, sp = new Float32Array(N * 3), ss = new Float32Array(N);
+const N = 3200, sp = new Float32Array(N * 3), ss = new Float32Array(N);
 let seed = 11; const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
 for (let i = 0; i < N; i++) { const u = rnd() * 2 - 1, th = rnd() * Math.PI * 2, y = Math.abs(u) * 0.96 + 0.02, r = Math.sqrt(1 - y * y); sp.set([Math.cos(th) * r * 900, y * 900, Math.sin(th) * r * 900], i * 3); ss[i] = rnd() < 0.06 ? 2.6 : 1 + rnd(); }
 const sg = new THREE.BufferGeometry(); sg.setAttribute('position', new THREE.BufferAttribute(sp, 3)); sg.setAttribute('size', new THREE.BufferAttribute(ss, 1));
@@ -42,7 +44,7 @@ scene.add(stars);
 
 /* --- light: one low sun (long, sharp shadows) + faint earthshine --- */
 const sun = new THREE.DirectionalLight(0xfff5e8, 3.1); sun.position.set(-14, 7, -6);
-sun.castShadow = true; sun.shadow.mapSize.set(isM ? 1024 : 2048, isM ? 1024 : 2048);
+sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048);
 Object.assign(sun.shadow.camera, { left: -9, right: 9, top: 9, bottom: -9, near: 1, far: 50 }); sun.shadow.bias = -0.0004; sun.shadow.normalBias = 0.03;
 sun.target.position.set(0, 0, -1); scene.add(sun, sun.target);
 scene.add(new THREE.HemisphereLight(0x9fb3d9, 0x3a3630, 0.35));
@@ -55,7 +57,7 @@ const [diff, nor, arm, fpCol, fpNor] = await Promise.all([
   tex('moon_footprints_01_decal_1k.webp'), tex('moon_footprints_01_nor_1k.webp', { srgb: false })
 ]);
 const SIZE = 150, R0 = 60;                                       // detailed disc of radius ~60, flattened to y=0 at its rim
-const G = new THREE.PlaneGeometry(SIZE, SIZE, isM ? 180 : 240, isM ? 180 : 240).rotateX(-Math.PI / 2);
+const G = new THREE.PlaneGeometry(SIZE, SIZE, 240, 240).rotateX(-Math.PI / 2);
 const craters = [[-6, -9, 3.2], [7, -16, 5], [-14, 6, 4], [12, 4, 2.4], [-3, -26, 7], [18, -30, 6], [-22, -18, 5.5], [3, 10, 2], [-9, -3, 1.4], [5, -5, 1.1], [-30, -40, 9], [28, -8, 4.5], [-38, 12, 6]];
 const pos = G.attributes.position;
 for (let i = 0; i < pos.count; i++) {
@@ -89,7 +91,7 @@ gl.forEach((g, i) => {
   base.traverse((o) => { if (o.isMesh) { o.castShadow = true; o.receiveShadow = true; } });
   const make = () => { const w = new THREE.Group(); w.add(base.clone()); return w; };   // wrapper keeps fit()'s centring
   const [x, z, s, ry] = hero[i]; const h = make(); h.scale.setScalar(s); h.position.set(x, -0.06 * s, z); h.rotation.y = ry; rocks.add(h);
-  for (let k = 0; k < (isM ? 9 : 12); k++) { const c = make(); const r = 3.5 + rnd() * 16, an = rnd() * Math.PI * 2, sc = 0.18 + rnd() * 0.6; c.scale.setScalar(sc); c.position.set(Math.cos(an) * r, -0.1 * sc, Math.sin(an) * r - 4); c.rotation.set(rnd() * 0.4, rnd() * 6.3, rnd() * 0.4); rocks.add(c); }
+  for (let k = 0; k < 12; k++) { const c = make(); const r = 3.5 + rnd() * 16, an = rnd() * Math.PI * 2, sc = 0.18 + rnd() * 0.6; c.scale.setScalar(sc); c.position.set(Math.cos(an) * r, -0.1 * sc, Math.sin(an) * r - 4); c.rotation.set(rnd() * 0.4, rnd() * 6.3, rnd() * 0.4); rocks.add(c); }
 });
 
 /* --- the Earth (NASA Blue Marble) with a code-made atmosphere rim --- */

@@ -1,0 +1,143 @@
+{
+  "brand": "Northpine Cabins",
+  "id": "N008",
+  "items": [
+    {
+      "what": "3D model",
+      "title": "Wooden Cabin",
+      "author": "donnichols",
+      "source": "Sketchfab",
+      "url": "https://sketchfab.com/3d-models/wooden-cabin-c90674a377864ac1b8fd141ad1917ee3",
+      "licence": "CC BY 4.0",
+      "note": "Optimised (WebP maps, meshopt, all triangles kept); snow added by a shader in the page. Licence: https://creativecommons.org/licenses/by/4.0/",
+      "credit_file": "../../_assets/models/wooden_cabin.glb.credit.json",
+      "files": [
+        "../../_assets/models/wooden_cabin.glb"
+      ]
+    },
+    {
+      "what": "3D model",
+      "title": "Pine Tree",
+      "author": "evolveduk",
+      "source": "Sketchfab",
+      "url": "https://sketchfab.com/3d-models/pine-tree-d45218a3fab349e5b1de040f29e7b6f9",
+      "licence": "CC BY 4.0",
+      "note": "Optimised (WebP maps, meshopt, all triangles kept); tinted and snow-dusted by a shader; one model placed ten times. Licence: https://creativecommons.org/licenses/by/4.0/",
+      "credit_file": "../../_assets/models/pine_tree.glb.credit.json",
+      "files": [
+        "../../_assets/models/pine_tree.glb"
+      ]
+    },
+    {
+      "what": "Texture",
+      "title": "Snow 02 (normal map)",
+      "author": "Rob Tuytel",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/snow_02",
+      "licence": "CC0 1.0",
+      "note": "Surface relief on the ground. 512 px WebP.",
+      "files": [
+        "../../_assets/tex/snow_02_nor_512.webp"
+      ]
+    },
+    {
+      "what": "3D model",
+      "title": "Stone Fire Pit",
+      "author": "Sebastian Platen",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/stone_fire_pit",
+      "licence": "CC0 1.0",
+      "note": "gltf-transform: meshopt + WebP 512 px (2.54 MB to 158 KB).",
+      "files": [
+        "../../_assets/models/stone_fire_pit.glb"
+      ]
+    },
+    {
+      "what": "3D model",
+      "title": "Tree Stump 01",
+      "author": "Rob Tuytel",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/tree_stump_01",
+      "licence": "CC0 1.0",
+      "note": "gltf-transform: simplified to 15%, meshopt + WebP 256 px (3.94 MB to 145 KB).",
+      "files": [
+        "../../_assets/models/tree_stump_01.glb"
+      ]
+    },
+    {
+      "what": "3D model",
+      "title": "Wooden Axe",
+      "author": "Ulan Cabanilla",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/wooden_axe",
+      "licence": "CC0 1.0",
+      "note": "gltf-transform: meshopt + WebP 256 px (2.03 MB to 52 KB).",
+      "files": [
+        "../../_assets/models/wooden_axe.glb"
+      ]
+    },
+    {
+      "what": "3D",
+      "title": "Rocks, pond, woodpile, snow shader",
+      "author": "Zyqor Studio",
+      "source": "code-made three.js",
+      "url": "",
+      "licence": "MIT",
+      "files": [],
+      "note": "made in code"
+    },
+    {
+      "what": "HDRI",
+      "title": "Studio Small 09",
+      "author": "Sergej Majboroda",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/studio_small_09",
+      "licence": "CC0 1.0",
+      "note": "Shared kit lighting (site/assets/hdri).",
+      "files": [
+        "../../../assets/hdri/studio_1k.hdr",
+        "../../../assets/hdri/studio_512.hdr"
+      ]
+    },
+    {
+      "what": "Type",
+      "title": "Zodiak, Satoshi",
+      "author": "Indian Type Foundry",
+      "source": "Fontshare",
+      "url": "https://www.fontshare.com",
+      "licence": "ITF Free Font License 2.0",
+      "files": []
+    },
+    {
+      "what": "Type",
+      "title": "JetBrains Mono",
+      "author": "The JetBrains Mono Project Authors",
+      "source": "GitHub",
+      "url": "https://github.com/JetBrains/JetBrainsMono",
+      "licence": "SIL OFL 1.1",
+      "files": []
+    },
+    {
+      "what": "Engine",
+      "title": "three.js r170, GSAP, Lenis",
+      "author": "their authors",
+      "source": "npm",
+      "url": "https://threejs.org",
+      "licence": "MIT / GSAP Standard Licence",
+      "files": []
+    },
+    {
+      "what": "Images (code-made)",
+      "title": "Poster and library thumbnail",
+      "author": "Zyqor Studio",
+      "source": "frames of this page",
+      "url": "",
+      "licence": "MIT",
+      "note": "WebGL-fallback poster and index thumbnail, rendered from this page by tools/qa-library.mjs. No AI imagery.",
+      "files": [
+        "poster.webp",
+        "thumb.webp"
+      ]
+    }
+  ]
+}

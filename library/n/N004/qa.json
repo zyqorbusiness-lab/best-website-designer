@@ -1,0 +1,126 @@
+{
+ "id": "N004",
+ "date": "2026-10-29T11:07:23.440Z",
+ "kit": 2,
+ "verdict": "PASS",
+ "tier": "normal",
+ "budgetKB": 1536,
+ "ownKB": 195,
+ "sharedKB": 1383,
+ "phoneOwnKB": 177,
+ "phoneSharedKB": 1364,
+ "weightKB": 1578,
+ "phoneWeightKB": 1541,
+ "sameAssets": true,
+ "assetDiff": {
+  "desktopOnly": [],
+  "phoneOnly": []
+ },
+ "assets3d": [
+  "/assets/hdri/studio_512.hdr",
+  "/library/n/N004/walnut_veneer_diff.webp"
+ ],
+ "sameEffects": true,
+ "effectDiff": [],
+ "effects": {
+  "toneMapping": 4,
+  "exposure": 1,
+  "outputColorSpace": "srgb",
+  "shadows": false,
+  "shadowType": null,
+  "antialias": true,
+  "envIntensity": 0.62,
+  "background": null,
+  "passes": [],
+  "contactShadows": 1,
+  "demand": true,
+  "dprCap": [
+   2,
+   2
+  ]
+ },
+ "nowebgl": true,
+ "credit": {
+  "pass": true,
+  "files": 9,
+  "missing": [],
+  "incomplete": [],
+  "ccby": [],
+  "ccbyNotVisible": [],
+  "unlisted": []
+ },
+ "runs": {
+  "d1440": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": true,
+   "ownKB": 195,
+   "sharedKB": 1383
+  },
+  "m390": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": true,
+   "ownKB": 177,
+   "sharedKB": 1364
+  },
+  "m360": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": true,
+   "ownKB": 195,
+   "sharedKB": 1364
+  },
+  "rd1440": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": true,
+   "ownKB": 195,
+   "sharedKB": 1383
+  },
+  "rm390": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": true,
+   "ownKB": 195,
+   "sharedKB": 1364
+  },
+  "nd1440": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": false,
+   "poster": true,
+   "ownKB": 162,
+   "sharedKB": 968
+  },
+  "nm390": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": false,
+   "poster": true,
+   "ownKB": 162,
+   "sharedKB": 950
+  }
+ }
+}

@@ -32,6 +32,9 @@ const ico = {
   info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/>',
   close: '<path d="M6 6l12 12M18 6L6 18"/>',
   grid: '<rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"/>',
+  mail: '<rect x="3.5" y="5.5" width="17" height="13" rx="2"/><path d="M4 7l8 6 8-6"/>',
+  wa: '<path d="M4.5 19.5l1.2-3.9A8 8 0 1 1 8.6 18.5z"/><path d="M9.2 9.3c.3 1.8 1.8 3.6 3.6 4.4l1.2-.9 1.7.8"/>',
+  ig: '<rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><path d="M16.8 7.2v.01"/>',
   ext: '<path d="M14 5h5v5M19 5l-8 8M18 14v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4"/>'
 };
 const svg = (k) => `<svg class="zk-i" viewBox="0 0 24 24" aria-hidden="true" focusable="false">${ico[k]}</svg>`;
@@ -75,6 +78,14 @@ foot.className = 'zk-foot';
 foot.innerHTML = `<div class="zk-foot-in">
   <p class="zk-honest"><b>${esc(name)}</b> is not a real company. Concept ${id} is ${TIER === 'Advanced' ? 'an' : 'a'} ${TIER.toLowerCase()} study from the Zyqor Library, designed and coded by Sujon Hoque at Zyqor Studio. Real 3D assets, credited below; no AI imagery.</p>
   <ul class="zk-cred zk-cred--foot" role="list"></ul>
+  <div class="zk-contact" aria-label="Hire Zyqor Studio">
+    <p class="zk-mono">Want a site like this? Hire Zyqor Studio</p>
+    <ul class="zk-contact-list" role="list">
+      <li><a class="zk-pill zk-mail lg lg--dark lg-pill lg-btn" href="mailto:zyqorbusiness@gmail.com" target="_blank" rel="noopener noreferrer">${svg('mail')}<span><small>Email</small><em>zyqorbusiness@gmail.com</em></span></a></li>
+      <li><a class="zk-pill lg lg--dark lg-pill lg-btn" href="https://wa.me/919547908593" target="_blank" rel="noopener noreferrer">${svg('wa')}<span><small>WhatsApp</small><em>+91 95479 08593</em></span></a></li>
+      <li><a class="zk-pill lg lg--dark lg-pill lg-btn" href="https://www.instagram.com/zyqor_og/" target="_blank" rel="noopener noreferrer">${svg('ig')}<span><small>Instagram</small><em>@zyqor_og</em></span></a></li>
+    </ul>
+  </div>
   <nav class="zk-nav" aria-label="More concepts">
     <a class="zk-pill zk-prev lg lg--dark lg-pill lg-btn" href="${libHome}" hidden>${svg('back')}<span><small>Previous</small><em></em></span></a>
     <a class="zk-pill zk-all lg lg--dark lg-pill lg-btn" href="${libHome}">${svg('grid')}<span>All concepts</span></a>
@@ -83,11 +94,16 @@ foot.innerHTML = `<div class="zk-foot-in">
   <p class="zk-small"><span>Zyqor Studio &middot; Library</span><span>Concept ${id}</span></p>
 </div>`;
 body.append(foot);
+/* contact: Gmail compose on a fine pointer (desktop), the mail app on touch */
+if (matchMedia('(pointer:fine)').matches) {
+  const m = foot.querySelector('.zk-mail');
+  if (m) m.href = 'https://mail.google.com/mail/?view=cm&fs=1&to=zyqorbusiness@gmail.com&su=' + encodeURIComponent('Website enquiry (Concept ' + id + ')');
+}
 
 /* credits: one file for both builds */
 function credLine(c) {
   const who = [c.title && `<b>${esc(c.title)}</b>`, c.author && `by ${esc(c.author)}`].filter(Boolean).join(' ');
-  const src = c.url ? `<a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.source || 'source')}${svg('ext')}</a>` : esc(c.source || '');
+  const src = c.url ? `<a href="${esc(c.url)}" target="_blank" rel="noopener noreferrer">${esc(c.source || 'source')}${svg('ext')}</a>` : esc(c.source || '');
   return `<li><span class="zk-mono">${esc(c.what || 'Asset')}</span><span>${who}${src ? ', ' + src : ''}${c.licence ? ` <i>${esc(c.licence)}</i>` : ''}${c.note ? `<small>${esc(c.note)}</small>` : ''}</span></li>`;
 }
 fetch(new URL('credits.json', location.href)).then((r) => (r.ok ? r.json() : null)).then((j) => {

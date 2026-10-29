@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en" data-build="m">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- desktop -> phone build when ?m=1 is absent -->
+<script>document.documentElement.classList.add('js');(function(){var q=location.search;if(/[?&]m=1/.test(q))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height,phone=w<=860||(c&&h>w);if(!phone)location.replace('./'+q+location.hash);})();</script>
+<title>Northpine Cabins &middot; Concept N008 &middot; Zyqor Library</title>
+<meta name="description" content="Northpine Cabins is a fictional brand: a normal 3D web concept by Zyqor Studio. One cabin, two seasons: drag the line across a small 3D clearing to go from deep winter to high summer.">
+<meta name="theme-color" content="#FCE1D1">
+<meta property="og:title" content="Northpine Cabins &middot; Concept N008 &middot; Zyqor Library">
+<meta property="og:description" content="A fictional-brand 3D concept by Zyqor Studio.">
+<meta property="og:image" content="thumb.webp">
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../_kit/stage.js" as="script" crossorigin>
+<link rel="preload" href="../../_assets/models/tree_stump_01.glb" as="fetch" crossorigin>
+<link rel="stylesheet" href="../../_kit/concept.css">
+<link rel="stylesheet" href="m.css">
+<style>:root{--c1:#FCE1D1;--c2:#193829;--c3:#C96926}</style>
+<script type="importmap">{"imports":{"three":"../../../vendor/three/three.module.min.js","three/addons/":"../../../vendor/three/addons/"}}</script>
+</head>
+<body class="grain" data-id="N008" data-tier="normal" data-name="Northpine Cabins">
+<a class="skip" href="#main">Skip to content</a>
+<main id="main">
+  <!-- Structure 06 (live sandbox hero) + 02 (Swiss exposed-hairline grid) for the content. Brief: brief.md -->
+  <section class="hero" id="top" aria-labelledby="h1">
+    <div class="season-bg" aria-hidden="true"><div class="bg-summer"></div><div class="bg-winter"></div></div>
+    <div class="hero-stage" data-stage>
+      <noscript><img class="poster" src="poster.webp" alt="A small 3D clearing: a green cabin with an orange door among pines, snow on the left half, summer on the right half"></noscript>
+    </div>
+    <div class="ink ink--summer">
+      <nav class="site-nav" aria-label="Northpine Cabins">
+  <a class="wordmark" href="#top"><span class="wm-a">Northpine</span><span class="wm-b">Cabins</span></a>
+  <button class="menu-btn" type="button" aria-haspopup="dialog" aria-controls="menu" data-open-menu><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg><span>Menu</span></button>
+</nav>
+<dialog class="menu" id="menu" aria-label="Menu">
+  <div class="menu-top"><span class="mono">Northpine Cabins &middot; Concept</span><button class="menu-x" type="button" aria-label="Close menu" data-close-menu><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <ul class="menu-list" role="list" tabindex="-1" autofocus>
+    <li><a href="#top" data-close-menu><span class="mono">01</span>The clearing</a></li>
+    <li><a href="#seasons" data-close-menu><span class="mono">02</span>Seasons</a></li>
+    <li><a href="#cabin" data-close-menu><span class="mono">03</span>The cabin</a></li>
+    <li><a href="#stay" data-close-menu><span class="mono">04</span>Stay</a></li>
+  </ul>
+  <a class="btn btn--accent menu-cta" href="#stay" data-close-menu data-press>Send an enquiry<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</dialog>
+      <div class="ink-head">
+        <p class="tag" data-rv>Travel &middot; Concept N008</p>
+        <h1 id="h1" class="title" data-rv>Northpine</h1>
+        <p class="lead" data-rv>One small cabin at the edge of the pines. Drag the line to pick your season.</p>
+      </div>
+      <div class="cap cap--w" data-rv><p class="cap-h serif">Deep winter</p><p class="cap-p">Stove lit, a path dug to the door, the pond frozen white.</p></div>
+      <div class="cap cap--s" data-rv><p class="cap-h serif">High summer</p><p class="cap-p">Door open, the fire pit going, the pond back to water.</p></div>
+    </div>
+    <div class="divider" aria-hidden="false">
+      <span class="divider-line" aria-hidden="true"></span>
+      <div class="grip" role="slider" tabindex="0" aria-label="Season divider: left is winter, right is summer" aria-orientation="horizontal" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="50% winter, 50% summer">
+        <svg class="icon grip-i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4"/></svg><span class="grip-dot" aria-hidden="true"></span>
+      </div>
+      <span class="divider-hint mono" aria-hidden="true">Drag the line</span>
+    </div>
+    <div class="hero-ui">
+      <div class="seg" role="group" aria-label="Choose a season">
+        <button type="button" data-p="1" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9M9.5 4.5L12 7l2.5-2.5M9.5 19.5L12 17l2.5 2.5"/></svg><span>Deep winter</span></button>
+        <button type="button" data-p="0.5" aria-pressed="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5v17"/><path d="M12 3.5a8.5 8.5 0 0 0 0 17z" fill="currentColor" stroke="none"/></svg><span>Both</span></button>
+        <button type="button" data-p="0" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg><span>High summer</span></button>
+      </div>
+    </div>
+    <p class="sr-only" aria-live="polite" id="live"></p>
+  </section>
+
+  <section class="section seasons" id="seasons" aria-labelledby="seasons-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="tag" data-rv>01 &middot; Seasons</p>
+        <h2 id="seasons-h" class="h2" data-rv>Everything changes <span class="serif">except the cabin.</span></h2>
+      </div>
+      <div class="ledger" role="table" aria-label="Winter and summer at Northpine">
+        <div class="lrow lrow--head" role="row"><span role="columnheader" class="mono"><span class="sr-only">Topic</span></span><span role="columnheader" class="lh"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9M9.5 4.5L12 7l2.5-2.5M9.5 19.5L12 17l2.5 2.5"/></svg>Winter</span><span role="columnheader" class="lh"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg>Summer</span></div>
+        <div class="lrow" role="row" data-rv><span role="rowheader" class="mono">Getting in</span><span role="cell">A path dug from the gate to the porch.</span><span role="cell">A grass track from the pond to the door.</span></div>
+        <div class="lrow" role="row" data-rv><span role="rowheader" class="mono">Light</span><span role="cell">Short days. By four the windows are the brightest thing in the woods.</span><span role="cell">Long evenings. It barely gets dark before midnight.</span></div>
+        <div class="lrow" role="row" data-rv><span role="rowheader" class="mono">Warmth</span><span role="cell">The wood stove does the work; the fire pit sleeps under snow.</span><span role="cell">The stove stays cold; evenings end at the fire pit.</span></div>
+        <div class="lrow" role="row" data-rv><span role="rowheader" class="mono">The pond</span><span role="cell">Frozen white, ringed by the same stones.</span><span role="cell">Open water, cold enough to wake you up.</span></div>
+        <div class="lrow lrow--same" role="row" data-rv><span role="rowheader" class="mono">Stays the same</span><span role="cell" class="same"><b>The pines, the stump with the axe in it, and the orange door.</b></span></div>
+      </div>
+      <div class="sec-actions" data-rv>
+        <button class="btn" type="button" data-p="1" data-press><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9M9.5 4.5L12 7l2.5-2.5M9.5 19.5L12 17l2.5 2.5"/></svg>See it in winter</button>
+        <button class="btn btn--ghost" type="button" data-p="0" data-press><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg>See it in summer</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cabin" id="cabin" aria-labelledby="cabin-h">
+    <div class="wrap cabin-in">
+      <div class="cabin-copy">
+        <p class="tag" data-rv>02 &middot; The cabin</p>
+        <h2 id="cabin-h" class="h2" data-rv>Built small <span class="serif">on purpose.</span></h2>
+        <p class="body" data-rv>One warm room, a sleeping loft under the roof and a porch that faces the pond. Painted pine planks outside, the same green as the trees, and one orange door you can find in a snowstorm.</p>
+      </div>
+      <dl class="spec" data-rv>
+        <div><dt class="mono">Sleeps</dt><dd>Four, two in the loft</dd></div>
+        <div><dt class="mono">Inside</dt><dd>One room, a loft, a small kitchen</dd></div>
+        <div><dt class="mono">Heat</dt><dd>Wood stove, logs stacked by the gable</dd></div>
+        <div><dt class="mono">Outside</dt><dd>Porch, stone fire pit, the pond</dd></div>
+        <div><dt class="mono">Walls</dt><dd>Painted pine planks <i class="sw" style="--sw:color-mix(in oklab,var(--c2) 84%,var(--c1))" aria-hidden="true"></i></dd></div>
+        <div><dt class="mono">Door</dt><dd>Burnt orange <i class="sw" style="--sw:var(--c3)" aria-hidden="true"></i></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section stay" id="stay" aria-labelledby="stay-h">
+    <div class="wrap stay-in">
+      <div class="stay-copy">
+        <p class="tag" data-rv>03 &middot; Stay</p>
+        <h2 id="stay-h" class="h2" data-rv>Ask for <span class="serif">your season.</span></h2>
+        <ol class="steps" role="list" data-rv>
+          <li><span class="mono">01</span><div><b>Pick a season</b><p>Winter runs December to March, summer June to August.</p></div></li>
+          <li><span class="mono">02</span><div><b>Send an enquiry</b><p>Dates, guests and anything we should know.</p></div></li>
+          <li><span class="mono">03</span><div><b>Get a reply</b><p>With what to pack for that season and how to find the gate.</p></div></li>
+        </ol>
+      </div>
+      <form class="enquiry" novalidate data-rv aria-labelledby="form-h">
+        <p id="form-h" class="form-h">Enquiry <span class="mono">Concept, nothing is sent</span></p>
+        <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="e-name"><p class="err" id="e-name"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.5v.01"/></svg><span>Please add your name.</span></p></div>
+        <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="e-email"><p class="err" id="e-email"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.5v.01"/></svg><span>Please add an email we could reply to.</span></p></div>
+        <fieldset class="field season-pick"><legend>Season</legend>
+          <label class="pick"><input type="radio" name="season" value="winter" required><span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9M9.5 4.5L12 7l2.5-2.5M9.5 19.5L12 17l2.5 2.5"/></svg>Winter</span></label>
+          <label class="pick"><input type="radio" name="season" value="summer"><span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg>Summer</span></label>
+          <p class="err" id="e-season"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.5v.01"/></svg><span>Choose winter or summer.</span></p>
+        </fieldset>
+        <div class="field-row">
+          <div class="field"><label for="f-date">Arrival</label><input id="f-date" name="arrival" type="date" required aria-describedby="e-date"><p class="err" id="e-date"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.5v.01"/></svg><span>Pick an arrival date in the season.</span></p></div>
+          <div class="field"><label for="f-guests">Guests</label><select id="f-guests" name="guests"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></div>
+        </div>
+        <div class="field"><label for="f-note">Anything else <span class="opt">optional</span></label><textarea id="f-note" name="note" rows="3"></textarea></div>
+        <button class="btn btn--accent submit" type="submit" data-press><span class="s-idle">Send enquiry</span><span class="s-busy" aria-hidden="true"><i class="spin"></i>Sending</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <div class="done" role="status" tabindex="-1" hidden>
+          <p class="done-h"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Concept: not sent.</p>
+          <p class="done-p">Northpine is a fictional cabin, so nothing left this page. <span class="done-sum"></span></p>
+          <button class="btn btn--ghost" type="button" data-reset>Start again</button>
+        </div>
+      </form>
+    </div>
+  </section>
+<aside class="cc-attr" aria-label="3D model credits"><p><span>3D models:</span> &ldquo;Wooden Cabin&rdquo; by <a href="https://sketchfab.com/donnichols" target="_blank" rel="noopener noreferrer">donnichols</a> (<a href="https://sketchfab.com/3d-models/wooden-cabin-c90674a377864ac1b8fd141ad1917ee3" target="_blank" rel="noopener noreferrer">Sketchfab</a>); &ldquo;Pine Tree&rdquo; by <a href="https://sketchfab.com/evolveduk" target="_blank" rel="noopener noreferrer">evolveduk</a> (<a href="https://sketchfab.com/3d-models/pine-tree-d45218a3fab349e5b1de040f29e7b6f9" target="_blank" rel="noopener noreferrer">Sketchfab</a>), licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>. Optimised and re-materialed for this page.</p></aside>
+</main>
+<script type="module" src="../../_kit/chrome.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

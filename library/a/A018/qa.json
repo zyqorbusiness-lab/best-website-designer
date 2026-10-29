@@ -1,16 +1,16 @@
 {
  "id": "A018",
- "date": "2026-10-28T20:27:19.518Z",
+ "date": "2026-10-29T11:07:23.440Z",
  "kit": 2,
  "verdict": "PASS",
  "tier": "advanced",
  "budgetKB": 3072,
- "ownKB": 1596,
- "sharedKB": 1210,
- "phoneOwnKB": 1590,
- "phoneSharedKB": 1077,
- "weightKB": 3211,
- "phoneWeightKB": 3072,
+ "ownKB": 1624,
+ "sharedKB": 1225,
+ "phoneOwnKB": 1611,
+ "phoneSharedKB": 1092,
+ "weightKB": 3255,
+ "phoneWeightKB": 3109,
  "sameAssets": true,
  "assetDiff": {
   "desktopOnly": [],
@@ -49,7 +49,7 @@
  "nowebgl": true,
  "credit": {
   "pass": true,
-  "files": 15,
+  "files": 16,
   "missing": [],
   "incomplete": [],
   "ccby": [],
@@ -64,8 +64,8 @@
    "failed": 0,
    "overflow": 0,
    "webgl": true,
-   "ownKB": 1596,
-   "sharedKB": 1210
+   "ownKB": 1624,
+   "sharedKB": 1225
   },
   "m390": {
    "pass": true,
@@ -74,8 +74,8 @@
    "failed": 0,
    "overflow": 0,
    "webgl": true,
-   "ownKB": 1590,
-   "sharedKB": 1077
+   "ownKB": 1611,
+   "sharedKB": 1092
   },
   "m360": {
    "pass": true,
@@ -84,8 +84,8 @@
    "failed": 0,
    "overflow": 0,
    "webgl": true,
-   "ownKB": 1595,
-   "sharedKB": 1077
+   "ownKB": 1624,
+   "sharedKB": 1092
   },
   "rd1440": {
    "pass": true,
@@ -94,8 +94,8 @@
    "failed": 0,
    "overflow": 0,
    "webgl": true,
-   "ownKB": 1596,
-   "sharedKB": 1230
+   "ownKB": 1624,
+   "sharedKB": 1245
   },
   "rm390": {
    "pass": true,
@@ -104,8 +104,8 @@
    "failed": 0,
    "overflow": 0,
    "webgl": true,
-   "ownKB": 1595,
-   "sharedKB": 1097
+   "ownKB": 1624,
+   "sharedKB": 1112
   },
   "nd1440": {
    "pass": true,
@@ -115,8 +115,8 @@
    "overflow": 0,
    "webgl": false,
    "poster": true,
-   "ownKB": 399,
-   "sharedKB": 945
+   "ownKB": 432,
+   "sharedKB": 960
   },
   "nm390": {
    "pass": true,
@@ -126,9 +126,8 @@
    "overflow": 0,
    "webgl": false,
    "poster": true,
-   "ownKB": 398,
-   "sharedKB": 812
+   "ownKB": 431,
+   "sharedKB": 827
   }
- },
- "weightNote": "own/shared recomputed from this run's network log with the final classifier (blob: URLs not counted, kit grain texture shared)"
+ }
 }

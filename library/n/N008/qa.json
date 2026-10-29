@@ -1,0 +1,134 @@
+{
+ "id": "N008",
+ "date": "2026-10-29T11:07:23.440Z",
+ "kit": 2,
+ "verdict": "PASS",
+ "tier": "normal",
+ "budgetKB": 1536,
+ "ownKB": 1377,
+ "sharedKB": 1494,
+ "phoneOwnKB": 1365,
+ "phoneSharedKB": 1494,
+ "weightKB": 3747,
+ "phoneWeightKB": 3735,
+ "sameAssets": true,
+ "assetDiff": {
+  "desktopOnly": [],
+  "phoneOnly": []
+ },
+ "assets3d": [
+  "/assets/hdri/studio_512.hdr",
+  "/library/_assets/models/pine_tree.glb",
+  "/library/_assets/models/stone_fire_pit.glb",
+  "/library/_assets/models/tree_stump_01.glb",
+  "/library/_assets/models/wooden_axe.glb",
+  "/library/_assets/models/wooden_cabin.glb",
+  "/library/_assets/tex/snow_02_nor_512.webp"
+ ],
+ "sameEffects": true,
+ "effectDiff": [],
+ "effects": {
+  "toneMapping": 4,
+  "exposure": 1,
+  "outputColorSpace": "srgb",
+  "shadows": true,
+  "shadowType": 2,
+  "antialias": true,
+  "envIntensity": 0.95,
+  "background": null,
+  "passes": [],
+  "contactShadows": 1,
+  "demand": true,
+  "dprCap": [
+   2,
+   2
+  ]
+ },
+ "nowebgl": true,
+ "credit": {
+  "pass": true,
+  "files": 12,
+  "missing": [],
+  "incomplete": [],
+  "ccby": [
+   "/library/_assets/models/pine_tree.glb",
+   "/library/_assets/models/wooden_cabin.glb"
+  ],
+  "ccbyNotVisible": [],
+  "unlisted": []
+ },
+ "runs": {
+  "d1440": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": true,
+   "ownKB": 1377,
+   "sharedKB": 1494
+  },
+  "m390": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": true,
+   "ownKB": 1365,
+   "sharedKB": 1494
+  },
+  "m360": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": true,
+   "ownKB": 1380,
+   "sharedKB": 1494
+  },
+  "rd1440": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": true,
+   "ownKB": 1377,
+   "sharedKB": 1514
+  },
+  "rm390": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": true,
+   "ownKB": 1380,
+   "sharedKB": 1514
+  },
+  "nd1440": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": false,
+   "poster": true,
+   "ownKB": 320,
+   "sharedKB": 814
+  },
+  "nm390": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": false,
+   "poster": true,
+   "ownKB": 323,
+   "sharedKB": 814
+  }
+ }
+}

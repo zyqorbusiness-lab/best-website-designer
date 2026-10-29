@@ -45,3 +45,7 @@ Write this BEFORE any code (Sujon's Master Award system, Drive point Q1/W5). Kee
 
 ## QA (node tools/qa-library.mjs N002)
 - 0 console errors/warnings, 0 failed requests, 0 overflow at 1440x900 / 390x844 / 360x740, reduced motion pass.
+
+
+## nb1b fix (2026-10-29)
+- Production page: glass nav (The vase, Glazes, Studio, Reserve) + phone menu sheet, a Glazes section, a Studio process section and a 'Reserve a piece' form (name, email, glaze, collect/ship) with validation, loading and an honest 'Concept: not sent' success. Same sections on m.html. Footer carries Zyqor Studio's contact (kit).

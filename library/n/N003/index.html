@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- phone -> m.html (separate phone build). ?desktop=1 keeps this page -->
+<script>document.documentElement.classList.add('js');(function(){var q=location.search;if(/[?&]desktop=1/.test(q))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height,phone=w<=860||(c&&h>w);if(phone)location.replace('m.html'+q+location.hash);})();</script>
+<title>Tidewell Salt &middot; Concept N003 &middot; Zyqor Library</title>
+<meta name="description" content="Tidewell Salt is a fictional brand: a normal 3D web concept by Zyqor Studio. A glass jar of flaky sea salt turns in front of a giant outline wordmark that moves only at the speed you scroll.">
+<meta name="theme-color" content="#F9DDC7">
+<meta property="og:title" content="Tidewell Salt &middot; Concept N003 &middot; Zyqor Library">
+<meta property="og:description" content="A fictional-brand 3D concept by Zyqor Studio.">
+<meta property="og:image" content="thumb.webp">
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../_kit/stage.js" as="script" crossorigin>
+<link rel="stylesheet" href="../../_kit/concept.css">
+<link rel="stylesheet" href="style.css">
+<link rel="preload" href="img/salt-flakes.webp" as="image" type="image/webp">
+
+<style>:root{--c1:#F9DDC7;--c2:#1B3A2F;--c3:#E48B62}</style>
+<script type="importmap">{"imports":{"three":"../../../vendor/three/three.module.min.js","three/addons/":"../../../vendor/three/addons/"}}</script>
+</head>
+<body class="grain" data-id="N003" data-tier="normal" data-name="Tidewell Salt">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site wrap" id="top">
+  <a class="logo" href="#top" aria-label="Tidewell Salt, back to top"><svg class="logo-i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 3h8v3H8z"/><path d="M7 6h10l1 3v10a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V9z"/></svg><span>Tidewell</span></a>
+  <nav class="site-nav" aria-label="Tidewell"><a href="#flake">The salt</a><a href="#jar">The jar</a><a href="#harvest">Harvest</a></nav>
+  <a class="btn btn--salt site-cta" href="#order" data-press>Order a jar</a>
+</header>
+<main id="main">
+  <section class="pin" id="salt" aria-labelledby="hero-h">
+    <div class="pin-sticky">
+      <div class="stage-full" data-stage>
+        <noscript><img class="poster" src="poster.webp" alt="A glass jar of sea salt flakes in front of a giant outline wordmark"></noscript>
+      </div>
+      <div class="hero-copy wrap">
+        <p class="tag" data-rv>Flaky sea salt &middot; Concept</p>
+        <h1 class="hero-h" id="hero-h" data-rv>Raked at <span>low tide.</span></h1>
+        <p class="lead" data-rv>Hollow pyramid flakes, grown on warm brine and lifted off by hand. Scroll and the jar opens.</p>
+        <div class="hero-cta" data-rv>
+          <a class="btn btn--salt" href="#order" data-press>Order a jar <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn--ghost" href="#flake" data-press>See the flake <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+        </div>
+      </div>
+      <p class="mono pin-hint" aria-hidden="true"><span class="ph-bar"><i></i></span><span data-hint>Scroll to open the jar</span></p>
+    </div>
+  </section>
+
+  <section class="section flake" id="flake" aria-labelledby="flake-h">
+    <div class="wrap flake-in">
+      <figure class="flake-fig" data-rv><img src="img/salt-flakes.webp" width="960" height="1280" alt="Close-up of white sea-salt crystals piled on a dark surface" loading="lazy" decoding="async"><figcaption class="mono">Real salt crystals, photographed by Nate Steiner (CC0)</figcaption></figure>
+      <div class="flake-copy">
+        <p class="tag" data-rv>01 &middot; The flake</p>
+        <h2 class="h2" id="flake-h" data-rv>Hollow, thin, <span class="out">loud.</span></h2>
+        <p class="body" data-rv>Each flake grows as an upside-down pyramid floating on the brine. That hollow shape is why it crunches, and why a pinch looks generous on the plate.</p>
+        <ul class="notes" role="list" data-rv-group><li data-rv><span class="mono">01 &middot; Crunch</span><p>A pyramid flake shatters between the teeth instead of dissolving straight away.</p></li><li data-rv><span class="mono">02 &middot; Finish</span><p>Scatter it last, on tomatoes, on chocolate, on a fried egg.</p></li><li data-rv><span class="mono">03 &middot; Pinch</span><p>Wide flakes are easy to see, so you salt less and taste more.</p></li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section jar" id="jar" aria-labelledby="jar-h">
+    <div class="wrap jar-in">
+      <div class="sec-head">
+        <p class="tag" data-rv>02 &middot; The jar</p>
+        <h2 class="h2" id="jar-h" data-rv>A jar you leave <span class="out">out.</span></h2>
+        <p class="body" data-rv>Clear so you can see how much is left, wide so your fingers fit, heavy enough to stay put next to the stove.</p>
+      </div>
+      <dl class="specs"><div class="spec" data-rv><dt class="mono">Contents</dt><dd>Flaky sea salt, hand raked</dd></div><div class="spec" data-rv><dt class="mono">Glass</dt><dd>Clear soda-lime, wide mouth so fingers fit</dd></div><div class="spec" data-rv><dt class="mono">Lid</dt><dd>Stoneware, coral glaze, cork seal</dd></div><div class="spec" data-rv><dt class="mono">Sizes</dt><dd>90 g jar, 180 g jar, 500 g refill pouch</dd></div><div class="spec" data-rv><dt class="mono">Keeps</dt><dd>Dry and loose for two years in the jar</dd></div><div class="spec" data-rv><dt class="mono">Made</dt><dd>Fictional brand, concept only</dd></div></dl>
+    </div>
+  </section>
+
+  <section class="section harvest" id="harvest" aria-labelledby="harvest-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="tag" data-rv>03 &middot; Harvest</p>
+        <h2 class="h2" id="harvest-h" data-rv>Sun, wind, <span class="out">a rake.</span></h2>
+      </div>
+      <ol class="hvs" role="list" data-rv-group><li class="hv" data-rv><span class="hv-i"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 15c3 0 3-3 6-3s3 3 6 3 3-3 6-3"/><path d="M3 19c3 0 3-3 6-3s3 3 6 3 3-3 6-3"/></svg></span><span class="mono">01</span><h3 class="hv-h">Let the tide in</h3><p class="hv-p">Sea water is let into shallow clay beds on a spring tide and left to the sun and wind.</p></li><li class="hv" data-rv><span class="hv-i"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg></span><span class="mono">02</span><h3 class="hv-h">Wait for the crust</h3><p class="hv-p">As the brine warms, hollow pyramid crystals grow on the surface and float there.</p></li><li class="hv" data-rv><span class="hv-i"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20 15 9"/><path d="M12 6l6 6M14 4l6 6"/><path d="M15 3.5 20.5 9"/></svg></span><span class="mono">03</span><h3 class="hv-h">Rake it by hand</h3><p class="hv-p">The flakes are lifted off the surface before they sink, then dried in moving air.</p></li></ol>
+    </div>
+  </section>
+
+  <section class="section order-sec" id="order" aria-labelledby="order-h">
+    <div class="wrap order-in">
+      <div class="order-copy">
+        <p class="tag" data-rv>04 &middot; Order</p>
+        <h2 class="h2" id="order-h" data-rv>Put a jar <span class="out">on the table.</span></h2>
+        <p class="body" data-rv>Pick a size and how many. This is a concept, so the form works but nothing leaves this page.</p>
+      </div>
+      <form class="order" id="order-form" novalidate data-rv>
+          <fieldset class="f">
+            <legend class="f-l">Size</legend>
+            <div class="chips" role="group" aria-label="Jar size">
+              <button class="chip size" type="button" data-size="90 g jar" aria-pressed="false">90 g jar</button>
+              <button class="chip size" type="button" data-size="180 g jar" aria-pressed="true">180 g jar</button>
+              <button class="chip size" type="button" data-size="500 g refill" aria-pressed="false">500 g refill</button>
+            </div>
+          </fieldset>
+          <div class="f-row f-2">
+            <div class="f"><span class="f-l" id="qty-l">Quantity</span>
+              <div class="stepper" role="group" aria-labelledby="qty-l">
+                <button type="button" class="st-b" data-step="-1" aria-label="One less"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 12h12"/></svg></button>
+                <output class="st-v num" name="qty" aria-live="polite">1</output>
+                <button type="button" class="st-b" data-step="1" aria-label="One more"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 6v12M6 12h12"/></svg></button>
+              </div><span class="f-err"></span></div>
+            <label class="f"><span class="f-l">Email for the order note</span><input name="email" type="email" autocomplete="email" required placeholder="you@example.com"><span class="f-err" aria-live="polite"></span></label>
+          </div>
+          <label class="f f-check"><input type="checkbox" name="grind"><span>Add a stoneware pinch pot</span></label>
+          <div class="f-foot">
+            <button class="btn btn--salt" type="submit" data-press><span class="b-label">Place concept order</span><span class="b-spin" aria-hidden="true"></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            <p class="f-note mono">Concept form: nothing is sent or charged.</p>
+          </div>
+          <div class="f-ok" role="status" hidden>
+            <span class="f-ok-i"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.2 4.2L19 7"/></svg></span>
+            <div><p class="f-ok-h">Concept: not sent.</p><p class="f-ok-p">Tidewell is a fictional brand, so no order was placed and nothing was charged. Your choice: <b data-ok-sum>1 x 180 g jar</b>.</p>
+            <button class="btn btn--ghost f-again" type="button" data-press>Start again</button></div>
+          </div>
+        </form>
+    </div>
+  </section>
+<aside class="cc-attr" aria-label="3D model credits"><p><span>3D models:</span> &ldquo;Glass Jar with Marble Lid 2.0&rdquo; by <a href="https://sketchfab.com/ingamestudio" target="_blank" rel="noopener noreferrer">InGameStudio</a> (<a href="https://sketchfab.com/3d-models/glass-jar-with-marble-lid-20-f5383b6b32eb4439b874473b6d52df0c" target="_blank" rel="noopener noreferrer">Sketchfab</a>), licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>. Optimised and re-materialed for this page.</p></aside>
+</main>
+<script src="../../../vendor/gsap.min.js" defer></script>
+<script src="../../../vendor/ScrollTrigger.min.js" defer></script>
+<script src="../../../vendor/lenis.min.js" defer></script>
+<script type="module" src="../../_kit/chrome.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

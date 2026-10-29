@@ -1,0 +1,11 @@
+{
+  "title": "Yandex Station Mini (re-branded as the fictional Signal One)",
+  "author": "Chizheo (ir4jeck.ru)",
+  "author_url": "https://sketchfab.com/Chizheo",
+  "source_url": "https://sketchfab.com/3d-models/yandex-station-mini-121867e97b284ae2b2e7ae0fa2675026",
+  "licence": "CC BY 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "\"Signal One\" speaker is based on \"Yandex Station Mini\" (https://sketchfab.com/3d-models/yandex-station-mini-121867e97b284ae2b2e7ae0fa2675026) by Chizheo (ir4jeck.ru) (https://sketchfab.com/Chizheo), licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Changed by Zyqor Studio.",
+  "changes": "Re-branded as the fictional 'Signal One': every maker logo and mark removed \u2014 painted out of the base-colour, normal and occlusion/roughness maps (embossed logo and text on the base, certification marks, the letter and triangle on the top button) and the raised logo plate on the top centre deleted from the mesh, leaving a plain round key; meshes baked to world space, re-scaled and centred; textures down-sized from 4K to 2K (metal/rough/occlusion 1K) and stored as WebP; mesh quantized and meshopt-compressed (gltf-transform). Fabric re-shaded in code with a sheen lobe; shell, fabric and key colours are tinted in code at runtime (Calm/Loud).",
+  "downloaded": "2026-10-28"
+}

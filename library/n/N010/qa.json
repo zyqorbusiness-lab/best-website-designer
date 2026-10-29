@@ -1,16 +1,16 @@
 {
  "id": "N010",
- "date": "2026-10-28T21:16:32.276Z",
+ "date": "2026-10-29T11:07:23.440Z",
  "kit": 2,
  "verdict": "PASS",
  "tier": "normal",
  "budgetKB": 1536,
  "ownKB": 597,
- "sharedKB": 1624,
+ "sharedKB": 1627,
  "phoneOwnKB": 585,
- "phoneSharedKB": 1606,
- "weightKB": 2585,
- "phoneWeightKB": 2555,
+ "phoneSharedKB": 1608,
+ "weightKB": 2587,
+ "phoneWeightKB": 2557,
  "sameAssets": true,
  "assetDiff": {
   "desktopOnly": [],
@@ -59,7 +59,7 @@
    "overflow": 0,
    "webgl": true,
    "ownKB": 597,
-   "sharedKB": 1624
+   "sharedKB": 1627
   },
   "m390": {
    "pass": true,
@@ -69,7 +69,7 @@
    "overflow": 0,
    "webgl": true,
    "ownKB": 585,
-   "sharedKB": 1606
+   "sharedKB": 1608
   },
   "m360": {
    "pass": true,
@@ -79,7 +79,7 @@
    "overflow": 0,
    "webgl": true,
    "ownKB": 600,
-   "sharedKB": 1606
+   "sharedKB": 1608
   },
   "rd1440": {
    "pass": true,
@@ -89,7 +89,7 @@
    "overflow": 0,
    "webgl": true,
    "ownKB": 597,
-   "sharedKB": 1645
+   "sharedKB": 1647
   },
   "rm390": {
    "pass": true,
@@ -99,7 +99,7 @@
    "overflow": 0,
    "webgl": true,
    "ownKB": 600,
-   "sharedKB": 1627
+   "sharedKB": 1629
   },
   "nd1440": {
    "pass": true,
@@ -110,7 +110,7 @@
    "webgl": false,
    "poster": true,
    "ownKB": 389,
-   "sharedKB": 945
+   "sharedKB": 947
   },
   "nm390": {
    "pass": true,
@@ -121,7 +121,7 @@
    "webgl": false,
    "poster": true,
    "ownKB": 393,
-   "sharedKB": 927
+   "sharedKB": 929
   }
  }
 }
