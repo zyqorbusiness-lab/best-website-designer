@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" data-build="m">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- desktop -> phone build when ?m=1 is absent -->
+<script>document.documentElement.classList.add('js');(function(){var q=location.search;if(/[?&]m=1/.test(q))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height,phone=w<=860||(c&&h>w);if(!phone)location.replace('./'+q+location.hash);})();</script>
+<title>Shelfline Ceramics &middot; Concept A013 &middot; Zyqor Library</title>
+<meta name="description" content="Shelfline Ceramics is a fictional brand: a advanced 3D web concept by Zyqor Studio. A ceramics shop as one long shelf: scroll and the camera walks past four real scanned vases, each lit as you reach it.">
+<meta name="theme-color" content="#ECD6CE">
+<meta property="og:title" content="Shelfline Ceramics &middot; Concept A013 &middot; Zyqor Library">
+<meta property="og:description" content="A fictional-brand 3D concept by Zyqor Studio.">
+<meta property="og:image" content="thumb.webp">
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../_kit/stage.js" as="script" crossorigin>
+<link rel="preload" href="../../_assets/models/ceramic_vase_01.glb" as="fetch" crossorigin>
+<link rel="preload" href="../../_assets/models/ceramic_vase_02.glb" as="fetch" crossorigin>
+<link rel="preload" href="../../_assets/models/ceramic_vase_04.glb" as="fetch" crossorigin>
+<link rel="preload" href="../../_assets/models/antique_ceramic_vase_01.glb" as="fetch" crossorigin>
+<link rel="stylesheet" href="../../_kit/concept.css">
+<link rel="stylesheet" href="../../_kit/landing.css">
+<link rel="stylesheet" href="m.css">
+<style>:root{--c1:#ECD6CE;--c2:#2F2316;--c3:#E64B76}</style>
+<script type="importmap">{"imports":{"three":"../../../vendor/three/three.module.min.js","three/addons/":"../../../vendor/three/addons/"}}</script>
+</head>
+<body class="grain" data-id="A013" data-tier="advanced" data-name="Shelfline Ceramics">
+<a class="skip" href="#main">Skip to content</a>
+<nav class="bnav" aria-label="Shelfline Ceramics">
+  <div class="bnav-in">
+    <a class="logo" href="#main" aria-label="Shelfline Ceramics, back to top"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M4 26h24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M8 26c-1-4 0-8 2-10l-1-5h4l-1 5c2 2 3 6 2 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M19 26c-1-3 0-7 3-9 3 2 4 6 3 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="22" cy="21" r="1.6" fill="var(--c3)"/></svg><span>Shelfline Ceramics</span></a>
+    <ul class="bnav-links"><li><a href="#shelf">The shelf</a></li><li><a href="#making">Making</a></li><li><a href="#reserve">Reserve</a></li></ul>
+    <a class="btn btn--accent bnav-cta" href="#reserve" data-press>Reserve a vase</a>
+    <button class="menu-btn" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="msheet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>Menu</button>
+  </div>
+</nav>
+<dialog class="msheet" id="msheet" aria-label="Menu">
+  <div class="msheet-in">
+    <div class="msheet-top"><span class="logo"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M4 26h24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M8 26c-1-4 0-8 2-10l-1-5h4l-1 5c2 2 3 6 2 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M19 26c-1-3 0-7 3-9 3 2 4 6 3 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="22" cy="21" r="1.6" fill="var(--c3)"/></svg><span>Shelfline Ceramics</span></span><button class="msheet-x" type="button" aria-label="Close menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+    <ul><li><a href="#shelf">The shelf<span>01</span></a></li><li><a href="#making">Making<span>02</span></a></li><li><a href="#reserve">Reserve<span>03</span></a></li></ul>
+    <a class="btn btn--accent" href="#reserve">Reserve a vase</a>
+  </div>
+</dialog>
+<main id="main">
+  <section class="intro" aria-labelledby="h1">
+    <div class="wrap intro-in">
+      <p class="tag" data-rv>Ceramics &middot; Concept A013</p>
+      <h1 id="h1" class="title" data-rv>Shelf<span class="serif">line</span></h1>
+      <p class="lead" data-rv>Four vases on one long shelf. Scroll, and walk past them one at a time.</p>
+      <p class="mono scroll-cue" data-rv><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>Walk the shelf</p>
+    </div>
+  </section>
+  <section class="shelf" id="shelf" aria-label="The shelf: four vases">
+    <div class="pin">
+      <div class="hero-stage" data-stage>
+        <noscript><img class="poster" src="poster.webp" alt="Four ceramic vases standing on a dark wooden shelf"></noscript>
+      </div>
+      <div class="vcaps" aria-live="polite"><div class="vcap" data-v="0"><span class="mono">01 / 04 &middot; <span class="vh" id="vh0">—</span> tall</span><h2 class="vcap-h">Ruffled bottle</h2><p class="body">A tall bottle with a ruffled lip, in a pale satin glaze.</p><p class="mono vsrc">Scan: Ceramic Vase 01, by James Ray Cock, Poly Haven CC0</p></div><div class="vcap" data-v="1"><span class="mono">02 / 04 &middot; <span class="vh" id="vh1">—</span> tall</span><h2 class="vcap-h">Speckled jar</h2><p class="body">A wide, squat body in a speckled white glaze.</p><p class="mono vsrc">Scan: Ceramic Vase 02, by James Ray Cock, Poly Haven CC0</p></div><div class="vcap" data-v="2"><span class="mono">03 / 04 &middot; <span class="vh" id="vh2">—</span> tall</span><h2 class="vcap-h">Loop jug</h2><p class="body">A slim jug with a looped handle and a soft white glaze.</p><p class="mono vsrc">Scan: Ceramic Vase 04, by James Ray Cock, Poly Haven CC0</p></div><div class="vcap" data-v="3"><span class="mono">04 / 04 &middot; <span class="vh" id="vh3">—</span> tall</span><h2 class="vcap-h">Blue garden</h2><p class="body">Blue on white, painted by hand: the oldest piece on the shelf.</p><p class="mono vsrc">Scan: Antique Ceramic Vase 01, by James Ray Cock, Poly Haven CC0</p></div></div>
+      <ol class="ticks" aria-hidden="true"><li data-v="0"><span>01</span></li><li data-v="1"><span>02</span></li><li data-v="2"><span>03</span></li><li data-v="3"><span>04</span></li></ol>
+    </div>
+  </section>
+  <section class="section pn-sec making" id="making" aria-labelledby="mk-h">
+    <div class="wrap pn-book">
+      <div class="pn-head"><p class="tag" data-rv>Making</p><h2 id="mk-h" class="h2" data-rv>Six steps <span class="serif">to the shelf.</span></h2>
+        <p class="body" data-rv>The four vases on this page are real 3D scans. Shelfline itself is a fictional shop.</p></div>
+      <ol class="pn-steps" data-rv-group><li data-rv><div><h3>Throw</h3><p class="body">Centred and pulled on the wheel.</p></div></li><li data-rv><div><h3>Dry</h3><p class="body">A week under cloth, turned daily.</p></div></li><li data-rv><div><h3>Bisque</h3><p class="body">The first firing.</p></div></li><li data-rv><div><h3>Glaze</h3><p class="body">Dipped or poured, one glaze per piece.</p></div></li><li data-rv><div><h3>Fire</h3><p class="body">A long firing, a slow cool.</p></div></li><li data-rv><div><h3>Shelf</h3><p class="body">It joins the line, lit like the ones above.</p></div></li></ol>
+    </div>
+  </section>
+  <section class="section pn-sec form-sec" id="reserve" aria-labelledby="rv-h">
+    <div class="wrap pn-book">
+      <div class="pn-head"><p class="tag" data-rv>Reserve</p><h2 id="rv-h" class="h2" data-rv>Hold one <span class="serif">from the shelf.</span></h2>
+        <p class="body" data-rv>Choose a vase from the walk above. This is a concept form: it checks what you type, but nothing is sent anywhere.</p></div>
+      <div data-rv>
+        <form class="form" data-honest data-success="rv-ok" data-echo="Thanks, {name}. Shelfline is fictional, so nothing left this page. A real shop would write to {email} about {vase}." novalidate>
+          <div class="row2">
+            <div class="field"><label for="rv-name">Your name</label><input class="input" id="rv-name" name="name" type="text" autocomplete="name" required minlength="2" data-req="Tell us what to call you." placeholder="Iris Mok" aria-describedby="rv-name-err"><p class="err" id="rv-name-err" aria-live="polite"></p></div>
+            <div class="field"><label for="rv-email">Email</label><input class="input" id="rv-email" name="email" type="email" autocomplete="email" required data-req="We need an email to reply." placeholder="you@example.com" aria-describedby="rv-email-err"><p class="err" id="rv-email-err" aria-live="polite"></p></div>
+          </div>
+          <div class="field"><label for="rv-vase">Vase</label><select class="input" id="rv-vase" name="vase" required data-req="Pick one." aria-describedby="rv-vase-err"><option value="">Choose</option><option>01. Ruffled bottle</option><option>02. Speckled jar</option><option>03. Loop jug</option><option>04. Blue garden</option></select><p class="err" id="rv-vase-err" aria-live="polite"></p></div>
+          <div class="field"><fieldset><legend>Delivery</legend><div class="chips"><label><input type="radio" name="how" value="collect" checked><span>Collect</span></label><label><input type="radio" name="how" value="ship"><span>Ship, boxed</span></label></div></fieldset></div>
+          <div class="submit-row"><button class="btn btn--accent" type="submit" data-press><span class="spin" aria-hidden="true"></span>Reserve a vase</button><p class="form-note">Concept form. Nothing leaves this page.</p></div>
+        </form>
+        <div class="success" id="rv-ok" tabindex="-1" role="status">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="15"/><path d="M13 20l5 5 9-10"/></svg>
+          <p class="tag">Concept: not sent</p>
+          <h3>Thanks. Nothing was sent.</h3>
+          <p class="body" data-echo></p>
+          <button class="btn btn--ghost" type="button" data-again>Fill it in again</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<script type="module" src="../../_kit/chrome.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+/* N048 Ironbark Barbers - phone build. Same chair model and HDRI as desktop; the ring of services becomes a swipe rail under the chair. */
+body{background:var(--c1)}
+.hero{position:relative;display:flex;flex-direction:column;padding-bottom:var(--s5)}
+.compass{order:-1;margin-top:calc(env(safe-area-inset-top) + 58px)}
+.hero-stage{position:relative;height:min(50svh,440px);min-height:340px}
+.gesture{left:50%;top:10px;translate:-50% 0;white-space:nowrap;padding:8px 12px;border-radius:var(--pill);background:color-mix(in oklab,var(--c1) 70%,transparent)}
+.ring{list-style:none;margin:0;padding:4px var(--gutter);display:flex;gap:6px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.ring::-webkit-scrollbar{display:none}
+.rs{flex:none;scroll-snap-align:center}
+.rs button{border:1px solid var(--line);min-width:8.5rem}
+.hero-copy{display:grid;gap:var(--s2);padding:var(--s4) var(--gutter) 0;position:relative;z-index:2}
+.title{font-size:clamp(3.2rem,16vw,4.6rem)}
+.tag{order:-1}
+.ticket{margin:var(--s4) var(--gutter) 0}
+.tk-btns .btn{flex:1;min-height:52px;justify-content:center}
+
+.title{font:800 clamp(4rem,1.4rem + 6.6vw,9rem)/.82 var(--f-display);letter-spacing:var(--track-display);color:var(--ink)}
+.title .serif{font-weight:400;font-style:italic;letter-spacing:-.03em;color:var(--c3)}
+.gesture{position:absolute;display:flex;align-items:center;gap:8px;color:var(--ink-3);transition:opacity var(--dur) var(--ease-out);pointer-events:none;z-index:3}
+.gesture .icon{width:16px;height:16px}
+.hero-stage.has-turned .gesture{opacity:0}
+.ticket{display:grid;gap:var(--s2);align-content:start;padding:var(--s4);border:1px solid var(--line);border-radius:var(--radius);background:color-mix(in oklab,var(--c1) 82%,transparent);box-shadow:var(--spec)}
+.tk-k{color:var(--c3)}
+.tk-h{font:700 clamp(1.7rem,1rem + 1.4vw,2.5rem)/1.05 var(--f-display);letter-spacing:var(--track-h)}
+.tk-row{display:grid;grid-template-columns:1fr 1fr;margin:var(--s2) 0 0;border-top:1px solid var(--line)}
+.tk-row div{padding-top:var(--s2)}.tk-row dt{color:var(--ink-3)}.tk-row dd{margin:4px 0 0;font:700 1.3rem/1 var(--f-display)}
+.tk-btns{display:flex;flex-wrap:wrap;gap:var(--s2);margin-top:var(--s2)}
+.ticket.flash .tk-h{animation:tk .48s var(--ease-out)}@keyframes tk{from{opacity:0;transform:translateY(8px)}}
+.rs button{display:grid;gap:2px;text-align:center;padding:8px 10px;border-radius:var(--radius-sm);color:var(--ink-2);min-height:var(--tap);transition:color var(--dur-fast) var(--ease-out),background var(--dur-fast) var(--ease-out)}
+.rs-n{font:600 .98rem/1.15 var(--f-body)}.rs-t{color:var(--ink-3)}
+.rs.is-on button{color:var(--ink);background:color-mix(in oklab,var(--c3) 12%,var(--c1))}
+.rs.is-on .rs-n{color:var(--c3)}
+.rs button:focus-visible{outline:2px solid var(--c3);outline-offset:2px}
+.menu{background:var(--c2);color:var(--c1)}
+.menu .tag,.menu .body{color:var(--on-dark-2)}.menu .h2{color:var(--c1)}.menu .h2 .serif{font-style:italic;font-weight:400;color:color-mix(in oklab,var(--c1) 60%,var(--c3))}
+.mn-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line-dark)}
+.mn-row{display:grid;align-items:baseline;gap:var(--s3);padding:var(--s4) 0;border-bottom:1px solid var(--line-dark)}
+.mn-row h3{font:700 1.45rem/1.1 var(--f-display);letter-spacing:var(--track-h);color:var(--c1)}
+.mn-no,.mn-t{color:var(--on-dark-2)}
+
+.mn-in{display:grid;gap:var(--s4)}.mn-head{display:grid;gap:var(--s3)}
+.mn-row{grid-template-columns:2.2rem 1fr auto}.mn-row .body{grid-column:2 / -1}

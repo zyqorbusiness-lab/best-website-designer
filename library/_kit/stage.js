@@ -276,7 +276,7 @@ export async function createStage(opts = {}) {
 export function contactShadow(stage, o = {}) {
   if (stage.failed) return null;
   const { THREE: T, scene, renderer } = stage;
-  const size = o.size ?? 3, res = o.resolution ?? (isM ? 256 : 512), blur = o.blur ?? 2.6, darkness = o.darkness ?? 1.6, opacity = o.opacity ?? 0.6, height = o.height ?? 1.2, y = o.y ?? 0.001;
+  const size = o.size ?? 3, res = o.resolution ?? 512   /* nb2: same contact-shadow resolution on phone and desktop (phone = PC rule) */, blur = o.blur ?? 2.6, darkness = o.darkness ?? 1.6, opacity = o.opacity ?? 0.6, height = o.height ?? 1.2, y = o.y ?? 0.001;
   const group = new T.Group(); group.position.y = y; group.userData.zkContactShadow = true; scene.add(group);
   const rt = new T.WebGLRenderTarget(res, res); rt.texture.generateMipmaps = false;
   const rtB = new T.WebGLRenderTarget(res, res); rtB.texture.generateMipmaps = false;

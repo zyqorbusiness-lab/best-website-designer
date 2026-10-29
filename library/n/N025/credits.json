@@ -1,0 +1,84 @@
+{
+  "brand": "Bathtime Duck",
+  "id": "N025",
+  "items": [
+    {
+      "what": "3D model",
+      "title": "Rubber Duck Toy",
+      "author": "Plat251",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/rubber_duck_toy",
+      "licence": "CC0 1.0",
+      "note": "Rubber Duck Toy by Plat251, Poly Haven (CC0 1.0). 2K glTF re-encoded once (meshopt, WebP 2048 px, all 4,288 triangles kept), 189 KB. Same file on phone and desktop.",
+      "files": [
+        "../../_assets/models/rubber_duck_toy.glb"
+      ]
+    },
+    {
+      "what": "Poster and thumbnail",
+      "title": "Bathtime Duck poster (WebGL fallback still) and thumbnail",
+      "author": "Zyqor Studio",
+      "licence": "MIT",
+      "files": [
+        "poster.webp",
+        "thumb.webp"
+      ],
+      "note": "Screenshots of this page's own real-time render of the CC0 model. Not AI imagery."
+    },
+    {
+      "what": "Water surface",
+      "title": "Bath water shader",
+      "author": "Zyqor Studio",
+      "licence": "MIT",
+      "note": "Made in code (a prop, not the product): a 160 x 160 plane displaced by ripple rings in the vertex shader; the duck rides the same formula in JavaScript."
+    },
+    {
+      "what": "Size drawings",
+      "title": "Duck size diagrams",
+      "author": "Zyqor Studio",
+      "licence": "MIT",
+      "note": "Drawn in code (SVG)."
+    },
+    {
+      "what": "HDRI",
+      "title": "Studio Small 09",
+      "author": "Sergej Majboroda",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/studio_small_09",
+      "licence": "CC0 1.0",
+      "note": "Shared kit lighting (site/assets/hdri)."
+    },
+    {
+      "what": "Type",
+      "title": "Cabinet Grotesk, Satoshi",
+      "author": "Indian Type Foundry",
+      "source": "Fontshare",
+      "url": "https://www.fontshare.com",
+      "licence": "ITF Free Font License"
+    },
+    {
+      "what": "Type",
+      "title": "Instrument Serif",
+      "author": "Rodrigo Fuenzalida, Jordan Egstad",
+      "source": "GitHub",
+      "url": "https://github.com/Instrument/instrument-serif",
+      "licence": "SIL OFL 1.1"
+    },
+    {
+      "what": "Type",
+      "title": "JetBrains Mono",
+      "author": "The JetBrains Mono Project Authors",
+      "source": "GitHub",
+      "url": "https://github.com/JetBrains/JetBrainsMono",
+      "licence": "SIL OFL 1.1"
+    },
+    {
+      "what": "Engine",
+      "title": "three.js r170, GSAP, Lenis",
+      "author": "their authors",
+      "source": "npm",
+      "url": "https://threejs.org",
+      "licence": "MIT / GSAP Standard Licence"
+    }
+  ]
+}

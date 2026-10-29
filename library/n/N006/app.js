@@ -200,7 +200,7 @@ const geoCache = {};
 function glyphGeo(w) {
   if (geoCache[w]) return geoCache[w];
   const g = Q[w], [x0, y0, x1, y1] = g.b;
-  const geo = new THREE.ExtrudeGeometry(shapesFrom(g.d), { depth: 190, bevelEnabled: true, bevelThickness: 26, bevelSize: 15, bevelSegments: 5, curveSegments: isM ? 12 : 14 });
+  const geo = new THREE.ExtrudeGeometry(shapesFrom(g.d), { depth: 190, bevelEnabled: true, bevelThickness: 26, bevelSize: 15, bevelSegments: 5, curveSegments: 14 });
   geo.translate(-(x0 + x1) / 2, -y0 + 26, -95); geo.scale(UNIT, UNIT, UNIT); geo.computeVertexNormals();
   return (geoCache[w] = geo);
 }

@@ -1,0 +1,84 @@
+{
+  "brand": "Glint Eyewear",
+  "id": "N014",
+  "items": [
+    {
+      "what": "3D model",
+      "title": "Round Spectacles",
+      "author": "Sean Buckley",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/round_spectacles",
+      "licence": "CC0 1.0",
+      "note": "Round Spectacles by Sean Buckley, Poly Haven (CC0 1.0). 2K glTF re-encoded once (meshopt, WebP 2048 px, all 11,810 triangles kept), 667 KB. Lens material set to clear transmission in the page. Same file on phone and desktop.",
+      "files": [
+        "../../_assets/models/round_spectacles.glb"
+      ]
+    },
+    {
+      "what": "Poster and thumbnail",
+      "title": "Glint Eyewear poster (WebGL fallback still) and thumbnail",
+      "author": "Zyqor Studio",
+      "licence": "MIT",
+      "files": [
+        "poster.webp",
+        "thumb.webp"
+      ],
+      "note": "Screenshots of this page's own real-time render of the CC0 model. Not AI imagery."
+    },
+    {
+      "what": "Eye chart",
+      "title": "Snellen-style eye chart",
+      "author": "Zyqor Studio",
+      "licence": "MIT",
+      "note": "Drawn in code on a canvas (a prop): letter rows in the classic Snellen proportions."
+    },
+    {
+      "what": "Fit drawing",
+      "title": "Frame measurement drawing",
+      "author": "Zyqor Studio",
+      "licence": "MIT",
+      "note": "Drawn in code (SVG)."
+    },
+    {
+      "what": "HDRI",
+      "title": "Studio Small 09",
+      "author": "Sergej Majboroda",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/studio_small_09",
+      "licence": "CC0 1.0",
+      "note": "Shared kit lighting (site/assets/hdri)."
+    },
+    {
+      "what": "Type",
+      "title": "Cabinet Grotesk, Satoshi",
+      "author": "Indian Type Foundry",
+      "source": "Fontshare",
+      "url": "https://www.fontshare.com",
+      "licence": "ITF Free Font License"
+    },
+    {
+      "what": "Type",
+      "title": "Instrument Serif",
+      "author": "Rodrigo Fuenzalida, Jordan Egstad",
+      "source": "GitHub",
+      "url": "https://github.com/Instrument/instrument-serif",
+      "licence": "SIL OFL 1.1"
+    },
+    {
+      "what": "Type",
+      "title": "JetBrains Mono",
+      "author": "The JetBrains Mono Project Authors",
+      "source": "GitHub",
+      "url": "https://github.com/JetBrains/JetBrainsMono",
+      "licence": "SIL OFL 1.1"
+    },
+    {
+      "what": "Engine",
+      "title": "three.js r170, GSAP, Lenis",
+      "author": "their authors",
+      "source": "npm",
+      "url": "https://threejs.org",
+      "licence": "MIT / GSAP Standard Licence"
+    }
+  ]
+}

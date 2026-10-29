@@ -1,0 +1,73 @@
+{
+  "brand": "Tapehead Hi-Fi",
+  "id": "P017",
+  "items": [
+    {
+      "what": "3D model",
+      "title": "Cassette Player",
+      "author": "Oday Abuzaeed",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/cassette_player",
+      "licence": "CC0 1.0",
+      "note": "Cassette Player by Oday Abuzaeed, Poly Haven (CC0 1.0). 2K glTF re-encoded once (meshopt, WebP 2048 px, all 4,830 triangles kept, the tape kept as its own part), 867 KB. Same file on phone and desktop.",
+      "files": [
+        "../../_assets/models/cassette_player.glb"
+      ]
+    },
+    {
+      "what": "HDRI",
+      "title": "Music Hall 01",
+      "author": "Sergej Majboroda",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/music_hall_01",
+      "licence": "CC0 1.0",
+      "note": "1K .hdr, unchanged, the scene's only environment light on phone and desktop.",
+      "files": [
+        "../../_assets/hdri/music_hall_01_1k.hdr"
+      ]
+    },
+    {
+      "what": "Poster and thumbnail",
+      "title": "Tapehead Hi-Fi poster (WebGL fallback still) and thumbnail",
+      "author": "Zyqor Studio",
+      "licence": "MIT",
+      "files": [
+        "poster.webp",
+        "thumb.webp"
+      ],
+      "note": "Screenshots of this page's own real-time render of the CC0 model. Not AI imagery."
+    },
+    {
+      "what": "Type",
+      "title": "Cabinet Grotesk, Satoshi",
+      "author": "Indian Type Foundry",
+      "source": "Fontshare",
+      "url": "https://www.fontshare.com",
+      "licence": "ITF Free Font License"
+    },
+    {
+      "what": "Type",
+      "title": "Instrument Serif",
+      "author": "Rodrigo Fuenzalida, Jordan Egstad",
+      "source": "GitHub",
+      "url": "https://github.com/Instrument/instrument-serif",
+      "licence": "SIL OFL 1.1"
+    },
+    {
+      "what": "Type",
+      "title": "JetBrains Mono",
+      "author": "The JetBrains Mono Project Authors",
+      "source": "GitHub",
+      "url": "https://github.com/JetBrains/JetBrainsMono",
+      "licence": "SIL OFL 1.1"
+    },
+    {
+      "what": "Engine",
+      "title": "three.js r170, GSAP, Lenis",
+      "author": "their authors",
+      "source": "npm",
+      "url": "https://threejs.org",
+      "licence": "MIT / GSAP Standard Licence"
+    }
+  ]
+}

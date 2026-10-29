@@ -1,0 +1,119 @@
+{
+  "brand": "Shelfline Ceramics",
+  "id": "A013",
+  "items": [
+    {
+      "what": "3D model",
+      "title": "Ceramic Vase 01",
+      "author": "James Ray Cock",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/ceramic_vase_01",
+      "licence": "CC0 1.0",
+      "note": "Ceramic Vase 01 by James Ray Cock, Poly Haven (CC0 1.0). Shared library model (also N002). Same file on phone and desktop.",
+      "files": [
+        "../../_assets/models/ceramic_vase_01.glb"
+      ]
+    },
+    {
+      "what": "3D model",
+      "title": "Ceramic Vase 02",
+      "author": "James Ray Cock",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/ceramic_vase_02",
+      "licence": "CC0 1.0",
+      "note": "Ceramic Vase 02 by James Ray Cock, Poly Haven (CC0 1.0). 2K glTF re-encoded once (meshopt, WebP 1024 px, all 2,756 triangles kept), 297 KB.",
+      "files": [
+        "../../_assets/models/ceramic_vase_02.glb"
+      ]
+    },
+    {
+      "what": "3D model",
+      "title": "Ceramic Vase 04",
+      "author": "James Ray Cock",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/ceramic_vase_04",
+      "licence": "CC0 1.0",
+      "note": "Ceramic Vase 04 by James Ray Cock, Poly Haven (CC0 1.0). 2K glTF re-encoded once (meshopt, WebP 1024 px, all 2,224 triangles kept), 203 KB.",
+      "files": [
+        "../../_assets/models/ceramic_vase_04.glb"
+      ]
+    },
+    {
+      "what": "3D model",
+      "title": "Antique Ceramic Vase 01",
+      "author": "James Ray Cock",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/antique_ceramic_vase_01",
+      "licence": "CC0 1.0",
+      "note": "Antique Ceramic Vase 01 by James Ray Cock, Poly Haven (CC0 1.0). 2K glTF re-encoded once (meshopt, WebP 1024 px, all 9,408 triangles kept), 181 KB.",
+      "files": [
+        "../../_assets/models/antique_ceramic_vase_01.glb"
+      ]
+    },
+    {
+      "what": "Texture",
+      "title": "Dark Planks",
+      "author": "Rob Tuytel",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/dark_planks",
+      "licence": "CC0 1.0",
+      "note": "Shared library texture (diffuse + normal, 512 px WebP) on the code-made shelf plank.",
+      "files": [
+        "../../_assets/tex/dark_planks_diff_512.webp",
+        "../../_assets/tex/dark_planks_nor_512.webp"
+      ]
+    },
+    {
+      "what": "Poster and thumbnail",
+      "title": "Shelfline Ceramics poster (WebGL fallback still) and thumbnail",
+      "author": "Zyqor Studio",
+      "licence": "MIT",
+      "files": [
+        "poster.webp",
+        "thumb.webp"
+      ],
+      "note": "Screenshots of this page's own real-time render of the CC0 model. Not AI imagery."
+    },
+    {
+      "what": "HDRI",
+      "title": "Studio Small 09",
+      "author": "Sergej Majboroda",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/studio_small_09",
+      "licence": "CC0 1.0",
+      "note": "Shared kit lighting (site/assets/hdri)."
+    },
+    {
+      "what": "Type",
+      "title": "Cabinet Grotesk, Satoshi",
+      "author": "Indian Type Foundry",
+      "source": "Fontshare",
+      "url": "https://www.fontshare.com",
+      "licence": "ITF Free Font License"
+    },
+    {
+      "what": "Type",
+      "title": "Instrument Serif",
+      "author": "Rodrigo Fuenzalida, Jordan Egstad",
+      "source": "GitHub",
+      "url": "https://github.com/Instrument/instrument-serif",
+      "licence": "SIL OFL 1.1"
+    },
+    {
+      "what": "Type",
+      "title": "JetBrains Mono",
+      "author": "The JetBrains Mono Project Authors",
+      "source": "GitHub",
+      "url": "https://github.com/JetBrains/JetBrainsMono",
+      "licence": "SIL OFL 1.1"
+    },
+    {
+      "what": "Engine",
+      "title": "three.js r170, GSAP, Lenis",
+      "author": "their authors",
+      "source": "npm",
+      "url": "https://threejs.org",
+      "licence": "MIT / GSAP Standard Licence"
+    }
+  ]
+}

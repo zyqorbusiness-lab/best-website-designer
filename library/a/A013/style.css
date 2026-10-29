@@ -1,0 +1,24 @@
+/* A013 Shelfline Ceramics - desktop. Structure 05, horizontal exhibition: vertical scroll walks the camera along one shelf. Palette: clay pink #ECD6CE / umber #2F2316 / glaze pink #E64B76. */
+body{background:var(--c1)}
+.intro-in{padding-top:var(--s8)}.lead{max-width:34ch}
+.vcaps{left:var(--gutter);top:calc(var(--s8) + 40px);width:min(26rem,32vw);height:16rem}
+.vcap{top:0;bottom:auto}
+.ticks{right:var(--gutter);bottom:var(--s6)}
+
+.intro{min-height:86svh;display:grid;align-items:end;padding-bottom:var(--s7)}
+.intro-in{display:grid;gap:var(--s4)}
+.title{font:800 clamp(4.4rem,1.6rem + 8vw,11rem)/.82 var(--f-display);letter-spacing:var(--track-display);color:var(--ink)}
+.title .serif{font-weight:400;font-style:italic;letter-spacing:-.03em;color:color-mix(in oklab,var(--c2) 70%,var(--c3))}
+.scroll-cue{display:flex;align-items:center;gap:8px;color:var(--ink-3)}.scroll-cue .icon{width:16px;height:16px}
+.shelf{position:relative;height:460svh;background:linear-gradient(var(--paper-2),var(--c1))}
+.pin{position:sticky;top:0;height:100svh;overflow:hidden}
+.pin .hero-stage{position:absolute;inset:0}
+.vcaps{position:absolute;z-index:2;pointer-events:none}
+.vcap{position:absolute;left:0;bottom:0;display:grid;gap:8px;opacity:0;transform:translateY(14px);transition:opacity var(--dur) var(--ease-out),transform var(--dur) var(--ease-out)}
+.vcap.is-on{opacity:1;transform:none}
+.vcap .mono{color:var(--ink-3)}.vcap .vh{color:var(--c3)}
+.vcap-h{font:700 clamp(2rem,1rem + 2.2vw,3.2rem)/1 var(--f-display);letter-spacing:var(--track-h)}
+.vsrc{font-size:var(--fs-xs)}
+.ticks{position:absolute;z-index:2;list-style:none;margin:0;padding:0;display:flex;gap:var(--s3)}
+.ticks li{font:500 var(--fs-xs)/1 var(--f-mono);color:var(--ink-3);padding-top:10px;border-top:2px solid var(--line);min-width:3rem;transition:color var(--dur-fast),border-color var(--dur-fast)}
+.ticks li.is-on{color:var(--ink);border-color:var(--c3)}

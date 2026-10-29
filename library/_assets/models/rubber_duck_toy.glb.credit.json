@@ -1,0 +1,11 @@
+{
+  "title": "Rubber Duck Toy",
+  "author": "Plat251",
+  "author_url": "https://polyhaven.com/all?a=Plat251",
+  "source_url": "https://polyhaven.com/a/rubber_duck_toy",
+  "licence": "CC0 1.0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution": "\"Rubber Duck Toy\" by Plat251, Poly Haven (https://polyhaven.com/a/rubber_duck_toy), CC0 1.0 (courtesy credit; no attribution required)",
+  "changes": "2K glTF from Poly Haven optimised once for phone and desktop: textures WebP at 2048 px max, meshopt compression, all 4,288 triangles kept (no simplification), packed as one GLB",
+  "downloaded": "2026-10-29"
+}

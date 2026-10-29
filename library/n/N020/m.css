@@ -1,0 +1,57 @@
+/* N020 Chordline Music School - phone build. Same ukulele model, textures and HDRI as desktop; the strings become full-width tap bars. */
+body{background:var(--c1)}
+.hero{position:relative;display:flex;flex-direction:column;padding-bottom:var(--s5)}
+.hero-stage{position:relative;order:-1;height:min(52svh,470px);min-height:360px;margin-top:calc(env(safe-area-inset-top) + 58px)}
+.hero-copy{display:grid;gap:var(--s2);padding:0 var(--gutter);position:relative;z-index:2;margin-top:calc(var(--s3) * -1)}
+.title{font-size:clamp(3.2rem,16vw,4.6rem)}
+.tag{order:-1}
+.gesture{left:50%;top:10px;translate:-50% 0;white-space:nowrap;padding:8px 12px;border-radius:var(--pill);background:color-mix(in oklab,var(--c1) 70%,transparent)}
+.strings{display:grid;gap:4px;padding:var(--s4) var(--gutter) 0}
+.string{grid-template-columns:2.4rem 1fr 5rem;min-height:56px;border:1px solid var(--line);background:color-mix(in oklab,var(--c1) 80%,transparent)}
+.string:active{background:color-mix(in oklab,var(--c3) 10%,var(--c1))}
+.level-card{margin:var(--s3) var(--gutter) 0}
+
+.title{font:800 clamp(4.2rem,1.4rem + 7vw,9.4rem)/.82 var(--f-display);letter-spacing:var(--track-display);color:var(--ink)}
+.title .serif{font-weight:400;font-style:italic;letter-spacing:-.03em;color:color-mix(in oklab,var(--c2) 70%,var(--c3))}
+.gesture{position:absolute;display:flex;align-items:center;gap:8px;color:var(--ink-3);transition:opacity var(--dur) var(--ease-out);pointer-events:none}
+.gesture .icon{width:16px;height:16px}
+.hero-stage.has-turned .gesture{opacity:0}
+.string{position:relative;display:grid;grid-template-columns:3.2rem 1fr 6.2rem;align-items:center;gap:var(--s3);width:100%;min-height:52px;padding:0 var(--s2);border-radius:var(--radius-sm);color:var(--ink);text-align:left;transition:background var(--dur-fast) var(--ease-out)}
+.string:focus-visible{outline:2px solid var(--c3);outline-offset:2px}
+.s-note{font:700 1.5rem/1 var(--f-display);letter-spacing:-.02em}
+.s-line{width:100%;height:24px;overflow:visible}
+.s-line path{fill:none;stroke:color-mix(in oklab,var(--c2) 78%,var(--c1));stroke-width:1.6;vector-effect:non-scaling-stroke}
+.string[data-string="0"] .s-line path{stroke-width:1.4}.string[data-string="1"] .s-line path{stroke-width:2.4}.string[data-string="2"] .s-line path{stroke-width:2}.string[data-string="3"] .s-line path{stroke-width:1.2}
+.string.is-on .s-line path{stroke:var(--c3)}
+.string.is-on .s-note{color:var(--c3)}
+.s-hz{color:var(--ink-3);text-align:right}
+.level-card{display:grid;gap:6px;align-content:start;padding:var(--s4);border:1px solid var(--line);border-radius:var(--radius);background:color-mix(in oklab,var(--c1) 70%,transparent);box-shadow:var(--spec)}
+.lc-k{color:var(--c3)}
+.lc-h{font:700 clamp(1.6rem,1rem + 1.2vw,2.3rem)/1.05 var(--f-display);letter-spacing:var(--track-h)}
+.level-card.flash .lc-h,.level-card.flash .lc-b{animation:lc .48s var(--ease-out)}
+@keyframes lc{from{opacity:0;transform:translateY(10px)}}
+.levels .tt{list-style:none;margin:var(--s6) 0 0;padding:0;border-top:1px solid var(--line-strong)}
+.tt-row{display:grid;align-items:baseline;gap:var(--s4);padding:var(--s4) 0;border-bottom:1px solid var(--line)}
+.tt-note{font-size:clamp(3rem,2rem + 3vw,5.4rem);line-height:.8;font-style:italic;color:var(--c3)}
+.tt-main{display:grid;gap:6px}.tt-main .mono{color:var(--ink-3)}
+.tt-main h3{font:700 1.5rem/1.1 var(--f-display);letter-spacing:var(--track-h)}
+.tt-time{color:var(--ink-2)}
+.chords{background:var(--c2);color:var(--c1)}
+.chords .tag,.chords .body{color:var(--on-dark-2)}
+.chords .h2{color:var(--c1)}.chords .h2 .serif{font-style:italic;font-weight:400;color:color-mix(in oklab,var(--c1) 70%,var(--c3))}
+.ch-row{display:grid;gap:var(--s3)}
+.chord{display:grid;justify-items:center;gap:8px;padding:var(--s4) var(--s3);border:1px solid var(--line-dark);border-radius:var(--radius);color:var(--c1);transition:transform var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out)}
+.chord svg{width:96px;height:96px;overflow:visible}
+.chord .frets path{fill:none;stroke:var(--on-dark-2);stroke-width:1.2}.chord .frets .nut{stroke:var(--c1);stroke-width:3}
+.chord .dot{fill:var(--c3)}.chord .open{fill:none;stroke:var(--c1);stroke-width:1.4}
+.ch-n{font:700 1.6rem/1 var(--f-display)}.ch-s{color:var(--on-dark-2)}
+.chord.is-on{border-color:var(--c3);transform:translateY(-4px)}
+.chord:focus-visible{outline:2px solid var(--c3);outline-offset:3px}
+
+.lv-head{display:grid;gap:var(--s3)}
+.tt-row{grid-template-columns:4.2rem 1fr;gap:var(--s3)}
+.tt-time{grid-column:2}
+.tt-note{font-size:3.4rem}
+.ch-in{display:grid;gap:var(--s5)}.ch-head{display:grid;gap:var(--s3)}
+.ch-row{grid-template-columns:1fr 1fr}
+.chord svg{width:84px;height:84px}

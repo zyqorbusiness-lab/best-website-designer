@@ -1,0 +1,11 @@
+{
+  "title": "Round Spectacles",
+  "author": "Sean Buckley",
+  "author_url": "https://polyhaven.com/all?a=Sean%20Buckley",
+  "source_url": "https://polyhaven.com/a/round_spectacles",
+  "licence": "CC0 1.0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution": "\"Round Spectacles\" by Sean Buckley, Poly Haven (https://polyhaven.com/a/round_spectacles), CC0 1.0 (courtesy credit; no attribution required)",
+  "changes": "2K glTF from Poly Haven optimised once for phone and desktop: textures WebP at 2048 px max, meshopt compression, all 11,810 triangles kept (no simplification), packed as one GLB",
+  "downloaded": "2026-10-29"
+}

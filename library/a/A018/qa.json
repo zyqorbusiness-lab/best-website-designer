@@ -1,6 +1,6 @@
 {
  "id": "A018",
- "date": "2026-10-29T11:07:23.440Z",
+ "date": "2026-10-29T20:19:08.817Z",
  "kit": 2,
  "verdict": "PASS",
  "tier": "advanced",
@@ -95,7 +95,7 @@
    "overflow": 0,
    "webgl": true,
    "ownKB": 1624,
-   "sharedKB": 1245
+   "sharedKB": 1246
   },
   "rm390": {
    "pass": true,
@@ -105,7 +105,7 @@
    "overflow": 0,
    "webgl": true,
    "ownKB": 1624,
-   "sharedKB": 1112
+   "sharedKB": 1113
   },
   "nd1440": {
    "pass": true,

@@ -1,0 +1,70 @@
+{
+  "brand": "Cut & Grain Knives",
+  "id": "A027",
+  "items": [
+    {
+      "what": "3D model",
+      "title": "Fish Knife",
+      "author": "Mateusz Sadek",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/fish_knife",
+      "licence": "CC0 1.0",
+      "note": "Fish Knife by Mateusz Sadek, Poly Haven (CC0 1.0). 2K glTF re-encoded once (meshopt, WebP 1024 px, all 2,736 triangles kept, blade and handle kept as separate parts), 488 KB. Same file on phone and desktop.",
+      "files": [
+        "../../_assets/models/fish_knife.glb"
+      ]
+    },
+    {
+      "what": "Poster and thumbnail",
+      "title": "Cut & Grain Knives poster (WebGL fallback still) and thumbnail",
+      "author": "Zyqor Studio",
+      "licence": "MIT",
+      "files": [
+        "poster.webp",
+        "thumb.webp"
+      ],
+      "note": "Screenshots of this page's own real-time render of the CC0 model. Not AI imagery."
+    },
+    {
+      "what": "HDRI",
+      "title": "Studio Small 09",
+      "author": "Sergej Majboroda",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/studio_small_09",
+      "licence": "CC0 1.0",
+      "note": "Shared kit lighting (site/assets/hdri)."
+    },
+    {
+      "what": "Type",
+      "title": "Cabinet Grotesk, Satoshi",
+      "author": "Indian Type Foundry",
+      "source": "Fontshare",
+      "url": "https://www.fontshare.com",
+      "licence": "ITF Free Font License"
+    },
+    {
+      "what": "Type",
+      "title": "Instrument Serif",
+      "author": "Rodrigo Fuenzalida, Jordan Egstad",
+      "source": "GitHub",
+      "url": "https://github.com/Instrument/instrument-serif",
+      "licence": "SIL OFL 1.1"
+    },
+    {
+      "what": "Type",
+      "title": "JetBrains Mono",
+      "author": "The JetBrains Mono Project Authors",
+      "source": "GitHub",
+      "url": "https://github.com/JetBrains/JetBrainsMono",
+      "licence": "SIL OFL 1.1"
+    },
+    {
+      "what": "Engine",
+      "title": "three.js r170, GSAP, Lenis",
+      "author": "their authors",
+      "source": "npm",
+      "url": "https://threejs.org",
+      "licence": "MIT / GSAP Standard Licence"
+    }
+  ]
+}

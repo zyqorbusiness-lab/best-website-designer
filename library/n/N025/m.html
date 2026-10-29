@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en" data-build="m">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- desktop -> phone build when ?m=1 is absent -->
+<script>document.documentElement.classList.add('js');(function(){var q=location.search;if(/[?&]m=1/.test(q))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height,phone=w<=860||(c&&h>w);if(!phone)location.replace('./'+q+location.hash);})();</script>
+<title>Bathtime Duck &middot; Concept N025 &middot; Zyqor Library</title>
+<meta name="description" content="Bathtime Duck is a fictional brand: a normal 3D web concept by Zyqor Studio. A calm field guide to one rubber duck: tap the water and it bobs away from the ripple.">
+<meta name="theme-color" content="#FBE7DA">
+<meta property="og:title" content="Bathtime Duck &middot; Concept N025 &middot; Zyqor Library">
+<meta property="og:description" content="A fictional-brand 3D concept by Zyqor Studio.">
+<meta property="og:image" content="thumb.webp">
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../_kit/stage.js" as="script" crossorigin>
+<link rel="preload" href="../../_assets/models/rubber_duck_toy.glb" as="fetch" crossorigin>
+<link rel="stylesheet" href="../../_kit/concept.css">
+<link rel="stylesheet" href="../../_kit/landing.css">
+<link rel="stylesheet" href="m.css">
+<style>:root{--c1:#FBE7DA;--c2:#164234;--c3:#C59B24}</style>
+<script type="importmap">{"imports":{"three":"../../../vendor/three/three.module.min.js","three/addons/":"../../../vendor/three/addons/"}}</script>
+</head>
+<body class="grain" data-id="N025" data-tier="normal" data-name="Bathtime Duck">
+<a class="skip" href="#main">Skip to content</a>
+<nav class="bnav" aria-label="Bathtime Duck">
+  <div class="bnav-in">
+    <a class="logo" href="#main" aria-label="Bathtime Duck, back to top"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 19c0 5 4 8 10 8s10-3 10-8c0-2-1-3-3-3h-4c2-1 3-3 3-5a5 5 0 0 0-10 0c0 2 1 4 3 5H9c-2 0-3 1-3 3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M20 10h4" stroke="var(--c3)" stroke-width="2.4" stroke-linecap="round"/></svg><span>Bathtime Duck</span></a>
+    <ul class="bnav-links"><li><a href="#duck">The duck</a></li><li><a href="#notes">Field notes</a></li><li><a href="#sizes">Sizes</a></li><li><a href="#care">Care</a></li><li><a href="#order">Order</a></li></ul>
+    <a class="btn btn--accent bnav-cta" href="#order" data-press>Adopt a duck</a>
+    <button class="menu-btn" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="msheet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>Menu</button>
+  </div>
+</nav>
+<dialog class="msheet" id="msheet" aria-label="Menu">
+  <div class="msheet-in">
+    <div class="msheet-top"><span class="logo"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 19c0 5 4 8 10 8s10-3 10-8c0-2-1-3-3-3h-4c2-1 3-3 3-5a5 5 0 0 0-10 0c0 2 1 4 3 5H9c-2 0-3 1-3 3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M20 10h4" stroke="var(--c3)" stroke-width="2.4" stroke-linecap="round"/></svg><span>Bathtime Duck</span></span><button class="msheet-x" type="button" aria-label="Close menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+    <ul><li><a href="#duck">The duck<span>01</span></a></li><li><a href="#notes">Field notes<span>02</span></a></li><li><a href="#sizes">Sizes<span>03</span></a></li><li><a href="#care">Care<span>04</span></a></li><li><a href="#order">Order<span>05</span></a></li></ul>
+    <a class="btn btn--accent" href="#order">Adopt a duck</a>
+  </div>
+</dialog>
+<main id="main">
+  <section class="hero" id="duck" aria-labelledby="h1">
+    <div class="plate" data-rv>
+      <p class="tag">Bath toys &middot; Concept N025</p>
+      <p class="plate-no mono">Plate 01 / 01</p>
+      <h1 id="h1" class="title">Bathtime <span class="serif">Duck</span></h1>
+      <p class="latin serif">Anas balnearia, the common bath duck</p>
+      <p class="lead">A field guide to exactly one duck. Tap the water and watch it bob away from the ripple.</p>
+    </div>
+    <div class="hero-stage" data-stage>
+      <noscript><img class="poster" src="poster.webp" alt="A yellow rubber duck floating on calm green bath water"></noscript>
+      <p class="gesture mono" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="7" opacity=".55"/><circle cx="12" cy="12" r="10.5" opacity=".25"/></svg>Tap the water</p>
+    </div>
+    <dl class="readout" data-rv>
+      <div><dt class="mono">Heel (tilt)</dt><dd><b class="num" id="ro-tilt">0.0</b><small>deg</small></dd></div>
+      <div><dt class="mono">Drift</dt><dd><b class="num" id="ro-drift">0.0</b><small>cm</small></dd></div>
+      <div><dt class="mono">Ripples</dt><dd><b class="num" id="ro-rip">0</b><small>made</small></dd></div>
+      <div class="ro-btn"><button class="btn btn--accent" type="button" data-press data-action="splash"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c3 4 5 7 5 10a5 5 0 0 1-10 0c0-3 2-6 5-10z"/></svg>Make a splash</button></div>
+    </dl>
+    <p class="sr-only" aria-live="polite" id="live"></p>
+  </section>
+  <section class="section notes" id="notes" aria-labelledby="nt-h">
+    <div class="wrap nt-in">
+      <div class="nt-head"><p class="tag" data-rv>Field notes</p><h2 id="nt-h" class="h2" data-rv>Observed closely, <span class="serif">for science.</span></h2></div>
+      <dl class="nt-list"><div class="nt-item" data-rv><dt class="mono">01 &middot; Habitat</dt><dd class="body">Warm still water, 36 to 38 degrees. Rarely seen in the wild; common on bath edges.</dd></div><div class="nt-item" data-rv><dt class="mono">02 &middot; Behaviour</dt><dd class="body">Turns to face nothing in particular. Drifts away from any disturbance, then slowly back to the middle.</dd></div><div class="nt-item" data-rv><dt class="mono">03 &middot; Call</dt><dd class="body">A single squeak, produced only when squeezed. Silent when floating.</dd></div><div class="nt-item" data-rv><dt class="mono">04 &middot; Field marks</dt><dd class="body">Orange bill, painted eyes, a seam you can feel under the tail where the two halves meet.</dd></div></dl>
+    </div>
+  </section>
+  <section class="section sizes" id="sizes" aria-labelledby="sz-h">
+    <div class="wrap">
+      <div class="sz-head"><p class="tag" data-rv>Sizes</p><h2 id="sz-h" class="h2" data-rv>Three ducks, <span class="serif">one shape.</span></h2></div>
+      <div class="sz-row" role="list"><div class="sz" role="listitem" data-rv><svg viewBox="0 0 120 120" aria-hidden="true" style="--k:0.55"><g transform="translate(60 104) scale(0.55) translate(-60 -104)"><path d="M22 84c0 14 14 22 38 22s40-8 40-22c0-6-4-9-10-9H76c7-3 11-9 11-16a19 19 0 0 0-38 0c0 7 4 13 11 16H32c-6 0-10 3-10 9z" class="duck"/><path d="M84 54h14" class="bill"/></g><path d="M8 106h104" class="line"/></svg><span class="sz-n">Duckling</span><span class="mono">6 cm tall</span><p class="body">for the soap dish</p></div><div class="sz" role="listitem" data-rv><svg viewBox="0 0 120 120" aria-hidden="true" style="--k:0.8"><g transform="translate(60 104) scale(0.8) translate(-60 -104)"><path d="M22 84c0 14 14 22 38 22s40-8 40-22c0-6-4-9-10-9H76c7-3 11-9 11-16a19 19 0 0 0-38 0c0 7 4 13 11 16H32c-6 0-10 3-10 9z" class="duck"/><path d="M84 54h14" class="bill"/></g><path d="M8 106h104" class="line"/></svg><span class="sz-n">Standard</span><span class="mono">9 cm tall</span><p class="body">the one in the picture</p></div><div class="sz" role="listitem" data-rv><svg viewBox="0 0 120 120" aria-hidden="true" style="--k:1.0"><g transform="translate(60 104) scale(1.0) translate(-60 -104)"><path d="M22 84c0 14 14 22 38 22s40-8 40-22c0-6-4-9-10-9H76c7-3 11-9 11-16a19 19 0 0 0-38 0c0 7 4 13 11 16H32c-6 0-10 3-10 9z" class="duck"/><path d="M84 54h14" class="bill"/></g><path d="M8 106h104" class="line"/></svg><span class="sz-n">Grand</span><span class="mono">14 cm tall</span><p class="body">for a deep bath</p></div></div>
+    </div>
+  </section>
+  <section class="section pn-sec care" id="care" aria-labelledby="cr-h">
+    <div class="wrap pn-book">
+      <div class="pn-head"><p class="tag" data-rv>Care</p><h2 id="cr-h" class="h2" data-rv>Four steps <span class="serif">after every bath.</span></h2>
+        <p class="body" data-rv>Bath toys hold water. These four steps keep the inside dry.</p></div>
+      <ol class="pn-steps" data-rv-group><li data-rv><div><h3>Rinse</h3><p class="body">Run it under clean water after every bath.</p></div></li><li data-rv><div><h3>Squeeze out</h3><p class="body">Hold it nose-down and press until no water comes out of the base.</p></div></li><li data-rv><div><h3>Dry upside down</h3><p class="body">On a rack or a towel, base up, overnight.</p></div></li><li data-rv><div><h3>Retire gracefully</h3><p class="body">If the paint chips, it becomes a shelf duck.</p></div></li></ol>
+    </div>
+  </section>
+  <section class="section pn-sec form-sec" id="order" aria-labelledby="od-h">
+    <div class="wrap pn-book">
+      <div class="pn-head"><p class="tag" data-rv>Adopt a duck</p><h2 id="od-h" class="h2" data-rv>One duck, <span class="serif">well looked after.</span></h2>
+        <p class="body" data-rv>Choose a size. Bathtime Duck is a fictional brand. This is a concept form: it checks what you type, but nothing is sent anywhere.</p></div>
+      <div data-rv>
+        <form class="form" data-honest data-success="od-ok" data-echo="Thanks, {name}. Bathtime Duck is fictional, so nothing left this page. A real shop would write to {email} about a {size} duck." novalidate>
+          <div class="row2">
+            <div class="field"><label for="od-name">Your name</label><input class="input" id="od-name" name="name" type="text" autocomplete="name" required minlength="2" data-req="Tell us what to call you." placeholder="Sam Okafor" aria-describedby="od-name-err"><p class="err" id="od-name-err" aria-live="polite"></p></div>
+            <div class="field"><label for="od-email">Email</label><input class="input" id="od-email" name="email" type="email" autocomplete="email" required data-req="We need an email to reply." placeholder="you@example.com" aria-describedby="od-email-err"><p class="err" id="od-email-err" aria-live="polite"></p></div>
+          </div>
+          <div class="field"><label for="od-size">Size</label><select class="input" id="od-size" name="size" required data-req="Pick one." aria-describedby="od-size-err"><option value="">Choose</option><option>Duckling (6 cm)</option><option>Standard (9 cm)</option><option>Grand (14 cm)</option></select><p class="err" id="od-size-err" aria-live="polite"></p></div>
+          <div class="field"><fieldset><legend>Wrapping</legend><div class="chips"><label><input type="radio" name="wrap" value="plain" checked><span>Plain box</span></label><label><input type="radio" name="wrap" value="gift"><span>Gift wrapped</span></label></div></fieldset></div>
+          <div class="submit-row"><button class="btn btn--accent" type="submit" data-press><span class="spin" aria-hidden="true"></span>Adopt a duck</button><p class="form-note">Concept form. Nothing leaves this page.</p></div>
+        </form>
+        <div class="success" id="od-ok" tabindex="-1" role="status">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="15"/><path d="M13 20l5 5 9-10"/></svg>
+          <p class="tag">Concept: not sent</p>
+          <h3>Thanks. Nothing was sent.</h3>
+          <p class="body" data-echo></p>
+          <button class="btn btn--ghost" type="button" data-again>Fill it in again</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<script type="module" src="../../_kit/chrome.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>
