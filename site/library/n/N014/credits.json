@@ -9,10 +9,43 @@
       "source": "Poly Haven",
       "url": "https://polyhaven.com/a/round_spectacles",
       "licence": "CC0 1.0",
-      "note": "Round Spectacles by Sean Buckley, Poly Haven (CC0 1.0). 2K glTF re-encoded once (meshopt, WebP 2048 px, all 11,810 triangles kept), 667 KB. Lens material set to clear transmission in the page. Same file on phone and desktop.",
+      "note": "Hero glasses, the exploded frame and the finishes. 2K glTF re-encoded once (meshopt, WebP), all 11,810 triangles kept. The page splits it into its own connected pieces and measures them; the wire is shown in warm gold and the four finishes, the lens glass is replaced by our refraction shader. Same file on phone and desktop.",
       "files": [
         "../../_assets/models/round_spectacles.glb"
       ]
+    },
+    {
+      "what": "3D model",
+      "title": "Magnifying Glass 01",
+      "author": "Nazar Borodavka",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/magnifying_glass_01",
+      "licence": "CC0 1.0",
+      "note": "The two '1 or 2' lenses in #exam. 1K glTF packed once (meshopt, WebP 512 px), all 7,240 triangles kept; ring and handle shown in warm tortoise brown, lens glass replaced by our refraction shader.",
+      "files": [
+        "../../_assets/models/magnifying_glass_01.glb"
+      ]
+    },
+    {
+      "what": "3D model",
+      "title": "Vintage Wooden Drawer 01",
+      "author": "James Ray Cock",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/vintage_wooden_drawer_01",
+      "licence": "CC0 1.0",
+      "note": "The frame drawer the glasses rest on in #finishes, scaled to a tabletop size; its top middle drawer slides open. 1K glTF packed once (meshopt, WebP 512 px), all 5,184 triangles kept.",
+      "files": [
+        "../../_assets/models/vintage_wooden_drawer_01.glb"
+      ]
+    },
+    {
+      "what": "HDRI",
+      "title": "Studio Small 09",
+      "author": "Sergej Majboroda",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/studio_small_09",
+      "licence": "CC0 1.0",
+      "note": "Shared kit lighting and lens reflections (site/assets/hdri)."
     },
     {
       "what": "Poster and thumbnail",
@@ -23,45 +56,36 @@
         "poster.webp",
         "thumb.webp"
       ],
-      "note": "Screenshots of this page's own real-time render of the CC0 model. Not AI imagery."
+      "note": "Screenshots of this page's own real-time render of the CC0 models. Real-time render, no generated imagery."
     },
     {
       "what": "Eye chart",
       "title": "Snellen-style eye chart",
       "author": "Zyqor Studio",
       "licence": "MIT",
-      "note": "Drawn in code on a canvas (a prop): letter rows in the classic Snellen proportions."
+      "note": "Drawn in code on a canvas (chart.js): eight rows, each 0.8x the one above."
     },
     {
-      "what": "Fit drawing",
-      "title": "Frame measurement drawing",
+      "what": "Fit drawing and tortoise pattern",
+      "title": "Frame fit drawing, tortoise finish",
       "author": "Zyqor Studio",
       "licence": "MIT",
-      "note": "Drawn in code (SVG)."
-    },
-    {
-      "what": "HDRI",
-      "title": "Studio Small 09",
-      "author": "Sergej Majboroda",
-      "source": "Poly Haven",
-      "url": "https://polyhaven.com/a/studio_small_09",
-      "licence": "CC0 1.0",
-      "note": "Shared kit lighting (site/assets/hdri)."
+      "note": "Drawn in code (SVG from the model's measured parts; canvas pattern)."
     },
     {
       "what": "Type",
-      "title": "Cabinet Grotesk, Satoshi",
-      "author": "Indian Type Foundry",
-      "source": "Fontshare",
-      "url": "https://www.fontshare.com",
-      "licence": "ITF Free Font License"
+      "title": "Archivo",
+      "author": "Omnibus-Type",
+      "source": "Google Fonts",
+      "url": "https://fonts.google.com/specimen/Archivo",
+      "licence": "SIL OFL 1.1"
     },
     {
       "what": "Type",
-      "title": "Instrument Serif",
-      "author": "Rodrigo Fuenzalida, Jordan Egstad",
-      "source": "GitHub",
-      "url": "https://github.com/Instrument/instrument-serif",
+      "title": "Inter Tight",
+      "author": "The Inter Project Authors",
+      "source": "Google Fonts",
+      "url": "https://fonts.google.com/specimen/Inter+Tight",
       "licence": "SIL OFL 1.1"
     },
     {
@@ -74,11 +98,11 @@
     },
     {
       "what": "Engine",
-      "title": "three.js r170, GSAP, Lenis",
-      "author": "their authors",
+      "title": "three.js r170",
+      "author": "three.js authors",
       "source": "npm",
       "url": "https://threejs.org",
-      "licence": "MIT / GSAP Standard Licence"
+      "licence": "MIT"
     }
   ]
 }
