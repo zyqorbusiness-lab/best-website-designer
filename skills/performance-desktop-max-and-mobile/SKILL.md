@@ -85,6 +85,37 @@ counts toward the total but not toward the first-load limits.
 
 ---
 
+### 2b. Loading choreography by tier
+
+What arrives in which order is a design decision. The order Zyqor uses:
+
+| Moment | NORMAL | ADVANCED | PREMIUM |
+|---|---|---|---|
+| HTML + inline critical CSS | 0 ms | 0 ms | 0 ms |
+| Hero image / poster (LCP) | high priority | high priority | the 3D scene's poster frame, high priority |
+| Display font | preloaded | preloaded | preloaded |
+| Libraries | none or own JS (module, deferred) | GSAP + ScrollTrigger after first paint | three.js + loaders after first paint, during idle time |
+| Heavy media | lazy below the fold | the scroll video / model when the hero is painted | the hero model right after the poster; other models when their section is about one screen away |
+| Sound, analytics | none / after `load` | after `load` | sound only after the opt-in tap |
+
+```js
+// Load a section's heavy asset when it is about one screen away (the "prefetch window", scroll-world T14)
+const near = new IntersectionObserver((entries) => {
+  for (const e of entries) if (e.isIntersecting) { near.unobserve(e.target); import('./scene.js').then((m) => m.mount(e.target)); }
+}, { rootMargin: '100% 0px' });             // one viewport ahead
+document.querySelectorAll('[data-scene]').forEach((el) => near.observe(el));
+
+// Non-urgent work after first paint, without blocking input
+const idle = window.requestIdleCallback || ((cb) => setTimeout(cb, 200));
+idle(() => import('./analytics.js'));
+```
+
+The home page of this repo shows why this matters: it loads 12.7 MB of 3D models on desktop at first visit (section
+10c). Loading each featured model only when its card is a screen away would keep the first load near the poster
+frames.
+
+---
+
 ## 3. Images
 
 | Step | Setting |
@@ -200,6 +231,58 @@ traffic is high (Vercel Hobby is for personal and small projects: Drive P8).
 
 ---
 
+### 10b. Lab data and field data
+
+- **Lab** (one run on your machine): budget-check, Lighthouse, the Performance panel. Repeatable, good for finding
+  causes. Lighthouse from the command line:
+
+```bash
+npx lighthouse https://example.com/ --only-categories=performance --output=json --output-path=lh-mobile.json --chrome-flags="--headless"
+npx lighthouse https://example.com/ --preset=desktop --only-categories=performance --output=json --output-path=lh-desktop.json --chrome-flags="--headless"
+```
+
+- **Field** (real visitors, the 75th percentile over 28 days, from the Chrome UX Report): PageSpeed Insights shows it
+  when a site has enough traffic; new client sites usually have none for weeks. The API:
+  `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=<url>&strategy=mobile` (an API key is needed for
+  regular use). Search Console's Core Web Vitals report shows the same field data per URL group.
+- Report which kind a number is. "LCP 460 ms" from a headless run on a fast connection is not what a visitor on 4G
+  gets; say "lab, desktop, no throttle".
+
+### 10c. Measured on this repo (30 Oct 2026)
+
+`budget-check.mjs` against the live Vercel site (headless Chrome, software WebGL, so fps on 3D pages is not meaningful):
+
+| Page (tier) | Own 1440 / 390 | JS | 3D | LCP 1440 / 390 | CLS 1440 / 390 | Long tasks 390 (4x CPU) |
+|---|---|---|---|---|---|---|
+| Home (PREMIUM) | 18.6 MB / 14.0 MB | 312 KB | 12.7 MB | 460 / 764 ms | 0.03 / 0.019 | 46 tasks, 6.9 s over 50 ms |
+| P041 (PREMIUM) | 771 / 779 KB | 26 KB | 0 | 708 / 560 ms | 1.006 (intermittent) / 0 | 1 task |
+| N020 (NORMAL) | 834 / 841 KB | 341 KB | 624 KB | 1600 / 1704 ms | 2.0 / 0 | 7 tasks, 0.9 s |
+| EMBER lab (ADVANCED) | 2.07 / 2.09 MB | 266 KB | 1.84 MB | 576 / 488 ms | 1.003 / 0 | 91 tasks, 5.4 s (software WebGL) |
+
+Findings, each with its lesson:
+
+1. **Weight that fails while LCP passes.** Every page painted its LCP fast, and two still failed their tier on weight
+   or JS. LCP alone does not tell you a page is light.
+2. **Intermittent desktop CLS of 1.0.** Found with this probe, which names the elements that moved:
+
+```js
+new PerformanceObserver((list) => {
+  for (const e of list.getEntries()) if (!e.hadRecentInput)
+    console.log(e.value.toFixed(3), Math.round(e.startTime), e.sources.map((s) => [s.node, s.previousRect, s.currentRect]));
+}).observe({ type: 'layout-shift', buffered: true });
+```
+
+   The first full-viewport section was reported at 0 height and then 900 px (P041 on 3 of 6 loads, N020 on 4 of 4).
+   Both sections already have `min-height:100svh`, so the cause is in the shared kit's load sequence; not isolated
+   in this pass. Run the probe several times: a shift that happens on some loads is a real shift for those visitors.
+3. **A "no content-encoding" note was a false alarm at first.** The first version of budget-check flagged two files
+   as uncompressed; Vercel served the CSS and JS with Brotli (checked with `curl -H "Accept-Encoding: br"`). The
+   script now names the files and ignores those under 1 KB (one 978-byte module, which Vercel sends as is).
+4. **Phone long tasks on the home page** (46 tasks, 6.9 s at 4x CPU) come from parsing and uploading the 3D models;
+   the loading choreography in section 2b is the fix.
+
+---
+
 ## 11. Do and don't
 
 | Do | Because |
@@ -248,3 +331,5 @@ traffic is high (Vercel Hobby is for personal and small projects: Drive P8).
 - scroll-world by cyw (MIT), https://github.com/oso95/scroll-world: Blob-loaded video (T2), lazy window (T14), seek coalescing (T15), encode recipes (T10).
 - web.dev: Core Web Vitals thresholds (LCP, INP, CLS), Optimize LCP, `content-visibility`, `scheduler.yield`; MDN: PerformanceObserver (largest-contentful-paint, layout-shift, longtask), `fetchpriority`, preload.
 - Vercel documentation: headers in `vercel.json`, caching; Zyqor portfolio v3 measured bakery encode (crf 26, g 12).
+- Live measurements on https://zyqor-portfolio.vercel.app with `scripts/budget-check.mjs` and a `layout-shift` observer probe, 30 Oct 2026 (section 10c); Brotli confirmed with curl the same day.
+- Lighthouse CLI (`--preset=desktop`, `--only-categories`), PageSpeed Insights API v5 and the Chrome UX Report (field data, 75th percentile over 28 days): developer.chrome.com and developers.google.com documentation.

@@ -52,8 +52,10 @@ Each skill is a folder an agent can read (`SKILL.md` with frontmatter, rules wit
 | [`seo-and-meta`](skills/seo-and-meta/) | Real tags, OG images, JSON-LD, sitemap.xml / robots.txt, and Google Search Console step by step. `seo-check.mjs`, `sitemap.mjs`. |
 | [`imagery-assets-licensing`](skills/imagery-assets-licensing/) | Real photos, video, 3D, icons and fonts: free sources, licence limits, credit files, grading, crops, knockouts; no AI images. |
 | [`interactive-product-configurator`](skills/interactive-product-configurator/) | Drag-to-build product configurators (pizza builder): real photo layers, drag + tap, live ticket, bake transition. Concept P041. |
+| [`award-site-teardown-method`](skills/award-site-teardown-method/) | Study award sites and extract techniques (not content): teardown card, DevTools recipes, timing by frame. `teardown.mjs`. |
+| [`client-site-delivery-workflow`](skills/client-site-delivery-workflow/) | Brief → build → QA → deploy (Vercel / sites.tab.bot) → handover, with intake, scope and the handover pack. |
 
-The tool skills (qa-harness, liquid-glass-ui, model-optimisation-phone, scroll-video-hero, unique-concepts, web-security) are listed in [`skills/README.md`](skills/README.md). Total: 22 skills.
+The tool skills (qa-harness, liquid-glass-ui, model-optimisation-phone, scroll-video-hero, unique-concepts, web-security) are listed in [`skills/README.md`](skills/README.md). Total: 24 skills.
 
 ## What's inside
 
@@ -129,7 +131,7 @@ Contact: [zyqorbusiness@gmail.com](mailto:zyqorbusiness@gmail.com) or [WhatsApp]
 
 ## Skills you can download
 
-[`skills/`](skills/) holds free, tested, MIT-licensed skills: a written method (`SKILL.md`), a working example and starter code each. Ready now: 22 skills: 16 website-design skills (start with **premium-website-playbook**) and 6 tool skills (**qa-harness**, **liquid-glass-ui**, **model-optimisation-phone**, **unique-concepts**, **web-security**, **scroll-video-hero**); the full list is in [`skills/README.md`](skills/README.md).
+[`skills/`](skills/) holds free, tested, MIT-licensed skills: a written method (`SKILL.md`), a working example and starter code each. Ready now: 24 skills: 18 website-design skills (start with **premium-website-playbook**) and 6 tool skills (**qa-harness**, **liquid-glass-ui**, **model-optimisation-phone**, **unique-concepts**, **web-security**, **scroll-video-hero**); the full list is in [`skills/README.md`](skills/README.md).
 
 ## Zyqor Lab
 

@@ -12,3 +12,5 @@ No third-party code or assets.
 | "Kami tools ki nahi, sahi selection, execution aur checking ki hai" | Sujon's Drive, MA Part G §8 |
 | Scroll-video technique per tier, previz-then-final | scroll-world by cyw (MIT), https://github.com/oso95/scroll-world |
 | Jury weights | Awwwards, read 30 Oct 2026 |
+| Library gzip sizes, live budget runs, CLS probe | measured in this repo and on https://zyqor-portfolio.vercel.app, 30 Oct 2026 |
+| Scroll-assembly technique in the tier example | igloo.inc (abeto), studied as inspiration in `award-site-teardown-method` |

@@ -2,7 +2,7 @@
 
 Each folder here is one self-contained skill you can download and use on your own projects: a written method (`SKILL.md`, readable by people and by AI coding agents), a working example, starter code, a QA checklist and an MIT licence. Every example was checked at 1440x900, 390x844 and 360x740 with 0 console errors before it shipped.
 
-## Website-design skills (the core of this repo, 16 skills + 6 tool skills = 22)
+## Website-design skills (the core of this repo, 18 skills + 6 tool skills = 24)
 
 Sujon, 30 Oct 2026: teach an AI agent, through many detailed skills, exactly how to design and build unique, premium, advanced websites. Desktop is the top bar ("PC me no compromise"); the phone matches it. Open [`premium-website-playbook`](premium-website-playbook/) first: it says which skill to use at each step. Each skill below folds in the points from his design Drive and from scroll-world (map: [`docs/beast/SKILLS_SOURCE_MAP.md`](../docs/beast/SKILLS_SOURCE_MAP.md)).
 
@@ -24,6 +24,8 @@ Sujon, 30 Oct 2026: teach an AI agent, through many detailed skills, exactly how
 | [`seo-and-meta`](seo-and-meta/) | Titles, descriptions, one H1, canonicals (incl. desktop + m.html), Open Graph / X cards, JSON-LD without fake reviews, sitemap.xml, robots.txt and Google Search Console step by step. `seo-check.mjs`, `sitemap.mjs`. |
 | [`imagery-assets-licensing`](imagery-assets-licensing/) | Free sources and each licence's limits, "unclear means skip", credit files that pass the gate, photo direction, grading into the palette, portrait crops, knockouts, own renders instead of AI images. `credit.mjs`, `knockout.py`. |
 | [`interactive-product-configurator`](interactive-product-configurator/) | Drag-to-build configurators (pizza builder from the @online.by.annie reel): real photo layers, drag with snap ring, tap-to-add on phone, layer order, live ticket, bake transition, a11y. Lead example: concept P041. |
+| [`award-site-teardown-method`](award-site-teardown-method/) | How to study Awwwards / FWA / CSSDA sites and extract techniques, not content: the teardown card, DevTools recipes (performance, network, layers), motion timing by frame, what to take and never take. `teardown.mjs` reads a live page's stack. |
+| [`client-site-delivery-workflow`](client-site-delivery-workflow/) | Brief → build → QA → deploy (Vercel / sites.tab.bot) → handover, for client and concept sites: intake questions, scope, staging, evidence, Search Console, credits, handover pack. `brief.mjs`, `handover.mjs`. |
 
 ## Tools and techniques
 

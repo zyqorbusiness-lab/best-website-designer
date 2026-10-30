@@ -6,7 +6,7 @@ Sujon, 30 Oct 2026: *"jo o repo tha (scroll-world) and drive me website ka drive
 - **scroll-world points** are the 23 techniques (SW-T1 to SW-T23) from https://github.com/oso95/scroll-world (MIT, by cyw, commit 71cc36d) in [`SCROLL_WORLD_POINTS.md`](SCROLL_WORLD_POINTS.md).
 - Drive file short names: MA = *Master-Award-Website-Guide-Improved-v4.2* (Part E = his Master Award Web Design System v2.0); WBG = *Website-Building-Guide-New-Site.md*; CHK = *web-design-promo-checklist.txt*; IDX = *DESIGN-LIBRARY-INDEX.md*; PRX = *prismx-web-build-framework.txt*; BOLO = *boloflow-native-motion-design-system.txt*; GEM = *gemini-instruction-DRAFT-motion-design.txt*; LOT = *lottie-icon-click-animation-note.txt*; MMG = MA Part F item 11 (*Master Motion Graphics Video Creator*).
 
-Status on 2026-10-30 06:45 UTC: 16 website-design skills shipped (+6 tool skills).
+Status on 2026-10-30 07:09 UTC: 18 website-design skills shipped (+6 tool skills).
 
 ## Drive points
 
@@ -94,7 +94,7 @@ Status on 2026-10-30 06:45 UTC: 16 website-design skills shipped (+6 tool skills
 | P5 | The main button is visible without scrolling at 360px and 1440px | MA Part A ("Landing page / promo"); WBG §3 | [`performance-desktop-max-and-mobile`](../../skills/performance-desktop-max-and-mobile/), [`responsive-phone-pc-parity`](../../skills/responsive-phone-pc-parity/), [`layout-grid-spacing`](../../skills/layout-grid-spacing/) |
 | P6 | 360px is a known weak width for his audience | PTS item 17 / C1 | [`performance-desktop-max-and-mobile`](../../skills/performance-desktop-max-and-mobile/), [`responsive-phone-pc-parity`](../../skills/responsive-phone-pc-parity/), [`layout-grid-spacing`](../../skills/layout-grid-spacing/) |
 | P7 | Pin versions; no development-only CDNs in production | MA Part C; WBG §8 | [`performance-desktop-max-and-mobile`](../../skills/performance-desktop-max-and-mobile/) |
-| P8 | Free hosting caveats | WBG §8 "Free hosting options" | [`performance-desktop-max-and-mobile`](../../skills/performance-desktop-max-and-mobile/), `client-site-delivery-workflow` (next batch) |
+| P8 | Free hosting caveats | WBG §8 "Free hosting options" | [`performance-desktop-max-and-mobile`](../../skills/performance-desktop-max-and-mobile/), [`client-site-delivery-workflow`](../../skills/client-site-delivery-workflow/) |
 | A1 | Contrast, focus, alt text, no colour-only meaning | WBG §6 rule 6 and §7; MA Part B; CHK "Accessibility" | [`accessibility-and-reduced-motion`](../../skills/accessibility-and-reduced-motion/), [`colour-systems`](../../skills/colour-systems/) |
 | A2 | Reduced motion that still makes sense | BOLO "ACCESSIBILITY / REDUCED MOTION"; WBG §7 ("Heavy animation stops, content readable") | [`accessibility-and-reduced-motion`](../../skills/accessibility-and-reduced-motion/) |
 | A3 | Keyboard works | MA Part B ("Keyboard"); MA Part E §11 (Escape handler) | [`accessibility-and-reduced-motion`](../../skills/accessibility-and-reduced-motion/) |
@@ -104,34 +104,34 @@ Status on 2026-10-30 06:45 UTC: 16 website-design skills shipped (+6 tool skills
 | H2 | Show the real thing, not decoration | CHK "Real product visuals"; IDX §1; MMG §17 | [`imagery-assets-licensing`](../../skills/imagery-assets-licensing/), [`unique-idea-and-concept`](../../skills/unique-idea-and-concept/) |
 | H3 | Concrete copy, no filler | MA Part E §1 table ("Generic Marketing Fluff"); MA Part F item 1 | [`copywriting-for-premium-sites`](../../skills/copywriting-for-premium-sites/) |
 | H4 | Nothing on the page says or looks AI | IDX §1; MA Part F item 13 §3 | [`imagery-assets-licensing`](../../skills/imagery-assets-licensing/), [`copywriting-for-premium-sites`](../../skills/copywriting-for-premium-sites/) |
-| H5 | Concepts are labelled and original | IDX §2; MA Part F item 13 §2h | `client-site-delivery-workflow` (next batch), [`unique-idea-and-concept`](../../skills/unique-idea-and-concept/) |
-| H6 | Legal pages exist | MA Part F item 1; CHK "Trust + legal" | [`seo-and-meta`](../../skills/seo-and-meta/), `client-site-delivery-workflow` (next batch) |
-| H7 | Never claim an award | MA Part C; WBG header; MA intro ("Honest scope") | `client-site-delivery-workflow` (next batch), [`premium-tiers-normal-advanced-premium`](../../skills/premium-tiers-normal-advanced-premium/) |
+| H5 | Concepts are labelled and original | IDX §2; MA Part F item 13 §2h | [`client-site-delivery-workflow`](../../skills/client-site-delivery-workflow/), [`unique-idea-and-concept`](../../skills/unique-idea-and-concept/) |
+| H6 | Legal pages exist | MA Part F item 1; CHK "Trust + legal" | [`seo-and-meta`](../../skills/seo-and-meta/), [`client-site-delivery-workflow`](../../skills/client-site-delivery-workflow/) |
+| H7 | Never claim an award | MA Part C; WBG header; MA intro ("Honest scope") | [`client-site-delivery-workflow`](../../skills/client-site-delivery-workflow/), [`premium-tiers-normal-advanced-premium`](../../skills/premium-tiers-normal-advanced-premium/) |
 | H8 | Licence before copying; unclear means write it yourself | MA Part F item 14 (rule + E); WBG §5b "Rules" | [`imagery-assets-licensing`](../../skills/imagery-assets-licensing/) |
 | H9 | Free only; for mixed libraries only the free part | MA Part F item 13 §3 and item 14 A; WBG §5b | [`imagery-assets-licensing`](../../skills/imagery-assets-licensing/) |
 | H10 | Photo licences have edges | MA Part C ("Unsplash licence"); WBG §8 | [`imagery-assets-licensing`](../../skills/imagery-assets-licensing/) |
 | H11 | One consistent language per site | CHK "Brand consistency" | [`copywriting-for-premium-sites`](../../skills/copywriting-for-premium-sites/) |
 | H12 | Calm, specific CTAs | CHK "CTA design" | [`copywriting-for-premium-sites`](../../skills/copywriting-for-premium-sites/) |
 | H13 | Icons: Phosphor, Tabler or custom SVG, never Lucide, no sparkles or decorative arrows | MA Part F item 14 C; WBG §2 ("Lucide icons" row) and §5b; avoid list ("lucide icons", "sparkle icons", "animated arrows") | [`imagery-assets-licensing`](../../skills/imagery-assets-licensing/) |
-| Q1 | Write the brief before any code | MA Part F item 13 §5; MA Part E §0 rule 3; WBG §6 "ORDER OF WORK a" | [`unique-idea-and-concept`](../../skills/unique-idea-and-concept/), `client-site-delivery-workflow` (next batch) |
+| Q1 | Write the brief before any code | MA Part F item 13 §5; MA Part E §0 rule 3; WBG §6 "ORDER OF WORK a" | [`unique-idea-and-concept`](../../skills/unique-idea-and-concept/), [`client-site-delivery-workflow`](../../skills/client-site-delivery-workflow/) |
 | Q2 | Name the style | MA Part F item 13 §1; IDX §2 ("Per-project styles") | [`unique-idea-and-concept`](../../skills/unique-idea-and-concept/) |
-| Q3 | Analyse each reference before building | MA Part F item 13 §2 | [`unique-idea-and-concept`](../../skills/unique-idea-and-concept/), `award-site-teardown-method` (next batch) |
-| Q4 | Build a section at a time, judge the render | MA Part A steps 3 and 6; WBG §1 step 6 | `client-site-delivery-workflow` (next batch), [`premium-website-playbook`](../../skills/premium-website-playbook/) |
-| Q5 | Pass/fail table; never ship a FAIL | WBG §7; MA Part B | `client-site-delivery-workflow` (next batch), [`premium-website-playbook`](../../skills/premium-website-playbook/) |
-| Q6 | Iterate and fix the weakest moment first | MMG §26; GEM rule 8 | `client-site-delivery-workflow` (next batch), [`premium-website-playbook`](../../skills/premium-website-playbook/) |
-| Q7 | Report evidence, not intent | GRV ("One rule above all", "THE 6 INVARIANTS" 3, 4, 6, "VERIFICATION HIERARCHY"); IDX §3 and §5 | `client-site-delivery-workflow` (next batch) |
-| Q8 | PRISMX build order | PRX | `client-site-delivery-workflow` (next batch), [`premium-website-playbook`](../../skills/premium-website-playbook/) |
+| Q3 | Analyse each reference before building | MA Part F item 13 §2 | [`unique-idea-and-concept`](../../skills/unique-idea-and-concept/), [`award-site-teardown-method`](../../skills/award-site-teardown-method/) |
+| Q4 | Build a section at a time, judge the render | MA Part A steps 3 and 6; WBG §1 step 6 | [`client-site-delivery-workflow`](../../skills/client-site-delivery-workflow/), [`premium-website-playbook`](../../skills/premium-website-playbook/) |
+| Q5 | Pass/fail table; never ship a FAIL | WBG §7; MA Part B | [`client-site-delivery-workflow`](../../skills/client-site-delivery-workflow/), [`premium-website-playbook`](../../skills/premium-website-playbook/) |
+| Q6 | Iterate and fix the weakest moment first | MMG §26; GEM rule 8 | [`client-site-delivery-workflow`](../../skills/client-site-delivery-workflow/), [`premium-website-playbook`](../../skills/premium-website-playbook/) |
+| Q7 | Report evidence, not intent | GRV ("One rule above all", "THE 6 INVARIANTS" 3, 4, 6, "VERIFICATION HIERARCHY"); IDX §3 and §5 | [`client-site-delivery-workflow`](../../skills/client-site-delivery-workflow/) |
+| Q8 | PRISMX build order | PRX | [`client-site-delivery-workflow`](../../skills/client-site-delivery-workflow/), [`premium-website-playbook`](../../skills/premium-website-playbook/) |
 | Q9 | At most two component libraries per site, restyled | WBG §5b ("Rules", shadcn row); MA Part F item 13 §5-6 | [`micro-interactions-and-cursor`](../../skills/micro-interactions-and-cursor/) |
-| Q10 | Free choice of stack; not a single-file limit | STK; IDX §1 ("Stack (16 Oct)") | `client-site-delivery-workflow` (next batch) |
+| Q10 | Free choice of stack; not a single-file limit | STK; IDX §1 ("Stack (16 Oct)") | [`client-site-delivery-workflow`](../../skills/client-site-delivery-workflow/) |
 | Q11 | The final motion review questions | BOLO "FINAL MOTION QA" | [`motion-and-scroll-storytelling`](../../skills/motion-and-scroll-storytelling/) |
 | Q12 | SEO basics on every page | WBG §1 step 8 and §6 rule 8 | [`seo-and-meta`](../../skills/seo-and-meta/) |
-| Q13 | Restyles never remove working features | IDX §1; MA Part F item 13 §3 | `client-site-delivery-workflow` (next batch) |
-| W1 | MA's 15-point quality gate, sorted against his rules | MA Part E §13 | [`premium-tiers-normal-advanced-premium`](../../skills/premium-tiers-normal-advanced-premium/), `award-site-teardown-method` (next batch) |
+| Q13 | Restyles never remove working features | IDX §1; MA Part F item 13 §3 | [`client-site-delivery-workflow`](../../skills/client-site-delivery-workflow/) |
+| W1 | MA's 15-point quality gate, sorted against his rules | MA Part E §13 | [`premium-tiers-normal-advanced-premium`](../../skills/premium-tiers-normal-advanced-premium/), [`award-site-teardown-method`](../../skills/award-site-teardown-method/) |
 | W2 | The bar is selection, execution and checking, not tools | MA Part G §8; MA header ("Honest scope") | [`premium-tiers-normal-advanced-premium`](../../skills/premium-tiers-normal-advanced-premium/), [`premium-website-playbook`](../../skills/premium-website-playbook/) |
-| W3 | The human-designed test | MMG §29 | [`premium-tiers-normal-advanced-premium`](../../skills/premium-tiers-normal-advanced-premium/), `award-site-teardown-method` (next batch), [`premium-website-playbook`](../../skills/premium-website-playbook/) |
+| W3 | The human-designed test | MMG §29 | [`premium-tiers-normal-advanced-premium`](../../skills/premium-tiers-normal-advanced-premium/), [`award-site-teardown-method`](../../skills/award-site-teardown-method/), [`premium-website-playbook`](../../skills/premium-website-playbook/) |
 | W4 | The details that make it premium | CHK "Details that make it feel premium" | [`premium-tiers-normal-advanced-premium`](../../skills/premium-tiers-normal-advanced-premium/) |
 | W5 | Three hand-made signature details per piece | MA Part F item 13 §5 | [`premium-tiers-normal-advanced-premium`](../../skills/premium-tiers-normal-advanced-premium/) |
-| W6 | The anti-AI-slop table and the 30-item avoid list as a red-flag scan | MA Part E §1; MA Part F item 1; WBG §9; BOLO "ANTI-VIBECODE DESIGN CONTRACT" | [`premium-tiers-normal-advanced-premium`](../../skills/premium-tiers-normal-advanced-premium/), `award-site-teardown-method` (next batch) |
+| W6 | The anti-AI-slop table and the 30-item avoid list as a red-flag scan | MA Part E §1; MA Part F item 1; WBG §9; BOLO "ANTI-VIBECODE DESIGN CONTRACT" | [`premium-tiers-normal-advanced-premium`](../../skills/premium-tiers-normal-advanced-premium/), [`award-site-teardown-method`](../../skills/award-site-teardown-method/) |
 | W7 | The 3-second test | MA Part E §8.3 | [`premium-tiers-normal-advanced-premium`](../../skills/premium-tiers-normal-advanced-premium/), [`layout-grid-spacing`](../../skills/layout-grid-spacing/) |
 
 ## scroll-world points (oso95/scroll-world, MIT)
@@ -158,10 +158,10 @@ SKILL L694-699; template L5 | [`motion-and-scroll-storytelling`](../../skills/mo
 | SW-T16 | Theme through a cascade layer | engine L438-442; SKILL L680-684 | [`colour-systems`](../../skills/colour-systems/) |
 | SW-T17 | One shared "style preamble" = cohesion | prompts L3-4, L33-43; SKILL L100-103, L248-250 | [`unique-idea-and-concept`](../../skills/unique-idea-and-concept/), [`threejs-3d-premium`](../../skills/threejs-3d-premium/) |
 | SW-T18 | Compose for the centre | prompts L65-70; CSS L385 | [`unique-idea-and-concept`](../../skills/unique-idea-and-concept/), [`layout-grid-spacing`](../../skills/layout-grid-spacing/), [`threejs-3d-premium`](../../skills/threejs-3d-premium/) |
-| SW-T19 | Seam QA you can automate | SKILL L613-646 | [`motion-and-scroll-storytelling`](../../skills/motion-and-scroll-storytelling/), `client-site-delivery-workflow` (next batch) |
+| SW-T19 | Seam QA you can automate | SKILL L613-646 | [`motion-and-scroll-storytelling`](../../skills/motion-and-scroll-storytelling/), [`client-site-delivery-workflow`](../../skills/client-site-delivery-workflow/) |
 | SW-T20 | Previz cheap, then final; decide cost before spending | SKILL L163-165; pipeline L298-302 | [`motion-and-scroll-storytelling`](../../skills/motion-and-scroll-storytelling/), [`threejs-3d-premium`](../../skills/threejs-3d-premium/), [`premium-website-playbook`](../../skills/premium-website-playbook/) |
-| SW-T21 | Re-roll the one failure, not the batch; run long jobs detached and poll | SKILL L68-71, L246-247, L462-463; pipeline L26-28 | [`motion-and-scroll-storytelling`](../../skills/motion-and-scroll-storytelling/), `client-site-delivery-workflow` (next batch) |
-| SW-T22 | Ask the subject openly, then only what can't be defaulted | SKILL L80-88 | [`unique-idea-and-concept`](../../skills/unique-idea-and-concept/), [`premium-website-playbook`](../../skills/premium-website-playbook/), `client-site-delivery-workflow` (next batch) |
+| SW-T21 | Re-roll the one failure, not the batch; run long jobs detached and poll | SKILL L68-71, L246-247, L462-463; pipeline L26-28 | [`motion-and-scroll-storytelling`](../../skills/motion-and-scroll-storytelling/), [`client-site-delivery-workflow`](../../skills/client-site-delivery-workflow/) |
+| SW-T22 | Ask the subject openly, then only what can't be defaulted | SKILL L80-88 | [`unique-idea-and-concept`](../../skills/unique-idea-and-concept/), [`premium-website-playbook`](../../skills/premium-website-playbook/), [`client-site-delivery-workflow`](../../skills/client-site-delivery-workflow/) |
 | SW-T23 | knockout.py: border-connected flood fill | knockout L1-21,
 L39-79 | [`imagery-assets-licensing`](../../skills/imagery-assets-licensing/) |
 

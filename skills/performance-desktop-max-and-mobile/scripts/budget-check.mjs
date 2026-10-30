@@ -17,13 +17,13 @@ const phone = W < 768; const ctx = await browser.newContext({ viewport: { width:
 const page = await ctx.newPage(); const cdp = await ctx.newCDPSession(page);
 await cdp.send('Network.enable'); if (throttle > 1) await cdp.send('Emulation.setCPUThrottlingRate', { rate: throttle });
 const reqs = new Map(); const bytes = { own: 0, vendor: 0, byType: {} }; const errors = [];
-const pending = []; let rawText = 0;
+const pending = []; let rawText = 0; const rawUrls = [];
 cdp.on('Network.responseReceived', (e) => reqs.set(e.requestId, { url: e.response.url, type: e.type, mime: e.response.mimeType, enc: Object.entries(e.response.headers).find(([k]) => k.toLowerCase() === 'content-encoding')?.[1] }));
 cdp.on('Network.loadingFinished', (e) => { const r = reqs.get(e.requestId); if (!r || r.url.startsWith('data:')) return; let n = e.encodedDataLength;
   const t = /font/.test(r.mime) || /\.woff2?$/.test(r.url) ? 'font' : r.type === 'Script' ? 'js' : r.type === 'Stylesheet' ? 'css' : r.type === 'Image' ? 'image' : r.type === 'Media' || /\.(mp4|webm)$/.test(r.url) ? 'media' : /\.(glb|gltf|hdr|ktx2|bin)$/.test(r.url) ? '3d' : r.type === 'Document' ? 'html' : 'other';
   let m = n;
-  if (!r.enc && ['js', 'css', 'html'].includes(t)) { rawText++; // server sent it uncompressed: count the gzip size production (Vercel: Brotli) would send
-    pending.push(cdp.send('Network.getResponseBody', { requestId: e.requestId }).then((b) => { const buf = Buffer.from(b.body, b.base64Encoded ? 'base64' : 'utf8'); const g = zlib.gzipSync(buf).length; const d = n - g; bytes.byType[t] -= d; if (vendorMarks.some((mk) => r.url.includes(mk))) bytes.vendor -= d; else bytes.own -= d; }).catch(() => {})); }
+  if (!r.enc && ['js', 'css', 'html'].includes(t) && n > 1024) { rawText++; rawUrls.push(r.url.split('?')[0].slice(-70)); // server sent it uncompressed: count the gzip size production (Vercel: Brotli) would send
+    pending.push(cdp.send('Network.getResponseBody', { requestId: e.requestId }).then((b) => { const buf = Buffer.from(b.body, b.base64Encoded ? 'base64' : 'utf8'); const g = zlib.gzipSync(buf).length; const d = Math.max(0, n - g); bytes.byType[t] -= d; if (vendorMarks.some((mk) => r.url.includes(mk))) bytes.vendor -= d; else bytes.own -= d; }).catch(() => {})); }
   bytes.byType[t] = (bytes.byType[t] || 0) + m; n = m; if (vendorMarks.some((m) => r.url.includes(m))) bytes.vendor += n; else bytes.own += n; });
 page.on('pageerror', (e) => errors.push(String(e)));
 await page.addInitScript(() => { window.__perf = { lcp: 0, cls: 0, long: 0, longN: 0 };
@@ -44,7 +44,7 @@ const kb = (n) => (n / 1024).toFixed(0) + ' KB';
 console.log(`budget-check ${url}\n  size ${W}x${H}  cpu throttle ${throttle}x  tier ${tier}`);
 console.log('  bytes by type: ' + Object.entries(bytes.byType).map(([k, v]) => `${k} ${kb(v)}`).join(', ') + `  (own ${kb(bytes.own)}, vendor ${kb(bytes.vendor)})`);
 let over = 0; for (const [n, v, lim] of checks) { const bad = v > lim; over += bad; console.log(`  ${bad ? 'OVER' : 'ok  '} ${n.padEnd(11)} ${typeof v === 'number' && v > 5000 ? kb(v) : v}  (limit ${lim > 5000 ? kb(lim) : lim})`); }
-if (rawText) console.log(`  note: ${rawText} text file(s) arrived uncompressed from this server; JS/CSS/HTML are counted at their gzip size (production should compress)`);
+if (rawText) console.log(`  note: ${rawText} text file(s) over 1 KB arrived without content-encoding (counted at their gzip size; production should compress): ${rawUrls.slice(0, 5).join(', ')}`);
 if ((bytes.byType['3d'] || 0) > 0 && /swiftshader|llvmpipe|software/i.test(gl)) console.log(`  note: WebGL is software-rendered here (${gl.slice(0, 60)}); fps for 3D pages is not meaningful, measure on a real GPU`);
 if (scrollCls > 0.1) console.log(`  info: layout shift during the scripted scroll ${scrollCls.toFixed(3)} (pins and sticky spacers count here; check it is intended)`);
 console.log(`  long tasks: ${perf.longN} (${Math.round(perf.long)} ms over 50 ms)` + (fps ? `   scroll fps: ${fps.avg} avg, worst frame ${fps.worstFrameMs} ms` : '   page too short to scroll'));

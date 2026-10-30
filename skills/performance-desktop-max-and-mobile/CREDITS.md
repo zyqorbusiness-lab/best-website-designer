@@ -12,3 +12,5 @@ No third-party code or media. Font from `../typography-premium/examples/fonts/` 
 | Core Web Vitals thresholds, LCP optimisation, content-visibility, scheduler.yield | web.dev (Google) |
 | PerformanceObserver entry types, fetchpriority, preload | MDN Web Docs |
 | Measured web encode crf 26 / g 12 | Zyqor portfolio v3 bakery build |
+| Live budget runs, CLS probe, Brotli check | measured on https://zyqor-portfolio.vercel.app, 30 Oct 2026 |
+| Lighthouse CLI, PageSpeed Insights API, CrUX | Google developer documentation |

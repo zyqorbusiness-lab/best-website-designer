@@ -1,0 +1,53 @@
+{
+  "client": {
+    "business": "Kessler Tire & Auto (concept)",
+    "contact_name": "(owner)",
+    "contact_channel": "phone",
+    "city": "Canton, OH",
+    "country": "US"
+  },
+  "goal": "More walk-in tire jobs from people searching on their phones",
+  "audience": "Drivers in Canton who need tires or an alignment this week",
+  "primary_action": "Call the shop or book a fitting time",
+  "tier": "normal",
+  "pages": [
+    "home",
+    "services",
+    "contact",
+    "privacy"
+  ],
+  "features": [
+    "css-motion",
+    "real-photos"
+  ],
+  "owned_assets": {
+    "logo": true,
+    "photos": false,
+    "footage": false,
+    "copy_notes": true
+  },
+  "missing_assets_plan": "Shoot 8 photos of the bays and team on a phone in daylight; CC0 detail shots from Wikimedia Commons where needed, credited",
+  "facts_sheet": "copy/facts.md",
+  "languages": [
+    "en-US"
+  ],
+  "domain": {
+    "has_domain": false,
+    "name": "",
+    "registrar_access": false
+  },
+  "hosting": "vercel (client account, commercial plan)",
+  "form_backend": "none on the concept: tel: link, and the demo form says \"Concept: not sent\"",
+  "deadline": "2026-11-14",
+  "concept": true,
+  "references": [
+    "a calm local-trade site from siteinspire",
+    "an editorial product page with large numbers"
+  ],
+  "approvals": {
+    "scope_ok": true,
+    "scope_ok_date": "2026-10-30",
+    "copy_ok": false,
+    "launch_ok": false
+  }
+}

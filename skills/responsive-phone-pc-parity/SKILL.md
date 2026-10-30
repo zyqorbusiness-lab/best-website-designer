@@ -151,6 +151,39 @@ you scroll, the phone has it too.
 
 ---
 
+### 6b. Container queries: components that recompose by their own width
+
+A card that sits in a 3-column grid on desktop, a 2-column grid on a tablet and full width on a phone should change
+layout by **its own width**, not the screen's. Container queries (supported in all current browsers) do that:
+
+```css
+.card-wrap{container-type:inline-size;container-name:card}
+.card{display:grid;gap:12px}
+@container card (min-width: 520px){
+  .card{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);align-items:end}
+  .card h3{font-size:clamp(1.4rem, 4cqi, 2.2rem)}      /* cqi = 1% of the container's inline size */
+}
+```
+
+Rules: put `container-type` on a wrapper, not on the element you restyle; use `cqi` units for type that should scale
+with the card; keep one or two breakpoints per component. Page-level structure (the 12-column grid, the nav) stays
+on media queries.
+
+### 6c. Tablets and big screens
+
+| Size | What to check |
+|---|---|
+| 768x1024 (tablet portrait) | the phone layout often looks stretched here: cap text measure at ~68ch, use 2 columns for cards |
+| 1024x768 (tablet landscape, small laptops) | the desktop layout with the tightest gutters; nav must not wrap |
+| 1280x800 | most common laptop class; the first screen must still hold the hero and the CTA |
+| 1920x1080 | the desktop hero is composed for this as well as 1440 (no empty bands) |
+| 2560 and up | a ceiling: content `max-width` 1680-1720 px (this repo's concepts use 1680 and 1720), full-bleed media allowed past it; type stops growing (`clamp` max) |
+
+Tablets with a trackpad report `pointer: fine` (section 9), so a 1024 px tablet can get hover effects; it must still
+work with touch.
+
+---
+
 ## 7. Images and art direction
 
 ```html
@@ -209,6 +242,40 @@ you scroll, the phone has it too.
 | Text too small on phone | px sizes from desktop | clamp(); 16 px body minimum |
 | Blurry canvas | DPR 1 | `setPixelRatio(Math.min(devicePixelRatio, 2))` |
 | CTA below the fold at 360 x 740 | hero padding and image height in fixed units | svh-based hero, CTA earlier in the source order on phone |
+
+---
+
+### 11b. What the checker found on the live site (30 Oct 2026)
+
+`parity-check.mjs` at all 10 sizes on https://zyqor-portfolio.vercel.app (home, `/services/`, concept P041):
+
+| Check | Result |
+|---|---|
+| Horizontal overflow | **none** at any size on all three pages |
+| Console errors | none |
+| Home CTA in the first screen | yes at every size, including 375x667 and 844x390 landscape |
+| Text under 12 px | yes, on all three: mono eyebrows and labels at 10.5-11.84 px (`.sw-copy__eyebrow` 11.84 px, `.zk-tier` 10.5 px, figure captions 11.2 px) |
+| Phone tap targets under 44 px | home: logo 164x38, header button 127x40, route dots 40x40; services: logo 137x30, "Start a project" 126x35; P041: pills 42x42, footer links 20 px tall |
+
+Lessons:
+
+1. **Overflow and CTA placement are solved by the layout rules above** (no fixed widths, `overflow-x:clip` on
+   sections, svh heroes). All three pages passed at 360 and in landscape.
+2. **Small mono labels are a deliberate style that the checker still flags.** Uppercase mono eyebrows at 11-12 px are
+   common on award sites, but 12 px is this repo's floor for readable text (`typography-premium`). Either raise them
+   to 12 px or accept the flag knowingly in the notes; don't let the habit spread to body text.
+3. **Targets that look right but measure 38-42 px.** Keep the visual size and enlarge the hit area:
+
+```css
+.btn, .logo, .dot{position:relative}
+.btn::before, .logo::before, .dot::before{content:"";position:absolute;inset:-4px -2px;}   /* 40 -> 48 px tall hit area */
+@media (pointer: coarse){ .footer a{display:inline-block;padding-block:12px} }             /* 20 -> 44 px */
+```
+
+   The spacing exception in WCAG 2.5.8 (24 px minimum) allows small targets with enough space around them; 44 px is
+   the stricter target this repo uses on phones (`accessibility-and-reduced-motion`).
+4. **Checker false positives exist**: an element with `font-size:0` holding text (a screen-reader-only technique)
+   was listed at 0 px. Read the list; do not "fix" a hidden label into view.
 
 ---
 
@@ -286,3 +353,5 @@ media query for short screens, `min-width:44px` on nav links. The three required
 - scroll-world by cyw (MIT), https://github.com/oso95/scroll-world: phone portrait chain (T12), mobile URL-bar measurement (T13), compose for the centre (T18).
 - MDN: viewport units (svh/lvh/dvh), `env(safe-area-inset-*)`, container queries, `<picture>` and responsive images, `(hover)` and `(pointer)` media features.
 - W3C WCAG 2.2: 1.4.4 Resize Text, 1.4.10 Reflow (320 CSS px), 2.5.8 Target Size; WebKit notes on input zoom below 16 px.
+- Live runs of `scripts/parity-check.mjs` at 10 sizes on https://zyqor-portfolio.vercel.app (home, /services/, /library/p/P041/), 30 Oct 2026 (section 11b).
+- MDN: CSS container queries and container query length units (`cqi`).

@@ -12,3 +12,5 @@ No third-party code or media. Fonts from `../typography-premium/examples/fonts/`
 | Phone portrait chain, URL-bar measurement, compose for the centre | scroll-world by cyw, MIT, https://github.com/oso95/scroll-world |
 | Viewport units, safe areas, container queries, responsive images | MDN Web Docs |
 | Reflow, resize text, target size | W3C WCAG 2.2 |
+| Live parity runs | `parity-check.mjs` on https://zyqor-portfolio.vercel.app, 30 Oct 2026 |
+| Container queries, `cqi` | MDN |

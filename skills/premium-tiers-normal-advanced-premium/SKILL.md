@@ -114,6 +114,62 @@ Ships only if:
 
 ---
 
+### 2.4 One business, three tiers (worked example)
+
+The same brief at each price, so the difference is concrete. Client: *Hearth & Grain*, a neighbourhood sourdough
+bakery (fictional). Primary action: order a loaf for pickup.
+
+| | NORMAL ($300) | ADVANCED ($1k) | PREMIUM ($10k) |
+|---|---|---|---|
+| Idea sentence | "The loaf, and when it comes out of the oven." | "48 hours of a loaf, told as you scroll." | "Walk into the bakery at 5 a.m." |
+| Pages | 1 page + privacy | home, menu, story, order, privacy | + journal, wholesale, a page per loaf |
+| Hero | one real photo of the loaf, display headline at 120-160 px desktop, bake times as a live "next loaf out at 11:40" line | pinned chapter: flour -> water -> salt -> 48 h -> oven, five real photo layers assembled by scroll | a scanned loaf (photogrammetry, PBR) on the counter under an HDRI of morning light, cut open by scroll; same model on phone |
+| Signature interaction | the menu as a ledger with image previews on hover / tap | scroll-assembled loaf (technique studied from igloo.inc, see `award-site-teardown-method` §9) | a configurator: pick loaf, slice, pickup time; the 3D loaf updates |
+| Micro-interactions | magnetic order button, number roll on the timer | + cursor label over loaves, page transition from the clicked loaf | + sound of the crust crackling, opt-in at the door |
+| Assets | 8-10 own photos shot in daylight on a phone, credited | + a 6 s macro video of dough (own footage), poster frame | + photogrammetry scan (or licensed model), HDRI (Poly Haven CC0), 2 short films |
+| JS | none or < 30 KB own | GSAP + ScrollTrigger + Lenis (~49 KB gzip) | three.js + loaders + GSAP (~300-400 KB gzip) |
+| Own files | ~1.1 MB | ~2.6 MB | ~7 MB with poster first |
+| QA | 1440/390/360 + reduced motion | + 375x667, 1920, real phone | + slow 4G, screen reader, second reviewer, real low-end Android |
+| Copy | 150-250 words, from the facts sheet | 500-800 words, chapter captions | full voice guide, microcopy for every state |
+| Planning time | 2-4 days | 1-2 weeks | 4-8 weeks |
+
+(Planning times are Zyqor's own defaults, not measured; agree real dates per quote.) Notice what does **not** change
+across tiers: real photos, the warm palette discipline, one display + one text face, reduced motion, the CTA in the
+first screen at 360 px, 0 console errors. The tier buys more *technique and story*, never permission to drop quality.
+
+### 2.5 Why the JS budgets decide which technique fits (measured)
+
+Gzip sizes of the libraries vendored in this repo (`site/vendor/`, measured with gzip -9 on 30 Oct 2026):
+
+| Library | Minified | Gzip |
+|---|---|---|
+| `three.module.min.js` | 675 KB | 166 KB |
+| GLTFLoader | 107 KB | 23 KB |
+| Draco decoder (`draco_decoder.js`, JS build) + wrapper | 557 KB | 115 KB |
+| meshopt decoder | 24 KB | 6 KB |
+| KTX2Loader + Basis transcoder (JS part) | 82 KB | 20 KB |
+| GSAP core | 71 KB | 27 KB |
+| ScrollTrigger | 43 KB | 17 KB |
+| Lenis | 18 KB | 5 KB |
+| matter.js (2D physics) | 81 KB | 25 KB |
+
+What follows from the JS budgets in `performance-desktop-max-and-mobile` §1:
+
+- **NORMAL (80 KB)**: three.js alone is 166 KB, twice the budget, so the 80 KB figure assumes **no WebGL**. GSAP +
+  ScrollTrigger + Lenis (49 KB) fit; most NORMAL signatures need only CSS and a few KB of own JS. The one exception is
+  section 2.1's "single rotating product": a NORMAL page whose one signature is a 3D model takes the ADVANCED JS
+  budget (250 KB) for that page, keeps the NORMAL weight budget (model <= 400 KB), and the notes say so. (This
+  reconciles the two numbers; it is Zyqor's planning rule as of 30 Oct 2026.)
+- **ADVANCED (250 KB)**: three.js + GLTFLoader + meshopt + GSAP + ScrollTrigger + Lenis = 244 KB: one 3D scene fits,
+  just. Choose meshopt over Draco here (Draco's JS decoder alone is 115 KB; the WASM build is smaller to download
+  but is a separate file to count).
+- **PREMIUM (600 KB)**: room for three.js, loaders, Draco or KTX2, GSAP, and your own scene code (aim < 100 KB).
+
+Matter.js (25 KB) makes 2D physics an ADVANCED technique that can also fit a NORMAL budget when it is the only
+library on the page.
+
+---
+
 ## 3. Picking the tier (decision tree)
 
 1. **Does the idea need the visitor to see an object from several sides, or travel through a space?**
@@ -128,6 +184,32 @@ Ships only if:
 
 Upsell honestly: the $300 page gets a working, beautiful page; the $1k page adds the scroll-driven 3D moment; the
 $10k page adds the content, the flagship 3D and the speed of delivery. Never promise awards (Drive H7).
+
+---
+
+### 3b. Moving between tiers
+
+**Upgrade path (the client wants more later)**: build NORMAL so it can grow.
+- NORMAL -> ADVANCED: keep the page, replace the hero photo with a pinned chapter of the same story, add GSAP +
+  ScrollTrigger; the copy and photos carry over. Budget room: 1.5 -> 3 MB.
+- ADVANCED -> PREMIUM: the pinned photo chapter becomes a 3D scene of the same object; the photo stays as the poster
+  and the reduced-motion state (nothing is thrown away).
+
+**Downgrade path (the budget shrinks mid-project)**: cut scope, never finish.
+- Drop pages before dropping the signature interaction.
+- Replace 3D with a scroll-scrubbed real video or photo sequence of the same idea (`scroll-video-hero`), not with a
+  generic animation.
+- Keep every universal gate in section 2.4's last paragraph.
+
+### 3c. Writing the tier into the quote
+
+The tier belongs in the scope line the client approves (`client-site-delivery-workflow` §2; `brief.mjs --quote`
+prints it). Name what is **not** included as clearly as what is:
+
+> NORMAL website (from $300). Pages: home, privacy. Includes: one signature interaction, phone + desktop builds,
+> SEO basics + sitemap, accessibility pass. Not included: 3D, scroll video, configurator, custom cursor, sound.
+
+`brief.mjs --check` fails a brief that asks for a feature outside its tier (3D in NORMAL, a configurator in ADVANCED).
 
 ---
 
@@ -210,6 +292,36 @@ Real runs, so you know what the tool can and cannot tell you:
 
 ---
 
+### 7b. The tier budgets against live pages (budget-check.mjs, 30 Oct 2026)
+
+`performance-desktop-max-and-mobile/scripts/budget-check.mjs` on the live Vercel site, headless Chrome with software
+WebGL (so fps on 3D pages is not meaningful; weights and CLS are):
+
+| Page | Checked as | Own files 1440 / 390 | JS | LCP 1440 / 390 | CLS 1440 / 390 | Verdict |
+|---|---|---|---|---|---|---|
+| Home `/` | PREMIUM | 18.6 MB / 14.0 MB (12.7 / 12.4 MB of it 3D models) | 312 KB | 460 / 764 ms | 0.03 / 0.019 | FAIL on weight |
+| Concept P041 `/library/p/P041/` | PREMIUM | 771 / 779 KB | 26 KB | 708 / 560 ms | **1.006** / 0 | FAIL on CLS (desktop) |
+| Concept N020 `/library/n/N020/` | NORMAL | 834 / 841 KB (a 624 KB model) | 341 KB | 1600 / 1704 ms | **2** / 0 | FAIL on JS and CLS |
+| Lab EMBER `/lab/ember/` | ADVANCED | 2.07 / 2.09 MB | 266 KB | 576 / 488 ms | **1.003** / 0 | FAIL on JS (16 KB over) and CLS |
+
+What the numbers teach:
+
+- **Desktop CLS of 1.0 on three pages**, found with a `layout-shift` observer (recipe in
+  `performance-desktop-max-and-mobile` §10c): the first full-viewport section (`#build` on P041, `#uke` on N020, a
+  900 px `::after` on EMBER) is reported at 0 height and then at 900 px about 0.1-1.2 s after load. It is
+  intermittent: P041 shifted on 3 of 6 desktop loads (a re-run of budget-check read CLS 0.005), N020 on 4 of 4, phone
+  CLS was 0 everywhere. Both sections already carry `min-height:100svh` in CSS, so the cause is elsewhere in the
+  shared kit's load sequence; not isolated in this pass. A CLS that changes between loads is still a CLS: users get
+  the bad loads.
+- **N020 is a NORMAL concept with one 3D model**: 341 KB of JS and a 624 KB model. Even under section 2.5's 3D
+  exception (250 KB JS, model <= 400 KB) it is over on both; the fix is meshopt compression of the model and loading
+  only the kit modules the page uses.
+- **The home page is over the PREMIUM weight** because it loads the 3D models of the featured concepts. A portfolio
+  home can defend that (it is the flagship), but the rule is to load each model when its card nears the viewport.
+- LCP was fine everywhere (under 1.8 s even headless), which is why a page can feel fast and still fail its tier.
+
+---
+
 ## 8. Do and don't
 
 | Do | Because |
@@ -256,3 +368,6 @@ Real runs, so you know what the tool can and cannot tell you:
 - Drive points D8, W1-W7, H1, H7, M8, M14, X3-X5 and the tier definitions in Zyqor's CONCEPTS_300 catalogue (28 Oct 2026). Mapping: `docs/beast/SKILLS_SOURCE_MAP.md`.
 - scroll-world by cyw (MIT), https://github.com/oso95/scroll-world: per-tier use of the scroll-scrubbed video technique (connectors optional, stills-only fallback), previz-then-final cost discipline.
 - Awwwards scoring weights (Design 40%, Usability 30%, Creativity 20%, Content 10%), read on awwwards.com on Oct 30 2026 (`docs/how-top-designers-build-unique-sites.md`).
+- Library sizes measured from this repo's `site/vendor/` (three.js, GSAP, ScrollTrigger, Lenis, matter.js and three.js addons; minified bytes and gzip -9) on 30 Oct 2026 (section 2.5).
+- Live budget runs: `performance-desktop-max-and-mobile/scripts/budget-check.mjs` against https://zyqor-portfolio.vercel.app on 30 Oct 2026, plus a `layout-shift` PerformanceObserver probe for the CLS sources (section 7b).
+- igloo.inc (abeto) teardown, `award-site-teardown-method/examples/igloo-inc.md`: the scroll-assembly technique in the section 2.4 example (inspiration only).

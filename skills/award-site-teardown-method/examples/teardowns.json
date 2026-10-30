@@ -1,0 +1,460 @@
+[
+ {
+  "url": "https://lusion.co/",
+  "studied": "2026-10-30",
+  "sizes": {
+   "desktop": {
+    "title": "Lusion - Award Winning 3D and Interactive Web Studio",
+    "libs": [
+     "three.js"
+    ],
+    "canvases": [
+     {
+      "type": "webgl2",
+      "w": 1440,
+      "h": 900
+     },
+     {
+      "type": "2d",
+      "w": 45,
+      "h": 45
+     },
+     {
+      "type": "2d",
+      "w": 0,
+      "h": 0
+     }
+    ],
+    "videos": 0,
+    "fonts": [
+     "Aeonik",
+     "IBMPlexMono",
+     "LusionMono"
+    ],
+    "largestText": {
+     "s": 144,
+     "f": "Aeonik",
+     "t": "Bold"
+    },
+    "palette": {
+     "backgrounds": [
+      {
+       "hex": "#FFFFFF",
+       "pct": 92
+      },
+      {
+       "hex": "#0016EC",
+       "pct": 4
+      },
+      {
+       "hex": "#000000",
+       "pct": 2
+      },
+      {
+       "hex": "#F0F1FA",
+       "pct": 1
+      },
+      {
+       "hex": "#2B2E3A",
+       "pct": 0
+      },
+      {
+       "hex": "#E4E6EF",
+       "pct": 0
+      }
+     ],
+     "text": [
+      {
+       "hex": "#000000",
+       "pct": 89
+      },
+      {
+       "hex": "#FFFFFF",
+       "pct": 7
+      },
+      {
+       "hex": "#F0F1FA",
+       "pct": 4
+      }
+     ]
+    },
+    "pageScreens": 1,
+    "animatesAtRest": true,
+    "reducedMotionCss": false,
+    "requests": 137,
+    "totalKB": 20444,
+    "byType": {
+     "document": {
+      "n": 5,
+      "kb": 7
+     },
+     "stylesheet": {
+      "n": 1,
+      "kb": 14
+     },
+     "script": {
+      "n": 15,
+      "kb": 478
+     },
+     "image": {
+      "n": 53,
+      "kb": 6164
+     },
+     "font": {
+      "n": 6,
+      "kb": 185
+     },
+     "fetch": {
+      "n": 6,
+      "kb": 589
+     },
+     "xhr": {
+      "n": 45,
+      "kb": 3312
+     },
+     "media": {
+      "n": 3,
+      "kb": 9696
+     },
+     "ping": {
+      "n": 3,
+      "kb": 0
+     }
+    },
+    "largest": [
+     {
+      "kb": 4864,
+      "type": "media",
+      "file": "reel/desktop.mp4"
+     },
+     {
+      "kb": 4800,
+      "type": "media",
+      "file": "reel/desktop.mp4"
+     },
+     {
+      "kb": 589,
+      "type": "fetch",
+      "file": "home/matcap.exr"
+     },
+     {
+      "kb": 465,
+      "type": "xhr",
+      "file": "audios/generic_end.ogg"
+     },
+     {
+      "kb": 450,
+      "type": "image",
+      "file": "astronaut/astronaut_wearpack_nor.webp"
+     },
+     {
+      "kb": 426,
+      "type": "image",
+      "file": "astronaut/astronaut_glove_shoes_nor.webp"
+     }
+    ],
+    "lcpMs": 272,
+    "cls": 0
+   },
+   "phone": {
+    "title": "Lusion - Award Winning 3D and Interactive Web Studio",
+    "libs": [
+     "three.js"
+    ],
+    "canvases": [
+     {
+      "type": "webgl2",
+      "w": 390,
+      "h": 844
+     },
+     {
+      "type": "2d",
+      "w": 0,
+      "h": 0
+     },
+     {
+      "type": "2d",
+      "w": 0,
+      "h": 0
+     }
+    ],
+    "videos": 0,
+    "fonts": [
+     "Aeonik",
+     "IBMPlexMono",
+     "LusionMono"
+    ],
+    "largestText": {
+     "s": 105,
+     "f": "Aeonik",
+     "t": "Play Reel"
+    },
+    "palette": {
+     "backgrounds": [
+      {
+       "hex": "#FFFFFF",
+       "pct": 53
+      },
+      {
+       "hex": "#0016EC",
+       "pct": 43
+      },
+      {
+       "hex": "#000000",
+       "pct": 4
+      },
+      {
+       "hex": "#E4E6EF",
+       "pct": 0
+      },
+      {
+       "hex": "#000000",
+       "pct": 0
+      }
+     ],
+     "text": [
+      {
+       "hex": "#000000",
+       "pct": 96
+      },
+      {
+       "hex": "#F0F1FA",
+       "pct": 3
+      },
+      {
+       "hex": "#FFFFFF",
+       "pct": 1
+      }
+     ]
+    },
+    "pageScreens": 1,
+    "animatesAtRest": true,
+    "reducedMotionCss": false,
+    "requests": 113,
+    "totalKB": 16586,
+    "byType": {
+     "document": {
+      "n": 4,
+      "kb": 7
+     },
+     "stylesheet": {
+      "n": 1,
+      "kb": 14
+     },
+     "script": {
+      "n": 12,
+      "kb": 477
+     },
+     "image": {
+      "n": 52,
+      "kb": 6010
+     },
+     "font": {
+      "n": 6,
+      "kb": 185
+     },
+     "fetch": {
+      "n": 5,
+      "kb": 168
+     },
+     "xhr": {
+      "n": 26,
+      "kb": 1886
+     },
+     "media": {
+      "n": 5,
+      "kb": 7839
+     },
+     "ping": {
+      "n": 2,
+      "kb": 0
+     }
+    },
+    "largest": [
+     {
+      "kb": 2214,
+      "type": "media",
+      "file": "reel/mobile.mp4"
+     },
+     {
+      "kb": 2022,
+      "type": "media",
+      "file": "reel/mobile.mp4"
+     },
+     {
+      "kb": 1894,
+      "type": "media",
+      "file": "reel/mobile.mp4"
+     },
+     {
+      "kb": 1670,
+      "type": "media",
+      "file": "reel/mobile.mp4"
+     },
+     {
+      "kb": 450,
+      "type": "image",
+      "file": "astronaut/astronaut_wearpack_nor.webp"
+     },
+     {
+      "kb": 426,
+      "type": "image",
+      "file": "astronaut/astronaut_glove_shoes_nor.webp"
+     }
+    ],
+    "lcpMs": 272,
+    "cls": 0
+   }
+  }
+ },
+ {
+  "url": "https://www.igloo.inc/",
+  "studied": "2026-10-30",
+  "sizes": {
+   "desktop": {
+    "title": "Igloo Inc.",
+    "libs": [
+     "three.js"
+    ],
+    "canvases": [],
+    "videos": 0,
+    "fonts": [],
+    "largestText": null,
+    "palette": {
+     "backgrounds": [
+      {
+       "hex": "#A0A5B1",
+       "pct": 100
+      }
+     ],
+     "text": []
+    },
+    "pageScreens": 1,
+    "animatesAtRest": true,
+    "reducedMotionCss": false,
+    "requests": 101,
+    "totalKB": 14026,
+    "byType": {
+     "document": {
+      "n": 1,
+      "kb": 0
+     },
+     "script": {
+      "n": 8,
+      "kb": 130
+     },
+     "fetch": {
+      "n": 92,
+      "kb": 13896
+     }
+    },
+    "largest": [
+     {
+      "kb": 1492,
+      "type": "fetch",
+      "file": "audio/music-highq.ogg"
+     },
+     {
+      "kb": 1256,
+      "type": "fetch",
+      "file": "images/scroll-datatexture.ktx2"
+     },
+     {
+      "kb": 1108,
+      "type": "fetch",
+      "file": "cubes/cube3_normal.ktx2"
+     },
+     {
+      "kb": 1052,
+      "type": "fetch",
+      "file": "cubes/cube1_normal.ktx2"
+     },
+     {
+      "kb": 823,
+      "type": "fetch",
+      "file": "igloo/igloo_exploded_color.ktx2"
+     },
+     {
+      "kb": 817,
+      "type": "fetch",
+      "file": "volumes/peachesbody_64.ktx2"
+     }
+    ],
+    "lcpMs": 480,
+    "cls": 0
+   },
+   "phone": {
+    "title": "Igloo Inc.",
+    "libs": [
+     "three.js"
+    ],
+    "canvases": [],
+    "videos": 0,
+    "fonts": [],
+    "largestText": null,
+    "palette": {
+     "backgrounds": [
+      {
+       "hex": "#A0A5B1",
+       "pct": 100
+      }
+     ],
+     "text": []
+    },
+    "pageScreens": 1,
+    "animatesAtRest": true,
+    "reducedMotionCss": false,
+    "requests": 101,
+    "totalKB": 14026,
+    "byType": {
+     "document": {
+      "n": 1,
+      "kb": 0
+     },
+     "script": {
+      "n": 8,
+      "kb": 130
+     },
+     "fetch": {
+      "n": 92,
+      "kb": 13896
+     }
+    },
+    "largest": [
+     {
+      "kb": 1492,
+      "type": "fetch",
+      "file": "audio/music-highq.ogg"
+     },
+     {
+      "kb": 1256,
+      "type": "fetch",
+      "file": "images/scroll-datatexture.ktx2"
+     },
+     {
+      "kb": 1108,
+      "type": "fetch",
+      "file": "cubes/cube3_normal.ktx2"
+     },
+     {
+      "kb": 1052,
+      "type": "fetch",
+      "file": "cubes/cube1_normal.ktx2"
+     },
+     {
+      "kb": 823,
+      "type": "fetch",
+      "file": "igloo/igloo_exploded_color.ktx2"
+     },
+     {
+      "kb": 817,
+      "type": "fetch",
+      "file": "volumes/peachesbody_64.ktx2"
+     }
+    ],
+    "lcpMs": 776,
+    "cls": 0
+   }
+  }
+ }
+]
