@@ -1,0 +1,7 @@
+# robots.txt: one file at the site root, plain text.
+# It controls crawling, not indexing: to keep a page out of Google use <meta name="robots" content="noindex"> and do NOT block it here.
+User-agent: *
+Allow: /
+Disallow: /drafts/
+
+Sitemap: https://kessler-tire.example/sitemap.xml

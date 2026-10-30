@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accessible patterns · accessibility-and-reduced-motion</title>
+<meta name="description" content="Skip link, menu dialog, pausable carousel, accessible canvas, form errors, reduced motion and forced colours, working and self-tested.">
+<style>
+:root{--canvas:#F3EDE1;--ink:#17423C;--accent:#8C611C;--muted:#41605A;--line:rgba(23,66,60,.22);--err:#9B2C1F;
+  --ease:cubic-bezier(.16,1,.3,1);--dur:520ms;--fast:180ms;--rise:20px}
+@media (prefers-reduced-motion:reduce){:root{--dur:0ms;--fast:0ms;--rise:0px}}
+*{box-sizing:border-box}
+html{background:var(--canvas);color:var(--ink);font:400 clamp(1rem,.95rem + .25vw,1.125rem)/1.6 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+body{margin:0}
+a{color:inherit;text-underline-offset:.18em}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip{position:absolute;left:12px;top:-60px;z-index:10;background:var(--ink);color:var(--canvas);padding:10px 14px;border-radius:8px;transition:top var(--fast) var(--ease)}
+.skip:focus{top:12px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+.bar{display:flex;justify-content:space-between;align-items:center;min-height:72px;border-bottom:1px solid var(--line)}
+.brand{font-weight:700;letter-spacing:-.02em;text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
+button{font:inherit;color:inherit;background:none;border:1px solid var(--ink);border-radius:999px;min-height:44px;min-width:44px;padding:0 18px;cursor:pointer;transition:background var(--fast) var(--ease),color var(--fast) var(--ease)}
+button:hover{background:var(--ink);color:var(--canvas)}
+.eyebrow{font:500 .75rem/1 ui-monospace,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+h1{font-size:clamp(2.2rem,1.4rem + 3.4vw,4.4rem);line-height:1.02;letter-spacing:-.035em;margin:.35em 0 .3em;max-width:15ch}
+h2{font-size:clamp(1.4rem,1.1rem + 1vw,2rem);letter-spacing:-.02em;margin:0 0 12px}
+section{padding:clamp(48px,8vh,96px) 0;border-top:1px solid var(--line)}
+.reveal{opacity:0;transform:translateY(var(--rise));transition:opacity var(--dur) var(--ease),transform var(--dur) var(--ease)}
+.reveal.in{opacity:1;transform:none}
+dialog{border:0;border-radius:16px;padding:0;width:min(420px,92vw);background:var(--canvas);color:var(--ink);box-shadow:0 0 0 1px var(--line)}
+dialog::backdrop{background:rgba(23,66,60,.45)}
+dialog nav{display:grid;padding:24px}
+dialog nav a{display:flex;align-items:center;min-height:48px;font-size:1.25rem;text-decoration:none;border-bottom:1px solid var(--line)}
+.dialog-head{display:flex;justify-content:space-between;align-items:center;padding:16px 24px 0}
+.carousel{display:grid;gap:16px}
+.slides{position:relative;min-height:180px;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.slide{position:absolute;inset:0;padding:28px;display:flex;flex-direction:column;justify-content:flex-end;opacity:0;transition:opacity var(--dur) var(--ease)}
+.slide[aria-hidden=false]{opacity:1;position:relative}
+.slide p{margin:0;max-width:44ch}
+.controls{display:flex;gap:8px;flex-wrap:wrap}
+.stage{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
+canvas{width:100%;height:auto;aspect-ratio:16/10;border-radius:16px;border:1px solid var(--line);background:#EAE2D2}
+form{display:grid;gap:16px;max-width:520px}
+label{font-weight:600}
+input{font:inherit;font-size:max(16px,1rem);min-height:48px;padding:0 14px;border:1px solid var(--muted);border-radius:10px;background:#FBF8F2;color:var(--ink);width:100%}
+input[aria-invalid=true]{border-color:var(--err);border-width:2px}
+.hint{font-size:.9rem;color:var(--muted);margin:4px 0 0}
+.error{color:var(--err);font-size:.95rem;margin:4px 0 0;font-weight:600}
+.status{min-height:1.6em;font-weight:600}
+footer{border-top:1px solid var(--line);padding:24px 0 48px;font-size:.9rem;color:var(--muted)}
+@media (forced-colors:active){
+  button,input,.slides,canvas,dialog{border:1px solid CanvasText}
+  :focus-visible{outline:2px solid Highlight}
+  .skip{background:Canvas;color:LinkText;border:1px solid CanvasText}
+}
+@media (max-width:760px){.stage{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="wrap bar">
+  <a class="brand" href="#main">Northlight Optics <span class="sr-only">(concept)</span></a>
+  <button id="menuBtn" aria-haspopup="dialog" aria-controls="menu" aria-expanded="false">Menu</button>
+</header>
+<dialog id="menu" aria-labelledby="menuTitle">
+  <div class="dialog-head"><h2 id="menuTitle" class="eyebrow">Menu</h2><button id="menuClose" aria-label="Close menu">Close</button></div>
+  <nav aria-label="Main"><a href="#lenses">Lenses</a><a href="#scene">How it is made</a><a href="#notify">Get notified</a></nav>
+</dialog>
+<main id="main" tabindex="-1">
+  <div class="wrap">
+    <p class="eyebrow">accessibility-and-reduced-motion · concept example</p>
+    <h1>Every effect, reachable by keyboard.</h1>
+    <p style="max-width:62ch">A fictional optics brand used to show the patterns from the skill: a skip link, a menu dialog that traps focus and closes on Escape, a carousel that can be paused and stops itself under reduced motion, a canvas with a text equivalent, and a form that says what went wrong in words.</p>
+  </div>
+  <section id="lenses" class="wrap reveal" aria-labelledby="lensesTitle">
+    <h2 id="lensesTitle">Three lenses</h2>
+    <div class="carousel" role="region" aria-roledescription="carousel" aria-label="Lenses">
+      <div class="controls">
+        <button id="prev" aria-controls="slides">Previous</button>
+        <button id="play" aria-pressed="false">Pause</button>
+        <button id="next" aria-controls="slides">Next</button>
+      </div>
+      <div class="slides" id="slides" aria-live="off">
+        <div class="slide" role="group" aria-roledescription="slide" aria-label="1 of 3" aria-hidden="false"><h3>Field 35</h3><p>A 35 mm prime for streets and rooms. Seven elements, brass barrel.</p></div>
+        <div class="slide" role="group" aria-roledescription="slide" aria-label="2 of 3" aria-hidden="true"><h3>Field 50</h3><p>The normal lens. Close focus at 40 cm for food and objects.</p></div>
+        <div class="slide" role="group" aria-roledescription="slide" aria-label="3 of 3" aria-hidden="true"><h3>Field 85</h3><p>A portrait lens with a nine-blade aperture for round highlights.</p></div>
+      </div>
+    </div>
+  </section>
+  <section id="scene" class="wrap reveal" aria-labelledby="sceneTitle">
+    <div class="stage">
+      <div><h2 id="sceneTitle">How it is made</h2><p id="sceneText">The canvas draws a lens being assembled: seven glass elements slide into the barrel from left to right, the aperture closes to f/8, and the barrel turns to show the engraved focus scale. With reduced motion the finished lens is drawn once.</p></div>
+      <canvas id="cv" width="800" height="500" role="img" aria-label="Lens assembly animation" aria-describedby="sceneText">A lens with seven glass elements inside a brass barrel.</canvas>
+    </div>
+  </section>
+  <section id="notify" class="wrap reveal" aria-labelledby="notifyTitle">
+    <h2 id="notifyTitle">Get notified</h2>
+    <form id="form" novalidate>
+      <div><label for="email">Email</label><p class="hint" id="emailHint">We write once, when the lenses ship.</p>
+        <input id="email" name="email" type="email" autocomplete="email" aria-describedby="emailHint emailErr" required>
+        <p class="error" id="emailErr" hidden></p></div>
+      <button type="submit">Notify me</button>
+      <p class="status" id="status" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+</main>
+<footer class="wrap">MIT · Zyqor Studio. Northlight Optics is fictional. Concept form: nothing is sent.</footer>
+<script>
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+// reveal
+const io = new IntersectionObserver((es) => es.forEach((e) => e.isIntersecting && (e.target.classList.add('in'), io.unobserve(e.target))), { threshold: .06 });
+document.querySelectorAll('.reveal').forEach((el) => reduce ? el.classList.add('in') : io.observe(el));
+// dialog menu (native modal dialog: rest of page is inert, Escape closes)
+const dlg = document.getElementById('menu'), mb = document.getElementById('menuBtn');
+mb.addEventListener('click', () => { dlg.showModal(); mb.setAttribute('aria-expanded', 'true'); document.getElementById('menuClose').focus(); });
+const closeMenu = () => dlg.close();
+document.getElementById('menuClose').addEventListener('click', closeMenu);
+dlg.addEventListener('close', () => { mb.setAttribute('aria-expanded', 'false'); mb.focus(); });
+dlg.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeMenu));
+// carousel
+const slides = [...document.querySelectorAll('.slide')], region = document.getElementById('slides'), play = document.getElementById('play');
+let i = 0, timer = null;
+const show = (n) => { i = (n + slides.length) % slides.length; slides.forEach((s, k) => s.setAttribute('aria-hidden', String(k !== i))); };
+const start = () => { if (timer) return; timer = setInterval(() => show(i + 1), 5000); region.setAttribute('aria-live', 'off'); play.textContent = 'Pause'; play.setAttribute('aria-pressed', 'false'); };
+const stop = () => { clearInterval(timer); timer = null; region.setAttribute('aria-live', 'polite'); play.textContent = 'Play'; play.setAttribute('aria-pressed', 'true'); };
+play.addEventListener('click', () => timer ? stop() : start());
+document.getElementById('prev').addEventListener('click', () => { stop(); show(i - 1); });
+document.getElementById('next').addEventListener('click', () => { stop(); show(i + 1); });
+region.parentElement.addEventListener('focusin', stop);
+reduce ? stop() : start();
+// canvas: animated assembly, or one finished frame under reduced motion
+const cv = document.getElementById('cv'), cx = cv.getContext('2d');
+function draw(p) {
+  cx.fillStyle = '#EAE2D2'; cx.fillRect(0, 0, 800, 500);
+  cx.fillStyle = '#8C611C'; cx.fillRect(170, 170, 460, 160);
+  for (let k = 0; k < 7; k++) { const t = Math.min(1, Math.max(0, p * 7 - k)); const x = 200 + k * 60 - (1 - t) * 260; cx.fillStyle = `rgba(23,66,60,${0.25 + 0.1 * k})`; cx.beginPath(); cx.ellipse(x, 250, 14, 70, 0, 0, Math.PI * 2); cx.fill(); }
+  cx.fillStyle = '#17423C'; cx.font = '600 22px ui-monospace, Menlo, monospace'; cx.fillText('f/8   ∞  10  5  3  2  1.5', 220, 370);
+}
+if (reduce) draw(1); else { let t0 = null; const loop = (ts) => { t0 ??= ts; const p = Math.min(1, (ts - t0) / 4000); draw(p); if (p < 1) requestAnimationFrame(loop); }; requestAnimationFrame(loop); }
+// form: errors in words, focus moved to the field, status announced
+const form = document.getElementById('form'), email = document.getElementById('email'), err = document.getElementById('emailErr'), status = document.getElementById('status');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const v = email.value.trim(); let msg = '';
+  if (!v) msg = 'Enter your email address.'; else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) msg = 'That email is missing something: it should look like name@example.com.';
+  if (msg) { email.setAttribute('aria-invalid', 'true'); err.textContent = msg; err.hidden = false; status.textContent = 'Please fix 1 field.'; email.focus(); return; }
+  email.removeAttribute('aria-invalid'); err.hidden = true; status.textContent = 'Concept: not sent. In a real build you would be on the list now.';
+});
+// self-tests
+(async () => {
+  let pass = 0, fail = 0; const notes = []; const t = (ok, m) => ok ? pass++ : (fail++, notes.push(m));
+  t(document.querySelector('.skip').getAttribute('href') === '#main' && document.getElementById('main'), 'skip link target');
+  mb.click(); t(dlg.open && document.activeElement.id === 'menuClose' && mb.getAttribute('aria-expanded') === 'true', 'menu opens, focus inside');
+  dlg.close(); await new Promise((r) => setTimeout(r, 30)); t(!dlg.open && document.activeElement === mb && mb.getAttribute('aria-expanded') === 'false', 'menu closes, focus returns');
+  t(reduce ? timer === null : timer !== null, 'carousel autoplay follows reduced motion');
+  play.click(); const paused = reduce ? timer !== null : timer === null; t(paused || reduce, 'pause toggles'); if (reduce) stop(); else start();
+  document.getElementById('next').click(); t(slides.filter((s) => s.getAttribute('aria-hidden') === 'false').length === 1 && timer === null, 'next shows one slide and stops autoplay');
+  t(cv.getAttribute('role') === 'img' && cv.getAttribute('aria-describedby') === 'sceneText', 'canvas has role and description');
+  email.value = 'nope'; form.requestSubmit(); t(email.getAttribute('aria-invalid') === 'true' && !err.hidden && document.activeElement === email, 'invalid email: error in words, focus on field');
+  email.value = 'a@b.co'; form.requestSubmit(); t(!email.hasAttribute('aria-invalid') && /not sent/.test(status.textContent), 'valid email: concept status');
+  email.value = ''; err.hidden = true; email.removeAttribute('aria-invalid'); status.textContent = '';
+  t([...document.querySelectorAll('button')].every((b) => b.getBoundingClientRect().height >= 44 || !b.offsetParent), 'buttons at least 44px tall');
+  window.scrollTo(0, 0); mb.blur();
+  window.__skillTest = { pass, fail, notes };
+})();
+</script>
+</body>
+</html>

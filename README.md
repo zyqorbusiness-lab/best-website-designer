@@ -36,22 +36,24 @@ Each skill is a folder an agent can read (`SKILL.md` with frontmatter, rules wit
 
 | Skill | What it teaches |
 |---|---|
+| [`premium-website-playbook`](skills/premium-website-playbook/) | The master route: brief → idea → palette/type → layout → motion/3D → build → QA → deploy, naming the skill and the gate at every step. **Start here.** |
 | [`unique-idea-and-concept`](skills/unique-idea-and-concept/) | Find the one big idea, its metaphor, story arc, chapters and camera grammar before design starts. |
 | [`colour-systems`](skills/colour-systems/) | Premium 3-colour palettes (OKLCH, WCAG-checked): no black, no purple, no neon, no decorative gradients. |
 | [`typography-premium`](skills/typography-premium/) | Font pairing, fluid type scale, tracking and leading, craft details, loading, font licences. |
 | [`layout-grid-spacing`](skills/layout-grid-spacing/) | 14 named page structures, grid, 8-point spacing, ledgers, sticky narratives, phone re-composition. |
+| [`copywriting-for-premium-sites`](skills/copywriting-for-premium-sites/) | Headlines, body, CTAs, honest proof and microcopy; no filler, no AI wording. `copy-lint.mjs`. |
 | [`premium-tiers-normal-advanced-premium`](skills/premium-tiers-normal-advanced-premium/) | What separates $300 / $1k / $10k sites: features, budgets, red flags, scorecard. |
 | [`motion-and-scroll-storytelling`](skills/motion-and-scroll-storytelling/) | Motion tokens and curves, reveal timings, GSAP ScrollTrigger + Lenis scroll stories, CSS scroll-driven animation, scroll-scrubbed video (every scroll-world engine rule), page transitions, reduced motion. |
 | [`threejs-3d-premium`](skills/threejs-3d-premium/) | Real models (sourcing, licences, meshopt), ACES renderer, HDRI + key/rim light, real PBR materials, contact shadows, portrait framing, scroll camera beats, finish studio, no-WebGL poster. |
 | [`micro-interactions-and-cursor`](skills/micro-interactions-and-cursor/) | State matrix for every control, magnetic button, labelled cursor, border light, press feedback, squish toggle, odometer, accordion, toasts, opt-in sound, touch versions. |
 | [`responsive-phone-pc-parity`](skills/responsive-phone-pc-parity/) | Desktop-first composition recomposed for phones: viewport matrix, svh, safe areas, art direction, video/3D per aspect. `parity-check.mjs` tests 10 sizes. |
 | [`performance-desktop-max-and-mobile`](skills/performance-desktop-max-and-mobile/) | Speed without lowering quality: tier budgets, Core Web Vitals, critical path, media recipes, 60-120 fps rules, long tasks. `budget-check.mjs` measures a URL. |
+| [`accessibility-and-reduced-motion`](skills/accessibility-and-reduced-motion/) | WCAG 2.2 AA, keyboard and focus, accessible 3D/canvas, reduced motion that still tells the story. `a11y-check.mjs`. |
+| [`seo-and-meta`](skills/seo-and-meta/) | Real tags, OG images, JSON-LD, sitemap.xml / robots.txt, and Google Search Console step by step. `seo-check.mjs`, `sitemap.mjs`. |
 | [`imagery-assets-licensing`](skills/imagery-assets-licensing/) | Real photos, video, 3D, icons and fonts: free sources, licence limits, credit files, grading, crops, knockouts; no AI images. |
 | [`interactive-product-configurator`](skills/interactive-product-configurator/) | Drag-to-build product configurators (pizza builder): real photo layers, drag + tap, live ticket, bake transition. Concept P041. |
 
-Coming in the next batches today: copywriting, SEO and meta, accessibility and reduced motion, award-site teardown, client delivery workflow, and the master playbook.
-
-The tool skills (qa-harness, liquid-glass-ui, model-optimisation-phone, scroll-video-hero, unique-concepts, web-security) are listed in [`skills/README.md`](skills/README.md).
+The tool skills (qa-harness, liquid-glass-ui, model-optimisation-phone, scroll-video-hero, unique-concepts, web-security) are listed in [`skills/README.md`](skills/README.md). Total: 22 skills.
 
 ## What's inside
 
@@ -127,7 +129,7 @@ Contact: [zyqorbusiness@gmail.com](mailto:zyqorbusiness@gmail.com) or [WhatsApp]
 
 ## Skills you can download
 
-[`skills/`](skills/) holds free, tested, MIT-licensed skills: a written method (`SKILL.md`), a working example and starter code each. Ready now: **qa-harness**, **liquid-glass-ui**, **model-optimisation-phone**, **unique-concepts** (now with the award-site study), **web-security** (build security in from the first file, plus a scanner for a folder or a live URL: `node skills/web-security/check.mjs site`), **scroll-video-hero** (the scroll-scrubbed video at the top of this site, as a downloadable skill with a working example). More are added with every batch; the full list is in [`skills/README.md`](skills/README.md).
+[`skills/`](skills/) holds free, tested, MIT-licensed skills: a written method (`SKILL.md`), a working example and starter code each. Ready now: 22 skills: 16 website-design skills (start with **premium-website-playbook**) and 6 tool skills (**qa-harness**, **liquid-glass-ui**, **model-optimisation-phone**, **unique-concepts**, **web-security**, **scroll-video-hero**); the full list is in [`skills/README.md`](skills/README.md).
 
 ## Zyqor Lab
 

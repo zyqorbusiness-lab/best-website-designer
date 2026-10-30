@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Route planner · premium-website-playbook</title>
+<meta name="description" content="Pick a tier and features; get the ordered route through the 24 Zyqor website skills with the gate for each step.">
+<meta name="theme-color" content="#F3EDE1">
+<style>
+:root{--canvas:#F3EDE1;--ink:#17423C;--accent:#8C611C;--line:rgba(23,66,60,.18);--soft:rgba(23,66,60,.06);
+  --ease:cubic-bezier(.16,1,.3,1);--dur:520ms;--fast:180ms;
+  --step--1:clamp(.84rem,.8rem + .15vw,.94rem);--step-0:clamp(1rem,.95rem + .25vw,1.125rem);--step-3:clamp(2.1rem,1.4rem + 3vw,4.2rem)}
+@media (prefers-reduced-motion:reduce){:root{--dur:0ms;--fast:0ms}}
+*{box-sizing:border-box}
+html{background:var(--canvas);color:var(--ink);font:400 var(--step-0)/1.6 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+body{margin:0}
+a{color:inherit}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:var(--canvas);padding:8px 12px;border-radius:6px}
+.skip:focus{left:8px}
+header,main{max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+header{padding-top:clamp(40px,8vh,96px);padding-bottom:24px}
+.eyebrow{font:500 .75rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+h1{font-size:var(--step-3);line-height:1.02;letter-spacing:-.035em;margin:.4em 0 .3em;max-width:16ch;font-weight:700}
+.lede{max-width:60ch;margin:0}
+form{display:grid;grid-template-columns:repeat(12,1fr);gap:16px 24px;margin:32px 0;padding:24px 0;border-block:1px solid var(--line)}
+fieldset{border:0;margin:0;padding:0;grid-column:span 4}
+fieldset.wide{grid-column:span 8}
+legend{font-weight:600;margin-bottom:8px}
+label{display:inline-flex;align-items:center;gap:8px;min-height:44px;margin-right:16px;cursor:pointer}
+input{accent-color:var(--ink);width:20px;height:20px}
+input:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+ol{list-style:none;margin:0 0 96px;padding:0;counter-reset:s}
+li.step{display:grid;grid-template-columns:72px 1fr 1.2fr;gap:24px;padding:24px 0;border-top:1px solid var(--line);
+  opacity:0;transform:translateY(20px);transition:opacity var(--dur) var(--ease),transform var(--dur) var(--ease)}
+li.step.in{opacity:1;transform:none}
+.n{font:500 2rem/1 ui-monospace,Menlo,monospace;color:var(--accent);font-variant-numeric:tabular-nums}
+.t{font-weight:650;font-size:1.15rem;margin:0 0 6px}
+.sk{display:inline-block;margin:2px 6px 2px 0;padding:4px 10px;border:1px solid var(--line);border-radius:999px;font:500 .82rem/1.4 ui-monospace,Menlo,monospace;text-decoration:none;transition:background var(--fast) var(--ease)}
+.sk:hover,.sk:focus-visible{background:var(--soft)}
+.g{font-size:var(--step--1);margin:0}
+.g b{color:var(--accent);font-weight:600}
+.count{font:500 var(--step--1)/1 ui-monospace,Menlo,monospace}
+footer{max-width:1200px;margin:0 auto;padding:24px clamp(20px,4vw,48px) 48px;border-top:1px solid var(--line);font-size:var(--step--1)}
+@media (pointer:coarse){.sk{display:inline-flex;align-items:center;min-height:44px;padding:0 14px}.skip{min-height:44px;display:inline-flex;align-items:center}}
+@media (max-width:820px){
+  fieldset,fieldset.wide{grid-column:1/-1}
+  li.step{grid-template-columns:48px 1fr;gap:8px 16px}
+  li.step .g{grid-column:2}
+  .n{font-size:1.4rem}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#route">Skip to the route</a>
+<header>
+  <p class="eyebrow">premium-website-playbook</p>
+  <h1>Which skill next, and what must pass.</h1>
+  <p class="lede">Choose the tier and the features the idea needs. The route lists every step in order, the skill to open, and the gate that has to pass before the next step. Same module as <code>scripts/route.mjs</code>.</p>
+</header>
+<main>
+  <form id="f" aria-describedby="cnt">
+    <fieldset><legend>Tier</legend>
+      <label><input type="radio" name="tier" value="normal"> Normal</label>
+      <label><input type="radio" name="tier" value="advanced" checked> Advanced</label>
+      <label><input type="radio" name="tier" value="premium"> Premium</label>
+    </fieldset>
+    <fieldset class="wide"><legend>The idea needs</legend>
+      <label><input type="checkbox" name="threeD"> 3D model</label>
+      <label><input type="checkbox" name="video"> Scroll video</label>
+      <label><input type="checkbox" name="configurator"> Configurator</label>
+      <label><input type="checkbox" name="glass"> Glass UI</label>
+    </fieldset>
+  </form>
+  <p class="count" id="cnt" role="status" aria-live="polite"></p>
+  <ol id="route"></ol>
+</main>
+<footer>MIT · Zyqor Studio. Part of the Zyqor website skills. The route follows Sujon Hoque's Drive process notes and scroll-world (MIT) by cyw.</footer>
+<script type="module">
+import { route, SKILLS } from '../scripts/route.mjs';
+const f = document.getElementById('f'), ol = document.getElementById('route'), cnt = document.getElementById('cnt');
+const io = 'IntersectionObserver' in window ? new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .08 }) : null;
+function render() {
+  const fd = new FormData(f), tier = fd.get('tier');
+  const b = { tier, video: fd.has('video'), configurator: fd.has('configurator'), glass: fd.has('glass') };
+  if (fd.has('threeD')) b.threeD = true; else if (tier !== 'premium') b.threeD = false;
+  const r = route(b);
+  ol.textContent = '';
+  for (const s of r) {
+    const li = document.createElement('li'); li.className = 'step';
+    li.innerHTML = `<span class="n" aria-hidden="true">${String(s.n).padStart(2, '0')}</span><div><p class="t">${s.title}</p>${s.skills.map((k) => `<a class="sk" href="../../${k.name}/">${k.name}</a>`).join('')}</div><p class="g"><b>Gate</b> ${s.gate}</p>`;
+    ol.appendChild(li); if (io && !matchMedia('(prefers-reduced-motion: reduce)').matches) io.observe(li); else li.classList.add('in');
+  }
+  cnt.textContent = `${r.length} steps for a ${tier} site`;
+  return r;
+}
+f.addEventListener('change', render);
+render();
+// self-tests
+let pass = 0, fail = 0; const notes = [];
+const t = (ok, msg) => { ok ? pass++ : (fail++, notes.push(msg)); };
+t(SKILLS.length === 24, 'expected 24 skills, got ' + SKILLS.length);
+t(new Set(SKILLS.map((s) => s.name)).size === 24, 'skill names not unique');
+const n = route({ tier: 'normal' }).map((s) => s.id);
+t(!n.includes('3d') && !n.includes('video'), 'normal must not include 3d/video');
+const p = route({ tier: 'premium', video: true }).map((s) => s.id);
+t(p.includes('3d') && p.includes('video'), 'premium+video must include 3d and video');
+t(p.indexOf('copy') < p.indexOf('motion'), 'copy must come before motion');
+t(p.indexOf('a11y') < p.indexOf('qa') && p.indexOf('seo') < p.indexOf('qa'), 'a11y and seo before qa');
+t(p[0] === 'brief' && p[p.length - 1] === 'deliver', 'route must start at brief and end at deliver');
+const used = new Set(route({ tier: 'premium', video: true, configurator: true, glass: true }).flatMap((s) => s.skills.map((k) => k.name)));
+t(SKILLS.filter((s) => s.name !== 'premium-website-playbook').every((s) => used.has(s.name)), 'a full route must reach all 23 other skills');
+t(ol.children.length > 0, 'route rendered');
+window.__skillTest = { pass, fail, notes };
+</script>
+</body>
+</html>

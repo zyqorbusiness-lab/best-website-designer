@@ -1,0 +1,39 @@
+{
+ "project": "Hotcoal Kitchen (concept)",
+ "goal": "Let visitors build a pizza and send an order",
+ "audience": "Takeaway customers, 18-40, mostly on phones in the evening",
+ "primary_action": "Build a pizza and place the order",
+ "tier": "premium",
+ "pages": [
+  "home (configurator)",
+  "menu",
+  "about",
+  "contact",
+  "privacy"
+ ],
+ "owned_assets": [],
+ "missing_assets": {
+  "ingredient photos": "Wikimedia Commons CC0 / CC BY, credited",
+  "fonts": "OFL from Google Fonts"
+ },
+ "features": {
+  "threeD": false,
+  "video": false,
+  "configurator": true,
+  "glass": false
+ },
+ "languages": [
+  "en"
+ ],
+ "deadline": "2026-10-30",
+ "domain": "zyqor-portfolio.vercel.app/library/p/P041/",
+ "concept": true,
+ "form_backend": "none: labelled 'Concept: not sent'",
+ "token_summary": [
+  "Style + idea: editorial warm / 'a pizza as a ticket you fill in'",
+  "Colour: canvas, ink, accent (palette.mjs PASS)",
+  "Type: display + body, 2-3 weights",
+  "Space + grid: 8-pt, 12-col desktop, 4-col phone",
+  "Motion: settle 520ms, wipe 650ms, UI 180ms"
+ ]
+}

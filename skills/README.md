@@ -2,22 +2,26 @@
 
 Each folder here is one self-contained skill you can download and use on your own projects: a written method (`SKILL.md`, readable by people and by AI coding agents), a working example, starter code, a QA checklist and an MIT licence. Every example was checked at 1440x900, 390x844 and 360x740 with 0 console errors before it shipped.
 
-## Website-design skills (the core of this repo)
+## Website-design skills (the core of this repo, 16 skills + 6 tool skills = 22)
 
-Sujon, 30 Oct 2026: teach an AI agent, through many detailed skills, exactly how to design and build unique, premium, advanced websites. Desktop is the top bar ("PC me no compromise"); the phone matches it. Each skill below folds in the points from his design Drive and from scroll-world (map: [`docs/beast/SKILLS_SOURCE_MAP.md`](../docs/beast/SKILLS_SOURCE_MAP.md)).
+Sujon, 30 Oct 2026: teach an AI agent, through many detailed skills, exactly how to design and build unique, premium, advanced websites. Desktop is the top bar ("PC me no compromise"); the phone matches it. Open [`premium-website-playbook`](premium-website-playbook/) first: it says which skill to use at each step. Each skill below folds in the points from his design Drive and from scroll-world (map: [`docs/beast/SKILLS_SOURCE_MAP.md`](../docs/beast/SKILLS_SOURCE_MAP.md)).
 
 | Skill | What it teaches |
 |---|---|
+| [`premium-website-playbook`](premium-website-playbook/) | **Start here.** The master route from brief to award-level site in 20 steps: which skill to open at each step, the command, and the gate that must pass. `route.mjs` prints the route for a tier and lints the library. |
 | [`unique-idea-and-concept`](unique-idea-and-concept/) | Find the one big idea ("[product] as [thing or place]"), metaphor, story arc, chapters, camera grammar, brief. `storyboard.mjs` checks the idea sentence. |
 | [`colour-systems`](colour-systems/) | Premium 3-colour palettes with OKLCH maths and WCAG checks; no black, no purple, no neon, no decorative gradients. `palette.mjs` generates and checks. |
 | [`typography-premium`](typography-premium/) | Font pairing, fluid clamp() scale, tracking/leading by size, craft details, loading without shift, OFL vs Fontshare vs paid licences. `type-scale.mjs`. |
 | [`layout-grid-spacing`](layout-grid-spacing/) | 14 named page structures, spatial tokens, 8-point scale, 12-column grid, ledgers, sticky narratives, horizontal tracks, phone re-composition. `layout-audit.js`. |
+| [`copywriting-for-premium-sites`](copywriting-for-premium-sites/) | Specific, short, true copy: facts-sheet interview, voice brief, eyebrow/title/body/proof/CTA numbers, honest proof, microcopy for every state, banned list. `copy-lint.mjs`. |
 | [`premium-tiers-normal-advanced-premium`](premium-tiers-normal-advanced-premium/) | What separates $300 / $1k / $10k sites: features, budgets, fps, red flags and the 8-dimension scorecard. `tier-check.mjs`. |
 | [`motion-and-scroll-storytelling`](motion-and-scroll-storytelling/) | Motion tokens, three named curves, reveal timings, GSAP ScrollTrigger + Lenis pins/scrubs/horizontal tracks, CSS scroll-driven animations, scroll-scrubbed video with every scroll-world engine rule, page transitions, reduced motion. |
 | [`threejs-3d-premium`](threejs-3d-premium/) | Real models (sourcing, licences, gltf-transform), ACES renderer defaults, HDRI + key/rim lighting, PBR materials, contact shadows, bounding-sphere framing for portrait, scroll camera beats, finish studio, render on demand, no-WebGL poster. |
 | [`micro-interactions-and-cursor`](micro-interactions-and-cursor/) | State matrix for every control, magnetic button, labelled lerp cursor, border light + tilt, press feedback, squish toggle, odometer (real numbers), accordion physics, real-action toasts, opt-in sound, a touch version of every pointer effect. |
 | [`responsive-phone-pc-parity`](responsive-phone-pc-parity/) | Desktop-first composition, recomposed (not shrunk) for phones: viewport matrix, content breakpoints, svh and the iOS URL bar, safe areas, art direction, video/3D per aspect. `parity-check.mjs` checks 10 sizes. |
 | [`performance-desktop-max-and-mobile`](performance-desktop-max-and-mobile/) | Speed without lowering quality: tier weight budgets, Core Web Vitals, critical path, image/video/3D recipes, 60-120 fps rules, long tasks, caching. `budget-check.mjs` measures any URL against the tier. |
+| [`accessibility-and-reduced-motion`](accessibility-and-reduced-motion/) | WCAG 2.2 AA as numbers, keyboard paths for menus/dialogs/carousels/configurators, accessible 3D and canvas, forms, reduced motion designed per scene, forced colours. `a11y-check.mjs` at 1440 and 390. |
+| [`seo-and-meta`](seo-and-meta/) | Titles, descriptions, one H1, canonicals (incl. desktop + m.html), Open Graph / X cards, JSON-LD without fake reviews, sitemap.xml, robots.txt and Google Search Console step by step. `seo-check.mjs`, `sitemap.mjs`. |
 | [`imagery-assets-licensing`](imagery-assets-licensing/) | Free sources and each licence's limits, "unclear means skip", credit files that pass the gate, photo direction, grading into the palette, portrait crops, knockouts, own renders instead of AI images. `credit.mjs`, `knockout.py`. |
 | [`interactive-product-configurator`](interactive-product-configurator/) | Drag-to-build configurators (pizza builder from the @online.by.annie reel): real photo layers, drag with snap ring, tap-to-add on phone, layer order, live ticket, bake transition, a11y. Lead example: concept P041. |
 
@@ -33,7 +37,7 @@ Sujon, 30 Oct 2026: teach an AI agent, through many detailed skills, exactly how
 | [`model-optimisation-phone`](model-optimisation-phone/) | Turn one glTF/GLB into one optimised file that desktop and phone both load and that looks identical, then prove it with side-by-side renders. |
 
 ## Coming next
-`lab-demo-template`, `3d-product-scroll`, `scroll-world-real` (the full multi-scene scroll-world flight without AI renders), `camera-path-renderer`, `video-to-scroll`, `hdri-lighting-materials`, `premium-typography`, `colour-3-palette`, `scroll-animation`, `micro-interactions`, `shader-starters`, `physics-interactions`, `asset-sourcing-credits`, `award-site-system`, `motion-design-system`, `performance-budget`, `honest-portfolio`, `concept-library-index`.
+Deeper versions of the existing skills (more worked examples per tier), `scroll-world-real` (the full multi-scene flight without AI renders), `shader-starters`, `physics-interactions`, `motion-design-system`.
 
 ## How to get one
 - Download the whole repo as a ZIP (green "Code" button, then "Download ZIP") and copy the skill folder you want, or
