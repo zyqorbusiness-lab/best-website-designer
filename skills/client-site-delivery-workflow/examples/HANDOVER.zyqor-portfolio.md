@@ -4,6 +4,7 @@ Date: 2026-10-30. Prepared from the files and the live site, not from memory.
 
 ## Live
 - https://zyqor-portfolio.vercel.app/: HTTP 200; sitemap.xml 200; robots.txt 200; security headers: strict-transport-security, x-content-type-options, referrer-policy, permissions-policy, x-frame-options
+- https://zyqor-portfolio.sites.tab.bot/: HTTP 200; sitemap.xml 200; robots.txt 200; security headers: none seen
 
 ## What was built
 - Pages (110): 404.html, color/index.html, color/m.html, components/cursor-follower/index.html, components/footer-wordmark/index.html, components/image-trail/index.html, components/index.html, components/liquid-glass-card/index.html, components/magnetic-button/index.html, components/marquee/index.html, components/mega-menu/index.html, components/page-transition/index.html, components/page-transition/project.html, components/preloader/index.html, components/pricing-table/index.html, components/quote-carousel/index.html, components/scroll-3d-stage/index.html, components/split-text/index.html, components/sticky-story/index.html, index.html, lab/cadence/index.html, lab/cadence/m.html, lab/carmine/index.html, lab/carmine/m.html, lab/dew/index.html, lab/dew/m.html, lab/ember/index.html, lab/ember/m.html, lab/fumee/index.html, lab/fumee/m.html, lab/halde/index.html, lab/halde/m.html, lab/hush/index.html, lab/hush/m.html, lab/index.html, lab/longway/index.html, lab/longway/m.html, lab/m.html, lab/meridian/index.html, lab/meridian/m.html, ...
