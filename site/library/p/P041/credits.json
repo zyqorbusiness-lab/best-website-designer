@@ -123,21 +123,23 @@
   },
   {
    "what": "Fonts",
-   "title": "Cabinet Grotesk, Satoshi, Instrument Serif, JetBrains Mono",
-   "author": "Indian Type Foundry; Rodrigo Fuenzalida and Jordan Egstad; JetBrains",
-   "source": "Fontshare / Google Fonts",
-   "licence": "ITF Free Font License / SIL OFL 1.1",
-   "note": "Self-hosted by the library kit.",
-   "files": []
+   "title": "Fraunces; Inter Tight; JetBrains Mono",
+   "author": "Undercase Type, Phaedra Charles, Flavia Zimbardi; Michael Sharpe (Inter Tight, from Inter by Rasmus Andersson); JetBrains",
+   "source": "Google Fonts",
+   "licence": "SIL OFL 1.1",
+   "note": "Self-hosted woff2 from the repo (assets/font, library/_kit/font). Best-4 rebuild (Oct 30 2026) dropped the kit's Fontshare/ITF fonts on this page.",
+   "files": [],
+   "url": "https://fonts.google.com/specimen/Fraunces"
   },
   {
    "what": "Code",
    "title": "Page code",
    "author": "Zyqor Studio",
    "licence": "MIT",
-   "note": "Vanilla JS: a 2D canvas renderer (two shadows per piece, raw-to-baked crossfade, steam), pointer events, Web Animations. No libraries.",
+   "note": "Page, scroll engine and canvas pizza renderer written by Zyqor Studio (MIT).",
    "files": [
-    "app.js"
+    "app.js",
+    "pizza.js"
    ]
   },
   {
@@ -297,6 +299,18 @@
    "files": [
     "img/base-cheese.webp",
     "img/base-cheese-1024.webp"
+   ]
+  },
+  {
+   "what": "Photo (dough ball, drawn)",
+   "title": "Dough ball",
+   "author": "Zyqor Studio",
+   "source": "Drawn in code",
+   "url": "https://zyqor-portfolio.vercel.app/library/p/P041/",
+   "licence": "MIT",
+   "note": "No dough-ball photo with a clean CC0/CC BY licence was used (spec fallback): the ball is drawn in code (shaded dome, colour matched to the raw crust of the base photo). Not a generated image.",
+   "files": [
+    "img/dough.webp"
    ]
   }
  ]

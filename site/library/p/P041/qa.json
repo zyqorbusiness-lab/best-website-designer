@@ -1,16 +1,16 @@
 {
  "id": "P041",
- "date": "2026-10-30T08:03:16.324Z",
+ "date": "2026-10-30T17:42:04.534Z",
  "kit": 2,
  "verdict": "PASS",
  "tier": "premium",
  "budgetKB": 6144,
- "ownKB": 1652,
- "sharedKB": 143,
- "phoneOwnKB": 1097,
- "phoneSharedKB": 143,
- "weightKB": 1795,
- "phoneWeightKB": 1240,
+ "ownKB": 3009,
+ "sharedKB": 80,
+ "phoneOwnKB": 1930,
+ "phoneSharedKB": 80,
+ "weightKB": 3089,
+ "phoneWeightKB": 2010,
  "sameAssets": true,
  "assetDiff": {
   "desktopOnly": [],
@@ -19,21 +19,19 @@
  "assets3d": [],
  "sameEffects": null,
  "effectDiff": [],
- "nowebgl": null,
+ "nowebgl": true,
  "credit": {
   "pass": true,
-  "files": 44,
+  "files": 75,
   "missing": [],
   "incomplete": [],
   "ccby": [
    "/library/p/P041/img/base-baked-1024.webp",
    "/library/p/P041/img/base-baked.webp",
+   "/library/p/P041/img/base-cheese-1024.webp",
+   "/library/p/P041/img/base-cheese.webp",
    "/library/p/P041/img/base-raw-1024.webp",
    "/library/p/P041/img/base-raw.webp",
-   "/library/p/P041/img/basil-baked-1.webp",
-   "/library/p/P041/img/basil-baked-2.webp",
-   "/library/p/P041/img/basil-baked-3.webp",
-   "/library/p/P041/img/basil-baked-4.webp",
    "/library/p/P041/img/basil-raw-1.webp",
    "/library/p/P041/img/basil-raw-2.webp",
    "/library/p/P041/img/basil-raw-3.webp",
@@ -49,10 +47,24 @@
    "/library/p/P041/img/mozz-raw-3.webp",
    "/library/p/P041/img/mozz-raw-4.webp",
    "/library/p/P041/img/mozz-raw-5.webp",
-   "/library/p/P041/img/mozz-raw-6.webp"
+   "/library/p/P041/img/mozz-raw-6.webp",
+   "/library/p/P041/img/mush-baked-3.webp",
+   "/library/p/P041/img/mush-raw-3.webp",
+   "/library/p/P041/img/pepper-baked-1.webp",
+   "/library/p/P041/img/pepper-baked-2.webp",
+   "/library/p/P041/img/pepper-baked-3.webp",
+   "/library/p/P041/img/pepper-baked-4.webp",
+   "/library/p/P041/img/pepper-baked-5.webp",
+   "/library/p/P041/img/pepper-raw-1.webp",
+   "/library/p/P041/img/pepper-raw-2.webp",
+   "/library/p/P041/img/pepper-raw-3.webp",
+   "/library/p/P041/img/pepper-raw-4.webp",
+   "/library/p/P041/img/pepper-raw-5.webp"
   ],
   "ccbyNotVisible": [],
-  "unlisted": []
+  "unlisted": [
+   "/library/p/P041/img/board-900.webp"
+  ]
  },
  "runs": {
   "d1440": {
@@ -62,8 +74,8 @@
    "failed": 0,
    "overflow": 0,
    "webgl": null,
-   "ownKB": 1652,
-   "sharedKB": 143
+   "ownKB": 3009,
+   "sharedKB": 80
   },
   "m390": {
    "pass": true,
@@ -72,8 +84,8 @@
    "failed": 0,
    "overflow": 0,
    "webgl": null,
-   "ownKB": 1097,
-   "sharedKB": 143
+   "ownKB": 1930,
+   "sharedKB": 80
   },
   "m360": {
    "pass": true,
@@ -82,8 +94,68 @@
    "failed": 0,
    "overflow": 0,
    "webgl": null,
-   "ownKB": 1110,
-   "sharedKB": 143
+   "ownKB": 1954,
+   "sharedKB": 80
+  },
+  "rd1440": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": null,
+   "ownKB": 3009,
+   "sharedKB": 80
+  },
+  "rm390": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": null,
+   "ownKB": 1954,
+   "sharedKB": 80
+  },
+  "nd1440": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": null,
+   "poster": true,
+   "ownKB": 3009,
+   "sharedKB": 80
+  },
+  "nm390": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": null,
+   "poster": true,
+   "ownKB": 1954,
+   "sharedKB": 80
   }
- }
+ },
+ "contrast": {
+  "basil on flour": 10.41,
+  "basil-2 on flour": 5.88,
+  "tomato on flour": 5.44,
+  "flour on tomato": 5.44,
+  "flour on basil": 10.41,
+  "basil on ember band 8%": 9.3,
+  "tomato on ember band 8%": 4.86,
+  "basil-2 on ember": 5.25,
+  "flour on tomato hover #933220": 6.64,
+  "foot-k #E9B9A8 on basil": 6.91
+ },
+ "first_screen_kb": {
+  "desktop_1440": 556,
+  "phone_390": 561,
+  "note": "resources finished by the load event (poster, board, fonts, css, js); the live hero canvas and ingredient photos load after"
+ },
+ "best4": "Oct 30 2026 flagship rebuild to work/beast/specs/best4/hotcoal-kitchen_spec.md"
 }
