@@ -12,10 +12,16 @@
 <meta property="og:description" content="Build-your-own pizza configurator, a fictional-brand concept by Zyqor Studio.">
 <meta property="og:image" content="https://zyqor-portfolio.sites.tab.bot/library/p/P041/thumb.webp">
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
-<link rel="preload" href="img/base.webp" as="image" fetchpriority="high">
+<link rel="preload" href="img/base-raw-1024.webp" as="image" fetchpriority="high">
+<link rel="preload" href="../../../assets/font/cabinetgrotesk-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../../assets/font/satoshi-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../../_kit/concept.css">
 <link rel="stylesheet" href="../../_kit/landing.css">
 <link rel="stylesheet" href="m.css">
+<!-- CLS fix (P041): the kit's chrome.js injects these after first paint; loading them render-blocking here stops the bar and its icons from painting unstyled and shoving the page (measured CLS 2.0 on a cold load) -->
+<link rel="stylesheet" href="../../_kit/chrome.css">
+<link rel="stylesheet" href="../../../assets/glass/liquid-glass.css">
+<link rel="stylesheet" href="../../_kit/premium.css">
 <style>:root{--c1:#F4EDE1;--c2:#283A2D;--c3:#A93A23}</style>
 <link rel="canonical" href="https://zyqor-portfolio.sites.tab.bot/library/p/P041/">
 <meta property="og:type" content="website">
@@ -46,14 +52,14 @@
       <h1 id="h1" class="title">Build it.<br><span class="serif">We fire it.</span></h1>
       <p class="lead">Real ingredients onto a San Marzano marinara base, then ninety seconds in a 485&deg;C oven.</p>
       <p class="help" id="dish-help">Tap a bowl to add a handful. Tap again for more, up to three.</p>
-      <ul class="tray" role="list" aria-label="Ingredients"><li><button class="dish" type="button" data-ing="mozzarella" aria-describedby="dish-help"><span class="dish-bowl" aria-hidden="true"><img src="img/mozzarella-1.webp" alt="" width="120" height="120" draggable="false"><img src="img/mozzarella-2.webp" alt="" width="120" height="120" draggable="false"><img src="img/mozzarella-3.webp" alt="" width="120" height="120" draggable="false"></span><span class="dish-t"><b>Fior di latte</b><span class="mono">+$2.50</span></span><span class="dish-n mono" aria-hidden="true"></span></button></li><li><button class="dish" type="button" data-ing="tomato" aria-describedby="dish-help"><span class="dish-bowl" aria-hidden="true"><img src="img/tomato.webp" alt="" width="120" height="120" draggable="false"><img src="img/tomato.webp" alt="" width="120" height="120" draggable="false"><img src="img/tomato.webp" alt="" width="120" height="120" draggable="false"></span><span class="dish-t"><b>Cherry tomato</b><span class="mono">+$2.00</span></span><span class="dish-n mono" aria-hidden="true"></span></button></li><li><button class="dish" type="button" data-ing="pepperoni" aria-describedby="dish-help"><span class="dish-bowl" aria-hidden="true"><img src="img/pepperoni-1.webp" alt="" width="120" height="120" draggable="false"><img src="img/pepperoni-2.webp" alt="" width="120" height="120" draggable="false"><img src="img/pepperoni-3.webp" alt="" width="120" height="120" draggable="false"></span><span class="dish-t"><b>Pepperoni</b><span class="mono">+$3.00</span></span><span class="dish-n mono" aria-hidden="true"></span></button></li><li><button class="dish" type="button" data-ing="basil" aria-describedby="dish-help"><span class="dish-bowl" aria-hidden="true"><img src="img/basil.webp" alt="" width="120" height="120" draggable="false"><img src="img/basil.webp" alt="" width="120" height="120" draggable="false"><img src="img/basil.webp" alt="" width="120" height="120" draggable="false"></span><span class="dish-t"><b>Basil</b><span class="mono">+$1.00</span></span><span class="dish-n mono" aria-hidden="true"></span></button></li></ul>
+      <ul class="tray" role="list" aria-label="Ingredients"><li><button class="dish" type="button" data-ing="mozzarella" aria-describedby="dish-help"><span class="dish-bowl" aria-hidden="true"><img src="img/mozz-raw-1.webp" alt="" width="120" height="120" draggable="false"><img src="img/mozz-raw-5.webp" alt="" width="120" height="120" draggable="false"><img src="img/mozz-raw-3.webp" alt="" width="120" height="120" draggable="false"></span><span class="dish-t"><b>Fior di latte</b><span class="mono">+$2.50</span></span><span class="dish-n mono" aria-hidden="true"></span></button></li><li><button class="dish" type="button" data-ing="tomato" aria-describedby="dish-help"><span class="dish-bowl" aria-hidden="true"><img src="img/tom-raw-1.webp" alt="" width="120" height="120" draggable="false"><img src="img/tom-raw-2.webp" alt="" width="120" height="120" draggable="false"><img src="img/tom-raw-1.webp" alt="" width="120" height="120" draggable="false"></span><span class="dish-t"><b>Cherry tomato</b><span class="mono">+$2.00</span></span><span class="dish-n mono" aria-hidden="true"></span></button></li><li><button class="dish" type="button" data-ing="pepperoni" aria-describedby="dish-help"><span class="dish-bowl" aria-hidden="true"><img src="img/pep-raw-1.webp" alt="" width="120" height="120" draggable="false"><img src="img/pep-raw-2.webp" alt="" width="120" height="120" draggable="false"><img src="img/pep-raw-3.webp" alt="" width="120" height="120" draggable="false"></span><span class="dish-t"><b>Pepperoni</b><span class="mono">+$3.00</span></span><span class="dish-n mono" aria-hidden="true"></span></button></li><li><button class="dish" type="button" data-ing="basil" aria-describedby="dish-help"><span class="dish-bowl" aria-hidden="true"><img src="img/basil-raw-1.webp" alt="" width="120" height="120" draggable="false"><img src="img/basil-raw-3.webp" alt="" width="120" height="120" draggable="false"><img src="img/basil-raw-4.webp" alt="" width="120" height="120" draggable="false"></span><span class="dish-t"><b>Basil</b><span class="mono">+$1.00</span></span><span class="dish-n mono" aria-hidden="true"></span></button></li></ul>
     </div>
     <div class="b-stage">
       <div class="board" id="board" role="img" aria-label="Your pizza: marinara base">
         <img class="board-wood" src="img/board.webp" alt="" width="1400" height="1400" draggable="false">
         <div class="pie" id="pie">
-          <img class="pie-base" src="img/base.webp" alt="" width="1200" height="1200" draggable="false" fetchpriority="high">
-          <div class="pie-layer" data-z="mozzarella"></div><div class="pie-layer" data-z="tomato"></div><div class="pie-layer" data-z="pepperoni"></div><div class="pie-layer" data-z="basil"></div>
+          <img class="pie-base" src="img/base-raw-1024.webp" alt="" width="2048" height="2048" draggable="false" fetchpriority="high">
+          
         </div>
         <span class="drop-ring" aria-hidden="true"></span>
       </div>
@@ -104,7 +110,7 @@
       </div>
     </div>
   </section>
-  <section class="wrap photo-cred" aria-label="Photo credits"><p class="mono">Photos: base "Pizza marinara (Napoli)" by Ruthven; pepperoni by Daderot; cherry tomato by Evan-Amos; basil by Khoney21 (Wikimedia Commons, CC0 1.0). Mozzarella: "Mozzarella" by Dezidor, Wikimedia Commons, CC BY 3.0 (creativecommons.org/licenses/by/3.0), cut out. Board: "Kitchen Wood" by Rob Tuytel, Poly Haven, CC0. Idea sparked by a pizza-builder reel shared by @online.by.annie; nothing of it is used.</p></section>
+  <section class="wrap photo-cred" aria-label="Photo credits"><p class="mono">Photos: crust, melted mozzarella and basil from "Neapolitan pizza at Trappica" by Bex Walton, Wikimedia Commons, CC BY 2.0 (creativecommons.org/licenses/by/2.0); raw mozzarella from "Mozzarella" by Dezidor, Wikimedia Commons, CC BY 3.0 (creativecommons.org/licenses/by/3.0); sauce "Pizza marinara (Napoli)" by Ruthven, pepperoni from "Luigis Pizza &amp; Pasta - Pepperoni pizza" by Beno&icirc;t Prieur, cherry tomatoes by Raju C Reddy (Wikimedia Commons, CC0 1.0). All cut out, re-lit and baked by Zyqor Studio. Board: "Kitchen Wood" by Rob Tuytel, Poly Haven, CC0. Idea sparked by a pizza-builder reel shared by @online.by.annie; nothing of it is used.</p></section>
 </main>
 
 <div class="m-bar" id="m-bar"><span class="mono">Total <b>$<span id="mb-total">9.00</span></b></span><button class="btn btn--accent" type="button" id="mb-fire" aria-disabled="true">Fire it</button></div>

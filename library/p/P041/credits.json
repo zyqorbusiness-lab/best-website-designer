@@ -1,114 +1,144 @@
 {
-  "brand": "Hotcoal Kitchen",
-  "id": "P041",
-  "items": [
-    {
-      "what": "Photo (pizza base)",
-      "title": "Pizza marinara (Napoli)",
-      "author": "Ruthven",
-      "source": "Wikimedia Commons",
-      "url": "https://commons.wikimedia.org/wiki/File:Pizza_marinara_(Napoli).jpg",
-      "licence": "CC0 1.0",
-      "note": "Rectified to a top-down view and cut out as a disc; shown lighter before the bake, as photographed after it.",
-      "files": [
-        "img/base.webp"
-      ]
-    },
-    {
-      "what": "Photo (pepperoni pieces)",
-      "title": "Pepperoni and mushroom pizza - Massachusetts",
-      "author": "Daderot",
-      "source": "Wikimedia Commons",
-      "url": "https://commons.wikimedia.org/wiki/File:Pepperoni_and_mushroom_pizza_-_Massachusetts.jpg",
-      "licence": "CC0 1.0",
-      "note": "Four single slices cut out of the photo.",
-      "files": [
-        "img/pepperoni-1.webp",
-        "img/pepperoni-2.webp",
-        "img/pepperoni-3.webp",
-        "img/pepperoni-4.webp"
-      ]
-    },
-    {
-      "what": "Photo (mozzarella pieces)",
-      "title": "Mozzarella",
-      "author": "Dezidor",
-      "source": "Wikimedia Commons",
-      "url": "https://commons.wikimedia.org/wiki/File:Mozzarella.jpeg",
-      "licence": "CC BY 3.0",
-      "note": "Photo by Dezidor, CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/). Five mozzarella balls cut out of the photo.",
-      "files": [
-        "img/mozzarella-1.webp",
-        "img/mozzarella-2.webp",
-        "img/mozzarella-3.webp",
-        "img/mozzarella-4.webp",
-        "img/mozzarella-5.webp"
-      ]
-    },
-    {
-      "what": "Photo (cherry tomato)",
-      "title": "Cherry-Tomatoes-in-Pack",
-      "author": "Evan-Amos",
-      "source": "Wikimedia Commons",
-      "url": "https://commons.wikimedia.org/wiki/File:Cherry-Tomatoes-in-Pack.jpg",
-      "licence": "CC0 1.0",
-      "note": "One tomato cut out of the photo.",
-      "files": [
-        "img/tomato.webp"
-      ]
-    },
-    {
-      "what": "Photo (basil leaf)",
-      "title": "Glowing basil leaf",
-      "author": "Khoney21",
-      "source": "Wikimedia Commons",
-      "url": "https://commons.wikimedia.org/wiki/File:Glowing_basil_leaf.jpg",
-      "licence": "CC0 1.0",
-      "note": "Cut out and re-toned from back-lit to front-lit green.",
-      "files": [
-        "img/basil.webp"
-      ]
-    },
-    {
-      "what": "Texture (serving board)",
-      "title": "Kitchen Wood",
-      "author": "Rob Tuytel",
-      "source": "Poly Haven",
-      "url": "https://polyhaven.com/a/kitchen_wood",
-      "licence": "CC0 1.0",
-      "note": "2K diffuse texture cut into a round board.",
-      "files": [
-        "img/board.webp"
-      ]
-    },
-    {
-      "what": "Inspiration",
-      "title": "Pizza-builder website shown in a reel",
-      "author": "@online.by.annie (Annie | Web Design Tips)",
-      "source": "Instagram",
-      "url": "https://www.instagram.com/reel/DfGDN_fIZsC/",
-      "licence": "Reference only",
-      "note": "The reel shows a pizza-ordering site branded Tondo; its designer could not be identified by search on 30 Oct 2026. Nothing from the reel or the site is used here: the idea of dragging ingredients onto a base was the starting point.",
-      "files": []
-    },
-    {
-      "what": "Fonts",
-      "title": "Cabinet Grotesk, Satoshi, Instrument Serif, JetBrains Mono",
-      "author": "Indian Type Foundry; Rodrigo Fuenzalida and Jordan Egstad; JetBrains",
-      "source": "Fontshare / Google Fonts",
-      "licence": "ITF Free Font License / SIL OFL 1.1",
-      "note": "Self-hosted by the library kit.",
-      "files": []
-    },
-    {
-      "what": "Code",
-      "title": "Page code",
-      "author": "Zyqor Studio",
-      "licence": "MIT",
-      "note": "Vanilla JS, pointer events, Web Animations. No libraries.",
-      "files": [
-        "app.js"
-      ]
-    }
-  ]
+ "brand": "Hotcoal Kitchen",
+ "id": "P041",
+ "items": [
+  {
+   "what": "Photo (crust, melted mozzarella, basil)",
+   "title": "Neapolitan pizza at Trappica",
+   "author": "Bex Walton",
+   "source": "Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/wiki/File:Neapolitan_pizza_at_Trappica_(48701940197).jpg",
+   "licence": "CC BY 2.0",
+   "note": "Photo by Bex Walton, CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/). Rectified to a top-down view; the leopard-spotted crust ring is the pizza base (raw state re-toned to pale dough), six melted mozzarella patches and four basil leaves cut out of it (baked basil = the same leaves wilted).",
+   "files": [
+    "img/base-baked-1024.webp",
+    "img/base-baked.webp",
+    "img/base-raw-1024.webp",
+    "img/base-raw.webp",
+    "img/mozz-baked-1.webp",
+    "img/mozz-baked-2.webp",
+    "img/mozz-baked-3.webp",
+    "img/mozz-baked-4.webp",
+    "img/mozz-baked-5.webp",
+    "img/mozz-baked-6.webp",
+    "img/basil-baked-1.webp",
+    "img/basil-baked-2.webp",
+    "img/basil-baked-3.webp",
+    "img/basil-baked-4.webp",
+    "img/basil-raw-1.webp",
+    "img/basil-raw-2.webp",
+    "img/basil-raw-3.webp",
+    "img/basil-raw-4.webp"
+   ]
+  },
+  {
+   "what": "Photo (sauce)",
+   "title": "Pizza marinara (Napoli)",
+   "author": "Ruthven",
+   "source": "Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/wiki/File:Pizza_marinara_(Napoli).jpg",
+   "licence": "CC0 1.0",
+   "note": "The sauce inside the crust ring, rectified, garlic and basil cloned out.",
+   "files": [
+    "img/base-baked-1024.webp",
+    "img/base-baked.webp",
+    "img/base-raw-1024.webp",
+    "img/base-raw.webp"
+   ]
+  },
+  {
+   "what": "Photo (raw mozzarella)",
+   "title": "Mozzarella",
+   "author": "Dezidor",
+   "source": "Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/wiki/File:Mozzarella.jpeg",
+   "licence": "CC BY 3.0",
+   "note": "Photo by Dezidor, CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/). Six torn chunks cut out of the mozzarella balls, given soft rounded shading.",
+   "files": [
+    "img/mozz-raw-1.webp",
+    "img/mozz-raw-2.webp",
+    "img/mozz-raw-3.webp",
+    "img/mozz-raw-4.webp",
+    "img/mozz-raw-5.webp",
+    "img/mozz-raw-6.webp"
+   ]
+  },
+  {
+   "what": "Photo (pepperoni)",
+   "title": "Luigis Pizza & Pasta - Pepperoni pizza",
+   "author": "Benoît Prieur",
+   "source": "Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/wiki/File:Luigis_Pizza_%26_Pasta_-_Pepperoni_pizza.jpg",
+   "licence": "CC0 1.0",
+   "note": "Five slices cut out; baked = tamed highlights and a charred rim, raw = the same slices without the oil shine.",
+   "files": [
+    "img/pep-baked-1.webp",
+    "img/pep-baked-2.webp",
+    "img/pep-baked-3.webp",
+    "img/pep-baked-4.webp",
+    "img/pep-baked-5.webp",
+    "img/pep-raw-1.webp",
+    "img/pep-raw-2.webp",
+    "img/pep-raw-3.webp",
+    "img/pep-raw-4.webp",
+    "img/pep-raw-5.webp"
+   ]
+  },
+  {
+   "what": "Photo (cherry tomato halves)",
+   "title": "Chiaroscuro Charms Black Cherry Tomatoes Unveiled by Raju C Reddy",
+   "author": "Raju C Reddy",
+   "source": "Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/wiki/File:Chiaroscuro_Charms_Black_Cherry_Tomatoes_Unveiled_by_Raju_C_Reddy.jpg",
+   "licence": "CC0 1.0",
+   "note": "Two halves cut out; baked = the same halves roasted.",
+   "files": [
+    "img/tom-baked-1.webp",
+    "img/tom-baked-2.webp",
+    "img/tom-raw-1.webp",
+    "img/tom-raw-2.webp"
+   ]
+  },
+  {
+   "what": "Texture (serving board)",
+   "title": "Kitchen Wood",
+   "author": "Rob Tuytel",
+   "source": "Poly Haven",
+   "url": "https://polyhaven.com/a/kitchen_wood",
+   "licence": "CC0 1.0",
+   "note": "2K diffuse texture cut into a round board.",
+   "files": [
+    "img/board.webp"
+   ]
+  },
+  {
+   "what": "Inspiration",
+   "title": "Pizza-builder website shown in a reel",
+   "author": "@online.by.annie (Annie | Web Design Tips)",
+   "source": "Instagram",
+   "url": "https://www.instagram.com/reel/DfGDN_fIZsC/",
+   "licence": "Reference only",
+   "note": "The reel shows a pizza-ordering site branded Tondo; its designer could not be identified by search on 30 Oct 2026. Nothing from the reel or the site is used here: the idea of dragging ingredients onto a base was the starting point.",
+   "files": []
+  },
+  {
+   "what": "Fonts",
+   "title": "Cabinet Grotesk, Satoshi, Instrument Serif, JetBrains Mono",
+   "author": "Indian Type Foundry; Rodrigo Fuenzalida and Jordan Egstad; JetBrains",
+   "source": "Fontshare / Google Fonts",
+   "licence": "ITF Free Font License / SIL OFL 1.1",
+   "note": "Self-hosted by the library kit.",
+   "files": []
+  },
+  {
+   "what": "Code",
+   "title": "Page code",
+   "author": "Zyqor Studio",
+   "licence": "MIT",
+   "note": "Vanilla JS: a 2D canvas renderer (two shadows per piece, raw-to-baked crossfade, steam), pointer events, Web Animations. No libraries.",
+   "files": [
+    "app.js"
+   ]
+  }
+ ]
 }
