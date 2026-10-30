@@ -37,7 +37,7 @@ const ING = {
   artichoke:  { name: 'Artichoke',     price: 2.5, n: 6, size: 1.2, raw: list('arti-raw', 7), baked: list('arti-baked', 7), grow: [1, 0.95], shadow: [0.55, 0.42], gap: 0.22 },
   pepper:     { name: 'Red pepper', price: 1.5, n: 7, size: 1.12, raw: list('pepper-raw', 5), baked: list('pepper-baked', 5), grow: [1, 0.92], shadow: [0.5, 0.4], gap: 0.2 },
   onion:      { name: 'Red onion',     price: 1.0, n: 8, size: 1.12, raw: list('onion-raw', 4), baked: list('onion-baked', 4), grow: [1, 0.9], shadow: [0.45, 0.35], gap: 0.19 },
-  olive:      { name: 'Black olive',   price: 1.5, n: 13, size: 1.3, raw: list('olive-raw', 3), baked: list('olive-baked', 3), grow: [1, 0.97], shadow: [0.55, 0.45], gap: 0.13 },
+  olive:      { name: 'Black olive',   price: 1.5, n: 7, size: 1.15, raw: list('olive-raw', 3), baked: list('olive-baked', 3), grow: [1, 0.97], shadow: [0.55, 0.45], gap: 0.2 },
   /* basil goes on fresh after the oven, the way a pizzaiolo finishes it: the baked state keeps the bright leaves */
   basil:      { name: 'Basil',         price: 1.0, n: 4, raw: list('basil-raw', 4), baked: list('basil-raw', 4), grow: [1, 1], shadow: [0.5, 0.45], gap: 0.22 }
 };
@@ -173,20 +173,21 @@ function drawShadow(q, f, k, grow, shA) {
   }
 }
 
-/* ---------- the serve: one slice pulled out of the pie after the oven, the marble showing through the cut ---------- */
-const offA = document.createElement('canvas'), offB = document.createElement('canvas');
+/* ---------- the serve: cut into eight after the oven ---------- */
 function sliceOut(p) {
-  const e = easeOut(p), c = W / 2, R = W * 0.5, a0 = Math.PI / 8, a1 = a0 + Math.PI / 4, mid = (a0 + a1) / 2, s = 1 - 0.07 * e, d = W * 0.07 * e;
-  for (const o of [offA, offB]) if (o.width !== W) { o.width = W; o.height = W; }
-  const A = offA.getContext('2d'), B = offB.getContext('2d');
-  A.setTransform(1, 0, 0, 1, 0, 0); A.clearRect(0, 0, W, W); A.drawImage(cv, 0, 0);
-  B.setTransform(1, 0, 0, 1, 0, 0); B.clearRect(0, 0, W, W);
-  B.save(); B.beginPath(); B.moveTo(c, c); B.arc(c, c, R, a0, a1); B.closePath(); B.clip(); B.drawImage(offA, 0, 0); B.restore();
-  ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, W, W);
-  ctx.save(); ctx.translate(c, c); ctx.scale(s, s); ctx.translate(-c, -c);
-  ctx.beginPath(); ctx.moveTo(c, c); ctx.arc(c, c, R, a1, a0 + Math.PI * 2); ctx.closePath(); ctx.clip(); ctx.drawImage(offA, 0, 0); ctx.restore();
-  ctx.save(); ctx.shadowColor = 'rgba(70,48,30,0.38)'; ctx.shadowBlur = 16 * DPR * e; ctx.shadowOffsetX = 5 * DPR * e; ctx.shadowOffsetY = 8 * DPR * e;
-  ctx.translate(c + Math.cos(mid) * d, c + Math.sin(mid) * d); ctx.scale(s, s); ctx.translate(-c, -c); ctx.drawImage(offB, 0, 0); ctx.restore();
+  /* v3.1: the pizza is cut into eight like a pizzeria does it: four faint knife lines through the cheese, a darker
+     groove with a light lip beside it (a pulled-out wedge read as a graphic, Sujon 2:31 PM) */
+  const e = easeOut(p), c = W / 2, R = W * 0.462;
+  ctx.save(); ctx.beginPath(); ctx.arc(c, c, W * 0.47, 0, Math.PI * 2); ctx.clip(); ctx.lineCap = 'round';
+  for (let i = 0; i < 4; i++) {
+    const a = Math.PI / 8 + i * Math.PI / 4, dx = Math.cos(a) * R * e, dy = Math.sin(a) * R * e;
+    ctx.globalCompositeOperation = 'multiply'; ctx.strokeStyle = 'rgba(122,74,38,0.55)'; ctx.lineWidth = Math.max(1.2, W * 0.0032);
+    ctx.beginPath(); ctx.moveTo(c - dx, c - dy); ctx.lineTo(c + dx, c + dy); ctx.stroke();
+    ctx.globalCompositeOperation = 'screen'; ctx.strokeStyle = 'rgba(255,236,200,0.28)'; ctx.lineWidth = Math.max(0.8, W * 0.0018);
+    const ox = -Math.sin(a) * W * 0.0035, oy = Math.cos(a) * W * 0.0035;
+    ctx.beginPath(); ctx.moveTo(c - dx + ox, c - dy + oy); ctx.lineTo(c + dx + ox, c + dy + oy); ctx.stroke();
+  }
+  ctx.restore(); ctx.globalCompositeOperation = 'source-over';
 }
 
 /* ---------- steam after the bake: soft puffs made by scaling a tiny disc up (no gradients) ---------- */
