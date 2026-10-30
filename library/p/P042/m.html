@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en" data-build="m">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- desktop -> phone build when ?m=1 is absent -->
+<script>document.documentElement.classList.add('js');(function(){var q=location.search;if(/[?&]m=1/.test(q))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height,phone=w<=860||(c&&h>w);if(!phone)location.replace('./'+q+location.hash);})();</script>
+<title>Tally Pad &middot; Concept P042 &middot; Zyqor Library</title>
+<meta name="description" content="Tally Pad is a fictional brand: a premium 3D web concept by Zyqor Studio. A three-key macro pad with a knurled dial and a light bar, built in code and driven by scroll: explode it, press the keys, turn the dial, change the light.">
+<meta name="theme-color" content="#ECE7DE">
+<meta property="og:title" content="Tally Pad &middot; Concept P042 &middot; Zyqor Library">
+<meta property="og:description" content="A fictional-brand 3D concept by Zyqor Studio: a macro pad you take apart by scrolling.">
+<meta property="og:image" content="https://zyqor-portfolio.vercel.app/library/p/P042/thumb.webp">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zyqor-portfolio.vercel.app/library/p/P042/m.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://zyqor-portfolio.vercel.app/library/p/P042/">
+
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../../assets/font/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="poster.webp" as="image" fetchpriority="high">
+<link rel="stylesheet" href="../../_kit/concept.css">
+<link rel="stylesheet" href="../../_kit/landing.css">
+<link rel="stylesheet" href="../../_kit/chrome.css">
+<link rel="stylesheet" href="../../../assets/glass/liquid-glass.css">
+<link rel="stylesheet" href="../../_kit/premium.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="m.css">
+<style>:root{--c1:#ECE7DE;--c2:#1F3A33;--c3:#E2572B}</style>
+<script type="importmap">{"imports":{"three":"../../../vendor/three/three.module.min.js","three/addons/":"../../../vendor/three/addons/"}}</script>
+</head>
+<body class="tp" data-id="P042" data-tier="premium" data-name="Tally Pad">
+<a class="skip" href="#main">Skip to content</a>
+<nav class="bnav" aria-label="Tally Pad">
+  <div class="bnav-in">
+    <a class="logo" href="#main" aria-label="Tally Pad, back to top"><svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false"><rect x="3" y="9" width="26" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><rect x="7" y="13" width="4" height="4" rx="1" fill="currentColor"/><rect x="13" y="13" width="4" height="4" rx="1" fill="currentColor"/><circle cx="23" cy="16" r="3" fill="none" stroke="currentColor" stroke-width="2"/></svg><span>Tally Works</span></a>
+    <ul class="bnav-links"><li><a href="#explode">Inside</a></li><li><a href="#keys">Keys</a></li><li><a href="#dial">Dial</a></li><li><a href="#light">Light</a></li><li><a href="#order">Order</a></li></ul>
+    <a class="btn btn--accent bnav-cta" href="#order" data-press>Reserve</a>
+    <button class="menu-btn" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="msheet"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>Menu</button>
+  </div>
+</nav>
+<dialog class="msheet" id="msheet" aria-label="Menu">
+  <div class="msheet-in">
+    <div class="msheet-top"><span class="logo">Tally Works</span><button class="msheet-x" type="button" aria-label="Close menu"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+    <ul><li><a href="#explode">Inside<span>01</span></a></li><li><a href="#keys">Keys<span>02</span></a></li><li><a href="#dial">Dial<span>03</span></a></li><li><a href="#light">Light<span>04</span></a></li><li><a href="#order">Order<span>05</span></a></li></ul>
+    <a class="btn btn--accent" href="#order">Reserve</a>
+  </div>
+</dialog>
+<div class="tp-stage" aria-hidden="true"><img class="tp-poster" src="poster.webp" alt="" width="1600" height="1000" fetchpriority="high"><canvas class="tp-gl"></canvas></div>
+<main id="main">
+  <section class="tp-hero" id="hero" aria-labelledby="h1">
+    <div class="tp-copy">
+      <p class="tp-tag">Macro pad &middot; Concept P042</p>
+      <h1 id="h1" class="tp-xl">Tally</h1>
+      <p class="tp-lead">Three keys and one heavy dial. Cut, mark and scrub your timeline by feel, not by menu.</p>
+      <div class="tp-btns"><a class="btn btn--accent" href="#order" data-press>Reserve one</a><a class="btn btn--ghost" href="#explode">Take it apart</a></div>
+    </div>
+    <ul class="tp-chips" aria-label="At a glance"><li><b>3</b> hot-swap keys</li><li><b>24</b> detents</li><li><b>4</b> light colours</li></ul>
+    <p class="tp-scroll" aria-hidden="true">Scroll</p>
+  </section>
+
+  <section class="tp-pin" id="explode" data-scene="explode" aria-labelledby="ex-h">
+    <div class="tp-sticky">
+      <div class="tp-side">
+        <p class="tp-tag">01 &middot; Inside</p>
+        <h2 id="ex-h" class="tp-l">Five layers. <span>No glue.</span></h2>
+        <ol class="tp-layers">
+          <li data-l="0"><b>Keycaps</b><span>PBT, 1.5 mm walls, dished tops</span></li>
+          <li data-l="1"><b>Switches</b><span>Linear, 45 gf, 3.6 mm travel</span></li>
+          <li data-l="2"><b>Dial shaft</b><span>Steel, 24 detents a turn</span></li>
+          <li data-l="3"><b>PCB</b><span>Hot-swap sockets, USB-C</span></li>
+          <li data-l="4"><b>Case</b><span>One block of 6063 aluminium</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="tp-pin" id="keys" data-scene="keys" aria-labelledby="ky-h">
+    <div class="tp-sticky">
+      <div class="tp-side">
+        <p class="tp-tag">02 &middot; Keys</p>
+        <h2 id="ky-h" class="tp-l">Every press <span>counts.</span></h2>
+        <p class="tp-count"><span class="tp-mono">Presses</span> <b id="ky-n">0</b><i>/3</i></p>
+        <ul class="tp-keys"><li data-k="0"><b>Cut</b><span>Split the clip under the playhead.</span></li><li data-k="1"><b>Mark</b><span>Drop a marker without stopping playback.</span></li><li data-k="2"><b>Undo</b><span>The orange one. You will use it most.</span></li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="tp-pin" id="dial" data-scene="dial" aria-labelledby="dl-h">
+    <div class="tp-sticky">
+      <div class="tp-side tp-side--dial">
+        <p class="tp-tag">03 &middot; Dial</p>
+        <h2 id="dl-h" class="tp-l">Feel every <span>frame.</span></h2>
+        <p class="tp-readout" aria-live="off"><b id="dl-n">00</b><i>/24</i></p>
+        <div class="tp-ticks" aria-hidden="true"></div>
+        <p class="tp-body">A machined knob on a steel shaft. 24 clicks a turn, one frame each. Push it to switch from scrub to zoom.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tp-pin" id="light" data-scene="light" aria-labelledby="lt-h">
+    <div class="tp-sticky">
+      <div class="tp-side">
+        <p class="tp-tag">04 &middot; Light</p>
+        <h2 id="lt-h" class="tp-l">Your colour, <span>on the desk.</span></h2>
+        <p class="tp-body">The front edge is frosted. The light spills onto the desk, never into your eyes.</p>
+        <div class="tp-sw" role="group" aria-label="Light colour"><button type="button" data-light="0" aria-pressed="true"><i style="background:#FFAA3B"></i>Ember</button><button type="button" data-light="1" aria-pressed="false"><i style="background:#3FC2A4"></i>Tide</button><button type="button" data-light="2" aria-pressed="false"><i style="background:#FF7A66"></i>Coral</button><button type="button" data-light="3" aria-pressed="false"><i style="background:#DCEFF5"></i>Frost</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section pn-sec form-sec tp-order" id="order" aria-labelledby="od-h">
+    <div class="wrap pn-book">
+      <div class="pn-head"><p class="tag">05 &middot; Order</p><h2 id="od-h" class="h2">Reserve a <span class="serif">Tally Pad.</span></h2>
+        <p class="body">Pick a finish. Tally Works is a fictional brand. This is a concept form: it checks what you type, but nothing is sent anywhere.</p>
+        <div class="tp-finish" role="group" aria-label="Case finish"><button type="button" data-fin="0" aria-pressed="true"><i style="background:#C8C6C1"></i>Raw aluminium</button><button type="button" data-fin="1" aria-pressed="false"><i style="background:#D8C3A0"></i>Sand</button><button type="button" data-fin="2" aria-pressed="false"><i style="background:#9DAF9B"></i>Sage</button></div>
+        <p class="tp-price"><b>$149</b> <span class="tp-mono">Concept price</span></p>
+      </div>
+      <div>
+        <form class="form" data-honest data-success="od-ok" data-echo="Thanks, {name}. Tally Works is fictional, so nothing left this page." novalidate>
+          <div class="row2">
+            <div class="field"><label for="od-name">Your name</label><input class="input" id="od-name" name="name" type="text" autocomplete="name" required minlength="2" data-req="Tell us what to call you." placeholder="Ana Ruiz" aria-describedby="od-name-err"><p class="err" id="od-name-err" aria-live="polite"></p></div>
+            <div class="field"><label for="od-email">Email</label><input class="input" id="od-email" name="email" type="email" autocomplete="email" required data-req="We need an email to reply." placeholder="you@example.com" aria-describedby="od-email-err"><p class="err" id="od-email-err" aria-live="polite"></p></div>
+          </div>
+          <div class="field"><label for="od-finish">Finish</label><select class="input" id="od-finish" name="finish" required data-req="Pick one." aria-describedby="od-finish-err"><option value="">Choose</option><option>Raw aluminium</option><option>Sand</option><option>Sage</option></select><p class="err" id="od-finish-err" aria-live="polite"></p></div>
+          <div class="submit-row"><button class="btn btn--accent" type="submit" data-press><span class="spin" aria-hidden="true"></span>Reserve (concept)</button><p class="form-note">Concept form. Nothing leaves this page.</p></div>
+        </form>
+        <div class="success" id="od-ok" tabindex="-1" role="status">
+          <svg viewBox="0 0 40 40" width="40" height="40" aria-hidden="true"><circle cx="20" cy="20" r="15"/><path d="M13 20l5 5 9-10"/></svg>
+          <p class="tag">Concept: not sent</p>
+          <h3>Thanks. Nothing was sent.</h3>
+          <p class="body" data-echo></p>
+          <button class="btn btn--ghost" type="button" data-again>Fill it in again</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="wrap photo-cred" aria-label="Credits"><p class="mono">Tally Pad is a fictional product. The model is built in code by Zyqor Studio (no downloaded 3D files). Studio light: "Studio Small 09" by Sergej Majboroda, Poly Haven, CC0. Fonts: Archivo, Inter Tight, JetBrains Mono (SIL OFL 1.1). three.js (MIT). Spark: a creator macro-pad launch page Sujon shared; nothing of it is used.</p></section>
+</main>
+<script src="../../../vendor/gsap.min.js" defer></script>
+<script src="../../../vendor/ScrollTrigger.min.js" defer></script>
+<script src="../../../vendor/lenis.min.js" defer></script>
+<script type="module" src="../../_kit/chrome.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>
