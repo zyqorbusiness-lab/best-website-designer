@@ -8,7 +8,7 @@ version: 1.0.0
 
 # Scroll video hero
 
-The first screen of [the Zyqor portfolio](https://zyqor-portfolio-v3.sites.tab.bot/) is a camera flight that moves only when you scroll. This skill is that technique on its own, small enough to drop into any site: **one video, its timeline mapped to the scroll position of a tall section, with a sticky frame and copy beats on top.**
+The first screen of [the Zyqor portfolio](https://zyqor-portfolio.sites.tab.bot/) is a camera flight that moves only when you scroll. This skill is that technique on its own, small enough to drop into any site: **one video, its timeline mapped to the scroll position of a tall section, with a sticky frame and copy beats on top.**
 
 Open `example/index.html` (any static server, e.g. `npx serve example`) to see it: a 4-second, 120-frame flight around a real scanned pair of binoculars, a desktop cut and a phone cut, 576 KB and 373 KB.
 

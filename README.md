@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://zyqor-portfolio-v3.sites.tab.bot/"><b>Live preview</b></a> &nbsp;&middot;&nbsp;
+  <a href="https://zyqor-portfolio.sites.tab.bot/"><b>Live preview</b></a> &nbsp;&middot;&nbsp;
   <a href="#zyqor-lab">Lab concepts</a> &nbsp;&middot;&nbsp;
   <a href="#zyqor-library-300-3d-concepts-in-progress">300-concept library</a> &nbsp;&middot;&nbsp;
   <a href="site/components/">Components</a> &nbsp;&middot;&nbsp;
