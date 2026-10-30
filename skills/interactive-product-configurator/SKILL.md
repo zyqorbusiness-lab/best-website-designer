@@ -181,6 +181,58 @@ a sneaker gets laced; always one change that touches the whole product.
 
 ---
 
+## 7b. Realism: make it read as ONE real photo (P041 v2, Oct 30 2026)
+
+Sujon's verdict on P041 v1 (11:48 AM IST, Oct 30): "accha nahi hai, real pizza jaisa nahi bana". The pieces were
+real photos, but they read as **stickers**: flat cut-outs on raw sauce, no shadow, one scale, cheese as white balls,
+and a "bake" that was a CSS filter. Real photos are necessary and not enough. What fixed it, in order of impact:
+
+| # | Rule | Why it matters | P041 numbers |
+|---|------|----------------|--------------|
+| R1 | **Cut the pieces out of photos of the finished product**, not of loose ingredients | a patch cut from a real pizza already has the melt, the oil, the lighting and the camera of a pizza photo; a mozzarella ball on a white plate never will | melted mozzarella and basil cut from one CC BY 2.0 Neapolitan pizza photo; pepperoni from a CC0 pepperoni pizza |
+| R2 | **One pixel scale for everything**: export every sprite at the base photo's scale and draw it at `naturalWidth * canvasWidth / basePx` | random `width: 12%` per piece is what makes a pepperoni the size of a tomato | base 2048 px (disc radius 960); pepperoni ~280 px, tomato half ~165 px, patches 210-370 px; random scale only ±15 % |
+| R3 | **Two shadows per piece, multiplied, one light direction**: a soft one (silhouette blurred ~7 base px, offset down-right) and a tight contact one (~2 px) | the contact shadow is what puts a piece *on* the surface; `multiply` darkens the sauce under it the way a real shadow does, a black `drop-shadow` greys it | soft alpha .5-.75 raw, .1-.6 baked; light from top-left like the base photo |
+| R4 | **A raw and a baked photo for every piece, same index**, and crossfade them during the transition | a filter cannot turn white cheese into browned melted cheese; a second real photo can. Pairing by index keeps each piece's identity | raw mozzarella = torn chunks of a real mozzarella ball, baked = melted patches (scale 1.0 -> 1.2, it spreads); pepperoni matte -> glossy, cupped, charred rim (0.92, it shrinks); tomatoes blister; basil wilts (darker, 0.9) |
+| R5 | **The base has a raw and a baked state too**, made from the same photo | crossfading two different pizzas reads as a morph; the same crust taken back to pale dough reads as baking | raw = crust re-toned in LAB (L toward 222, chroma x0.4); baked = the real leopard-spotted crust, sauce V x0.8 |
+| R6 | **Melt and oil are a tinted soft silhouette under the piece** (`multiply`, golden for cheese, orange for pepperoni), only in the baked state | real pepperoni lets out orange fat and melted cheese runs golden at its edge; this one pass "sinks" the pieces into the pizza | oil alpha .55 x bake progress, silhouette scaled 1.22 |
+| R7 | **Scatter inside the sauce, never on the crust**: centre limit = sauce radius - piece radius x 0.9, spacing per type, mirrored + any rotation | a piece on the cornicione is the fastest way to look fake | sauce edge 0.755 of the pie box half-width |
+| R8 | **Grade the whole pie once at the end** (one soft-light pass in a warm colour, clipped to the disc) | photos from 4 different cameras need one light to look like one photo | `soft-light`, rgb(255,176,96), alpha .16 x bake |
+| R9 | **The oven is light, not a filter**: a warm soft-light swell while it bakes, then steam | steam is the "it's hot, it's real" cue in every food reel | glow alpha sin(pi p) x .55; steam = 1-2 puffs / 70 ms for 14 s, alpha .05-.11, rising 0.42 of the stage |
+
+How to build it (copy from `site/library/p/P041/app.js`):
+
+1. **Render the product on a `<canvas>`** sized `cssWidth x min(devicePixelRatio, 3)` on desktop (no cap below the
+   screen's real density: desktop gets the full 2048 px base), keep a plain `<img>` of the raw base underneath as the
+   LCP element and no-JS fallback. Redraw only on change (`requestAnimationFrame` while something animates, then stop).
+2. **Shadows without `ctx.filter`** (Safari support is patchy): draw the sprite at 1/blur size, fill `source-in` with a
+   warm dark brown `rgb(58,34,22)`, and draw that tiny canvas back up at full size; the browser's smoothing is the blur.
+   Make it once per sprite at load.
+3. **Cut-outs**: rectify the source to top-down (fit the disc, scale it to a circle), then cut each piece with a
+   colour mask *times* an organic blob mask (low-frequency radius noise), feather 6-11 px. Colour mask examples that
+   worked: melted cheese `smoothstep(G/R, .56, .74) * smoothstep(V, 110, 160)`, basil `G - R > 8 and G - B > 10`.
+   Clone-stamp (shifted copy + feathered mask) to remove unwanted bits from a base; Telea inpaint smears on texture.
+4. **Torn fresh mozzarella** = a real mozzarella ball photo masked with an irregular blob (angle noise at 24 and 180
+   samples), contrast x1.45 around the median, rim darkening over the outer 12 px, light from top-left, a few wet
+   highlights where the photo is already brightest. Flat white blobs read as paper.
+5. **Judge at 2x on a crop, and at phone size.** A colour that looks fine on a sprite sheet can turn pink at 390 px
+   (glossy pepperoni averages toward pink); tame highlights rather than shifting hue (hue shifts went cartoon orange).
+
+Don't:
+- don't use CSS `filter` to fake a bake (v1: `brightness/saturate/blur` on each piece) - it reads as a photo filter;
+- don't place pieces at a random % width - it breaks R2;
+- don't let the melted size decide placement late: compute the placement radius from the *largest* (baked) size;
+- don't draw steam over the product at more than ~.1 alpha - it washes the photo out (v2 first try at .22 did);
+- don't ship a licence the credit gate doesn't know: CC BY 2.0 was added to `tools/credits-check.mjs` for P041 with
+  title, author, licence and link visible on the page.
+
+Checklist (realism):
+- [ ] every piece cut from a photo of the finished product, at the base's pixel scale
+- [ ] soft + contact shadow, multiplied, light direction matches the base photo
+- [ ] raw and baked photo per piece, crossfade; base raw/baked from the same photo
+- [ ] nothing on the crust; random rotation, mirror, scale +-15 %
+- [ ] steam/glow off with `prefers-reduced-motion` (bake is instant)
+- [ ] screenshot raw, mid-build and baked at 1440 and 390; a stranger would say "that's a real pizza"
+
 ## 8. Honest ordering
 
 Concepts say so: "Concept: not sent" success state, a note under the button, fictional brand labels (Zyqor's library

@@ -116,7 +116,7 @@ for a folder holding one asset), with these keys, all non-empty:
   "downloaded": "2026-10-28"
 }
 ```
-Allowed licences (Sujon, 28 Oct 2026): CC0 1.0, CC BY 4.0, CC BY 3.0, SIL OFL 1.1, MIT, Apache 2.0, Public domain
+Allowed licences (Sujon, 28 Oct 2026): CC0 1.0, CC BY 4.0, CC BY 3.0, CC BY 2.0 (added Oct 30 2026 for P041: same attribution terms), SIL OFL 1.1, MIT, Apache 2.0, Public domain
 (NASA | Smithsonian); Unsplash/Pexels only with `"verified": true` after checking the photo page; ITF FFL, Mixkit,
 CC BY-SA, CC BY 3.0 US and own work are "review" licences.
 

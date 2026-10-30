@@ -15,7 +15,8 @@ const KEYS = ['title', 'author', 'author_url', 'source_url', 'licence', 'licence
 const EXT = new Set(['.glb', '.gltf', '.bin', '.hdr', '.exr', '.jpg', '.jpeg', '.png', '.webp', '.avif', '.ktx2', '.woff2', '.woff', '.ttf', '.otf', '.mp4', '.webm', '.mov', '.mp3', '.ogg', '.wav', '.m4a', '.svg', '.gif']);
 const SKIP_DIRS = new Set(['node_modules', '.git', 'vendor', '_template', '_test']);
 // Allow-list (Sujon, Oct 28 2026). Unsplash/Pexels pass only with "verified": true.
-const ALLOW = [/^CC0 1\.0$/, /^CC BY 4\.0$/, /^CC BY 3\.0$/, /^SIL OFL 1\.1$/, /^MIT$/, /^Apache 2\.0$/, /^Public domain \((NASA|Smithsonian)\)$/];
+// CC BY 2.0 added Oct 30 2026 (P041 realism rework): same terms as 3.0/4.0, credit with title, author, licence and link.
+const ALLOW = [/^CC0 1\.0$/, /^CC BY 4\.0$/, /^CC BY 3\.0$/, /^CC BY 2\.0$/, /^SIL OFL 1\.1$/, /^MIT$/, /^Apache 2\.0$/, /^Public domain \((NASA|Smithsonian)\)$/];
 const VERIFY_ONLY = [/^Unsplash License$/, /^Pexels License$/];
 const REVIEW = [/^ITF Free Font License/, /^Mixkit /, /^CC BY-SA /, /^CC BY 3\.0 US$/, /^All rights reserved \(own work\)$/];
 const OWN = /^(Zyqor Studio|Sujon Hoque)/;

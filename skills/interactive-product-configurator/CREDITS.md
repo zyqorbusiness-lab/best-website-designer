@@ -3,11 +3,14 @@
 ## Photos used by the demo (loaded from site/library/p/P041/img/, credited there file by file)
 | Asset | Author | Source | Licence |
 |---|---|---|---|
-| "Pizza marinara (Napoli)" (base, rectified to top-down) | Ruthven | Wikimedia Commons | CC0 1.0 |
-| "Pepperoni and mushroom pizza - Massachusetts" (slices cut out) | Daderot | Wikimedia Commons | CC0 1.0 |
-| "Mozzarella" (balls cut out) | Dezidor | Wikimedia Commons | CC BY 3.0 |
-| "Glowing basil leaf" (cut out, re-toned) | Khoney21 | Wikimedia Commons | CC0 1.0 |
+| "Neapolitan pizza at Trappica" (crust ring, melted mozzarella patches, basil leaves; rectified to top-down) | Bex Walton | Wikimedia Commons | CC BY 2.0 |
+| "Pizza marinara (Napoli)" (sauce inside the crust, rectified) | Ruthven | Wikimedia Commons | CC0 1.0 |
+| "Luigis Pizza & Pasta - Pepperoni pizza" (slices cut out, raw + baked) | Benoît Prieur | Wikimedia Commons | CC0 1.0 |
+| "Mozzarella" (torn chunks cut out of the balls) | Dezidor | Wikimedia Commons | CC BY 3.0 |
+| "Chiaroscuro Charms Black Cherry Tomatoes Unveiled by Raju C Reddy" (halves cut out, raw + roasted) | Raju C Reddy | Wikimedia Commons | CC0 1.0 |
 | "Kitchen Wood" (board) | Rob Tuytel | Poly Haven | CC0 1.0 |
+
+The realism method in SKILL.md §7b (two multiplied shadows, raw/baked photo pairs, one pixel scale, oil pools, steam) is Zyqor Studio's own (MIT), written after Sujon's feedback on P041 v1, WhatsApp 30 Oct 2026 11:48 AM IST.
 
 Fonts from `../typography-premium/examples/fonts/` (SIL OFL 1.1).
 

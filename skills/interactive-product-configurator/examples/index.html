@@ -52,17 +52,17 @@ footer{grid-column:1/-1;font-size:.82rem;color:#56665a}footer a{color:inherit;di
 <main class="wrap">
   <div class="copy"><p class="eyebrow">Configurator demo</p><h1>Build it, then fire it.</h1><p>Drag a bowl onto the pizza, or click or tap it.</p>
     <ul class="tray" aria-label="Toppings">
-      <li><button class="dish" data-k="mozzarella"><span class="bowl" aria-hidden="true"><img src="../../../site/library/p/P041/img/mozzarella-1.webp" alt=""></span><span>Mozzarella<small>+$2.50</small></span></button></li>
-      <li><button class="dish" data-k="pepperoni"><span class="bowl" aria-hidden="true"><img src="../../../site/library/p/P041/img/pepperoni-1.webp" alt=""></span><span>Pepperoni<small>+$3.00</small></span></button></li>
-      <li><button class="dish" data-k="basil"><span class="bowl" aria-hidden="true"><img src="../../../site/library/p/P041/img/basil.webp" alt=""></span><span>Basil<small>+$1.00</small></span></button></li>
+      <li><button class="dish" data-k="mozzarella"><span class="bowl" aria-hidden="true"><img src="../../../site/library/p/P041/img/mozz-raw-1.webp" alt=""></span><span>Mozzarella<small>+$2.50</small></span></button></li>
+      <li><button class="dish" data-k="pepperoni"><span class="bowl" aria-hidden="true"><img src="../../../site/library/p/P041/img/pep-raw-1.webp" alt=""></span><span>Pepperoni<small>+$3.00</small></span></button></li>
+      <li><button class="dish" data-k="basil"><span class="bowl" aria-hidden="true"><img src="../../../site/library/p/P041/img/basil-raw-1.webp" alt=""></span><span>Basil<small>+$1.00</small></span></button></li>
     </ul></div>
-  <div class="stage"><div class="board" id="board" role="img" aria-label="Pizza: marinara base"><img src="../../../site/library/p/P041/img/board.webp" alt=""><div class="pie" id="pie"><img src="../../../site/library/p/P041/img/base.webp" alt=""><div class="layer" data-z="mozzarella"></div><div class="layer" data-z="pepperoni"></div><div class="layer" data-z="basil"></div></div><span class="ring"></span></div></div>
+  <div class="stage"><div class="board" id="board" role="img" aria-label="Pizza: marinara base"><img src="../../../site/library/p/P041/img/board.webp" alt=""><div class="pie" id="pie"><img src="../../../site/library/p/P041/img/base-raw-1024.webp" alt=""><div class="layer" data-z="mozzarella"></div><div class="layer" data-z="pepperoni"></div><div class="layer" data-z="basil"></div></div><span class="ring"></span></div></div>
   <aside class="ticket" aria-label="Order"><ul id="lines"></ul><div class="total"><span>Total</span><span aria-live="polite">$<span id="total">9.00</span></span></div><button class="btn" id="fire" aria-disabled="true">Fire it</button><p class="why" id="why">Add a topping first.</p></aside>
-  <footer>Photos: "Pizza marinara (Napoli)" by Ruthven, pepperoni by Daderot, basil by Khoney21 (Wikimedia Commons, CC0); "Mozzarella" by Dezidor (Wikimedia Commons, CC BY 3.0); "Kitchen Wood" by Rob Tuytel (Poly Haven, CC0). Fonts SIL OFL 1.1. Demo code MIT. <a href="../SKILL.md">Read the skill</a>.</footer>
+  <footer>Photos (the P041 set; minimal demo of the mechanics, P041 itself shows the realism layer): crust and basil from "Neapolitan pizza at Trappica" by Bex Walton (Wikimedia Commons, CC BY 2.0); sauce "Pizza marinara (Napoli)" by Ruthven, pepperoni from "Luigis Pizza &amp; Pasta - Pepperoni pizza" by Beno&icirc;t Prieur (Wikimedia Commons, CC0); "Mozzarella" by Dezidor (Wikimedia Commons, CC BY 3.0); "Kitchen Wood" by Rob Tuytel (Poly Haven, CC0). Fonts SIL OFL 1.1. Demo code MIT. <a href="../SKILL.md">Read the skill</a>.</footer>
 </main>
 <div class="ghost" id="ghost" aria-hidden="true"></div>
 <script>
-const ING = { mozzarella: { name: 'Mozzarella', price: 2.5, n: 7, s: [0.095, 0.125], img: ['mozzarella-1', 'mozzarella-2', 'mozzarella-3'] }, pepperoni: { name: 'Pepperoni', price: 3, n: 7, s: [0.12, 0.14], img: ['pepperoni-1', 'pepperoni-2', 'pepperoni-3', 'pepperoni-4'] }, basil: { name: 'Basil', price: 1, n: 5, s: [0.1, 0.125], img: ['basil'] } };
+const ING = { mozzarella: { name: 'Mozzarella', price: 2.5, n: 7, s: [0.095, 0.125], img: ['mozz-raw-1', 'mozz-raw-2', 'mozz-raw-3'] }, pepperoni: { name: 'Pepperoni', price: 3, n: 7, s: [0.12, 0.14], img: ['pep-raw-1', 'pep-raw-2', 'pep-raw-3', 'pep-raw-4'] }, basil: { name: 'Basil', price: 1, n: 5, s: [0.1, 0.125], img: ['basil-raw-1', 'basil-raw-3'] } };
 const IMG = '../../../site/library/p/P041/img/', MAX = 3, BASE = 9;
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches, fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
 const pie = document.getElementById('pie'), board = document.getElementById('board'), ghost = document.getElementById('ghost');
