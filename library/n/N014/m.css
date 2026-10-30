@@ -59,7 +59,7 @@ html.in-fin .fr-copy{opacity:0}
 .ex-in .d-l{margin:0 0 14px}
 .ex-panel{margin-top:28px;padding:12px 12px 18px;margin-inline:calc(var(--side) * -1 + 8px)}
 .ex-stage{height:62vw;max-height:300px}
-.ex-n{left:22%}.ex-n2{right:22%}
+.ex-n{left:22%}.ex-n2{left:auto;right:22%}
 .ex-btns{grid-template-columns:1fr;gap:10px}
 .ex-b{width:100%}
 .ex-step,.ex-q{text-align:center}
