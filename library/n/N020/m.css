@@ -55,3 +55,10 @@ body{background:var(--c1)}
 .ch-in{display:grid;gap:var(--s5)}.ch-head{display:grid;gap:var(--s3)}
 .ch-row{grid-template-columns:1fr 1fr}
 .chord svg{width:84px;height:84px}
+
+/* Oct 30 premium pass: the ukulele stays pinned while the copy and the four strings slide up over it, so the
+   instrument is in view when you pluck (it used to scroll away before the strings). */
+.hero-stage{position:sticky;top:calc(env(safe-area-inset-top) + 58px);z-index:0;height:min(46svh,420px);min-height:330px}
+.hero-copy{margin-top:0;padding-top:var(--s3);padding-bottom:var(--s2);background:var(--c1);border-radius:22px 22px 0 0;border-top:1px solid var(--line)}
+.strings{position:relative;z-index:2;background:var(--c1)}
+.level-card{position:relative;z-index:2}

@@ -94,6 +94,9 @@ foot.innerHTML = `<div class="zk-foot-in">
   <p class="zk-small"><span>Zyqor Studio &middot; Library</span><span>Concept ${id}</span></p>
 </div>`;
 body.append(foot);
+/* premium layer (Oct 30 2026): type band, mask headings, progress hairline, footer wordmark */
+css(new URL('premium.css', KIT).href);
+import('./premium.js').then((m) => m.premium({ name, foot })).catch(() => {});
 /* contact: Gmail compose on a fine pointer (desktop), the mail app on touch */
 if (matchMedia('(pointer:fine)').matches) {
   const m = foot.querySelector('.zk-mail');
