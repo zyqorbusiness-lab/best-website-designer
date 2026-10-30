@@ -209,6 +209,19 @@ if (isM) {
   const mb = $('#nav-menu'), sh = $('#nav-sheet');
   mb.addEventListener('click', () => { const o = sh.hidden; sh.hidden = !o; mb.setAttribute('aria-expanded', String(o)); mb.textContent = o ? 'Close' : 'Menu'; });
   $$('a', sh).forEach((a) => a.addEventListener('click', () => { sh.hidden = true; mb.setAttribute('aria-expanded', 'false'); mb.textContent = 'Menu'; }));
-  const bar = $('#m-bar'), io = new IntersectionObserver(([e]) => bar.classList.toggle('on', e.isIntersecting), { rootMargin: '-30% 0px -30% 0px' }); io.observe($('.builder'));
+  /* sticky total bar (fix Oct 31 2026): it shows only while the strip behind it holds no words, so it never covers a bowl
+     label, the ticket or any copy; the in-flow ticket carries the same Total + Fire it when the bar steps away */
+  const bar = $('#m-bar');
+  let inB = false, raf = 0, words = null;
+  const hasWords = (el) => { for (const n of el.childNodes) if (n.nodeType === 3 && n.nodeValue.trim()) return true; return false; };
+  const upd = () => {
+    raf = 0; if (!inB) { bar.classList.remove('on'); return; }
+    if (!words) words = $$('main *').filter((el) => !bar.contains(el) && (hasWords(el) || el.matches('.bowl')));
+    const h = bar.offsetHeight || 56, b = parseFloat(getComputedStyle(bar).bottom) || 12, top = innerHeight - b - h - 10, bot = innerHeight - b + 6;
+    const hit = words.some((el) => { const r = el.getBoundingClientRect(); return r.width > 0 && r.height > 0 && r.bottom > top && r.top < bot; });
+    bar.classList.toggle('on', !hit);
+  };
+  const io = new IntersectionObserver(([e]) => { inB = e.isIntersecting; upd(); }, { rootMargin: '-30% 0px -30% 0px' }); io.observe($('.builder'));
+  addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(upd); }, { passive: true }); addEventListener('resize', upd);
 }
 sync();

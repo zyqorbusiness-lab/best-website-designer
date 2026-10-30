@@ -5,106 +5,156 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- desktop -> phone build when ?m=1 is absent -->
 <script>document.documentElement.classList.add('js');(function(){var q=location.search;if(/[?&]m=1/.test(q))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height,phone=w<=860||(c&&h>w);if(!phone)location.replace('./'+q+location.hash);})();</script>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' data: blob:; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'none'">
 <title>Ironbark Barbers &middot; Concept N048 &middot; Zyqor Library</title>
-<meta name="description" content="Ironbark Barbers is a fictional brand: a normal 3D web concept by Zyqor Studio. A barber shop where you swing the real chair and it points at the service on the board around it.">
+<meta name="description" content="Ironbark Barbers is a fictional barbershop: a web concept by Zyqor Studio. Swing the real scanned barber chair to pick your cut, walk into the shop as the lamps come on, watch the chalkboard write the price, then book the chair.">
 <meta name="theme-color" content="#EFE7DA">
 <meta property="og:title" content="Ironbark Barbers &middot; Concept N048 &middot; Zyqor Library">
-<meta property="og:description" content="A fictional-brand 3D concept by Zyqor Studio.">
+<meta property="og:description" content="A barbershop whose website is the chair. A fictional-brand concept by Zyqor Studio.">
 <meta property="og:image" content="https://zyqor-portfolio.vercel.app/library/n/N048/thumb.webp">
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
-<link rel="preload" href="../../_kit/stage.js" as="script" crossorigin>
-<link rel="preload" href="../../_assets/models/barbershopchair_01.glb" as="fetch" crossorigin>
-<link rel="stylesheet" href="../../_kit/concept.css">
-<link rel="stylesheet" href="../../_kit/landing.css">
+<link rel="preload" href="poster.webp" as="image" fetchpriority="high">
+<link rel="preload" href="../../../assets/font/anton-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../../assets/font/intertight-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../_kit/chrome.css">
+<link rel="stylesheet" href="../../../assets/glass/liquid-glass.css">
+<link rel="stylesheet" href="../../_kit/premium.css">
+<link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="m.css">
-<style>:root{--c1:#EFE7DA;--c2:#17303A;--c3:#C8402F}</style>
 <script type="importmap">{"imports":{"three":"../../../vendor/three/three.module.min.js","three/addons/":"../../../vendor/three/addons/"}}</script>
 <link rel="canonical" href="https://zyqor-portfolio.vercel.app/library/n/N048/">
+<link rel="alternate" media="only screen and (max-width: 640px)" href="https://zyqor-portfolio.vercel.app/library/n/N048/m.html">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://zyqor-portfolio.vercel.app/library/n/N048/">
+<meta property="og:url" content="https://zyqor-portfolio.vercel.app/library/n/N048/m.html">
 <meta name="twitter:card" content="summary_large_image">
 </head>
-<body class="grain" data-id="N048" data-tier="normal" data-name="Ironbark Barbers">
-<a class="skip" href="#main">Skip to content</a>
-<nav class="bnav" aria-label="Ironbark Barbers">
-  <div class="bnav-in">
-    <a class="logo" href="#main" aria-label="Ironbark Barbers, back to top"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M9 5h14M16 5v6M8 11h16l-2 9H10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M16 20v6M10 27h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="15.5" r="1.8" fill="var(--c3)"/></svg><span>Ironbark Barbers</span></a>
-    <ul class="bnav-links"><li><a href="#chair">The chair</a></li><li><a href="#menu">Menu</a></li><li><a href="#visit">A visit</a></li><li><a href="#book">Book</a></li></ul>
-    <a class="btn btn--accent bnav-cta" href="#book" data-press>Book a chair</a>
-    <button class="menu-btn" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="msheet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>Menu</button>
-  </div>
-</nav>
-<dialog class="msheet" id="msheet" aria-label="Menu">
-  <div class="msheet-in">
-    <div class="msheet-top"><span class="logo"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M9 5h14M16 5v6M8 11h16l-2 9H10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M16 20v6M10 27h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="15.5" r="1.8" fill="var(--c3)"/></svg><span>Ironbark Barbers</span></span><button class="msheet-x" type="button" aria-label="Close menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
-    <ul><li><a href="#chair">The chair<span>01</span></a></li><li><a href="#menu">Menu<span>02</span></a></li><li><a href="#visit">A visit<span>03</span></a></li><li><a href="#book">Book<span>04</span></a></li></ul>
-    <a class="btn btn--accent" href="#book">Book a chair</a>
-  </div>
-</dialog>
+<body data-id="N048" data-tier="normal" data-name="Ironbark Barbers" data-assets="Real 3D scans" data-pm-off="band heads">
+<a class="skip" href="#book">Skip to booking</a>
+<header class="nav" id="top">
+  <a class="logo" href="#top" aria-label="Ironbark Barbers, back to top">IRONBARK<span class="badge mono">Concept</span></a>
+  <a class="btn btn--accent nav-cta" href="#book" data-press>Book</a>
+  <button class="btn btn--line nav-menu" type="button" id="nav-menu" aria-expanded="false" aria-controls="nav-sheet">Menu</button>
+  <div class="nav-sheet" id="nav-sheet" hidden><nav aria-label="Sections"><a href="#shop">Shop</a><a href="#services">Services</a><a href="#visit-steps">Visit</a><a href="#book">Book</a><a href="#hours">Hours</a></nav></div>
+</header>
 <main id="main">
-  <section class="hero" id="chair" aria-labelledby="h1">
+  <section class="hero" id="hero" aria-labelledby="h-h">
     <div class="hero-copy">
-      <p class="tag" data-rv>Barber &middot; Concept N048</p>
-      <h1 id="h1" class="title" data-rv>Iron<span class="serif">bark</span></h1>
-      <p class="lead" data-rv>Swing the chair. Wherever it faces is what you are booking.</p>
+      <p class="tag mono" data-rv>Barbershop &middot; walk-ins welcome &middot; fictional brand</p>
+      <h1 id="h-h" class="d-xl" data-rv><span>Sit down.</span> <span>Pick your cut.</span></h1>
+      <p class="lead" data-rv>Swing the chair. Wherever it stops is the service you are booking, with the time and the price on the ticket.</p>
     </div>
     <div class="compass">
-      <div class="hero-stage" data-stage>
-        <noscript><img class="poster" src="poster.webp" alt="A vintage barber chair with red leather and a chrome base"></noscript>
-        <p class="gesture mono" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3M18 3v4h-4M6 21v-4h4"/></svg>Drag to swing</p>
+      <div class="hero-stage" data-stage id="hero-stage">
+        <img class="poster hero-poster" src="poster.webp" alt="" width="568" height="568" fetchpriority="high" decoding="async">
+        <p class="gesture mono" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3M18 3v4h-4M6 21v-4h4"/></svg>Swipe to swing</p>
       </div>
-      <ol class="ring" aria-label="Services around the chair"><li class="rs" style="--x:50.00%;--y:100.00%" data-i="0"><button type="button" data-face="0" aria-label="Swing the chair to Classic cut"><span class="rs-n">Classic cut</span><span class="mono rs-t">35 min</span></button></li><li class="rs" style="--x:93.30%;--y:75.00%" data-i="1"><button type="button" data-face="1" aria-label="Swing the chair to Skin fade"><span class="rs-n">Skin fade</span><span class="mono rs-t">45 min</span></button></li><li class="rs" style="--x:93.30%;--y:25.00%" data-i="2"><button type="button" data-face="2" aria-label="Swing the chair to Hot towel shave"><span class="rs-n">Hot towel shave</span><span class="mono rs-t">30 min</span></button></li><li class="rs" style="--x:50.00%;--y:0.00%" data-i="3"><button type="button" data-face="3" aria-label="Swing the chair to Beard shape"><span class="rs-n">Beard shape</span><span class="mono rs-t">20 min</span></button></li><li class="rs" style="--x:6.70%;--y:25.00%" data-i="4"><button type="button" data-face="4" aria-label="Swing the chair to Father and son"><span class="rs-n">Father and son</span><span class="mono rs-t">60 min</span></button></li><li class="rs" style="--x:6.70%;--y:75.00%" data-i="5"><button type="button" data-face="5" aria-label="Swing the chair to Tidy up"><span class="rs-n">Tidy up</span><span class="mono rs-t">15 min</span></button></li></ol>
+      <ul class="rail" id="rail" aria-label="Services: the chair swings to the one you tap"><li><button class="chip" type="button" data-face="0" aria-pressed="true"><span>Classic cut</span><small class="mono">$35</small></button></li><li><button class="chip" type="button" data-face="1" aria-pressed="false"><span>Skin fade</span><small class="mono">$40</small></button></li><li><button class="chip" type="button" data-face="2" aria-pressed="false"><span>Hot towel shave</span><small class="mono">$35</small></button></li><li><button class="chip" type="button" data-face="3" aria-pressed="false"><span>Beard shape</span><small class="mono">$20</small></button></li><li><button class="chip" type="button" data-face="4" aria-pressed="false"><span>Father and son</span><small class="mono">$60</small></button></li><li><button class="chip" type="button" data-face="5" aria-pressed="false"><span>Tidy up</span><small class="mono">$15</small></button></li></ul>
     </div>
-    <div class="ticket" aria-live="polite">
-      <p class="mono tk-k">Facing</p>
+    <div class="ticket" id="ticket">
+      <p class="mono tk-k">The chair faces <span class="tk-i" id="tk-i">01 / 06</span></p>
       <h2 class="tk-h" id="tk-h">Classic cut</h2>
-      <p class="body tk-b" id="tk-b">Scissors on top, clippers at the sides, washed and finished.</p>
-      <dl class="tk-row"><div><dt class="mono">Time</dt><dd id="tk-t">35 min</dd></div><div><dt class="mono">Chair height</dt><dd><span id="tk-hgt">48</span> cm</dd></div></dl>
-      <div class="tk-btns"><button class="btn btn--accent" type="button" data-press data-action="pump"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>Pump the chair</button>
-      <button class="btn btn--ghost" type="button" data-action="lower"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>Lower</button></div>
+      <p class="tk-b" id="tk-b">Scissors on top, clippers at the sides.</p>
+      <dl class="tk-row"><div><dt class="mono">Time</dt><dd id="tk-t">35 min</dd></div><div><dt class="mono">Sample price</dt><dd id="tk-p">$35</dd></div></dl>
+      <div class="tk-btns"><a class="btn btn--accent" href="#book" id="tk-book" data-press>Book this chair</a><a class="btn btn--line" href="#services" data-press>All services</a></div>
     </div>
     <p class="sr-only" aria-live="polite" id="live"></p>
   </section>
-  <section class="section menu" id="menu" aria-labelledby="mn-h">
-    <div class="wrap mn-in">
-      <div class="mn-head"><p class="tag" data-rv>The menu</p><h2 id="mn-h" class="h2" data-rv>Six things, <span class="serif">done slowly.</span></h2>
-        <p class="body" data-rv>Times are how long the chair is yours. Ironbark is a fictional shop, so the menu shows no prices.</p></div>
-      <ol class="mn-list" role="list"><li class="mn-row" data-rv><span class="mono mn-no">01</span><h3>Classic cut</h3><p class="body">Scissors on top, clippers at the sides, washed and finished.</p><span class="mono mn-t">35 min</span></li><li class="mn-row" data-rv><span class="mono mn-no">02</span><h3>Skin fade</h3><p class="body">Down to the skin at the neck, blended up by hand.</p><span class="mono mn-t">45 min</span></li><li class="mn-row" data-rv><span class="mono mn-no">03</span><h3>Hot towel shave</h3><p class="body">Two hot towels, a straight razor, a cold towel to close.</p><span class="mono mn-t">30 min</span></li><li class="mn-row" data-rv><span class="mono mn-no">04</span><h3>Beard shape</h3><p class="body">Lined at the cheek and neck, trimmed to the jaw.</p><span class="mono mn-t">20 min</span></li><li class="mn-row" data-rv><span class="mono mn-no">05</span><h3>Father and son</h3><p class="body">Two chairs side by side, two cuts, one booking.</p><span class="mono mn-t">60 min</span></li><li class="mn-row" data-rv><span class="mono mn-no">06</span><h3>Tidy up</h3><p class="body">Neckline and ears between cuts.</p><span class="mono mn-t">15 min</span></li></ol>
+
+  <div class="world" id="world">
+    <div class="w-sticky">
+      <div class="w-stage" data-stage id="w-stage"><img class="poster" src="poster.webp" alt="" width="568" height="568" loading="lazy" decoding="async"></div>
+      <div class="w-shop" id="w-shop">
+        <p class="tag mono" data-rv>The shop</p>
+        <h2 class="d-l" id="shop-h" data-rv>Lights on. <span>Come in.</span></h2>
+        <p class="body" data-rv>One chair, one mirror, two lamps over the seat and a board with today's prices. Every object here is a real scan.</p>
+      </div>
+      <div class="w-svc" id="w-svc" aria-hidden="true">
+        <p class="sv-idx mono" id="sv-idx">01</p>
+        <h3 class="sv-cur" id="sv-cur">Classic cut</h3>
+        <ul class="sv-inc" id="sv-inc"><li>A quick talk about what you want</li><li>Scissors on top, clippers at the sides</li><li>Wash and a warm towel</li><li>Finished and styled</li></ul>
+        <p class="sv-row mono"><span id="sv-t">35 min</span><span><b id="sv-p">$35</b> <small>sample price</small></span></p>
+        <ol class="sv-dots" aria-hidden="true"><li></li><li></li><li></li><li></li><li></li><li></li></ol>
+      </div>
+    </div>
+    <section class="w-sec w-sec--shop" id="shop" aria-labelledby="shop-h"></section>
+    <section class="w-sec w-sec--svc" id="services" aria-labelledby="svc-h">
+      <h2 class="sr-only" id="svc-h">Services</h2>
+      <ol class="svc-list" id="svc-list"><li class="sv-item" data-i="0"><span class="sv-n mono" aria-hidden="true">01</span><h3 class="sv-name">Classic cut</h3><ul class="sv-inc"><li>A quick talk about what you want</li><li>Scissors on top, clippers at the sides</li><li>Wash and a warm towel</li><li>Finished and styled</li></ul><p class="sv-row mono"><span>35 min</span><span>$35 <small>sample price</small></span></p></li><li class="sv-item" data-i="1"><span class="sv-n mono" aria-hidden="true">02</span><h3 class="sv-name">Skin fade</h3><ul class="sv-inc"><li>Down to the skin at the neck</li><li>Blended up by hand</li><li>Sharp line-up at the edges</li><li>Hot lather on the neckline</li></ul><p class="sv-row mono"><span>45 min</span><span>$40 <small>sample price</small></span></p></li><li class="sv-item" data-i="2"><span class="sv-n mono" aria-hidden="true">03</span><h3 class="sv-name">Hot towel shave</h3><ul class="sv-inc"><li>Two hot towels to soften</li><li>Pre-shave oil and a rich lather</li><li>Straight razor, with and against</li><li>Cold towel and balm to close</li></ul><p class="sv-row mono"><span>30 min</span><span>$35 <small>sample price</small></span></p></li><li class="sv-item" data-i="3"><span class="sv-n mono" aria-hidden="true">04</span><h3 class="sv-name">Beard shape</h3><ul class="sv-inc"><li>Lined at the cheek and neck</li><li>Trimmed to the jaw</li><li>Hot towel at the end</li><li>A drop of beard oil</li></ul><p class="sv-row mono"><span>20 min</span><span>$20 <small>sample price</small></span></p></li><li class="sv-item" data-i="4"><span class="sv-n mono" aria-hidden="true">05</span><h3 class="sv-name">Father and son</h3><ul class="sv-inc"><li>Two chairs side by side</li><li>Two cuts, one booking</li><li>Kids under 12 sit first</li><li>Same time, same mirror</li></ul><p class="sv-row mono"><span>60 min</span><span>$60 <small>sample price</small></span></p></li><li class="sv-item" data-i="5"><span class="sv-n mono" aria-hidden="true">06</span><h3 class="sv-name">Tidy up</h3><ul class="sv-inc"><li>Neckline cleaned up</li><li>Around the ears</li><li>Brows if you want</li><li>Between two full cuts</li></ul><p class="sv-row mono"><span>15 min</span><span>$15 <small>sample price</small></span></p></li></ol>
+    </section>
+  </div>
+
+  <section class="visit" id="visit-steps" aria-labelledby="vs-h">
+    <div class="vs-sticky">
+      <div class="vs-head"><p class="tag mono" data-rv>A visit</p><h2 class="d-l" id="vs-h" data-rv>Four steps. <span>No fuss.</span></h2></div>
+      <div class="vs-body"><svg class="pole" viewBox="0 0 120 680" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet">
+<defs><clipPath id="pole-clip"><rect x="26" y="48" width="68" height="584" rx="34"/></clipPath></defs>
+<rect x="26" y="48" width="68" height="584" rx="34" fill="#EFE7DA"/>
+<g clip-path="url(#pole-clip)"><g class="pole-stripes" fill="#C8402F"><path d="M-40 -240 L160 -360 L160 -320 L-40 -200Z"/><path d="M-40 -160 L160 -280 L160 -240 L-40 -120Z"/><path d="M-40 -80 L160 -200 L160 -160 L-40 -40Z"/><path d="M-40 0 L160 -120 L160 -80 L-40 40Z"/><path d="M-40 80 L160 -40 L160 0 L-40 120Z"/><path d="M-40 160 L160 40 L160 80 L-40 200Z"/><path d="M-40 240 L160 120 L160 160 L-40 280Z"/><path d="M-40 320 L160 200 L160 240 L-40 360Z"/><path d="M-40 400 L160 280 L160 320 L-40 440Z"/><path d="M-40 480 L160 360 L160 400 L-40 520Z"/><path d="M-40 560 L160 440 L160 480 L-40 600Z"/><path d="M-40 640 L160 520 L160 560 L-40 680Z"/><path d="M-40 720 L160 600 L160 640 L-40 760Z"/><path d="M-40 800 L160 680 L160 720 L-40 840Z"/><path d="M-40 880 L160 760 L160 800 L-40 920Z"/><path d="M-40 960 L160 840 L160 880 L-40 1000Z"/></g></g>
+<rect x="26" y="48" width="68" height="584" rx="34" fill="none" stroke="#17303A" stroke-width="3"/>
+<rect x="14" y="14" width="92" height="38" rx="8" fill="#17303A"/><circle cx="60" cy="10" r="10" fill="#17303A"/>
+<rect x="14" y="628" width="92" height="38" rx="8" fill="#17303A"/><rect x="40" y="662" width="40" height="14" rx="4" fill="#42555A"/>
+</svg><ol class="vs-steps" role="list"><li class="vs-step" data-i="0"><span class="vs-k mono">Step 01</span><h3>Walk in or book</h3><p class="body">Walk-ins are always welcome. Booking just holds the chair for you, so there is no wait.</p></li><li class="vs-step" data-i="1"><span class="vs-k mono">Step 02</span><h3>Pick your cut</h3><p class="body">Sit down, swing round to the mirror, and tell us what you want. A photo helps.</p></li><li class="vs-step" data-i="2"><span class="vs-k mono">Step 03</span><h3>Hot towel finish</h3><p class="body">Every service ends with a hot towel on the neck and a brush-off.</p></li><li class="vs-step" data-i="3"><span class="vs-k mono">Step 04</span><h3>Pay at the chair</h3><p class="body">Card or cash, right at the chair. No deposit, no booking fee.</p></li></ol></div>
     </div>
   </section>
-  <section class="section pn-sec visit" id="visit" aria-labelledby="vs-h">
-    <div class="wrap pn-book">
-      <div class="pn-head"><p class="tag" data-rv>A visit</p><h2 id="vs-h" class="h2" data-rv>Four turns <span class="serif">of the chair.</span></h2>
-        <p class="body" data-rv>The chair on this page is a real scanned vintage chair; in the shop it would be the only one.</p></div>
-      <ol class="pn-steps" data-rv-group><li data-rv><div><h3>Sit</h3><p class="body">The chair turns to face the mirror. Tell us what you want, or show a photo.</p></div></li><li data-rv><div><h3>Wash</h3><p class="body">A short wash at the basin, warm water, no fragrance unless you ask.</p></div></li><li data-rv><div><h3>Cut</h3><p class="body">Scissors and clippers. We check the back with a hand mirror before we finish.</p></div></li><li data-rv><div><h3>Finish</h3><p class="body">Hot towel on the neck, a brush-off, and the chair turns you to the door.</p></div></li></ol>
-    </div>
-  </section>
-  <section class="section pn-sec form-sec" id="book" aria-labelledby="bk-h">
-    <div class="wrap pn-book">
-      <div class="pn-head"><p class="tag" data-rv>Book a chair</p><h2 id="bk-h" class="h2" data-rv>Pick a service, <span class="serif">pick a time.</span></h2>
-        <p class="body" data-rv>Choose what the chair was facing, or anything else on the menu. This is a concept form: it checks what you type, but nothing is sent anywhere.</p></div>
-      <div data-rv>
-        <form class="form" data-honest data-success="bk-ok" data-echo="Thanks, {name}. Ironbark is fictional, so nothing left this page. A real shop would write to {email} to confirm a {service}." novalidate>
-          <div class="row2">
-            <div class="field"><label for="bk-name">Your name</label><input class="input" id="bk-name" name="name" type="text" autocomplete="name" required minlength="2" data-req="Tell us what to call you." placeholder="Dev Patel" aria-describedby="bk-name-err"><p class="err" id="bk-name-err" aria-live="polite"></p></div>
-            <div class="field"><label for="bk-email">Email</label><input class="input" id="bk-email" name="email" type="email" autocomplete="email" required data-req="We need an email to reply." placeholder="you@example.com" aria-describedby="bk-email-err"><p class="err" id="bk-email-err" aria-live="polite"></p></div>
-          </div>
-          <div class="field"><label for="bk-service">Service</label><select class="input" id="bk-service" name="service" required data-req="Pick one." aria-describedby="bk-service-err"><option value="">Choose</option><option>Classic cut</option><option>Skin fade</option><option>Hot towel shave</option><option>Beard shape</option><option>Father and son</option><option>Tidy up</option></select><p class="err" id="bk-service-err" aria-live="polite"></p></div>
-          <div class="field"><fieldset><legend>When</legend><div class="chips"><label><input type="radio" name="when" value="am" checked><span>Morning</span></label><label><input type="radio" name="when" value="pm"><span>Afternoon</span></label><label><input type="radio" name="when" value="eve"><span>After work</span></label></div></fieldset></div>
-          <div class="submit-row"><button class="btn btn--accent" type="submit" data-press><span class="spin" aria-hidden="true"></span>Book a chair</button><p class="form-note">Concept form. Nothing leaves this page.</p></div>
-        </form>
-        <div class="success" id="bk-ok" tabindex="-1" role="status">
-          <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="15"/><path d="M13 20l5 5 9-10"/></svg>
-          <p class="tag">Concept: not sent</p>
-          <h3>Thanks. Nothing was sent.</h3>
-          <p class="body" data-echo></p>
-          <button class="btn btn--ghost" type="button" data-again>Fill it in again</button>
+
+  <section class="book" id="book" aria-labelledby="bk-h">
+    <div class="bk-card">
+      <p class="tag mono" data-rv>Book a chair</p>
+      <h2 class="d-l" id="bk-h" data-rv>Hold the chair. <span>Skip the wait.</span></h2>
+      <p class="body" data-rv>The service is whatever the chair is facing. Change it here and the chair swings too.</p>
+      <form class="bk-form" id="bk-form" novalidate>
+        <div class="field"><label for="f-svc">Service</label><div class="sel"><select id="f-svc" name="service"><option value="0">Classic cut (35 min, $35)</option><option value="1">Skin fade (45 min, $40)</option><option value="2">Hot towel shave (30 min, $35)</option><option value="3">Beard shape (20 min, $20)</option><option value="4">Father and son (60 min, $60)</option><option value="5">Tidy up (15 min, $15)</option></select></div></div>
+        <fieldset class="field"><legend>Day</legend><ul class="chips days" id="days" role="list"></ul><p class="err" id="e-day" hidden>Pick a day.</p></fieldset>
+        <fieldset class="field"><legend>Time <small class="mono">sample slots</small></legend><ul class="chips times" id="times" role="list"><li><button class="chip tchip" type="button" data-time="9:00" aria-pressed="false">9:00</button></li><li><button class="chip tchip" type="button" data-time="9:30" aria-pressed="false">9:30</button></li><li><button class="chip tchip" type="button" data-time="10:00" aria-pressed="false" disabled aria-disabled="true">10:00<small>taken</small></button></li><li><button class="chip tchip" type="button" data-time="10:30" aria-pressed="false">10:30</button></li><li><button class="chip tchip" type="button" data-time="11:00" aria-pressed="false">11:00</button></li><li><button class="chip tchip" type="button" data-time="11:30" aria-pressed="false">11:30</button></li><li><button class="chip tchip" type="button" data-time="1:00" aria-pressed="false">1:00</button></li><li><button class="chip tchip" type="button" data-time="1:30" aria-pressed="false" disabled aria-disabled="true">1:30<small>taken</small></button></li><li><button class="chip tchip" type="button" data-time="2:00" aria-pressed="false">2:00</button></li><li><button class="chip tchip" type="button" data-time="3:00" aria-pressed="false">3:00</button></li><li><button class="chip tchip" type="button" data-time="4:00" aria-pressed="false" disabled aria-disabled="true">4:00<small>taken</small></button></li><li><button class="chip tchip" type="button" data-time="5:30" aria-pressed="false">5:30</button></li></ul><p class="err" id="e-time" hidden>Pick a time.</p></fieldset>
+        <div class="field2">
+          <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required minlength="2"><p class="err" id="e-name" hidden>Tell us your name.</p></div>
+          <div class="field"><label for="f-tel">Phone</label><input id="f-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" required><p class="err" id="e-tel" hidden>A phone number with at least 7 digits.</p></div>
         </div>
+        <button class="btn btn--accent bk-go" type="submit" id="bk-go" data-press>Hold my chair</button>
+        <p class="mono bk-note">Concept: nothing is sent anywhere.</p>
+      </form>
+      <div class="bk-done" id="bk-done" hidden tabindex="-1">
+        <p class="mono bk-k">Concept: not sent</p>
+        <h3 class="d-m">Your chair is held.</h3>
+        <p class="body" id="bk-sum"></p>
+        <p class="body">In a real shop you would get a text now. This is a concept, so nothing left this page.</p>
+        <button class="btn btn--line" type="button" id="bk-again" data-press>Change booking</button>
       </div>
     </div>
   </section>
 
+  <section class="hours" id="hours" aria-labelledby="hr-h">
+    <div class="hr-in">
+      <div class="hr-l">
+        <p class="tag mono" data-rv>Hours</p>
+        <h2 class="d-l" id="hr-h" data-rv>When can <span>I come?</span></h2>
+        <table class="hr-t" aria-label="Opening hours (sample)"><tbody><tr data-d="1"><th scope="row">Monday</th><td class="mono">Closed</td></tr><tr data-d="2"><th scope="row">Tuesday</th><td class="mono">9 to 7</td></tr><tr data-d="3"><th scope="row">Wednesday</th><td class="mono">9 to 7</td></tr><tr data-d="4"><th scope="row">Thursday</th><td class="mono">9 to 8</td></tr><tr data-d="5"><th scope="row">Friday</th><td class="mono">9 to 8</td></tr><tr data-d="6"><th scope="row">Saturday</th><td class="mono">8 to 5</td></tr><tr data-d="0"><th scope="row">Sunday</th><td class="mono">10 to 3</td></tr></tbody></table>
+        <p class="mono hr-s">Sample hours</p>
+      </div>
+      <div class="hr-r">
+        <p class="walk" data-rv><b>Walk-ins welcome.</b> Booking only holds the chair.</p>
+        <address class="addr" data-rv>214 Main Street, Elm corner<br>Springfield <small class="mono">sample address</small></address>
+        <figure class="map-f"><svg class="map" viewBox="0 0 400 300" role="img" aria-label="Sample map: the shop on the corner of Main Street and Elm, drawn by hand">
+<rect width="400" height="300" fill="#E2DCD0"/>
+<g fill="#EFE7DA"><rect x="0" y="120" width="400" height="34"/><rect x="232" y="0" width="30" height="300"/><rect x="60" y="0" width="22" height="300"/><rect x="0" y="236" width="400" height="20"/></g>
+<g fill="#D3CCC0"><rect x="96" y="22" width="120" height="84" rx="2"/><rect x="276" y="22" width="108" height="84" rx="2"/><rect x="96" y="168" width="120" height="56" rx="2"/><rect x="276" y="168" width="108" height="56" rx="2"/><rect x="8" y="22" width="40" height="84" rx="2"/><rect x="8" y="168" width="40" height="56" rx="2"/></g>
+<g font-family="JetBrains Mono, monospace" font-size="11" fill="#42555A" letter-spacing="1"><text x="110" y="141">MAIN STREET</text><text x="240" y="40" transform="rotate(90 240 40)">ELM AVE</text></g>
+<g transform="translate(222 120)"><path d="M0 0 C-14 -20 -16 -28 -16 -34 C-16 -44 -9 -52 0 -52 C9 -52 16 -44 16 -34 C16 -28 14 -20 0 0Z" fill="#C8402F"/><circle cx="0" cy="-35" r="6" fill="#EFE7DA"/></g>
+</svg><figcaption class="mono">Sample map, drawn by hand. Not a real place.</figcaption></figure>
+      </div>
+    </div>
+  </section>
 </main>
+<footer class="foot">
+  <div class="foot-in">
+    <p class="foot-k mono">Concept &middot; fictional brand</p>
+    <p class="foot-t">Ironbark Barbers is not a real barbershop. It is a concept site by Zyqor Studio: the services, prices, hours and address are samples, and no booking is ever sent.</p>
+    <div class="foot-cta"><p class="d-m">Want a site like this?</p>
+      <div class="btns"><a class="btn btn--bone" href="mailto:zyqorbusiness@gmail.com?subject=A%20site%20like%20Ironbark%20Barbers" target="_blank" rel="noopener" data-press>Email Zyqor Studio</a><a class="btn btn--line-l" href="https://wa.me/919547908593" target="_blank" rel="noopener" data-press>WhatsApp</a><button class="btn btn--line-l" type="button" id="open-credits">Credits</button></div></div>
+    <p class="foot-cred mono">3D scans from Poly Haven, all CC0 1.0: "Barber Shop Chair 01" by Fernando Quinn, "Ornate Mirror 01" by James Ray Cock, "Hanging Industrial Lamp" by Kuutti Siitonen, "Metal Stool 01" by Ulan Cabanilla, "Standing Chalkboard 01" by ParzivalCG, "Shelf 01" by Gabriel Radi&#263;; lighting "Studio Small 09" HDRI by Sergej Majboroda (CC0). Floor tiles, chalk lettering, barber pole and map drawn in code by Zyqor Studio. Fonts: Anton, Inter Tight, JetBrains Mono (SIL OFL 1.1).</p>
+  </div>
+</footer>
+
 <script type="module" src="../../_kit/chrome.js"></script>
 <script type="module" src="app.js"></script>
 </body>

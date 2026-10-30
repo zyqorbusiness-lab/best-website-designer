@@ -1,42 +1,83 @@
-/* N048 Ironbark Barbers - phone build. Same chair model and HDRI as desktop; the ring of services becomes a swipe rail under the chair. */
-body{background:var(--c1)}
-.hero{position:relative;display:flex;flex-direction:column;padding-bottom:var(--s5)}
-.compass{order:-1;margin-top:calc(env(safe-area-inset-top) + 58px)}
-.hero-stage{position:relative;height:min(50svh,440px);min-height:340px}
-.gesture{left:50%;top:10px;translate:-50% 0;white-space:nowrap;padding:8px 12px;border-radius:var(--pill);background:color-mix(in oklab,var(--c1) 70%,transparent)}
-.ring{list-style:none;margin:0;padding:4px var(--gutter);display:flex;gap:6px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
-.ring::-webkit-scrollbar{display:none}
-.rs{flex:none;scroll-snap-align:center}
-.rs button{border:1px solid var(--line);min-width:8.5rem}
-.hero-copy{display:grid;gap:var(--s2);padding:var(--s4) var(--gutter) 0;position:relative;z-index:2}
-.title{font-size:clamp(3.2rem,16vw,4.6rem)}
-.tag{order:-1}
-.ticket{margin:var(--s4) var(--gutter) 0}
-.tk-btns .btn{flex:1;min-height:52px;justify-content:center}
+/* N048 Ironbark Barbers: phone layout (m.html). Same beats, same scans, same HDRI and renderer as desktop; only the
+   layout changes. Reference 390x844, checked at 360x740. --u 8px, 20px side margins, tap targets >= 48px. */
+:root{--side:20px;--rhythm:64px;--u:8px}
+body{font-size:1rem}
+.d-xl{font-size:3.8rem;line-height:.9}
+.d-l{font-size:2.4rem}
+.lead{font-size:1.125rem}
+.mono{font-size:.75rem}
+.nav{height:60px;margin-top:60px;gap:10px}
+.logo{font-size:1.4rem;gap:8px}
+.badge{font-size:.625rem;padding:5px 8px}
+.nav-cta{margin-left:auto;min-height:44px;padding:0 16px;font-size:.9rem}
+.nav-menu{min-height:44px;padding:0 14px;font-size:.9rem}
+.nav-sheet{position:absolute;left:0;right:0;top:60px;background:var(--bone);border-bottom:1px solid var(--line);padding:8px var(--side) 16px;z-index:20}
+.nav-sheet nav{display:grid}
+.nav-sheet a{display:flex;align-items:center;min-height:52px;font:400 1.7rem/1 var(--f-display);text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--line)}
 
-.title{font:800 clamp(4rem,1.4rem + 6.6vw,9rem)/.82 var(--f-display);letter-spacing:var(--track-display);color:var(--ink)}
-.title .serif{font-weight:400;font-style:italic;letter-spacing:-.03em;color:var(--c3)}
-.gesture{position:absolute;display:flex;align-items:center;gap:8px;color:var(--ink-3);transition:opacity var(--dur) var(--ease-out);pointer-events:none;z-index:3}
-.gesture .icon{width:16px;height:16px}
-.hero-stage.has-turned .gesture{opacity:0}
-.ticket{display:grid;gap:var(--s2);align-content:start;padding:var(--s4);border:1px solid var(--line);border-radius:var(--radius);background:color-mix(in oklab,var(--c1) 82%,transparent);box-shadow:var(--spec)}
-.tk-k{color:var(--c3)}
-.tk-h{font:700 clamp(1.7rem,1rem + 1.4vw,2.5rem)/1.05 var(--f-display);letter-spacing:var(--track-h)}
-.tk-row{display:grid;grid-template-columns:1fr 1fr;margin:var(--s2) 0 0;border-top:1px solid var(--line)}
-.tk-row div{padding-top:var(--s2)}.tk-row dt{color:var(--ink-3)}.tk-row dd{margin:4px 0 0;font:700 1.3rem/1 var(--f-display)}
-.tk-btns{display:flex;flex-wrap:wrap;gap:var(--s2);margin-top:var(--s2)}
-.ticket.flash .tk-h{animation:tk .48s var(--ease-out)}@keyframes tk{from{opacity:0;transform:translateY(8px)}}
-.rs button{display:grid;gap:2px;text-align:center;padding:8px 10px;border-radius:var(--radius-sm);color:var(--ink-2);min-height:var(--tap);transition:color var(--dur-fast) var(--ease-out),background var(--dur-fast) var(--ease-out)}
-.rs-n{font:600 .98rem/1.15 var(--f-body)}.rs-t{color:var(--ink-3)}
-.rs.is-on button{color:var(--ink);background:color-mix(in oklab,var(--c3) 12%,var(--c1))}
-.rs.is-on .rs-n{color:var(--c3)}
-.rs button:focus-visible{outline:2px solid var(--c3);outline-offset:2px}
-.menu{background:var(--c2);color:var(--c1)}
-.menu .tag,.menu .body{color:var(--on-dark-2)}.menu .h2{color:var(--c1)}.menu .h2 .serif{font-style:italic;font-weight:400;color:color-mix(in oklab,var(--c1) 60%,var(--c3))}
-.mn-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line-dark)}
-.mn-row{display:grid;align-items:baseline;gap:var(--s3);padding:var(--s4) 0;border-bottom:1px solid var(--line-dark)}
-.mn-row h3{font:700 1.45rem/1.1 var(--f-display);letter-spacing:var(--track-h);color:var(--c1)}
-.mn-no,.mn-t{color:var(--on-dark-2)}
+.hero{display:flex;flex-direction:column;min-height:auto;padding:12px 0 56px;gap:0}
+.compass{order:-1;width:100%;height:auto;aspect-ratio:auto;justify-self:auto}
+.hero-stage{position:relative;inset:auto;width:min(92vw,46svh);aspect-ratio:1;margin:0 auto}
+.gesture{top:auto;bottom:0}
+.rail{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;padding:14px var(--side) 8px;scrollbar-width:none;overscroll-behavior-x:contain}
+.rail::-webkit-scrollbar{display:none}
+.rail li{flex:0 0 auto;scroll-snap-align:center}
+.rail .chip{min-height:52px}
+.rail .chip[aria-pressed="true"]{box-shadow:0 0 0 2px var(--red)}
+.hero-copy{padding:20px var(--side) 0}
+.hero .lead{margin-top:16px}
+.ticket{margin:28px var(--side) 0;padding:20px 18px}
+.tk-h{font-size:1.5rem}
+.tk-btns{grid-template-columns:1fr}
+.tk-btns .btn{min-height:52px}
 
-.mn-in{display:grid;gap:var(--s4)}.mn-head{display:grid;gap:var(--s3)}
-.mn-row{grid-template-columns:2.2rem 1fr auto}.mn-row .body{grid-column:2 / -1}
+.world{height:390vh;height:390svh}
+.w-sticky{height:100vh;height:100svh}
+.w-sec--shop{height:170vh;height:170svh}
+.w-sec--svc{top:170vh;top:170svh;height:220vh;height:220svh}
+.w-stage .poster{width:70vw;top:32%}
+.w-shop{left:var(--side);right:var(--side);bottom:calc(16px + env(safe-area-inset-bottom));max-width:none;padding:20px 20px}
+.w-shop .d-l{font-size:2rem}
+.w-shop .body{margin-top:10px;font-size:.95rem}
+.w-svc{left:0;right:0;top:auto;bottom:0;width:auto;height:45%;justify-content:flex-start;padding:20px 52px calc(20px + env(safe-area-inset-bottom)) var(--side);background:rgba(239,231,218,.94);border-top:1px solid var(--line)}
+.sv-idx{font-size:3rem;position:absolute;right:var(--side);top:12px;opacity:.9}
+.sv-cur{font-size:1.5rem;margin:4px 0 10px;padding-right:72px}
+.sv-inc{gap:4px;font-size:.95rem}
+.sv-row{margin-top:12px;padding-top:10px;gap:16px}
+.sv-row b{font-size:1.25rem}
+.sv-dots{right:18px;top:auto;bottom:calc(24px + env(safe-area-inset-bottom));transform:none;gap:8px}
+
+.visit{height:120vh;height:120svh}
+.vs-sticky{height:100vh;height:100svh;padding:72px var(--side) 24px}
+.vs-head{text-align:left;justify-self:start}
+.vs-body{grid-template-columns:56px 1fr;gap:0 20px;margin-top:20px;align-items:center}
+.pole{grid-column:1;grid-row:1/span 4;width:56px;height:min(60svh,520px)}
+.vs-step,.vs-step:nth-child(odd),.vs-step:nth-child(even){grid-column:2;justify-self:start;text-align:left}
+.vs-step h3{font-size:1.2rem;margin:2px 0}
+.vs-step .body{font-size:.9rem;line-height:1.45}
+
+.book{padding:var(--rhythm) 0}
+.bk-card{border-left:0;border-right:0;padding:32px var(--side)}
+.field2{grid-template-columns:1fr}
+.days{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:calc(var(--side) * -1);padding:2px var(--side) 6px}
+.days::-webkit-scrollbar{display:none}
+.days li{flex:0 0 auto}
+.times{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.times .chip{padding:8px 4px;font-size:.9rem}
+.bk-go{justify-self:stretch;min-width:0;width:100%}
+
+.hr-in{grid-template-columns:1fr;gap:36px}
+.walk{font-size:1.2rem}
+.foot{padding:56px var(--side) calc(40px + env(safe-area-inset-bottom))}
+.foot-cta{flex-direction:column;align-items:stretch}
+.foot-cta .btns{display:grid;grid-template-columns:1fr}
+.foot-cta .btn{width:100%}
+@media (max-width:370px){.d-xl{font-size:3.3rem}.nav-cta{padding:0 12px}.logo{font-size:1.2rem}.times .chip{font-size:.82rem}}
+
+html.rm .world{height:auto}
+html.rm .w-sticky{height:auto}
+html.rm .w-stage{position:relative;height:62svh}
+html.rm .w-shop{position:relative;left:auto;right:auto;bottom:auto;margin:16px var(--side) 0}
+html.rm .svc-list{grid-template-columns:1fr;padding:40px var(--side)}
+html.rm .visit{height:auto}
+html.rm .pole{height:420px}
