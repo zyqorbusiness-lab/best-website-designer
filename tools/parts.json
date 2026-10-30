@@ -1,6 +1,12 @@
 {
  "files": [
   {
+   "path": "site/assets/models/AntiqueCamera-hd.glb",
+   "bytes": 3301880,
+   "parts": 2,
+   "sha256": "d0b505a96abc37b2e92ee126b8149d0845df0a3d9ad072efd1f2cbc8e011f303"
+  },
+  {
    "path": "site/assets/lab/halde/halde-d.glb",
    "bytes": 4437892,
    "parts": 2,
