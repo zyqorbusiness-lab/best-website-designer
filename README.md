@@ -10,7 +10,8 @@
 </p>
 
 <p align="center">
-  <a href="https://zyqor-portfolio.sites.tab.bot/"><b>Live preview</b></a> &nbsp;&middot;&nbsp;
+  <a href="https://zyqor-portfolio.vercel.app/"><b>Live site</b></a> &nbsp;&middot;&nbsp;
+  <a href="https://zyqor-portfolio.sites.tab.bot/">Preview mirror</a> &nbsp;&middot;&nbsp;
   <a href="#zyqor-lab">Lab concepts</a> &nbsp;&middot;&nbsp;
   <a href="#zyqor-library-300-3d-concepts-in-progress">300-concept library</a> &nbsp;&middot;&nbsp;
   <a href="site/components/">Components</a> &nbsp;&middot;&nbsp;
@@ -229,6 +230,8 @@ Note: open it through a server, not by double-clicking the file; ES modules and 
 To see the phone build on a laptop: `http://localhost:3000/m/?desktop=1`, or use Chrome DevTools device mode.
 
 ## Deploy on Vercel
+
+Live on Vercel: **https://zyqor-portfolio.vercel.app/** (project `zyqor-portfolio`, linked to this repo's `main`; every push to `main` redeploys it).
 
 It's a static site. The only build step is rebuilding the large model files, which Vercel runs for you.
 
