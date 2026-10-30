@@ -85,3 +85,11 @@ body{padding-bottom:5.5rem}
 .photo-cred{padding-block:0 3rem}.photo-cred p{font-size:var(--fs-xs);line-height:1.6;color:var(--ink-3);max-width:90ch;letter-spacing:.02em}
 
 .t-fire[hidden]{display:none}
+
+/* v3: a warm marble slab instead of the wood board; the styled props (slicer, chili flakes, fresh basil) arrive after the oven */
+.board{border-radius:clamp(14px,2.2vw,26px)}
+.board-wood{border-radius:inherit;object-fit:cover}
+.board-props{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;user-select:none;opacity:0;transform:scale(1.03);transition:opacity .9s var(--ease-out,ease) .5s,transform 1.1s var(--ease-out,ease) .5s}
+.board.is-fired .board-props{opacity:1;transform:none}
+.board.is-fired .pie-base{visibility:hidden}
+@media (prefers-reduced-motion: reduce){.board-props{transition:none;transform:none}}
