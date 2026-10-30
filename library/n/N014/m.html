@@ -1,115 +1,162 @@
 <!doctype html>
-<html lang="en" data-build="m">
+<html lang="en" data-build="m" data-finish="tortoise">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- desktop -> phone build when ?m=1 is absent -->
-<script>document.documentElement.classList.add('js');(function(){var q=location.search;if(/[?&]m=1/.test(q))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height,phone=w<=860||(c&&h>w);if(!phone)location.replace('./'+q+location.hash);})();</script>
+<script>document.documentElement.classList.add('js');(function(){var q=location.search;if(/[?&]m=1/.test(q))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height,phone=w<=860||(c&&h>w);if(!phone)location.replace('./'+q.replace(/[?&]m=1/,'')+location.hash);})();</script>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' data: blob:; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'none'">
 <title>Glint Eyewear &middot; Concept N014 &middot; Zyqor Library</title>
-<meta name="description" content="Glint Eyewear is a fictional brand: a normal 3D web concept by Zyqor Studio. An optician where real round spectacles hover over an eye chart: slide them and the lenses bend the letters behind.">
+<meta name="description" content="Glint Eyewear is a fictional independent optician: a web concept by Zyqor Studio. Slide real round spectacles across an eye chart and watch the lenses bend the letters, see the frame come apart, pick a finish and book an eye exam.">
 <meta name="theme-color" content="#E2EAEE">
 <meta property="og:title" content="Glint Eyewear &middot; Concept N014 &middot; Zyqor Library">
-<meta property="og:description" content="A fictional-brand 3D concept by Zyqor Studio.">
+<meta property="og:description" content="An optician's chart wall as a website. A fictional-brand concept by Zyqor Studio.">
 <meta property="og:image" content="https://zyqor-portfolio.vercel.app/library/n/N014/thumb.webp">
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
-<link rel="preload" href="../../_kit/stage.js" as="script" crossorigin>
-<link rel="preload" href="../../_assets/models/round_spectacles.glb" as="fetch" crossorigin>
-<link rel="stylesheet" href="../../_kit/concept.css">
-<link rel="stylesheet" href="../../_kit/landing.css">
+<link rel="preload" href="poster.webp" as="image" fetchpriority="high">
+<link rel="preload" href="../../../assets/font/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../../assets/font/intertight-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../_kit/chrome.css">
+<link rel="stylesheet" href="../../../assets/glass/liquid-glass.css">
+<link rel="stylesheet" href="../../_kit/premium.css">
+<link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="m.css">
-<style>:root{--c1:#E2EAEE;--c2:#3B2A1E;--c3:#2F58DE}</style>
 <script type="importmap">{"imports":{"three":"../../../vendor/three/three.module.min.js","three/addons/":"../../../vendor/three/addons/"}}</script>
 <link rel="canonical" href="https://zyqor-portfolio.vercel.app/library/n/N014/">
+<link rel="alternate" media="only screen and (max-width: 640px)" href="https://zyqor-portfolio.vercel.app/library/n/N014/m.html">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://zyqor-portfolio.vercel.app/library/n/N014/">
 <meta name="twitter:card" content="summary_large_image">
 </head>
-<body class="grain" data-id="N014" data-tier="normal" data-name="Glint Eyewear">
-<a class="skip" href="#main">Skip to content</a>
-<nav class="bnav" aria-label="Glint Eyewear">
-  <div class="bnav-in">
-    <a class="logo" href="#main" aria-label="Glint Eyewear, back to top"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="9.5" cy="17" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="22.5" cy="17" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 16.5q1-1.5 2 0" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="22.5" cy="17" r="1.6" fill="var(--c3)"/></svg><span>Glint Eyewear</span></a>
-    <ul class="bnav-links"><li><a href="#frames">Frames</a></li><li><a href="#lenses">Lenses</a></li><li><a href="#fit">Fit</a></li><li><a href="#fitting">Book a fitting</a></li></ul>
-    <a class="btn btn--accent bnav-cta" href="#fitting" data-press>Book a fitting</a>
-    <button class="menu-btn" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="msheet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>Menu</button>
-  </div>
-</nav>
-<dialog class="msheet" id="msheet" aria-label="Menu">
-  <div class="msheet-in">
-    <div class="msheet-top"><span class="logo"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="9.5" cy="17" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="22.5" cy="17" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 16.5q1-1.5 2 0" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="22.5" cy="17" r="1.6" fill="var(--c3)"/></svg><span>Glint Eyewear</span></span><button class="msheet-x" type="button" aria-label="Close menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
-    <ul><li><a href="#frames">Frames<span>01</span></a></li><li><a href="#lenses">Lenses<span>02</span></a></li><li><a href="#fit">Fit<span>03</span></a></li><li><a href="#fitting">Book a fitting<span>04</span></a></li></ul>
-    <a class="btn btn--accent" href="#fitting">Book a fitting</a>
-  </div>
-</dialog>
+<body data-id="N014" data-tier="normal" data-name="Glint Eyewear" data-assets="Real 3D scans" data-pm-off="band heads">
+<a class="skip" href="#book">Skip to booking</a>
+<header class="nav" id="top">
+  <a class="logo" href="#top" aria-label="Glint Eyewear, back to top">GLINT<span class="badge mono">Concept</span></a>
+  <a class="btn btn--accent nav-cta" href="#book" data-press>Book</a>
+  <button class="btn btn--line nav-menu" type="button" id="nav-menu" aria-expanded="false" aria-controls="nav-sheet">Menu</button>
+  <div class="nav-sheet" id="nav-sheet" hidden><nav aria-label="Sections"><a href="#hero">Lenses</a><a href="#frames">Frames</a><a href="#finishes">Finishes</a><a href="#exam">Exam</a><a href="#visit">Visit</a><a href="#book">Book an eye exam</a></nav></div>
+</header>
 <main id="main">
-  <section class="hero" id="frames" aria-labelledby="h1">
+  <section class="hero" id="hero" aria-labelledby="h-h">
+    <div class="hero-wall">
+      <div class="h-stage" id="hero-stage" data-stage><img class="poster" src="poster.webp" alt="Round wire spectacles floating in front of an eye chart" width="1440" height="900" fetchpriority="high" decoding="async"></div>
+      <span class="mono hint">Swipe the glasses</span>
+    </div>
     <div class="hero-copy">
-      <p class="tag" data-rv>Eyewear &middot; Concept N014</p>
-      <h1 id="h1" class="title" data-rv>Glint</h1>
-      <p class="lead" data-rv>Round wire frames, tested where it matters: in front of the chart. Slide them across and look through the lenses.</p>
-      <div class="rx" data-rv role="group" aria-label="Lens strength">
-        <span class="mono rx-k">Lens</span>
-        <button class="rx-b" type="button" data-rx="-1" aria-label="Weaker lens"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12"/></svg></button>
-        <output class="rx-v num" id="rx-v" aria-live="polite">+1.50</output>
-        <button class="rx-b" type="button" data-rx="1" data-press aria-label="Stronger lens"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12M12 6v12"/></svg></button>
-        <span class="mono rx-u">dioptres</span>
+      <p class="mono tag" data-rv>Independent optician &middot; Concept</p>
+      <h1 class="d-xl" id="h-h" data-rv="1">See the difference.</h1>
+      <div class="rx" data-rv="2" role="group" aria-labelledby="rx-l">
+        <p class="mono rx-l" id="rx-l">Lens strength</p>
+        <div class="rx-row">
+          <button class="rx-b" type="button" id="rx-minus" aria-label="Weaker lens, toward minus" data-press><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg></button>
+          <output class="rx-v" id="rx-v" aria-live="off">+1.50</output>
+          <button class="rx-b" type="button" id="rx-plus" aria-label="Stronger lens, toward plus" data-press><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5v14"/></svg></button>
+        </div>
+        <p class="rx-say" id="rx-say">Reading lens: the letters look larger.</p>
+      </div>
+      <p class="lead" data-rv="3">Slide the glasses across the chart. The lenses bend the letters behind them, the way a real pair does on your face.</p>
+      <div class="hero-cta" data-rv="4"><a class="btn btn--accent" href="#book" data-press>Book an eye exam</a></div>
+    </div>
+  </section>
+  <div class="studio" id="studio">
+    <div class="st-sticky">
+      <div class="st-stage" id="st-stage" data-stage><img class="poster" src="poster.webp" alt="" width="1440" height="900" loading="lazy" decoding="async"></div>
+      <span class="dot mono" aria-hidden="true">1</span><span class="dot mono" aria-hidden="true">2</span><span class="dot mono" aria-hidden="true">3</span><span class="dot mono" aria-hidden="true">4</span>
+      <div class="fr-copy">
+        <p class="mono tag">02 &middot; Frames</p>
+        <h2 class="d-l" id="fr-h">Built to come apart.</h2>
+        <p class="body fr-b">Four parts, measured from the real frame on this page. When one wears out, a good optician fixes that part, not the whole pair.</p>
+        <ol class="lab-list"><li><span class="mono ln">1</span><span><b>Lenses</b><br><span data-mm="lens">43</span> mm round, cut to your prescription</span></li><li><span class="mono ln">2</span><span><b>Rims and bridge</b><br>One soldered front, <span data-mm="bridge">23</span> mm bridge</span></li><li><span class="mono ln">3</span><span><b>Hinges and temples</b><br>Screw hinges, <span data-mm="temple">146</span> mm temples</span></li><li><span class="mono ln">4</span><span><b>Nose pads</b><br>Clear pads on arms that bend to fit</span></li></ol>
+      </div>
+      <div class="fin-panel" aria-labelledby="fin-h">
+        <p class="mono tag">03 &middot; Finishes <span class="fin-step" id="fin-step">1 / 4</span></p>
+        <h2 class="d-l" id="fin-h">Pick a finish.</h2>
+        <p class="fin-name" id="fin-name">Tortoise</p>
+        <p class="body" id="fin-say">Warm brown acetate with amber flecks. The classic.</p>
+        <div class="fin-chips" role="group" aria-label="Frame finish"><button class="chip fin-chip" type="button" aria-pressed="true" data-press><span class="sw sw--tortoise" aria-hidden="true"></span>Tortoise</button><button class="chip fin-chip" type="button" aria-pressed="false" data-press><span class="sw sw--cobalt" aria-hidden="true"></span>Cobalt</button><button class="chip fin-chip" type="button" aria-pressed="false" data-press><span class="sw sw--mist" aria-hidden="true"></span>Clear mist</button><button class="chip fin-chip" type="button" aria-pressed="false" data-press><span class="sw sw--gold" aria-hidden="true"></span>Gold wire</button></div>
       </div>
     </div>
-    <div class="hero-stage" data-stage>
-      <noscript><img class="poster" src="poster.webp" alt="Round wire spectacles in front of an eye chart"></noscript>
-      <p class="gesture mono" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M4 12h16M8 8l-4 4 4 4M16 8l4 4-4 4"/></svg>Drag to slide the frames</p>
-    </div>
-    <dl class="spec" data-rv>
-      <div><dt class="mono">Frame</dt><dd>Round Spectacles<small>scan by Sean Buckley, Poly Haven CC0</small></dd></div>
-      <div><dt class="mono">Lens</dt><dd id="sp-lens">Reading, +1.50</dd></div>
-      <div><dt class="mono">Through the lens</dt><dd id="sp-mag">Letters look larger</dd></div>
-    </dl>
-  </section>
-  <section class="section lenses" id="lenses" aria-labelledby="ln-h">
-    <div class="wrap ln-in">
-      <div class="ln-head"><p class="tag" data-rv>Lenses</p><h2 id="ln-h" class="h2" data-rv>Three kinds of glass, <span class="serif">one frame.</span></h2>
-        <p class="body" data-rv>Try the strength control above: plus lenses make the chart larger, minus lenses make it smaller, exactly the way a real lens bends light.</p></div>
-      <ol class="ln-list" role="list"><li class="ln-row" data-rv><span class="ln-lens" aria-hidden="true" style="--k:1"><span>Aa</span></span><div><h3>Plain glass</h3><span class="mono">0.00</span><p class="body">For the frame alone. Anti-glare coated on both sides.</p></div></li><li class="ln-row" data-rv><span class="ln-lens" aria-hidden="true" style="--k:1.25"><span>Aa</span></span><div><h3>Reading</h3><span class="mono">+1.00 to +3.00</span><p class="body">Magnifies close work. The chart above shows +1.50 by default.</p></div></li><li class="ln-row" data-rv><span class="ln-lens" aria-hidden="true" style="--k:0.8"><span>Aa</span></span><div><h3>Distance</h3><span class="mono">-0.50 to -6.00</span><p class="body">Makes far things sharp; through it, the chart letters shrink.</p></div></li></ol>
-    </div>
-  </section>
-  <section class="section fit" id="fit" aria-labelledby="ft-h">
-    <div class="wrap ft-in">
-      <div class="ft-head"><p class="tag" data-rv>Fit</p><h2 id="ft-h" class="h2" data-rv>Three numbers <span class="serif">on the temple.</span></h2>
-        <p class="body" data-rv>Every frame carries its size inside the arm. These are the numbers a fitting checks.</p></div>
-      <svg class="ft-draw" viewBox="0 0 520 200" role="img" aria-label="Frame measurements: lens width 46 millimetres, bridge 20 millimetres, temple 140 millimetres" data-rv>
-        <circle cx="140" cy="100" r="62" class="fr"/><circle cx="380" cy="100" r="62" class="fr"/><path d="M202 92q58-30 116 0" class="fr"/>
-        <path d="M78 178h124M78 172v12M202 172v12" class="dim"/><text x="140" y="196" class="dt">46 lens</text>
-        <path d="M202 30h116M202 24v12M318 24v12" class="dim"/><text x="260" y="20" class="dt">20 bridge</text>
-        <path d="M442 92h70" class="fr"/><text x="478" y="84" class="dt">140 temple</text>
-      </svg>
-    </div>
-  </section>
-  <section class="section pn-sec form-sec" id="fitting" aria-labelledby="ft-h">
-    <div class="wrap pn-book">
-      <div class="pn-head"><p class="tag" data-rv>Book a fitting</p><h2 id="ft-h" class="h2" data-rv>Twenty minutes, <span class="serif">one chair, one chart.</span></h2>
-        <p class="body" data-rv>A fitting checks the three numbers and your prescription. Glint is a fictional optician. This is a concept form: it checks what you type, but nothing is sent anywhere.</p></div>
-      <div data-rv>
-        <form class="form" data-honest data-success="ft-ok" data-echo="Thanks, {name}. Glint is fictional, so nothing left this page. A real optician would write to {email} about {lens} lenses." novalidate>
-          <div class="row2">
-            <div class="field"><label for="ft-name">Your name</label><input class="input" id="ft-name" name="name" type="text" autocomplete="name" required minlength="2" data-req="Tell us what to call you." placeholder="Lena Hoff" aria-describedby="ft-name-err"><p class="err" id="ft-name-err" aria-live="polite"></p></div>
-            <div class="field"><label for="ft-email">Email</label><input class="input" id="ft-email" name="email" type="email" autocomplete="email" required data-req="We need an email to reply." placeholder="you@example.com" aria-describedby="ft-email-err"><p class="err" id="ft-email-err" aria-live="polite"></p></div>
-          </div>
-          <div class="field"><label for="ft-lens">Lenses</label><select class="input" id="ft-lens" name="lens" required data-req="Pick one." aria-describedby="ft-lens-err"><option value="">Choose</option><option>Plain glass</option><option>Reading</option><option>Distance</option><option>Not sure yet</option></select><p class="err" id="ft-lens-err" aria-live="polite"></p></div>
-          <div class="field"><fieldset><legend>Bring</legend><div class="chips"><label><input type="radio" name="bring" value="rx" checked><span>My prescription</span></label><label><input type="radio" name="bring" value="test"><span>I need an eye test</span></label></div></fieldset></div>
-          <div class="submit-row"><button class="btn btn--accent" type="submit" data-press><span class="spin" aria-hidden="true"></span>Book a fitting</button><p class="form-note">Concept form. Nothing leaves this page.</p></div>
-        </form>
-        <div class="success" id="ft-ok" tabindex="-1" role="status">
-          <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="15"/><path d="M13 20l5 5 9-10"/></svg>
-          <p class="tag">Concept: not sent</p>
-          <h3>Thanks. Nothing was sent.</h3>
-          <p class="body" data-echo></p>
-          <button class="btn btn--ghost" type="button" data-again>Fill it in again</button>
+    <section class="st-sec st-frames" id="frames" aria-labelledby="fr-h"></section>
+    <section class="st-sec st-fin" id="finishes" aria-labelledby="fin-h"></section>
+  </div>
+  <section class="exam" id="exam" aria-labelledby="ex-h">
+    <div class="ex-in">
+      <p class="mono tag" data-rv>04 &middot; Exam</p>
+      <h2 class="d-l" id="ex-h" data-rv="1">Which is clearer, 1 or 2?</h2>
+      <p class="body" data-rv="2">The question every eye exam asks. Here it is just for fun: this is a demo, not a vision test.</p>
+      <div class="ex-panel" data-rv="3">
+        <div class="ex-stage" id="ex-stage" data-stage><span class="ex-n mono" aria-hidden="true">1</span><span class="ex-n ex-n2 mono" aria-hidden="true">2</span></div>
+        <p class="mono ex-step" id="ex-step" aria-live="polite">Pair 1 of 3</p>
+        <p class="ex-q" id="ex-q">Look at the letters through each lens.</p>
+        <div class="ex-btns" id="ex-btns"><button class="btn btn--line ex-b" type="button" data-pick="1" data-press>1 looks clearer</button><button class="btn btn--line ex-b" type="button" data-pick="2" data-press>2 looks clearer</button></div>
+        <div class="ex-done" id="ex-done" hidden tabindex="-1">
+          <p class="d-m">Real answers come from a real exam. Book one.</p>
+          <p class="body" id="ex-sum"></p>
+          <div class="btns"><a class="btn btn--accent" href="#book" data-press>Book an eye exam</a><button class="btn btn--line" type="button" id="ex-again" data-press>Try again</button></div>
         </div>
       </div>
     </div>
   </section>
-
+  <section class="fit" id="fit" aria-labelledby="fit-h">
+    <div class="fit-in">
+      <div class="fit-copy">
+        <p class="mono tag" data-rv>05 &middot; Fit</p>
+        <h2 class="d-l" id="fit-h" data-rv="1">Three numbers on every frame.</h2>
+        <p class="body" data-rv="2">Lens width, bridge and temple length are printed inside every temple. These three are measured from the 3D frame on this page, not typed in.</p>
+        <dl class="fit-nums" data-rv="3"><div><dt class="mono">Lens width</dt><dd><span data-mm="lens">43</span><small>mm</small></dd></div><div><dt class="mono">Bridge</dt><dd><span data-mm="bridge">23</span><small>mm</small></dd></div><div><dt class="mono">Temple</dt><dd><span data-mm="temple">146</span><small>mm</small></dd></div></dl>
+      </div>
+      <figure class="fit-figs" id="fit-figs" aria-label="Fit drawing of the frame: front view with lens width and bridge, side view with temple length">
+        <svg class="fit-front" id="fit-front" role="img" aria-label="Front view"></svg>
+        <svg class="fit-side" id="fit-side" role="img" aria-label="Side view"></svg>
+        <figcaption class="mono">Front and side, drawn to scale from the model</figcaption>
+      </figure>
+    </div>
+  </section>
+  <section class="book" id="book" aria-labelledby="bk-h">
+    <div class="bk-in">
+      <div class="bk-l">
+        <p class="mono tag" data-rv>06 &middot; Book</p>
+        <h2 class="d-l" id="bk-h" data-rv="1">Book an eye exam.</h2>
+        <p class="body" data-rv="2">Glint is a fictional optician. This is a concept form: it checks what you type, but nothing is sent anywhere.</p>
+        <form class="bk-form" id="bk-form" novalidate>
+          <fieldset class="field"><legend>What do you need?</legend><div class="chips"><label class="rc"><input type="radio" name="type" value="Eye exam" checked><span>Eye exam</span></label><label class="rc"><input type="radio" name="type" value="Contact lens check"><span>Contact lens check</span></label><label class="rc"><input type="radio" name="type" value="Frame fitting"><span>Frame fitting</span></label></div></fieldset>
+          <fieldset class="field"><legend>Preferred day</legend><ul class="days"><li><button class="chip day" type="button" data-day="Monday" aria-pressed="false">Mon</button></li><li><button class="chip day" type="button" data-day="Tuesday" aria-pressed="false">Tue</button></li><li><button class="chip day" type="button" data-day="Wednesday" aria-pressed="false">Wed</button></li><li><button class="chip day" type="button" data-day="Thursday" aria-pressed="false">Thu</button></li><li><button class="chip day" type="button" data-day="Friday" aria-pressed="false">Fri</button></li><li><button class="chip day" type="button" data-day="Saturday" aria-pressed="false">Sat</button></li><li><button class="chip day" type="button" data-day="Sunday" disabled aria-disabled="true">Sun<small>closed</small></button></li></ul><p class="err" id="e-day" hidden></p></fieldset>
+          <div class="field"><label for="f-time">Time</label><select id="f-time" name="time" required><option value="">Choose a time</option><option>9:00 am</option><option>10:00 am</option><option>11:00 am</option><option>12:30 pm</option><option>2:00 pm</option><option>3:00 pm</option><option>4:00 pm</option><option>5:30 pm</option></select><p class="err" id="e-time" hidden></p></div>
+          <div class="field2">
+            <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required minlength="2"><p class="err" id="e-name" hidden></p></div>
+            <div class="field"><label for="f-reach">Phone or email</label><input id="f-reach" name="reach" autocomplete="email" required><p class="err" id="e-reach" hidden></p></div>
+          </div>
+          <button class="btn btn--accent bk-go" type="submit" id="bk-go" data-press>Request my exam</button>
+          <p class="mono bk-note">Concept: nothing is sent anywhere.</p>
+        </form>
+        <div class="bk-done" id="bk-done" hidden tabindex="-1">
+          <p class="mono bk-k">Concept: not sent</p>
+          <h3 class="d-m">Your exam request is ready.</h3>
+          <p class="body" id="bk-sum"></p>
+          <p class="body">A real optician would call you back to confirm the time. This is a concept, so nothing left this page.</p>
+          <button class="btn btn--line" type="button" id="bk-again" data-press>Change the request</button>
+        </div>
+      </div>
+      <aside class="bk-r" id="visit" aria-labelledby="vs-h">
+        <h3 class="d-m" id="vs-h">Visit</h3>
+        <address class="addr">214 Lantern Street, Suite 2<br>Next to the corner bakery <small class="mono">sample address</small></address>
+        <table class="hours" aria-label="Opening hours (sample)"><tbody><tr><th scope="row">Monday to Friday</th><td class="mono">9 to 6</td></tr><tr><th scope="row">Saturday</th><td class="mono">10 to 4</td></tr><tr><th scope="row">Sunday</th><td class="mono">Closed</td></tr></tbody></table>
+        <p class="mono hr-s">Sample hours</p>
+        <p class="body vs-t">Bring your current glasses and any old prescription. An exam takes about 30 minutes.</p>
+      </aside>
+    </div>
+  </section>
 </main>
+<footer class="foot">
+  <div class="foot-in">
+    <p class="foot-k mono">Concept &middot; fictional brand</p>
+    <p class="foot-t">Glint Eyewear is not a real optician. It is a concept site by Zyqor Studio: the hours and address are samples, the "1 or 2" demo is not a vision test, and no booking is ever sent.</p>
+    <div class="foot-cta"><p class="d-m">Want a site like this?</p>
+      <div class="btns"><a class="btn btn--mist" href="mailto:zyqorbusiness@gmail.com?subject=A%20site%20like%20Glint%20Eyewear" data-press>Email Zyqor Studio</a><a class="btn btn--line-l" href="https://wa.me/919547908593" target="_blank" rel="noopener" data-press>WhatsApp</a></div></div>
+    <p class="foot-cred mono">3D models from Poly Haven, all CC0 1.0: "Round Spectacles" by Sean Buckley, "Magnifying Glass 01" by Nazar Borodavka, "Vintage Wooden Drawer 01" by James Ray Cock; lighting "Studio Small 09" HDRI by Sergej Majboroda (CC0). Eye chart, fit drawing and tortoise pattern drawn in code by Zyqor Studio. Fonts: Archivo, Inter Tight, JetBrains Mono (SIL OFL 1.1).</p>
+  </div>
+</footer>
+<p class="sr-only" aria-live="polite" id="live"></p>
 <script type="module" src="../../_kit/chrome.js"></script>
 <script type="module" src="app.js"></script>
 </body>

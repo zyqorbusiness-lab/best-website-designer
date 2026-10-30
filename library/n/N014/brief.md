@@ -1,33 +1,8 @@
-# brief.md: N014 Glint Eyewear (Concept)
+# N014 Glint Eyewear: brief (best-4 build #4, Oct 31 2026)
 
-## Pitch
-- One sentence: real round spectacles hover in front of an eye chart; slide them and the lenses bend the letters behind.
-- Matrix card: material glass + wire / motion slide along / story the eye test.
-- Constraint cards: "Wrong category" (an optician's chart wall as the hero layout), "Data as decoration" (the chart and the dioptre control are the decoration).
-- Category inversion: eyewear sites show faces wearing frames; here there is no face at all, only the lens doing its job.
-- Distinct from the library: first concept built on real-time refraction (transmission) through a real scanned lens.
+Fictional independent optician, labelled "Concept" in the nav and footer. Built to docs/beast/specs/glint-eyewear_spec.md (section 10 lists what changed).
 
-## Real assets
-| asset | author | licence | source | used as |
-|---|---|---|---|---|
-| Round Spectacles | Sean Buckley | CC0 1.0 | https://polyhaven.com/a/round_spectacles | hero, same GLB on phone and desktop |
-| Studio Small 09 HDRI | Sergej Majboroda | CC0 1.0 | https://polyhaven.com/a/studio_small_09 | kit lighting |
-Code-made: the eye chart (canvas texture on a plane) and the SVG fit drawing.
-
-## Palette
---c1 #E2EAEE mist, --c2 #3B2A1E tortoise brown (chart letters, text), --c3 #2F58DE cobalt (lens value, CTA). palette-check PASS.
-
-## Frames
-- Phone: chart and frames in the top half, swipe to slide, then title and the full-width lens control.
-- Desktop: title and lens control left, the chart wall right with the frames in front.
-
-## States
-Drag/swipe/arrow keys slide with inertia; +/- change lens strength (plus bends one way, minus the other, plain = no bend); reduced motion: no idle float; no WebGL: poster.
-
-## Three hand-made details
-1. Snellen-style ladder with each row about 0.8x the one above.
-2. The frames tip into the direction you slide them.
-3. The readout says what the lens does in words, never a made-up number.
-
-## Production shell
-Nav: Frames, Lenses, Fit, Book a fitting. Form: name, email, lenses, prescription/eye test; "Concept: not sent".
+- Beats: #hero eye chart wall (rows type in, 40 ms each; the CC0 Round Spectacles drop 12 mm and settle). Drag or swipe slides the glasses with inertia and soft walls; the lenses really refract the chart behind them (own shader: view ray bent by the scanned lens normals, dioptre magnifies or shrinks around each lens centre), lens control -3 to +3 -> #frames (220vh pinned): 3/4 turn, the frame comes apart into its real connected pieces (lenses, front with rims and bridge, temples with hinges, nose pads) with four leader labels whose numbers are measured from the model -> #finishes (160vh pinned): the frame rests on the CC0 Vintage Wooden Drawer, Tortoise / Cobalt / Clear mist / Gold wire by scroll or chips, the band tints in flat steps -> #exam: "Which is clearer, 1 or 2?" with two CC0 Magnifying Glass 01 lenses over one chart row (a demo, not a vision test) -> #fit: SVG front and side drawn from the measured lens width, bridge and temple -> #book (Concept: not sent) + visit -> footer.
+- Files: index.html (desktop), m.html (phone), style.css, m.css, app.js (scroll engine, UI, stages), lens.js (refraction material, part split + measuring), chart.js (eye chart canvas), poster.webp, thumb.webp, credits.json, qa.json.
+- Fonts: Archivo, Inter Tight, JetBrains Mono (SIL OFL 1.1, self-hosted). Palette: mist #E2EAEE, tortoise #3B2A1E, cobalt #2F58DE plus tints; flat fills only. No kit concept.css / landing.css.
+- Phone = desktop: same GLBs, same chart, same shader, same HDRI, same renderer settings (qa-library: same 3D files, same effects).

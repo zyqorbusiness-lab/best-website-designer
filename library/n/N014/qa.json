@@ -1,16 +1,16 @@
 {
  "id": "N014",
- "date": "2026-10-29T20:45:03.614Z",
+ "date": "2026-10-30T22:24:30.702Z",
  "kit": 2,
  "verdict": "PASS",
  "tier": "normal",
  "budgetKB": 1536,
- "ownKB": 790,
- "sharedKB": 1640,
- "phoneOwnKB": 779,
- "phoneSharedKB": 1507,
- "weightKB": 3010,
- "phoneWeightKB": 2865,
+ "ownKB": 1094,
+ "sharedKB": 1467,
+ "phoneOwnKB": 1083,
+ "phoneSharedKB": 1467,
+ "weightKB": 3261,
+ "phoneWeightKB": 3250,
  "sameAssets": true,
  "assetDiff": {
   "desktopOnly": [],
@@ -18,7 +18,9 @@
  },
  "assets3d": [
   "/assets/hdri/studio_512.hdr",
-  "/library/_assets/models/round_spectacles.glb"
+  "/library/_assets/models/magnifying_glass_01.glb",
+  "/library/_assets/models/round_spectacles.glb",
+  "/library/_assets/models/vintage_wooden_drawer_01.glb"
  ],
  "sameEffects": true,
  "effectDiff": [],
@@ -29,7 +31,7 @@
   "shadows": false,
   "shadowType": null,
   "antialias": true,
-  "envIntensity": 0.9,
+  "envIntensity": 1,
   "background": null,
   "passes": [],
   "contactShadows": 0,
@@ -42,7 +44,7 @@
  "nowebgl": true,
  "credit": {
   "pass": true,
-  "files": 9,
+  "files": 8,
   "missing": [],
   "incomplete": [],
   "ccby": [],
@@ -57,8 +59,8 @@
    "failed": 0,
    "overflow": 0,
    "webgl": true,
-   "ownKB": 790,
-   "sharedKB": 1640
+   "ownKB": 1094,
+   "sharedKB": 1467
   },
   "m390": {
    "pass": true,
@@ -67,8 +69,8 @@
    "failed": 0,
    "overflow": 0,
    "webgl": true,
-   "ownKB": 779,
-   "sharedKB": 1507
+   "ownKB": 1083,
+   "sharedKB": 1467
   },
   "m360": {
    "pass": true,
@@ -77,8 +79,8 @@
    "failed": 0,
    "overflow": 0,
    "webgl": true,
-   "ownKB": 789,
-   "sharedKB": 1507
+   "ownKB": 1099,
+   "sharedKB": 1467
   },
   "rd1440": {
    "pass": true,
@@ -87,8 +89,8 @@
    "failed": 0,
    "overflow": 0,
    "webgl": true,
-   "ownKB": 790,
-   "sharedKB": 1660
+   "ownKB": 1095,
+   "sharedKB": 1467
   },
   "rm390": {
    "pass": true,
@@ -97,8 +99,8 @@
    "failed": 0,
    "overflow": 0,
    "webgl": true,
-   "ownKB": 789,
-   "sharedKB": 1527
+   "ownKB": 1099,
+   "sharedKB": 1467
   },
   "nd1440": {
    "pass": true,
@@ -108,8 +110,8 @@
    "overflow": 0,
    "webgl": false,
    "poster": true,
-   "ownKB": 806,
-   "sharedKB": 960
+   "ownKB": 208,
+   "sharedKB": 787
   },
   "nm390": {
    "pass": true,
@@ -119,8 +121,24 @@
    "overflow": 0,
    "webgl": false,
    "poster": true,
-   "ownKB": 805,
-   "sharedKB": 827
+   "ownKB": 212,
+   "sharedKB": 787
   }
+ },
+ "fit_mm": {
+  "source": "bounding boxes of the Round Spectacles GLB's own connected pieces, measured at runtime by lens.js splitSpectacles()",
+  "lensWidth": 43,
+  "lensHeight": 43,
+  "bridge": 23,
+  "temple": 146,
+  "frameFront": 118
+ },
+ "contrast": {
+  "tortoise_on_mist": "11.2:1",
+  "tortoise2_on_mist": "6.4:1",
+  "cobalt_on_mist": "4.8:1 (large readout + buttons)",
+  "mist_on_cobalt_button": "4.8:1",
+  "tortoise_on_band_D4DEED": "10.1:1",
+  "mist_on_tortoise_footer": "11.2:1"
  }
 }
