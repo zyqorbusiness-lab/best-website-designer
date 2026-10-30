@@ -6,7 +6,7 @@
  "licence": "CC0 1.0",
  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
  "attribution": "\"Lantern\" by sbtron (Microsoft), Khronos glTF Sample Assets (https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/Lantern), CC0 1.0 (courtesy credit)",
- "changes": "re-encoded from the full-resolution original (textures up to 2048 px WebP q92, meshopt geometry, 12-bit normals); same file on desktop and phone; textures resized to 1024px and re-encoded WebP (q80, normals q90) on 2026-10-30",
+ "changes": "re-encoded from the full-resolution original (textures up to 2048 px WebP q92, meshopt geometry, 12-bit normals); same file on desktop and phone; roughness/metal/occlusion maps resized to 1024 px WebP q92 on 2026-10-30 (colour and normal maps untouched; verify.mjs IDENTICAL)",
  "downloaded": "2026-10-27",
  "file": "Lantern-hd.glb",
  "credit_written_by": "credits backfill 2026-10-28 (work/beast/credits/backfill)"
