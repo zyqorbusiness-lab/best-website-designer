@@ -27,6 +27,18 @@ Sujon, 30 Oct 2026: teach an AI agent, through many detailed skills, exactly how
 | [`award-site-teardown-method`](award-site-teardown-method/) | How to study Awwwards / FWA / CSSDA sites and extract techniques, not content: the teardown card, DevTools recipes (performance, network, layers), motion timing by frame, what to take and never take. `teardown.mjs` reads a live page's stack. |
 | [`client-site-delivery-workflow`](client-site-delivery-workflow/) | Brief → build → QA → deploy (Vercel / sites.tab.bot) → handover, for client and concept sites: intake questions, scope, staging, evidence, Search Console, credits, handover pack. `brief.mjs`, `handover.mjs`. |
 
+## Process and delivery (3 skills, added 30 Oct 2026)
+
+Sujon, 30 Oct 2026: before any website, a full spec and storyboard first; real assets only; a clean handover. These three run around the design skills above: one before the build, one during it, one at the client end.
+
+| Skill | What it teaches | Lines |
+|---|---|---|
+| [`build-spec-and-storyboard`](build-spec-and-storyboard/) | **Before any code.** The 10-section build spec (story beats, stack, token tables, assets with licences, section layouts with layering, the 3D/hero part by part, scroll timeline, QA), 4-8 storyboard stills from real assets, and the owner/client review gate. Full worked example (a fictional desk lamp) and `spec-lint.mjs`, which refuses a spec with gaps. | 243 |
+| [`asset-sources-and-licence-check`](asset-sources-and-licence-check/) | Where to get real CC0 / CC BY photos, textures, HDRIs and 3D models (Commons, Poly Haven, ambientCG, Smithsonian, Sketchfab filters, Openverse, Unsplash/Pexels notes), how to verify a licence on the asset's own page, the credit file the gate reads, visible CC BY credits. `licence-probe.mjs` reads the licence from the source's API and drafts the credit file. No AI images. | 228 |
+| [`client-delivery-kit`](client-delivery-kit/) | What we send a client: brief form, price tiers (from $300, up to $10k; tier contents to be filled by Sujon), stage timeline, revision policy, quote/launch message templates and the handover checklist (domain, hosting, credentials, credits, analytics, Search Console). | 236 |
+
+Also: the one-page ship checklist [`docs/QA_CHECKLIST.md`](../docs/QA_CHECKLIST.md) and case studies in [`docs/case-studies/`](../docs/case-studies/) (first: [P041 Hotcoal Kitchen, the pizza built three times](../docs/case-studies/P041-hotcoal-kitchen.md)).
+
 ## Tools and techniques
 
 | Skill | What it gives you |
