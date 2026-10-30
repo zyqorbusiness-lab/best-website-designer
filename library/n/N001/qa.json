@@ -1,16 +1,16 @@
 {
  "id": "N001",
- "date": "2026-10-29T20:19:08.817Z",
+ "date": "2026-10-30T21:49:58.167Z",
  "kit": 2,
  "verdict": "PASS",
  "tier": "normal",
  "budgetKB": 1536,
- "ownKB": 723,
- "sharedKB": 1362,
- "phoneOwnKB": 711,
- "phoneSharedKB": 1344,
- "weightKB": 2085,
- "phoneWeightKB": 2055,
+ "ownKB": 771,
+ "sharedKB": 1202,
+ "phoneOwnKB": 756,
+ "phoneSharedKB": 1202,
+ "weightKB": 1973,
+ "phoneWeightKB": 1958,
  "sameAssets": true,
  "assetDiff": {
   "desktopOnly": [],
@@ -48,7 +48,7 @@
  "nowebgl": true,
  "credit": {
   "pass": true,
-  "files": 14,
+  "files": 13,
   "missing": [],
   "incomplete": [],
   "ccby": [],
@@ -63,8 +63,8 @@
    "failed": 0,
    "overflow": 0,
    "webgl": true,
-   "ownKB": 723,
-   "sharedKB": 1362
+   "ownKB": 771,
+   "sharedKB": 1202
   },
   "m390": {
    "pass": true,
@@ -73,8 +73,8 @@
    "failed": 0,
    "overflow": 0,
    "webgl": true,
-   "ownKB": 711,
-   "sharedKB": 1344
+   "ownKB": 756,
+   "sharedKB": 1202
   },
   "m360": {
    "pass": true,
@@ -83,8 +83,8 @@
    "failed": 0,
    "overflow": 0,
    "webgl": true,
-   "ownKB": 726,
-   "sharedKB": 1344
+   "ownKB": 774,
+   "sharedKB": 1202
   },
   "rd1440": {
    "pass": true,
@@ -93,8 +93,8 @@
    "failed": 0,
    "overflow": 0,
    "webgl": true,
-   "ownKB": 723,
-   "sharedKB": 1383
+   "ownKB": 771,
+   "sharedKB": 1202
   },
   "rm390": {
    "pass": true,
@@ -103,8 +103,8 @@
    "failed": 0,
    "overflow": 0,
    "webgl": true,
-   "ownKB": 726,
-   "sharedKB": 1365
+   "ownKB": 774,
+   "sharedKB": 1202
   },
   "nd1440": {
    "pass": true,
@@ -114,8 +114,8 @@
    "overflow": 0,
    "webgl": false,
    "poster": true,
-   "ownKB": 370,
-   "sharedKB": 948
+   "ownKB": 405,
+   "sharedKB": 787
   },
   "nm390": {
    "pass": true,
@@ -125,8 +125,8 @@
    "overflow": 0,
    "webgl": false,
    "poster": true,
-   "ownKB": 374,
-   "sharedKB": 929
+   "ownKB": 409,
+   "sharedKB": 787
   }
  }
 }

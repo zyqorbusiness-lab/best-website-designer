@@ -1,165 +1,213 @@
 <!doctype html>
-<html lang="en" data-build="m">
+<html lang="en" data-build="m" data-theme="rose" data-ink="rose">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- desktop -> phone build when ?m=1 is absent -->
-<script>document.documentElement.classList.add('js');(function(){var q=location.search;if(/[?&]m=1/.test(q))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height,phone=w<=860||(c&&h>w);if(!phone)location.replace('./'+q+location.hash);})();</script>
+<script>document.documentElement.classList.add('js');(function(){var q=location.search;if(/[?&]m=1/.test(q))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height,phone=w<=860||(c&&h>w);if(!phone)location.replace('./'+q.replace(/[?&]m=1/,'')+location.hash);})();</script>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' data: blob:; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'none'">
 <title>Loomhouse Tailors &middot; Concept N001 &middot; Zyqor Library</title>
-<meta name="description" content="Loomhouse Tailors is a fictional brand: a normal 3D web concept by Zyqor Studio. Point at a cloth swatch and it floods the hanging cloth from the spot you chose.">
+<meta name="description" content="Loomhouse Tailors is a fictional tailor and alterations shop: a web concept by Zyqor Studio. Point at a swatch and real scanned cloth floods the hanging length, set a hem with a chalk line, and book a fitting.">
 <meta name="theme-color" content="#F6E2E5">
 <meta property="og:title" content="Loomhouse Tailors &middot; Concept N001 &middot; Zyqor Library">
-<meta property="og:description" content="A fictional-brand 3D concept by Zyqor Studio.">
+<meta property="og:description" content="A tailor's cloth room as a website. A fictional-brand concept by Zyqor Studio.">
 <meta property="og:image" content="https://zyqor-portfolio.vercel.app/library/n/N001/thumb.webp">
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
-<link rel="preload" href="../../_kit/stage.js" as="script" crossorigin>
-<link rel="stylesheet" href="../../_kit/concept.css">
+<link rel="preload" href="poster.webp" as="image" fetchpriority="high">
+<link rel="preload" href="../../../assets/font/instrumentserif-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../../assets/font/intertight-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../_kit/chrome.css">
+<link rel="stylesheet" href="../../../assets/glass/liquid-glass.css">
+<link rel="stylesheet" href="../../_kit/premium.css">
+<link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="m.css">
-<link rel="preload" href="tex/denim_diff.webp" as="image" type="image/webp">
-<style>:root{--c1:#F6E2E5;--c2:#293E20;--c3:#3B8C5F}</style>
 <script type="importmap">{"imports":{"three":"../../../vendor/three/three.module.min.js","three/addons/":"../../../vendor/three/addons/"}}</script>
 <link rel="canonical" href="https://zyqor-portfolio.vercel.app/library/n/N001/">
+<link rel="alternate" media="only screen and (max-width: 640px)" href="https://zyqor-portfolio.vercel.app/library/n/N001/m.html">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://zyqor-portfolio.vercel.app/library/n/N001/">
 <meta name="twitter:card" content="summary_large_image">
 </head>
-<body class="grain" data-id="N001" data-tier="normal" data-name="Loomhouse Tailors">
-<a class="skip" href="#main">Skip to content</a>
-<div class="flood" aria-hidden="true"></div>
-<header class="site wrap" id="top">
-  <a class="logo" href="#top" aria-label="Loomhouse Tailors, back to top"><span class="logo-m" aria-hidden="true">L</span><span>Loomhouse</span><em class="serif">Tailors</em></a>
-  <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-controls="menu"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg><span>Menu</span></button>
+<body data-id="N001" data-tier="normal" data-name="Loomhouse Tailors" data-assets="Real cloth scans" data-pm-off="band heads">
+<a class="skip" href="#book">Skip to booking</a>
+<header class="nav" id="top">
+  <a class="logo" href="#top" aria-label="Loomhouse Tailors, back to top">LOOMHOUSE<span class="badge mono">Concept</span></a>
+  <a class="btn btn--accent nav-cta" href="#book" data-press>Book</a>
+  <button class="btn btn--line nav-menu" type="button" id="nav-menu" aria-expanded="false" aria-controls="nav-sheet">Menu</button>
+  <div class="nav-sheet" id="nav-sheet" hidden><nav aria-label="Sections"><a href="#cloths">The cloths</a><a href="#alterations">Alterations</a><a href="#fitting">Fittings</a><a href="#visit">Visit</a><a href="#book">Book a fitting</a></nav></div>
 </header>
-<div class="menu" id="menu" hidden>
-  <div class="menu-in">
-    <div class="menu-top"><span class="mono">Loomhouse Tailors &middot; Concept</span><button class="menu-x" type="button" data-menu-close aria-label="Close menu"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
-    <nav class="menu-nav" aria-label="Loomhouse"><a href="#cloths"><span class="mono">01</span>The cloths</a><a href="#fitting"><span class="mono">02</span>Fittings</a><a href="#visit"><span class="mono">03</span>Book a fitting</a></nav>
-    <a class="btn btn--book menu-cta" href="#visit">Book a fitting <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-  </div>
-</div>
 <main id="main">
-  <section class="hero wrap" aria-labelledby="hero-h">
-    <div class="hero-copy">
-      <p class="tag" data-rv>Bespoke cloth room &middot; Concept</p>
-      <h1 class="hero-h" id="hero-h" data-rv><span class="h-sans">Cloth first.</span> <span class="h-serif serif">Cut second.</span></h1>
-      <p class="lead" data-rv>Four cloths hang on the rail. Point at one and it floods the length in front of you, starting from the exact spot you chose.</p>
-      <div class="rail" data-rv>
-        <p class="mono rail-h"><span>The rail</span><span class="rail-hint">Tap a swatch</span></p>
-        <ul class="sws" role="list" aria-label="Choose a cloth"><li><button class="sw sw--denim" type="button" data-cloth="0" aria-pressed="true" aria-label="Hang Indigo Denim">
-          <span class="sw-cut" aria-hidden="true"><span class="sw-tex"></span></span>
-          <span class="sw-meta"><span class="mono sw-n">01</span><span class="sw-name">Indigo Denim</span></span></button></li><li><button class="sw sw--glen" type="button" data-cloth="1" aria-pressed="false" aria-label="Hang Glen Check Wool">
-          <span class="sw-cut" aria-hidden="true"><span class="sw-tex"></span></span>
-          <span class="sw-meta"><span class="mono sw-n">02</span><span class="sw-name">Glen Check Wool</span></span></button></li><li><button class="sw sw--satin" type="button" data-cloth="2" aria-pressed="false" aria-label="Hang Blush Crepe Satin">
-          <span class="sw-cut" aria-hidden="true"><span class="sw-tex"></span></span>
-          <span class="sw-meta"><span class="mono sw-n">03</span><span class="sw-name">Blush Crepe Satin</span></span></button></li><li><button class="sw sw--jacq" type="button" data-cloth="3" aria-pressed="false" aria-label="Hang Fern Jacquard">
-          <span class="sw-cut" aria-hidden="true"><span class="sw-tex"></span></span>
-          <span class="sw-meta"><span class="mono sw-n">04</span><span class="sw-name">Fern Jacquard</span></span></button></li></ul>
+  <div class="world" id="world">
+    <div class="w-sticky" id="w-sticky">
+      <div class="flood" id="flood" aria-hidden="true"></div>
+      <div class="w-stage" id="w-stage" data-stage><img class="poster" src="poster.webp" alt="" width="780" height="946" fetchpriority="high" decoding="async"></div>
+    <div class="tape" id="tape" role="progressbar" aria-label="Loading the cloth room" aria-valuemin="0" aria-valuemax="60" aria-valuenow="0">
+      <span class="tape-case" aria-hidden="true"><svg viewBox="0 0 56 56"><circle cx="28" cy="28" r="26" class="tc-o"/><circle cx="28" cy="28" r="17" class="tc-i"/><circle cx="28" cy="28" r="5" class="tc-c"/></svg></span>
+      <span class="tape-blade" aria-hidden="true"><span class="tape-ruler"></span><span class="tape-tip"></span></span>
+      <span class="tape-read mono">0 in</span>
+    </div>
+      <p class="ch-meta mono" aria-hidden="true"><span id="ch-idx">01 / 04</span><span id="ch-name">Indigo Denim</span></p>
+      <ol class="ch-dots" aria-hidden="true"><li class="on"></li><li></li><li></li><li></li></ol>
+    </div>
+    <div class="w-flow">
+      <section class="hero" id="hero" aria-labelledby="h-h">
+        <div class="hero-copy">
+          <p class="tag mono" data-rv>Tailor and alterations &middot; fictional brand</p>
+          <h1 id="h-h" class="d-xl" data-rv><span>Cut for you.</span> <span>Altered to last.</span></h1>
+          <p class="lead" data-rv>Point at a cloth. It floods the length on the rail from the exact spot you chose.</p>
+          <ul class="sws" data-rv aria-label="Choose a cloth"><li><button class="sw sw--denim" type="button" data-cloth="0" aria-pressed="true" aria-label="Hang Indigo Denim"><span class="sw-cut" aria-hidden="true"><span class="sw-tex"></span></span><span class="sw-name">Indigo Denim</span></button></li><li><button class="sw sw--glen" type="button" data-cloth="1" aria-pressed="false" aria-label="Hang Glen Check Wool"><span class="sw-cut" aria-hidden="true"><span class="sw-tex"></span></span><span class="sw-name">Glen Check Wool</span></button></li><li><button class="sw sw--satin" type="button" data-cloth="2" aria-pressed="false" aria-label="Hang Blush Crepe Satin"><span class="sw-cut" aria-hidden="true"><span class="sw-tex"></span></span><span class="sw-name">Blush Crepe Satin</span></button></li><li><button class="sw sw--jacq" type="button" data-cloth="3" aria-pressed="false" aria-label="Hang Fern Jacquard"><span class="sw-cut" aria-hidden="true"><span class="sw-tex"></span></span><span class="sw-name">Fern Jacquard</span></button></li></ul>
+          <p class="now mono" data-rv>On the rail: <span data-now>Indigo Denim</span></p>
+          <div class="hero-btns" data-rv><a class="btn btn--accent" href="#book" data-press>Book a fitting</a><a class="btn btn--line" href="#alterations" data-press>Alterations</a></div>
+        </div>
+      </section>
+      <section class="cloths" id="cloths" aria-labelledby="cl-h">
+        <h2 class="sr-only" id="cl-h">The cloths</h2>
+      <article class="ch ch--denim" data-i="0" aria-labelledby="ch-h0">
+        <div class="ch-copy">
+          <p class="mono ch-n" data-rv>01 &middot; Twill</p>
+          <h3 class="ch-name" id="ch-h0" data-rv>Indigo Denim</h3>
+          <p class="body ch-t" data-rv>A right-hand twill that softens with every wash. We hem jeans with a chain-stitch look and patch the knees that have done their years.</p>
+          <p class="mono ch-gk" data-rv>Good for</p>
+          <ul class="ch-good" data-rv><li class="chip-s">Jeans hems</li><li class="chip-s">Work jackets</li><li class="chip-s">Chore coats</li></ul>
+        </div>
+      </article>
+      <article class="ch ch--glen" data-i="1" aria-labelledby="ch-h1">
+        <div class="ch-copy">
+          <p class="mono ch-n" data-rv>02 &middot; Woven check</p>
+          <h3 class="ch-name" id="ch-h1" data-rv>Glen Check Wool</h3>
+          <p class="body ch-t" data-rv>A check that reads plain from across the room and rich up close. Our house cloth for two-piece suits and a coat that lasts.</p>
+          <p class="mono ch-gk" data-rv>Good for</p>
+          <ul class="ch-good" data-rv><li class="chip-s">Suits</li><li class="chip-s">Overcoats</li><li class="chip-s">Trousers</li></ul>
+        </div>
+      </article>
+      <article class="ch ch--satin" data-i="2" aria-labelledby="ch-h2">
+        <div class="ch-copy">
+          <p class="mono ch-n" data-rv>03 &middot; Crepe back satin</p>
+          <h3 class="ch-name" id="ch-h2" data-rv>Blush Crepe Satin</h3>
+          <p class="body ch-t" data-rv>Matte on one face, liquid on the other. Bridal work lives here: bustles, hems and straps fitted to the shoes you will wear.</p>
+          <p class="mono ch-gk" data-rv>Good for</p>
+          <ul class="ch-good" data-rv><li class="chip-s">Wedding gowns</li><li class="chip-s">Slip dresses</li><li class="chip-s">Linings</li></ul>
+        </div>
+      </article>
+      <article class="ch ch--jacq" data-i="3" aria-labelledby="ch-h3">
+        <div class="ch-copy">
+          <p class="mono ch-n" data-rv>04 &middot; Quatrefoil jacquard</p>
+          <h3 class="ch-name" id="ch-h3" data-rv>Fern Jacquard</h3>
+          <p class="body ch-t" data-rv>The quatrefoil is woven into the cloth, not printed on it. Cut for waistcoats and dinner jackets that want one quiet flourish.</p>
+          <p class="mono ch-gk" data-rv>Good for</p>
+          <ul class="ch-good" data-rv><li class="chip-s">Waistcoats</li><li class="chip-s">Evening jackets</li><li class="chip-s">Ties</li></ul>
+        </div>
+      </article>
+      </section>
+    </div>
+  </div>
+
+  <section class="alt" id="alterations" aria-labelledby="alt-h">
+    <div class="alt-in">
+      <div class="alt-l">
+        <div class="leg-wrap" id="leg-wrap" data-mode="hem">
+          <svg id="leg" viewBox="0 0 300 600" role="img" aria-label="A trouser leg in glen check wool, drawn by hand, with a tailor's chalk line on it">
+            <defs><pattern id="glenp" patternUnits="userSpaceOnUse" width="150" height="150"><image href="tex/glen_diff.webp" width="150" height="150" preserveAspectRatio="none"/></pattern></defs>
+            <path class="leg-shape" d="M48 20 L256 20 L262 60 L250 330 L234 560 L86 560 L66 330 L40 60 Z" fill="url(#glenp)"/>
+            <path class="leg-ln" d="M44 56 L259 56"/>
+            <g class="leg-loop"><rect x="78" y="18" width="10" height="44" rx="2"/><rect x="146" y="18" width="10" height="44" rx="2"/><rect x="214" y="18" width="10" height="44" rx="2"/></g>
+            <path class="leg-ln" d="M214 56 Q222 108 260 118"/>
+            <path class="leg-dash" d="M152 58 L160 556"/>
+            <path class="leg-dash" d="M87 544 L233 544"/>
+            <path class="leg-ln leg-edge" d="M48 20 L256 20 L262 60 L250 330 L234 560 L86 560 L66 330 L40 60 Z"/>
+            <line id="chalk-l" class="chalk" x1="70" y1="540" x2="250" y2="540"/>
+          </svg>
+          <div class="chalk-h" id="chalk-h" role="slider" tabindex="0" aria-label="Hem chalk line" aria-orientation="vertical" aria-valuemin="-1.5" aria-valuemax="4" aria-valuenow="1.25"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l-4 4h8zM12 21l-4-4h8z"/></svg></div>
+          <p class="mono leg-cap">Sample trouser leg &middot; 32 in inseam</p>
+        </div>
       </div>
-      <div class="hero-cta" data-rv>
-        <a class="btn btn--book" href="#visit" data-press>Book a fitting <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn btn--ghost" href="#cloths" data-press>About the cloths <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+      <div class="alt-r">
+        <p class="tag mono" data-rv>Alterations</p>
+        <h2 class="d-l" id="alt-h" data-rv><span>Bring it in.</span> <em>We chalk it.</em></h2>
+        <p class="lead" data-rv>Drag the chalk line on the leg. The ticket works out the job while you drag.</p>
+        <div class="alt-chips" role="group" aria-label="Choose the alteration" data-rv><button class="chip alt-chip" type="button" data-alt="hem" aria-pressed="true">Hem</button><button class="chip alt-chip" type="button" data-alt="in" aria-pressed="false">Take in</button><button class="chip alt-chip" type="button" data-alt="out" aria-pressed="false">Let out</button><button class="chip alt-chip" type="button" data-alt="zip" aria-pressed="false">Zip</button></div>
+        <p class="alt-note" id="alt-note">Drag the chalk line up to shorten, down to let down.</p>
+        <div class="ticket" id="ticket">
+          <p class="mono tk-k">Alteration ticket <span>No. 0418</span></p>
+          <dl class="tk-dl">
+            <div><dt class="mono">Job</dt><dd id="tk-job">Hem</dd></div>
+            <div><dt class="mono">Chalk</dt><dd id="tk-m">Shorten 1 &frac14; in</dd></div>
+            <div><dt class="mono">Result</dt><dd id="tk-new">30 &frac34; in inseam</dd></div>
+            <div><dt class="mono">Ready in</dt><dd id="tk-d">3 days</dd></div>
+            <div class="tk-price"><dt class="mono">Sample price</dt><dd id="tk-p">$18</dd></div>
+          </dl>
+          <a class="btn btn--accent" href="#book" id="tk-book" data-press>Book this alteration</a>
+        </div>
       </div>
     </div>
-    <figure class="hero-stage-wrap">
-      <div class="hero-stage" data-stage>
-        <noscript><img class="poster" src="poster.webp" alt="A length of indigo denim hanging from a rod"></noscript>
-      </div>
-      <figcaption class="now" aria-live="polite"><span class="mono">Now hanging</span><span class="now-name serif" data-now>Indigo Denim</span><span class="mono now-weave" data-now-weave>Twill</span></figcaption>
-      <p class="mono stage-hint" aria-hidden="true">Tap the cloth to make it move</p>
-    </figure>
   </section>
 
-  <section class="section cloths" id="cloths" aria-labelledby="cloths-h">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="tag" data-rv>01 &middot; The cloths</p>
-        <h2 class="h2" id="cloths-h" data-rv>Four lengths, <span class="serif">chosen by hand.</span></h2>
-        <p class="body" data-rv>Every cloth is a real scanned textile with its own weave, sheen and weight of light. Hang any of them on the rod above.</p>
+  <section class="fitting" id="fitting" aria-labelledby="fit-h">
+    <div class="fit-sticky">
+      <div class="fit-head">
+        <p class="tag mono" data-rv>Fittings</p>
+        <h2 class="d-l" id="fit-h" data-rv>How a fitting <em>goes.</em></h2>
+        <p class="lead" data-rv>Four stops on the tape, from the first measure to the day you collect.</p>
       </div>
-      <ol class="rows" role="list" data-rv-group>
-        <li class="row" data-rv>
-          <span class="mono row-n">01</span>
-          <span class="row-sw sw--denim" aria-hidden="true"><span class="sw-tex"></span></span>
-          <div class="row-main"><h3 class="row-name serif">Indigo Denim</h3><p class="row-weave mono">Twill</p></div>
-          <p class="row-copy">Cotton twill, indigo warp over an undyed weft. Breaks in to its owner over a year of wear.</p>
-          <p class="row-use"><span class="mono">Cut for</span>Jackets, chore coats, trousers</p>
-          <button class="btn btn--ghost row-btn" type="button" data-cloth="0" data-press>Hang it <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-        </li>
-        <li class="row" data-rv>
-          <span class="mono row-n">02</span>
-          <span class="row-sw sw--glen" aria-hidden="true"><span class="sw-tex"></span></span>
-          <div class="row-main"><h3 class="row-name serif">Glen Check Wool</h3><p class="row-weave mono">Woven check</p></div>
-          <p class="row-copy">A small glen check in worsted wool with a faint rose overcheck. Reads plain across a room, patterned up close.</p>
-          <p class="row-use"><span class="mono">Cut for</span>Suits, overcoats, waistcoats</p>
-          <button class="btn btn--ghost row-btn" type="button" data-cloth="1" data-press>Hang it <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-        </li>
-        <li class="row" data-rv>
-          <span class="mono row-n">03</span>
-          <span class="row-sw sw--satin" aria-hidden="true"><span class="sw-tex"></span></span>
-          <div class="row-main"><h3 class="row-name serif">Blush Crepe Satin</h3><p class="row-weave mono">Crepe back satin</p></div>
-          <p class="row-copy">Liquid on the face, matte crepe on the back. Catches light along the thread, so it changes as you move.</p>
-          <p class="row-use"><span class="mono">Cut for</span>Linings, evening shirts, slip dresses</p>
-          <button class="btn btn--ghost row-btn" type="button" data-cloth="2" data-press>Hang it <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-        </li>
-        <li class="row" data-rv>
-          <span class="mono row-n">04</span>
-          <span class="row-sw sw--jacq" aria-hidden="true"><span class="sw-tex"></span></span>
-          <div class="row-main"><h3 class="row-name serif">Fern Jacquard</h3><p class="row-weave mono">Quatrefoil jacquard</p></div>
-          <p class="row-copy">The quatrefoil is woven in, not printed: a shine-and-matte figure that only shows when light rakes across it.</p>
-          <p class="row-use"><span class="mono">Cut for</span>Waistcoats, evening jackets, ties</p>
-          <button class="btn btn--ghost row-btn" type="button" data-cloth="3" data-press>Hang it <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-        </li>
-      </ol>
+      <div class="fit-track">
+        <div class="fit-strip" id="fit-strip">
+          <ol class="fit-cards">
+            <li class="fit-card" data-in="12"><p class="mono fc-k">12 in &middot; Step 1</p><h3 class="fc-h">Measure</h3><p class="fc-t">Twenty minutes and about fifteen measurements, written on your card. Wear the shoes you plan to wear.</p></li>
+            <li class="fit-card" data-in="24"><p class="mono fc-k">24 in &middot; Step 2</p><h3 class="fc-h">Choose cloth</h3><p class="fc-t">Pick from the rail or bring your own length. We pin a swatch to your card.</p></li>
+            <li class="fit-card" data-in="36"><p class="mono fc-k">36 in &middot; Step 3</p><h3 class="fc-h">First fitting</h3><p class="fc-t">A basted try-on two weeks later. Chalk, pins and small changes while you stand.</p></li>
+            <li class="fit-card" data-in="48"><p class="mono fc-k">48 in &middot; Step 4</p><h3 class="fc-h">Collect</h3><p class="fc-t">Pressed, bagged and checked once more on you. Small tweaks in the first month are on us.</p></li>
+          </ol>
+          <div class="fit-ruler" id="fit-ruler"></div>
+        </div>
+        <span class="fit-centre" aria-hidden="true"></span>
+      </div>
     </div>
   </section>
 
-  <section class="section fitting" id="fitting" aria-labelledby="fit-h">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="tag" data-rv>02 &middot; How a fitting goes</p>
-        <h2 class="h2" id="fit-h" data-rv>Four steps, <span class="serif">one garment.</span></h2>
-      </div>
-      <ol class="steps" role="list" data-rv-group><li class="step" data-rv><span class="step-i"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="6" cy="6" r="2.6"/><circle cx="6" cy="18" r="2.6"/><path d="M8.2 7.6 20 18M8.2 16.4 20 6"/></svg></span><span class="mono step-n">Step 01</span><h3 class="step-h">Choose the cloth</h3><p class="step-p">Hang each length, hold it to the window, take a swatch home if you want to sleep on it.</p></li><li class="step" data-rv><span class="step-i"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="7" width="18" height="10" rx="2"/><path d="M7 7v3M11 7v4M15 7v3M19 7v4"/></svg></span><span class="mono step-n">Step 02</span><h3 class="step-h">Measure by hand</h3><p class="step-p">Your cutter takes your measurements and notes how you stand, not only how long your arms are.</p></li><li class="step" data-rv><span class="step-i"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20 18.5 5.5a2.1 2.1 0 0 1 3 3L7 23"/><path d="M17 7l2 2"/></svg></span><span class="mono step-n">Step 03</span><h3 class="step-h">Basted try-on</h3><p class="step-p">The garment is tacked together in white thread so the shape can still move before anything is final.</p></li><li class="step" data-rv><span class="step-i"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="6" r="2.5"/><path d="M12 8.5V21"/></svg></span><span class="mono step-n">Step 04</span><h3 class="step-h">Final fitting</h3><p class="step-p">Last pins at the hem and cuff, then the finished piece is pressed and ready to collect.</p></li></ol>
-    </div>
-  </section>
-
-  <section class="section visit" id="visit" aria-labelledby="visit-h">
-    <div class="wrap visit-in">
-      <div class="visit-copy">
-        <p class="tag" data-rv>03 &middot; Book a fitting</p>
-        <h2 class="h2" id="visit-h" data-rv>Come and <span class="serif">feel the cloth.</span></h2>
-        <p class="body" data-rv>Tell us which length caught your eye and the day that suits you. The first visit is about the cloth and the shape, nothing is cut yet.</p>
-        <ul class="facts" role="list" data-rv>
-          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><span><b>By appointment</b> Tuesday to Saturday</span></li>
-          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg><span><b>Cloth room</b> address shared when you book</span></li>
-          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="5.5" width="17" height="13" rx="2"/><path d="M4 7l8 6 8-6"/></svg><span><b>Swatches</b> any cloth on the rail, posted to you</span></li>
-        </ul>
-      </div>
-      <form class="book" id="book-form" novalidate data-rv>
-          <div class="f-row f-2">
-            <label class="f"><span class="f-l">Name</span><input name="name" autocomplete="name" required minlength="2" placeholder="Your name"><span class="f-err" aria-live="polite"></span></label>
-            <label class="f"><span class="f-l">Email</span><input name="email" type="email" autocomplete="email" required placeholder="you@example.com"><span class="f-err" aria-live="polite"></span></label>
+  <section class="book" id="book" aria-labelledby="bk-h">
+    <div class="bk-in">
+      <div class="bk-l">
+        <p class="tag mono" data-rv>Book</p>
+        <h2 class="d-l" id="bk-h" data-rv>Book a <em>fitting.</em></h2>
+        <form class="bk-form" id="bk-form" novalidate>
+          <div class="field"><label for="f-svc">What is it for?</label><select id="f-svc" name="svc" required><option value="">Choose one</option><option value="suit">A made-to-measure suit</option><option value="alt">An alteration</option><option value="bridal">Bridal alterations</option><option value="other">Something else</option></select><p class="err" id="e-svc" hidden></p></div>
+          <fieldset class="field"><legend>Preferred day</legend><ul class="days"><li><button class="chip day" type="button" data-day="Monday" disabled aria-disabled="true">Mon<small>closed</small></button></li><li><button class="chip day" type="button" data-day="Tuesday" aria-pressed="false">Tue</button></li><li><button class="chip day" type="button" data-day="Wednesday" aria-pressed="false">Wed</button></li><li><button class="chip day" type="button" data-day="Thursday" aria-pressed="false">Thu</button></li><li><button class="chip day" type="button" data-day="Friday" aria-pressed="false">Fri</button></li><li><button class="chip day" type="button" data-day="Saturday" aria-pressed="false">Sat</button></li></ul><p class="err" id="e-day" hidden></p></fieldset>
+          <div class="field2">
+            <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required minlength="2"><p class="err" id="e-name" hidden></p></div>
+            <div class="field"><label for="f-reach">Phone or email</label><input id="f-reach" name="reach" autocomplete="email" inputmode="email" required><p class="err" id="e-reach" hidden></p></div>
           </div>
-          <div class="f-row f-2">
-            <label class="f"><span class="f-l">Cloth</span><select name="cloth" data-cloth-select><option value="denim" selected>Indigo Denim</option><option value="glen">Glen Check Wool</option><option value="satin">Blush Crepe Satin</option><option value="jacq">Fern Jacquard</option></select><span class="f-err"></span></label>
-            <label class="f"><span class="f-l">Preferred day</span><select name="day" required><option value="">Pick a day</option><option>Tuesday</option><option>Wednesday</option><option>Thursday</option><option>Friday</option><option>Saturday</option></select><span class="f-err" aria-live="polite"></span></label>
-          </div>
-          <label class="f"><span class="f-l">What should we make? <i>(optional)</i></span><textarea name="note" rows="3" maxlength="400" placeholder="A two-piece in the glen check, half lined"></textarea><span class="f-err"></span></label>
-          <div class="f-foot">
-            <button class="btn btn--book" type="submit" data-press><span class="b-label">Request a fitting</span><span class="b-spin" aria-hidden="true"></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-            <p class="f-note mono">Concept form: nothing is sent anywhere.</p>
-          </div>
-          <div class="f-ok" role="status" hidden>
-            <span class="f-ok-i"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.2 4.2L19 7"/></svg></span>
-            <div><p class="f-ok-h">Concept: not sent.</p><p class="f-ok-p">Loomhouse is a fictional tailor, so this request went nowhere. In a real build it would reach the cutting room and you would get a time for your <b data-ok-cloth>fitting</b>.</p>
-            <button class="btn btn--ghost f-again" type="button" data-press>Fill it in again</button></div>
-          </div>
+          <button class="btn btn--accent bk-go" type="submit" id="bk-go" data-press>Ask for a fitting</button>
+          <p class="mono bk-note">Concept: nothing is sent anywhere.</p>
         </form>
+        <div class="bk-done" id="bk-done" hidden tabindex="-1">
+          <p class="mono bk-k">Concept: not sent</p>
+          <h3 class="d-m">Your card is pinned.</h3>
+          <p class="body" id="bk-sum"></p>
+          <p class="body">A real shop would call you back to fix the time. This is a concept, so nothing left this page.</p>
+          <button class="btn btn--line" type="button" id="bk-again" data-press>Change the request</button>
+        </div>
+      </div>
+      <aside class="bk-r" id="visit" aria-labelledby="vs-h">
+        <h3 class="d-m" id="vs-h">Visit</h3>
+        <address class="addr">18 Mercer Lane, second floor<br>Above the haberdasher <small class="mono">sample address</small></address>
+        <table class="hours" aria-label="Opening hours (sample)"><tbody><tr><th scope="row">Monday</th><td class="mono">Closed</td></tr><tr><th scope="row">Tuesday to Friday</th><td class="mono">10 to 7</td></tr><tr><th scope="row">Saturday</th><td class="mono">9 to 5</td></tr><tr><th scope="row">Sunday</th><td class="mono">Closed</td></tr></tbody></table>
+        <p class="mono hr-s">Sample hours</p>
+        <p class="body vs-t">Alterations drop-off any time we are open. Bring the shoes and the belt you will wear with it.</p>
+      </aside>
     </div>
   </section>
 </main>
-<script src="../../../vendor/gsap.min.js" defer></script>
-<script src="../../../vendor/ScrollTrigger.min.js" defer></script>
+<footer class="foot">
+  <div class="foot-in">
+    <p class="foot-k mono">Concept &middot; fictional brand</p>
+    <p class="foot-t">Loomhouse Tailors is not a real shop. It is a concept site by Zyqor Studio: the prices, hours and address are samples, and no booking is ever sent.</p>
+    <div class="foot-cta"><p class="d-m">Want a site like this?</p>
+      <div class="btns"><a class="btn btn--rose" href="mailto:zyqorbusiness@gmail.com?subject=A%20site%20like%20Loomhouse%20Tailors" target="_blank" rel="noopener" data-press>Email Zyqor Studio</a><a class="btn btn--line-l" href="https://wa.me/919547908593" target="_blank" rel="noopener" data-press>WhatsApp</a><button class="btn btn--line-l" type="button" id="open-credits">Credits</button></div></div>
+    <p class="foot-cred mono">Cloth scans from Poly Haven, all CC0 1.0: "Denim Fabric 04", "Wool Boucle", "Crepe Satin" and "Quatrefoil Jacquard Fabric" by colormass and Rico Cilliers; lighting "Studio Small 09" HDRI by Sergej Majboroda (CC0). Cloth mesh, rod, trouser leg, tape and rulers drawn in code by Zyqor Studio. Fonts: Instrument Serif, Inter Tight, JetBrains Mono (SIL OFL 1.1).</p>
+  </div>
+</footer>
+<p class="sr-only" aria-live="polite" id="live"></p>
+<script type="module" src="tape.js"></script>
 <script type="module" src="../../_kit/chrome.js"></script>
 <script type="module" src="app.js"></script>
 </body>
