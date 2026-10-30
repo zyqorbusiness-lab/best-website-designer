@@ -23,12 +23,6 @@ Checked 27 October 2026. "Live" means the page loads (HTTP 2xx); "Download verif
 | BoloFlow | Original Android voice translator: speak Hindi, Hinglish or another language, then copy, insert, listen to or share the translation; floating button over other apps. | [APK v1.13.53, 21 MB, Android 7.0+](https://zyqor-studio-portfolio.vercel.app/downloads/1-BoloFlow.apk?v=1.13.53) | Download verified; install not tested here |
 | Shadow of the Pass | Original 3D samurai combat playtest for Android: enemy waves, sword attacks, guard and dash, misty mountains. | Not public yet | Playtest build 1.0; graphics and phone performance in testing |
 
-## Case study only
-
-| Project | What it is | Status |
-|---|---|---|
-| Numivra Math | Learning site for Classes 5 to 10 (class pages, note and chapter search, video area). | Taken offline on purpose on 21 October 2026; shown as a case study with no live link |
-
 ## Elsewhere
 
 - Live portfolio before v3: [zyqor-studio-portfolio.vercel.app](https://zyqor-studio-portfolio.vercel.app/)

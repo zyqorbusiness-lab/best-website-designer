@@ -35,6 +35,8 @@
 | **Worlds** | Five pinned scroll scenes around one live three.js product: colourway morph in a browser card, giant type behind the product, exploded callouts, orbit carousel, organic mask reveal. |
 | **Work** | Six real, live projects in a pinned horizontal gallery with hover video. |
 | **Zyqor Lab** | Eighteen complete concept sites for fictional brands, each built around one signature interaction (below). |
+| **Concept library** | The 18 built library concepts as cards with real screenshots, plus two phone screen recordings (N020 simple, P017 premium), linking to each concept's desktop and phone page. |
+| **Components** | The 14 component demos as cards, linking to each live demo. |
 | **Studio pages** | [Colour theory](site/color/), [Process](site/process/), [Services](site/services/), [Type specimen](site/studio/type/), [Case study](site/studio/case/) and a [UI micro-interaction gallery](site/studio/ui/), each with its own phone build. |
 | **Liquid glass** | One shared glass material (`site/assets/glass/`) on every screen: nav pills, buttons, mode switches, cards and the Lab chrome. Refraction and a cursor-following highlight on desktop, a lighter blur on phones. |
 | **About / Pricing / Contact** | Copy-to-clipboard email, WhatsApp and Gmail links, big footer wordmark. |
