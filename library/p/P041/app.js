@@ -1,344 +1,214 @@
-/* P041 Hotcoal Kitchen - shared app for index.html (desktop) and m.html (phone).
-   Signature: a build-your-own pizza made of real photographs, rendered on a canvas so it reads like one photo.
-   Base: the leopard-spotted crust of "Neapolitan pizza at Trappica" (CC BY 2.0) around the sauce of
-   "Pizza marinara (Napoli)" by Ruthven (CC0), both rectified to a top-down view; the raw state is the same photo
-   with the crust taken back to pale dough. Toppings are cut out of real pizza photos (credits.json, CREDITS.md):
-   melted mozzarella patches from the Trappica pizza (raw = the same patches before they melt), baked pepperoni
-   from a CC0 Luigi's pepperoni pizza, raw salami slices from a CC BY 2.0 kitchen photo, CC0 cherry tomato halves,
-   basil leaves from the Trappica pizza. v3 (veggie, after Sujon's reference): golden crust (the pale-dough crust re-toned
-   golden-brown, char removed), olives from "Supreme pizza" (USDA ARS, public domain), mushrooms from "Pizza veggie by Arthur"
-   (CC0) and "Sliced champignons" (CC BY 2.0), artichoke hearts (Daderot, CC0), roasted pepper strips (Ryan Snyder, CC BY 2.0),
-   red onion slivers (Sebastian Wallroth, public domain); a marble slab (ambientCG Marble012, CC0) with a pizza slicer
-   (Evan-Amos, public domain), chili flakes (CC0) and fresh basil styled round it after the oven, and one slice pulled out.
-   Realism rules (skills/interactive-product-configurator, "Realism"):
-   (1) every piece casts two shadows, a soft one and a tight contact one, multiplied onto what is under it, from one
-       light direction (top-left, as in the base photo); (2) random rotation, mirror and +-15 % scale, scattered
-       inside the sauce, never on the crust; (3) one shared pixel scale, so a pepperoni is the size of a pepperoni;
-   (4) "Fire it" crossfades every piece to its own baked photo: cheese spreads and browns, salami turns into
-       cupped pepperoni, tomatoes blister, basil wilts, the crust blisters, then steam rises.
-   Desktop: drag a bowl onto the pizza (pointer events, a snap ring) or click / Enter on a bowl. Phone: tap a bowl.
-   Inspired by a pizza-builder site shown in a reel by @online.by.annie (Instagram); nothing of theirs is used. */
-import { reveals, press } from '../../_kit/fx/index.js';
-import { landing } from '../../_kit/landing.js';
-landing(); reveals(); press('[data-press]');
-const $ = (s) => document.querySelector(s), $$ = (s) => [...document.querySelectorAll(s)];
+/* P041 Hotcoal Kitchen, best-4 flagship (Oct 30 2026): app.js, shared by index.html (desktop) and m.html (phone).
+   One scroll engine: a single requestAnimationFrame loop reads each pinned section's progress from getBoundingClientRect()
+   (CSS position: sticky, no scroll library, no scroll-jacking), lerped 0.12 per frame. Canvases draw only while on screen.
+   Beats: intro poster -> hero pizza turning on the peel -> dough stretches into the base -> build (drag / tap / keyboard)
+   -> the oven: scroll is the clock, 00 to 90 s, your exact pieces bake one handful at a time -> menu rows load onto the board
+   -> pickup form that ends in "Concept: not sent". Reduced motion: every pinned section shows its end state as a still. */
+import { ING, ORDER, makeModel, addHandful, count, PieView, warmAll, onImage, sstep, easeOut } from './pizza.js';
+const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const isM = document.documentElement.dataset.build === 'm';
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
+const BASE = 9, MAX = 3, fmt = (v) => v.toFixed(2);
+const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+const mix = (a, b, t) => { const p = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16)); const A = p(a), B = p(b); return `rgb(${A.map((v, i) => Math.round(v + (B[i] - v) * t)).join(',')})`; };
+const FLOUR = '#F4EDE1', TOMATO = '#A93A23';
 
-/* every sprite is stored at the base photo's pixel scale: the base is 2048 px wide, the pie disc has a 960 px radius */
-const BASE_PX = 2048, SAUCE_R = 0.755; /* sauce edge as a fraction of the pie box half-width */
-const list = (p, n) => Array.from({ length: n }, (_, i) => `img/${p}-${i + 1}.webp`);
-const ING = {
-  mozzarella: { name: 'Fior di latte', price: 2.5, n: 4, size: 1.25, oil: 'rgb(238,170,92)', raw: list('mozz-raw', 6), baked: list('mozz-baked', 6), grow: [1.0, 1.2], shadow: [0.75, 0.1], gap: 0.24 },
-  tomato:     { name: 'Cherry tomato', price: 2.0, n: 6, size: 1.12, raw: list('tom-raw', 2), baked: list('tom-baked', 2), grow: [1, 0.9], shadow: [0.7, 0.55], gap: 0.17 },
-  pepperoni:  { name: 'Pepperoni',     price: 3.0, n: 6, oil: 'rgb(226,118,38)', raw: list('pep-raw', 5), baked: list('pep-baked', 5), grow: [1.02, 0.92], shadow: [0.5, 0.38], gap: 0.25 },
-  mushroom:   { name: 'Mushroom',      price: 2.0, n: 8, size: 1.25, raw: list('mush-raw', 3), baked: list('mush-baked', 3), grow: [1, 0.9], shadow: [0.55, 0.42], gap: 0.2 },
-  artichoke:  { name: 'Artichoke',     price: 2.5, n: 6, size: 1.2, raw: list('arti-raw', 7), baked: list('arti-baked', 7), grow: [1, 0.95], shadow: [0.55, 0.42], gap: 0.22 },
-  pepper:     { name: 'Red pepper', price: 1.5, n: 7, size: 1.12, raw: list('pepper-raw', 5), baked: list('pepper-baked', 5), grow: [1, 0.92], shadow: [0.5, 0.4], gap: 0.2 },
-  onion:      { name: 'Red onion',     price: 1.0, n: 8, size: 1.12, raw: list('onion-raw', 4), baked: list('onion-baked', 4), grow: [1, 0.9], shadow: [0.45, 0.35], gap: 0.19 },
-  olive:      { name: 'Black olive',   price: 1.5, n: 7, size: 1.15, raw: list('olive-raw', 3), baked: list('olive-baked', 3), grow: [1, 0.97], shadow: [0.55, 0.45], gap: 0.2 },
-  /* basil goes on fresh after the oven, the way a pizzaiolo finishes it: the baked state keeps the bright leaves */
-  basil:      { name: 'Basil',         price: 1.0, n: 4, raw: list('basil-raw', 4), baked: list('basil-raw', 4), grow: [1, 1], shadow: [0.5, 0.45], gap: 0.22 }
-};
-const ORDER = ['mozzarella', 'tomato', 'pepperoni', 'mushroom', 'artichoke', 'pepper', 'onion', 'olive', 'basil'];
-/* each sprite set's half-size as a fraction of the pie box half-width, for keeping pieces off the crust */
-const RAD = { mozzarella: 0.15, tomato: 0.08, pepperoni: 0.135, mushroom: 0.105, artichoke: 0.115, pepper: 0.156, onion: 0.146, olive: 0.0625, basil: 0.19 };
-const BASE = 9, MAX = 3;
-const board = $('#board'), pie = $('#pie'), lines = $('#t-lines'), totalEl = $('#t-total'), fireBtn = $('#fire'), why = $('#fire-why');
-const mbTotal = $('#mb-total'), mbFire = $('#mb-fire'), meter = $('#fire-meter');
-const state = { portions: Object.fromEntries(ORDER.map((k) => [k, []])), fired: false, busy: false, bake: 0, slice: 0 };
-const fmt = (v) => v.toFixed(2);
-let seed = (Date.now() % 100000) + 7; const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
-const sstep = (a, b, x) => { const t = Math.min(1, Math.max(0, (x - a) / (b - a))); return t * t * (3 - 2 * t); };
-const easeOut = (t) => 1 - Math.pow(1 - t, 4);
+/* ---------- reveals ---------- */
+const rv = $$('[data-rv]');
+if (reduced || !('IntersectionObserver' in window)) rv.forEach((e) => e.classList.add('in'));
+else { const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+  rv.forEach((e) => { const sib = [...e.parentElement.children].filter((c) => c.hasAttribute('data-rv')); e.style.setProperty('--i', Math.min(sib.indexOf(e), 6)); io.observe(e); }); }
 
-/* ---------- images: load, decode, and make each sprite's shadow once ---------- */
-const IMGS = new Map();
-function img(src) {
-  if (IMGS.has(src)) return IMGS.get(src);
-  const rec = { el: new Image(), ok: false, soft: null, tight: null };
-  rec.el.decoding = 'async'; rec.el.src = src;
-  rec.el.decode().then(() => { rec.ok = true; if (!/base-/.test(src)) { rec.soft = shadowOf(rec.el, 7); rec.tight = shadowOf(rec.el, 2.2); const t = /pep-baked/.test(src) ? ING.pepperoni.oil : /mozz-baked/.test(src) ? ING.mozzarella.oil : null; if (t) rec.oil = shadowOf(rec.el, 5, t); } invalidate(); }).catch(() => {});
-  IMGS.set(src, rec); return rec;
-}
-/* a shadow is the sprite's silhouette shrunk and scaled back up: the browser's smoothing does the blur (works in every engine) */
-function shadowOf(el, blur, tint) {
-  const k = 1 / blur, pad = 3, w = Math.max(2, Math.round(el.naturalWidth * k / 2)), h = Math.max(2, Math.round(el.naturalHeight * k / 2));
-  const c = document.createElement('canvas'); c.width = w + pad * 2; c.height = h + pad * 2;
-  const x = c.getContext('2d'); x.imageSmoothingQuality = 'high'; x.drawImage(el, pad, pad, w, h);
-  x.globalCompositeOperation = 'source-in'; x.fillStyle = tint || 'rgb(58,34,22)'; x.fillRect(0, 0, c.width, c.height);
-  c._px = pad / w; c._py = pad / h; return c;
-}
-const baseRaw = img(isM ? 'img/base-raw-1024.webp' : 'img/base-raw.webp');
-const baseBaked = img(isM ? 'img/base-baked-1024.webp' : 'img/base-baked.webp');
-/* with mozzarella on, the oven melts it into one sheet: real melted cheese (Baron Maddock, CC BY 4.0) fades in over the sauce */
-const baseCheese = img(isM ? 'img/base-cheese-1024.webp' : 'img/base-cheese.webp');
-const warm = () => { for (const t of ORDER) { ING[t].raw.forEach(img); ING[t].baked.forEach(img); } };
-('requestIdleCallback' in window) ? requestIdleCallback(warm, { timeout: 900 }) : setTimeout(warm, 300);
+/* ---------- views ---------- */
+let heroGo = false;
+const views = [];
+const vis = new Map();
+const seen = new IntersectionObserver((es) => es.forEach((e) => { vis.set(e.target, e.isIntersecting); if (e.isIntersecting) dirtyAll(); }), { rootMargin: '200px 0px' });
+function view(cv, model, opt) { const v = new PieView(cv, model, { small: isM, dprMax: 2, ...opt }); v.el = cv; v.dirty = true; views.push(v); seen.observe(cv); return v; }
+const dirtyAll = () => views.forEach((v) => (v.dirty = true));
+onImage(dirtyAll);
 
-/* ---------- canvas ---------- */
-const cv = document.createElement('canvas'); cv.className = 'pie-canvas'; cv.setAttribute('aria-hidden', 'true'); pie.append(cv);
-const ctx = cv.getContext('2d');
-const steam = document.createElement('canvas'); steam.className = 'steam'; steam.setAttribute('aria-hidden', 'true'); board.append(steam);
-const sctx = steam.getContext('2d');
-let W = 0, SW = 0, SH = 0, DPR = 1;
-function size() {
-  DPR = Math.min(window.devicePixelRatio || 1, isM ? 2.5 : 3);
-  const r = pie.getBoundingClientRect(); if (!r.width) return;
-  W = Math.round(r.width * DPR); if (cv.width !== W) { cv.width = W; cv.height = W; }
-  const s = steam.getBoundingClientRect(); SW = Math.round(s.width * Math.min(DPR, 2)); SH = Math.round(s.height * Math.min(DPR, 2));
-  if (steam.width !== SW) { steam.width = SW; steam.height = SH; }
-  invalidate();
-}
-new ResizeObserver(size).observe(pie);
+/* hero: a finished pizza on the peel, cut in eight, turning 4 deg/s (phone 2 deg/s) */
+const heroModel = makeModel();
+['mozzarella', 'mozzarella', 'tomato', 'pepperoni', 'basil'].forEach((t) => addHandful(heroModel, t, { now: -1e6, preload: false }));
+const hero = view($('#hero-cv'), heroModel, { small: true }); /* 1024 px bases: the hero pizza is at most ~1040 device px wide */ hero.uniform = 1; hero.slice = 1;
+const heroSec = $('#hero');
 
-let raf = 0; function invalidate() { if (!raf) raf = requestAnimationFrame(render); }
-function render(now) {
-  raf = 0; if (!W) return;
-  now = now || performance.now();
-  let busy = false; const p = state.bake, k = W / BASE_PX;
-  ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, W, W);
-  ctx.imageSmoothingEnabled = true; ctx.imageSmoothingQuality = 'high';
-  if (baseRaw.ok) ctx.drawImage(baseRaw.el, 0, 0, W, W);
-  if (baseBaked.ok && p > 0) { ctx.globalAlpha = sstep(0.05, 0.9, p); ctx.drawImage(baseBaked.el, 0, 0, W, W); ctx.globalAlpha = 1; }
-  const nz = state.portions.mozzarella.length;
-  if (nz && baseCheese.ok && p > 0) { ctx.globalAlpha = sstep(0.2, 0.85, p) * Math.min(1, 0.55 + 0.25 * nz); ctx.drawImage(baseCheese.el, 0, 0, W, W); ctx.globalAlpha = 1; }
-  for (const type of ORDER) {
-    const cfg = ING[type], pieces = state.portions[type].flat().concat(gone.filter((g) => g.type === type));
-    if (!pieces.length) continue;
-    const grow = cfg.grow[0] + (cfg.grow[1] - cfg.grow[0]) * easeOut(p);
-    const rawA = 1 - sstep(0.55, 1, p), bakedA = sstep(0.08, 0.85, p), shA = cfg.shadow[0] + (cfg.shadow[1] - cfg.shadow[0]) * p;
-    /* pass 1: shadows of this layer, multiplied onto everything under it */
-    ctx.globalCompositeOperation = 'multiply';
-    for (const q of pieces) { const f = frame(q, now); if (f.anim) busy = true; if (cfg.oil && p > 0) drawOil(q, f, k, grow, bakedA); drawShadow(q, f, k, grow, shA); }
-    ctx.globalCompositeOperation = 'source-over';
-    /* pass 2: the photos themselves, raw then baked on top */
-    for (const q of pieces) {
-      const f = frame(q, now);
-      if (rawA > 0) drawSprite(img(q.raw), q, f, k, grow, rawA * f.a);
-      if (bakedA > 0) drawSprite(img(q.baked), q, f, k, grow, bakedA * f.a);
-    }
-  }
-  /* the oven: a warm light that swells and fades while it bakes */
-  if (state.busy && p > 0 && p < 1) {
-    ctx.save(); ctx.beginPath(); ctx.arc(W / 2, W / 2, W * 0.47, 0, Math.PI * 2); ctx.clip();
-    ctx.globalCompositeOperation = 'soft-light'; ctx.globalAlpha = Math.sin(Math.PI * p) * 0.55; ctx.fillStyle = 'rgb(255,128,36)'; ctx.fillRect(0, 0, W, W);
-    ctx.restore(); busy = true;
-  }
-  if (p > 0) {
-    ctx.save(); ctx.beginPath(); ctx.arc(W / 2, W / 2, W * 0.465, 0, Math.PI * 2); ctx.clip();
-    ctx.globalCompositeOperation = 'soft-light'; ctx.globalAlpha = 0.16 * p; ctx.fillStyle = 'rgb(255,176,96)'; ctx.fillRect(0, 0, W, W); ctx.restore();
-  }
-  ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over';
-  if (state.slice > 0) sliceOut(state.slice);
-  if (stepSteam(now)) busy = true;
-  for (let i = gone.length - 1; i >= 0; i--) if (now - gone[i].out > 300) gone.splice(i, 1);
-  if (busy || gone.length) invalidate();
-}
-function frame(q, now) {
-  /* landing: the handful flies in from the bowl, drops with a wide faint shadow that tightens as it settles */
-  let t = reduced ? 1 : Math.min(1, Math.max(0, (now - q.t0) / q.dur)), a = 1, lift = 0, dx = 0, dy = 0, extra = 0;
-  if (t < 1) { const e = easeOut(t); lift = 1 - e; dx = q.fx * lift; dy = q.fy * lift; a = Math.min(1, t * 5); }
-  if (q.out) { const o = Math.min(1, (now - q.out) / 260); a = 1 - o; lift = o * 0.5; extra = o * 0.15; }
-  return { anim: t < 1 || !!q.out, a, lift, dx, dy, extra, rot: q.rot - lift * 0.7 };
-}
-function place(q, f, k, grow) {
-  const s = q.scale * grow * (1 + f.lift * 0.22 + f.extra);
-  return { x: W / 2 + q.x * W / 2 + f.dx * DPR, y: W / 2 + q.y * W / 2 + f.dy * DPR, s };
-}
-function drawSprite(rec, q, f, k, grow, alpha) {
-  if (!rec.ok || alpha <= 0) return;
-  const { x, y, s } = place(q, f, k, grow), w = rec.el.naturalWidth * k * s, h = rec.el.naturalHeight * k * s;
-  ctx.save(); ctx.globalAlpha = alpha; ctx.translate(x, y); ctx.rotate(f.rot); ctx.scale(q.flip, 1);
-  ctx.drawImage(rec.el, -w / 2, -h / 2, w, h); ctx.restore();
-}
-/* baked pepperoni lets out its orange oil and melted cheese runs golden at the edge: a soft tinted pool under each piece */
-function drawOil(q, f, k, grow, a) {
-  const rec = img(q.baked); if (!rec.ok || !rec.oil) return;
-  const { x, y, s } = place(q, f, k, grow), c = rec.oil, w = rec.el.naturalWidth * k * s * 1.22, h = rec.el.naturalHeight * k * s * 1.22;
-  ctx.save(); ctx.globalAlpha = 0.55 * a * f.a; ctx.translate(x, y); ctx.rotate(f.rot);
-  ctx.drawImage(c, -w * (1 + c._px * 2) / 2, -h * (1 + c._py * 2) / 2, w * (1 + c._px * 2), h * (1 + c._py * 2)); ctx.restore();
-}
-function drawShadow(q, f, k, grow, shA) {
-  const rec = img(q.raw), bk = img(q.baked), use = state.bake > 0.5 && bk.ok ? bk : rec; if (!use.ok || !use.soft) return;
-  const { x, y, s } = place(q, f, k, grow), w = use.el.naturalWidth * k * s, h = use.el.naturalHeight * k * s;
-  const L = 1 + f.lift * 5; /* the light is top-left, as in the base photo, so shadows fall down-right */
-  const soft = [use.soft, (7 + f.lift * 40) * k * L, shA * f.a * (1 - f.lift * 0.6)], tight = [use.tight, 2.2 * k, shA * 0.9 * f.a * (1 - f.lift)];
-  for (const [c, off, al] of [soft, tight]) {
-    if (al <= 0.01) continue;
-    const pw = w * (1 + c._px * 2) * 1.03, ph = h * (1 + c._py * 2) * 1.03;
-    ctx.save(); ctx.globalAlpha = al; ctx.translate(x + off * 0.8, y + off * 1.15); ctx.rotate(f.rot); ctx.scale(q.flip, 1);
-    ctx.drawImage(c, -pw / 2, -ph / 2, pw, ph); ctx.restore();
-  }
-}
+/* builder + oven share one model: the oven bakes exactly the pieces you dropped */
+const model = makeModel();
+const build = view($('#build-cv'), model);
+const fireCv = $('#fire-cv');
+const marg = makeModel(); ['mozzarella', 'tomato', 'basil'].forEach((t) => addHandful(marg, t, { now: -1e6, preload: false }));
+const fire = view(fireCv, model); fire.clock = 0;
 
-/* ---------- the serve: cut into eight after the oven ---------- */
-function sliceOut(p) {
-  /* v3.1: the pizza is cut into eight like a pizzeria does it: four faint knife lines through the cheese, a darker
-     groove with a light lip beside it (a pulled-out wedge read as a graphic, Sujon 2:31 PM) */
-  const e = easeOut(p), c = W / 2, R = W * 0.462;
-  ctx.save(); ctx.beginPath(); ctx.arc(c, c, W * 0.47, 0, Math.PI * 2); ctx.clip(); ctx.lineCap = 'round';
-  for (let i = 0; i < 4; i++) {
-    const a = Math.PI / 8 + i * Math.PI / 4, dx = Math.cos(a) * R * e, dy = Math.sin(a) * R * e;
-    ctx.globalCompositeOperation = 'multiply'; ctx.strokeStyle = 'rgba(122,74,38,0.55)'; ctx.lineWidth = Math.max(1.2, W * 0.0032);
-    ctx.beginPath(); ctx.moveTo(c - dx, c - dy); ctx.lineTo(c + dx, c + dy); ctx.stroke();
-    ctx.globalCompositeOperation = 'screen'; ctx.strokeStyle = 'rgba(255,236,200,0.28)'; ctx.lineWidth = Math.max(0.8, W * 0.0018);
-    const ox = -Math.sin(a) * W * 0.0035, oy = Math.cos(a) * W * 0.0035;
-    ctx.beginPath(); ctx.moveTo(c - dx + ox, c - dy + oy); ctx.lineTo(c + dx + ox, c + dy + oy); ctx.stroke();
-  }
-  ctx.restore(); ctx.globalCompositeOperation = 'source-over';
-}
-
-/* ---------- steam after the bake: soft puffs made by scaling a tiny disc up (no gradients) ---------- */
-const puff = (() => { const s = document.createElement('canvas'); s.width = s.height = 12; const x = s.getContext('2d'); x.fillStyle = '#fff'; x.beginPath(); x.arc(6, 6, 3.6, 0, Math.PI * 2); x.fill();
-  const b = document.createElement('canvas'); b.width = b.height = 96; const y = b.getContext('2d'); y.imageSmoothingQuality = 'high'; y.drawImage(s, 0, 0, 96, 96); return b; })();
-let puffs = [], steamUntil = 0, lastSpawn = 0;
-function startSteam(now) { if (reduced) return; steamUntil = now + 14000; invalidate(); }
-function stepSteam(now) {
-  if (!SW) return false;
-  sctx.setTransform(1, 0, 0, 1, 0, 0); sctx.clearRect(0, 0, SW, SH);
-  const live = now < steamUntil;
-  if (live && now - lastSpawn > 70) {
-    lastSpawn = now; const left = (steamUntil - now) / 14000;
-    const n = left > 0.6 ? 2 : 1;
-    for (let i = 0; i < n; i++) { const a = rnd() * Math.PI * 2, r = Math.sqrt(rnd()) * 0.3;
-      puffs.push({ x: 0.5 + Math.cos(a) * r, y: 0.5 + Math.sin(a) * r * 0.8, t0: now, life: 2400 + rnd() * 2000, s: 0.05 + rnd() * 0.06, sway: rnd() * 6.28, max: (0.05 + rnd() * 0.06) * Math.max(0.4, left) }); }
-  }
-  puffs = puffs.filter((q) => now - q.t0 < q.life);
-  for (const q of puffs) {
-    const t = (now - q.t0) / q.life, rise = t * 0.42;
-    const x = (q.x + Math.sin(q.sway + t * 3) * 0.025 + t * 0.02) * SW, y = (q.y - rise) * SH, sz = (q.s * (1 + t * 2.2)) * SW;
-    sctx.globalAlpha = q.max * Math.sin(Math.PI * Math.min(1, t * 1.15)) * (0.55 + t * 0.6);
-    sctx.drawImage(puff, x - sz / 2, y - sz / 2, sz, sz);
-  }
-  sctx.globalAlpha = 1;
-  return live || puffs.length > 0;
-}
-
-/* ---------- placement: spaced random points inside the sauce, never on the crust ---------- */
-function placeSpots(type, count) {
-  const cfg = ING[type], all = Object.values(state.portions).flat().flat(), same = state.portions[type].flat();
-  const spots = []; let tries = 0;
-  while (spots.length < count && tries < 1400) {
-    tries++;
-    const scale = 0.85 + rnd() * 0.3, rad = RAD[type] * scale * (cfg.size || 1) * Math.max(...cfg.grow);
-    const lim = SAUCE_R - rad * (type === 'basil' ? 0.6 : 0.9), a = rnd() * Math.PI * 2, r = Math.sqrt(rnd()) * lim;
-    const x = Math.cos(a) * r, y = Math.sin(a) * r, relax = Math.min(1, tries / 1200);
-    const minSame = cfg.gap * (1 - relax * 0.55), minAny = 0.07 * (1 - relax);
-    if (spots.some((s) => Math.hypot(s.x - x, s.y - y) < minSame)) continue;
-    if (same.some((p) => Math.hypot(p.x - x, p.y - y) < minSame * 0.85)) continue;
-    if (all.some((p) => p.type !== type && Math.hypot(p.x - x, p.y - y) < minAny)) continue;
-    spots.push({ x, y, scale });
-  }
-  return spots;
-}
-
-/* ---------- add / remove a handful ---------- */
-const gone = [];
-function addPortion(type, from) {
-  if (state.fired || state.busy) return;
-  const P = state.portions[type]; if (P.length >= MAX) { flash(`Three handfuls of ${ING[type].name.toLowerCase()} is the most we put on.`); return; }
-  const cfg = ING[type], rect = pie.getBoundingClientRect(), now = performance.now();
-  const pieces = placeSpots(type, cfg.n).map((s, i) => {
-    const vi = Math.floor(rnd() * 1000);
-    const fx = from ? from.x - (rect.left + rect.width * (0.5 + s.x / 2)) : 0, fy = from ? from.y - (rect.top + rect.height * (0.5 + s.y / 2)) : -40;
-    return { type, x: s.x, y: s.y, scale: s.scale * (cfg.size || 1), rot: rnd() * Math.PI * 2, flip: rnd() > 0.5 ? -1 : 1,
-      raw: cfg.raw[vi % cfg.raw.length], baked: cfg.baked[vi % cfg.raw.length % cfg.baked.length], t0: now + i * 42, dur: 620 + i * 12, fx, fy };
-  });
-  pieces.forEach((q) => { img(q.raw); img(q.baked); });
-  P.push(pieces); sync(type); invalidate();
-}
-function removePortion(type) {
-  if (state.fired) return; const P = state.portions[type]; const last = P.pop(); if (!last) return;
-  if (!reduced) { const now = performance.now(); last.forEach((q, i) => { q.out = now + i * 16; gone.push(q); }); }
-  sync(type); invalidate();
-}
+/* ---------- hours (sample) ---------- */
+(() => { const d = new Date().getDay(), rows = $$('#hours tr'); let row = rows.find((r) => r.dataset.d.split(',').includes(String(d)));
+  if (row) row.classList.add('today'); const chip = $('#hours-chip span'); const t = row ? row.querySelector('td').textContent : '';
+  if (/closed/i.test(t)) { chip.textContent = 'Closed today, open Tuesday at 11'; $('#hours-chip').classList.add('closed'); } else if (t) chip.textContent = `Open today ${t}`; })();
 
 /* ---------- ticket ---------- */
-function total() { return BASE + Object.entries(state.portions).reduce((t, [k, v]) => t + v.length * ING[k].price, 0); }
-let shown = BASE;
-function roll(to) {
-  const from = shown; shown = to; const t0 = performance.now();
-  const step = (t) => { const k = reduced ? 1 : Math.min(1, (t - t0) / 600), e = 1 - Math.pow(1 - k, 4), v = from + (to - from) * e; totalEl.textContent = fmt(v); if (mbTotal) mbTotal.textContent = fmt(v); if (k < 1) requestAnimationFrame(step); };
-  requestAnimationFrame(step);
+const lines = $('#t-lines'), totalEl = $('#t-total'), empty = $('#t-empty'), clearBtn = $('#t-clear'), flashEl = $('#b-flash'), mbTotal = $('#mb-total');
+const total = () => BASE + ORDER.reduce((t, k) => t + model.portions[k].length * ING[k].price, 0);
+function describe() { const on = ORDER.filter((k) => model.portions[k].length); return on.length ? on.map((k) => ING[k].name.toLowerCase() + (model.portions[k].length > 1 ? ` x${model.portions[k].length}` : '')).join(', ') : ''; }
+let shown = BASE, tick = 0;
+function sync() {
+  lines.innerHTML = '<li class="t-line"><span>Marinara base</span><span class="mono">$9.00</span><span></span></li>' + ORDER.filter((k) => model.portions[k].length).map((k) => {
+    const n = model.portions[k].length; return `<li class="t-line"><span>${ING[k].name}${n > 1 ? ` <span class="mono">x${n}</span>` : ''}</span><span class="mono">$${fmt(n * ING[k].price)}</span><button class="x" type="button" data-rm="${k}" aria-label="Remove one handful of ${ING[k].name.toLowerCase()}">&minus;</button></li>`; }).join('');
+  const n = count(model); empty.hidden = n > 0; clearBtn.disabled = !n;
+  $$('.bowl').forEach((b) => { const c = model.portions[b.dataset.type].length; b.querySelector('.b-n').textContent = c ? `${c} of 3` : ''; b.classList.toggle('full', c >= MAX); });
+  const to = total(), from = shown; cancelAnimationFrame(tick);
+  const t0 = performance.now(), go = (now) => { const k = reduced ? 1 : clamp((now - t0) / 420); shown = from + (to - from) * easeOut(k); totalEl.textContent = fmt(shown); if (mbTotal) mbTotal.textContent = fmt(shown); if (k < 1) tick = requestAnimationFrame(go); };
+  tick = requestAnimationFrame(go);
+  const d = describe(); build.el.setAttribute('aria-label', `Your pizza: marinara base${d ? ' with ' + d : ''}`);
+  $('#od-sum').textContent = `Your pizza: marinara base${d ? ' with ' + d : ''}, $${fmt(to)}.`;
+  fire.model = n ? model : marg; $('#f-note').textContent = n ? 'This is the pizza you built, piece for piece.' : 'Your board is empty, so the oven shows a plain margherita.';
+  dirtyAll();
 }
-function sync(changed) {
-  lines.querySelectorAll('.t-line:not(.t-base)').forEach((l) => l.remove());
-  const names = ['Marinara base'];
-  for (const [k, v] of Object.entries(state.portions)) {
-    if (!v.length) continue; names.push(`${ING[k].name}${v.length > 1 ? ' x' + v.length : ''}`);
-    const li = document.createElement('li'); li.className = 't-line' + (k === changed ? ' is-new' : '');
-    li.innerHTML = `<span>${ING[k].name} <i class="mono">x${v.length}</i></span><span class="mono">$${fmt(v.length * ING[k].price)}</span>` + (state.fired ? '' : `<button class="t-rm" type="button" aria-label="Remove one handful of ${ING[k].name}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12"/></svg></button>`);
-    li.querySelector('.t-rm')?.addEventListener('click', () => removePortion(k));
-    lines.append(li);
-  }
-  $$('.dish').forEach((d) => { const n = state.portions[d.dataset.ing].length; d.querySelector('.dish-n').textContent = n ? 'x' + n : ''; d.setAttribute('aria-label', `${ING[d.dataset.ing].name}, ${n} of ${MAX} handfuls. Add one`); d.classList.toggle('is-full', n >= MAX); });
-  const toppings = Object.values(state.portions).reduce((t, v) => t + v.length, 0);
-  [fireBtn, mbFire].forEach((b) => b && b.setAttribute('aria-disabled', String(!toppings || state.fired)));
-  why.textContent = state.fired ? '' : toppings ? 'Ready when you are.' : 'Add at least one topping first.';
-  roll(total());
-  const summary = names.join(', ');
-  board.setAttribute('aria-label', `Your pizza: ${summary.toLowerCase()}`);
-  $('#od-sum').textContent = `Your pizza: ${summary}. $${fmt(total())}.`; $('#od-pizza').value = summary;
+let flashT = 0; const flash = (m) => { flashEl.textContent = m; clearTimeout(flashT); flashT = setTimeout(() => (flashEl.textContent = ''), 2600); };
+function add(type, opt = {}) {
+  if (model.portions[type].length >= MAX) { flash(`Three handfuls of ${ING[type].name.toLowerCase()} is the most we put on.`); return false; }
+  addHandful(model, type, opt); sync(); return true;
 }
-let flashT = 0; function flash(msg) { why.textContent = msg; clearTimeout(flashT); flashT = setTimeout(() => sync(), 2600); }
+lines.addEventListener('click', (e) => { const b = e.target.closest('[data-rm]'); if (!b) return; model.portions[b.dataset.rm].pop(); sync(); });
+clearBtn.addEventListener('click', () => { ORDER.forEach((k) => (model.portions[k] = [])); sync(); flash('Board cleared.'); });
 
-/* ---------- bowls: click / Enter / tap to add; drag on desktop ---------- */
-const ghost = $('#ghost');
-$$('.dish').forEach((d) => {
-  const type = d.dataset.ing; let start = null, dragging = false;
-  d.addEventListener('click', (e) => { if (dragging) { dragging = false; return; } const r = d.querySelector('.dish-bowl').getBoundingClientRect(); addPortion(type, { x: r.left + r.width / 2, y: r.top + r.height / 2 }); });
-  if (!fine || isM || !ghost) return;
-  d.addEventListener('pointerdown', (e) => { if (e.button !== 0) return; start = { x: e.clientX, y: e.clientY }; d.setPointerCapture(e.pointerId); });
-  d.addEventListener('pointermove', (e) => {
-    if (!start) return;
-    if (!dragging && Math.hypot(e.clientX - start.x, e.clientY - start.y) > 6) {
-      if (state.fired || state.portions[type].length >= MAX) { start = null; return; }
-      dragging = true; ghost.innerHTML = d.querySelector('.dish-bowl').innerHTML; ghost.classList.add('is-on'); document.body.classList.add('is-dragging');
-    }
-    if (dragging) { ghost.style.transform = `translate(${e.clientX}px,${e.clientY}px)`; board.classList.toggle('is-over', overPie(e.clientX, e.clientY)); }
+/* ---------- drag / tap / keyboard ---------- */
+const board = $('#board'), ring = $('#ring');
+const pieRect = () => build.el.getBoundingClientRect();
+const toPie = (x, y) => { const r = pieRect(); return { x: ((x - r.left) / r.width) * 2 - 1, y: ((y - r.top) / r.height) * 2 - 1 }; };
+const onPie = (p) => Math.hypot(p.x, p.y) < 0.98;
+function showRing(p) { const r = pieRect(), b = board.getBoundingClientRect(); ring.style.left = `${r.left - b.left + (p.x + 1) / 2 * r.width}px`; ring.style.top = `${r.top - b.top + (p.y + 1) / 2 * r.height}px`; ring.classList.add('on'); }
+const hideRing = () => ring.classList.remove('on');
+let ghost = null, drag = null;
+$$('.bowl').forEach((b) => {
+  const type = b.dataset.type;
+  b.addEventListener('pointerdown', (e) => { if (e.button !== 0) return; drag = { b, type, x0: e.clientX, y0: e.clientY, moved: false, id: e.pointerId }; });
+  b.addEventListener('click', () => { if (b._dragged) { b._dragged = false; return; } if (performance.now() - (b._kbd || -1e9) < 600) return; add(type); });
+  b.addEventListener('keydown', (e) => {
+    const k = e.key, st = b._kp || { x: 0, y: 0 };
+    if (k.startsWith('Arrow')) { e.preventDefault(); const d = 0.12; if (k === 'ArrowLeft') st.x -= d; if (k === 'ArrowRight') st.x += d; if (k === 'ArrowUp') st.y -= d; if (k === 'ArrowDown') st.y += d;
+      const m = Math.hypot(st.x, st.y); if (m > 0.7) { st.x *= 0.7 / m; st.y *= 0.7 / m; } b._kp = st; showRing(st); }
+    else if (k === 'Enter' || k === ' ') { e.preventDefault(); b._kbd = performance.now(); add(type, b._kp ? { near: { ...b._kp } } : {}); }
   });
-  const end = (e) => {
-    if (!start) return; start = null; document.body.classList.remove('is-dragging');
-    if (!dragging) return;
-    const hit = overPie(e.clientX, e.clientY); board.classList.remove('is-over'); ghost.classList.remove('is-on');
-    if (hit) addPortion(type, { x: e.clientX, y: e.clientY }); else if (!reduced) { const r = d.getBoundingClientRect(); ghost.animate([{ transform: `translate(${e.clientX}px,${e.clientY}px)`, opacity: 1 }, { transform: `translate(${r.left + r.width / 2}px,${r.top + r.height / 2}px)`, opacity: 0 }], { duration: 320, easing: 'cubic-bezier(.16,1,.3,1)' }); }
-    setTimeout(() => (dragging = false), 0);
-  };
-  d.addEventListener('pointerup', end); d.addEventListener('pointercancel', end);
+  b.addEventListener('blur', () => { b._kp = null; hideRing(); });
 });
-function overPie(x, y) { const r = pie.getBoundingClientRect(); return Math.hypot(x - (r.left + r.width / 2), y - (r.top + r.height / 2)) < r.width * 0.5; }
+addEventListener('pointermove', (e) => {
+  if (!drag || e.pointerId !== drag.id) return;
+  if (!drag.moved && Math.hypot(e.clientX - drag.x0, e.clientY - drag.y0) < 8) return;
+  if (!drag.moved) { drag.moved = true; ghost = document.createElement('div'); ghost.className = 'ghost'; ghost.setAttribute('aria-hidden', 'true'); ghost.append(drag.b.querySelector('.dish').cloneNode(true)); document.body.append(ghost); document.documentElement.classList.add('dragging'); }
+  ghost.style.transform = `translate(${e.clientX}px,${e.clientY}px)`;
+  const p = toPie(e.clientX, e.clientY); if (onPie(p)) showRing(p); else hideRing();
+}, { passive: true });
+const endDrag = (e) => {
+  if (!drag || (e && e.pointerId !== drag.id)) return; const d = drag; drag = null;
+  if (!d.moved) return; d.b._dragged = true; setTimeout(() => (d.b._dragged = false), 50);
+  ghost?.remove(); ghost = null; document.documentElement.classList.remove('dragging'); hideRing();
+  if (e && e.type === 'pointerup') { const p = toPie(e.clientX, e.clientY); if (onPie(p)) add(d.type, { near: { x: p.x * 0.9, y: p.y * 0.9 } }); else flash('Drop it on the base.'); }
+};
+addEventListener('pointerup', endDrag); addEventListener('pointercancel', endDrag);
 
-/* ---------- fire it ---------- */
-function fire() {
-  const toppings = Object.values(state.portions).reduce((t, v) => t + v.length, 0);
-  if (!toppings) { flash('Add at least one topping first.'); return; }
-  if (state.fired || state.busy) return;
-  state.busy = true; board.classList.add('is-firing'); document.body.classList.add('is-firing');
-  const D = reduced ? 0 : 3200, t0 = performance.now();
-  if (!reduced) pie.animate([{ transform: 'rotate(0deg)' }, { transform: 'rotate(360deg)' }], { duration: D, easing: 'cubic-bezier(.76,0,.24,1)' });
-  const tick = (t) => { const k = D ? Math.min(1, (t - t0) / D) : 1; state.bake = k; invalidate(); meter.textContent = `In the oven: ${Math.round(k * 90)} s at 485\u00b0C`; if (k < 1) requestAnimationFrame(tick); else done(t); };
-  requestAnimationFrame(tick);
-  function done(t) {
-    state.busy = false; state.fired = true; state.bake = 1; board.classList.remove('is-firing'); board.classList.add('is-fired'); document.body.classList.remove('is-firing');
-    startSteam(t || performance.now()); invalidate();
-    const s0 = performance.now(), SD = reduced ? 0 : 1100;
-    const sl = (n) => { const k = SD ? Math.min(1, Math.max(0, (n - s0 - 350) / SD)) : 1; state.slice = k; invalidate(); if (k < 1) requestAnimationFrame(sl); };
-    requestAnimationFrame(sl);
-    const no = 'HC-' + String(1000 + Math.floor(rnd() * 8999)); meter.textContent = 'Fired in 90 seconds.'; $('#t-no').textContent = `Ticket ${no}. Out of the oven.`;
-    $('#t-done').hidden = false; fireBtn.hidden = true; sync(); $('#t-done .btn').focus({ preventScroll: true });
-    if (mbFire) { mbFire.textContent = 'Order it'; mbFire.setAttribute('aria-disabled', 'false'); }
-  }
+/* ---------- menu: "Load it" flies the toppings onto the board ---------- */
+$$('[data-load]').forEach((btn) => btn.addEventListener('click', () => {
+  ORDER.forEach((k) => (model.portions[k] = [])); sync();
+  $('#build').scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
+  const types = btn.dataset.load.split(','); const wait = reduced ? 0 : 650, now = performance.now();
+  types.forEach((t, i) => addHandful(model, t, { fly: reduced ? null : { x: 0, y: -260 }, delay: wait + i * 160, now }));
+  sync(); flash(`${btn.dataset.name} is on your board. Change anything you like.`);
+}));
+
+/* ---------- the scroll engine ---------- */
+const END = { dough: 1, fire: 0.9 }; /* reduced motion: each pinned section's end state (the oven's is the finished pizza, still inside) */
+const pins = $$('.pin').map((el) => ({ el, id: el.id, p: reduced ? END[el.id] : 0, t: 0 }));
+const dough = { ball: $('.dough-ball'), base: $('.dough-base'), labels: $$('.d-labels li') };
+const F = { sec: $('#fire'), pie: $('#f-pie'), clock: $('#clock'), k: $('#clock-k'), order: $('#f-order'), stage: $('#fire-stage'), oven: $('.oven'), steam: $('.steam') };
+const progress = (el) => { const r = el.getBoundingClientRect(), span = r.height - innerHeight; return span > 0 ? clamp(-r.top / span) : (r.top < innerHeight * 0.5 ? 1 : 0); };
+const ioS = (a, b, x) => { const t = clamp((x - a) / (b - a)); return t < .5 ? 8 * t ** 4 : 1 - Math.pow(-2 * t + 2, 4) / 2; };
+function applyDough(p) {
+  const s = sstep(0.15, 0.7, p);
+  dough.ball.style.setProperty('--ds', (0.3 + 0.75 * s).toFixed(4));
+  dough.ball.style.setProperty('--da', (1 - sstep(0.55, 0.75, p)).toFixed(3));
+  dough.base.style.setProperty('--mask', `${(sstep(0.3, 0.72, p) * 50).toFixed(2)}%`);
+  dough.base.style.setProperty('--bo', sstep(0.3, 0.45, p).toFixed(3));
+  [0.30, 0.48, 0.66].forEach((a, i) => dough.labels[i].style.setProperty('--o', clamp((p - a) / 0.06).toFixed(3)));
 }
-fireBtn.addEventListener('click', fire);
-mbFire && mbFire.addEventListener('click', () => { if (state.fired) document.getElementById('order').scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' }); else fire(); });
-$('#again').addEventListener('click', () => {
-  Object.keys(state.portions).forEach((k) => { state.portions[k] = []; }); puffs = []; steamUntil = 0;
-  state.fired = false; state.bake = 0; state.slice = 0; board.classList.remove('is-fired'); $('#t-done').hidden = true; fireBtn.hidden = false; meter.textContent = '';
-  if (mbFire) mbFire.textContent = 'Fire it'; sync(); invalidate(); $('.dish').focus({ preventScroll: true });
-});
-sync(); size();
+const KS = [[0, 'Into the oven'], [1, 'Baking'], [30, 'The cheese melts'], [55, 'Pepperoni cups'], [72, 'Leopard spots'], [90, 'Done. Ninety seconds.']];
+let lastClock = -1;
+function applyFire(p) {
+  const w = F.oven.getBoundingClientRect().width;
+  const inn = ioS(0, 0.2, p), out = ioS(0.9, 1, p);
+  const fx = (-(0.62) * (1 - inn) - 0.62 * out) * w;
+  F.pie.style.setProperty('--fx', fx.toFixed(1));
+  const c = Math.round(clamp((p - 0.2) / 0.7) * 90); fire.clock = clamp((p - 0.2) / 0.7) * 90;
+  if (c !== lastClock) { lastClock = c; F.clock.textContent = String(c).padStart(2, '0'); F.k.textContent = KS.filter(([s]) => c >= s).pop()[1]; }
+  const step = c >= 67 ? 0.08 : c >= 45 ? 0.05 : c >= 22 ? 0.03 : 0;
+  F.sec.style.setProperty('--band', mix(FLOUR, TOMATO, step));
+  F.oven.style.setProperty('--mouth', mix(FLOUR, TOMATO, 0.08 + step * 1.6));
+  F.steam.style.setProperty('--st', clamp((p - 0.78) / 0.08).toFixed(3));
+  F.order.classList.toggle('on', p >= 0.9); F.order.tabIndex = p >= 0.9 ? 0 : -1;
+  fire.dirty = true;
+}
+let t0 = performance.now(), last = t0, pointerL = 0, lightT = 0;
+if (fine && !reduced) heroSec.addEventListener('pointermove', (e) => { const r = heroSec.getBoundingClientRect(); lightT = ((e.clientX - r.left) / r.width - 0.5) * 2 * (6 * Math.PI / 180); }, { passive: true });
+function loop(now) {
+  const dt = Math.min(64, now - last); last = now;
+  for (const P of pins) {
+    P.t = reduced ? END[P.id] : progress(P.el);
+    const np = reduced ? P.t : P.p + (P.t - P.p) * (1 - Math.pow(1 - 0.12, dt / 16.7));
+    if (Math.abs(np - P.p) > 1e-4 || !P.init) { P.p = Math.abs(P.t - np) < 1e-4 ? P.t : np; P.init = true; if (P.id === 'dough') applyDough(P.p); else applyFire(P.p); }
+  }
+  if (heroGo && vis.get(hero.el)) {
+    if (!reduced) { hero.rot += (isM ? 2 : 4) * Math.PI / 180 * dt / 1000; pointerL += (lightT - pointerL) * 0.08; hero.light = pointerL; hero.dirty = true; }
+  }
+  for (const v of views) {
+    if (!vis.get(v.el) || !v.dirty || (v === hero && !heroGo)) continue;
+    v.dirty = false; if (v.draw(now)) v.dirty = true;
+  }
+  if (!heroSec.classList.contains('live') && heroLoaded()) { hero.dirty = true; hero.draw(now); heroSec.classList.add('live'); }
+  requestAnimationFrame(loop);
+}
+const heroLoaded = () => heroGo && hero.base.baked.ok && hero.base.cheese.ok;
+requestAnimationFrame(loop);
+/* first screen = poster + board + type; the live hero canvas and the ingredient photos load after the page has settled */
+const idle = (f, t) => ('requestIdleCallback' in window) ? requestIdleCallback(f, { timeout: t }) : setTimeout(f, 300);
+const go = () => idle(() => { heroGo = true; hero.dirty = true; }, 900);
+document.readyState === 'complete' ? go() : addEventListener('load', go, { once: true });
+const warmIO = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { warmIO.disconnect(); idle(warmAll, 1500); } }, { rootMargin: '600px 0px' });
+warmIO.observe($('#dough'));
+/* below-the-fold photos (data-src) are swapped in only when their section is near, so they never compete with the first screen */
+const lazyIO = new IntersectionObserver((es) => es.forEach((e) => { if (!e.isIntersecting) return; $$('img[data-src]', e.target).forEach((i) => { i.src = i.dataset.src; i.removeAttribute('data-src'); }); lazyIO.unobserve(e.target); }), { rootMargin: '400px 0px' });
+$$('.pin, .build').forEach((s) => lazyIO.observe(s));
 
-/* ---------- self-test hook for QA ---------- */
-window.__p041 = { addPortion, fire, state, total, pieces: () => Object.values(state.portions).flat().flat().length, ready: () => baseRaw.ok && [...IMGS.values()].every((r) => r.ok) };
+/* intro: 14 ember sparks drift up for 1.2 s, then stop */
+if (!reduced) { const sp = $('.sparks'); $$('i', sp).forEach((i, k) => { i.style.left = `${8 + (k * 61) % 84}%`; i.style.setProperty('--dx', `${((k * 37) % 40) - 20}px`); i.style.animationDelay = `${(k % 7) * 60}ms`; }); requestAnimationFrame(() => sp.classList.add('go')); }
+
+/* ---------- pickup form (concept: nothing is sent) ---------- */
+const form = $('#order-form'), ok = $('#od-ok'), chips = $('#chips');
+['As soon as possible', '6:00 pm', '6:30 pm', '7:00 pm', '7:30 pm'].forEach((t, i) => { chips.insertAdjacentHTML('beforeend', `<label><input type="radio" name="when" value="${t}"${i ? '' : ' checked'}><span>${t}</span></label>`); });
+const rules = { 'od-name': (v) => v.trim().length >= 2 ? '' : 'Tell us what to call you.', 'od-phone': (v) => v.replace(/\D/g, '').length >= 7 ? '' : 'Enter a phone number we could text, at least 7 digits.' };
+function check(id) { const el = $('#' + id), m = rules[id](el.value); el.setAttribute('aria-invalid', m ? 'true' : 'false'); $('#' + id + '-err').textContent = m; return !m; }
+Object.keys(rules).forEach((id) => $('#' + id).addEventListener('blur', () => { if ($('#' + id).value) check(id); }));
+Object.keys(rules).forEach((id) => $('#' + id).addEventListener('input', () => { if ($('#' + id).getAttribute('aria-invalid') === 'true') check(id); }));
+form.addEventListener('submit', (e) => {
+  e.preventDefault(); const good = Object.keys(rules).map(check); if (good.includes(false)) { $('#' + Object.keys(rules)[good.indexOf(false)]).focus(); return; }
+  const btn = $('#od-send'); btn.classList.add('sending'); btn.disabled = true; $('.lbl', btn).textContent = 'Sending';
+  setTimeout(() => {
+    btn.classList.remove('sending'); btn.disabled = false; $('.lbl', btn).textContent = 'Place the order';
+    const name = $('#od-name').value.trim(), when = form.when.value, d = describe();
+    $('#od-echo').textContent = `Thanks, ${name}. Hotcoal Kitchen is a concept, so nothing left this page. A real kitchen would text ${$('#od-phone').value.trim()} when your marinara${d ? ' with ' + d : ''} ($${fmt(total())}) is out of the oven, ${when === 'As soon as possible' ? 'in about twenty minutes' : 'for ' + when}.`;
+    form.hidden = true; ok.hidden = false; ok.focus();
+  }, reduced ? 0 : 900);
+});
+$('#od-again').addEventListener('click', () => { form.reset(); form.hidden = false; ok.hidden = true; $$('.input', form).forEach((i) => i.removeAttribute('aria-invalid')); $$('.err', form).forEach((e) => (e.textContent = '')); $('#od-name').focus(); });
+
+/* ---------- credits button opens the Library credits sheet ---------- */
+$('#open-credits').addEventListener('click', () => { const b = $$('.zk-bar button, .zk-bar a').find((x) => /credit/i.test(x.textContent + (x.getAttribute('aria-label') || ''))); if (b) b.click(); else document.querySelector('.foot-cred').scrollIntoView(); });
+
+/* ---------- phone: section sheet + sticky total bar ---------- */
+if (isM) {
+  const mb = $('#nav-menu'), sh = $('#nav-sheet');
+  mb.addEventListener('click', () => { const o = sh.hidden; sh.hidden = !o; mb.setAttribute('aria-expanded', String(o)); mb.textContent = o ? 'Close' : 'Menu'; });
+  $$('a', sh).forEach((a) => a.addEventListener('click', () => { sh.hidden = true; mb.setAttribute('aria-expanded', 'false'); mb.textContent = 'Menu'; }));
+  const bar = $('#m-bar'), io = new IntersectionObserver(([e]) => bar.classList.toggle('on', e.isIntersecting), { rootMargin: '-30% 0px -30% 0px' }); io.observe($('.builder'));
+}
+sync();
