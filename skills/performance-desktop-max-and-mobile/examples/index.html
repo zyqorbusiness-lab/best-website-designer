@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>performance-desktop-max-and-mobile: performance lab</title>
+<meta name="theme-color" content="#F2F0EA">
+<link rel="preload" href="../../typography-premium/examples/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Archivo";src:url(../../typography-premium/examples/fonts/archivo-var.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Archivo Fallback";src:local("Arial");size-adjust:104%;ascent-override:90%;descent-override:22%}
+:root{--c-canvas:#F2F0EA;--c-ink:#24324A;--c-accent:#A8461F;--c-muted:#56627A;--c-surface:#E6E3DA;--c-hairline:#24324A1C;--gutter:clamp(1.25rem,5vw,5rem)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--c-canvas);color:var(--c-ink);font:400 clamp(1rem,.96rem + .19vw,1.125rem)/1.6 "Archivo","Archivo Fallback",ui-sans-serif,sans-serif}
+:focus-visible{outline:2px solid var(--c-accent);outline-offset:3px}
+h1,h2{font-weight:800;letter-spacing:-.035em;line-height:.98;text-wrap:balance}
+.wrap{max-width:1440px;margin:0 auto;padding:0 var(--gutter)}
+.eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--c-muted)}
+header{min-height:80svh;display:grid;align-content:center;gap:1.4rem}
+header h1{font-size:clamp(2.6rem,1.4rem + 6vw,7rem);max-width:14ch}
+header p{color:var(--c-muted);max-width:42rem}
+.hud{position:fixed;right:max(1rem,env(safe-area-inset-right));top:max(1rem,env(safe-area-inset-top));z-index:5;padding:.6rem .9rem;border-radius:10px;background:rgba(36,50,74,.92);color:#F2F0EA;font:500 .8rem/1.5 ui-monospace,Menlo,monospace;font-variant-numeric:tabular-nums}
+section{padding:clamp(3rem,7vw,6rem) 0;border-top:1px solid var(--c-hairline);display:grid;gap:1.2rem}
+section h2{font-size:clamp(1.8rem,1.2rem + 2.4vw,3.4rem)}
+section p{color:var(--c-muted);max-width:56ch}
+.spin-wrap{height:min(50vh,26rem);display:grid;place-items:center;border-radius:16px;background:var(--c-surface);overflow:hidden}
+.disc{width:min(44vw,16rem);aspect-ratio:1;border-radius:50%;background:repeating-radial-gradient(circle,var(--c-ink) 0 2px,#33435f 2px 5px);position:relative;will-change:transform}
+.disc::after{content:"";position:absolute;inset:36%;border-radius:50%;background:var(--c-accent)}
+.long{content-visibility:auto;contain-intrinsic-size:auto 900px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,12rem),1fr));gap:.8rem}
+.tile{aspect-ratio:4/3;border-radius:10px;background:var(--c-surface);display:grid;place-items:center;color:var(--c-muted);font-size:.85rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 1.3rem;border-radius:999px;border:1px solid var(--c-ink);background:none;color:inherit;font:inherit;cursor:pointer;justify-self:start}
+.btn:active{transform:scale(.96)}
+footer{padding:2rem var(--gutter) 4rem;color:var(--c-muted);font-size:.9rem}footer a{color:inherit;display:inline-flex;align-items:center;min-height:44px}
+@media (prefers-reduced-motion: reduce){.btn{transition:none}}
+</style>
+</head>
+<body>
+<div class="hud" aria-live="off" id="hud">fps --</div>
+<main class="wrap">
+  <header><p class="eyebrow">Performance lab</p><h1>Fast because nothing runs that you cannot see.</h1><p>One preloaded font with a metric-matched fallback, an animation that stops when it leaves the screen or the tab is hidden, long sections skipped by the browser until they come near, and heavy work cut into pieces that never block a tap.</p></header>
+  <section aria-labelledby="h-a"><p class="eyebrow">1 // pause off-screen</p><h2 id="h-a">This disc only turns while you can see it.</h2><div class="spin-wrap"><div class="disc" id="disc" role="img" aria-label="A record that turns while visible"></div></div><p id="spin-state">State: waiting</p></section>
+  <section aria-labelledby="h-b"><p class="eyebrow">2 // chunked work</p><h2 id="h-b">Sort 200,000 numbers without freezing the page.</h2><p>The work yields every 8 ms (scheduler.yield where the browser has it), so taps stay instant.</p><button class="btn" id="work">Run the heavy task</button><p id="work-state" aria-live="polite">Not run yet.</p></section>
+  <section class="long" aria-labelledby="h-c"><p class="eyebrow">3 // content-visibility</p><h2 id="h-c">The browser skips this until it is near.</h2><div class="tiles" id="tiles"></div></section>
+</main>
+<footer>Demo code MIT. Font: Archivo (Omnibus-Type), SIL OFL 1.1. <a href="../SKILL.md">Read the skill</a>.</footer>
+<script type="module">
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const T = { pass: 0, fail: 0, notes: [] }; const ok = (c, n) => (c ? T.pass++ : (T.fail++, T.notes.push(n))); window.__skillTest = T;
+// HUD: fps + long tasks
+const hud = document.getElementById('hud'); let frames = 0, last = performance.now(), longMs = 0;
+try { new PerformanceObserver((l) => { for (const e of l.getEntries()) longMs += e.duration; }).observe({ type: 'longtask', buffered: true }); } catch {}
+(function tick(now){ frames++; if (now - last >= 1000) { hud.textContent = `fps ${Math.round(frames * 1000 / (now - last))}  long ${Math.round(longMs)}ms`; frames = 0; last = now; } requestAnimationFrame(tick); })(performance.now());
+// 1. animation that pauses off-screen and in hidden tabs
+const disc = document.getElementById('disc'), st = document.getElementById('spin-state'); let angle = 0, running = false, onScreen = false, prev = 0, changedAt = 0, sawOff = false; window.__spinFrames = 0; window.__offFrames = 0;
+function spin(now){ if (!running) return; const dt = prev ? now - prev : 16; prev = now; angle = (angle + dt * 0.06) % 360; disc.style.transform = `rotate(${angle}deg)`; window.__spinFrames++; if (!onScreen && now - changedAt > 120) window.__offFrames++; requestAnimationFrame(spin); }
+function update(){ const should = onScreen && !document.hidden && !reduce; if (should && !running) { running = true; prev = 0; requestAnimationFrame(spin); } if (!should) running = false; st.textContent = 'State: ' + (reduce ? 'still (reduced motion)' : running ? 'turning (visible)' : 'paused (off-screen or hidden)'); }
+new IntersectionObserver(([e]) => { onScreen = e.isIntersecting; changedAt = performance.now(); if (!onScreen) sawOff = true; update(); }).observe(disc);
+document.addEventListener('visibilitychange', update);
+// 2. chunked heavy work
+const yieldNow = () => (globalThis.scheduler?.yield ? scheduler.yield() : new Promise((r) => setTimeout(r, 0)));
+async function heavy(){ const n = 200000, a = new Float64Array(n); for (let i = 0; i < n; i++) a[i] = Math.random();
+  const chunk = 20000, parts = []; let t = performance.now(), maxBlock = 0;
+  for (let i = 0; i < n; i += chunk) { parts.push(a.slice(i, i + chunk).sort()); const now = performance.now(); maxBlock = Math.max(maxBlock, now - t); if (now - t > 8) { await yieldNow(); t = performance.now(); } }
+  // k-way merge in slices
+  const out = new Float64Array(n), idx = new Array(parts.length).fill(0); t = performance.now();
+  for (let k = 0; k < n; k++) { let best = -1, bv = Infinity; for (let p = 0; p < parts.length; p++) { const v = idx[p] < parts[p].length ? parts[p][idx[p]] : Infinity; if (v < bv) { bv = v; best = p; } } out[k] = bv; idx[best]++;
+    if ((k & 4095) === 0) { const now = performance.now(); maxBlock = Math.max(maxBlock, now - t); if (now - t > 8) { await yieldNow(); t = performance.now(); } } }
+  let sorted = true; for (let k = 1; k < n; k++) if (out[k] < out[k - 1]) { sorted = false; break; } return { sorted, maxBlock }; }
+const wb = document.getElementById('work'), ws = document.getElementById('work-state');
+wb.addEventListener('click', async () => { wb.disabled = true; ws.textContent = 'Working...'; const t0 = performance.now(); const r = await heavy(); ws.textContent = `Done in ${Math.round(performance.now() - t0)} ms; sorted: ${r.sorted}; longest block between yields: ${Math.round(r.maxBlock)} ms.`; wb.disabled = false; window.__work = r; });
+// 3. tiles
+document.getElementById('tiles').innerHTML = Array.from({ length: 24 }, (_, i) => `<div class="tile">Tile ${i + 1}</div>`).join('');
+// self-tests: spin pauses when off-screen; chunked work is correct and never blocks long
+await new Promise((r) => setTimeout(r, 600));
+scrollTo(0, document.documentElement.scrollHeight); await new Promise((r) => setTimeout(r, 700));
+ok(window.__offFrames <= 2, 'spin kept running off-screen: ' + window.__offFrames + ' frames');   // frames drawn while the disc was off-screen (after the observer's report)
+T.sawOff = sawOff;
+const r = await heavy(); ok(r.sorted, 'heavy task wrong'); ok(r.maxBlock < 50, 'block too long: ' + Math.round(r.maxBlock) + 'ms'); T.maxBlock = Math.round(r.maxBlock);
+ok(getComputedStyle(document.querySelector('.long')).contentVisibility === 'auto' || !CSS.supports('content-visibility', 'auto'), 'content-visibility');
+scrollTo(0, 0);
+</script>
+</body>
+</html>

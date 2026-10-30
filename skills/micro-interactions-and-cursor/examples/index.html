@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>micro-interactions-and-cursor: demo</title>
+<meta name="theme-color" content="#F3EDE1">
+<style>
+@font-face{font-family:"Instrument Serif";src:url(../../typography-premium/examples/fonts/instrumentserif-400.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"Archivo";src:url(../../typography-premium/examples/fonts/archivo-var.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"JetBrains Mono";src:url(../../typography-premium/examples/fonts/jetbrainsmono-400.woff2) format("woff2");font-display:swap}
+:root{--c-canvas:#F3EDE1;--c-ink:#17423C;--c-accent:#8C611C;--c-muted:#527069;--c-surface:#EBE5D8;--c-hairline:#17423C1A;--font-mono:"JetBrains Mono",ui-monospace,monospace;
+  --ease-out-expo:cubic-bezier(.16,1,.3,1);--ease-spring-snappy:cubic-bezier(.34,1.56,.64,1);--gutter:clamp(1.25rem,5vw,5rem)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--c-canvas);color:var(--c-ink);font:400 clamp(1rem,.96rem + .19vw,1.125rem)/1.6 "Archivo",ui-sans-serif,system-ui,sans-serif}
+:focus-visible{outline:2px solid var(--c-accent);outline-offset:3px}
+h1,h2{font-family:"Instrument Serif",ui-serif,Georgia,serif;font-weight:400;letter-spacing:-.02em;line-height:1.02;text-wrap:balance}
+.wrap{max-width:1440px;margin:0 auto;padding:0 var(--gutter)}
+.eyebrow{font:400 .75rem/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--c-muted)}
+header{padding:clamp(4rem,10vw,8rem) 0 3rem;display:grid;gap:1.4rem;border-bottom:1px solid var(--c-hairline)}
+header h1{font-size:clamp(2.6rem,6vw + 1rem,6rem);max-width:13ch}
+.row{display:flex;flex-wrap:wrap;gap:1rem;align-items:center}
+section{padding:clamp(3rem,7vw,6rem) 0;border-bottom:1px solid var(--c-hairline);display:grid;gap:1.5rem}
+section h2{font-size:clamp(1.8rem,1.3rem + 2vw,3rem)}
+section>p{color:var(--c-muted);max-width:56ch}
+/* magnetic */
+.mag{position:relative;display:inline-flex;align-items:center;min-height:52px;padding:0 1.6rem;border-radius:999px;overflow:hidden;background:var(--c-ink);color:var(--c-canvas);text-decoration:none;transition:transform .5s var(--ease-spring-snappy)}
+.mag-fill{position:absolute;left:50%;top:50%;width:0;height:0;border-radius:50%;background:var(--c-accent);transform:translate(-50%,-50%);transition:width .5s var(--ease-out-expo),height .5s var(--ease-out-expo)}
+.mag-label{position:relative;display:grid;overflow:hidden;line-height:1.2;transition:transform .5s var(--ease-spring-snappy)}
+.mag-label>span{grid-area:1/1;transition:transform .45s var(--ease-out-expo)}
+.mag-label>span+span{transform:translateY(120%)}
+@media (hover:hover) and (pointer:fine){.mag:hover .mag-fill{width:260%;height:260%}.mag:hover .mag-label>span:first-child{transform:translateY(-120%)}.mag:hover .mag-label>span+span{transform:none}}
+.mag:active{transform:scale(.96)!important;transition-duration:.09s}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:48px;padding:0 1.3rem;border-radius:999px;border:1px solid var(--c-ink);background:transparent;color:var(--c-ink);font:inherit;cursor:pointer;transition:transform .18s var(--ease-out-expo),background-color .18s}
+.btn:active{transform:scale(.96);transition-duration:.09s}
+@media (hover:hover) and (pointer:fine){.btn:hover{background:var(--c-surface)}}
+.btn[aria-disabled=true]{opacity:.45;cursor:not-allowed}
+/* lit card */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr));gap:1rem}
+.lit{position:relative;border:1px solid var(--c-hairline);border-radius:12px;background:var(--c-surface);padding:1.5rem;min-height:11rem;display:grid;align-content:space-between;transition:transform .5s var(--ease-out-expo);box-shadow:inset 0 1px 0 rgba(255,255,255,.6)}
+.lit::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(240px circle at var(--mx,50%) var(--my,50%),var(--c-accent),transparent 60%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0)}
+@media (hover:hover) and (pointer:fine){.lit:hover::before{opacity:1}}
+.lit h3{font:400 1.6rem/1.1 "Instrument Serif",serif}
+/* seg */
+.seg{position:relative;display:inline-grid;grid-auto-flow:column;grid-auto-columns:1fr;padding:4px;border-radius:999px;border:1px solid var(--c-hairline);background:var(--c-surface)}
+.seg button{position:relative;z-index:1;min-height:44px;padding:0 1.2rem;border:0;background:none;color:inherit;font:inherit;cursor:pointer;transition:color .3s}
+.seg .ind{position:absolute;top:4px;bottom:4px;left:4px;border-radius:999px;background:var(--c-ink)}
+.seg button[aria-pressed=true]{color:var(--c-canvas)}
+.price{font:400 clamp(2.4rem,1.8rem + 3vw,4.6rem)/1 "Instrument Serif",serif;font-variant-numeric:tabular-nums}
+/* accordion */
+.faq{border-top:1px solid var(--c-hairline);max-width:46rem}
+.acc{width:100%;display:flex;justify-content:space-between;align-items:center;gap:1rem;min-height:56px;padding:.8rem 0;border:0;border-bottom:1px solid var(--c-hairline);background:none;color:inherit;font:inherit;font-size:1.05rem;text-align:left;cursor:pointer}
+.acc .plus{font:400 1.6rem/1 var(--font-mono);transition:transform .32s var(--ease-out-expo),color .32s}
+.acc[aria-expanded=true] .plus{transform:rotate(45deg);color:var(--c-accent)}
+.acc-panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .32s var(--ease-out-expo)}
+.acc-panel>div{overflow:hidden}.acc-panel p{padding:.6rem 0 1.2rem;color:var(--c-muted)}
+.acc[aria-expanded=true]+.acc-panel{grid-template-rows:1fr}
+/* sound */
+.eq{display:inline-flex;gap:3px;align-items:flex-end;height:16px}.eq i{width:3px;background:currentColor;height:100%;transition:height .3s var(--ease-out-expo)}
+.eq i:nth-child(2){height:60%}.eq i:nth-child(3){height:85%}.eq i:nth-child(4){height:45%}
+[aria-pressed=false] .eq i{height:1px}
+/* form */
+form{display:grid;gap:1rem;max-width:30rem}
+label{display:grid;gap:.4rem;font-size:.95rem}
+input{min-height:48px;padding:0 1rem;border-radius:10px;border:1px solid var(--c-hairline);background:var(--c-canvas);color:inherit;font:inherit;font-size:1rem}
+input[aria-invalid=true]{border-color:#9b3b2a}
+.err{color:#8f3424;font-size:.9rem;min-height:1.4em}
+.skel{display:grid;gap:.6rem;max-width:30rem}.skel i{display:block;height:1rem;border-radius:6px;background:linear-gradient(90deg,var(--c-surface) 0 40%,#f6f1e7 50%,var(--c-surface) 60% 100%);background-size:300% 100%;animation:sh 1.2s linear infinite}
+.skel i:nth-child(1){width:70%}.skel i:nth-child(3){width:40%}
+@keyframes sh{from{background-position:100% 0}to{background-position:0 0}}
+.toasts{position:fixed;left:50%;bottom:max(1.25rem,env(safe-area-inset-bottom));transform:translateX(-50%);z-index:50;display:grid;gap:.5rem}
+.toast{padding:.8rem 1.1rem;border-radius:999px;background:var(--c-ink);color:var(--c-canvas);font-size:.95rem;animation:tin .32s var(--ease-out-expo)}
+@keyframes tin{from{opacity:0;transform:translateY(12px)}}
+.cur-dot,.cur-ring{position:fixed;left:0;top:0;pointer-events:none;z-index:200}
+.cur-dot{width:6px;height:6px;margin:-3px;border-radius:50%;background:var(--c-ink)}
+.cur-ring{width:36px;height:36px;margin:-18px;border-radius:50%;border:1px solid var(--c-ink);display:grid;place-items:center;transition:width .3s var(--ease-out-expo),height .3s var(--ease-out-expo),margin .3s var(--ease-out-expo),background-color .3s}
+.cur-ring.has-label{width:84px;height:84px;margin:-42px;background:var(--c-ink)}
+.cur-ring.has-label::after{content:attr(data-label);color:var(--c-canvas);font:500 .72rem/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase}
+footer{padding:2rem 0 5rem;font-size:.85rem;color:var(--c-muted)}footer a{color:inherit;display:inline-flex;align-items:center;min-height:44px;min-width:44px}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header><p class="eyebrow">Micro-interactions // every state, every device</p><h1>Small things, done completely.</h1>
+  <div class="row"><a class="mag" href="#contact" data-cursor="Write"><span class="mag-fill" aria-hidden="true"></span><span class="mag-label"><span>Start a project</span><span aria-hidden="true">Start a project</span></span></a>
+  <button class="btn" id="copy" data-cursor="Copy"><span class="label">Copy the email</span></button></div></header>
+<section aria-labelledby="h-lit"><p class="eyebrow">Border light + tilt (pointer: fine only)</p><h2 id="h-lit">The frame stays still; the light follows you.</h2>
+  <div class="cards"><article class="lit" data-tilt><p class="eyebrow">01</p><h3>Survey</h3></article><article class="lit" data-tilt><p class="eyebrow">02</p><h3>Plan</h3></article><article class="lit" data-tilt><p class="eyebrow">03</p><h3>Make</h3></article></div></section>
+<section aria-labelledby="h-seg"><p class="eyebrow">Squish toggle + odometer (a real price, not a proof metric)</p><h2 id="h-seg">Pick a package.</h2>
+  <div class="seg" id="seg" role="group" aria-label="Package"><span class="ind" aria-hidden="true"></span><button aria-pressed="true" data-v="300">Simple</button><button aria-pressed="false" data-v="1000">3D scroll</button><button aria-pressed="false" data-v="10000">Full</button></div>
+  <p class="price" aria-live="polite">$<span id="price" data-v="0">0</span></p></section>
+<section aria-labelledby="h-faq"><p class="eyebrow">Accordion with height physics</p><h2 id="h-faq">Questions.</h2>
+  <div class="faq"><button class="acc" aria-expanded="false" aria-controls="p1">How long does a site take?<span class="plus" aria-hidden="true">+</span></button><div class="acc-panel" id="p1"><div><p>A simple site in days, a 3D scroll site in one to two weeks. Dates are agreed in the brief.</p></div></div>
+  <button class="acc" aria-expanded="false" aria-controls="p2">Do I own the code?<span class="plus" aria-hidden="true">+</span></button><div class="acc-panel" id="p2"><div><p>Yes. You get the files, the credits for every asset and a note on how to edit them.</p></div></div></div></section>
+<section aria-labelledby="h-snd"><p class="eyebrow">Opt-in sound, click only</p><h2 id="h-snd">Sound is off until you turn it on.</h2>
+  <div class="row"><button class="btn" id="sound" aria-pressed="false"><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="label">Sound off</span></button><button class="btn" id="tick">Press me</button><button class="btn" aria-disabled="true" id="dis" title="Pick a package first">Disabled, with a reason</button></div></section>
+<section id="contact" aria-labelledby="h-form"><p class="eyebrow">Form states + skeleton</p><h2 id="h-form">Every state, in words.</h2>
+  <form id="form" novalidate><label>Your email<input id="em" type="email" autocomplete="email" required aria-describedby="em-err"></label><p class="err" id="em-err" aria-live="polite"></p><button class="btn" type="submit" id="send"><span class="label">Send</span></button></form>
+  <div class="skel" aria-hidden="true"><i></i><i></i><i></i></div></section>
+</main>
+<div class="toasts" aria-live="polite" id="toasts"></div>
+<footer class="wrap">Demo code MIT. Fonts: Instrument Serif (Rodrigo Fuenzalida, Jordan Egstad), Archivo (Omnibus-Type), JetBrains Mono (JetBrains), SIL OFL 1.1. <a href="../SKILL.md">Read the skill</a>.</footer>
+<script src="../../layout-grid-spacing/scripts/layout-audit.js"></script>
+<script>
+const fine = matchMedia('(hover: hover) and (pointer: fine)').matches, reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const wire = (el, ev, fn) => { el.addEventListener(ev, fn); el.dataset.wired = '1'; };
+function toast(msg){ const t = Object.assign(document.createElement('div'), { className: 'toast', textContent: msg }); document.getElementById('toasts').append(t); setTimeout(() => t.remove(), 3200); }
+// magnetic
+(function(){ const el = document.querySelector('.mag'); el.dataset.wired = '1'; if (!fine || reduce) return; const lab = el.querySelector('.mag-label'), fill = el.querySelector('.mag-fill');
+  el.addEventListener('pointerenter', (e) => { const r = el.getBoundingClientRect(); fill.style.left = e.clientX - r.left + 'px'; fill.style.top = e.clientY - r.top + 'px'; });
+  addEventListener('pointermove', (e) => { const r = el.getBoundingClientRect(), dx = e.clientX - (r.left + r.width / 2), dy = e.clientY - (r.top + r.height / 2); const near = Math.hypot(dx, dy) < 80 + Math.max(r.width, r.height) / 2;
+    el.style.transform = near ? `translate(${dx * 0.28}px,${dy * 0.28}px)` : ''; lab.style.transform = near ? `translate(${dx * 0.14}px,${dy * 0.14}px)` : ''; }, { passive: true }); })();
+// cursor with labels
+(function(){ if (!fine || reduce) return; const dot = Object.assign(document.createElement('div'), { className: 'cur-dot' }), ring = Object.assign(document.createElement('div'), { className: 'cur-ring' });
+  dot.setAttribute('aria-hidden', 'true'); ring.setAttribute('aria-hidden', 'true'); document.body.append(dot, ring);
+  let x = innerWidth / 2, y = innerHeight / 2, rx = x, ry = y, raf = 0; const loop = () => { rx += (x - rx) * 0.16; ry += (y - ry) * 0.16; ring.style.transform = `translate(${rx}px,${ry}px)`; raf = Math.abs(x - rx) + Math.abs(y - ry) > 0.1 ? requestAnimationFrame(loop) : 0; };
+  addEventListener('pointermove', (e) => { x = e.clientX; y = e.clientY; dot.style.transform = `translate(${x}px,${y}px)`; if (!raf) raf = requestAnimationFrame(loop); }, { passive: true });
+  document.addEventListener('pointerover', (e) => { const t = e.target.closest('[data-cursor]'); ring.dataset.label = t ? t.dataset.cursor : ''; ring.classList.toggle('has-label', !!t); }); })();
+// copy
+const say = (btn, msg, ms = 1500) => { const l = btn.querySelector('.label'), was = l.dataset.was || l.textContent; l.dataset.was = was; btn.style.minWidth = btn.offsetWidth + 'px'; l.textContent = msg; setTimeout(() => { l.textContent = was; btn.style.minWidth = ''; }, ms); };
+wire(document.getElementById('copy'), 'click', async (e) => { const b = e.currentTarget; try { await navigator.clipboard.writeText('hello@example.com'); say(b, 'Copied'); toast('Email copied'); } catch { say(b, 'hello@example.com', 3000); } });
+// lit + tilt
+document.querySelectorAll('.lit').forEach((el) => { el.addEventListener('pointermove', (e) => { const r = el.getBoundingClientRect(); el.style.setProperty('--mx', e.clientX - r.left + 'px'); el.style.setProperty('--my', e.clientY - r.top + 'px');
+  if (fine && !reduce) el.style.transform = `perspective(1000px) rotateX(${((e.clientY - r.top) / r.height - 0.5) * -8}deg) rotateY(${((e.clientX - r.left) / r.width - 0.5) * 8}deg)`; }); el.addEventListener('pointerleave', () => (el.style.transform = '')); });
+// odometer + seg
+function rollTo(el, to, ms = 600){ const from = +el.dataset.v || 0, t0 = performance.now(), fmt = new Intl.NumberFormat('en-US');
+  const step = (t) => { const k = Math.min(1, (t - t0) / ms), e = 1 - Math.pow(1 - k, 4); el.textContent = fmt.format(Math.round(from + (to - from) * e)); if (k < 1) requestAnimationFrame(step); else el.dataset.v = to; };
+  if (reduce) { el.textContent = fmt.format(to); el.dataset.v = to; } else requestAnimationFrame(step); }
+(function(){ const el = document.getElementById('seg'), btns = [...el.querySelectorAll('button')], ind = el.querySelector('.ind'), price = document.getElementById('price');
+  const go = (b, first) => { btns.forEach((x) => x.setAttribute('aria-pressed', x === b)); ind.style.width = b.offsetWidth + 'px'; const to = `translateX(${b.offsetLeft - 4}px)`;
+    if (!first && !reduce) ind.animate([{ transform: ind.style.transform || 'none' }, { transform: to + ' scaleX(1.12)', offset: 0.55 }, { transform: to }], { duration: 420, easing: 'cubic-bezier(.16,1,.3,1)' });
+    ind.style.transform = to; rollTo(price, +b.dataset.v, first ? 1600 : 600); document.getElementById('dis').setAttribute('aria-disabled', 'false'); };
+  btns.forEach((b) => wire(b, 'click', () => go(b))); go(btns[0], true); addEventListener('resize', () => go(btns.find((b) => b.getAttribute('aria-pressed') === 'true'), true)); })();
+// accordion
+document.querySelectorAll('.acc').forEach((b) => wire(b, 'click', () => b.setAttribute('aria-expanded', b.getAttribute('aria-expanded') !== 'true')));
+// sound (opt-in) + click
+let ctx = null, soundOn = false; const click = () => { if (!soundOn) return; ctx ||= new AudioContext(); const o = ctx.createOscillator(), g = ctx.createGain(), t = ctx.currentTime;
+  o.type = 'triangle'; o.frequency.setValueAtTime(1800, t); o.frequency.exponentialRampToValueAtTime(600, t + 0.05); g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.06, t + 0.004); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.08); o.connect(g).connect(ctx.destination); o.start(t); o.stop(t + 0.09); };
+wire(document.getElementById('sound'), 'click', (e) => { soundOn = !soundOn; const b = e.currentTarget; b.setAttribute('aria-pressed', soundOn); b.querySelector('.label').textContent = soundOn ? 'Sound on' : 'Sound off'; click(); });
+wire(document.getElementById('tick'), 'click', (e) => { click(); say(e.currentTarget, 'Pressed', 900); });
+wire(document.getElementById('dis'), 'click', (e) => { if (e.currentTarget.getAttribute('aria-disabled') === 'true') toast('Pick a package first'); else toast('Package kept: $' + document.getElementById('price').dataset.v); });
+// form states
+wire(document.getElementById('form'), 'submit', (e) => { e.preventDefault(); const em = document.getElementById('em'), err = document.getElementById('em-err'), send = document.getElementById('send');
+  if (!em.checkValidity()) { em.setAttribute('aria-invalid', 'true'); err.textContent = 'Enter an email like name@example.com.'; em.focus(); return; }
+  em.removeAttribute('aria-invalid'); err.textContent = ''; say(send, 'Sending', 700); setTimeout(() => { say(send, 'Sent (demo: nothing was sent)', 2200); toast('Demo form: nothing was sent'); }, 700); });
+document.getElementById('send').dataset.wired = '1';
+// self-tests: no dead controls, no href="#", targets >= 44 px, ARIA states present
+const T = { pass: 0, fail: 0, notes: [] }; const ok = (c, n) => (c ? T.pass++ : (T.fail++, T.notes.push(n)));
+const dead = [...document.querySelectorAll('button,a[href]')].filter((el) => !el.dataset.wired && el.tagName === 'BUTTON' && !el.closest('form')); ok(dead.length === 0, 'unwired buttons: ' + dead.length);
+ok(!document.querySelector('a[href="#"]'), 'href="#" found');
+const a = layoutAudit({ quiet: true }); ok(a.smallTargets.length === 0, 'small targets: ' + a.smallTargets.join('; ')); ok(!a.overflowX, 'overflow: ' + a.overflowCulprits.join('; '));
+ok([...document.querySelectorAll('.acc')].every((b) => b.hasAttribute('aria-expanded')), 'accordion aria');
+window.__skillTest = T;
+</script>
+</body>
+</html>

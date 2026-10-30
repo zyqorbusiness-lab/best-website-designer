@@ -13,6 +13,11 @@ Sujon, 30 Oct 2026: teach an AI agent, through many detailed skills, exactly how
 | [`typography-premium`](typography-premium/) | Font pairing, fluid clamp() scale, tracking/leading by size, craft details, loading without shift, OFL vs Fontshare vs paid licences. `type-scale.mjs`. |
 | [`layout-grid-spacing`](layout-grid-spacing/) | 14 named page structures, spatial tokens, 8-point scale, 12-column grid, ledgers, sticky narratives, horizontal tracks, phone re-composition. `layout-audit.js`. |
 | [`premium-tiers-normal-advanced-premium`](premium-tiers-normal-advanced-premium/) | What separates $300 / $1k / $10k sites: features, budgets, fps, red flags and the 8-dimension scorecard. `tier-check.mjs`. |
+| [`motion-and-scroll-storytelling`](motion-and-scroll-storytelling/) | Motion tokens, three named curves, reveal timings, GSAP ScrollTrigger + Lenis pins/scrubs/horizontal tracks, CSS scroll-driven animations, scroll-scrubbed video with every scroll-world engine rule, page transitions, reduced motion. |
+| [`threejs-3d-premium`](threejs-3d-premium/) | Real models (sourcing, licences, gltf-transform), ACES renderer defaults, HDRI + key/rim lighting, PBR materials, contact shadows, bounding-sphere framing for portrait, scroll camera beats, finish studio, render on demand, no-WebGL poster. |
+| [`micro-interactions-and-cursor`](micro-interactions-and-cursor/) | State matrix for every control, magnetic button, labelled lerp cursor, border light + tilt, press feedback, squish toggle, odometer (real numbers), accordion physics, real-action toasts, opt-in sound, a touch version of every pointer effect. |
+| [`responsive-phone-pc-parity`](responsive-phone-pc-parity/) | Desktop-first composition, recomposed (not shrunk) for phones: viewport matrix, content breakpoints, svh and the iOS URL bar, safe areas, art direction, video/3D per aspect. `parity-check.mjs` checks 10 sizes. |
+| [`performance-desktop-max-and-mobile`](performance-desktop-max-and-mobile/) | Speed without lowering quality: tier weight budgets, Core Web Vitals, critical path, image/video/3D recipes, 60-120 fps rules, long tasks, caching. `budget-check.mjs` measures any URL against the tier. |
 
 ## Tools and techniques
 

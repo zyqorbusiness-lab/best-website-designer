@@ -41,8 +41,13 @@ Each skill is a folder an agent can read (`SKILL.md` with frontmatter, rules wit
 | [`typography-premium`](skills/typography-premium/) | Font pairing, fluid type scale, tracking and leading, craft details, loading, font licences. |
 | [`layout-grid-spacing`](skills/layout-grid-spacing/) | 14 named page structures, grid, 8-point spacing, ledgers, sticky narratives, phone re-composition. |
 | [`premium-tiers-normal-advanced-premium`](skills/premium-tiers-normal-advanced-premium/) | What separates $300 / $1k / $10k sites: features, budgets, red flags, scorecard. |
+| [`motion-and-scroll-storytelling`](skills/motion-and-scroll-storytelling/) | Motion tokens and curves, reveal timings, GSAP ScrollTrigger + Lenis scroll stories, CSS scroll-driven animation, scroll-scrubbed video (every scroll-world engine rule), page transitions, reduced motion. |
+| [`threejs-3d-premium`](skills/threejs-3d-premium/) | Real models (sourcing, licences, meshopt), ACES renderer, HDRI + key/rim light, real PBR materials, contact shadows, portrait framing, scroll camera beats, finish studio, no-WebGL poster. |
+| [`micro-interactions-and-cursor`](skills/micro-interactions-and-cursor/) | State matrix for every control, magnetic button, labelled cursor, border light, press feedback, squish toggle, odometer, accordion, toasts, opt-in sound, touch versions. |
+| [`responsive-phone-pc-parity`](skills/responsive-phone-pc-parity/) | Desktop-first composition recomposed for phones: viewport matrix, svh, safe areas, art direction, video/3D per aspect. `parity-check.mjs` tests 10 sizes. |
+| [`performance-desktop-max-and-mobile`](skills/performance-desktop-max-and-mobile/) | Speed without lowering quality: tier budgets, Core Web Vitals, critical path, media recipes, 60-120 fps rules, long tasks. `budget-check.mjs` measures a URL. |
 
-Coming in the next batches today: motion and scroll storytelling, three.js 3D premium, micro-interactions and cursor, responsive phone/PC parity, performance (desktop max), imagery and licensing, copywriting, SEO and meta, accessibility and reduced motion, award-site teardown, client delivery workflow, and the master playbook.
+Coming in the next batches today: imagery and licensing, copywriting, SEO and meta, accessibility and reduced motion, award-site teardown, client delivery workflow, and the master playbook.
 
 The tool skills (qa-harness, liquid-glass-ui, model-optimisation-phone, scroll-video-hero, unique-concepts, web-security) are listed in [`skills/README.md`](skills/README.md).
 

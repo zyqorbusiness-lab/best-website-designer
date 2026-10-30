@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>responsive-phone-pc-parity: recomposition demo</title>
+<meta name="theme-color" content="#EEF1EC">
+<style>
+@font-face{font-family:"Bricolage Grotesque";src:url(../../typography-premium/examples/fonts/bricolage-axes.woff2) format("woff2");font-weight:200 800;font-display:swap}
+@font-face{font-family:"Archivo";src:url(../../typography-premium/examples/fonts/archivo-var.woff2) format("woff2");font-weight:100 900;font-display:swap}
+:root{--c-canvas:#EEF1EC;--c-ink:#1D3A2F;--c-accent:#B5532E;--c-muted:#4D6359;--c-surface:#E2E7E0;--c-hairline:#1D3A2F1C;
+  --step-0:clamp(1rem,.96rem + .19vw,1.125rem);--step-5:clamp(2.75rem,1.6rem + 5.7vw,7.5rem);--space-section:clamp(4rem,2rem + 8vw,10rem);--gutter:clamp(1.25rem,5vw,5rem);--ease:cubic-bezier(.16,1,.3,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--c-canvas);color:var(--c-ink);font:400 var(--step-0)/1.6 "Archivo",ui-sans-serif,system-ui,sans-serif}
+:focus-visible{outline:2px solid var(--c-accent);outline-offset:3px}
+h1,h2,h3{font-family:"Bricolage Grotesque",ui-sans-serif,sans-serif;font-weight:700;letter-spacing:-.035em;line-height:.95;text-wrap:balance}
+.eyebrow{font:600 .75rem/1 "Archivo",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--c-muted)}
+.wrap{max-width:1600px;margin:0 auto;padding:0 var(--gutter)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:max(1rem,env(safe-area-inset-top)) var(--gutter) 1rem;max-width:1600px;margin:0 auto}
+nav a{color:inherit;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px}
+nav ul{display:flex;gap:2rem;list-style:none}
+.cta{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 1.6rem;border-radius:999px;background:var(--c-accent);color:#fff;text-decoration:none;font-weight:600;transition:transform .18s var(--ease)}
+.cta:active{transform:scale(.96)}
+/* hero: desktop split 7/5 with the art bleeding right */
+.hero{display:grid;grid-template-columns:repeat(12,1fr);column-gap:1.5rem;align-items:center;min-height:calc(100vh - 76px);min-height:calc(100svh - 76px);padding-bottom:3rem}
+.hero .copy{grid-column:1/8;display:grid;gap:1.6rem;align-content:center}
+.hero h1{font-size:var(--step-5)}
+.hero p{max-width:34rem;color:var(--c-muted);font-size:clamp(1.05rem,1rem + .4vw,1.35rem)}
+.hero .art{grid-column:8/13;aspect-ratio:4/5;margin-right:calc(var(--gutter) * -1);border-radius:16px 0 0 16px;background:
+  radial-gradient(60% 50% at 70% 30%,#f3c8a8 0,transparent 70%),linear-gradient(160deg,#c9d6cc,#8faa99 55%,#1D3A2F);position:relative;overflow:hidden}
+.hero .art::after{content:"";position:absolute;inset:auto 12% 10% 12%;height:38%;border-radius:50% 50% 8px 8px;background:linear-gradient(#EEF1EC,#cfd8cf)}
+/* horizontal track on desktop */
+.track-sec{padding:var(--space-section) 0}
+.track{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(22rem,30vw);gap:1.5rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 var(--gutter) 1rem;scrollbar-width:thin}
+.track article{scroll-snap-align:start}
+.cards{container-type:inline-size}
+.card{display:grid;gap:1rem;padding:1.5rem;border:1px solid var(--c-hairline);border-radius:14px;background:var(--c-surface);height:100%}
+.card .ph{aspect-ratio:16/10;border-radius:10px;background:linear-gradient(135deg,#d5ddd4,#a8bcad)}
+@container (min-width: 30rem){.card{grid-template-columns:1fr 1fr;align-items:end}}
+.card h3{font-size:clamp(1.5rem,1.2rem + 1vw,2.2rem)}
+.card p{color:var(--c-muted)}
+form{display:grid;gap:1rem;max-width:32rem;padding:var(--space-section) 0}
+label{display:grid;gap:.4rem}
+input{min-height:52px;padding:0 1rem;border-radius:10px;border:1px solid var(--c-hairline);background:#fff;font:inherit;font-size:1rem;color:inherit}
+.sticky{display:none}
+footer{padding:2rem var(--gutter) 6rem;color:var(--c-muted);font-size:.9rem;max-width:1600px;margin:0 auto}
+footer a{color:inherit;display:inline-flex;align-items:center;min-height:44px}
+/* phone: recompose, don't shrink */
+@media (max-width:47.99em){
+  nav ul{display:none}
+  .hero{grid-template-columns:1fr;min-height:auto;gap:1.5rem;padding-top:.5rem}
+  .hero .art{grid-column:1;grid-row:1;aspect-ratio:auto;height:min(26svh,68vw);margin:0 calc(var(--gutter) * -1);border-radius:0}   /* svh-capped so the CTA fits on short phones (375x667) */
+  .hero .copy{grid-column:1;gap:1rem}
+  .hero h1{font-size:clamp(2.5rem,11vw,3.4rem)}
+  .track{grid-auto-flow:row;grid-auto-columns:auto;overflow:visible;scroll-snap-type:none}
+  .track article:nth-child(even){margin-left:12%}        /* deliberate offsets so it is not a plain stack */
+  .sticky{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:5;padding:.7rem var(--gutter) max(.7rem,env(safe-area-inset-bottom));background:rgba(238,241,236,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--c-hairline)}
+  .sticky .cta{flex:1}
+}
+@media (min-width:90em){.hero h1{max-width:12ch}}
+/* phone landscape: short screen, keep the CTA in view */
+@media (max-height:31.25em) and (orientation:landscape){.hero{min-height:auto;padding-top:.5rem}.hero h1{font-size:clamp(2rem,6vh + 1rem,3.2rem)}.hero .copy{gap:.8rem}.hero .art{aspect-ratio:auto;height:calc(100svh - 96px)}.hero p{font-size:1rem}}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<nav aria-label="Main"><a href="#top" id="top"><strong>Fernhill Clinic</strong></a><ul><li><a href="#work">Treatments</a></li><li><a href="#book">Book</a></li></ul></nav>
+<main>
+  <section class="hero wrap" aria-labelledby="h1">
+    <div class="copy"><p class="eyebrow">Physiotherapy // Fernhill</p><h1 id="h1">Move without thinking about it.</h1><p>Sports and back care from two physiotherapists who see you every visit. Fictional clinic for a layout demo.</p><div><a class="cta" id="cta" href="#book">Book an assessment</a></div></div>
+    <div class="art" role="img" aria-label="Illustration of a treatment room"></div>
+  </section>
+  <section class="track-sec" id="work" aria-labelledby="h2"><div class="wrap" style="margin-bottom:2rem"><p class="eyebrow">Treatments</p><h2 id="h2" style="font-size:clamp(2rem,1.4rem + 3vw,4rem);margin-top:.8rem">Desktop: a horizontal track. Phone: an offset column.</h2></div>
+    <div class="track" data-overflow-ok>
+      <article class="cards"><div class="card"><div class="ph" aria-hidden="true"></div><div><h3>Back pain</h3><p>Assessment, hands-on work and a plan you can do at home.</p></div></div></article>
+      <article class="cards"><div class="card"><div class="ph" aria-hidden="true"></div><div><h3>Running</h3><p>Gait review and loading plans for your next race.</p></div></div></article>
+      <article class="cards"><div class="card"><div class="ph" aria-hidden="true"></div><div><h3>After surgery</h3><p>Step-by-step return to strength with weekly checks.</p></div></div></article>
+      <article class="cards"><div class="card"><div class="ph" aria-hidden="true"></div><div><h3>Desk work</h3><p>Neck and shoulder care plus a workstation check.</p></div></div></article>
+    </div></section>
+  <form class="wrap" id="book" aria-labelledby="h3"><h2 id="h3" style="font-size:clamp(2rem,1.4rem + 3vw,4rem)">Book</h2><label>Phone<input type="tel" inputmode="tel" autocomplete="tel"></label><button class="cta" type="submit" style="border:0;font:inherit;font-weight:600">Request a call (demo)</button></form>
+</main>
+<div class="sticky"><a class="cta" href="#book">Book an assessment</a></div>
+<footer>Demo code MIT. Fonts: Bricolage Grotesque (Mathieu Triay), Archivo (Omnibus-Type), SIL OFL 1.1. <a href="../SKILL.md">Read the skill</a>.</footer>
+<script src="../../layout-grid-spacing/scripts/layout-audit.js"></script>
+<script>
+document.getElementById('book').addEventListener('submit', (e) => { e.preventDefault(); e.target.querySelector('button').textContent = 'Demo: nothing was sent'; });
+const T = { pass: 0, fail: 0, notes: [] }; const ok = (c, n) => (c ? T.pass++ : (T.fail++, T.notes.push(n)));
+const b = document.getElementById('cta').getBoundingClientRect(); ok(b.bottom <= innerHeight && b.top >= 0, 'CTA not in first screen: bottom ' + Math.round(b.bottom) + ' / ' + innerHeight);
+ok(document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1, 'horizontal overflow');
+ok([...document.querySelectorAll('input')].every((i) => parseFloat(getComputedStyle(i).fontSize) >= 16), 'input under 16px');
+const a = layoutAudit({ quiet: true }); ok(a.smallTargets.length === 0, 'small targets: ' + a.smallTargets.join('; '));
+ok(parseFloat(getComputedStyle(document.body).fontSize) >= 16, 'body under 16px');
+window.__skillTest = T;
+</script>
+</body>
+</html>

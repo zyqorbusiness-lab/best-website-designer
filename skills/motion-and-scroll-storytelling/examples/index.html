@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>motion-and-scroll-storytelling: demo</title>
+<meta name="theme-color" content="#F5EEE4">
+<style>
+@font-face{font-family:"Instrument Serif";src:url(../../typography-premium/examples/fonts/instrumentserif-400.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"Archivo";src:url(../../typography-premium/examples/fonts/archivo-var.woff2) format("woff2");font-weight:100 900;font-display:swap}
+:root{--c-canvas:#F5EEE4;--c-ink:#3A2418;--c-accent:#B14D1A;--c-muted:#6E5A4E;--c-surface:#EDE4D7;--c-hairline:#3A241817;
+  --dur-instant:90ms;--dur-fast:180ms;--dur-base:320ms;--dur-reveal:520ms;--dur-moment:1200ms;
+  --ease-out-expo:cubic-bezier(.16,1,.3,1);--ease-in-out-quart:cubic-bezier(.76,0,.24,1);--ease-spring-snappy:cubic-bezier(.34,1.56,.64,1);
+  --rise:24px;--stagger:70ms;--gutter:clamp(1.5rem,5vw,5rem)}
+@media (prefers-reduced-motion: reduce){:root{--dur-fast:0ms;--dur-base:0ms;--dur-reveal:0ms;--dur-moment:0ms;--rise:0px;--stagger:0ms}}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--c-canvas);color:var(--c-ink);font:400 clamp(1rem,.96rem + .19vw,1.125rem)/1.6 "Archivo",ui-sans-serif,system-ui,sans-serif}
+html.lenis{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}
+:focus-visible{outline:2px solid var(--c-accent);outline-offset:3px}
+h1,h2,h3{font-family:"Instrument Serif",ui-serif,Georgia,serif;font-weight:400;letter-spacing:-.02em;text-wrap:balance}
+.wrap{max-width:1440px;margin:0 auto;padding:0 var(--gutter)}
+.eyebrow{font:500 .75rem/1 ui-monospace,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--c-muted)}
+.progress{position:fixed;inset:0 0 auto;height:2px;background:var(--c-accent);transform-origin:left;transform:scaleX(0);z-index:30}
+@supports (animation-timeline: scroll()){.progress{animation:grow linear both;animation-timeline:scroll(root)}@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}}
+@media (prefers-reduced-motion: reduce){.progress{animation:none;display:none}}
+header.hero{min-height:100svh;display:grid;align-content:center;gap:1.5rem}
+header.hero h1{font-size:clamp(2.75rem,6.5vw + 1rem,6.5rem);line-height:.96;max-width:13ch}
+header.hero p{max-width:54ch;color:var(--c-muted)}
+.js .reveal{opacity:0;transform:translate3d(0,var(--rise),0);transition:opacity var(--dur-reveal) var(--ease-out-expo),transform var(--dur-reveal) var(--ease-out-expo);transition-delay:calc(var(--i,0) * var(--stagger))}
+.js .reveal.is-in{opacity:1;transform:none}
+.btn{display:inline-flex;align-items:center;min-height:48px;padding:0 1.5rem;border-radius:999px;border:0;background:var(--c-ink);color:var(--c-canvas);font:inherit;cursor:pointer;transition:transform var(--dur-instant) var(--ease-out-expo)}
+.btn:active{transform:scale(.96)}
+/* pinned chapter */
+#chapter{height:100svh;position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;padding:0 var(--gutter);border-top:1px solid var(--c-hairline)}
+.disc{width:min(38vw,520px);aspect-ratio:1;border-radius:50%;justify-self:center;position:relative;background:repeating-radial-gradient(circle at 50% 50%,#3A2418 0 2px,#4a3024 2px 4px);box-shadow:inset 0 0 0 1px #3A241840}
+.disc::before{content:"";position:absolute;inset:34%;border-radius:50%;background:var(--c-accent)}
+.disc::after{content:"";position:absolute;inset:48.5%;border-radius:50%;background:var(--c-canvas)}
+.disc i{position:absolute;left:50%;top:6%;width:2px;height:16%;background:#F5EEE460;transform-origin:50% 275%}
+.caps{position:relative;min-height:12rem}
+.cap{position:absolute;inset:0;display:grid;align-content:center;gap:.8rem}
+.cap h2{font-size:clamp(2rem,1.4rem + 3vw,4.4rem);line-height:1.02}
+.cap p{color:var(--c-muted);max-width:40ch}
+/* horizontal track */
+.hx{position:relative;overflow:hidden;border-top:1px solid var(--c-hairline)}
+.hx-inner{height:100svh;display:flex;flex-direction:column;justify-content:center;gap:2rem}
+.track{display:flex;gap:clamp(1rem,2vw,1.5rem);padding:0 var(--gutter);will-change:transform}
+.track figure{flex:0 0 min(62vw,520px);aspect-ratio:4/3;border-radius:10px;background:var(--c-surface);border:1px solid var(--c-hairline);display:grid;align-content:end;padding:1.25rem}
+.track figcaption{font:400 clamp(1.4rem,1rem + 1.5vw,2.2rem)/1.1 "Instrument Serif",serif}
+section.end{min-height:80svh;display:grid;align-content:center;gap:1.2rem;border-top:1px solid var(--c-hairline)}
+section.end h2{font-size:clamp(2.2rem,1.6rem + 3vw,4.6rem);line-height:1.02;max-width:16ch}
+.paper{background:var(--c-ink);color:var(--c-canvas)}
+footer{padding:2rem 0 3rem;font-size:.85rem;color:var(--c-muted)}
+footer a{color:inherit}
+@media (max-width:767px){
+  #chapter{grid-template-columns:1fr;grid-template-rows:auto auto;align-content:center;gap:2rem}
+  .disc{width:min(70vw,320px)}
+  .hx-inner{height:auto;padding:5rem 0}
+  .track{overflow-x:auto;scroll-snap-type:x mandatory;transform:none!important}
+  .track figure{scroll-snap-align:start;flex-basis:82%}
+}
+@media (prefers-reduced-motion: reduce){
+  #chapter{height:auto;padding-block:5rem}.caps{min-height:0}.cap{position:static;margin-top:2rem}
+  .hx-inner{height:auto;padding:5rem 0}.track{overflow-x:auto;transform:none!important}
+}
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+<main>
+<header class="wrap hero">
+  <p class="eyebrow reveal">Motion demo // tokens, reveals, pins, scrub, transitions</p>
+  <h1 class="reveal">Motion that explains, then gets out of the way.</h1>
+  <p class="reveal">Reveals rise 24px over 520ms on the expo curve, no blur, no bounce. Scroll on: the record below is pinned and scrubbed, the captions follow a linger curve, and the gallery moves sideways with a clamped skew.</p>
+  <p class="reveal"><button class="btn" id="vt">Flip the page colour</button></p>
+</header>
+<section id="chapter" aria-label="Pinned chapter">
+  <div class="disc" id="disc" aria-hidden="true"><i></i></div>
+  <div class="caps">
+    <div class="cap" id="cap1"><p class="eyebrow">Side A</p><h2>Press play.</h2><p>One main mover: the record turns with your scroll. Scroll back and it turns back.</p></div>
+    <div class="cap" id="cap2"><p class="eyebrow">The groove</p><h2>The copy peaks when the motion slows.</h2><p>Progress runs through linger(x, 0.35), so the middle of the chapter holds.</p></div>
+    <div class="cap" id="cap3"><p class="eyebrow">Side B</p><h2>Flip it over.</h2><p>The pin releases with the next section already underneath.</p></div>
+  </div>
+</section>
+<section class="hx" aria-label="Gallery">
+  <div class="hx-inner"><div class="wrap"><p class="eyebrow">Gallery // horizontal, velocity skew clamped to 3.5 degrees</p></div>
+  <div class="track" id="track"><figure><figcaption>Side A</figcaption></figure><figure><figcaption>Side B</figcaption></figure><figure><figcaption>Liner notes</figcaption></figure><figure><figcaption>The deck</figcaption></figure><figure><figcaption>The room</figcaption></figure></div></div>
+</section>
+<section class="wrap end"><h2 class="reveal">Reduced motion gets the same story, with nothing moving.</h2><p class="reveal" style="max-width:54ch;color:var(--c-muted)">Turn on reduced motion and reload: no smooth scroll, no pin, no scrub, every caption visible, the gallery scrolls natively.</p></section>
+</main>
+<footer class="wrap">GSAP 3.15.0 and ScrollTrigger (GreenSock, Standard License), Lenis 1.3.27 (darkroom.engineering, MIT), pinned and self-hosted. Fonts: Instrument Serif (Rodrigo Fuenzalida, Jordan Egstad), Archivo (Omnibus-Type), SIL OFL 1.1. Demo code MIT. <a href="../SKILL.md">Read the skill</a>.</footer>
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const linger = (x, L = 0.35) => (1 - L) * x + L * (4 * (x - 0.5) ** 3 + 0.5);
+// 1. reveals (no library)
+const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } }), { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+document.querySelectorAll('.reveal').forEach((el, i) => { el.style.setProperty('--i', i % 4); io.observe(el); });
+// 2. smooth scroll on desktop wheels only; phones keep native scroll (syncTouch false by default)
+let lenis = null;
+if (!reduce) { lenis = new Lenis({ lerp: 0.1, smoothWheel: true }); lenis.on('scroll', ScrollTrigger.update); gsap.ticker.add((t) => lenis.raf(t * 1000)); gsap.ticker.lagSmoothing(0); }
+// 3. pinned, scrubbed chapter + 4. horizontal track, built per media condition and reverted automatically
+const mm = gsap.matchMedia();
+mm.add({ all: 'all', desktop: '(min-width: 768px)', reduce: '(prefers-reduced-motion: reduce)' }, (ctx) => {   // 'all' so the callback also runs on phones
+  const { desktop, reduce } = ctx.conditions;
+  if (reduce) { gsap.set('.cap', { autoAlpha: 1, y: 0 }); return; }
+  const caps = gsap.utils.toArray('.cap');
+  gsap.set(caps, { autoAlpha: 0, y: 24 }); gsap.set(caps[0], { autoAlpha: 1, y: 0 });
+  const show = (i) => caps.forEach((c, k) => gsap.to(c, { autoAlpha: k === i ? 1 : 0, y: k === i ? 0 : (k < i ? -16 : 24), duration: k === i ? 0.52 : 0.32, ease: 'expo.out', overwrite: true }));
+  let last = 0;
+  ScrollTrigger.create({ trigger: '#chapter', start: 'top top', end: '+=220%', pin: true, scrub: 1, anticipatePin: 1,
+    onUpdate: (self) => { const p = linger(self.progress); gsap.set('#disc', { rotate: p * 540, scale: 0.9 + 0.1 * Math.sin(p * Math.PI) });
+      const i = p < 0.34 ? 0 : p < 0.7 ? 1 : 2; if (i !== last) { last = i; show(i); } } });
+  if (desktop) {
+    const track = document.getElementById('track');
+    gsap.to(track, { x: () => -(track.scrollWidth - innerWidth), ease: 'none', scrollTrigger: { trigger: '.hx', start: 'top top', end: () => '+=' + (track.scrollWidth - innerWidth), scrub: 1, pin: true, invalidateOnRefresh: true } });
+    const skewTo = gsap.quickTo('.track figure', 'skewX', { duration: 0.4, ease: 'power3' });
+    ScrollTrigger.create({ trigger: '.hx', start: 'top bottom', end: 'bottom top', onUpdate: (s) => skewTo(gsap.utils.clamp(-3.5, 3.5, s.getVelocity() / -300)), onLeave: () => skewTo(0), onLeaveBack: () => skewTo(0) });
+  }
+});
+addEventListener('load', () => ScrollTrigger.refresh());
+// 5. circle reveal from the click point (View Transitions), instant fallback
+document.getElementById('vt').addEventListener('click', async (e) => {
+  const apply = () => document.body.classList.toggle('paper');
+  if (!document.startViewTransition || reduce) return apply();
+  const x = e.clientX, y = e.clientY, r = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
+  const vt = document.startViewTransition(apply); await vt.ready;
+  document.documentElement.animate({ clipPath: [`circle(0 at ${x}px ${y}px)`, `circle(${r}px at ${x}px ${y}px)`] }, { duration: 650, easing: 'cubic-bezier(0.16, 1, 0.3, 1)', pseudoElement: '::view-transition-new(root)' });
+});
+// self-tests
+let pass = 0, fail = 0; const notes = []; const ok = (c, n) => (c ? pass++ : (fail++, notes.push(n)));
+ok(typeof gsap !== 'undefined' && gsap.version === '3.15.0', 'gsap 3.15.0 not loaded');
+ok(Math.abs(linger(0)) < 1e-9 && Math.abs(linger(1) - 1) < 1e-9 && linger(0.5) === 0.5, 'linger endpoints');
+let mono = true; for (let x = 0; x < 1; x += 0.01) if (linger(x + 0.01) < linger(x)) mono = false; ok(mono, 'linger not monotone');
+ok(getComputedStyle(document.documentElement).getPropertyValue('--ease-out-expo').includes('.16'), 'tokens missing');
+if (reduce) ok(ScrollTrigger.getAll().length === 0 && [...document.querySelectorAll('.cap')].every((c) => getComputedStyle(c).opacity === '1'), 'reduced motion path not clean');
+else ok(ScrollTrigger.getAll().length >= (matchMedia('(min-width:768px)').matches ? 3 : 1), 'scroll triggers missing');
+window.__skillTest = { pass, fail, notes, triggers: ScrollTrigger.getAll().length, reduce };
+</script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+Unmodified copies: GSAP 3.15.0 and ScrollTrigger 3.15.0 by GreenSock (Standard 'No Charge' License, https://gsap.com/standard-license), Lenis 1.3.27 by darkroom.engineering (MIT, https://github.com/darkroomengineering/lenis). Pinned versions, self-hosted, no CDN.
