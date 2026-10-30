@@ -1,11 +1,12 @@
 {
-  "title": "Ironbark Barbers poster (WebGL fallback still)",
-  "author": "Zyqor Studio",
-  "author_url": "https://github.com/zyqorbusiness-lab",
-  "source_url": "https://github.com/zyqorbusiness-lab/best-website-designer",
-  "licence": "MIT",
-  "licence_url": "https://opensource.org/license/mit",
-  "attribution": "Ironbark Barbers poster (WebGL fallback still), Zyqor Studio (MIT). Shows Barbershop Chair 01 (Poly Haven, CC0).",
-  "changes": "rendered by tools/qa-library.mjs from this concept's own page: a screenshot of the real-time render on the page, saved as WebP. Not AI imagery.",
-  "downloaded": "2026-10-30"
+ "title": "Ironbark Barbers poster",
+ "author": "Zyqor Studio",
+ "author_url": "https://zyqor-portfolio.vercel.app",
+ "source_url": "https://zyqor-portfolio.vercel.app/library/n/N048/",
+ "licence": "MIT",
+ "licence_url": "https://opensource.org/license/mit",
+ "attribution": "Rendered from this concept page by Zyqor Studio; the chair in it is \"Barber Shop Chair 01\" by Fernando Quinn, Poly Haven (CC0 1.0), lit by \"Studio Small 09\" by Sergej Majboroda (CC0 1.0)",
+ "changes": "the hero chair stage of this concept page captured by tools/qa-library.mjs --poster and saved as WebP (first-paint still and WebGL-off fallback)",
+ "downloaded": "2026-10-31",
+ "file": "poster.webp"
 }

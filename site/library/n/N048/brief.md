@@ -1,33 +1,15 @@
-# brief.md: N048 Ironbark Barbers (Concept)
+# N048 Ironbark Barbers (best-4 build #2, Oct 31 2026)
 
-## Pitch
-- One sentence: a barber shop where you swing the real chair and the service it faces is what you book.
-- Matrix card: material tufted leather + brass / motion swing a heavy chair / story the menu as a compass.
-- Constraint cards: "One verb" (swing), "No cards" (the menu is a ring and a ruled list).
-- Category inversion: barber sites show beards and a price grid; here the chair is the menu.
-- Distinct from the library: N002 spins a vase for speed; here the heading is the selection (a dial), with detents and a hydraulic lift.
+Fictional barbershop, labelled Concept everywhere. Built to docs/beast/specs/ironbark-barbers_spec.md (section 10 = what changed).
 
-## Real assets
-| asset | author | licence | source | used as |
-|---|---|---|---|---|
-| Barber Shop Chair 01 | Fernando Quinn | CC0 1.0 | https://polyhaven.com/a/BarberShopChair_01 | hero, same GLB on phone and desktop |
-| Studio Small 09 HDRI | Sergej Majboroda | CC0 1.0 | https://polyhaven.com/a/studio_small_09 | kit lighting |
-Code-made: none in 3D (kit contact shadow only).
+Beats: poster first paint -> hero chair (CC0 scan) turns into view and settles with a 2 cm hydraulic dip; drag / swipe /
+arrow keys swing it onto six services (detents every 60 deg), ring labels (desktop) or a chip rail (phone) and the ticket
+follow it -> #shop (200vh / 170svh pinned): camera pulls back 1.6 m -> 4.2 m, lamps switch on at 0.25 / 0.45, mirror,
+shelf, stool, board fade from bone silhouettes to full material -> #services (260vh / 220svh pinned): the chair swings
+through all six; each stop: index, name, includes, time, sample price; the chalkboard writes the price in chalk; the
+mirror name swaps -> #visit-steps (140vh / 120svh): barber pole stripes travel with scroll, four steps light up ->
+#book: service synced with the chair both ways, day chips, 4x3 time chips, name, phone, "Concept: not sent" -> #hours.
 
-## Palette
---c1 #EFE7DA bone, --c2 #17303A slate teal, --c3 #C8402F barber red. palette-check PASS.
-
-## Frames
-- Phone: chair top half, the ring becomes a snap rail that follows the chair, then title and ticket with two 52 px buttons.
-- Desktop: title left, the chair inside a ring of six services, ticket right.
-
-## States
-Drag/swipe/arrow keys swing (inertia, detent on the nearest service); tap a service: the chair swings to it; pump raises in 2.5 cm steps; reduced motion: jumps instead of swinging; no WebGL: poster.
-
-## Three hand-made details
-1. Detent: the chair settles on the nearest service like a heavy chair.
-2. Hydraulic steps of 2.5 cm, 48 to 58 cm, shown on the ticket.
-3. On the phone the service rail scrolls to follow the chair.
-
-## Production shell
-Nav: The chair, Menu, A visit, Book. No prices (fictional shop). Form: name, email, service, time of day; "Concept: not sent".
+Files: index.html, m.html, style.css, m.css, app.js (scroll engine, hero chair, UI, form), shop.js (the shop scene),
+chalk.js (chalk writer). Models are shared under library/_assets/models/ (same files on phone and desktop).
+Fonts: Anton, Inter Tight, JetBrains Mono (OFL), self-hosted. Only Google/OFL fonts, self-hosted; the shared kit stylesheets are not loaded.

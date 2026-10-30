@@ -1,70 +1,118 @@
 {
-  "brand": "Ironbark Barbers",
-  "id": "N048",
-  "items": [
-    {
-      "what": "3D model",
-      "title": "Barber Shop Chair 01",
-      "author": "Fernando Quinn",
-      "source": "Poly Haven",
-      "url": "https://polyhaven.com/a/BarberShopChair_01",
-      "licence": "CC0 1.0",
-      "note": "Barber Shop Chair 01 by Fernando Quinn, Poly Haven (CC0 1.0). 2K glTF re-encoded once (meshopt, WebP 1024 px, all 4,280 triangles kept), 418 KB. Same file on phone and desktop.",
-      "files": [
-        "../../_assets/models/barbershopchair_01.glb"
-      ]
-    },
-    {
-      "what": "Poster and thumbnail",
-      "title": "Ironbark Barbers poster (WebGL fallback still) and thumbnail",
-      "author": "Zyqor Studio",
-      "licence": "MIT",
-      "files": [
-        "poster.webp",
-        "thumb.webp"
-      ],
-      "note": "Screenshots of this page's own real-time render of the CC0 model. Not AI imagery."
-    },
-    {
-      "what": "HDRI",
-      "title": "Studio Small 09",
-      "author": "Sergej Majboroda",
-      "source": "Poly Haven",
-      "url": "https://polyhaven.com/a/studio_small_09",
-      "licence": "CC0 1.0",
-      "note": "Shared kit lighting (site/assets/hdri)."
-    },
-    {
-      "what": "Type",
-      "title": "Cabinet Grotesk, Satoshi",
-      "author": "Indian Type Foundry",
-      "source": "Fontshare",
-      "url": "https://www.fontshare.com",
-      "licence": "ITF Free Font License"
-    },
-    {
-      "what": "Type",
-      "title": "Instrument Serif",
-      "author": "Rodrigo Fuenzalida, Jordan Egstad",
-      "source": "GitHub",
-      "url": "https://github.com/Instrument/instrument-serif",
-      "licence": "SIL OFL 1.1"
-    },
-    {
-      "what": "Type",
-      "title": "JetBrains Mono",
-      "author": "The JetBrains Mono Project Authors",
-      "source": "GitHub",
-      "url": "https://github.com/JetBrains/JetBrainsMono",
-      "licence": "SIL OFL 1.1"
-    },
-    {
-      "what": "Engine",
-      "title": "three.js r170, GSAP, Lenis",
-      "author": "their authors",
-      "source": "npm",
-      "url": "https://threejs.org",
-      "licence": "MIT / GSAP Standard Licence"
-    }
-  ]
+ "brand": "Ironbark Barbers",
+ "id": "N048",
+ "items": [
+  {
+   "what": "3D scan (the hero chair and the chair in the shop)",
+   "title": "Barber Shop Chair 01",
+   "author": "Fernando Quinn",
+   "source": "Poly Haven",
+   "url": "https://polyhaven.com/a/BarberShopChair_01",
+   "licence": "CC0 1.0",
+   "note": "1K glTF packed as one GLB (WebP textures, meshopt), all triangles kept. Same file on phone and desktop.",
+   "files": [
+    "../../_assets/models/barbershopchair_01.glb"
+   ]
+  },
+  {
+   "what": "3D scan (wall mirror (the shop name is painted on its glass in code))",
+   "title": "Ornate Mirror 01",
+   "author": "James Ray Cock",
+   "source": "Poly Haven",
+   "url": "https://polyhaven.com/a/ornate_mirror_01",
+   "licence": "CC0 1.0",
+   "note": "1K glTF packed as one GLB (WebP textures, meshopt), all triangles kept. Same file on phone and desktop.",
+   "files": [
+    "../../_assets/models/ornate_mirror_01.glb"
+   ]
+  },
+  {
+   "what": "3D scan (the two lamps over the chair)",
+   "title": "Hanging Industrial Lamp",
+   "author": "Kuutti Siitonen",
+   "source": "Poly Haven",
+   "url": "https://polyhaven.com/a/hanging_industrial_lamp",
+   "licence": "CC0 1.0",
+   "note": "1K glTF packed as one GLB (WebP textures, meshopt), all triangles kept. Same file on phone and desktop.",
+   "files": [
+    "../../_assets/models/hanging_industrial_lamp.glb"
+   ]
+  },
+  {
+   "what": "3D scan (waiting stool)",
+   "title": "Metal Stool 01",
+   "author": "Ulan Cabanilla",
+   "source": "Poly Haven",
+   "url": "https://polyhaven.com/a/metal_stool_01",
+   "licence": "CC0 1.0",
+   "note": "1K glTF packed as one GLB (WebP textures, meshopt), all triangles kept. Same file on phone and desktop.",
+   "files": [
+    "../../_assets/models/metal_stool_01.glb"
+   ]
+  },
+  {
+   "what": "3D scan (price board (its face carries the chalk canvas))",
+   "title": "Standing Chalkboard 01",
+   "author": "ParzivalCG",
+   "source": "Poly Haven",
+   "url": "https://polyhaven.com/a/standing_chalkboard_01",
+   "licence": "CC0 1.0",
+   "note": "1K glTF packed as one GLB (WebP textures, meshopt), all triangles kept. Same file on phone and desktop.",
+   "files": [
+    "../../_assets/models/standing_chalkboard_01.glb"
+   ]
+  },
+  {
+   "what": "3D scan (product shelf on the back wall)",
+   "title": "Shelf 01",
+   "author": "Gabriel Radić",
+   "source": "Poly Haven",
+   "url": "https://polyhaven.com/a/Shelf_01",
+   "licence": "CC0 1.0",
+   "note": "1K glTF packed as one GLB (WebP textures, meshopt), all triangles kept. Same file on phone and desktop.",
+   "files": [
+    "../../_assets/models/shelf_01.glb"
+   ]
+  },
+  {
+   "what": "HDRI lighting",
+   "title": "Studio Small 09",
+   "author": "Sergej Majboroda",
+   "source": "Poly Haven",
+   "url": "https://polyhaven.com/a/studio_small_09",
+   "licence": "CC0 1.0",
+   "note": "Shared Library HDRI, reflections only.",
+   "files": [
+    "../../../assets/hdri/studio_1k.hdr",
+    "../../../assets/hdri/studio_512.hdr"
+   ]
+  },
+  {
+   "what": "Floor tiles, chalk lettering, mirror lettering, barber pole, map",
+   "title": "Drawn in code",
+   "author": "Zyqor Studio",
+   "source": "this page",
+   "url": "https://zyqor-portfolio.vercel.app/library/n/N048/",
+   "licence": "MIT",
+   "note": "Canvas and SVG drawn by hand in code; the chalk digits are hand-traced single-stroke paths. No photo or generated image.",
+   "files": [
+    "chalk.js",
+    "shop.js"
+   ]
+  },
+  {
+   "what": "Fonts",
+   "title": "Anton, Inter Tight, JetBrains Mono",
+   "author": "Vernon Adams; Rasmus Andersson and contributors; JetBrains",
+   "source": "Google Fonts (self-hosted)",
+   "url": "https://fonts.google.com/specimen/Anton",
+   "licence": "SIL OFL 1.1",
+   "note": "Self-hosted WOFF2 files already in the repo.",
+   "files": [
+    "../../../assets/font/anton-400.woff2",
+    "../../../assets/font/intertight-normal.woff2",
+    "../../_kit/font/jetbrainsmono-400.woff2"
+   ]
+  }
+ ]
 }

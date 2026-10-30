@@ -1,16 +1,16 @@
 {
  "id": "N048",
- "date": "2026-10-29T20:45:03.614Z",
+ "date": "2026-10-30T21:16:14.608Z",
  "kit": 2,
  "verdict": "PASS",
  "tier": "normal",
  "budgetKB": 1536,
- "ownKB": 542,
- "sharedKB": 1640,
- "phoneOwnKB": 529,
- "phoneSharedKB": 1507,
- "weightKB": 2501,
- "phoneWeightKB": 2355,
+ "ownKB": 1301,
+ "sharedKB": 1467,
+ "phoneOwnKB": 1286,
+ "phoneSharedKB": 1467,
+ "weightKB": 3557,
+ "phoneWeightKB": 3542,
  "sameAssets": true,
  "assetDiff": {
   "desktopOnly": [],
@@ -18,7 +18,12 @@
  },
  "assets3d": [
   "/assets/hdri/studio_512.hdr",
-  "/library/_assets/models/barbershopchair_01.glb"
+  "/library/_assets/models/barbershopchair_01.glb",
+  "/library/_assets/models/hanging_industrial_lamp.glb",
+  "/library/_assets/models/metal_stool_01.glb",
+  "/library/_assets/models/ornate_mirror_01.glb",
+  "/library/_assets/models/shelf_01.glb",
+  "/library/_assets/models/standing_chalkboard_01.glb"
  ],
  "sameEffects": true,
  "effectDiff": [],
@@ -26,14 +31,14 @@
   "toneMapping": 4,
   "exposure": 1,
   "outputColorSpace": "srgb",
-  "shadows": false,
-  "shadowType": null,
+  "shadows": true,
+  "shadowType": 2,
   "antialias": true,
-  "envIntensity": 1,
-  "background": null,
+  "envIntensity": 0.8,
+  "background": "color",
   "passes": [],
   "contactShadows": 1,
-  "demand": false,
+  "demand": true,
   "dprCap": [
    2,
    2
@@ -42,7 +47,7 @@
  "nowebgl": true,
  "credit": {
   "pass": true,
-  "files": 9,
+  "files": 11,
   "missing": [],
   "incomplete": [],
   "ccby": [],
@@ -57,8 +62,8 @@
    "failed": 0,
    "overflow": 0,
    "webgl": true,
-   "ownKB": 542,
-   "sharedKB": 1640
+   "ownKB": 1301,
+   "sharedKB": 1467
   },
   "m390": {
    "pass": true,
@@ -67,8 +72,8 @@
    "failed": 0,
    "overflow": 0,
    "webgl": true,
-   "ownKB": 529,
-   "sharedKB": 1507
+   "ownKB": 1286,
+   "sharedKB": 1467
   },
   "m360": {
    "pass": true,
@@ -77,8 +82,8 @@
    "failed": 0,
    "overflow": 0,
    "webgl": true,
-   "ownKB": 541,
-   "sharedKB": 1507
+   "ownKB": 1305,
+   "sharedKB": 1467
   },
   "rd1440": {
    "pass": true,
@@ -87,8 +92,8 @@
    "failed": 0,
    "overflow": 0,
    "webgl": true,
-   "ownKB": 542,
-   "sharedKB": 1660
+   "ownKB": 1301,
+   "sharedKB": 1467
   },
   "rm390": {
    "pass": true,
@@ -97,8 +102,8 @@
    "failed": 0,
    "overflow": 0,
    "webgl": true,
-   "ownKB": 541,
-   "sharedKB": 1527
+   "ownKB": 1305,
+   "sharedKB": 1467
   },
   "nd1440": {
    "pass": true,
@@ -108,8 +113,8 @@
    "overflow": 0,
    "webgl": false,
    "poster": true,
-   "ownKB": 552,
-   "sharedKB": 960
+   "ownKB": 135,
+   "sharedKB": 787
   },
   "nm390": {
    "pass": true,
@@ -119,8 +124,8 @@
    "overflow": 0,
    "webgl": false,
    "poster": true,
-   "ownKB": 551,
-   "sharedKB": 827
+   "ownKB": 140,
+   "sharedKB": 787
   }
  }
 }
