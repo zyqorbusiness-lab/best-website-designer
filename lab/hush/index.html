@@ -17,13 +17,13 @@
 <link rel="stylesheet" href="../../assets/glass/liquid-glass.css">
 <script type="application/json" id="lg-map">{".hnav": "lg lg-pill lg-rim", ".seg": "lg lg-pill", ".pill-a": "lg lg-btn lg--ink", ".pill-g": "lg lg-btn"}</script>
 <script src="../../assets/glass/liquid-glass.js" defer></script>
-<link rel="canonical" href="https://zyqor-portfolio.sites.tab.bot/lab/hush/">
+<link rel="canonical" href="https://zyqor-portfolio.vercel.app/lab/hush/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Zyqor Studio">
 <meta property="og:title" content="Hush One &middot; Concept 03 &middot; Zyqor Lab">
 <meta property="og:description" content="Hush One is a fictional pair of noise-cancelling headphones: a design concept by Zyqor Studio (3D scroll spin, exploded view, feature callouts).">
-<meta property="og:url" content="https://zyqor-portfolio.sites.tab.bot/lab/hush/">
-<meta property="og:image" content="https://zyqor-portfolio.sites.tab.bot/lab/hush/poster.webp">
+<meta property="og:url" content="https://zyqor-portfolio.vercel.app/lab/hush/">
+<meta property="og:image" content="https://zyqor-portfolio.vercel.app/lab/hush/poster.webp">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 <body data-slug="hush">
@@ -33,7 +33,8 @@
 <section class="stage" aria-label="Hush One headphones">
   <canvas class="waves" aria-hidden="true"></canvas>
   <p class="giant" aria-hidden="true"><span>H</span><span>U</span><span>S</span><span>H</span></p>
-  <canvas class="gl" role="img" aria-label="3D model of the Hush One headphones"></canvas>
+  <canvas class="gl" data-nogl="self" role="img" aria-label="3D model of the Hush One headphones"></canvas>
+  <div class="hp-load" aria-hidden="true"><i></i></div>
   <nav class="hnav" aria-label="Concept site navigation"><a href="#" data-noop class="on">Hush One</a><a href="#" data-noop>Sound</a><a href="#" data-noop>Specs</a><a href="#" data-noop>Support</a></nav>
   <div class="h-ui">
     <div class="h-left">
@@ -52,6 +53,7 @@
   </div>
   
   <div class="tech"><div class="t-head"><p class="eyebrow">Inside Hush One</p><h2>Built from<br>the quiet out.</h2><p class="t-prog"><b class="tp">01</b><i><s></s></i>05</p></div><svg class="lines" aria-hidden="true"></svg><div class="cos"><div class="co" data-k="driver"><span class="co-n">01</span><span class="co-t"><b>40 mm driver</b><small>Bio-cellulose cone, tuned flat.</small></span></div><div class="co" data-k="foam"><span class="co-n">02</span><span class="co-t"><b>Memory foam</b><small>Slow-rebound cushions seal out the room.</small></span></div><div class="co" data-k="mics"><span class="co-n">03</span><span class="co-t"><b>6 mics</b><small>Three per cup listen so you do not have to.</small></span></div><div class="co" data-k="band"><span class="co-n">04</span><span class="co-t"><b>Soft-touch band</b><small>248 g, balanced on a wide pad.</small></span></div><div class="co" data-k="slider"><span class="co-n">05</span><span class="co-t"><b>Steel sliders</b><small>Twelve clicks of fit, silent.</small></span></div></div></div>
+  <button type="button" class="xbtn" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v5M12 16v5M3 12h5M16 12h5"/><circle cx="12" cy="12" r="2.5"/></svg><span>Explode view</span></button>
 </section>
 
 <section class="battery" aria-label="Battery">
@@ -70,12 +72,13 @@
   <h2 class="cta-h" data-rv="up">Hear less.<br><em>Feel more.</em></h2>
   <div class="cta-row" data-rv="up" data-rv-d="2"><button type="button" class="pill pill-a mag notify" data-cur="Notify">Notify me <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button><a href="#main" class="pill pill-g mag" data-cur="Top">Back to top <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a></div>
   <p class="toast" role="status" aria-live="polite"></p>
+  <p class="attr">3D model: “Over-ear headphones” by <a href="https://sketchfab.com/zcore101" rel="noopener">Zack Kenin</a>, <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>, modified by Zyqor Studio.</p>
 </section>
 </main>
 <template id="credits">
-  <li>Code and design: Zyqor Studio (MIT licence for the code).</li>
-  <li>The headphones are procedural three.js geometry made for this concept (v2 rebuild: superellipse cups, swept leather band with stitching, brushed-aluminium yokes and sliders). Leather grain, cloth weave and brushed-metal maps are generated in code at load: no model or image download, no photography.</li>
-  <li>Studio lighting: "Studio Small 09" HDRI by Sergej Majboroda, Poly Haven, CC0 (desktop build).</li>
+  <li>Headphones 3D model: "Over-ear headphones" by <a href="https://sketchfab.com/zcore101" rel="noopener">Zack Kenin (zcore101)</a>, <a href="https://sketchfab.com/3d-models/over-ear-headphones-d14ea6edcb3f4c0690a99ec3ba34c5df" rel="noopener">Sketchfab</a>, <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>. Changed by Zyqor Studio: cable, plug and jack removed; each ear cup split into cushion, driver cloth, gasket, housing, cap and bezel for the exploded view; re-scaled, decimated and compressed; new materials, colourways and surface maps.</li>
+  <li>Code, design and the code-made parts (the speaker internals seen in the exploded view, the etched cap wordmark and mic holes, the leather, soft-touch, brushed-metal and knit surface maps, the sound-wave field and the poster renders): Zyqor Studio, made with three.js (MIT licence for the code).</li>
+  <li>Studio lighting: "Studio Small 09" HDRI by Sergej Majboroda, Poly Haven, CC0 (phone and desktop).</li>
   <li>Contact shadow technique after the three.js "contact shadows" example (MIT).</li>
   <li>Fonts: Unbounded by NORD ID and Inter Tight by Rasmus Andersson et al., SIL Open Font License 1.1.</li>
   <li>Hush One and every spec on this page are fictional.</li>
