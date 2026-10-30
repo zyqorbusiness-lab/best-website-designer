@@ -15,7 +15,7 @@
   <a href="#zyqor-lab">Lab concepts</a> &nbsp;&middot;&nbsp;
   <a href="#zyqor-library-300-3d-concepts-in-progress">300-concept library</a> &nbsp;&middot;&nbsp;
   <a href="site/components/">Components</a> &nbsp;&middot;&nbsp;
-  <a href="skills/">Skills</a> &nbsp;&middot;&nbsp;
+  <a href="#skills-how-to-build-unique-premium-websites-the-core-of-this-repo"><b>Skills</b></a> &nbsp;&middot;&nbsp;
   <a href="#inspiration">Inspiration</a> &nbsp;&middot;&nbsp;
   <a href="#run-it-locally">Run locally</a> &nbsp;&middot;&nbsp;
   <a href="#deploy-on-vercel">Deploy</a> &nbsp;&middot;&nbsp;
@@ -27,6 +27,24 @@
 <p align="center"><img src="docs/screens/phone.jpg" alt="The phone build: home, Lab and three concepts at 390 px" width="100%"></p>
 
 ---
+
+## Skills: how to build unique, premium websites (the core of this repo)
+
+This repo's main goal (Sujon, 30 Oct 2026): **teach an AI agent, through many detailed skills, exactly how to design and build unique, premium, advanced websites**: the idea, colour, fonts, layout, motion, 3D, tiers, phone parity and the rest. Desktop is the top bar (*"PC me no compromise, ek dam best"*); the phone gets the same quality. Every point from his design Drive and from [scroll-world](https://github.com/oso95/scroll-world) (MIT, by cyw) is folded into these skills, credited, with a point-by-point map in [`docs/beast/SKILLS_SOURCE_MAP.md`](docs/beast/SKILLS_SOURCE_MAP.md). The concepts, components and Lab sites further down are **examples** of the skills in use.
+
+Each skill is a folder an agent can read (`SKILL.md` with frontmatter, rules with reasons, numbers, tested code, a premium / advanced / normal tier table, a pre-ship checklist, sources), plus scripts and a working example checked at 1440, 390 and 360 px with 0 console errors.
+
+| Skill | What it teaches |
+|---|---|
+| [`unique-idea-and-concept`](skills/unique-idea-and-concept/) | Find the one big idea, its metaphor, story arc, chapters and camera grammar before design starts. |
+| [`colour-systems`](skills/colour-systems/) | Premium 3-colour palettes (OKLCH, WCAG-checked): no black, no purple, no neon, no decorative gradients. |
+| [`typography-premium`](skills/typography-premium/) | Font pairing, fluid type scale, tracking and leading, craft details, loading, font licences. |
+| [`layout-grid-spacing`](skills/layout-grid-spacing/) | 14 named page structures, grid, 8-point spacing, ledgers, sticky narratives, phone re-composition. |
+| [`premium-tiers-normal-advanced-premium`](skills/premium-tiers-normal-advanced-premium/) | What separates $300 / $1k / $10k sites: features, budgets, red flags, scorecard. |
+
+Coming in the next batches today: motion and scroll storytelling, three.js 3D premium, micro-interactions and cursor, responsive phone/PC parity, performance (desktop max), imagery and licensing, copywriting, SEO and meta, accessibility and reduced motion, award-site teardown, client delivery workflow, and the master playbook.
+
+The tool skills (qa-harness, liquid-glass-ui, model-optimisation-phone, scroll-video-hero, unique-concepts, web-security) are listed in [`skills/README.md`](skills/README.md).
 
 ## What's inside
 

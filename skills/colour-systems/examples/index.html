@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>colour-systems: palette playground</title>
+<meta name="theme-color" content="#F7EFE5">
+<style>
+@property --c-canvas{syntax:'<color>';inherits:true;initial-value:#F7EFE5}
+@property --c-ink{syntax:'<color>';inherits:true;initial-value:#093F31}
+@property --c-accent{syntax:'<color>';inherits:true;initial-value:#A4517B}
+:root{--c-canvas:#F7EFE5;--c-ink:#093F31;--c-accent:#A4517B;--c-muted:#496F62;--c-surface:#EFE9DF;--c-hairline:#093F3117;--c-on-accent:#F7EFE5;
+  --ease-settle:cubic-bezier(.16,1,.3,1);--ease-wipe:cubic-bezier(.65,0,.35,1);
+  transition:--c-canvas .7s var(--ease-settle),--c-ink .7s var(--ease-settle),--c-accent .7s var(--ease-settle)}
+*{box-sizing:border-box;margin:0}
+html{background:var(--c-canvas);color:var(--c-ink);font:400 17px/1.55 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+body{min-height:100vh;background:var(--c-canvas);color:var(--c-ink);transition:background-color .6s var(--ease-wipe),color .6s var(--ease-wipe)}
+body.is-inverted{background:var(--c-ink);color:var(--c-canvas)}
+::selection{background:var(--c-accent);color:var(--c-on-accent)}
+:focus-visible{outline:2px solid var(--c-accent);outline-offset:3px}
+.wrap{max-width:1440px;margin:0 auto;padding:0 clamp(1.25rem,5vw,5rem)}
+header{padding:clamp(2.5rem,6vw,5rem) 0 2rem;border-bottom:1px solid var(--c-hairline)}
+.eyebrow{font:500 .78rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--c-muted)}
+h1{font:400 clamp(2.4rem,6.5vw,5.6rem)/1 ui-serif,Georgia,"Times New Roman",serif;letter-spacing:-.02em;margin:.6rem 0 1rem;max-width:14ch}
+h1 em{font-style:italic;color:var(--c-accent)}
+p.lede{max-width:56ch;color:var(--c-muted)}
+.controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:1rem;padding:2rem 0;border-bottom:1px solid var(--c-hairline)}
+label{display:block;font-size:.85rem;color:var(--c-muted);margin-bottom:.4rem}
+input[type=range]{width:100%;accent-color:var(--c-accent);min-height:44px}
+.seg{display:flex;border:1px solid var(--c-hairline);border-radius:999px;padding:3px;gap:3px;background:var(--c-surface)}
+.seg button{flex:1;min-height:40px;border:0;border-radius:999px;background:transparent;color:var(--c-ink);font:inherit;font-size:.9rem;cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--c-ink);color:var(--c-canvas)}
+.sw{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,10rem),1fr));gap:1px;background:var(--c-hairline);border:1px solid var(--c-hairline);margin:2rem 0}
+.sw div{background:var(--c-canvas);padding:1rem}
+.chip{height:72px;border-radius:6px;border:1px solid var(--c-hairline);margin-bottom:.6rem}
+.sw b{display:block;font-weight:600}.sw code{font:500 .85rem ui-monospace,monospace;color:var(--c-muted)}
+table{width:100%;border-collapse:collapse;margin:1rem 0 2rem;font-size:.95rem}
+th,td{text-align:left;padding:.7rem .4rem;border-bottom:1px solid var(--c-hairline);vertical-align:top}
+th{font-weight:500;color:var(--c-muted);font-size:.8rem;text-transform:uppercase;letter-spacing:.06em}
+.v{font:600 .8rem ui-monospace,monospace;padding:.2rem .5rem;border-radius:4px;border:1px solid currentColor}
+.panel{background:var(--c-surface);border:1px solid var(--c-hairline);box-shadow:inset 0 1px 0 rgba(255,255,255,.6);border-radius:8px;padding:clamp(1.25rem,3vw,2.5rem);margin:2rem 0;display:grid;gap:1rem}
+.btns{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{min-height:48px;padding:0 1.4rem;border-radius:999px;border:0;font:500 1rem/1 inherit;font-family:inherit;cursor:pointer}
+.btn-primary{background:var(--c-accent);color:var(--c-on-accent)}
+.btn-secondary{background:transparent;color:var(--c-ink);box-shadow:inset 0 0 0 1px var(--c-ink)}
+.chapter{padding:clamp(5rem,12vw,10rem) 0;border-top:1px solid var(--c-hairline)}
+.chapter h2{font:400 clamp(2rem,5vw,4rem)/1.05 ui-serif,Georgia,serif;letter-spacing:-.015em;max-width:18ch}
+.flagship p{max-width:52ch;margin-top:1rem;opacity:.85}
+.css{white-space:pre;overflow:auto;font:500 .8rem/1.5 ui-monospace,monospace;background:var(--c-surface);border:1px solid var(--c-hairline);border-radius:8px;padding:1rem}
+footer{padding:3rem 0 4rem;color:var(--c-muted);font-size:.9rem;border-top:1px solid var(--c-hairline)}
+footer a{color:inherit}
+.grain{position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.028}
+.grain::before{content:"";position:absolute;inset:0;background:#808080;filter:url(#grain);mix-blend-mode:multiply}
+@media (prefers-reduced-motion: reduce){:root,body{transition:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter></svg>
+<div class="grain" aria-hidden="true"></div>
+<div class="wrap">
+<header>
+  <p class="eyebrow">colour-systems / playground</p>
+  <h1>Three colours, <em>one job</em> each.</h1>
+  <p class="lede">Move the seed hue. The page rebuilds its canvas, ink and accent with OKLCH maths and checks every pair against WCAG. Purple hues are moved out of the purple band; a canvas is never black or pure white.</p>
+</header>
+<section class="controls" aria-label="Palette controls">
+  <div><label for="hue">Seed hue: <span id="hueOut">170</span>&deg;</label><input id="hue" type="range" min="0" max="359" value="170"></div>
+  <div><label id="modeL">Canvas</label><div class="seg" role="group" aria-labelledby="modeL"><button data-mode="light" aria-pressed="true">Warm paper</button><button data-mode="deep" aria-pressed="false">Coloured deep</button></div></div>
+  <div><label id="accL">Accent</label><div class="seg" role="group" aria-labelledby="accL"><button data-acc="complement" aria-pressed="true">Complement</button><button data-acc="split" aria-pressed="false">Split</button><button data-acc="analogous" aria-pressed="false">Analogous</button></div></div>
+</section>
+<div class="sw" id="sw"></div>
+<table aria-describedby="tcap"><caption id="tcap" style="text-align:left;caption-side:top;color:var(--c-muted);font-size:.85rem;padding-bottom:.4rem">Contrast checks (WCAG 2.2). Goal is the premium target, floor is the legal minimum.</caption>
+<thead><tr><th>Pair</th><th>Ratio</th><th>Goal / floor</th><th>Verdict</th></tr></thead><tbody id="rows"></tbody></table>
+<div class="panel">
+  <p class="eyebrow">sample section</p>
+  <h2 style="font:400 clamp(1.6rem,3.4vw,2.6rem)/1.1 ui-serif,Georgia,serif">The accent appears once per screen.</h2>
+  <p style="color:var(--c-muted);max-width:52ch">Muted text is a mix of ink and canvas, stopped where it still reads at 4.5:1. Borders are ink at low alpha, with a highlight on the top edge instead of a drop shadow.</p>
+  <div class="btns"><button class="btn btn-primary">Book a call</button><button class="btn btn-secondary">See the work</button></div>
+</div>
+<pre class="css" id="css" aria-label="CSS tokens"></pre>
+<section class="chapter flagship" data-invert>
+  <p class="eyebrow">chapter break</p>
+  <h2>Scroll here and the page inverts: the deep side is the ink, never black.</h2>
+  <p>The switch takes 600 ms on the wipe curve and is instant when the visitor asks for reduced motion.</p>
+</section>
+<section class="chapter"><h2>And back to paper.</h2></section>
+<footer>MIT. Method from Zyqor Studio's colour rules. OKLab by Bj&ouml;rn Ottosson. <a href="../SKILL.md">Read the skill</a>.</footer>
+</div>
+<script type="module">
+import { build, report, css, derive, contrast } from '../scripts/palette.mjs';
+const st = { hue: 170, mode: 'light', acc: 'complement' };
+const $ = (s) => document.querySelector(s);
+function render() {
+  const p = build(st.hue, st.mode, st.acc); const rep = report(p); const s = document.documentElement.style;
+  for (const [k, v] of [['canvas', p.canvas], ['ink', p.ink], ['accent', p.accent], ['muted', p.muted], ['surface', p.surface], ['hairline', p.hairline], ['on-accent', p.accentInk]]) s.setProperty('--c-' + k, v);
+  document.querySelector('meta[name=theme-color]').content = p.canvas;
+  $('#sw').innerHTML = [['Canvas', p.canvas, '60% background'], ['Ink', p.ink, '30% text, deep chapters'], ['Accent', p.accent, 'rare: CTA, focus, active'], ['Muted', p.muted, 'tint: secondary text'], ['Surface', p.surface, 'tint: raised panels']]
+    .map(([n, h, j]) => `<div><div class="chip" style="background:${h}"></div><b>${n}</b><code>${h}</code><br><small>${j}</small></div>`).join('');
+  $('#rows').innerHTML = rep.rows.map((r) => `<tr><td>${r.check}</td><td>${r.ratio.toFixed(2)}:1</td><td>${r.goal} / ${r.floor}</td><td><span class="v">${r.verdict}</span></td></tr>`).join('') +
+    rep.banned.map((b) => `<tr><td colspan="3">${b}</td><td><span class="v">FAIL</span></td></tr>`).join('');
+  $('#css').textContent = css(p); $('#hueOut').textContent = st.hue;
+}
+$('#hue').addEventListener('input', (e) => { st.hue = +e.target.value; render(); });
+for (const b of document.querySelectorAll('[data-mode]')) b.addEventListener('click', () => { st.mode = b.dataset.mode; document.querySelectorAll('[data-mode]').forEach((x) => x.setAttribute('aria-pressed', x === b)); render(); });
+for (const b of document.querySelectorAll('[data-acc]')) b.addEventListener('click', () => { st.acc = b.dataset.acc; document.querySelectorAll('[data-acc]').forEach((x) => x.setAttribute('aria-pressed', x === b)); render(); });
+new IntersectionObserver(([e]) => document.body.classList.toggle('is-inverted', e.isIntersecting), { rootMargin: '-45% 0px -45% 0px' }).observe(document.querySelector('[data-invert]'));
+render();
+// self-tests: every generated palette across the hue wheel must PASS; known AI palettes must FAIL
+let pass = 0, fail = 0, notes = [];
+for (let h = 0; h < 360; h += 15) for (const m of ['light', 'deep']) for (const a of ['complement', 'split', 'analogous']) { const r = report(build(h, m, a)); if (r.fail) { fail++; notes.push(`${h}/${m}/${a}`); } else pass++; }
+for (const bad of [['#070709', '#F4F4F6', '#E2FF32'], ['#0F172A', '#FFFFFF', '#6366F1']]) { const r = report(derive({ canvas: bad[0], ink: bad[1], accent: bad[2] })); if (r.fail) pass++; else { fail++; notes.push('banned palette passed ' + bad); } }
+window.__skillTest = { pass, fail, notes: notes.slice(0, 10) };
+</script>
+</body>
+</html>

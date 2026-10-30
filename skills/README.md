@@ -2,7 +2,19 @@
 
 Each folder here is one self-contained skill you can download and use on your own projects: a written method (`SKILL.md`, readable by people and by AI coding agents), a working example, starter code, a QA checklist and an MIT licence. Every example was checked at 1440x900, 390x844 and 360x740 with 0 console errors before it shipped.
 
-## Ready
+## Website-design skills (the core of this repo)
+
+Sujon, 30 Oct 2026: teach an AI agent, through many detailed skills, exactly how to design and build unique, premium, advanced websites. Desktop is the top bar ("PC me no compromise"); the phone matches it. Each skill below folds in the points from his design Drive and from scroll-world (map: [`docs/beast/SKILLS_SOURCE_MAP.md`](../docs/beast/SKILLS_SOURCE_MAP.md)).
+
+| Skill | What it teaches |
+|---|---|
+| [`unique-idea-and-concept`](unique-idea-and-concept/) | Find the one big idea ("[product] as [thing or place]"), metaphor, story arc, chapters, camera grammar, brief. `storyboard.mjs` checks the idea sentence. |
+| [`colour-systems`](colour-systems/) | Premium 3-colour palettes with OKLCH maths and WCAG checks; no black, no purple, no neon, no decorative gradients. `palette.mjs` generates and checks. |
+| [`typography-premium`](typography-premium/) | Font pairing, fluid clamp() scale, tracking/leading by size, craft details, loading without shift, OFL vs Fontshare vs paid licences. `type-scale.mjs`. |
+| [`layout-grid-spacing`](layout-grid-spacing/) | 14 named page structures, spatial tokens, 8-point scale, 12-column grid, ledgers, sticky narratives, horizontal tracks, phone re-composition. `layout-audit.js`. |
+| [`premium-tiers-normal-advanced-premium`](premium-tiers-normal-advanced-premium/) | What separates $300 / $1k / $10k sites: features, budgets, fps, red flags and the 8-dimension scorecard. `tier-check.mjs`. |
+
+## Tools and techniques
 
 | Skill | What it gives you |
 |---|---|

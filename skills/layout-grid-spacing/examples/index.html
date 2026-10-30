@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>layout-grid-spacing: structures demo</title>
+<meta name="theme-color" content="#F4F0EA">
+<link rel="preload" href="../../typography-premium/examples/fonts/instrumentserif-400.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Instrument Serif";src:url(../../typography-premium/examples/fonts/instrumentserif-400.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"Archivo";src:url(../../typography-premium/examples/fonts/archivo-var.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"JetBrains Mono";src:url(../../typography-premium/examples/fonts/jetbrainsmono-400.woff2) format("woff2");font-display:swap}
+:root{--c-canvas:#F4F0EA;--c-ink:#2A2622;--c-accent:#866740;--c-muted:#6A6158;--c-surface:#EBE6DD;--c-hairline:#2A262217;
+  --font-display:"Instrument Serif",ui-serif,Georgia,serif;--font-body:"Archivo",ui-sans-serif,system-ui,sans-serif;--font-mono:"JetBrains Mono",ui-monospace,monospace;
+  --container:1440px;--gutter:clamp(1.5rem,5vw,5rem);--grid-gap:clamp(1rem,2vw,1.5rem);--section-y:clamp(6rem,12vw,11rem);
+  --s-1:8px;--s-2:12px;--s-3:16px;--s-4:24px;--s-5:32px;--s-6:48px;--s-7:64px;--s-8:96px;--s-9:128px;--ease:cubic-bezier(.16,1,.3,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--c-canvas);color:var(--c-ink);font:400 clamp(1rem,.96rem + .19vw,1.125rem)/1.6 var(--font-body)}
+img,svg{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--c-accent);outline-offset:3px}
+.wrap{width:100%;max-width:var(--container);margin-inline:auto;padding-inline:var(--gutter)}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--grid-gap)}
+.eyebrow{font:400 .75rem/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--c-muted)}
+h1,h2,h3{font-family:var(--font-display);font-weight:400;text-wrap:balance;letter-spacing:-.02em}
+h2{font-size:clamp(2.2rem,1.6rem + 3vw,4.6rem);line-height:1.02}
+p{text-wrap:pretty}
+/* nav pill */
+.nav{position:fixed;inset:var(--s-4) 0 auto;z-index:20;display:flex;justify-content:center;pointer-events:none}
+.nav div{pointer-events:auto;display:flex;align-items:center;gap:var(--s-4);padding:6px 6px 6px var(--s-4);border-radius:999px;background:rgba(244,240,234,.72);backdrop-filter:blur(16px) saturate(1.3);-webkit-backdrop-filter:blur(16px) saturate(1.3);border:1px solid var(--c-hairline);box-shadow:inset 0 1px 0 rgba(255,255,255,.7)}
+.nav b{font:400 1.2rem/1 var(--font-display)}
+.nav a{min-height:44px;display:inline-flex;align-items:center;padding:0 var(--s-4);border-radius:999px;background:var(--c-accent);color:#F4F0EA;text-decoration:none;font-size:.95rem}
+.gridbtn{min-height:44px;min-width:44px;border:1px solid var(--c-hairline);background:transparent;border-radius:999px;font:inherit;font-size:.85rem;padding:0 var(--s-3);color:var(--c-ink);cursor:pointer}
+/* hero: 7 + 5 asymmetric */
+.hero{min-height:100svh;padding-top:var(--s-9);padding-bottom:var(--s-8);align-content:end}
+.hero h1{grid-column:1/span 8;font-size:clamp(2.75rem,6.5vw + 1rem,6.5rem);line-height:.96;letter-spacing:-.035em;margin-top:var(--s-4)}
+.hero .side{grid-column:9/span 4;align-self:end;color:var(--c-muted);padding-bottom:var(--s-2)}
+.hero .side a{display:inline-flex;align-items:center;min-height:48px;margin-top:var(--s-4);padding:0 var(--s-5);border-radius:999px;background:var(--c-accent);color:#F4F0EA;text-decoration:none}
+.hero .eyebrow{grid-column:1/-1}
+.photo{aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:linear-gradient(180deg,#d9cfbf,#b9a88f)}
+.photo svg{width:100%;height:100%}
+/* ledger */
+section.s{padding-block:var(--section-y)}
+.ledger{list-style:none;border-top:1px solid var(--c-hairline);margin-top:var(--s-7)}
+.ledger li{display:grid;grid-template-columns:4rem minmax(0,1fr) minmax(0,1.2fr);gap:var(--s-4);align-items:baseline;padding-block:var(--s-5);border-bottom:1px solid var(--c-hairline);transition:background-color .4s var(--ease),padding .4s var(--ease)}
+.ledger .n{font:400 .75rem/1 var(--font-mono);letter-spacing:.14em;color:var(--c-muted)}
+.ledger h3{font-size:clamp(1.6rem,1.2rem + 1.6vw,2.6rem);line-height:1.05}
+.ledger p{color:var(--c-muted);max-width:52ch}
+@media (hover:hover){.ledger li:hover{background:var(--c-surface)}}
+/* split sticky */
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:var(--grid-gap)}
+.stage{position:sticky;top:0;height:100svh;display:grid;place-items:center}
+.stage .frame{width:min(100%,560px);aspect-ratio:4/5;border-radius:12px;position:relative;overflow:hidden;background:var(--c-surface);border:1px solid var(--c-hairline)}
+.stage .frame span{position:absolute;inset:0;display:grid;place-items:center;font:400 clamp(5rem,12vw,11rem)/1 var(--font-display);color:var(--c-accent);opacity:0;transition:opacity .6s var(--ease),transform .8s var(--ease);transform:translateY(8%)}
+.stage .frame span.on{opacity:1;transform:none}
+.chapters article{min-height:100svh;display:grid;align-content:center;gap:var(--s-3);max-width:34rem}
+.chapters h3{font-size:clamp(1.8rem,1.3rem + 2vw,3rem);line-height:1.05}
+.chapters p{color:var(--c-muted)}
+/* horizontal track */
+.hx{height:calc(var(--frames) * 60vh)}
+.hx-pin{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:var(--s-5)}
+.hx-head{display:flex;justify-content:space-between;align-items:baseline}
+.hx-track{display:flex;gap:var(--grid-gap);will-change:transform}
+.hx-track figure{flex:0 0 min(70vw,560px);aspect-ratio:4/3;border-radius:10px;background:var(--c-surface);border:1px solid var(--c-hairline);display:grid;align-content:end;padding:var(--s-4)}
+.hx-track figcaption{font:400 1.6rem/1.1 var(--font-display)}
+.bar{height:1px;background:var(--c-hairline);position:relative}.bar i{position:absolute;inset:0 auto 0 0;width:100%;background:var(--c-ink);transform-origin:left;transform:scaleX(0)}
+/* stacked cards */
+.stack{display:grid;gap:var(--s-6);margin-top:var(--s-7)}
+.stack article{position:sticky;top:calc(96px + var(--i) * 24px);min-height:56svh;border-radius:12px;background:var(--c-surface);border:1px solid var(--c-hairline);box-shadow:inset 0 1px 0 rgba(255,255,255,.7);padding:clamp(1.5rem,4vw,4rem);display:grid;align-content:space-between;transform-origin:top center}
+.stack h3{font-size:clamp(2rem,1.4rem + 3vw,4.4rem);line-height:1}
+/* footer */
+.pre{padding-block:var(--section-y);text-align:left}
+.pre a{display:inline-flex;align-items:center;min-height:52px;padding:0 var(--s-6);border-radius:999px;background:var(--c-ink);color:var(--c-canvas);text-decoration:none;margin-top:var(--s-5)}
+.word{font:400 clamp(4rem,15vw,16rem)/.8 var(--font-display);letter-spacing:-.04em;white-space:nowrap;overflow:hidden;padding-top:var(--s-6)}
+.legal{display:flex;flex-wrap:wrap;gap:var(--s-2) var(--s-4);padding-block:var(--s-5) var(--s-7);border-top:1px solid var(--c-hairline);font-size:.9rem;color:var(--c-muted)}
+.legal a{color:inherit;min-height:44px;min-width:44px;display:inline-flex;align-items:center;justify-content:center;padding-inline:4px}
+/* grid overlay */
+.overlay{position:fixed;inset:0;z-index:50;pointer-events:none;display:none}
+.overlay.on{display:block}
+.overlay .wrap{height:100%}.overlay .grid{height:100%}.overlay .grid i{background:rgba(134,103,64,.08);border-inline:1px solid rgba(134,103,64,.25)}
+@media (max-width:767px){
+  .grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .hero h1,.hero .side{grid-column:1/-1}.hero .side{margin-top:var(--s-5)}
+  .ledger li{grid-template-columns:3rem minmax(0,1fr)}.ledger li p{grid-column:2}
+  .split{grid-template-columns:1fr}.stage{position:sticky;top:0;height:45svh;z-index:1;background:var(--c-canvas)}.stage .frame{height:88%;width:auto}
+  .chapters article{min-height:70svh}
+  .overlay .grid i:nth-child(n+5){display:none}
+}
+@media (max-width:767px),(prefers-reduced-motion:reduce){
+  .hx{height:auto}.hx-pin{position:static;height:auto;padding-block:var(--section-y)}
+  .hx-track{transform:none!important;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:var(--s-3)}
+  .hx-track figure{scroll-snap-align:start;flex-basis:82%}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.stage .frame span{transform:none}}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main"><div><b>Atelier Norde</b><button class="gridbtn" id="gbtn" aria-pressed="false">Grid</button><a href="#contact">Book a visit</a></div></nav>
+<div class="overlay" id="ov" aria-hidden="true"><div class="wrap"><div class="grid"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
+<main>
+<header class="wrap grid hero">
+  <p class="eyebrow">Structure 02 + 07 // Swiss hairline grid with a sticky narrative</p>
+  <h1>Rooms drawn around the light you already have.</h1>
+  <div class="side"><p>An interior studio concept. 7 + 5 columns, one focal point (the headline), 40%+ open canvas, the call to action visible without scrolling at 360 and 1440.</p><a href="#contact">Book a visit</a></div>
+</header>
+<div class="wrap"><div class="photo" role="img" aria-label="Placeholder for a real interior photograph"><svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="900" fill="#cfc3b0"/><rect x="980" y="120" width="420" height="560" fill="#e9e1d3"/><rect x="980" y="120" width="420" height="560" fill="none" stroke="#2A262230"/><rect x="0" y="690" width="1600" height="210" fill="#b8a78e"/></svg></div></div>
+<section class="s wrap" aria-labelledby="led">
+  <p class="eyebrow">01 // Ledger instead of three cards</p>
+  <h2 id="led" style="margin-top:var(--s-4);max-width:16ch">What a project includes.</h2>
+  <ol class="ledger">
+    <li><span class="n">01</span><h3>Survey</h3><p>We measure the rooms and the light at three times of day.</p></li>
+    <li><span class="n">02</span><h3>Plan</h3><p>Drawings for every wall, with the furniture you keep marked first.</p></li>
+    <li><span class="n">03</span><h3>Make</h3><p>Joinery and finishes from two workshops within a day's drive.</p></li>
+    <li><span class="n">04</span><h3>Hand over</h3><p>A printed care book for every surface in the house.</p></li>
+  </ol>
+</section>
+<section class="wrap split" aria-label="Process">
+  <div class="stage"><div class="frame" aria-hidden="true"><span class="on">i</span><span>ii</span><span>iii</span></div></div>
+  <div class="chapters">
+    <article data-ch="0"><p class="eyebrow">Chapter i</p><h3>Light first.</h3><p>The stage stays pinned while the chapters scroll past it. On phone it sits at the top at 45% of the screen height.</p></article>
+    <article data-ch="1"><p class="eyebrow">Chapter ii</p><h3>Then the walls.</h3><p>Each chapter swaps the stage with an opacity and transform crossfade, nothing that moves layout.</p></article>
+    <article data-ch="2"><p class="eyebrow">Chapter iii</p><h3>Then the things you love.</h3><p>One idea stays on screen from the first chapter to the last.</p></article>
+  </div>
+</section>
+<section class="hx" style="--frames:6" aria-label="Selected rooms">
+  <div class="hx-pin"><div class="wrap hx-head"><p class="eyebrow">Selected rooms</p><p class="eyebrow" id="cnt">01 / 06</p></div>
+  <div class="wrap"><div class="hx-track" id="track">
+    <figure><figcaption>North kitchen</figcaption></figure><figure><figcaption>Reading room</figcaption></figure><figure><figcaption>Stair hall</figcaption></figure><figure><figcaption>Garden studio</figcaption></figure><figure><figcaption>Bath in oak</figcaption></figure><figure><figcaption>Attic bedroom</figcaption></figure>
+  </div></div>
+  <div class="wrap"><div class="bar"><i id="bar"></i></div></div></div>
+</section>
+<section class="s wrap" aria-labelledby="st">
+  <p class="eyebrow">Stacked sticky cases</p>
+  <h2 id="st" style="margin-top:var(--s-4)">Three houses.</h2>
+  <div class="stack">
+    <article style="--i:0"><p class="eyebrow">Case 01</p><h3>The cliff house</h3></article>
+    <article style="--i:1"><p class="eyebrow">Case 02</p><h3>A flat above a bakery</h3></article>
+    <article style="--i:2"><p class="eyebrow">Case 03</p><h3>The long barn</h3></article>
+  </div>
+</section>
+<section class="wrap pre" id="contact" aria-labelledby="ct"><p class="eyebrow">Concept, not a real studio</p><h2 id="ct" style="max-width:14ch;margin-top:var(--s-4)">Come and see the rooms.</h2><a href="#">Book a visit</a></section>
+</main>
+<footer class="wrap"><div class="word" aria-hidden="true">Atelier Norde</div><div class="legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Contact</a><span>MIT demo. Fonts: Instrument Serif (Rodrigo Fuenzalida, Jordan Egstad), Archivo (Omnibus-Type), JetBrains Mono (JetBrains), SIL OFL 1.1.</span></div></footer>
+<script src="../scripts/layout-audit.js"></script>
+<script>
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+// grid overlay: button or G key
+const ov = document.getElementById('ov'), gb = document.getElementById('gbtn');
+const tog = () => { const on = ov.classList.toggle('on'); gb.setAttribute('aria-pressed', on); };
+gb.addEventListener('click', tog); addEventListener('keydown', (e) => { if (e.key === 'g' && !e.metaKey && !e.ctrlKey && !/input|textarea/i.test(e.target.tagName)) tog(); });
+// sticky narrative: swap the stage per chapter
+const marks = document.querySelectorAll('.stage .frame span');
+const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) marks.forEach((m, k) => m.classList.toggle('on', k === +e.target.dataset.ch)); }), { rootMargin: '-50% 0px -50% 0px' });
+document.querySelectorAll('.chapters article').forEach((a) => io.observe(a));
+// horizontal track + stacked card depth
+const hx = document.querySelector('.hx'), track = document.getElementById('track'), bar = document.getElementById('bar'), cnt = document.getElementById('cnt');
+const mq = matchMedia('(min-width:768px) and (prefers-reduced-motion:no-preference)');
+const cards = [...document.querySelectorAll('.stack article')];
+let raf = 0;
+function frame() { raf = 0;
+  if (mq.matches) { const r = hx.getBoundingClientRect(); const t = Math.min(1, Math.max(0, -r.top / (r.height - innerHeight)));
+    track.style.transform = `translate3d(${-t * Math.max(0, track.scrollWidth - track.clientWidth)}px,0,0)`; bar.style.transform = `scaleX(${t})`;
+    cnt.textContent = String(Math.min(6, 1 + Math.floor(t * 6))).padStart(2, '0') + ' / 06'; }
+  if (!reduce) cards.forEach((c, i) => { const next = cards[i + 1]; if (!next) return; const d = c.getBoundingClientRect().top, n = next.getBoundingClientRect().top;
+    const k = Math.min(1, Math.max(0, 1 - (n - d) / innerHeight)); c.style.transform = `scale(${1 - k * 0.06})`; c.style.filter = `brightness(${1 - k * 0.12})`; });
+}
+addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(frame); }, { passive: true }); frame();
+// self-test: layout audit at the current viewport
+const a = layoutAudit({ quiet: true });
+window.__skillTest = { pass: [!a.overflowX, a.smallTargets.length === 0, a.longLines.length === 0].filter(Boolean).length, fail: [a.overflowX, a.smallTargets.length > 0, a.longLines.length > 0].filter(Boolean).length, notes: [...a.overflowCulprits, ...a.smallTargets, ...a.longLines].slice(0, 6), distinctSpacing: a.distinctSpacing };
+</script>
+</body>
+</html>

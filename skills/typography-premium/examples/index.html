@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>typography-premium: specimen</title>
+<meta name="theme-color" content="#F3EDE1">
+<link rel="preload" href="fonts/instrumentserif-400.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Instrument Serif";src:url(fonts/instrumentserif-400.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url(fonts/instrumentserif-400-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Bricolage Grotesque";src:url(fonts/bricolage-axes.woff2) format("woff2");font-weight:200 800;font-stretch:75% 100%;font-display:swap}
+@font-face{font-family:"Archivo";src:url(fonts/archivo-var.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"JetBrains Mono";src:url(fonts/jetbrainsmono-400.woff2) format("woff2");font-weight:400;font-display:swap}
+:root{
+  --c-canvas:#F3EDE1;--c-ink:#17423C;--c-accent:#8C611C;--c-muted:#527069;--c-hairline:#17423C17;
+  --font-display:"Instrument Serif",ui-serif,Georgia,serif;--font-sans:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;--font-body:"Archivo",ui-sans-serif,system-ui,sans-serif;--font-mono:"JetBrains Mono",ui-monospace,monospace;
+  --fs-small:clamp(0.8333rem, 0.8298rem + 0.0157vw, 0.844rem);--fs-body:clamp(1rem, 0.9583rem + 0.1852vw, 1.125rem);
+  --fs-h5:clamp(1.44rem, 1.2537rem + 0.8281vw, 1.999rem);--fs-h4:clamp(1.728rem, 1.4158rem + 1.3877vw, 2.6647rem);
+  --fs-h3:clamp(2.0736rem, 1.5808rem + 2.1902vw, 3.552rem);--fs-h2:clamp(2.4883rem, 1.7395rem + 3.3281vw, 4.7348rem);
+  --fs-h1:clamp(2.75rem, 6.5vw + 1rem, 6.5rem);--fs-giant:clamp(4rem, 14vw, 13rem);
+  --ease-settle:cubic-bezier(.16,1,.3,1)}
+*{box-sizing:border-box;margin:0}
+html{background:var(--c-canvas);color:var(--c-ink);font-family:var(--font-body);font-size:100%;line-height:1.6;-webkit-text-size-adjust:100%;text-rendering:optimizeLegibility;font-kerning:normal;font-optical-sizing:auto;font-synthesis:none}
+body{font-size:var(--fs-body)}
+::selection{background:var(--c-accent);color:var(--c-canvas)}
+.wrap{max-width:1440px;margin:0 auto;padding:0 clamp(1.25rem,5vw,5rem)}
+.eyebrow{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--c-muted)}
+h1,h2,h3{text-wrap:balance;font-weight:400}
+p,li{text-wrap:pretty;hanging-punctuation:first allow-end}
+.hero{min-height:100svh;display:grid;align-content:end;padding-bottom:clamp(3rem,8vw,7rem);border-bottom:1px solid var(--c-hairline)}
+.hero h1{font-family:var(--font-sans);font-size:var(--fs-h1);line-height:.96;letter-spacing:-.04em;font-weight:640;max-width:12ch;margin:1.2rem 0 1.5rem}
+.hero h1 em{font-family:var(--font-display);font-style:italic;font-weight:400;letter-spacing:-.02em;color:var(--c-accent)}
+.hero p{max-width:52ch;color:var(--c-muted)}
+.reveal-lines .line{display:block;overflow:hidden;padding-bottom:.08em}
+.reveal-lines .line>span{display:inline-block;transform:translateY(105%);transition:transform .9s var(--ease-settle)}
+.reveal-lines.is-in .line>span{transform:none}
+.reveal-lines .line:nth-child(2)>span{transition-delay:.08s}.reveal-lines .line:nth-child(3)>span{transition-delay:.16s}
+section.block{padding:clamp(4rem,10vw,9rem) 0;border-bottom:1px solid var(--c-hairline)}
+.scale{display:grid;gap:1.4rem;margin-top:2rem}
+.row{display:grid;grid-template-columns:minmax(0,9rem) 1fr;gap:1rem;align-items:baseline;border-top:1px solid var(--c-hairline);padding-top:1rem}
+.row code{font-family:var(--font-mono);font-size:.78rem;color:var(--c-muted)}
+.row .s{overflow-wrap:anywhere}
+@media (max-width:640px){.row{grid-template-columns:1fr}}
+.serif{font-family:var(--font-display)}
+.sans{font-family:var(--font-sans);font-weight:620}
+.pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,26rem),1fr));gap:clamp(2rem,5vw,5rem);margin-top:2rem}
+.pair h3{font-family:var(--font-display);font-size:var(--fs-h2);line-height:1.02;letter-spacing:-.02em}
+.pair p{max-width:62ch;margin-top:1rem}
+.prices{margin-top:2rem;border-top:1px solid var(--c-hairline);font-variant-numeric:tabular-nums lining-nums}
+.prices div{display:flex;justify-content:space-between;gap:1rem;padding:.9rem 0;border-bottom:1px solid var(--c-hairline)}
+.prices b{font-family:var(--font-mono);font-weight:400}
+.manifesto{height:200vh}
+.manifesto .stick{position:sticky;top:0;height:100svh;display:grid;place-items:center}
+.manifesto p{font-family:var(--font-display);font-size:var(--fs-h3);line-height:1.12;letter-spacing:-.015em;max-width:20ch;text-align:left}
+.manifesto .w{opacity:.15;transition:opacity .2s linear}
+.giant{font-family:var(--font-sans);font-size:var(--fs-giant);font-weight:800;font-stretch:75%;letter-spacing:-.045em;line-height:.85;padding:clamp(3rem,8vw,6rem) 0 1rem;overflow-wrap:anywhere}
+footer{padding:2rem 0 4rem;font-size:var(--fs-small);color:var(--c-muted)}
+footer a{color:inherit}
+@media (prefers-reduced-motion: reduce){.reveal-lines .line>span{transform:none;transition:none}.manifesto{height:auto}.manifesto .stick{position:static;height:auto;padding:6rem 0}.manifesto .w{opacity:1;transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+  <p class="eyebrow">01 // Specimen</p>
+  <h1 class="reveal-lines" id="h1"><span class="line"><span>Built to be</span></span><span class="line"><span><em>heard</em>, not</span></span><span class="line"><span>just seen.</span></span></h1>
+  <p>Bricolage Grotesque at weight 640 for the voice, one Instrument Serif italic keyword, Archivo for reading and JetBrains Mono for labels and numbers. Every size is a clamp() token; the headline tracks at -0.04em and leads at 0.96.</p>
+</header>
+<section class="block" aria-labelledby="sc">
+  <p class="eyebrow">02 // Scale</p>
+  <h2 id="sc" class="serif" style="font-size:var(--fs-h2);line-height:1.02;margin-top:1rem">One scale from 360 to 1440.</h2>
+  <div class="scale" id="scale"></div>
+</section>
+<section class="block" aria-labelledby="pr">
+  <p class="eyebrow">03 // Pairing and numbers</p>
+  <div class="pair">
+    <div><h3 id="pr">Serif for the voice, grotesk for the work.</h3></div>
+    <div><p>Body copy sits at 16 to 18 pixels with 1.6 leading and a 62 character measure. Quotes are typographic (&ldquo;like this&rdquo;), numbers in tables are tabular so the columns line up, and nothing here is a synthesised bold or italic.</p>
+      <div class="prices" aria-label="Example price list">
+        <div><span>Simple, premium site</span><b>$300</b></div>
+        <div><span>Scroll-based 3D site</span><b>$1,000</b></div>
+        <div><span>Full package</span><b>$10,000</b></div>
+      </div></div>
+  </div>
+</section>
+<section class="manifesto" aria-label="Manifesto">
+  <div class="stick"><p id="man">A premium site is mostly restraint: three colours, two typefaces, one idea, and the patience to set the headline by hand.</p></div>
+</section>
+<div class="giant" aria-hidden="true">Specimen</div>
+<footer>Fonts: Bricolage Grotesque by Mathieu Triay; Archivo by Omnibus-Type; Instrument Serif by Rodrigo Fuenzalida, Jordan Egstad; JetBrains Mono by JetBrains, Philipp Nurullin, Konstantin Bulenkov. All SIL Open Font License 1.1. Code MIT. <a href="../SKILL.md">Read the skill</a>.</footer>
+</div>
+<script type="module">
+import { evalClamp } from '../scripts/type-scale.mjs';
+const toks = ['h1', 'h2', 'h3', 'h4', 'h5', 'body', 'small'];
+const cs = getComputedStyle(document.documentElement);
+document.getElementById('scale').innerHTML = toks.map((t) => { const v = cs.getPropertyValue('--fs-' + t).trim();
+  return `<div class="row"><code>--fs-${t}<br>${evalClamp(v, 360).toFixed(0)}px @360 / ${evalClamp(v, 1440).toFixed(0)}px @1440</code><div class="s ${t.startsWith('h') ? 'sans' : ''}" style="font-size:var(--fs-${t});line-height:${t.startsWith('h') ? 1.02 : 1.6};letter-spacing:${t === 'h1' ? '-.04em' : t.startsWith('h') ? '-.025em' : '0'}">Premium is restraint</div></div>`; }).join('');
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+// masked line reveal, started only once the display face has loaded (1.5 s cap)
+const h1 = document.getElementById('h1');
+Promise.race([document.fonts.load('640 1em "Bricolage Grotesque"'), new Promise((r) => setTimeout(r, 1500))]).then(() => requestAnimationFrame(() => h1.classList.add('is-in')));
+// word-lit manifesto
+const p = document.getElementById('man'); const sec = p.closest('.manifesto');
+p.innerHTML = p.textContent.trim().split(/\s+/).map((w) => `<span class="w">${w}</span>`).join(' ');
+const words = [...p.querySelectorAll('.w')];
+if (!reduce) { let tick = false; const up = () => { tick = false; const r = sec.getBoundingClientRect(); const total = r.height - innerHeight; const t = Math.min(1, Math.max(0, -r.top / total)); const lit = t * words.length * 1.15; words.forEach((w, i) => (w.style.opacity = Math.min(1, Math.max(0.15, lit - i + 0.15)))); };
+  addEventListener('scroll', () => { if (!tick) { tick = true; requestAnimationFrame(up); } }, { passive: true }); up(); }
+// self-tests
+await document.fonts.ready;
+let pass = 0, fail = 0; const notes = []; const ok = (c, n) => (c ? pass++ : (fail++, notes.push(n)));
+for (const f of ['640 1em "Bricolage Grotesque"', 'italic 400 1em "Instrument Serif"', '400 1em "Archivo"', '400 1em "JetBrains Mono"']) ok(document.fonts.check(f), 'font not loaded ' + f);
+const bodyPx = parseFloat(getComputedStyle(document.body).fontSize); ok(bodyPx >= 16, 'body under 16px: ' + bodyPx);
+const h1px = parseFloat(getComputedStyle(h1).fontSize); const exp = evalClamp('clamp(2.75rem, 6.5vw + 1rem, 6.5rem)', document.documentElement.clientWidth); ok(Math.abs(h1px - exp) < 1.5, `h1 ${h1px} vs ${exp}`);
+const fams = new Set([...document.fonts].filter((f) => f.status === 'loaded').map((f) => f.family.replace(/"/g, ''))); ok(fams.size <= 4, 'too many families ' + [...fams]);
+ok(h1.getBoundingClientRect().height / (h1px * 0.96) <= 4.2, 'hero headline over 4 lines');
+window.__skillTest = { pass, fail, notes };
+</script>
+</body>
+</html>
