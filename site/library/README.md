@@ -73,6 +73,7 @@ Reference concepts (copy these, they pass QA):
 |---|---|
 | `_kit/concept.css` | reset, fluid type scale, spacing scale, palette tokens, hairlines + specular edges, grain, glass tokens, focus, reduced motion |
 | `_kit/chrome.js` + `chrome.css` | the top glass bar (back to library, "Zyqor Library · Concept N002 · fictional brand", tier badge), credits sheet from `credits.json`, honest footer with previous / next |
+| `_kit/premium.js` + `premium.css` | the premium layer every concept gets from `chrome.js` (Oct 30): a type band built from the page's own section headings that moves only with scroll, headings that rise out of a mask, a hairline scroll progress in the accent colour, and the brand name as a giant wordmark rising in the footer. Opt out per part with `<body data-pm-off="band mark progress heads">` |
 | `_kit/stage.js` | `createStage()` and helpers: `load, fit, add, asset, loadTexture, setEnv, contactShadow, spin, scroll, smooth, onFrame, invalidate, loaded, passes, info` |
 | `_kit/fx/*.js` | reveal, split-text, magnetic, tilt, cursor follower, press ripple, marquee, SVG morph |
 | `_kit/font/` | JetBrains Mono (OFL) for index tags; display/body fonts come from the portfolio's licensed set |

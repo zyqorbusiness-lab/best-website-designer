@@ -58,7 +58,7 @@ Open it at [`site/library/`](site/library/) (live preview: `/library/`). The ind
   <img src="site/library/a/A018/thumb.webp" alt="A018 Tranquility Base: a scroll descent onto a moonscape" width="49%">
 </p>
 
-Built with a shared kit (`site/library/_kit/`: one-call three.js stage with HDRI, ACES, contact shadow, lazy loading, pause off-screen and poster fallback; concept chrome; interaction modules) and a batch QA harness (`tools/qa-library.mjs`). How to add a concept: [`site/library/README.md`](site/library/README.md). The rules every concept follows: [`docs/beast/DESIGN_RULES.md`](docs/beast/DESIGN_RULES.md).
+Since Oct 30 every concept also gets a **premium layer** from the kit (a colour-blocked type band built from the page's own headings, headings that rise out of a mask, a scroll progress line and the brand name as a giant rising wordmark in the footer). Built with a shared kit (`site/library/_kit/`: one-call three.js stage with HDRI, ACES, contact shadow, lazy loading, pause off-screen and poster fallback; concept chrome; interaction modules) and a batch QA harness (`tools/qa-library.mjs`). How to add a concept: [`site/library/README.md`](site/library/README.md). The rules every concept follows: [`docs/beast/DESIGN_RULES.md`](docs/beast/DESIGN_RULES.md).
 
 ## Components: 14 detailed UI pieces
 

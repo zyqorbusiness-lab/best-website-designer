@@ -1,6 +1,6 @@
 # MASTER_ASKS.md: everything Sujon asked for, checked
 
-Updated Oct 30 2026, 02:34 UTC by the big-review worker. Built from `work/beast/CHAT_ANALYSIS.md` (all 697 of his messages, Oct 25 to Oct 30), `VOICE_NOTES.md` (9 voice notes) and `DRIVE_BEST_POINTS.md`. One row per ask; repeated asks are merged into the first. Process rules (one agent, fast replies, quality first) and non-repo errands (calls, reels, Instagram) are in CHAT_ANALYSIS sections 8-13 and are not counted here.
+Updated Oct 30 2026, 03:41 UTC by the big-review worker. Built from `work/beast/CHAT_ANALYSIS.md` (all 697 of his messages, Oct 25 to Oct 30), `VOICE_NOTES.md` (9 voice notes) and `DRIVE_BEST_POINTS.md`. One row per ask; repeated asks are merged into the first. Process rules (one agent, fast replies, quality first) and non-repo errands (calls, reels, Instagram) are in CHAT_ANALYSIS sections 8-13 and are not counted here.
 
 **Counts: 53 done, 11 partial, 0 missing (64 asks).**
 
@@ -95,7 +95,7 @@ Updated Oct 30 2026, 02:34 UTC by the big-review worker. Built from `work/beast/
 | [x] N6 | Study how the best unique sites are made; put it in the skill and the repo | Oct 30 06:26 `119fbe03` | **DONE** | `docs/how-top-designers-build-unique-sites.md` + `skills/unique-concepts` section 10b. |
 | [~] N7 | A concept website per industry | Oct 30 06:26 `119fbe03` | **PARTIAL** | 18 concepts across 16 industries (tailor, ceramics, salt, lighting, optics, type, diya, cabins, toggles, citrus, eyewear, music school, toys, barber, knives, hi-fi). No full per-industry index yet. |
 | [x] N8 | Repo usable by any AI that downloads it | Oct 30 06:26 `119fbe03` | **DONE** | Every skill has a SKILL.md with front matter (name, description, when_to_use) that agents read; web-security has an "order to work in" for agents. |
-| [~] N9 | Concepts feel too simple: make them better | Oct 30 06:28 `9a0d3507` | **PARTIAL** | Components library adds premium interaction pieces; the 18 concepts were not all rebuilt in this batch (see weak spots). |
+| [~] N9 | Concepts feel too simple: make them better | Oct 30 06:28 `9a0d3507` | **PARTIAL** | Oct 30: a premium layer on all 18 concepts, desktop and phone (`site/library/_kit/premium.js`): a colour-blocked type band from each page's own headings that moves with scroll, headings that rise out of a mask, a scroll progress hairline, and the brand name as a giant rising wordmark in the footer. N020 phone: the ukulele now stays pinned while the strings slide over it. Library QA: 18/18 PASS. The concepts were not rebuilt one by one, so the content sections are still fairly plain. |
 | [x] N10 | Two concept videos (1 simple, 1 premium) | Oct 30 06:28 `9a0d3507` | **DONE** | N020 + P017 videos sent Oct 30. |
 | [~] N11 | Put the sites on Vercel | Oct 30 06:28 `9a0d3507` | **PARTIAL** | `vercel.json` ready (build step, security headers). Needs his one-time "Import Git Repository" on vercel.com; demo link meanwhile: zyqor-concepts.sites.tab.bot. |
 | [x] N12 | Detailed, best-quality components | Oct 30 06:29 `b06c7f5b` | **DONE** | 14 components in `site/components/` with demos, READMEs, credits; live gallery zyqor-concepts.sites.tab.bot/components/. |
