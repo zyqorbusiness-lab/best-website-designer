@@ -14,7 +14,7 @@ const isM = html.dataset.build === 'm';
 const id = body.dataset.id || 'N000';
 const tier = (body.dataset.tier || 'normal').toLowerCase();
 const name = body.dataset.name || 'Concept';
-const dark = body.classList.contains('dark');
+const dark = body.classList.contains('dark');   // optional <body data-assets="Real photographs"> changes the footer's asset line
 const TIER = { normal: 'Normal', advanced: 'Advanced', premium: 'Premium' }[tier] || 'Normal';
 const libHome = isM ? new URL('m.html', ROOT).href : ROOT.href;
 const pageOf = (it) => new URL(it.path + (isM ? 'm.html' : ''), ROOT).href;
@@ -76,7 +76,7 @@ dlg.addEventListener('click', (e) => { if (e.target === dlg) close(); });
 const foot = document.createElement('footer');
 foot.className = 'zk-foot';
 foot.innerHTML = `<div class="zk-foot-in">
-  <p class="zk-honest"><b>${esc(name)}</b> is not a real company. Concept ${id} is ${TIER === 'Advanced' ? 'an' : 'a'} ${TIER.toLowerCase()} study from the Zyqor Library, designed and coded by Sujon Hoque at Zyqor Studio. Real 3D assets, credited below; no AI imagery.</p>
+  <p class="zk-honest"><b>${esc(name)}</b> is not a real company. Concept ${id} is ${TIER === 'Advanced' ? 'an' : 'a'} ${TIER.toLowerCase()} study from the Zyqor Library, designed and coded by Sujon Hoque at Zyqor Studio. ${esc(body.dataset.assets || 'Real 3D assets')}, credited below; no AI imagery.</p>
   <ul class="zk-cred zk-cred--foot" role="list"></ul>
   <div class="zk-contact" aria-label="Hire Zyqor Studio">
     <p class="zk-mono">Want a site like this? Hire Zyqor Studio</p>

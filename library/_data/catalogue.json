@@ -1,7 +1,7 @@
 {
  "schema": 1,
- "generated": "2026-10-29T20:58:23.396Z",
- "source": "work/beast/concepts_300.json",
+ "generated": "2026-10-30T06:02:47.939Z",
+ "source": "site/library/_data/catalogue.json",
  "concepts": {
   "N001": {
    "tier": "normal",
@@ -5907,24 +5907,24 @@
    "name": "Hotcoal Kitchen",
    "label": "Hotcoal Kitchen (Concept)",
    "category": "food",
-   "idea": "A copper pot of glowing coals with heat shimmer for a hot-pot restaurant",
-   "technique": "emissive coals + heat-haze post pass + clearcoat copper",
-   "asset_source": "Khronos glTF Sample 'PotOfCoals' (CC-BY 4.0) [logo must be painted out]; Poly Haven HDRI 'Industrial Workshop Foundry' (CC0)",
+   "idea": "Build your own wood-fired pizza: drag real ingredients onto a real marinara base, then fire it for ninety seconds",
+   "technique": "photographic layer configurator: pointer-event drag with a snap ring, spaced random placement per layer, live order ticket with odometer, bake transition (peel turn + crust, melt and crisp filters)",
+   "asset_source": "Wikimedia Commons photos: 'Pizza marinara (Napoli)' by Ruthven (CC0), pepperoni by Daderot (CC0), cherry tomato by Evan-Amos (CC0), basil by Khoney21 (CC0), mozzarella by Dezidor (CC BY 3.0); Poly Haven texture 'Kitchen Wood' (CC0)",
    "assets": [
-    "kh:PotOfCoals",
-    "hdri:industrial_workshop_foundry"
+    "photo:commons",
+    "tex:kitchen_wood"
    ],
    "palette": [
-    "#E3E9C8",
-    "#212925",
-    "#2C91AD"
+    "#F4EDE1",
+    "#283A2D",
+    "#A93A23"
    ],
-   "pattern": "H",
-   "pattern_name": "Environment storytelling (product in a world)",
-   "three_d": "real model(s): Khronos glTF Sample 'PotOfCoals' (CC-BY 4.0) [logo must be painted out]",
+   "pattern": "I",
+   "pattern_name": "Micro-interactions and UI patterns",
+   "three_d": "none: real photographs layered in 2D (the reel this answers is 2D too)",
    "hero_source": "real",
    "structure": null,
-   "batch": 10,
+   "batch": 11,
    "first25": false
   },
   "P042": {
