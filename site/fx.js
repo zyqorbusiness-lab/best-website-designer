@@ -193,8 +193,14 @@
     hs.classList.add('is-h');
     var bar=$('.hs-p i',hs), nEl=$('.hs-n',hs), cards=$$('.proj',track), pinEl=$('.hs-pin',hs);
     var dist=function(){ return Math.max(0, track.scrollWidth - innerWidth); };
+    /* v4: CSS sticky instead of a ScrollTrigger pin. The section gets the scroll length as its own height and the pin
+       sticks inside it: no fixed/relative swap, so no layout shift when the pin starts or ends (the old pin scored CLS
+       1.0 + 0.49 on a fast scroll), and the browser keeps the pin on the compositor (smoother on desktop). */
+    var preH=function(){ var p=pinEl.previousElementSibling; if(!p) return 0; var cs=getComputedStyle(p); return p.offsetTop+p.offsetHeight+parseFloat(cs.marginBottom||0); };
+    var sizeHS=function(){ hs.style.height=(preH()+pinEl.offsetHeight+dist())+'px'; };
+    sizeHS(); ST.addEventListener('refreshInit',sizeHS);
     var tw=G.to(track,{ x:function(){return -dist()}, ease:'none',
-      scrollTrigger:{ trigger:pinEl, start:'top top', end:function(){return '+='+dist()}, pin:true, scrub:0.8, invalidateOnRefresh:true, anticipatePin:1,
+      scrollTrigger:{ trigger:hs, start:function(){return 'top+='+preH()+' top'}, end:function(){return '+='+dist()}, scrub:0.8, invalidateOnRefresh:true,
         onUpdate:function(self){ if(bar) bar.style.transform='scaleX('+self.progress.toFixed(4)+')'; var k=Math.min(cards.length, 1+Math.floor(self.progress*cards.length*0.999)); if(nEl) nEl.textContent=('0'+k).slice(-2)+' / '+('0'+cards.length).slice(-2); } } });
     w.__zsHS=tw;
     /* each card's media parallax inside the moving track */

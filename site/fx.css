@@ -97,7 +97,7 @@ html.cur-on .cur.is-hide,html.cur-on .cur-r.is-hide{opacity:0}
 .hs-track{max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
 .hs-bar{display:none}
 .hs.is-h{padding-bottom:0}
-.hs.is-h .hs-pin{height:100vh;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.hs.is-h .hs-pin{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
 .hs.is-h .hs-track{display:flex;gap:5vw;padding:0 7vw;margin:0;max-width:none;width:max-content;will-change:transform}
 .hs.is-h .hs-track>.proj{flex:none;width:min(80vw,1180px);margin:0!important;padding:0!important;border:0!important;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr)!important;gap:4vw!important}
 .hs.is-h .hs-track>.proj .shot{order:0!important;padding:0 clamp(28px,4vw,56px) clamp(30px,4vw,48px) 0!important}
