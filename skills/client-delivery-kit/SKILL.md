@@ -211,6 +211,63 @@ I've sent the account list (no passwords) and the files. Please log in to each o
 Free fixes until {date}. I'll check in on {date} to make sure forms and Google are working.
 ```
 
+## F. The first call (15 minutes)
+
+When a lead says "call me" or picks up interested. Goal: understand the job well enough to quote, and book the next
+step. Not to sell.
+
+| Minute | Do | Say (example) |
+|---|---|---|
+| 0-1 | thank them, confirm who you are and why you're calling | "Thanks for taking the call. I'm Sujon from Zyqor Studio, about the website for {business}." |
+| 1-5 | let them talk about the business | "Tell me about the business: what do people come to you for most?" |
+| 5-8 | the site's job | "When someone finds you on Google, what should they do next: call, book, come in?" |
+| 8-11 | what they have | "Do you have a logo and photos of your work? A domain name already?" |
+| 11-13 | budget and timing, plainly | "Websites start at $300, bigger packages go up to $10k. Where would you like to be in that range? When do you need it live?" |
+| 13-15 | next step with a date | "I'll send you a short form and a quote by {day}. If it looks right, I'll show you design pictures before I build anything." |
+
+After the call, within the hour: write the answers into the brief, send the form for the rest, and put the quote date in
+your calendar. A promised quote that arrives late loses more jobs than a high price.
+
+## G. Honest answers to the questions clients ask
+
+| They ask | Answer (true, short) | Never say |
+|---|---|---|
+| "Why not just use Wix / a free builder?" | "You can, and for some businesses it's enough. What you get from me: a design made for your business, a fast site on your phone, set up properly on Google, and everything in your name." | that builders are bad or "don't work on Google" |
+| "Can you get me to #1 on Google?" | "Nobody honest can promise a ranking. I set up everything Google needs to find and trust the site (speed, titles, Search Console, your business profile link), and I show you how it's doing." | any ranking, traffic or sales promise |
+| "Do you have reviews / past clients?" | show the real portfolio, labelled as concepts where they are concepts; offer to send live links | invented clients, reviews or logos |
+| "How long will it take?" | the stage table (section C), counted from when their content arrives | a date that ignores their content |
+| "What if I don't like it?" | "You see design pictures before I build, and you get rounds of changes at the picture stage and at the preview." | "unlimited changes" |
+| "Who owns the site?" | "You do: domain, hosting, code and accounts are in your name. I'm only invited." | anything that keeps them locked to us |
+| "Can I update it myself?" | the honest answer for the stack you chose: what they can edit, what needs you, and the rate | "it's easy" without showing them |
+| "Are you a real person?" (on calls placed for Sujon) | answer truthfully, every time | anything untrue |
+
+## H. Scope line (the paragraph they say OK to)
+
+Send this with the quote. It is the paragraph you both point at if anything is unclear later.
+
+```
+Scope for {business}, {date}
+Included: {n} pages ({list}); design pictures before build; {copy: written by us / from your texts};
+{photos: yours, edited / licensed stock, credited}; contact form to {email}; {other features};
+phone and desktop versions; basic Google setup (titles, sitemap, Search Console); launch on your domain;
+{n} rounds of changes as described; free fixes for {n} days after launch.
+Not included: domain and hosting fees (in your name), {paid tools}, new pages or features after design approval
+(quoted separately), ongoing content updates after launch ({rate}).
+Price: ${price}. Payment: TODO (Sujon). Timeline: about {n} days from receiving your logo, photos and texts.
+```
+
+## I. After launch (the part that brings referrals)
+
+- **Day 1:** send the launch message (section E) and test the contact form from your own phone.
+- **Day 14:** check forms received mail, analytics shows visits, Search Console shows the pages indexed; send the client
+  a three-line note with what you saw. Fix anything broken for free.
+- **Day 30 (optional):** offer a small, priced next step only if it is useful (photos refresh, a booking page, Google
+  Business Profile posts). One offer, not a sales sequence.
+- **Ask for a referral or a real review** only after they have said they are happy, in their words. Never write it for
+  them.
+- Keep a short record per client: domain, host, renewal dates, what was delivered, open questions. When they call in a
+  year, you know everything in a minute.
+
 ## Common mistakes and the fix
 
 | Mistake | What it causes | Fix |

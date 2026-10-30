@@ -13,6 +13,10 @@ DfGDN_fIZsC) showing a pizza-builder site; used for the idea only, nothing copie
 *Left to right: v1 (06:08 UTC), v2 (08:12 UTC), v3.1 (09:05 UTC). Screenshots of our own page; the photos inside are
 credited at the end of this file.*
 
+![All versions as a contact sheet: v1 desktop, v2 desktop, v2 mid-build, v2 baked, v3.1 desktop, v3.1 baked](img/P041-all-versions.jpg)
+
+*The same day as one contact sheet (made with `skills/build-spec-and-storyboard/scripts/contact-sheet.py`).*
+
 ---
 
 ## Timeline
@@ -111,7 +115,7 @@ rebuilt every element from licensed photos.
 
 ## Credits for the image in this file
 
-The comparison image is made from screenshots of our own P041 pages (Zyqor Studio, MIT). Photos visible in it:
+Both images are made from screenshots of our own P041 pages (Zyqor Studio, MIT). Photos visible in it:
 "Neapolitan pizza at Trappica" by Bex Walton (Wikimedia Commons), CC BY 2.0; "Mozzarella" by Dezidor (Wikimedia
 Commons), CC BY 3.0; "Mellow Mushroom cheese pizza" by Baron Maddock (Wikimedia Commons), CC BY 4.0; "Sliced
 champignons" by frank wouters and "Roasted Bell Peppers" by Ryan Snyder (Wikimedia Commons), CC BY 2.0; "Supreme

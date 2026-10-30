@@ -206,8 +206,100 @@ Don't:
 - [ ] `node tools/credits-check.mjs` -> `"fail": 0`
 - [ ] `CREDITS.md` rebuilt (`node tools/credits-build.mjs`)
 
+## 10. Source by source: the fastest honest path
+
+### Wikimedia Commons (photos of real things)
+
+```bash
+node skills/asset-sources-and-licence-check/scripts/commons-search.mjs "neapolitan pizza" --min 1600
+#  3024x3024  CC BY 2.0   Bex Walton from London, England   https://commons.wikimedia.org/wiki/File:Neapolitan_pizza_at_Trappica_(48701940197).jpg
+#  2252x1756  Public domain  [PD: name the kind] Stevemconst61   https://commons.wikimedia.org/wiki/File:Neapolitan_pizza.jpg
+#  ... 26 of 40 hits shown (min width 1600px, gate-passing licences only)
+```
+
+- The search reads Commons' own API (`generator=search` in the File namespace, `filetype:bitmap`) and keeps only files
+  at least `--min` px wide whose licence passes the gate. `--all` also shows CC BY-SA ([REVIEW]) and failing licences.
+- Pick 3-5 candidates, open each page, look at the photo at 100 %: focus, noise, white balance, whether the light
+  direction matches your other assets. A sharp 2000 px photo beats a soft 6000 px one.
+- Then `licence-probe.mjs <File: URL> --write <asset>` for the one you keep.
+- Download the original from the "Original file" link (the probe prints it). Never save the page preview.
+
+### Poly Haven (HDRIs, textures, models; all CC0)
+
+```bash
+curl -s https://api.polyhaven.com/files/studio_small_09 | jq -r '.hdri["1k"].hdr.url'
+# https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/studio_small_09_1k.hdr   (1.6 MB)
+curl -sLo site/assets/hdri/studio_small_09_1k.hdr "$(curl -s https://api.polyhaven.com/files/studio_small_09 | jq -r '.hdri["1k"].hdr.url')"
+node skills/asset-sources-and-licence-check/scripts/licence-probe.mjs https://polyhaven.com/a/studio_small_09 \
+  --write site/assets/hdri/studio_small_09_1k.hdr
+```
+
+- `api.polyhaven.com/info/<id>` gives the name, authors and type; `api.polyhaven.com/files/<id>` gives a download URL
+  per resolution and format.
+- Web sizes: HDRI 1k for lighting and soft reflections, 2k only when a polished surface reflects it in a close-up.
+  Textures 1k (phone and most desktop), 2k for a surface that fills the screen.
+- Credit the named author (the probe reads it from the API), even though CC0 does not ask for it.
+
+### ambientCG (PBR textures; all CC0)
+
+- Asset ids are stable (`Marble012`, `Wood066`, `Metal034`, `Paper002`, `Fabric026`); the page is
+  `https://ambientcg.com/view?id=<id>`.
+- Download the `1K-JPG` or `2K-JPG` zip, keep only the maps you use (colour, normal, roughness; skip displacement for
+  the web), convert to WebP or KTX2.
+- Re-tint into your palette instead of hunting for "the right colour" marble: P041 v3 converted Marble012 to luminance
+  and tinted it warm (Lab a* +1.5, b* +7.5) so it would not read lavender next to tomato red.
+
+### Smithsonian Open Access (museum objects, specimens)
+
+- Search on si.edu/openaccess and filter to CC0, or use the API (`api.si.edu/openaccess/api/v1.0/search?q=...&api_key=KEY`,
+  free key from api.data.gov).
+- In the API record, use only items whose usage says CC0 (`content.descriptiveNonRepeating.metadata_usage.access`).
+  Many items are shown but not CC0.
+- Credit as `Public domain (Smithsonian)` only when the record says CC0 or public domain; otherwise skip.
+
+### Sketchfab (specific 3D models)
+
+1. Search with Downloadable on and a narrow query; open the model page.
+2. Read the licence under the description. CC0 or CC BY 4.0: continue. CC BY-SA: only after review. Anything else: skip.
+3. Check the triangle count and textures on the page: under ~100k triangles and 2k textures is a web-sized start.
+4. Download glTF/GLB (signed-in account), optimise ([`model-optimisation-phone`](../model-optimisation-phone/)), and
+   write the credit by hand with the exact model URL; the probe prints the manual checklist for Sketchfab.
+5. CC BY: the author's name and "CC BY 4.0" go on the page that shows the model (the gate checks it).
+
+### Unsplash and Pexels (mood and lifestyle photos)
+
+- Free to use without credit under their own licences, but: no recognisable people in ad-like uses without care, no
+  brands front and centre, and Unsplash+ photos are paid.
+- Read the photo page and the photographer's page. Then write `"licence": "Unsplash License"` (or `Pexels License`)
+  and `"verified": true` in the credit file; without `verified` the gate fails it on purpose.
+- Credit the photographer anyway; it is good practice and clients notice.
+
+## 11. When the right asset does not exist
+
+This happens on every concept: the product is fictional. In order of preference:
+
+1. **Build it.** A lamp, a speaker, a bottle or a keyboard can be built from primitives in three.js with real CC0
+   textures and an HDRI (see the worked example in [`build-spec-and-storyboard`](../build-spec-and-storyboard/)).
+2. **Use a CC0 model as a base and change it** (materials, proportions, colour) so it becomes the brand's product.
+3. **Photograph context, not the product.** A CC0 desk, kitchen or street, with the product as a 3D render or a
+   clean graphic.
+4. **Design around it** with type, colour and layout. A strong typographic hero beats a weak photo.
+5. **Never** an AI image, an "inspired" redraw of someone's product photo, or a screenshot of another brand's site.
+
+## 12. Tiers: how much asset work each price level gets
+
+| Tier | Asset work | Typical sources |
+|---|---|---|
+| Normal (from $300) | the client's own photos, cleaned and cropped; 1-3 licensed context photos; credits page | client, Commons, Unsplash/Pexels (verified) |
+| Advanced | graded photo set in one light and palette, cut-outs, one CC0 texture system | Commons, ambientCG, Poly Haven |
+| Premium | a built 3D product or configurator from real photo layers, HDRI lighting, every asset credited on page | Poly Haven, ambientCG, Sketchfab CC0/CC BY, own builds |
+
+See [`premium-tiers-normal-advanced-premium`](../premium-tiers-normal-advanced-premium/) for the rest of each tier.
+
 ## Files
 
+- `scripts/commons-search.mjs`: Commons search filtered to gate-passing licences and a minimum width (tested 30 Oct 2026:
+  "neapolitan pizza" -> 26 of 40 hits kept; "marble countertop" --all marks CC BY-SA hits [REVIEW]).
 - `scripts/licence-probe.mjs`: licence + credit draft from Wikimedia Commons, Poly Haven and ambientCG APIs; manual
   checklist for other hosts. Node 18+, no install. Exit 0 / 2 / 1 as described in section 3.
 - The gate itself: `tools/credits-check.mjs` (repo root).

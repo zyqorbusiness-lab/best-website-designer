@@ -162,7 +162,7 @@ Which frames: the first thing the visitor sees, the end of the intro, one frame 
 moment, the final call to action, and one phone frame of the hardest section. 4 is the minimum, 8 the maximum; more
 than 8 means the story has too many beats.
 
-Contact sheet: put all frames on one image (`storyboard.jpg`), 3-4 per row, with the frame number, section name and
+Contact sheet: put all frames on one image (`storyboard.jpg`, made by `scripts/contact-sheet.py`), 3-4 per row, with the frame number, section name and
 timecode or scroll % under each. This is the one picture the client actually looks at on a phone.
 
 Look at every frame yourself at 100 % and at phone size. Ask: is the product clear in one second? Is the text
@@ -224,11 +224,106 @@ Spending 20-30 % of the time before code is normal. It is what makes the build f
 - [ ] `node scripts/spec-lint.mjs SPEC.md` prints READY
 - [ ] sent to the owner/client; answer and date written into the spec
 
+## 9. Worked example of "one by one": how the Halyard Arc choices were made
+
+The example spec states the winners. This is the comparison behind them, written the way you should record your own
+(the product is fictional, so the verdicts are illustrative; the contrast numbers are calculated). It is the part a
+client never sees, and it is what makes the result look decided rather than default.
+
+**Idea (3 candidates):**
+1. "The lamp as a tool you unfold" -> the arm opening is the intro, each chapter is one movement. **Chosen**: every
+   section gets a job (reach, warm, hold), and it ends where a buyer decides.
+2. "The lamp as a sunrise over the desk" -> beautiful intro, but sections 3-5 had nothing to do with sunrise.
+3. "Inside the lamp" (exploded view all the way) -> good for engineers, cold for a home buyer.
+
+**Palette (3 candidates, tested with a render of the brass lamp on each):**
+
+| Option | Colours | Result |
+|---|---|---|
+| A. Oat + pine + brass | `#F2ECE1` `#1E3530` `#A87A33` | **chosen**: brass glows on oat, pine reads as "furniture", 11.1:1 text contrast |
+| B. Stone grey + ink blue + brass | `#E6E4DF` `#1F2E44` `#A87A33` | 10.8:1 text contrast, but brass looks dull against cool grey; reads like an office catalogue |
+| C. Warm white + terracotta + brass | `#FAF6F0` `#9A4B2F` `#A87A33` | terracotta and brass fight for attention; terracotta text only 5.7:1 |
+
+**Display font (3 OFL candidates, set as "Light that leans in." at 112 px and 48 px):**
+
+| Font | At 112 px | At 48 px on 390 px | Verdict |
+|---|---|---|---|
+| Fraunces (opsz 144, SOFT 50) | soft, warm serifs echo the bent brass | 2 lines, fits | **chosen** |
+| Instrument Serif | elegant but too thin next to a heavy lamp | 2 lines, fits | too fragile |
+| Space Grotesk | technical, crisp | 2 lines | wrong mood: gadget, not furniture |
+
+**Hero pose (3 renders):** arm high and straight (silhouette read as a crane), arm low over the desk (shade hid the
+light pool), **arm at 62° / 28° with the pool in front of the title** (chosen: the light points at the words).
+
+**Motion character (2 tests, same 1.6 s unfold):** a springy overshoot made the brass feel like plastic; a slow settle
+(`cubic-bezier(0.22, 1, 0.36, 1)`) felt heavy and expensive. Chosen: settle, no overshoot anywhere.
+
+Each verdict is one line in the spec. Six lines of "why" saved every later "can we try another font?" conversation.
+
+## 10. The same format for other kinds of work
+
+The ten sections stay; what goes inside them changes.
+
+| Work | What changes in the spec | Storyboard frames |
+|---|---|---|
+| Small-business site, 3-6 pages, no 3D | "hero element" = the hero photo and the main call-to-action; layout section covers each page's key screens; the timeline is a short reveal table, not scroll scenes | home top, home middle (services), one inner page, contact; each at desktop + phone |
+| Product page with 3D (the example) | full part table, poses, renderer settings | 6-8, one per beat |
+| Configurator (P041-style) | the layer table (base, pieces, shadows, states), the drag/tap rules, the order summary states | empty, mid-build, finished, ordered; phone mid-build |
+| Logo reveal or reel | "stack" = output formats (site intro: SVG + GSAP under ~150 KB; reel: 1080x1920 MP4); timeline in seconds, not scroll %; sound note; end card | 6-8 stills at key seconds, at the output's aspect ratio |
+| Redesign of an existing site | add a "before" section: current screenshots, measured weight, LCP, CLS, what the owner wants kept | the same screens before and after |
+
+## 11. A blank spec to start from
+
+Copy this into `work/<project>/SPEC.md` and replace every TODO; the lint fails until the sections have real numbers.
+
+```markdown
+# <Product>: site build spec
+## 1. Goal and story
+One sentence: TODO. Idea: TODO.
+| # | Beat | Visitor sees | Visitor feels |
+|---|---|---|---|
+| 1 | TODO | TODO | TODO |
+Copy: TODO (real words per beat)
+## 2. Stack and setup
+Libraries + versions: TODO. Folder tree: TODO. Title / description: TODO.
+## 3. Design tokens
+Scale: --u desktop TODO / phone TODO
+| Name | Hex | Role | Contrast |
+| Style | Font | Size desktop / phone | Weight | Tracking | Line height |
+Spacing: TODO. Motion: | Token | Value | Use | (cubic-bezier + ms). Reduced motion: TODO
+## 4. Assets
+| Asset | URL | Use | Licence | Status |
+## 5. Layout, section by section
+### 0. Structure and layering
+### 1. TODO (desktop positions; phone positions)
+## 6. The hero element
+| Part | Geometry or file | Size | Material |
+## 7. Scroll timeline
+| Section | Progress | What moves | Ease |
+## 8. Storyboard
+| Frame | File | Shows |   (sb_01.png ... sb_0N.png, storyboard.jpg)
+## 9. QA checklist
+(copy docs/QA_CHECKLIST.md, add page-specific checks)
+## 10. Review gate
+Sent: TODO. Answer + date: TODO. Changes made: TODO.
+```
+
+Make the contact sheet from the frames with:
+
+```bash
+python3 skills/build-spec-and-storyboard/scripts/contact-sheet.py work/<project>/storyboard \
+  --labels work/<project>/storyboard/labels.json --cols 3
+# -> work/<project>/storyboard/storyboard.jpg: 6 frames, 1912x946, 285 KB
+```
+
 ## Files
 
 - `example/SPEC-halyard-arc.md`: a full spec for a fictional brass desk lamp (story, stack, tokens, assets with
   verified CC0/OFL sources, five sections with desktop and phone positions, the lamp part by part, the scroll timeline,
   six storyboard frames, QA, review gate). It passes the lint.
+- `scripts/contact-sheet.py`: builds `storyboard.jpg` from `sb_01.png ... sb_08.png` with frame numbers and captions
+  (`labels.json`), in the page palette; refuses fewer than 4 or more than 8 frames. Tested 30 Oct 2026 on the six P041
+  screenshots (1912x946, 285 KB; that sheet is in `docs/case-studies/img/P041-all-versions.jpg`).
 - `scripts/spec-lint.mjs`: checks a SPEC.md for the 10 sections, numeric tokens (scale unit, 3+ hex colours, weight,
   tracking, line height, cubic-bezier and durations, spacing), the palette rules, asset rows with URL and licence,
   3+ laid-out sections with desktop and phone positions and layering, a scroll timeline, 4-8 storyboard frames, no
