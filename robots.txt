@@ -1,0 +1,5 @@
+# robots.txt for https://zyqor-portfolio.sites.tab.bot
+User-agent: *
+Allow: /
+
+Sitemap: https://zyqor-portfolio.sites.tab.bot/sitemap.xml
