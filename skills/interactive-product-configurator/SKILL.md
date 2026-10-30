@@ -315,3 +315,13 @@ handfuls, total $20.50, fired, 0 errors at 1440, 390 and 360.
 - Sujon's Drive: *Master-Award-Website-Guide-Improved-v4.2* Part E §6.3 (one tactile draggable component), §6.2 (odometer), §11 (zero dead buttons); *web-design-promo-checklist.txt* ("UX states").
 - Photos: "Pizza marinara (Napoli)" by Ruthven (CC0), "Pepperoni and mushroom pizza - Massachusetts" by Daderot (CC0), "Cherry-Tomatoes-in-Pack" by Evan-Amos (CC0), "Glowing basil leaf" by Khoney21 (CC0), "Mozzarella" by Dezidor (CC BY 3.0), all Wikimedia Commons; "Kitchen Wood" by Rob Tuytel, Poly Haven (CC0).
 - W3C WCAG 2.2 SC 2.5.7 Dragging Movements, 2.5.8 Target Size; MDN Pointer Events (`setPointerCapture`), Web Animations API.
+
+
+### Realism v3: matching a client's food-magazine reference (P041, Oct 30 2026)
+What moved the pizza from "photo collage" to "same vibe as the reference" (twopeasandtheirpod-style veggie pizza, used as style reference only):
+- Surface first. A light warm-grey marble slab (ambientCG Marble012, CC0, converted to luminance and re-tinted to Lab a* +1.5, b* +7.5) did more for the mood than any topping. A cool or pink marble reads lavender next to tomato red: neutralise the hue before tinting.
+- Crust: rebuild the ring instead of painting over char. Unwrap the base to polar coordinates (cv2.warpPolar), pick the cleanest 90 degree arc, mirror-tile it 4 times round the rim (forward, reversed, forward, reversed, so the seams meet themselves), wrap back, and blend from 0.79 R outward. Inpainting char spots smeared grey; the mirrored arc stays photo-real.
+- Golden, not charred: in Lab, darken by local lightness (more browning in the crevices), +9..19 a*, +14..32 b*.
+- Toppings from real photos of the same toppings on real pizzas (USDA "Supreme pizza", CC0 Daderot artichoke pizza, CC0 raw veggie pizza), cut with GrabCut on a tight box, holes filled, 2-3 px feather. Pepper strips: curved polygon masks on a roasted pepper's skin. Onion slivers: an arc band of the outer two rings of a real slice, tapered at both ends.
+- Density sells it: the reference has toppings over about 60 % of the sauce. Handful sizes of 6-13 pieces and two handfuls each got there.
+- Finish after the oven, like a food stylist: fresh basil on top (the basil does not wilt), chili-flake pinches, a slicer and one slice pulled out along the 45 degree bisector (rest of the pie and the wedge both scaled to 0.93 so the wedge stays inside the canvas).

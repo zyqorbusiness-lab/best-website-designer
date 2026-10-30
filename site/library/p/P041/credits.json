@@ -139,6 +139,152 @@
    "files": [
     "app.js"
    ]
+  },
+  {
+   "what": "Photo (black olives)",
+   "title": "Supreme pizza",
+   "author": "Scott Bauer, USDA ARS",
+   "source": "Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/wiki/File:Supreme_pizza.jpg",
+   "licence": "Public domain (USDA)",
+   "note": "Scott Bauer, USDA ARS, Public domain (USDA) (https://commons.wikimedia.org/wiki/Template:PD-USGov-USDA-ARS). Cut out and re-graded raw/baked by Zyqor Studio.",
+   "files": [
+    "img/olive-baked-1.webp",
+    "img/olive-baked-2.webp",
+    "img/olive-baked-3.webp",
+    "img/olive-raw-1.webp",
+    "img/olive-raw-2.webp",
+    "img/olive-raw-3.webp"
+   ]
+  },
+  {
+   "what": "Photo (raw mushrooms)",
+   "title": "Pizza veggie by Arthur avant cuisson au four",
+   "author": "Benoît Prieur",
+   "source": "Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/wiki/File:Pizza_veggie_by_Arthur_avant_cuisson_au_four.jpg",
+   "licence": "CC0 1.0",
+   "note": "Benoît Prieur, CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/). Cut out and re-graded raw/baked by Zyqor Studio.",
+   "files": [
+    "img/mush-baked-1.webp",
+    "img/mush-baked-2.webp",
+    "img/mush-raw-1.webp",
+    "img/mush-raw-2.webp"
+   ]
+  },
+  {
+   "what": "Photo (mushroom slice)",
+   "title": "Sliced champignons",
+   "author": "frank wouters",
+   "source": "Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/wiki/File:Sliced_champignons.jpg",
+   "licence": "CC BY 2.0",
+   "note": "frank wouters, CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/). Cut out and re-graded raw/baked by Zyqor Studio.",
+   "files": [
+    "img/mush-baked-3.webp",
+    "img/mush-raw-3.webp"
+   ]
+  },
+  {
+   "what": "Photo (artichoke hearts)",
+   "title": "Mushroom and artichoke hearts pizza, with cheese and tomato paste - Massachusetts",
+   "author": "Daderot",
+   "source": "Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/wiki/File:Mushroom_and_artichoke_hearts_pizza,_with_cheese_and_tomato_paste_-_Massachusetts.jpg",
+   "licence": "CC0 1.0",
+   "note": "Daderot, CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/). Cut out and re-graded raw/baked by Zyqor Studio.",
+   "files": [
+    "img/arti-baked-1.webp",
+    "img/arti-baked-2.webp",
+    "img/arti-baked-3.webp",
+    "img/arti-baked-4.webp",
+    "img/arti-baked-5.webp",
+    "img/arti-baked-6.webp",
+    "img/arti-baked-7.webp",
+    "img/arti-raw-1.webp",
+    "img/arti-raw-2.webp",
+    "img/arti-raw-3.webp",
+    "img/arti-raw-4.webp",
+    "img/arti-raw-5.webp",
+    "img/arti-raw-6.webp",
+    "img/arti-raw-7.webp"
+   ]
+  },
+  {
+   "what": "Photo (roasted pepper)",
+   "title": "Roasted Bell Peppers",
+   "author": "Ryan Snyder",
+   "source": "Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/wiki/File:Roasted_Bell_Peppers_(3138711870).jpg",
+   "licence": "CC BY 2.0",
+   "note": "Ryan Snyder, CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/). Cut out and re-graded raw/baked by Zyqor Studio.",
+   "files": [
+    "img/pepper-baked-1.webp",
+    "img/pepper-baked-2.webp",
+    "img/pepper-baked-3.webp",
+    "img/pepper-baked-4.webp",
+    "img/pepper-baked-5.webp",
+    "img/pepper-raw-1.webp",
+    "img/pepper-raw-2.webp",
+    "img/pepper-raw-3.webp",
+    "img/pepper-raw-4.webp",
+    "img/pepper-raw-5.webp"
+   ]
+  },
+  {
+   "what": "Photo (red onion)",
+   "title": "Red onion rings",
+   "author": "Sebastian Wallroth",
+   "source": "Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/wiki/File:Red_onion_rings.jpg",
+   "licence": "Public domain (author release)",
+   "note": "Sebastian Wallroth, Public domain (author release) (https://commons.wikimedia.org/wiki/Template:PD-self). Cut out and re-graded raw/baked by Zyqor Studio.",
+   "files": [
+    "img/onion-baked-1.webp",
+    "img/onion-baked-2.webp",
+    "img/onion-baked-3.webp",
+    "img/onion-baked-4.webp",
+    "img/onion-raw-1.webp",
+    "img/onion-raw-2.webp",
+    "img/onion-raw-3.webp",
+    "img/onion-raw-4.webp"
+   ]
+  },
+  {
+   "what": "Photo (pizza slicer prop)",
+   "title": "Pizza-slicer",
+   "author": "Evan-Amos",
+   "source": "Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/wiki/File:Pizza-slicer.jpg",
+   "licence": "Public domain (author release)",
+   "note": "Evan-Amos, Public domain (author release) (https://commons.wikimedia.org/wiki/Template:PD-self). Cut out and re-graded raw/baked by Zyqor Studio.",
+   "files": [
+    "img/props.webp"
+   ]
+  },
+  {
+   "what": "Photo (chili flakes prop)",
+   "title": "Red pepper flakes for pickling",
+   "author": "Nutrition, Food Safety & Health",
+   "source": "Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/wiki/File:Red_pepper_flakes_for_pickling.jpg",
+   "licence": "CC0 1.0",
+   "note": "Nutrition, Food Safety & Health, CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/). Cut out and re-graded raw/baked by Zyqor Studio.",
+   "files": [
+    "img/props.webp"
+   ]
+  },
+  {
+   "what": "Texture (marble table)",
+   "title": "Marble 012",
+   "author": "ambientCG",
+   "source": "ambientCG",
+   "url": "https://ambientcg.com/view?id=Marble012",
+   "licence": "CC0 1.0",
+   "note": "warmed to a warm-grey slab",
+   "files": [
+    "img/marble.webp"
+   ]
   }
  ]
 }

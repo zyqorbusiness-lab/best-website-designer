@@ -5,7 +5,11 @@
    with the crust taken back to pale dough. Toppings are cut out of real pizza photos (credits.json, CREDITS.md):
    melted mozzarella patches from the Trappica pizza (raw = the same patches before they melt), baked pepperoni
    from a CC0 Luigi's pepperoni pizza, raw salami slices from a CC BY 2.0 kitchen photo, CC0 cherry tomato halves,
-   basil leaves from the Trappica pizza.
+   basil leaves from the Trappica pizza. v3 (veggie, after Sujon's reference): golden crust (the pale-dough crust re-toned
+   golden-brown, char removed), olives from "Supreme pizza" (USDA ARS, public domain), mushrooms from "Pizza veggie by Arthur"
+   (CC0) and "Sliced champignons" (CC BY 2.0), artichoke hearts (Daderot, CC0), roasted pepper strips (Ryan Snyder, CC BY 2.0),
+   red onion slivers (Sebastian Wallroth, public domain); a marble slab (ambientCG Marble012, CC0) with a pizza slicer
+   (Evan-Amos, public domain), chili flakes (CC0) and fresh basil styled round it after the oven, and one slice pulled out.
    Realism rules (skills/interactive-product-configurator, "Realism"):
    (1) every piece casts two shadows, a soft one and a tight contact one, multiplied onto what is under it, from one
        light direction (top-left, as in the base photo); (2) random rotation, mirror and +-15 % scale, scattered
@@ -29,15 +33,21 @@ const ING = {
   mozzarella: { name: 'Fior di latte', price: 2.5, n: 4, size: 1.25, oil: 'rgb(238,170,92)', raw: list('mozz-raw', 6), baked: list('mozz-baked', 6), grow: [1.0, 1.2], shadow: [0.75, 0.1], gap: 0.24 },
   tomato:     { name: 'Cherry tomato', price: 2.0, n: 6, size: 1.12, raw: list('tom-raw', 2), baked: list('tom-baked', 2), grow: [1, 0.9], shadow: [0.7, 0.55], gap: 0.17 },
   pepperoni:  { name: 'Pepperoni',     price: 3.0, n: 6, oil: 'rgb(226,118,38)', raw: list('pep-raw', 5), baked: list('pep-baked', 5), grow: [1.02, 0.92], shadow: [0.5, 0.38], gap: 0.25 },
-  basil:      { name: 'Basil',         price: 1.0, n: 4, raw: list('basil-raw', 4), baked: list('basil-baked', 4), grow: [1, 0.9], shadow: [0.5, 0.35], gap: 0.22 }
+  mushroom:   { name: 'Mushroom',      price: 2.0, n: 8, raw: list('mush-raw', 3), baked: list('mush-baked', 3), grow: [1, 0.9], shadow: [0.55, 0.42], gap: 0.2 },
+  artichoke:  { name: 'Artichoke',     price: 2.5, n: 6, raw: list('arti-raw', 7), baked: list('arti-baked', 7), grow: [1, 0.95], shadow: [0.55, 0.42], gap: 0.22 },
+  pepper:     { name: 'Red pepper', price: 1.5, n: 7, raw: list('pepper-raw', 5), baked: list('pepper-baked', 5), grow: [1, 0.92], shadow: [0.5, 0.4], gap: 0.2 },
+  onion:      { name: 'Red onion',     price: 1.0, n: 8, raw: list('onion-raw', 4), baked: list('onion-baked', 4), grow: [1, 0.9], shadow: [0.45, 0.35], gap: 0.19 },
+  olive:      { name: 'Black olive',   price: 1.5, n: 13, raw: list('olive-raw', 3), baked: list('olive-baked', 3), grow: [1, 0.97], shadow: [0.55, 0.45], gap: 0.13 },
+  /* basil goes on fresh after the oven, the way a pizzaiolo finishes it: the baked state keeps the bright leaves */
+  basil:      { name: 'Basil',         price: 1.0, n: 4, raw: list('basil-raw', 4), baked: list('basil-raw', 4), grow: [1, 1], shadow: [0.5, 0.45], gap: 0.22 }
 };
-const ORDER = ['mozzarella', 'tomato', 'pepperoni', 'basil'];
+const ORDER = ['mozzarella', 'tomato', 'pepperoni', 'mushroom', 'artichoke', 'pepper', 'onion', 'olive', 'basil'];
 /* each sprite set's half-size as a fraction of the pie box half-width, for keeping pieces off the crust */
-const RAD = { mozzarella: 0.15, tomato: 0.08, pepperoni: 0.135, basil: 0.19 };
+const RAD = { mozzarella: 0.15, tomato: 0.08, pepperoni: 0.135, mushroom: 0.105, artichoke: 0.115, pepper: 0.156, onion: 0.146, olive: 0.0625, basil: 0.19 };
 const BASE = 9, MAX = 3;
 const board = $('#board'), pie = $('#pie'), lines = $('#t-lines'), totalEl = $('#t-total'), fireBtn = $('#fire'), why = $('#fire-why');
 const mbTotal = $('#mb-total'), mbFire = $('#mb-fire'), meter = $('#fire-meter');
-const state = { portions: { mozzarella: [], tomato: [], pepperoni: [], basil: [] }, fired: false, busy: false, bake: 0 };
+const state = { portions: Object.fromEntries(ORDER.map((k) => [k, []])), fired: false, busy: false, bake: 0, slice: 0 };
 const fmt = (v) => v.toFixed(2);
 let seed = (Date.now() % 100000) + 7; const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
 const sstep = (a, b, x) => { const t = Math.min(1, Math.max(0, (x - a) / (b - a))); return t * t * (3 - 2 * t); };
@@ -117,6 +127,7 @@ function render(now) {
     ctx.globalCompositeOperation = 'soft-light'; ctx.globalAlpha = 0.16 * p; ctx.fillStyle = 'rgb(255,176,96)'; ctx.fillRect(0, 0, W, W); ctx.restore();
   }
   ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over';
+  if (state.slice > 0) sliceOut(state.slice);
   if (stepSteam(now)) busy = true;
   for (let i = gone.length - 1; i >= 0; i--) if (now - gone[i].out > 300) gone.splice(i, 1);
   if (busy || gone.length) invalidate();
@@ -156,6 +167,22 @@ function drawShadow(q, f, k, grow, shA) {
     ctx.save(); ctx.globalAlpha = al; ctx.translate(x + off * 0.8, y + off * 1.15); ctx.rotate(f.rot); ctx.scale(q.flip, 1);
     ctx.drawImage(c, -pw / 2, -ph / 2, pw, ph); ctx.restore();
   }
+}
+
+/* ---------- the serve: one slice pulled out of the pie after the oven, the marble showing through the cut ---------- */
+const offA = document.createElement('canvas'), offB = document.createElement('canvas');
+function sliceOut(p) {
+  const e = easeOut(p), c = W / 2, R = W * 0.5, a0 = Math.PI / 8, a1 = a0 + Math.PI / 4, mid = (a0 + a1) / 2, s = 1 - 0.07 * e, d = W * 0.07 * e;
+  for (const o of [offA, offB]) if (o.width !== W) { o.width = W; o.height = W; }
+  const A = offA.getContext('2d'), B = offB.getContext('2d');
+  A.setTransform(1, 0, 0, 1, 0, 0); A.clearRect(0, 0, W, W); A.drawImage(cv, 0, 0);
+  B.setTransform(1, 0, 0, 1, 0, 0); B.clearRect(0, 0, W, W);
+  B.save(); B.beginPath(); B.moveTo(c, c); B.arc(c, c, R, a0, a1); B.closePath(); B.clip(); B.drawImage(offA, 0, 0); B.restore();
+  ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, W, W);
+  ctx.save(); ctx.translate(c, c); ctx.scale(s, s); ctx.translate(-c, -c);
+  ctx.beginPath(); ctx.moveTo(c, c); ctx.arc(c, c, R, a1, a0 + Math.PI * 2); ctx.closePath(); ctx.clip(); ctx.drawImage(offA, 0, 0); ctx.restore();
+  ctx.save(); ctx.shadowColor = 'rgba(70,48,30,0.38)'; ctx.shadowBlur = 16 * DPR * e; ctx.shadowOffsetX = 5 * DPR * e; ctx.shadowOffsetY = 8 * DPR * e;
+  ctx.translate(c + Math.cos(mid) * d, c + Math.sin(mid) * d); ctx.scale(s, s); ctx.translate(-c, -c); ctx.drawImage(offB, 0, 0); ctx.restore();
 }
 
 /* ---------- steam after the bake: soft puffs made by scaling a tiny disc up (no gradients) ---------- */
@@ -291,6 +318,9 @@ function fire() {
   function done(t) {
     state.busy = false; state.fired = true; state.bake = 1; board.classList.remove('is-firing'); board.classList.add('is-fired'); document.body.classList.remove('is-firing');
     startSteam(t || performance.now()); invalidate();
+    const s0 = performance.now(), SD = reduced ? 0 : 1100;
+    const sl = (n) => { const k = SD ? Math.min(1, Math.max(0, (n - s0 - 350) / SD)) : 1; state.slice = k; invalidate(); if (k < 1) requestAnimationFrame(sl); };
+    requestAnimationFrame(sl);
     const no = 'HC-' + String(1000 + Math.floor(rnd() * 8999)); meter.textContent = 'Fired in 90 seconds.'; $('#t-no').textContent = `Ticket ${no}. Out of the oven.`;
     $('#t-done').hidden = false; fireBtn.hidden = true; sync(); $('#t-done .btn').focus({ preventScroll: true });
     if (mbFire) { mbFire.textContent = 'Order it'; mbFire.setAttribute('aria-disabled', 'false'); }
@@ -300,7 +330,7 @@ fireBtn.addEventListener('click', fire);
 mbFire && mbFire.addEventListener('click', () => { if (state.fired) document.getElementById('order').scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' }); else fire(); });
 $('#again').addEventListener('click', () => {
   Object.keys(state.portions).forEach((k) => { state.portions[k] = []; }); puffs = []; steamUntil = 0;
-  state.fired = false; state.bake = 0; board.classList.remove('is-fired'); $('#t-done').hidden = true; fireBtn.hidden = false; meter.textContent = '';
+  state.fired = false; state.bake = 0; state.slice = 0; board.classList.remove('is-fired'); $('#t-done').hidden = true; fireBtn.hidden = false; meter.textContent = '';
   if (mbFire) mbFire.textContent = 'Fire it'; sync(); invalidate(); $('.dish').focus({ preventScroll: true });
 });
 sync(); size();
