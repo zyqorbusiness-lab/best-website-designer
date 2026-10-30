@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Image trail and hover reveal &middot; Zyqor Components</title>
+<meta name="description" content="Pictures that follow the pointer and fall away, plus a project list where each row reveals its image beside the cursor. On a phone the list becomes a tap-to-open accordion with the same images.">
+<meta name="theme-color" content="#F0EAE0">
+<meta property="og:title" content="Image trail and hover reveal &middot; Zyqor Components">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../_shared/base.css">
+<link rel="stylesheet" href="image-trail.css">
+<style>:root{--bg:#F0EAE0;--ink:#2A2F45;--acc:#D9573B}</style>
+
+</head>
+<body class="">
+<a class="skip" href="#demo">Skip to the demo</a>
+<header class="cx-top">
+  <a href="../"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg><span>All components</span></a>
+  <span class="cx-brand">Zyqor <span class="serif">Components</span></span>
+  <nav><a class="cx-hide-s" href="https://github.com/zyqorbusiness-lab/best-website-designer/tree/main/site/components/image-trail" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.3-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6.2 0C6.6 2.8 5.6 3.1 5.6 3.1a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.2 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg><span>Source</span></a></nav>
+</header>
+<main id="main">
+<section class="cx-intro">
+  <p class="mono">Component &middot; image-trail</p>
+  <h1>Image <span class="serif">trail</span></h1>
+  <p class="lead">Pictures that follow the pointer and fall away, plus a project list where each row reveals its image beside the cursor. On a phone the list becomes a tap-to-open accordion with the same images.</p>
+  <div class="cx-chips"><span>Vanilla JS</span><span>2.8 KB</span><span>Touch accordion</span><span>Preloaded</span><span>Reduced motion</span></div>
+</section>
+<section class="cx-stage" id="demo" aria-label="Live demo">
+
+<div class="it it-area" data-image-trail data-images='["../../library/n/N020/thumb.webp", "../../library/p/P017/thumb.webp", "../../library/a/A013/thumb.webp", "../../library/a/A027/thumb.webp", "../../library/n/N014/thumb.webp", "../../library/n/N048/thumb.webp", "../../library/n/N025/thumb.webp", "../../library/n/N002/thumb.webp", "../../library/a/A018/thumb.webp", "../../library/n/N008/thumb.webp", "../../library/n/N010/thumb.webp", "../../library/n/N005/thumb.webp"]'>
+  <div><h2>Move <span class="serif">slowly.</span></h2><p>Move the pointer or drag a finger here</p><img class="it-still" src="../../library/p/P017/thumb.webp" alt="Tapehead Hi-Fi concept" width="640" height="400" loading="lazy"></div>
+</div>
+<div class="hr-wrap">
+  <p class="mono">Hover list &middot; on a phone, tap a row</p>
+  <ul class="hr" data-hover-reveal>
+    <li class="hr-row" data-img="../../library/n/N020/thumb.webp" data-alt="Chordline Music School concept page"><button class="hr-toggle" type="button" aria-expanded="false"><span class="hr-n">01</span><span class="hr-t">Chordline Music School</span><span class="hr-m">Normal<svg class="hr-plus icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="hr-pane"><div></div></div></li><li class="hr-row" data-img="../../library/p/P017/thumb.webp" data-alt="Tapehead Hi-Fi concept page"><button class="hr-toggle" type="button" aria-expanded="false"><span class="hr-n">02</span><span class="hr-t">Tapehead Hi-Fi</span><span class="hr-m">Premium<svg class="hr-plus icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="hr-pane"><div></div></div></li><li class="hr-row" data-img="../../library/a/A013/thumb.webp" data-alt="Shelfline Ceramics concept page"><button class="hr-toggle" type="button" aria-expanded="false"><span class="hr-n">03</span><span class="hr-t">Shelfline Ceramics</span><span class="hr-m">Advanced<svg class="hr-plus icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="hr-pane"><div></div></div></li><li class="hr-row" data-img="../../library/a/A027/thumb.webp" data-alt="Cut &amp; Grain Knives concept page"><button class="hr-toggle" type="button" aria-expanded="false"><span class="hr-n">04</span><span class="hr-t">Cut &amp; Grain Knives</span><span class="hr-m">Advanced<svg class="hr-plus icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="hr-pane"><div></div></div></li><li class="hr-row" data-img="../../library/n/N014/thumb.webp" data-alt="Glint Eyewear concept page"><button class="hr-toggle" type="button" aria-expanded="false"><span class="hr-n">05</span><span class="hr-t">Glint Eyewear</span><span class="hr-m">Normal<svg class="hr-plus icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="hr-pane"><div></div></div></li><li class="hr-row" data-img="../../library/n/N048/thumb.webp" data-alt="Ironbark Barbers concept page"><button class="hr-toggle" type="button" aria-expanded="false"><span class="hr-n">06</span><span class="hr-t">Ironbark Barbers</span><span class="hr-m">Normal<svg class="hr-plus icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="hr-pane"><div></div></div></li>
+  </ul>
+</div>
+</section>
+<section class="cx-doc" aria-labelledby="use-h">
+  <div>
+    <h2 id="use-h">Use it</h2>
+    <p>Copy the folder <code>image-trail/</code> (the <code>.js</code> and <code>.css</code> files) into your project. No build step and no framework.</p>
+    <h3>Behaviour</h3>
+    <ul><li>Trail images are preloaded once and cloned, so the first pass never flashes empty boxes.</li><li>Hover list: the floating image eases after the pointer and leans with its speed; the images wipe between rows.</li><li>Touch and reduced motion: the list becomes an accordion (tap a row to open its image inline, one open at a time); the trail area shows one still image instead of the effect under reduced motion.</li><li>Rows are real buttons with <code>aria-expanded</code>; floating images are decorative and <code>aria-hidden</code>.</li></ul>
+    <h3>Credits</h3>
+    <ul><li>Hover-reveal project lists are a signature of studio portfolios such as <a href="https://brandonyasin.com" target="_blank" rel="noopener noreferrer">Brandon Yasin</a> (Awwwards SOTD Oct 24 2026) and <a href="https://guillaumecolombel.fr/" target="_blank" rel="noopener noreferrer">G. Colombel</a> (SOTD Oct 28 2026); image trails are a long-running award-site motif. Written from scratch.</li><li>Images are Zyqor's own concept renders (models credited on each concept page).</li></ul>
+  </div>
+  <div>
+    <div class="cx-code"><pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;image-trail.css&quot;&gt;
+
+&lt;div class=&quot;it&quot; data-image-trail data-images=&#x27;[&quot;a.webp&quot;,&quot;b.webp&quot;,&quot;c.webp&quot;]&#x27;&gt;...&lt;/div&gt;
+
+&lt;ul class=&quot;hr&quot; data-hover-reveal&gt;
+  &lt;li class=&quot;hr-row&quot; data-img=&quot;tapehead.webp&quot; data-alt=&quot;Tapehead page&quot;&gt;
+    &lt;button class=&quot;hr-toggle&quot; type=&quot;button&quot; aria-expanded=&quot;false&quot;&gt;
+      &lt;span class=&quot;hr-n&quot;&gt;01&lt;/span&gt;&lt;span class=&quot;hr-t&quot;&gt;Tapehead Hi-Fi&lt;/span&gt;&lt;span class=&quot;hr-m&quot;&gt;Premium&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;div class=&quot;hr-pane&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;script type=&quot;module&quot; src=&quot;image-trail.js&quot;&gt;&lt;/script&gt;</code></pre></div>
+    <div class="cx-tablewrap"><table class="cx-table"><thead><tr><th>Option</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td>data-images</td><td>[]</td><td>JSON list of image URLs for the trail (preloaded once).</td></tr><tr><td>data-step</td><td>90</td><td>Pointer travel in px between two images.</td></tr><tr><td>life / max (JS)</td><td>900 / 9</td><td>How long an image stays (ms) and how many can be on screen.</td></tr><tr><td>--it-w</td><td>clamp(140px,16vw,240px)</td><td>Trail image width.</td></tr><tr><td>data-img (row)</td><td></td><td>Image for that list row.</td></tr></tbody></table></div>
+  </div>
+</section>
+</main>
+<footer class="cx-foot">
+  <div><a class="cx-hire" href="https://zyqor-portfolio-v3.sites.tab.bot/" target="_blank" rel="noopener noreferrer">Hire Zyqor Studio <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><p>Websites from $300. Code in this folder is MIT.</p></div>
+  <ul><li><a href="mailto:zyqorbusiness@gmail.com">zyqorbusiness@gmail.com</a></li><li><a href="https://wa.me/919547908593" target="_blank" rel="noopener noreferrer">WhatsApp +91 95479 08593</a></li></ul>
+  <ul><li><a href="../">All components</a></li><li><a href="../../library/">Concept library</a></li><li><a href="https://github.com/zyqorbusiness-lab/best-website-designer/tree/main/site/components/image-trail" target="_blank" rel="noopener noreferrer">Source on GitHub</a></li></ul>
+</footer>
+<script src="../_shared/base.js" defer></script>
+<script type="module" src="image-trail.js"></script>
+</body>
+</html>

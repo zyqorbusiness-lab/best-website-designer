@@ -1,0 +1,37 @@
+/* magnetic-button: three-layer magnetic button (pull, entry-point fill, label roll). Zyqor Components, MIT. */
+.mb{--mb-bg:var(--ink,#1F3B2D);--mb-fg:var(--bg,#EDE6DA);--mb-fill:var(--acc,#D2643A);--mb-fill-fg:var(--mb-fg);
+  position:relative;display:inline-flex;align-items:center;justify-content:center;gap:.6em;isolation:isolate;overflow:hidden;
+  min-height:52px;padding:0 1.6em;border-radius:999px;border:1px solid var(--mb-bg);background:var(--mb-bg);color:var(--mb-fg);
+  font:600 16px/1 var(--body,system-ui);letter-spacing:-.005em;text-decoration:none;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent;
+  transform:translate3d(var(--mb-x,0),var(--mb-y,0),0);will-change:transform;transition:color .35s var(--ease-out,cubic-bezier(.16,1,.3,1)),scale .25s var(--ease-out,cubic-bezier(.16,1,.3,1))}
+.mb.mb--outline{--mb-bg:transparent;--mb-fg:var(--ink,#1F3B2D);--mb-fill-fg:var(--bg,#EDE6DA);border-color:currentColor}
+.mb.mb--outline{color:var(--mb-fg)}
+.mb.mb--round{width:var(--mb-size,112px);height:var(--mb-size,112px);padding:0;font-size:13px}
+.mb--round .mb-inner{flex-direction:column;gap:.4em}
+.mb.mb--small{min-height:40px;padding:0 1.1em;font-size:14px}
+.mb-inner{display:inline-flex;align-items:center;gap:.6em;transform:translate3d(var(--mb-lx,0),var(--mb-ly,0),0);will-change:transform;pointer-events:none}
+.mb-fill{position:absolute;z-index:-1;left:var(--mb-fx,50%);top:var(--mb-fy,50%);width:var(--mb-d,300px);height:var(--mb-d,300px);margin:calc(var(--mb-d,300px) / -2) 0 0 calc(var(--mb-d,300px) / -2);
+  border-radius:50%;background:var(--mb-fill);transform:scale(0);transition:transform .55s var(--ease-out,cubic-bezier(.16,1,.3,1));pointer-events:none}
+.mb.is-in .mb-fill,.mb:focus-visible .mb-fill{transform:scale(1)}
+.mb.is-in,.mb:focus-visible{color:var(--mb-fill-fg)}
+.mb-label{position:relative;display:inline-grid;overflow:hidden;line-height:1.15;padding:.08em 0}
+.mb-label>span{grid-area:1/1;display:block;transition:transform .5s var(--ease-out,cubic-bezier(.16,1,.3,1))}
+.mb-label>span+span{transform:translateY(110%)}
+.mb.is-in .mb-label>span:first-child,.mb:focus-visible .mb-label>span:first-child{transform:translateY(-110%)}
+.mb.is-in .mb-label>span+span,.mb:focus-visible .mb-label>span+span{transform:translateY(0)}
+.mb .icon{width:1.05em;height:1.05em;transition:transform .5s var(--ease-out,cubic-bezier(.16,1,.3,1))}
+.mb.is-in .icon{transform:rotate(-45deg)}
+.mb.is-pressed{scale:.96}
+/* touch: no hover states, a tap ripple instead */
+@media (hover:none){.mb.is-in .mb-label>span:first-child{transform:none}.mb.is-in .mb-label>span+span{transform:translateY(110%)}.mb.is-in .icon{transform:none}}
+@media (prefers-reduced-motion:reduce){.mb,.mb-inner{transform:none!important}.mb-fill{transition:none}.mb-label>span{transition:none}}
+
+/* demo page only */
+.mb-demo{display:grid;gap:clamp(36px,6vw,72px)}
+.mb-hero .mono{color:var(--soft)}
+.mb-big{font:700 clamp(34px,5.2vw,72px)/.95 var(--display);letter-spacing:-.035em;font-stretch:90%;margin:.2em 0 .6em;max-width:18ch}
+.mb-row{display:flex;flex-wrap:wrap;align-items:center;gap:clamp(14px,2.4vw,28px)}
+.mb-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;border-top:1px solid var(--line);padding-top:28px}
+.mb-grid .mono{color:var(--soft);margin:0 0 14px}
+.mb-note{color:var(--soft);max-width:62ch;margin:0}
+@media (max-width:700px){.mb-grid{grid-template-columns:1fr}.mb-row .mb:not(.mb--round){flex:1 1 100%}}

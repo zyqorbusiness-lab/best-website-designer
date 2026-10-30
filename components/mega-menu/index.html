@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mega menu &middot; Zyqor Components</title>
+<meta name="description" content="A navigation bar with wide panels on desktop and a full-screen accordion sheet on the phone. Hover intent, real buttons, Esc to close, focus that never gets lost.">
+<meta name="theme-color" content="#EDEFE9">
+<meta property="og:title" content="Mega menu &middot; Zyqor Components">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../_shared/base.css">
+<link rel="stylesheet" href="mega-menu.css">
+<style>:root{--bg:#EDEFE9;--ink:#1F2F3A;--acc:#D4743A}</style>
+
+</head>
+<body class="">
+<a class="skip" href="#demo">Skip to the demo</a>
+<header class="cx-top">
+  <a href="../"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg><span>All components</span></a>
+  <span class="cx-brand">Zyqor <span class="serif">Components</span></span>
+  <nav><a class="cx-hide-s" href="https://github.com/zyqorbusiness-lab/best-website-designer/tree/main/site/components/mega-menu" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.3-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6.2 0C6.6 2.8 5.6 3.1 5.6 3.1a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.2 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg><span>Source</span></a></nav>
+</header>
+<main id="main">
+<section class="cx-intro">
+  <p class="mono">Component &middot; mega-menu</p>
+  <h1>Mega <span class="serif">menu</span></h1>
+  <p class="lead">A navigation bar with wide panels on desktop and a full-screen accordion sheet on the phone. Hover intent, real buttons, Esc to close, focus that never gets lost.</p>
+  <div class="cx-chips"><span>Vanilla JS</span><span>2.4 KB</span><span>Keyboard + Esc</span><span>Phone sheet</span><span>Reduced motion</span></div>
+</section>
+<section class="cx-stage" id="demo" aria-label="Live demo">
+
+<div class="mm-demo">
+<nav class="mm" data-mega-menu aria-label="Main">
+  <div class="mm-bar">
+    <a class="mm-logo" href="#demo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 15c2.5 0 2.5-3 5-3s2.5 3 5 3 2.5-3 5-3 2.5 3 5 3M2 9c2.5 0 2.5-3 5-3s2.5 3 5 3 2.5-3 5-3 2.5 3 5 3"/></svg>Saltmarsh</a>
+    <button class="mm-burger" type="button" aria-expanded="false" aria-controls="mm-list"><span class="mm-burger-label">Menu</span><i aria-hidden="true"></i></button>
+    <ul class="mm-list" id="mm-list">
+      <li class="mm-item"><button class="mm-trigger" type="button" aria-expanded="false" aria-controls="mm-p1">Routes<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="mm-panel" id="mm-p1"><div class="mm-inner"><div class="mm-grid">
+          <div class="mm-col"><h3>Daily</h3><ul><li><a href="#demo">Harbour to Isle<small>35 min, every hour</small></a></li><li><a href="#demo">Isle to Point<small>20 min, on the half hour</small></a></li></ul></div>
+          <div class="mm-col"><h3>Seasonal</h3><ul><li><a href="#demo">Seal colony loop<small>May to September</small></a></li><li><a href="#demo">Night crossing<small>Fridays only</small></a></li></ul></div>
+          <div class="mm-col"><h3>Plan</h3><ul><li><a href="#demo">Timetable<small>Print or download</small></a></li><li><a href="#demo">Tides and weather<small>Why a sailing moves</small></a></li></ul></div>
+          <a class="mm-feat" href="#demo"><img src="../../library/n/N008/thumb.webp" alt="" width="640" height="400" loading="lazy"><span>New this summer: the cabin stop</span></a>
+        </div></div></div></li>
+      <li class="mm-item"><button class="mm-trigger" type="button" aria-expanded="false" aria-controls="mm-p2">Tickets<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="mm-panel" id="mm-p2"><div class="mm-inner"><div class="mm-grid">
+          <div class="mm-col"><h3>Buy</h3><ul><li><a href="#demo">Single and return<small>Walk-on fares</small></a></li><li><a href="#demo">Car and van<small>Book ahead</small></a></li></ul></div>
+          <div class="mm-col"><h3>Save</h3><ul><li><a href="#demo">10-trip card<small>For islanders</small></a></li><li><a href="#demo">Family day<small>Two adults, three kids</small></a></li></ul></div>
+          <div class="mm-col"><h3>Help</h3><ul><li><a href="#demo">Change a booking<small>Up to 2 h before</small></a></li><li><a href="#demo">Accessibility<small>Step-free boarding</small></a></li></ul></div>
+          <a class="mm-feat" href="#demo"><img src="../../library/a/A018/thumb.webp" alt="" width="640" height="400" loading="lazy"><span>Night crossing under the stars</span></a>
+        </div></div></div></li>
+      <li class="mm-item"><a class="mm-link" href="#demo">Islands</a></li>
+      <li class="mm-item"><a class="mm-link" href="#demo">About</a></li>
+      <li class="mm-item mm-cta-item"><a class="mm-cta" href="#demo">Book a crossing</a></li>
+    </ul>
+  </div>
+  <div class="mm-scrim" aria-hidden="true"></div>
+</nav>
+<div class="mm-hero"><p class="mono" style="color:var(--soft)">Saltmarsh Ferries &middot; Concept</p><h2>Across the bay in <span class="serif">thirty-five</span> minutes.</h2></div>
+</div>
+</section>
+<section class="cx-doc" aria-labelledby="use-h">
+  <div>
+    <h2 id="use-h">Use it</h2>
+    <p>Copy the folder <code>mega-menu/</code> (the <code>.js</code> and <code>.css</code> files) into your project. No build step and no framework.</p>
+    <h3>Behaviour</h3>
+    <ul><li>Hover opens after a 90 ms intent delay and closes 220 ms after you leave, so crossing the bar diagonally does not flicker panels.</li><li>Click and keyboard work without hover: Enter or Space toggles, ArrowDown moves into the panel, Esc closes and returns focus to the button.</li><li>Phone: full-screen sheet with accordion groups, focus trapped inside, Esc closes, page scroll locked.</li><li>Panels open with a height animation on <code>grid-template-rows</code> (no fixed heights), links stagger in.</li><li><code>prefers-reduced-motion</code>: panels and sheet appear without animation.</li></ul>
+    <h3>Credits</h3>
+    <ul><li>Navigation patterns studied on <a href="https://www.esrbespoke.au/" target="_blank" rel="noopener noreferrer">ESR Bespoke by NIGHTJAR</a> (Awwwards SOTD Oct 23 2026, "ESR Navigation" element) and <a href="https://staratlas.com" target="_blank" rel="noopener noreferrer">Star Atlas by Hello Monday</a> (SOTY 2021, overlay menu). Disclosure pattern per the WAI-ARIA Authoring Practices. Written from scratch.</li><li>Accordion physics from Sujon's Drive guide (MA 8.9). Images are Zyqor concept renders. Saltmarsh Ferries is fictional.</li></ul>
+  </div>
+  <div>
+    <div class="cx-code"><pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;mega-menu.css&quot;&gt;
+&lt;nav class=&quot;mm&quot; data-mega-menu aria-label=&quot;Main&quot;&gt;
+  &lt;div class=&quot;mm-bar&quot;&gt;
+    &lt;a class=&quot;mm-logo&quot; href=&quot;/&quot;&gt;Brand&lt;/a&gt;
+    &lt;button class=&quot;mm-burger&quot; type=&quot;button&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;mm-list&quot;&gt;
+      &lt;span class=&quot;mm-burger-label&quot;&gt;Menu&lt;/span&gt;&lt;i aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+    &lt;ul class=&quot;mm-list&quot; id=&quot;mm-list&quot;&gt;
+      &lt;li class=&quot;mm-item&quot;&gt;
+        &lt;button class=&quot;mm-trigger&quot; type=&quot;button&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;p1&quot;&gt;Routes&lt;/button&gt;
+        &lt;div class=&quot;mm-panel&quot; id=&quot;p1&quot;&gt;&lt;div class=&quot;mm-inner&quot;&gt;&lt;div class=&quot;mm-grid&quot;&gt;...columns...&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li class=&quot;mm-item&quot;&gt;&lt;a class=&quot;mm-link&quot; href=&quot;/about&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;mm-scrim&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
+&lt;/nav&gt;
+&lt;script type=&quot;module&quot; src=&quot;mega-menu.js&quot;&gt;&lt;/script&gt;</code></pre></div>
+    <div class="cx-tablewrap"><table class="cx-table"><thead><tr><th>Option</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td>.mm-trigger</td><td></td><td>A button with aria-controls pointing at its .mm-panel.</td></tr><tr><td>.mm-grid</td><td>3 columns + feature</td><td>Panel layout on desktop; a single column inside the phone sheet.</td></tr><tr><td>breakpoint</td><td>899px</td><td>Change the media queries in the CSS and the mobile() test in the JS together.</td></tr></tbody></table></div>
+  </div>
+</section>
+</main>
+<footer class="cx-foot">
+  <div><a class="cx-hire" href="https://zyqor-portfolio-v3.sites.tab.bot/" target="_blank" rel="noopener noreferrer">Hire Zyqor Studio <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><p>Websites from $300. Code in this folder is MIT.</p></div>
+  <ul><li><a href="mailto:zyqorbusiness@gmail.com">zyqorbusiness@gmail.com</a></li><li><a href="https://wa.me/919547908593" target="_blank" rel="noopener noreferrer">WhatsApp +91 95479 08593</a></li></ul>
+  <ul><li><a href="../">All components</a></li><li><a href="../../library/">Concept library</a></li><li><a href="https://github.com/zyqorbusiness-lab/best-website-designer/tree/main/site/components/mega-menu" target="_blank" rel="noopener noreferrer">Source on GitHub</a></li></ul>
+</footer>
+<script src="../_shared/base.js" defer></script>
+<script type="module" src="mega-menu.js"></script>
+</body>
+</html>

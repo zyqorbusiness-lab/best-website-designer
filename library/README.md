@@ -88,3 +88,15 @@ Real assets only, credited. No emoji (inline SVG icons). Fictional brands say Co
 numbers. Three colours per page, warm paper instead of white, coloured darks instead of black, no purple AI gradients.
 Nothing hover-only. Phone loads the same assets and runs the same effects as desktop. A credit file next to every asset.
 Poster shows when WebGL is off. Own files within the tier budget. 0 console errors and no horizontal overflow at 1440, 390 and 360.
+
+## What a concept like this costs to commission
+
+The library shows three levels of work, and they match Zyqor Studio's starting prices (exact scope agreed per project):
+
+| Level in the library | Plan | From |
+|---|---|---|
+| Normal (N) | Simple: a simple website that still feels premium | $300 |
+| Advanced (A) | Scroll 3D: a scroll-based 3D website, premium | $1,000 |
+| Premium (P) | Everything: content, top quality, fast delivery | $10,000 |
+
+Contact: zyqorbusiness@gmail.com or WhatsApp +91 95479 08593.

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Preloader &middot; Zyqor Components</title>
+<meta name="description" content="A loader that counts the bytes really received for your model, light and images, skips itself when the files are cached, and leaves with a two-panel wipe while the page rises in.">
+<meta name="theme-color" content="#E6DFD1">
+<meta property="og:title" content="Preloader &middot; Zyqor Components">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../_shared/base.css">
+<link rel="stylesheet" href="preloader.css">
+<style>:root{--bg:#E6DFD1;--ink:#26392F;--acc:#CF8B3A}</style>
+
+</head>
+<body class="">
+<a class="skip" href="#demo">Skip to the demo</a>
+<div class="pl" role="status" aria-live="polite" aria-label="Loading" data-assets='["../../library/_assets/models/binoculars.glb", "../../assets/hdri/studio_1k.hdr", "../../library/n/N020/thumb.webp", "../../library/p/P017/thumb.webp"]'>
+  <div class="pl-panel top"></div><div class="pl-panel bot"></div>
+  <div class="pl-inner"><div class="pl-word">Fieldnote</div><div class="pl-num" aria-hidden="true">000</div><div class="pl-bar"><i></i></div><div class="pl-status">Loading the model and light</div></div>
+</div>
+<header class="cx-top">
+  <a href="../"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg><span>All components</span></a>
+  <span class="cx-brand">Zyqor <span class="serif">Components</span></span>
+  <nav><a class="cx-hide-s" href="https://github.com/zyqorbusiness-lab/best-website-designer/tree/main/site/components/preloader" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.3-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6.2 0C6.6 2.8 5.6 3.1 5.6 3.1a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.2 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg><span>Source</span></a></nav>
+</header>
+<main id="main">
+<section class="cx-intro">
+  <p class="mono">Component &middot; preloader</p>
+  <h1>Pre<span class="serif">loader</span></h1>
+  <p class="lead">A loader that counts the bytes really received for your model, light and images, skips itself when the files are cached, and leaves with a two-panel wipe while the page rises in.</p>
+  <div class="cx-chips"><span>Vanilla JS</span><span>1.8 KB</span><span>Real progress</span><span>No flash</span><span>Reduced motion</span></div>
+</section>
+<section class="cx-stage" id="demo" aria-label="Live demo">
+
+<div class="cx-panel pl-demo pl-rise">
+  <div>
+    <h2>It counts real <span class="serif">bytes.</span></h2>
+    <p>This page loaded the four files on the right before showing itself: a 560 KB 3D model, a studio HDRI and two images. The number is the share of bytes that actually arrived. If they come from the cache in under 350 ms, you never see the loader at all.</p>
+    <button class="pl-btn" type="button" id="pl-replay">Replay without cache</button>
+  </div>
+  <ul class="pl-list"><li><span>binoculars.glb</span><span>560 KB</span></li><li><span>studio_1k.hdr</span><span>1.6 MB</span></li><li><span>thumb.webp</span><span>image</span></li><li><span>thumb.webp</span><span>image</span></li></ul>
+</div>
+</section>
+<section class="cx-doc" aria-labelledby="use-h">
+  <div>
+    <h2 id="use-h">Use it</h2>
+    <p>Copy the folder <code>preloader/</code> (the <code>.js</code> and <code>.css</code> files) into your project. No build step and no framework.</p>
+    <h3>Behaviour</h3>
+    <ul><li>Progress is real: bytes received out of the total, streamed with <code>fetch</code>; it holds at 92 until every file reports its size, so it never runs backwards.</li><li>Never flashes: fast or cached loads skip the loader entirely.</li><li>Uses the normal HTTP cache, so your 3D code that loads the same files afterwards gets them instantly.</li><li>Announced politely to screen readers (<code>role="status"</code>, <code>aria-busy</code>); the moving number is <code>aria-hidden</code>.</li><li><code>prefers-reduced-motion</code>: no counting animation, a short fade instead of the wipe.</li></ul>
+    <h3>Credits</h3>
+    <ul><li>Real-progress loaders with a panel exit are common on WebGL award sites such as <a href="https://lusion.co/" target="_blank" rel="noopener noreferrer">Lusion</a> and <a href="https://www.igloo.inc/" target="_blank" rel="noopener noreferrer">Igloo Inc</a>. Sujon's Drive guide asks for loaders that show real progress, never a fake bar. Written from scratch.</li><li>Files loaded: "Binoculars" by Derek Wight and the studio HDRI, both Poly Haven CC0 1.0; images are Zyqor renders.</li></ul>
+  </div>
+  <div>
+    <div class="cx-code"><pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;preloader.css&quot;&gt;
+&lt;div class=&quot;pl&quot; role=&quot;status&quot; aria-live=&quot;polite&quot; aria-label=&quot;Loading&quot;
+     data-assets=&#x27;[&quot;/models/hero.glb&quot;,&quot;/hdri/studio_1k.hdr&quot;]&#x27; data-once&gt;
+  &lt;div class=&quot;pl-panel top&quot;&gt;&lt;/div&gt;&lt;div class=&quot;pl-panel bot&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;pl-inner&quot;&gt;
+    &lt;div class=&quot;pl-word&quot;&gt;Brand&lt;/div&gt;&lt;div class=&quot;pl-num&quot; aria-hidden=&quot;true&quot;&gt;000&lt;/div&gt;
+    &lt;div class=&quot;pl-bar&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/div&gt;&lt;div class=&quot;pl-status&quot;&gt;Loading&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;main class=&quot;pl-rise&quot;&gt;...&lt;/main&gt;
+&lt;script type=&quot;module&quot;&gt;
+  import { preloader } from &#x27;./preloader.js&#x27;;
+  await preloader();           // then start your 3D scene: the files are in the HTTP cache
+&lt;/script&gt;</code></pre></div>
+    <div class="cx-tablewrap"><table class="cx-table"><thead><tr><th>Option</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td>data-assets</td><td>[]</td><td>Files to wait for (models, HDRIs, hero images). Fonts can be added too.</td></tr><tr><td>data-once</td><td>off</td><td>Show only once per browser session.</td></tr><tr><td>minTime (JS)</td><td>900</td><td>Minimum time on screen once it is visible, so it never blinks.</td></tr><tr><td>.pl-rise</td><td></td><td>Add to content that should rise in after the loader leaves.</td></tr></tbody></table></div>
+  </div>
+</section>
+</main>
+<footer class="cx-foot">
+  <div><a class="cx-hire" href="https://zyqor-portfolio-v3.sites.tab.bot/" target="_blank" rel="noopener noreferrer">Hire Zyqor Studio <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><p>Websites from $300. Code in this folder is MIT.</p></div>
+  <ul><li><a href="mailto:zyqorbusiness@gmail.com">zyqorbusiness@gmail.com</a></li><li><a href="https://wa.me/919547908593" target="_blank" rel="noopener noreferrer">WhatsApp +91 95479 08593</a></li></ul>
+  <ul><li><a href="../">All components</a></li><li><a href="../../library/">Concept library</a></li><li><a href="https://github.com/zyqorbusiness-lab/best-website-designer/tree/main/site/components/preloader" target="_blank" rel="noopener noreferrer">Source on GitHub</a></li></ul>
+</footer>
+<script src="../_shared/base.js" defer></script>
+<script type="module">
+import { preloader } from './preloader.js';
+preloader();
+document.getElementById('pl-replay').addEventListener('click', () => {
+  const el = document.querySelector('.pl'); el.hidden = false; document.documentElement.classList.remove('pl-done');
+  const list = JSON.parse(el.dataset.assets).map((u) => u + (u.includes('?') ? '&' : '?') + 'r=' + Date.now());
+  el.querySelector('.pl-status').textContent = 'Loading the model and light';
+  preloader({ assets: list, minTime: 1200 });
+});
+</script>
+</body>
+</html>

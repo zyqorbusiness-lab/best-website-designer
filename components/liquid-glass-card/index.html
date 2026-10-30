@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Liquid glass card &middot; Zyqor Components</title>
+<meta name="description" content="A glass card that really bends what is behind it at the edges, catches a highlight where your pointer is and tilts gently. Drag it over the type to see the lens.">
+<meta name="theme-color" content="#E4E9E6">
+<meta property="og:title" content="Liquid glass card &middot; Zyqor Components">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../_shared/base.css">
+<link rel="stylesheet" href="liquid-glass-card.css">
+<style>:root{--bg:#E4E9E6;--ink:#23453E;--acc:#E9A23B}</style>
+
+</head>
+<body class="">
+<a class="skip" href="#demo">Skip to the demo</a>
+<header class="cx-top">
+  <a href="../"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg><span>All components</span></a>
+  <span class="cx-brand">Zyqor <span class="serif">Components</span></span>
+  <nav><a class="cx-hide-s" href="https://github.com/zyqorbusiness-lab/best-website-designer/tree/main/site/components/liquid-glass-card" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.3-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6.2 0C6.6 2.8 5.6 3.1 5.6 3.1a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.2 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg><span>Source</span></a></nav>
+</header>
+<main id="main">
+<section class="cx-intro">
+  <p class="mono">Component &middot; liquid-glass-card</p>
+  <h1>Liquid <span class="serif">glass</span></h1>
+  <p class="lead">A glass card that really bends what is behind it at the edges, catches a highlight where your pointer is and tilts gently. Drag it over the type to see the lens.</p>
+  <div class="cx-chips"><span>Vanilla JS</span><span>2.6 KB</span><span>SVG refraction</span><span>Blur fallback</span><span>Reduced transparency</span></div>
+</section>
+<section class="cx-stage" id="demo" aria-label="Live demo">
+
+<div class="lg-scene">
+  <div class="lg-back" aria-hidden="true">
+    <div class="lg-word w1">ALPINE</div><div class="lg-sun"></div><div class="lg-arch"></div><div class="lg-stripes"></div><div class="lg-word w2">HUTS</div>
+  </div>
+  <nav class="lg lg-pill" data-lg-flat aria-label="Demo nav"><a href="#demo" aria-current="page">Huts</a><a href="#demo">Routes</a><a href="#demo">Book</a></nav>
+  <article class="lg lg-card" data-lg-drag tabindex="0" aria-label="Glass card. Drag it, or use the arrow keys, to see the refraction.">
+    <p class="mono">Hut 04 &middot; 2,310 m</p>
+    <h3>Rifugio Larice</h3>
+    <p>Twelve bunks, a wood stove and the last sun on the ridge. Open June to September.</p>
+    <div class="lg-meta"><span>From<b>&euro;48</b></span><span>Walk in<b>3 h 20</b></span><span>Beds<b>12</b></span></div>
+  </article>
+  <span class="lg-hint">Drag the card</span>
+</div>
+</section>
+<section class="cx-doc" aria-labelledby="use-h">
+  <div>
+    <h2 id="use-h">Use it</h2>
+    <p>Copy the folder <code>liquid-glass-card/</code> (the <code>.js</code> and <code>.css</code> files) into your project. No build step and no framework.</p>
+    <h3>Behaviour</h3>
+    <ul><li>Real refraction (an SVG displacement map strongest at the edges, like thick glass) in Chromium browsers; everywhere else a frosted blur with the same rim and highlight, so it never looks broken.</li><li>Rim light and highlight are inset lines and a soft light spot, not drop shadows.</li><li>Tilt only with a mouse or trackpad; touch gets the same glass without movement.</li><li><code>prefers-reduced-transparency</code>: an opaque card. <code>prefers-reduced-motion</code>: no tilt.</li><li>Draggable card also moves with the arrow keys when focused.</li></ul>
+    <h3>Credits</h3>
+    <ul><li>Look based on Apple's "Liquid Glass" design language (2025) and Sujon's own ask for premium liquid glass (Oct 27). Also see the fuller kit in <a href="https://github.com/zyqorbusiness-lab/best-website-designer/tree/main/skills/liquid-glass-ui">skills/liquid-glass-ui</a>.</li><li>Rifugio Larice is a fictional hut. The background is plain type and shapes, no images.</li></ul>
+  </div>
+  <div>
+    <div class="cx-code"><pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;liquid-glass-card.css&quot;&gt;
+
+&lt;article class=&quot;lg&quot; data-lg-drag tabindex=&quot;0&quot;&gt;
+  ...your content...
+&lt;/article&gt;
+&lt;nav class=&quot;lg&quot; data-lg-flat&gt;...&lt;/nav&gt;  &lt;!-- data-lg-flat: no tilt --&gt;
+
+&lt;script type=&quot;module&quot; src=&quot;liquid-glass-card.js&quot;&gt;&lt;/script&gt;</code></pre></div>
+    <div class="cx-tablewrap"><table class="cx-table"><thead><tr><th>Option</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td>--lg-tint</td><td>255 255 255</td><td>RGB of the glass body (use your light palette colour).</td></tr><tr><td>--lg-r</td><td>22px</td><td>Corner radius.</td></tr><tr><td>data-lg-drag</td><td>off</td><td>Card can be dragged (pointer or arrow keys) inside its parent.</td></tr><tr><td>data-lg-flat</td><td>off</td><td>No tilt (for nav bars and pills).</td></tr></tbody></table></div>
+  </div>
+</section>
+</main>
+<footer class="cx-foot">
+  <div><a class="cx-hire" href="https://zyqor-portfolio-v3.sites.tab.bot/" target="_blank" rel="noopener noreferrer">Hire Zyqor Studio <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><p>Websites from $300. Code in this folder is MIT.</p></div>
+  <ul><li><a href="mailto:zyqorbusiness@gmail.com">zyqorbusiness@gmail.com</a></li><li><a href="https://wa.me/919547908593" target="_blank" rel="noopener noreferrer">WhatsApp +91 95479 08593</a></li></ul>
+  <ul><li><a href="../">All components</a></li><li><a href="../../library/">Concept library</a></li><li><a href="https://github.com/zyqorbusiness-lab/best-website-designer/tree/main/site/components/liquid-glass-card" target="_blank" rel="noopener noreferrer">Source on GitHub</a></li></ul>
+</footer>
+<script src="../_shared/base.js" defer></script>
+<script type="module" src="liquid-glass-card.js"></script>
+</body>
+</html>

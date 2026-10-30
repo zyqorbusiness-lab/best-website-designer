@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Split text reveal &middot; Zyqor Components</title>
+<meta name="description" content="Headlines that rise line by line out of a mask, letters that flip up, and a paragraph that lights up word by word as you read it. Accessible, and re-measured so lines never break wrong.">
+<meta name="theme-color" content="#F1ECE2">
+<meta property="og:title" content="Split text reveal &middot; Zyqor Components">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../_shared/base.css">
+<link rel="stylesheet" href="split-text.css">
+<style>:root{--bg:#F1ECE2;--ink:#22313F;--acc:#E0A43B}</style>
+
+</head>
+<body class="">
+<a class="skip" href="#demo">Skip to the demo</a>
+<header class="cx-top">
+  <a href="../"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg><span>All components</span></a>
+  <span class="cx-brand">Zyqor <span class="serif">Components</span></span>
+  <nav><a class="cx-hide-s" href="https://github.com/zyqorbusiness-lab/best-website-designer/tree/main/site/components/split-text" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.3-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6.2 0C6.6 2.8 5.6 3.1 5.6 3.1a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.2 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg><span>Source</span></a></nav>
+</header>
+<main id="main">
+<section class="cx-intro">
+  <p class="mono">Component &middot; split-text</p>
+  <h1>Split <span class="serif">text</span></h1>
+  <p class="lead">Headlines that rise line by line out of a mask, letters that flip up, and a paragraph that lights up word by word as you read it. Accessible, and re-measured so lines never break wrong.</p>
+  <div class="cx-chips"><span>Vanilla JS</span><span>2.6 KB</span><span>Fonts-ready</span><span>Reduced motion</span><span>Screen reader safe</span></div>
+</section>
+<section class="cx-stage" id="demo" aria-label="Live demo">
+
+<div class="st-demo">
+  <div>
+    <div class="st-row"><span class="mono">anim: rise &middot; lines</span><button class="st-btn" type="button" data-replay="h1">Replay</button></div>
+    <h2 class="st-h" id="h1" data-split="lines">Maps for people who <span class="serif">walk</span> slowly.</h2>
+  </div>
+  <div>
+    <div class="st-row"><span class="mono">anim: chars &middot; letters</span><button class="st-btn" type="button" data-replay="h2">Replay</button></div>
+    <p class="st-k" id="h2" data-split="chars">Hand-drawn. Printed in Porto.</p>
+  </div>
+  <div class="st-spacer" aria-hidden="true"></div>
+  <div>
+    <div class="st-row"><span class="mono">anim: scrub &middot; scroll the page</span></div>
+    <p class="st-p" data-split="words">Every Slowmap sheet is drawn by one cartographer who walked the route first. We mark benches, bakeries, steep steps and the quiet way round, and we leave out the <span class="serif">noise</span> a phone map can't.</p>
+  </div>
+  <div class="st-spacer" aria-hidden="true"></div>
+</div>
+<script type="module">
+  import { play } from './split-text.js';
+  document.querySelectorAll('[data-replay]').forEach((b) => b.addEventListener('click', () => play(document.getElementById(b.dataset.replay))));
+</script>
+</section>
+<section class="cx-doc" aria-labelledby="use-h">
+  <div>
+    <h2 id="use-h">Use it</h2>
+    <p>Copy the folder <code>split-text/</code> (the <code>.js</code> and <code>.css</code> files) into your project. No build step and no framework.</p>
+    <h3>Behaviour</h3>
+    <ul><li>Lines are measured after the web fonts load and again on width changes (not on phone address-bar resizes), so a line never breaks in the wrong place.</li><li>One level of inline markup is kept: an italic serif word stays italic after the split.</li><li>Screen readers read the sentence once from a visually hidden copy; the animated copy is <code>aria-hidden</code>.</li><li><code>prefers-reduced-motion</code>: text is shown at once, no movement, the scrub paragraph is full ink.</li><li>Scroll scrub uses one passive scroll listener and one rAF for every paragraph on the page.</li></ul>
+    <h3>Credits</h3>
+    <ul><li>Line-mask reveals are a staple of award sites such as <a href="https://format.obys.agency/" target="_blank" rel="noopener noreferrer">FORMAT by Obys</a> (Awwwards SOTD Oct 19 2026) and <a href="https://emotion-agency.com/" target="_blank" rel="noopener noreferrer">Emotion Agency</a> (SOTD Oct 22 2026). The scroll reading highlight is common on product pages. Written from scratch; no code or text copied.</li><li>Slowmap is a fictional brand for this demo.</li></ul>
+  </div>
+  <div>
+    <div class="cx-code"><pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;split-text.css&quot;&gt;
+
+&lt;h1 data-split=&quot;lines&quot;&gt;Maps for people who &lt;span class=&quot;serif&quot;&gt;walk&lt;/span&gt; slowly.&lt;/h1&gt;
+&lt;p data-split=&quot;chars&quot;&gt;Hand-drawn. Printed in Porto.&lt;/p&gt;
+&lt;p data-split=&quot;words&quot;&gt;Long paragraph that lights up word by word as it scrolls.&lt;/p&gt;
+
+&lt;script type=&quot;module&quot; src=&quot;split-text.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- by hand --&gt;
+&lt;script type=&quot;module&quot;&gt;
+  import { splitText, play } from &#x27;./split-text.js&#x27;;
+  splitText(el, { by: &#x27;lines&#x27;, anim: &#x27;rise&#x27; });
+  play(el); // replay the reveal
+&lt;/script&gt;</code></pre></div>
+    <div class="cx-tablewrap"><table class="cx-table"><thead><tr><th>Option</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td>data-split</td><td>lines</td><td>lines (mask rise per line), chars (letters flip up) or words (scroll scrub).</td></tr><tr><td>data-split-anim</td><td>by type</td><td>Force an animation: rise, chars or scrub.</td></tr><tr><td>data-split-repeat</td><td>off</td><td>Hide again when the text leaves the screen, so it replays on the way back.</td></tr><tr><td>--st-delay</td><td>0ms</td><td>CSS variable: delay before the first line or letter starts.</td></tr><tr><td>--li / --ci / --wi</td><td>set by JS</td><td>Index of each line, letter, word; use them for your own stagger maths.</td></tr></tbody></table></div>
+  </div>
+</section>
+</main>
+<footer class="cx-foot">
+  <div><a class="cx-hire" href="https://zyqor-portfolio-v3.sites.tab.bot/" target="_blank" rel="noopener noreferrer">Hire Zyqor Studio <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><p>Websites from $300. Code in this folder is MIT.</p></div>
+  <ul><li><a href="mailto:zyqorbusiness@gmail.com">zyqorbusiness@gmail.com</a></li><li><a href="https://wa.me/919547908593" target="_blank" rel="noopener noreferrer">WhatsApp +91 95479 08593</a></li></ul>
+  <ul><li><a href="../">All components</a></li><li><a href="../../library/">Concept library</a></li><li><a href="https://github.com/zyqorbusiness-lab/best-website-designer/tree/main/site/components/split-text" target="_blank" rel="noopener noreferrer">Source on GitHub</a></li></ul>
+</footer>
+<script src="../_shared/base.js" defer></script>
+<script type="module" src="split-text.js"></script>
+</body>
+</html>

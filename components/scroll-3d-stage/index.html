@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Scroll-scrubbed 3D stage &middot; Zyqor Components</title>
+<meta name="description" content="A real scanned product, lit by a studio HDRI, that turns and moves through four chapters as you scroll. Eased, lazy, pauses off screen, and falls back to a poster without WebGL.">
+<meta name="theme-color" content="#E9E4DA">
+<meta property="og:title" content="Scroll-scrubbed 3D stage &middot; Zyqor Components">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../_shared/base.css">
+<link rel="stylesheet" href="scroll-3d-stage.css">
+<style>:root{--bg:#E9E4DA;--ink:#2B3A33;--acc:#C8553D}</style>
+<script type="importmap">{"imports":{"three":"../../vendor/three/three.module.min.js","three/addons/":"../../vendor/three/addons/"}}</script>
+</head>
+<body class="">
+<a class="skip" href="#demo">Skip to the demo</a>
+<header class="cx-top">
+  <a href="../"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg><span>All components</span></a>
+  <span class="cx-brand">Zyqor <span class="serif">Components</span></span>
+  <nav><a class="cx-hide-s" href="https://github.com/zyqorbusiness-lab/best-website-designer/tree/main/site/components/scroll-3d-stage" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.3-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6.2 0C6.6 2.8 5.6 3.1 5.6 3.1a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.2 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg><span>Source</span></a></nav>
+</header>
+<main id="main">
+<section class="cx-intro">
+  <p class="mono">Component &middot; scroll-3d-stage</p>
+  <h1>Scroll <span class="serif">3D</span> stage</h1>
+  <p class="lead">A real scanned product, lit by a studio HDRI, that turns and moves through four chapters as you scroll. Eased, lazy, pauses off screen, and falls back to a poster without WebGL.</p>
+  <div class="cx-chips"><span>three.js</span><span>4 KB + model</span><span>Real CC0 scan</span><span>Poster fallback</span><span>Same on phone</span></div>
+</section>
+<section class="cx-stage" id="demo" aria-label="Live demo">
+
+<div class="s3" id="stage3">
+  <div class="s3-pin">
+    <img class="s3-poster" src="poster.webp" alt="Fieldnote 8x32 binoculars, a real scanned model (CC0)" width="1104" height="900">
+    <div class="s3-canvas" aria-hidden="true"></div>
+    <div class="s3-head"><p class="mono">Fieldnote Optics &middot; Concept &middot; scroll</p></div>
+    <div class="s3-copy">
+      <article class="s3-ch"><p class="mono">01 &middot; The pair</p><h3>Built for the dawn <span class="serif">chorus.</span></h3><p>A compact 8x32 for people who walk out before sunrise. Light enough to forget, sharp enough to name the bird.</p></article>
+      <article class="s3-ch"><p class="mono">02 &middot; Glass</p><h3>Wide, bright, honest.</h3><p>Fully multi-coated lenses and a 7.5 degree field, so a moving wren stays in frame.</p><div class="s3-spec"><span>Field<b>7.5&deg;</b></span><span>Weight<b>420 g</b></span></div></article>
+      <article class="s3-ch"><p class="mono">03 &middot; Eyepieces</p><h3>Glasses on, or off.</h3><p>Twist-up eyecups with three stops and a centre focus wheel you can turn with gloves on.</p></article>
+      <article class="s3-ch"><p class="mono">04 &middot; Carry</p><h3>From pocket to eye in a <span class="serif">second.</span></h3><p>Concept product for this demo. Fieldnote is a fictional brand.</p></article>
+    </div>
+    <div class="s3-bar" aria-hidden="true"><i></i></div>
+  </div>
+</div>
+<div class="s3-after"><div><h2>Same model on your phone.</h2><p class="lead" style="margin:0 auto;color:var(--soft);max-width:46ch">The phone loads the same 19,248-triangle scan, the same textures and the same studio light. Only the layout changes.</p></div></div>
+</section>
+<section class="cx-doc" aria-labelledby="use-h">
+  <div>
+    <h2 id="use-h">Use it</h2>
+    <p>Copy the folder <code>scroll-3d-stage/</code> (the <code>.js</code> and <code>.css</code> files) into your project. No build step and no framework.</p>
+    <h3>Behaviour</h3>
+    <ul><li>Scroll only sets a target; the camera eases toward it each frame, so trackpad flicks and phone flings never jump.</li><li>WebGL starts 300 px before the section reaches the screen; the loop pauses off screen and in hidden tabs.</li><li>No WebGL, or a lost GPU context: the poster image stays and the chapters still read in order.</li><li>Narrow screens centre the model above the copy and pull the camera back; same files, same quality.</li><li><code>prefers-reduced-motion</code>: no glide and no idle sway; each chapter is a still of its keyframe.</li><li>Pixel ratio capped at 2 and lowered to 1.25 only if frames stay slow.</li></ul>
+    <h3>Credits</h3>
+    <ul><li>Model: <a href="https://polyhaven.com/a/binoculars" target="_blank" rel="noopener noreferrer">"Binoculars" by Derek Wight, Poly Haven</a>, CC0 1.0 (optimised: WebP textures, meshopt; all 19,248 triangles kept). HDRI: Poly Haven studio, CC0 1.0 (credit file next to it).</li><li>Scroll-driven 3D product stories are the signature of <a href="https://www.opalcamera.com/opal-tadpole" target="_blank" rel="noopener noreferrer">Opal Tadpole</a> (Awwwards SOTY 2024) and <a href="https://landonorris.com/" target="_blank" rel="noopener noreferrer">landonorris.com</a> (SOTY 2025). Library: <a href="https://threejs.org/" target="_blank" rel="noopener noreferrer">three.js</a> (MIT). Written from scratch.</li></ul>
+  </div>
+  <div>
+    <div class="cx-code"><pre><code>&lt;script type=&quot;importmap&quot;&gt;{ &quot;imports&quot;: {
+  &quot;three&quot;: &quot;/vendor/three/three.module.min.js&quot;,
+  &quot;three/addons/&quot;: &quot;/vendor/three/addons/&quot; } }&lt;/script&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;scroll-3d-stage.css&quot;&gt;
+
+&lt;div class=&quot;s3&quot;&gt;
+  &lt;div class=&quot;s3-pin&quot;&gt;
+    &lt;img class=&quot;s3-poster&quot; src=&quot;poster.webp&quot; alt=&quot;...&quot;&gt;
+    &lt;div class=&quot;s3-canvas&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;s3-copy&quot;&gt;
+      &lt;article class=&quot;s3-ch&quot;&gt;...&lt;/article&gt;   &lt;!-- one per keyframe --&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;s3-bar&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script type=&quot;module&quot;&gt;
+  import { scrollStage } from &#x27;./scroll-3d-stage.js&#x27;;
+  scrollStage({
+    section: document.querySelector(&#x27;.s3&#x27;),
+    model: &#x27;/models/binoculars.glb&#x27;, hdr: &#x27;/hdri/studio_1k.hdr&#x27;,
+    meshopt: &#x27;/vendor/three/addons/libs/meshopt_decoder.module.js&#x27;,
+    keys: [ { cam:[0,.25,3.6], look:[-.38,0,0], rot:[.12,-.55,0] },
+            { cam:[0,.1,2.5],  look:[.36,0,0],  rot:[.05,.95,0] } ]
+  });
+&lt;/script&gt;</code></pre></div>
+    <div class="cx-tablewrap"><table class="cx-table"><thead><tr><th>Option</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td>section</td><td>required</td><td>The tall section. Its height (--s3-len, default 420vh) sets how much scroll the story takes.</td></tr><tr><td>model / hdr</td><td>required / optional</td><td>GLB file and an equirectangular .hdr for image-based light.</td></tr><tr><td>meshopt</td><td>optional</td><td>Path to the meshopt decoder when the GLB is meshopt-compressed.</td></tr><tr><td>keys</td><td>required</td><td>One keyframe per chapter: cam (camera position), look (target), rot (model rotation, radians), exposure.</td></tr><tr><td>size</td><td>1.6</td><td>Model is centred and scaled to this size, so keyframes work for any model.</td></tr><tr><td>fov / envIntensity / keyLight</td><td>30 / 1 / 1.4</td><td>Lens and light.</td></tr></tbody></table></div>
+  </div>
+</section>
+</main>
+<footer class="cx-foot">
+  <div><a class="cx-hire" href="https://zyqor-portfolio-v3.sites.tab.bot/" target="_blank" rel="noopener noreferrer">Hire Zyqor Studio <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><p>Websites from $300. Code in this folder is MIT.</p></div>
+  <ul><li><a href="mailto:zyqorbusiness@gmail.com">zyqorbusiness@gmail.com</a></li><li><a href="https://wa.me/919547908593" target="_blank" rel="noopener noreferrer">WhatsApp +91 95479 08593</a></li></ul>
+  <ul><li><a href="../">All components</a></li><li><a href="../../library/">Concept library</a></li><li><a href="https://github.com/zyqorbusiness-lab/best-website-designer/tree/main/site/components/scroll-3d-stage" target="_blank" rel="noopener noreferrer">Source on GitHub</a></li></ul>
+</footer>
+<script src="../_shared/base.js" defer></script>
+<script type="module">
+import { scrollStage } from './scroll-3d-stage.js';
+scrollStage({ section: document.getElementById('stage3'), model: '../../library/_assets/models/binoculars.glb', hdr: '../../assets/hdri/studio_1k.hdr', meshopt: '../../vendor/three/addons/libs/meshopt_decoder.module.js', size: 1.7, keys: [{cam:[0,.25,3.6],look:[-.38,-.1,0],rot:[.12,-.55,0]},{cam:[0,.1,2.5],look:[.36,0,0],rot:[.05,.95,0]},{cam:[0,1.05,2.2],look:[-.32,-.05,0],rot:[.35,3.1,0],exposure:1.08},{cam:[0,.2,3.1],look:[.3,0,0],rot:[.08,5.75,0]}] });
+</script>
+</body>
+</html>

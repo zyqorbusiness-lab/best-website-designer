@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Marquee &middot; Zyqor Components</title>
+<meta name="description" content="A seamless loop that speeds up with your scroll, flips direction when you scroll back, and can be grabbed and flung. Accessible clones, pauses off-screen.">
+<meta name="theme-color" content="#F3EBDD">
+<meta property="og:title" content="Marquee &middot; Zyqor Components">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../_shared/base.css">
+<link rel="stylesheet" href="marquee.css">
+<style>:root{--bg:#F3EBDD;--ink:#3A2E26;--acc:#D9822B}</style>
+
+</head>
+<body class="">
+<a class="skip" href="#demo">Skip to the demo</a>
+<header class="cx-top">
+  <a href="../"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg><span>All components</span></a>
+  <span class="cx-brand">Zyqor <span class="serif">Components</span></span>
+  <nav><a class="cx-hide-s" href="https://github.com/zyqorbusiness-lab/best-website-designer/tree/main/site/components/marquee" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.3-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6.2 0C6.6 2.8 5.6 3.1 5.6 3.1a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.2 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg><span>Source</span></a></nav>
+</header>
+<main id="main">
+<section class="cx-intro">
+  <p class="mono">Component &middot; marquee</p>
+  <h1>Mar<span class="serif">quee</span></h1>
+  <p class="lead">A seamless loop that speeds up with your scroll, flips direction when you scroll back, and can be grabbed and flung. Accessible clones, pauses off-screen.</p>
+  <div class="cx-chips"><span>Vanilla JS</span><span>2.2 KB</span><span>Drag + inertia</span><span>Scroll velocity</span><span>Reduced motion</span></div>
+</section>
+<section class="cx-stage" id="demo" aria-label="Live demo">
+
+<div class="mq-demo">
+  <p class="mq-label mono"><span>Words &middot; speeds up when you scroll</span><span>Drag it</span></p>
+  <div class="mq mq-words" data-marquee data-speed="70" aria-label="Kettle and Co. values">
+    <div class="mq-track"><div class="mq-item"><span>Loose leaf</span><svg class="mq-star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.2 7.1 7.3-.1-5.9 4.3 2.3 7-5.9-4.4-5.9 4.4 2.3-7L2.5 8.5l7.3.1z"/></svg><span class="serif">slow brewed</span><svg class="mq-star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.2 7.1 7.3-.1-5.9 4.3 2.3 7-5.9-4.4-5.9 4.4 2.3-7L2.5 8.5l7.3.1z"/></svg><span>Small farms</span><svg class="mq-star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.2 7.1 7.3-.1-5.9 4.3 2.3 7-5.9-4.4-5.9 4.4 2.3-7L2.5 8.5l7.3.1z"/></svg><span class="serif">no dust</span><svg class="mq-star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.2 7.1 7.3-.1-5.9 4.3 2.3 7-5.9-4.4-5.9 4.4 2.3-7L2.5 8.5l7.3.1z"/></svg></div></div>
+  </div>
+  <p class="mq-label mono"><span>Chips &middot; reverses with scroll direction &middot; pauses on hover</span></p>
+  <div class="mq mq-chips" data-marquee data-speed="40" data-direction="right" data-scroll-flip aria-label="Tea origins">
+    <div class="mq-track"><div class="mq-item"><a class="mq-chip" href="#demo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c9 0 14-5 14-14-9 0-14 5-14 14zM5 19l7-7"/></svg>Darjeeling first flush</a><a class="mq-chip" href="#demo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c9 0 14-5 14-14-9 0-14 5-14 14zM5 19l7-7"/></svg>Uji sencha</a><a class="mq-chip" href="#demo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c9 0 14-5 14-14-9 0-14 5-14 14zM5 19l7-7"/></svg>Nilgiri frost</a><a class="mq-chip" href="#demo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c9 0 14-5 14-14-9 0-14 5-14 14zM5 19l7-7"/></svg>Assam second flush</a><a class="mq-chip" href="#demo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c9 0 14-5 14-14-9 0-14 5-14 14zM5 19l7-7"/></svg>Yunnan gold</a><a class="mq-chip" href="#demo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c9 0 14-5 14-14-9 0-14 5-14 14zM5 19l7-7"/></svg>Kandy high grown</a><a class="mq-chip" href="#demo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c9 0 14-5 14-14-9 0-14 5-14 14zM5 19l7-7"/></svg>Taiwan oolong</a></div></div>
+  </div>
+  <p class="mq-label mono"><span>Images &middot; Zyqor concept renders</span></p>
+  <div class="mq mq-imgs" data-marquee data-speed="34" aria-label="Zyqor concept pages">
+    <div class="mq-track"><div class="mq-item"><figure class="mq-card"><img src="../../library/n/N020/thumb.webp" alt="Chordline concept" loading="lazy" decoding="async" width="640" height="400"><figcaption>Chordline</figcaption></figure><figure class="mq-card"><img src="../../library/p/P017/thumb.webp" alt="Tapehead concept" loading="lazy" decoding="async" width="640" height="400"><figcaption>Tapehead</figcaption></figure><figure class="mq-card"><img src="../../library/a/A013/thumb.webp" alt="Shelfline concept" loading="lazy" decoding="async" width="640" height="400"><figcaption>Shelfline</figcaption></figure><figure class="mq-card"><img src="../../library/n/N002/thumb.webp" alt="Kiln & Quiet concept" loading="lazy" decoding="async" width="640" height="400"><figcaption>Kiln & Quiet</figcaption></figure><figure class="mq-card"><img src="../../library/a/A027/thumb.webp" alt="Cut & Grain concept" loading="lazy" decoding="async" width="640" height="400"><figcaption>Cut & Grain</figcaption></figure><figure class="mq-card"><img src="../../library/n/N014/thumb.webp" alt="Glint concept" loading="lazy" decoding="async" width="640" height="400"><figcaption>Glint</figcaption></figure><figure class="mq-card"><img src="../../library/n/N025/thumb.webp" alt="Bathtime Duck concept" loading="lazy" decoding="async" width="640" height="400"><figcaption>Bathtime Duck</figcaption></figure><figure class="mq-card"><img src="../../library/n/N048/thumb.webp" alt="Ironbark concept" loading="lazy" decoding="async" width="640" height="400"><figcaption>Ironbark</figcaption></figure></div></div>
+  </div>
+</div>
+</section>
+<section class="cx-doc" aria-labelledby="use-h">
+  <div>
+    <h2 id="use-h">Use it</h2>
+    <p>Copy the folder <code>marquee/</code> (the <code>.js</code> and <code>.css</code> files) into your project. No build step and no framework.</p>
+    <h3>Behaviour</h3>
+    <ul><li>Clones are <code>aria-hidden</code> and their links get <code>tabindex="-1"</code>, so keyboard and screen-reader users meet each item once.</li><li>Drag works with mouse and touch (horizontal only; vertical swipes still scroll the page) and keeps inertia after release. A drag never fires a click on a link inside.</li><li>Pauses when off-screen (IntersectionObserver), on mouse hover and while something inside has focus.</li><li>Re-measures after web fonts load and when the width changes.</li><li><code>prefers-reduced-motion</code>: nothing moves; the row is a normal horizontal scroller.</li></ul>
+    <h3>Credits</h3>
+    <ul><li>Scroll-reactive marquees appear across award winners, for example <a href="https://landonorris.com/" target="_blank" rel="noopener noreferrer">landonorris.com</a> (Awwwards Site of the Year 2025) and <a href="https://dontboardme.com" target="_blank" rel="noopener noreferrer">Don't Board Me</a> (SOTY 2024). Written from scratch.</li><li>Images are Zyqor's own renders from the concept library (models credited on each concept page). Kettle &amp; Co. is fictional.</li></ul>
+  </div>
+  <div>
+    <div class="cx-code"><pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;marquee.css&quot;&gt;
+
+&lt;div class=&quot;mq&quot; data-marquee data-speed=&quot;70&quot; data-scroll-flip aria-label=&quot;Our values&quot;&gt;
+  &lt;div class=&quot;mq-track&quot;&gt;
+    &lt;div class=&quot;mq-item&quot;&gt;Loose leaf · slow brewed · small farms ·&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script type=&quot;module&quot; src=&quot;marquee.js&quot;&gt;&lt;/script&gt;</code></pre></div>
+    <div class="cx-tablewrap"><table class="cx-table"><thead><tr><th>Option</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td>data-speed</td><td>60</td><td>Pixels per second at rest.</td></tr><tr><td>data-direction</td><td>left</td><td>left or right.</td></tr><tr><td>data-boost</td><td>0.9</td><td>How much page-scroll velocity speeds it up (0 = ignore scroll).</td></tr><tr><td>data-scroll-flip</td><td>off</td><td>Reverse direction while the page scrolls up.</td></tr><tr><td>data-no-pause</td><td>off</td><td>Keep moving under the mouse.</td></tr></tbody></table></div>
+  </div>
+</section>
+</main>
+<footer class="cx-foot">
+  <div><a class="cx-hire" href="https://zyqor-portfolio-v3.sites.tab.bot/" target="_blank" rel="noopener noreferrer">Hire Zyqor Studio <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><p>Websites from $300. Code in this folder is MIT.</p></div>
+  <ul><li><a href="mailto:zyqorbusiness@gmail.com">zyqorbusiness@gmail.com</a></li><li><a href="https://wa.me/919547908593" target="_blank" rel="noopener noreferrer">WhatsApp +91 95479 08593</a></li></ul>
+  <ul><li><a href="../">All components</a></li><li><a href="../../library/">Concept library</a></li><li><a href="https://github.com/zyqorbusiness-lab/best-website-designer/tree/main/site/components/marquee" target="_blank" rel="noopener noreferrer">Source on GitHub</a></li></ul>
+</footer>
+<script src="../_shared/base.js" defer></script>
+<script type="module" src="marquee.js"></script>
+</body>
+</html>

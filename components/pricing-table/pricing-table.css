@@ -1,0 +1,28 @@
+/* pricing-table: plan switcher with odometer price. Zyqor Components, MIT. */
+.pr{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,5vw,72px);align-items:start}
+.pr-seg{position:relative;display:inline-flex;padding:5px;border:1px solid var(--line,rgb(0 0 0 / .15));border-radius:999px;background:color-mix(in srgb,var(--bg,#F2EBDD) 70%,#fff 30%)}
+.pr-seg button{position:relative;z-index:1;font:600 15px/1 var(--body,system-ui);color:var(--ink,#1E2B26);background:none;border:0;border-radius:999px;padding:13px 18px;cursor:pointer;min-height:46px;white-space:nowrap;transition:color .35s}
+.pr-seg button[aria-selected=true]{color:var(--bg,#F2EBDD)}
+.pr-pill{position:absolute;left:0;top:5px;bottom:5px;width:0;border-radius:999px;background:var(--ink,#1E2B26);transition:transform .5s cubic-bezier(.16,1,.3,1),width .5s cubic-bezier(.16,1,.3,1)}
+.pr-price{display:inline-flex;font:780 clamp(68px,10vw,148px)/1 var(--display,system-ui);letter-spacing:-.05em;font-variant-numeric:tabular-nums;margin:.15em 0 0;height:1em;overflow:hidden}
+.od-col{display:inline-block;height:1em;overflow:hidden}
+.od-strip{display:flex;flex-direction:column;transition:transform .9s cubic-bezier(.16,1,.3,1)}
+.od-strip>span{height:1em;line-height:1em}
+.od-sym{display:inline-block}
+.pr-unit{font:400 12px/1 var(--mono,monospace);text-transform:uppercase;letter-spacing:.08em;opacity:.7}
+.pr-plan{border-top:1px solid var(--line,rgb(0 0 0 / .15))}
+.pr-plan.is-in{animation:pr-in .6s cubic-bezier(.16,1,.3,1)}
+@keyframes pr-in{from{opacity:0;transform:translateX(calc(var(--pr-dir,1) * 24px))}to{opacity:1;transform:none}}
+.pr-plan h3{font:720 clamp(30px,3.6vw,48px)/1 var(--display,system-ui);letter-spacing:-.03em;margin:22px 0 10px}
+.pr-plan ul{list-style:none;padding:0;margin:16px 0 26px}
+.pr-plan li{display:grid;grid-template-columns:22px 1fr;gap:10px;padding:12px 0;border-bottom:1px solid var(--line,rgb(0 0 0 / .15))}
+.pr-plan li svg{width:18px;height:18px;margin-top:3px;stroke:var(--acc,#E8553B);fill:none;stroke-width:2;stroke-linecap:round}
+.pr-cta{display:flex;flex-wrap:wrap;gap:12px}
+.pr-cta a{display:inline-flex;align-items:center;gap:10px;min-height:50px;padding:0 20px;border-radius:999px;font:600 15px/1 var(--body,system-ui);text-decoration:none;border:1px solid var(--ink,#1E2B26)}
+.pr-cta a.pr-main{background:var(--acc,#E8553B);border-color:var(--acc,#E8553B);color:var(--bg,#F2EBDD)}
+.pr-note{font-size:14px;opacity:.75;margin:18px 0 0;max-width:52ch}
+@media (max-width:860px){.pr{grid-template-columns:1fr}.pr-seg{display:flex;width:100%}.pr-seg button{flex:1;padding:13px 8px;font-size:14px}}
+@media (prefers-reduced-motion:reduce){.pr-pill,.od-strip{transition:none}.pr-plan.is-in{animation:none}}
+/* demo page only */
+.pr-side .mono{color:var(--soft)}
+.pr-side p.lead2{color:var(--soft);max-width:40ch;margin:16px 0 0}

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cursor follower &middot; Zyqor Components</title>
+<meta name="description" content="A precise dot and a ring that trails it, grows into a label over work, wraps nav links like a magnet and gets out of the way over text fields. Switches itself off on touch.">
+<meta name="theme-color" content="#E8EEF0">
+<meta property="og:title" content="Cursor follower &middot; Zyqor Components">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../_shared/base.css">
+<link rel="stylesheet" href="cursor-follower.css">
+<style>:root{--bg:#E8EEF0;--ink:#1E3A4C;--acc:#F06B3C}</style>
+
+</head>
+<body class="">
+<a class="skip" href="#demo">Skip to the demo</a>
+<header class="cx-top">
+  <a href="../"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg><span>All components</span></a>
+  <span class="cx-brand">Zyqor <span class="serif">Components</span></span>
+  <nav><a class="cx-hide-s" href="https://github.com/zyqorbusiness-lab/best-website-designer/tree/main/site/components/cursor-follower" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.3-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6.2 0C6.6 2.8 5.6 3.1 5.6 3.1a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.2 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg><span>Source</span></a></nav>
+</header>
+<main id="main">
+<section class="cx-intro">
+  <p class="mono">Component &middot; cursor-follower</p>
+  <h1>Cursor <span class="serif">follower</span></h1>
+  <p class="lead">A precise dot and a ring that trails it, grows into a label over work, wraps nav links like a magnet and gets out of the way over text fields. Switches itself off on touch.</p>
+  <div class="cx-chips"><span>Vanilla JS</span><span>2 KB</span><span>Context labels</span><span>Off on touch</span><span>Reduced motion</span></div>
+</section>
+<section class="cx-stage" id="demo" aria-label="Live demo">
+
+<div class="cx-panel cf-demo">
+  <p class="cf-touch">On a phone there is no cursor, so this component switches itself off. The tiles keep their own tap and focus states.</p>
+  <div class="cf-grid">
+    <a class="cf-tile" href="../../library/p/P017/" data-cursor="View"><img src="../../library/p/P017/thumb.webp" alt="" loading="lazy" decoding="async" width="640" height="400"><span>Tapehead Hi-Fi<em>Premium</em></span></a><a class="cf-tile" href="../../library/n/N020/" data-cursor="View"><img src="../../library/n/N020/thumb.webp" alt="" loading="lazy" decoding="async" width="640" height="400"><span>Chordline<em>Normal</em></span></a><a class="cf-tile" href="../../library/a/A027/" data-cursor="View"><img src="../../library/a/A027/thumb.webp" alt="" loading="lazy" decoding="async" width="640" height="400"><span>Cut &amp; Grain<em>Advanced</em></span></a>
+  </div>
+  <div class="cf-links">
+    <span class="mono" style="color:var(--soft)">Sticky ring:</span>
+    <a href="#demo" data-cursor-stick>Work</a><a href="#demo" data-cursor-stick>Studio</a><a href="#demo" data-cursor-stick>Contact</a>
+    <span class="mono" style="color:var(--soft)">Custom word:</span>
+    <a href="#demo" data-cursor="Say hi" data-cursor-color="#F06B3C">Email</a>
+  </div>
+  <label class="cf-field"><span class="mono" style="color:var(--soft)">Text fields keep the normal caret</span><input type="text" placeholder="Type here" autocomplete="off"></label>
+</div>
+</section>
+<section class="cx-doc" aria-labelledby="use-h">
+  <div>
+    <h2 id="use-h">Use it</h2>
+    <p>Copy the folder <code>cursor-follower/</code> (the <code>.js</code> and <code>.css</code> files) into your project. No build step and no framework.</p>
+    <h3>Behaviour</h3>
+    <ul><li>Runs only with <code>hover:hover and pointer:fine</code>; on touch it returns <code>null</code> and adds nothing to the page.</li><li>Over text fields the follower hides and the normal caret shows.</li><li>The loop stops when the ring has caught up (no idle animation frames).</li><li><code>prefers-reduced-motion</code>: no lag, the ring sits exactly on the pointer.</li><li>Decorative only: <code>aria-hidden</code>, never moves focus.</li></ul>
+    <h3>Credits</h3>
+    <ul><li>Spec from Sujon's Drive guide (MA 6.4: dot exact, ring lerp 0.16, context labels, off on touch).</li><li>Seen on award sites such as <a href="https://a24.raviklaassens.com/" target="_blank" rel="noopener noreferrer">A24 by Ravi Klaassens</a> (Awwwards SOTD Oct 26 2026) and <a href="https://lusion.co/" target="_blank" rel="noopener noreferrer">Lusion</a>. Written from scratch.</li></ul>
+  </div>
+  <div>
+    <div class="cx-code"><pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;cursor-follower.css&quot;&gt;
+
+&lt;a href=&quot;/work/tapehead&quot; data-cursor=&quot;View&quot;&gt;...&lt;/a&gt;
+&lt;a href=&quot;/studio&quot; data-cursor-stick&gt;Studio&lt;/a&gt;
+&lt;video data-cursor-hide ...&gt;&lt;/video&gt;
+
+&lt;script type=&quot;module&quot;&gt;
+  import { cursorFollower } from &#x27;./cursor-follower.js&#x27;;
+  cursorFollower({ lerp: 0.16, hideNative: true }); // returns null on touch devices
+&lt;/script&gt;</code></pre></div>
+    <div class="cx-tablewrap"><table class="cx-table"><thead><tr><th>Option</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td>lerp</td><td>0.16</td><td>Ring lag: 1 = no lag, 0.08 = very floaty. Forced to 1 under reduced motion.</td></tr><tr><td>hideNative</td><td>true</td><td>Hide the system cursor (text fields always keep the caret).</td></tr><tr><td>data-cursor="Word"</td><td></td><td>Grow into a filled circle that shows the word.</td></tr><tr><td>data-cursor-stick</td><td></td><td>Ring wraps the element and leans with the pointer.</td></tr><tr><td>data-cursor-color</td><td>ink</td><td>Ring colour for that element.</td></tr><tr><td>data-cursor-hide</td><td></td><td>Hide the follower over this element.</td></tr></tbody></table></div>
+  </div>
+</section>
+</main>
+<footer class="cx-foot">
+  <div><a class="cx-hire" href="https://zyqor-portfolio-v3.sites.tab.bot/" target="_blank" rel="noopener noreferrer">Hire Zyqor Studio <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><p>Websites from $300. Code in this folder is MIT.</p></div>
+  <ul><li><a href="mailto:zyqorbusiness@gmail.com">zyqorbusiness@gmail.com</a></li><li><a href="https://wa.me/919547908593" target="_blank" rel="noopener noreferrer">WhatsApp +91 95479 08593</a></li></ul>
+  <ul><li><a href="../">All components</a></li><li><a href="../../library/">Concept library</a></li><li><a href="https://github.com/zyqorbusiness-lab/best-website-designer/tree/main/site/components/cursor-follower" target="_blank" rel="noopener noreferrer">Source on GitHub</a></li></ul>
+</footer>
+<script src="../_shared/base.js" defer></script>
+<script type="module">import { cursorFollower } from "./cursor-follower.js"; cursorFollower();</script>
+</body>
+</html>

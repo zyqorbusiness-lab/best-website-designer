@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Harbour Rowing Club (concept) &middot; Page transition demo &middot; Zyqor Components</title>
+<meta name="theme-color" content="#E46C4A">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../_shared/base.css"><link rel="stylesheet" href="page-transition.css">
+<style>:root{--bg:#E46C4A;--ink:#193F47;--acc:#EEE7DB}
+.pj{min-height:100vh;min-height:100svh;display:grid;align-content:space-between;padding:clamp(20px,4vw,48px) var(--pad)}
+.pj h1{font:780 clamp(56px,12vw,190px)/.86 var(--display);letter-spacing:-.05em;font-stretch:80%;margin:0}
+.pj p{max-width:48ch;font-size:clamp(16px,1.6vw,20px);margin:18px 0 28px}
+.pj a.back{display:inline-flex;gap:10px;align-items:center;font:600 16px/1 var(--body);text-decoration:none;border:1px solid var(--ink);border-radius:999px;padding:16px 20px;min-height:48px}
+</style>
+</head>
+<body>
+<main class="pj" id="main">
+  <p class="mono">Case 01 &middot; Concept &middot; page two of the transition demo</p>
+  <div><h1>Harbour <span class="serif">Rowing</span> Club</h1>
+  <p>Early sessions on flat water, a boathouse that smells of varnish and coffee. This is the second page of the demo: you arrived through the circle. Go back and try the other card.</p>
+  <a class="back" href="./" data-pt data-pt-color="#EEE7DB"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg><span>Back to the components</span></a></div>
+</main>
+<script type="module" src="page-transition.js"></script>
+</body>
+</html>

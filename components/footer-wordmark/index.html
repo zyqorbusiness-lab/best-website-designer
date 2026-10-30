@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Footer with wordmark &middot; Zyqor Components</title>
+<meta name="description" content="A closing footer with a giant wordmark that rises letter by letter, email that opens the right app on each device, a quiet copy button, the studio&#x27;s local time and real legal links.">
+<meta name="theme-color" content="#E9E1D2">
+<meta property="og:title" content="Footer with wordmark &middot; Zyqor Components">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../_shared/base.css">
+<link rel="stylesheet" href="footer-wordmark.css">
+<style>:root{--bg:#E9E1D2;--ink:#2C3B2F;--acc:#E2683C}</style>
+
+</head>
+<body class="">
+<a class="skip" href="#demo">Skip to the demo</a>
+<header class="cx-top">
+  <a href="../"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg><span>All components</span></a>
+  <span class="cx-brand">Zyqor <span class="serif">Components</span></span>
+  <nav><a class="cx-hide-s" href="https://github.com/zyqorbusiness-lab/best-website-designer/tree/main/site/components/footer-wordmark" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.3-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6.2 0C6.6 2.8 5.6 3.1 5.6 3.1a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.2 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg><span>Source</span></a></nav>
+</header>
+<main id="main">
+<section class="cx-intro">
+  <p class="mono">Component &middot; footer-wordmark</p>
+  <h1>Footer <span class="serif">wordmark</span></h1>
+  <p class="lead">A closing footer with a giant wordmark that rises letter by letter, email that opens the right app on each device, a quiet copy button, the studio's local time and real legal links.</p>
+  <div class="cx-chips"><span>Vanilla JS</span><span>1.6 KB</span><span>Gmail / mailto</span><span>Copy email</span><span>Reduced motion</span></div>
+</section>
+<section class="cx-stage" id="demo" aria-label="Live demo">
+
+<div class="fw-before"><p class="mono">Scroll down: the footer is the demo</p></div>
+<footer class="fw" data-footer-wordmark>
+  <div class="fw-top">
+    <div><p class="fw-big">Have a site in mind? <span class="serif">Let's talk.</span></p>
+      <div class="fw-actions">
+        <a class="fw-btn fw-main" href="mailto:zyqorbusiness@gmail.com" data-email="zyqorbusiness@gmail.com"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>Email Sujon</a>
+        <button class="fw-btn" type="button" data-copy="zyqorbusiness@gmail.com"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></svg><span>Copy email</span></button>
+      </div></div>
+    <div><h3>Contact</h3><ul><li><a href="https://wa.me/919547908593" target="_blank" rel="noopener noreferrer">WhatsApp</a></li><li><a href="https://www.instagram.com/zyqor_og/" target="_blank" rel="noopener noreferrer">Instagram</a></li><li><a href="https://github.com/zyqorbusiness-lab/best-website-designer" target="_blank" rel="noopener noreferrer">GitHub</a></li></ul></div>
+    <div><h3>Studio</h3><ul><li><a href="../../library/">Concept library</a></li><li><a href="../">Components</a></li><li><a href="https://zyqor-portfolio-v3.sites.tab.bot/" target="_blank" rel="noopener noreferrer">Portfolio</a></li></ul></div>
+    <div><h3>Local time</h3><ul><li class="fw-time"><span>Kolkata <b data-tz="Asia/Kolkata">--:--</b></span></li><li><span>Websites from $300</span></li></ul></div>
+  </div>
+  <div class="fw-mark">ZYQOR</div>
+  <div class="fw-base"><span>Zyqor Studio, Sujon Hoque</span><nav aria-label="Legal"><a href="../../privacy.html">Privacy</a><a href="../../privacy.html#terms">Terms</a><button class="fw-up" type="button" data-top="#main"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>Back to top</button></nav></div>
+</footer>
+</section>
+<section class="cx-doc" aria-labelledby="use-h">
+  <div>
+    <h2 id="use-h">Use it</h2>
+    <p>Copy the folder <code>footer-wordmark/</code> (the <code>.js</code> and <code>.css</code> files) into your project. No build step and no framework.</p>
+    <h3>Behaviour</h3>
+    <ul><li>Wordmark letters rise in a stagger when the footer is a quarter visible, and the whole mark drifts up slightly with scroll.</li><li>Email opens Gmail compose on a desktop and the phone's mail app on touch (Sujon's contact rule).</li><li>Copy feedback is short and quiet; if the clipboard is blocked, the address is shown instead.</li><li>Real Privacy and Terms links (his avoid list says a site without them is a mistake).</li><li><code>prefers-reduced-motion</code>: the wordmark is simply there, no rise, no drift.</li></ul>
+    <h3>Credits</h3>
+    <ul><li>Per-letter footer wordmarks: <a href="https://emotion-agency.com/" target="_blank" rel="noopener noreferrer">Emotion Agency</a> (Awwwards SOTD Oct 22 2026, "Emotion Agency Footer" element) and <a href="https://en.manayerbamate.com/" target="_blank" rel="noopener noreferrer">Mana Yerba Mate</a> (SOTY 2023, Footer Design). Also pattern G in the @ayzz.thedesigner study. Written from scratch.</li><li>Contact details are Zyqor Studio's real ones.</li></ul>
+  </div>
+  <div>
+    <div class="cx-code"><pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;footer-wordmark.css&quot;&gt;
+&lt;footer class=&quot;fw&quot; data-footer-wordmark&gt;
+  &lt;div class=&quot;fw-top&quot;&gt;
+    &lt;div&gt;&lt;p class=&quot;fw-big&quot;&gt;Have a site in mind?&lt;/p&gt;
+      &lt;a class=&quot;fw-btn fw-main&quot; href=&quot;mailto:you@studio.com&quot; data-email=&quot;you@studio.com&quot;&gt;Email&lt;/a&gt;
+      &lt;button class=&quot;fw-btn&quot; type=&quot;button&quot; data-copy=&quot;you@studio.com&quot;&gt;&lt;span&gt;Copy email&lt;/span&gt;&lt;/button&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;h3&gt;Local time&lt;/h3&gt;&lt;b data-tz=&quot;Asia/Kolkata&quot;&gt;&lt;/b&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;fw-mark&quot;&gt;STUDIO&lt;/div&gt;
+  &lt;div class=&quot;fw-base&quot;&gt;... &lt;button class=&quot;fw-up&quot; type=&quot;button&quot; data-top=&quot;#main&quot;&gt;Back to top&lt;/button&gt;&lt;/div&gt;
+&lt;/footer&gt;
+&lt;script type=&quot;module&quot; src=&quot;footer-wordmark.js&quot;&gt;&lt;/script&gt;</code></pre></div>
+    <div class="cx-tablewrap"><table class="cx-table"><thead><tr><th>Option</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td>.fw-mark</td><td></td><td>The wordmark text; split into letters by JS (screen readers read the word once).</td></tr><tr><td>data-email</td><td></td><td>Gmail compose on desktop, mailto: on phones.</td></tr><tr><td>data-copy</td><td></td><td>Text to copy; the button says "Copied" for 1.4 s.</td></tr><tr><td>data-tz</td><td></td><td>IANA time zone for the live clock.</td></tr><tr><td>data-top</td><td>#main</td><td>Element that gets focus after Back to top.</td></tr></tbody></table></div>
+  </div>
+</section>
+</main>
+<footer class="cx-foot">
+  <div><a class="cx-hire" href="https://zyqor-portfolio-v3.sites.tab.bot/" target="_blank" rel="noopener noreferrer">Hire Zyqor Studio <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><p>Websites from $300. Code in this folder is MIT.</p></div>
+  <ul><li><a href="mailto:zyqorbusiness@gmail.com">zyqorbusiness@gmail.com</a></li><li><a href="https://wa.me/919547908593" target="_blank" rel="noopener noreferrer">WhatsApp +91 95479 08593</a></li></ul>
+  <ul><li><a href="../">All components</a></li><li><a href="../../library/">Concept library</a></li><li><a href="https://github.com/zyqorbusiness-lab/best-website-designer/tree/main/site/components/footer-wordmark" target="_blank" rel="noopener noreferrer">Source on GitHub</a></li></ul>
+</footer>
+<script src="../_shared/base.js" defer></script>
+<script type="module" src="footer-wordmark.js"></script>
+</body>
+</html>

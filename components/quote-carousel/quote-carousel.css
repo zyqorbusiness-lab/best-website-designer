@@ -1,0 +1,23 @@
+/* quote-carousel: scroll-snap carousel with drag, inertia and accessible autoplay. Zyqor Components, MIT. */
+.qc{position:relative}
+.qc-track{display:flex;gap:clamp(14px,2vw,24px);overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:auto;overscroll-behavior-x:contain;scrollbar-width:none;padding:6px 0 10px;-webkit-overflow-scrolling:touch;cursor:grab}
+.qc-track::-webkit-scrollbar{display:none}
+.qc-track.is-drag{cursor:grabbing;scroll-snap-type:none;user-select:none}
+.qc-slide{flex:0 0 min(78%,720px);scroll-snap-align:start;margin:0;padding:clamp(22px,3.4vw,44px);border:1px solid var(--line,rgb(0 0 0 / .15));border-radius:12px;background:color-mix(in srgb,var(--bg,#ECE4D4) 70%,#fff 30%);opacity:.5;transform:scale(.97);transform-origin:left center;transition:opacity .5s,transform .7s cubic-bezier(.16,1,.3,1)}
+.qc-slide.is-active{opacity:1;transform:none}
+.qc-slide blockquote{margin:0;font:600 clamp(24px,3.2vw,44px)/1.12 var(--display,system-ui);letter-spacing:-.025em;text-wrap:balance}
+.qc-slide blockquote .serif{color:var(--acc,#6E8B74)}
+.qc-slide figcaption{display:flex;align-items:center;gap:12px;margin-top:clamp(18px,3vw,34px);font:600 15px/1.25 var(--body,system-ui)}
+.qc-slide figcaption small{display:block;font:400 12px/1.3 var(--mono,monospace);text-transform:uppercase;letter-spacing:.06em;opacity:.7}
+.qc-mark{width:38px;height:38px;flex:none;border-radius:50%;background:var(--ink,#3D2E2A);display:grid;place-items:center}
+.qc-mark svg{width:18px;height:18px;fill:var(--bg,#ECE4D4)}
+.qc-ui{display:flex;align-items:center;gap:12px;margin-top:20px}
+.qc-ui button{display:inline-grid;place-items:center;min-width:48px;height:48px;border-radius:999px;border:1px solid var(--ink,#3D2E2A);background:transparent;color:var(--ink,#3D2E2A);cursor:pointer;font:600 14px/1 var(--body,system-ui);padding:0 14px;gap:8px;grid-auto-flow:column}
+.qc-ui button:hover{background:var(--ink,#3D2E2A);color:var(--bg,#ECE4D4)}
+.qc-bar{flex:1;height:2px;background:color-mix(in srgb,var(--ink,#3D2E2A) 15%,transparent);position:relative}
+.qc-bar i{position:absolute;inset:0;background:var(--acc,#6E8B74);transform-origin:left;transform:scaleX(.12);transition:transform .2s linear}
+.qc-count{font:400 12px/1 var(--mono,monospace);min-width:7ch;text-align:right}
+@media (max-width:640px){.qc-slide{flex-basis:88%}}
+@media (prefers-reduced-motion:reduce){.qc-slide{transition:none;transform:none}}
+/* demo page only */
+.qc-note{color:var(--soft);font-size:14px;margin:18px 0 0;max-width:62ch}
