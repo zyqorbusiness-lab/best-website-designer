@@ -105,7 +105,7 @@ function frame(now) {
   const lift = (k, a) => ss(0.15 + a * 0.08, 0.6 + a * 0.08, ex);
   L.caps.position.y = L.caps.userData.y0 + 2.6 * lift('caps', 0);
   L.switches.position.y = L.switches.userData.y0 + 1.6 * lift('sw', 1);
-  L.pcb.position.y = L.pcb.userData.y0 + 0.4 * lift('pcb', 2) - 0.9 * lift('pcb', 2) * 0;
+  L.pcb.position.y = L.pcb.userData.y0 + 0.4 * lift('pcb', 2);
   $$('.tp-layers li').forEach((li, i) => li.classList.toggle('is-on', ex > 0.25 + i * 0.12 || (reduced && idx >= 1)));
 
   /* keys: three presses at 0.3 / 0.5 / 0.7 */

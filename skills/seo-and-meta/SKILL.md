@@ -380,6 +380,45 @@ Don't:
 | `examples/robots.txt`, `examples/sitemap.xml` | minimal correct files |
 | `CREDITS.md` | sources |
 
+
+## Switching the canonical host (Oct 30 2026, zyqor-portfolio)
+The same files were served from two hosts (`zyqor-portfolio.sites.tab.bot` and `zyqor-portfolio.vercel.app`) and every page said the first was canonical. Search Console was verified on the second. Two hosts that both claim to be the real one split ranking; a canonical that points away from the verified property means the verified property is told "do not index me".
+
+What changed (one commit, 112 HTML files + `sitemap.xml` + `robots.txt`):
+| where | before | after |
+|---|---|---|
+| `<link rel="canonical">` | sites.tab.bot URL | vercel.app URL, same path |
+| `<link rel="alternate">` (phone `m.html` <-> desktop) | sites.tab.bot | vercel.app |
+| `og:url`, `og:image`, `twitter:image` | sites.tab.bot | vercel.app |
+| JSON-LD `url`, `@id`, `image`, `logo` | sites.tab.bot | vercel.app |
+| `sitemap.xml` `<loc>` | sites.tab.bot | vercel.app |
+| `robots.txt` `Sitemap:` line | sites.tab.bot | vercel.app |
+| visible text and in-page links | unchanged | unchanged |
+| `google-site-verification` meta | kept | kept |
+
+The script only touches `<link>` / `<meta>` tags and JSON-LD keys, never body text:
+```python
+OLD, NEW = 'https://zyqor-portfolio.sites.tab.bot', 'https://zyqor-portfolio.vercel.app'
+tag = re.compile(r'<(link|meta)\b[^>]*>', re.I)
+def fix(m):
+    t = m.group(0)
+    if re.search(r'rel="(canonical|alternate)"|property="og:(url|image)"|name="twitter:image"', t):
+        return t.replace(OLD, NEW)
+    return t
+html = tag.sub(fix, html)
+html = re.sub(r'("(?:url|@id|image|logo)"\s*:\s*")' + re.escape(OLD), r'\1' + NEW, html)
+```
+Checks after the push:
+- `grep -rl 'rel="canonical" href="https://zyqor-portfolio.sites.tab.bot' site | wc -l` gives 0;
+- the live `robots.txt` names the new sitemap; the live home `<link rel="canonical">` is the new host;
+- the verification meta is still in `site/index.html` (a lost verification tag un-verifies the property);
+- then in Search Console: submit the sitemap on the verified property and request indexing for the home page.
+
+The second host keeps serving the same files. That is fine: its pages now point their canonical at the verified host, which is exactly what a mirror should do.
+
+### Adding a page later
+Every new concept page needs its canonical, alternate and `og:url` on the canonical host from day one, plus one `<url>` line in `sitemap.xml`. P042 (Tally Pad) was the first page written this way.
+
 ## Sources
 
 - Sujon Hoque (Zyqor Studio): WhatsApp 30 Oct 2026 10:51 IST ("Google search console par login karo"); 30 Oct 2026 "PC me no compromise"; no AI wording anywhere.

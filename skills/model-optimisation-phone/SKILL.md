@@ -105,11 +105,69 @@ v.ready.then(() => v.goTo('detail'));
 ## 6. Budgets
 A budget is a guard, not a target. When `--budget` is exceeded the script lists the biggest textures and the safe options, and exits 2 without touching quality. For the Zyqor library: NORMAL 1.5 MB, ADVANCED 4 MB, PREMIUM 12 MB per concept are planning numbers; a hero model that cannot pass verify under its budget gets a bigger budget, not a softer texture.
 
+## 7. The "lighter home page" pass (Oct 30 2026): what passed and what did not
+The brief was "make the home page lighter". The six desktop models were 11.6 MB of a 29.3 MB full scroll. Two passes, both measured with `verify.mjs` against the shipped file:
+
+| pass | what changed | camera size | verify worst view | verdict |
+|---|---|---|---|---|
+| A | every map 2048 -> 1024 px, colour WebP q80, normals lossy q90 | 4.58 -> 0.92 MB | desktop close-up 30.1 dB, 4.5 % pixels moved | VISIBLE CHANGE |
+| B | colour + normals at 1536 px (q90 / q96), data maps 1024 | 4.58 -> 2.18 MB | 32.9 dB, 2.6 % | VISIBLE CHANGE |
+| C | **only roughness / metal / occlusion maps** to 1024 px WebP q92, colour and normals untouched | 4.58 -> 3.30 MB | 48.6 dB, 0.07 % | IDENTICAL |
+
+Pass A went live for twenty minutes before this check and was rolled back. Its full views scored 45-48 dB: a full-view render alone would have called it fine. **The close-ups are the test.** A model on the home page is still a model somebody zooms into on a 3x phone.
+
+Pass C on all six:
+
+| model | before | after | verify |
+|---|---|---|---|
+| AntiqueCamera-hd | 4.58 MB | 3.30 MB | IDENTICAL 48.6 dB |
+| MaterialsVariantsShoe-hd | 3.12 MB | 2.83 MB | IDENTICAL 49.2 dB |
+| Lantern-hd | 1.80 MB | 1.53 MB | IDENTICAL 56.9 dB |
+| WaterBottle-hd | 0.79 MB | 0.54 MB | IDENTICAL 42.2 dB |
+| BoomBox-hd | 0.98 MB | (0.53 MB) | **VISIBLE CHANGE 32.0 dB, kept original** |
+| GlassVaseFlowers-hd | 0.32 MB | (0.33 MB, bigger) | kept original |
+| total | 11.6 MB | 9.5 MB | |
+
+Why BoomBox failed: its occlusion map carries real painted detail (grille holes, seams), so halving it shows. A data map is only "data" when it is smooth. Check each model; never apply a pass to a folder blind.
+
+### The recipe (data maps only)
+`starter/data-maps-1024.mjs`:
+```js
+import { NodeIO } from '@gltf-transform/core';
+import { ALL_EXTENSIONS } from '@gltf-transform/extensions';
+import { textureCompress } from '@gltf-transform/functions';
+import { MeshoptDecoder, MeshoptEncoder } from 'meshoptimizer';
+import sharp from 'sharp';
+const [src, out] = process.argv.slice(2);
+await MeshoptDecoder.ready; await MeshoptEncoder.ready;
+const io = new NodeIO().registerExtensions(ALL_EXTENSIONS)
+  .registerDependencies({ 'meshopt.decoder': MeshoptDecoder, 'meshopt.encoder': MeshoptEncoder });
+const doc = await io.read(src);
+await doc.transform(textureCompress({ encoder: sharp, targetFormat: 'webp', quality: 92,
+  resize: [1024, 1024], slots: /^(metallicRoughness|occlusion)/ }));
+await io.write(out, doc);
+```
+Then, for every file: `node starter/verify.mjs original.glb out.glb --out verify/<name>`. Ship only the IDENTICAL ones.
+
+### Order of moves when a page is too heavy
+1. Is the model loaded before anyone can see it? Lazy-load first (zero quality cost).
+2. Data maps (roughness, metal, occlusion) to 1024: usually IDENTICAL, saves 10-45 % per model.
+3. A part that is small on screen (`--max-for "<regex>=1024"`), verified.
+4. Only then colour or normal maps, and expect VISIBLE CHANGE.
+5. If nothing passes, the budget grows. The look does not shrink.
+
+### Gotchas met on the day
+- `gltf-transform resize` has no `--slots` (it has `--pattern` on texture names, and names differ per model). Use `textureCompress({ slots })` in a script, as above.
+- Re-encoding an already-lossy WebP adds a second generation of loss. Only touch the maps you mean to change; pass C leaves colour and normal bytes untouched.
+- A file over ~3 MB is stored in this repo as `.part1/.part2` with a line in `tools/parts.json` (sha256 + bytes + parts). If you change such a model, rewrite the parts **and** the manifest line, then run `node tools/join-parts.mjs` locally: it must say the file is rebuilt and the sha must match. A stale whole file in git is harmless (the build overwrites it); a stale manifest breaks the Vercel build.
+- `--allow-flagged` credits check still has to pass: add one line to the model's `.credit.json` `changes` saying what was resized and when.
+
 ## Files
 - `starter/optimise.mjs`: the optimiser (guards, report, budget, validator).
 - `starter/verify.mjs`: the proof renders and metrics.
 - `starter/loader.js`: the three.js viewer for desktop and phone.
 - `starter/recipe.sh`: the same recipe as glTF Transform CLI commands.
+- `starter/data-maps-1024.mjs`: the data-maps-only pass from section 7.
 - `starter/studio_1k.hdr`: the studio HDRI the checker lights with (Poly Haven, CC0).
 - `example/`: Flight Helmet (CC0) through the pipeline, desktop `index.html` + phone `m.html` loading the same 13.76 MB GLB, `report.json`, `verify.json`, `screens/`.
 - `checklist.md`: what "done" means.

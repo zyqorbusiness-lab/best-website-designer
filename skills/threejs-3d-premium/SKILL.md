@@ -360,6 +360,77 @@ poster; both are acceptable.
 |---|---|
 | `examples/index.html` | the stage: real CC0 scan, CC0 HDRI, ACES, rig, contact shadow, bounding-sphere framing, three scroll beats, finish studio, real progress, pause/resume, poster fallback, self-tests |
 
+
+## Worked build: a product modelled in code, driven by scroll (P042 Tally Pad, Oct 30 2026)
+The brief: a macro-pad launch page of our own (three keys, a knurled dial, a light bar), desktop with no compromise and a phone page that tells the same story. No downloaded model: the product is ~110 lines of `pad.js` and the page is ~155 lines of `app.js`. Live: `site/library/p/P042/`. Spec first: `docs/beast/specs/tally-pad_SPEC.md`.
+
+### Why model it in code
+- A fictional product has no scan to download, and a generated "AI" model is off-brand for the studio.
+- Every part is a separate mesh with a name, so the story (take it apart, press a key, turn the dial, change the light) is just moving named meshes.
+- The whole model costs about 25 KB of JavaScript. No GLB, no decoder, nothing to compress.
+
+### Building blocks that read as real
+| part | geometry | material | the detail that sells it |
+|---|---|---|---|
+| case | `RoundedBoxGeometry(w, h, d, 6, r)` | `MeshPhysicalMaterial` metalness 0.78, roughness 0.48, clearcoat 0.2 | rounded radius ~4 % of width; a hard box reads as a render |
+| top plate | thin rounded box | metalness 0.55, roughness 0.5, a lighter warm grey | a different roughness from the case so the seam shows |
+| switches | small boxes, sunk mostly below the plate | plastic, roughness 0.6 | visible only in the exploded view |
+| keycaps | `RoundedBoxGeometry` with a 0.6 mm dish pushed into the top vertices | `MeshPhysicalMaterial` roughness 0.66-0.72 with a little `sheen` (0.2) for PBT-like plastic | cap bottoms just above the plate; caps floating over visible switch housings read as toys |
+| dial | `CylinderGeometry` with 96 segments | metal with a **canvas normal map** for the knurl | knurl drawn as a height field, then converted to a tangent normal map; `normalScale` 0.2, not 0.5 (a deep knurl looks like mesh fabric) |
+| light bar | thin rounded box, `MeshPhysicalMaterial` with `transmission` 0.55 and emissive | emissive colour + intensity animated | change the emissive colour and a matching `PointLight` (in front, low) together, so the light also lands on the table |
+| shadow | one plane with a 256 px canvas radial gradient | `MeshBasicMaterial`, transparent, depthWrite false | no shadow maps; the soft contact patch is what grounds it |
+
+### Explode by data, not by hand-written tweens
+Each layer group (caps, switches, pcb, case) stores its rest height in `userData.y0`. One eased value per layer, staggered so the stack opens top-down:
+```js
+const ss = (a, b, x) => { const t = Math.min(1, Math.max(0, (x - a) / (b - a))); return t * t * (3 - 2 * t); };
+const lift = (i) => ss(0.15 + i * 0.08, 0.6 + i * 0.08, ex);    // ex = progress through the #explode section
+L.caps.position.y     = L.caps.userData.y0     + 2.6 * lift(0);
+L.switches.position.y = L.switches.userData.y0 + 1.6 * lift(1);
+L.pcb.position.y      = L.pcb.userData.y0      + 0.4 * lift(2);
+```
+The case stays put, so the eye has an anchor. The layer names are an HTML list beside the canvas whose items light up with the same `lift` values (no 3D text).
+
+### Camera: one keyframe per section, eased between them
+```js
+const K = {
+  hero:    { pos: V(14, 12, 24),   tgt: V(0, 0.8, 0),  sx: 0.2,  sy: 0.02 },
+  explode: { pos: V(24, 11, 19),   tgt: V(0, 2.4, 0),  sx: 0.21, sy: 0 },
+  keys:    { pos: V(6, 21, 21),    tgt: V(-0.6, 1.2, 0), sx: 0.17, sy: 0 },
+  dial:    { pos: V(19, 13, 15),   tgt: V(2.2, 1.4, 0), sx: 0.21, sy: 0 },
+  light:   { pos: V(0.01, 40, 11), tgt: V(0, 0, 0.6),  sx: 0.21, sy: 0 }
+};
+```
+Each frame: find the active section and the previous one, blend the two keyframes by the section's progress, then lerp the live camera towards the blend (factor 0.12 per frame; 1 under `prefers-reduced-motion`).
+
+**Framing rule: shift the picture, never the look direction.** Our first version put the model on the right by aiming the camera at a point left of the model (`tgt.x = -8`). In the top-down light shot that rolled the whole product about 20 degrees, and in close shots it pushed the pad off the edge. The fix is a screen-space shift:
+```js
+cam.position.copy(pos); cam.lookAt(tgt);               // tgt = the part you are talking about
+cam.setViewOffset(innerWidth, innerHeight, -sx * innerWidth, -sy * innerHeight, innerWidth, innerHeight);
+```
+`sx = 0.2` moves the product a fifth of the screen to the right, leaving the left for copy. Interpolate `sx`/`sy` like the camera. Remember `clearViewOffset()` if a section wants the model centred.
+
+### Phone: same story, different distance
+A portrait screen has about half the horizontal field of view. Copying the desktop camera cropped the pad on every section. What worked:
+- multiply each camera position by **1.9** (hero, explode) or **1.7** (close sections);
+- `sx = 0`, `sy = -0.2`: the product sits in the top half, the copy card in the bottom half;
+- check the phone at 390 and 360 px; the 360 shot is where a tight crop shows first.
+
+### The CLS trap in a canvas page
+First load scored **CLS 1.0** on a page whose canvas never moves. The cause: inline `<svg>` icons with only a `viewBox` render at full container width for one frame before the CSS arrives (we measured an SVG at 1421 x 883 px for 70 ms), then collapse, and the hero section shifts by its full height. Two fixes, both needed:
+- give every inline SVG a `width` and `height` attribute;
+- load the shared kit CSS (`chrome.css`, `liquid-glass.css`, `premium.css`) as render-blocking `<link>`s in the head, not injected by JavaScript.
+After: CLS 0.004-0.009 at 1440, 390 and 360.
+
+### Poster from the real scene
+The poster (shown before WebGL starts, and as the no-WebGL fallback) must be the same model, not a mock-up. Open the page headless at 1600 x 1000, wait for the first frames, hide everything except the canvas (`document.querySelectorAll('body > *:not(.tp-stage)').forEach(e => e.style.visibility = 'hidden')`), screenshot, save WebP q82. Give it a `.credit.json` that says "own render".
+
+### QA that caught real bugs on this build
+- section-by-section screenshots at 1440 and 390 in one contact sheet (found the cropped close-ups and the rolled top-down shot);
+- CLS with the shift sources listed (found the SVG flash);
+- a run with reduced motion at 360 px, clicking the finish and light buttons;
+- console errors and failed requests: 0 on all four runs, locally and on the live host.
+
 ## Sources
 
 - Sujon Hoque (Zyqor Studio): WhatsApp 27 Oct 2026 6:22 PM (real premium models, no code-made look), 27 Oct 2026 8:23 PM (phone same models and quality, compressed), 28 Oct 2026 9:42 AM (new websites use real models), 30 Oct 2026 ("PC me no compromise"), 15 Oct 2026 (no endless loops).
