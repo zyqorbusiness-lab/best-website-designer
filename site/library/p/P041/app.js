@@ -33,11 +33,11 @@ const ING = {
   mozzarella: { name: 'Fior di latte', price: 2.5, n: 4, size: 1.25, oil: 'rgb(238,170,92)', raw: list('mozz-raw', 6), baked: list('mozz-baked', 6), grow: [1.0, 1.2], shadow: [0.75, 0.1], gap: 0.24 },
   tomato:     { name: 'Cherry tomato', price: 2.0, n: 6, size: 1.12, raw: list('tom-raw', 2), baked: list('tom-baked', 2), grow: [1, 0.9], shadow: [0.7, 0.55], gap: 0.17 },
   pepperoni:  { name: 'Pepperoni',     price: 3.0, n: 6, oil: 'rgb(226,118,38)', raw: list('pep-raw', 5), baked: list('pep-baked', 5), grow: [1.02, 0.92], shadow: [0.5, 0.38], gap: 0.25 },
-  mushroom:   { name: 'Mushroom',      price: 2.0, n: 8, raw: list('mush-raw', 3), baked: list('mush-baked', 3), grow: [1, 0.9], shadow: [0.55, 0.42], gap: 0.2 },
-  artichoke:  { name: 'Artichoke',     price: 2.5, n: 6, raw: list('arti-raw', 7), baked: list('arti-baked', 7), grow: [1, 0.95], shadow: [0.55, 0.42], gap: 0.22 },
-  pepper:     { name: 'Red pepper', price: 1.5, n: 7, raw: list('pepper-raw', 5), baked: list('pepper-baked', 5), grow: [1, 0.92], shadow: [0.5, 0.4], gap: 0.2 },
-  onion:      { name: 'Red onion',     price: 1.0, n: 8, raw: list('onion-raw', 4), baked: list('onion-baked', 4), grow: [1, 0.9], shadow: [0.45, 0.35], gap: 0.19 },
-  olive:      { name: 'Black olive',   price: 1.5, n: 13, raw: list('olive-raw', 3), baked: list('olive-baked', 3), grow: [1, 0.97], shadow: [0.55, 0.45], gap: 0.13 },
+  mushroom:   { name: 'Mushroom',      price: 2.0, n: 8, size: 1.25, raw: list('mush-raw', 3), baked: list('mush-baked', 3), grow: [1, 0.9], shadow: [0.55, 0.42], gap: 0.2 },
+  artichoke:  { name: 'Artichoke',     price: 2.5, n: 6, size: 1.2, raw: list('arti-raw', 7), baked: list('arti-baked', 7), grow: [1, 0.95], shadow: [0.55, 0.42], gap: 0.22 },
+  pepper:     { name: 'Red pepper', price: 1.5, n: 7, size: 1.12, raw: list('pepper-raw', 5), baked: list('pepper-baked', 5), grow: [1, 0.92], shadow: [0.5, 0.4], gap: 0.2 },
+  onion:      { name: 'Red onion',     price: 1.0, n: 8, size: 1.12, raw: list('onion-raw', 4), baked: list('onion-baked', 4), grow: [1, 0.9], shadow: [0.45, 0.35], gap: 0.19 },
+  olive:      { name: 'Black olive',   price: 1.5, n: 13, size: 1.3, raw: list('olive-raw', 3), baked: list('olive-baked', 3), grow: [1, 0.97], shadow: [0.55, 0.45], gap: 0.13 },
   /* basil goes on fresh after the oven, the way a pizzaiolo finishes it: the baked state keeps the bright leaves */
   basil:      { name: 'Basil',         price: 1.0, n: 4, raw: list('basil-raw', 4), baked: list('basil-raw', 4), grow: [1, 1], shadow: [0.5, 0.45], gap: 0.22 }
 };
@@ -72,6 +72,8 @@ function shadowOf(el, blur, tint) {
 }
 const baseRaw = img(isM ? 'img/base-raw-1024.webp' : 'img/base-raw.webp');
 const baseBaked = img(isM ? 'img/base-baked-1024.webp' : 'img/base-baked.webp');
+/* with mozzarella on, the oven melts it into one sheet: real melted cheese (Baron Maddock, CC BY 4.0) fades in over the sauce */
+const baseCheese = img(isM ? 'img/base-cheese-1024.webp' : 'img/base-cheese.webp');
 const warm = () => { for (const t of ORDER) { ING[t].raw.forEach(img); ING[t].baked.forEach(img); } };
 ('requestIdleCallback' in window) ? requestIdleCallback(warm, { timeout: 900 }) : setTimeout(warm, 300);
 
@@ -100,6 +102,8 @@ function render(now) {
   ctx.imageSmoothingEnabled = true; ctx.imageSmoothingQuality = 'high';
   if (baseRaw.ok) ctx.drawImage(baseRaw.el, 0, 0, W, W);
   if (baseBaked.ok && p > 0) { ctx.globalAlpha = sstep(0.05, 0.9, p); ctx.drawImage(baseBaked.el, 0, 0, W, W); ctx.globalAlpha = 1; }
+  const nz = state.portions.mozzarella.length;
+  if (nz && baseCheese.ok && p > 0) { ctx.globalAlpha = sstep(0.2, 0.85, p) * Math.min(1, 0.55 + 0.25 * nz); ctx.drawImage(baseCheese.el, 0, 0, W, W); ctx.globalAlpha = 1; }
   for (const type of ORDER) {
     const cfg = ING[type], pieces = state.portions[type].flat().concat(gone.filter((g) => g.type === type));
     if (!pieces.length) continue;

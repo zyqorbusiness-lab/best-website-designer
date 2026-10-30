@@ -285,6 +285,19 @@
    "files": [
     "img/marble.webp"
    ]
+  },
+  {
+   "what": "Photo (melted cheese sheet)",
+   "title": "Mellow Mushroom cheese pizza",
+   "author": "Baron Maddock",
+   "source": "Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/wiki/File:Mellow_Mushroom_cheese_pizza.jpg",
+   "licence": "CC BY 4.0",
+   "note": "Baron Maddock, CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Rectified top-down, cut to a disc.",
+   "files": [
+    "img/base-cheese.webp",
+    "img/base-cheese-1024.webp"
+   ]
   }
  ]
 }
