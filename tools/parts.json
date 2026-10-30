@@ -1,18 +1,6 @@
 {
  "files": [
   {
-   "path": "site/assets/models/MaterialsVariantsShoe-hd.glb",
-   "bytes": 3115616,
-   "parts": 2,
-   "sha256": "11a243b026d411f2a4474cec7eafc386fecf08daf0f255e35fb346a3b1c21b14"
-  },
-  {
-   "path": "site/assets/models/AntiqueCamera-hd.glb",
-   "bytes": 4584388,
-   "parts": 2,
-   "sha256": "d8daeb9a3851167948b2b3755301ca4b858937b290160f71b0be43b3166f0337"
-  },
-  {
    "path": "site/assets/lab/halde/halde-d.glb",
    "bytes": 4437892,
    "parts": 2,
