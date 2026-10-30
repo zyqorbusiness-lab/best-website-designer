@@ -60,56 +60,43 @@
       "source": "Poly Haven",
       "url": "https://polyhaven.com/a/studio_small_09",
       "licence": "CC0 1.0",
-      "note": "Shared kit lighting (site/assets/hdri).",
+      "note": "Shared kit lighting (site/assets/hdri), same file on desktop and phone.",
       "files": [
-        "../../../assets/hdri/studio_1k.hdr",
         "../../../assets/hdri/studio_512.hdr"
       ]
     },
     {
-      "what": "Type",
-      "title": "Cabinet Grotesk, Satoshi",
-      "author": "Indian Type Foundry",
-      "source": "Fontshare",
-      "url": "https://www.fontshare.com",
-      "licence": "ITF Free Font License 2.0",
-      "files": []
-    },
-    {
-      "what": "Type",
-      "title": "Instrument Serif",
-      "author": "Instrument (Rodrigo Fuenzalida, Jordan Egstad)",
-      "source": "Google Fonts",
-      "url": "https://github.com/Instrument/instrument-serif",
+      "what": "Fonts",
+      "title": "Instrument Serif, Inter Tight, JetBrains Mono",
+      "author": "Rodrigo Fuenzalida and Jordan Egstad; Rasmus Andersson and contributors; JetBrains",
+      "source": "Google Fonts (self-hosted)",
+      "url": "https://fonts.google.com/specimen/Instrument+Serif",
       "licence": "SIL OFL 1.1",
-      "files": []
-    },
-    {
-      "what": "Type",
-      "title": "JetBrains Mono",
-      "author": "The JetBrains Mono Project Authors",
-      "source": "GitHub",
-      "url": "https://github.com/JetBrains/JetBrainsMono",
-      "licence": "SIL OFL 1.1",
-      "files": []
+      "note": "Self-hosted WOFF2 files already in the repo. They replace Cabinet Grotesk and Satoshi (Fontshare), which this page no longer loads.",
+      "files": [
+        "../../../assets/font/instrumentserif-400.woff2",
+        "../../../assets/font/instrumentserif-400-italic.woff2",
+        "../../../assets/font/intertight-normal.woff2",
+        "../../_kit/font/jetbrainsmono-400.woff2"
+      ]
     },
     {
       "what": "Engine",
-      "title": "three.js r170, GSAP, Lenis",
-      "author": "their authors",
-      "source": "npm",
+      "title": "three.js",
+      "author": "three.js authors",
+      "source": "threejs.org (vendored in the repo)",
       "url": "https://threejs.org",
-      "licence": "MIT / GSAP Standard Licence",
+      "licence": "MIT",
       "files": []
     },
     {
-      "what": "3D",
-      "title": "Cloth, hanger and drape shader",
+      "what": "3D + drawings (code-made)",
+      "title": "Cloth mesh and drape shader, rod, trouser leg drawing, tailor's tape and rulers",
       "author": "Zyqor Studio",
-      "source": "code-made three.js",
+      "source": "code-made (three.js, SVG)",
       "url": "",
       "licence": "MIT",
-      "note": "No AI imagery anywhere on this page.",
+      "note": "No AI imagery anywhere on this page. The trouser leg is filled with the Wool Boucle scan above.",
       "files": []
     },
     {
@@ -119,7 +106,7 @@
       "source": "frames of this page",
       "url": "",
       "licence": "MIT",
-      "note": "WebGL-fallback poster and index thumbnail, rendered from this page by tools/qa-library.mjs. No AI imagery.",
+      "note": "WebGL-fallback poster and index thumbnail, rendered from this page's own scene by tools/qa-library.mjs. No AI imagery.",
       "files": [
         "poster.webp",
         "thumb.webp"
