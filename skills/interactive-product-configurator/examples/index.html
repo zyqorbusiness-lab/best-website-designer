@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>interactive-product-configurator: compact builder</title>
+<meta name="theme-color" content="#F4EDE1">
+<style>
+@font-face{font-family:"Bricolage Grotesque";src:url(../../typography-premium/examples/fonts/bricolage-axes.woff2) format("woff2");font-weight:200 800;font-display:swap}
+@font-face{font-family:"Archivo";src:url(../../typography-premium/examples/fonts/archivo-var.woff2) format("woff2");font-weight:100 900;font-display:swap}
+:root{--c1:#F4EDE1;--c2:#283A2D;--c3:#A93A23;--line:#283A2D22;--gutter:clamp(1.25rem,5vw,4rem);--ease:cubic-bezier(.16,1,.3,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--c1);color:var(--c2);font:400 clamp(1rem,.96rem + .19vw,1.125rem)/1.55 "Archivo",ui-sans-serif,sans-serif}
+:focus-visible{outline:2px solid var(--c3);outline-offset:3px}
+h1{font:800 clamp(2.2rem,1.2rem + 3.4vw,4.2rem)/.95 "Bricolage Grotesque",sans-serif;letter-spacing:-.035em}
+.wrap{max-width:1440px;margin:0 auto;padding:clamp(2rem,5vw,4rem) var(--gutter);display:grid;grid-template-columns:minmax(0,3fr) minmax(0,5fr) minmax(0,3fr);gap:clamp(1.25rem,3vw,3rem);align-items:center;min-height:100svh}
+.eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#56665a}
+.copy{display:grid;gap:1rem}
+.tray{list-style:none;display:grid;gap:.6rem}
+.dish{display:flex;align-items:center;gap:.8rem;width:100%;min-height:48px;padding:.45rem .8rem .45rem .45rem;border-radius:16px;border:1px solid var(--line);background:#fbf7ef;font:inherit;color:inherit;text-align:left;cursor:pointer;transition:transform .2s var(--ease)}
+.dish:active{transform:scale(.97)}
+.dish[aria-disabled=true]{opacity:.5}
+.bowl{position:relative;width:60px;height:60px;border-radius:50%;background:#ebe3d4;box-shadow:inset 0 3px 8px #283A2D2e;overflow:hidden;flex:none}
+.bowl img{position:absolute;width:56%;left:22%;top:22%;pointer-events:none}
+.dish small{display:block;color:#56665a;font-size:.8rem}
+.stage{display:grid;justify-items:center;gap:.8rem}
+.board{position:relative;width:min(100%,72vh,640px);aspect-ratio:1;border-radius:50%;filter:drop-shadow(0 20px 24px #283A2D3d)}
+.board>img{position:absolute;inset:0;width:100%;height:100%}
+.pie{position:absolute;inset:7.5%}
+.pie>img{position:absolute;inset:0;width:100%;height:100%;filter:brightness(1.1) saturate(.84) sepia(.08);transition:filter 2.2s}
+.layer{position:absolute;inset:0;pointer-events:none}
+.piece{position:absolute;left:var(--x);top:var(--y);width:var(--s);transform:translate(-50%,-50%) rotate(var(--r)) scale(var(--m,1));filter:drop-shadow(0 2px 2px #2a1e1452);transition:transform 2.2s,filter 2.2s}
+.ring{position:absolute;inset:6%;border-radius:50%;border:2px dashed #fffc;opacity:0;transition:opacity .2s;pointer-events:none}
+.dragging .ring{opacity:1}.over .ring{border-style:solid}
+.fired .pie>img{filter:none}.fired [data-z=mozzarella] .piece{--m:1.3;filter:contrast(.9) blur(.4px)}.fired [data-z=pepperoni] .piece{--m:.94;filter:brightness(.8) saturate(1.2)}
+.ticket{border:1px solid var(--line);border-radius:16px;background:#fbf7ef;padding:1.2rem;display:grid;gap:.8rem}
+.ticket ul{list-style:none;border-top:1px solid var(--line)}
+.ticket li{display:flex;justify-content:space-between;align-items:center;min-height:44px;border-bottom:1px solid var(--line);font-size:.92rem}
+.ticket li button{width:44px;height:44px;border:0;background:none;color:inherit;font-size:1.3rem;cursor:pointer}
+.total{display:flex;justify-content:space-between;font-weight:700;font-variant-numeric:tabular-nums}
+.btn{min-height:48px;border-radius:999px;border:0;background:var(--c3);color:var(--c1);font:600 1rem "Archivo",sans-serif;cursor:pointer}
+.btn[aria-disabled=true]{opacity:.5;cursor:not-allowed}
+.why{font-size:.8rem;color:#56665a;min-height:1.2em}
+.ghost{position:fixed;left:0;top:0;width:90px;height:90px;margin:-45px;pointer-events:none;opacity:0;z-index:9}
+.ghost.on{opacity:1}.ghost img{width:100%}
+footer{grid-column:1/-1;font-size:.82rem;color:#56665a}footer a{color:inherit;display:inline-flex;align-items:center;min-height:44px}
+@media (max-width:860px){.wrap{grid-template-columns:1fr}.stage{order:-1}.tray{grid-auto-flow:column;grid-auto-columns:62%;overflow-x:auto}}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="copy"><p class="eyebrow">Configurator demo</p><h1>Build it, then fire it.</h1><p>Drag a bowl onto the pizza, or click or tap it.</p>
+    <ul class="tray" aria-label="Toppings">
+      <li><button class="dish" data-k="mozzarella"><span class="bowl" aria-hidden="true"><img src="../../../site/library/p/P041/img/mozzarella-1.webp" alt=""></span><span>Mozzarella<small>+$2.50</small></span></button></li>
+      <li><button class="dish" data-k="pepperoni"><span class="bowl" aria-hidden="true"><img src="../../../site/library/p/P041/img/pepperoni-1.webp" alt=""></span><span>Pepperoni<small>+$3.00</small></span></button></li>
+      <li><button class="dish" data-k="basil"><span class="bowl" aria-hidden="true"><img src="../../../site/library/p/P041/img/basil.webp" alt=""></span><span>Basil<small>+$1.00</small></span></button></li>
+    </ul></div>
+  <div class="stage"><div class="board" id="board" role="img" aria-label="Pizza: marinara base"><img src="../../../site/library/p/P041/img/board.webp" alt=""><div class="pie" id="pie"><img src="../../../site/library/p/P041/img/base.webp" alt=""><div class="layer" data-z="mozzarella"></div><div class="layer" data-z="pepperoni"></div><div class="layer" data-z="basil"></div></div><span class="ring"></span></div></div>
+  <aside class="ticket" aria-label="Order"><ul id="lines"></ul><div class="total"><span>Total</span><span aria-live="polite">$<span id="total">9.00</span></span></div><button class="btn" id="fire" aria-disabled="true">Fire it</button><p class="why" id="why">Add a topping first.</p></aside>
+  <footer>Photos: "Pizza marinara (Napoli)" by Ruthven, pepperoni by Daderot, basil by Khoney21 (Wikimedia Commons, CC0); "Mozzarella" by Dezidor (Wikimedia Commons, CC BY 3.0); "Kitchen Wood" by Rob Tuytel (Poly Haven, CC0). Fonts SIL OFL 1.1. Demo code MIT. <a href="../SKILL.md">Read the skill</a>.</footer>
+</main>
+<div class="ghost" id="ghost" aria-hidden="true"></div>
+<script>
+const ING = { mozzarella: { name: 'Mozzarella', price: 2.5, n: 7, s: [0.095, 0.125], img: ['mozzarella-1', 'mozzarella-2', 'mozzarella-3'] }, pepperoni: { name: 'Pepperoni', price: 3, n: 7, s: [0.12, 0.14], img: ['pepperoni-1', 'pepperoni-2', 'pepperoni-3', 'pepperoni-4'] }, basil: { name: 'Basil', price: 1, n: 5, s: [0.1, 0.125], img: ['basil'] } };
+const IMG = '../../../site/library/p/P041/img/', MAX = 3, BASE = 9;
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches, fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
+const pie = document.getElementById('pie'), board = document.getElementById('board'), ghost = document.getElementById('ghost');
+const st = { mozzarella: [], pepperoni: [], basil: [] }; let fired = false; let seed = 42; const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+function spots(k, n) { const all = Object.values(st).flat(2), out = []; let t = 0; while (out.length < n && t < 900) { t++; const a = rnd() * 6.283, r = Math.sqrt(rnd()) * 0.7, x = Math.cos(a) * r, y = Math.sin(a) * r, d = 0.21 - t / 9000;
+  if (out.some((s) => Math.hypot(s.x - x, s.y - y) < d) || st[k].flat().some((p) => Math.hypot(p.x - x, p.y - y) < d * 0.9) || all.some((p) => Math.hypot(p.x - x, p.y - y) < 0.1 - t / 18000)) continue; out.push({ x, y }); } return out; }
+function add(k, from) {
+  if (fired || st[k].length >= MAX) return; const c = ING[k], layer = pie.querySelector(`[data-z=${k}]`), R = pie.getBoundingClientRect(), group = [];
+  spots(k, c.n).forEach((s, i) => { const el = new Image(); el.src = IMG + c.img[(st[k].length * 3 + i) % c.img.length] + '.webp'; el.alt = ''; el.className = 'piece'; const rot = rnd() * 360;
+    el.style.cssText = `--x:${50 + s.x * 50}%;--y:${50 + s.y * 50}%;--s:${(c.s[0] + rnd() * (c.s[1] - c.s[0])) * 100}%;--r:${rot}deg`; layer.append(el); group.push({ el, x: s.x, y: s.y });
+    if (!reduce && from) el.animate([{ transform: `translate(-50%,-50%) translate(${from.x - (R.left + R.width * (0.5 + s.x / 2))}px,${from.y - (R.top + R.height * (0.5 + s.y / 2))}px) rotate(${rot - 40}deg) scale(1.25)`, opacity: 0 }, { opacity: 1, offset: 0.25 }, { transform: `translate(-50%,-50%) rotate(${rot}deg) scale(1.06)`, offset: 0.82 }, { transform: `translate(-50%,-50%) rotate(${rot}deg) scale(1)` }], { duration: 560, delay: i * 38, easing: 'cubic-bezier(.16,1,.3,1)', fill: 'backwards' }); });
+  st[k].push(group); sync();
+}
+function remove(k) { const g = st[k].pop(); if (g) g.forEach(({ el }) => el.remove()); sync(); }
+function sync() {
+  const lines = document.getElementById('lines'); lines.innerHTML = '<li><span>Marinara base</span><span>$9.00</span></li>'; let total = BASE, any = 0;
+  for (const [k, v] of Object.entries(st)) { if (!v.length) continue; any += v.length; total += v.length * ING[k].price; const li = document.createElement('li'); li.innerHTML = `<span>${ING[k].name} x${v.length}</span><span>$${(v.length * ING[k].price).toFixed(2)}${fired ? '' : `<button aria-label="Remove one ${ING[k].name}">\u2212</button>`}</span>`; li.querySelector('button')?.addEventListener('click', () => remove(k)); lines.append(li); }
+  document.getElementById('total').textContent = total.toFixed(2); document.getElementById('fire').setAttribute('aria-disabled', String(!any || fired));
+  document.getElementById('why').textContent = fired ? 'Fired. Ninety seconds at 485\u00b0C.' : any ? 'Ready when you are.' : 'Add a topping first.';
+  document.querySelectorAll('.dish').forEach((d) => d.setAttribute('aria-disabled', String(st[d.dataset.k].length >= MAX || fired)));
+  board.setAttribute('aria-label', 'Pizza: marinara base' + Object.entries(st).filter(([, v]) => v.length).map(([k, v]) => `, ${ING[k].name.toLowerCase()} x${v.length}`).join(''));
+}
+const over = (x, y) => { const r = pie.getBoundingClientRect(); return Math.hypot(x - r.left - r.width / 2, y - r.top - r.height / 2) < r.width / 2; };
+document.querySelectorAll('.dish').forEach((d) => { const k = d.dataset.k; let start = null, drag = false;
+  d.addEventListener('click', () => { if (drag) { drag = false; return; } const r = d.getBoundingClientRect(); add(k, { x: r.left + 30, y: r.top + r.height / 2 }); });
+  if (!fine) return;
+  d.addEventListener('pointerdown', (e) => { start = { x: e.clientX, y: e.clientY }; d.setPointerCapture(e.pointerId); });
+  d.addEventListener('pointermove', (e) => { if (!start) return; if (!drag && Math.hypot(e.clientX - start.x, e.clientY - start.y) > 6) { drag = true; ghost.innerHTML = d.querySelector('.bowl').innerHTML; ghost.classList.add('on'); board.classList.add('dragging'); }
+    if (drag) { ghost.style.transform = `translate(${e.clientX}px,${e.clientY}px)`; board.classList.toggle('over', over(e.clientX, e.clientY)); } });
+  d.addEventListener('pointerup', (e) => { if (!start) return; start = null; if (!drag) return; ghost.classList.remove('on'); board.classList.remove('dragging', 'over'); if (over(e.clientX, e.clientY)) add(k, { x: e.clientX, y: e.clientY }); setTimeout(() => (drag = false), 0); });
+});
+document.getElementById('fire').addEventListener('click', () => { if (fired || !Object.values(st).some((v) => v.length)) return; fired = true; board.classList.add('fired'); if (!reduce) pie.animate([{ transform: 'rotate(0)' }, { transform: 'rotate(360deg)' }], { duration: 2200, easing: 'cubic-bezier(.76,0,.24,1)' }); sync(); });
+sync();
+// self-tests
+const T = { pass: 0, fail: 0, notes: [] }; const ok = (c, n) => (c ? T.pass++ : (T.fail++, T.notes.push(n)));
+add('mozzarella'); add('pepperoni'); add('pepperoni');
+ok(pie.querySelectorAll('[data-z=pepperoni] .piece').length === 14, 'pepperoni count'); ok(document.getElementById('total').textContent === '17.50', 'total ' + document.getElementById('total').textContent);
+const ps = [...pie.querySelectorAll('.piece')].map((p) => [parseFloat(p.style.getPropertyValue('--x')), parseFloat(p.style.getPropertyValue('--y'))]); ok(ps.every(([x, y]) => Math.hypot(x - 50, y - 50) <= 35.5), 'piece outside the sauce');
+remove('pepperoni'); ok(pie.querySelectorAll('[data-z=pepperoni] .piece').length === 7, 'remove');
+ok(document.getElementById('fire').getAttribute('aria-disabled') === 'false', 'fire should be enabled');
+remove('pepperoni'); remove('mozzarella'); ok(document.getElementById('fire').getAttribute('aria-disabled') === 'true', 'fire should be disabled when empty');
+window.__skillTest = T;
+</script>
+</body>
+</html>

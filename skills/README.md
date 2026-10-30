@@ -18,6 +18,8 @@ Sujon, 30 Oct 2026: teach an AI agent, through many detailed skills, exactly how
 | [`micro-interactions-and-cursor`](micro-interactions-and-cursor/) | State matrix for every control, magnetic button, labelled lerp cursor, border light + tilt, press feedback, squish toggle, odometer (real numbers), accordion physics, real-action toasts, opt-in sound, a touch version of every pointer effect. |
 | [`responsive-phone-pc-parity`](responsive-phone-pc-parity/) | Desktop-first composition, recomposed (not shrunk) for phones: viewport matrix, content breakpoints, svh and the iOS URL bar, safe areas, art direction, video/3D per aspect. `parity-check.mjs` checks 10 sizes. |
 | [`performance-desktop-max-and-mobile`](performance-desktop-max-and-mobile/) | Speed without lowering quality: tier weight budgets, Core Web Vitals, critical path, image/video/3D recipes, 60-120 fps rules, long tasks, caching. `budget-check.mjs` measures any URL against the tier. |
+| [`imagery-assets-licensing`](imagery-assets-licensing/) | Free sources and each licence's limits, "unclear means skip", credit files that pass the gate, photo direction, grading into the palette, portrait crops, knockouts, own renders instead of AI images. `credit.mjs`, `knockout.py`. |
+| [`interactive-product-configurator`](interactive-product-configurator/) | Drag-to-build configurators (pizza builder from the @online.by.annie reel): real photo layers, drag with snap ring, tap-to-add on phone, layer order, live ticket, bake transition, a11y. Lead example: concept P041. |
 
 ## Tools and techniques
 

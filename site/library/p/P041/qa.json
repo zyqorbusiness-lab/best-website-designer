@@ -1,0 +1,80 @@
+{
+ "id": "P041",
+ "date": "2026-10-30T06:02:47Z",
+ "kit": 2,
+ "verdict": "PASS",
+ "tier": "premium",
+ "budgetKB": 6144,
+ "ownKB": 615,
+ "sharedKB": 152,
+ "phoneOwnKB": 616,
+ "phoneSharedKB": 152,
+ "weightKB": 767,
+ "phoneWeightKB": 768,
+ "sameAssets": true,
+ "assetDiff": {
+  "desktopOnly": [],
+  "phoneOnly": []
+ },
+ "assets3d": [],
+ "sameEffects": true,
+ "nowebgl": true,
+ "credit": {
+  "pass": true,
+  "files": 15,
+  "missing": [],
+  "incomplete": [],
+  "ccby": [
+   "img/mozzarella-*.webp (Dezidor, CC BY 3.0)"
+  ],
+  "ccbyNotVisible": [],
+  "unlisted": []
+ },
+ "runs": {
+  "d1440": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0
+  },
+  "rd1440": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0
+  },
+  "m390": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0
+  },
+  "m360": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0
+  },
+  "rm390": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0
+  }
+ },
+ "interaction": {
+  "desktop_drag_drop": "pass",
+  "click_add": "pass",
+  "tap_add_390": "pass",
+  "tap_add_360": "pass",
+  "fire_transition": "pass",
+  "pieces_after_5_handfuls": 32,
+  "total": "20.50"
+ },
+ "note": "Checked 30 Oct 2026 with the skills QA harness (1440, 1440 reduced motion, 390, 360; 0 console errors, no overflow), an interaction script (drag, click, tap, fire on desktop and both phone sizes; 0 errors) and budget-check.mjs (LCP 368 ms desktop / 352 ms phone at 4x CPU, CLS 0.005). tools/qa-library.mjs hung on this page (it waits for a 3D stage this 2D concept does not have) and was stopped at 10 minutes; its WebGL-off runs do not apply (no WebGL)."
+}

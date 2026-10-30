@@ -6,7 +6,7 @@ Sujon, 30 Oct 2026: *"jo o repo tha (scroll-world) and drive me website ka drive
 - **scroll-world points** are the 23 techniques (SW-T1 to SW-T23) from https://github.com/oso95/scroll-world (MIT, by cyw, commit 71cc36d) in [`SCROLL_WORLD_POINTS.md`](SCROLL_WORLD_POINTS.md).
 - Drive file short names: MA = *Master-Award-Website-Guide-Improved-v4.2* (Part E = his Master Award Web Design System v2.0); WBG = *Website-Building-Guide-New-Site.md*; CHK = *web-design-promo-checklist.txt*; IDX = *DESIGN-LIBRARY-INDEX.md*; PRX = *prismx-web-build-framework.txt*; BOLO = *boloflow-native-motion-design-system.txt*; GEM = *gemini-instruction-DRAFT-motion-design.txt*; LOT = *lottie-icon-click-animation-note.txt*; MMG = MA Part F item 11 (*Master Motion Graphics Video Creator*).
 
-Status on 2026-10-30 05:17 UTC: 10 skills shipped.
+Status on 2026-10-30 06:06 UTC: 12 skills shipped.
 
 ## Drive points
 
@@ -34,7 +34,7 @@ Status on 2026-10-30 05:17 UTC: 10 skills shipped.
 | T5 | Masked line reveals | MA Part E §7 Part C rule 2 | [`typography-premium`](../../skills/typography-premium/), [`motion-and-scroll-storytelling`](../../skills/motion-and-scroll-storytelling/) |
 | T6 | Word-by-word scrubbed manifesto | MA Part E Structure 10 | [`typography-premium`](../../skills/typography-premium/), [`motion-and-scroll-storytelling`](../../skills/motion-and-scroll-storytelling/) |
 | T7 | Industry font pairs (usable rows) | MA Part E §4 (font column); WBG §4e | [`typography-premium`](../../skills/typography-premium/) |
-| T8 | Free fonts only, licence read per font | WBG §5b and §8; MA Part F item 14 B | [`typography-premium`](../../skills/typography-premium/), `imagery-assets-licensing` (next batch) |
+| T8 | Free fonts only, licence read per font | WBG §5b and §8; MA Part F item 14 B | [`typography-premium`](../../skills/typography-premium/), [`imagery-assets-licensing`](../../skills/imagery-assets-licensing/) |
 | T9 | Text craft details | CHK "Details that make it feel premium" | [`typography-premium`](../../skills/typography-premium/) |
 | C1 | Every colour has a fixed job | CHK "Color system"; MA Part F item 13 §5 (BEAST asks for these roles with hex codes) | [`colour-systems`](../../skills/colour-systems/) |
 | C2 | The accent is rare | MA Part E §2 Step 2 (5-layer formula, item 5); §12 "COLOR ARCHITECTURE" | [`colour-systems`](../../skills/colour-systems/) |
@@ -75,17 +75,17 @@ Status on 2026-10-30 05:17 UTC: 10 skills shipped.
 | I1 | Magnetic primary button, three layers | MA Part E §6.1 | [`micro-interactions-and-cursor`](../../skills/micro-interactions-and-cursor/) |
 | I2 | Liquid squish segmented toggle | MA Part E §6.2 item 1 | [`micro-interactions-and-cursor`](../../skills/micro-interactions-and-cursor/) |
 | I3 | Circular clip-path theme reveal from the click point | MA Part E §6.2 item 3 (code) | [`micro-interactions-and-cursor`](../../skills/micro-interactions-and-cursor/) |
-| I4 | Rolling odometer numbers | MA Part E §6.2 item 4, §9 (`animateCounter`) | [`micro-interactions-and-cursor`](../../skills/micro-interactions-and-cursor/) |
-| I5 | One tactile draggable thing | MA Part E §6.3 (code), §12 rule 3 | [`micro-interactions-and-cursor`](../../skills/micro-interactions-and-cursor/) |
+| I4 | Rolling odometer numbers | MA Part E §6.2 item 4, §9 (`animateCounter`) | [`micro-interactions-and-cursor`](../../skills/micro-interactions-and-cursor/) · [`interactive-product-configurator`](../../skills/interactive-product-configurator/) |
+| I5 | One tactile draggable thing | MA Part E §6.3 (code), §12 rule 3 | [`micro-interactions-and-cursor`](../../skills/micro-interactions-and-cursor/) · [`interactive-product-configurator`](../../skills/interactive-product-configurator/) |
 | I6 | Custom lerp cursor with context labels | MA Part E §6.4 (code); §2 Step 6 | [`micro-interactions-and-cursor`](../../skills/micro-interactions-and-cursor/) |
 | I7 | Cursor-proximity border spotlight and gentle tilt | MA Part E §6.4 ("Shared Mouse Radial Spotlight + 3D Card Tilt") | [`micro-interactions-and-cursor`](../../skills/micro-interactions-and-cursor/) |
 | I8 | Card hover: the frame stays still, the image moves | MA Part E §1 table ("Cheap Card Bounce" → replacement) | [`micro-interactions-and-cursor`](../../skills/micro-interactions-and-cursor/) |
 | I9 | Press feedback that is short and quiet | BOLO "SIGNATURE ANIMATION 5" and "6" | [`micro-interactions-and-cursor`](../../skills/micro-interactions-and-cursor/) |
 | I10 | Accordion with real height physics | MA Part E §8.9 | [`micro-interactions-and-cursor`](../../skills/micro-interactions-and-cursor/) |
-| I11 | Click animations from LottieFiles, free items only | LOT; WBG §5b ("LottieFiles, IconScout" row); IDX §5 | [`micro-interactions-and-cursor`](../../skills/micro-interactions-and-cursor/), `imagery-assets-licensing` (next batch) |
+| I11 | Click animations from LottieFiles, free items only | LOT; WBG §5b ("LottieFiles, IconScout" row); IDX §5 | [`micro-interactions-and-cursor`](../../skills/micro-interactions-and-cursor/), [`imagery-assets-licensing`](../../skills/imagery-assets-licensing/) |
 | I12 | Nothing that only works on hover | BOLO anti-vibecode item 28; MA Part F item 8 item 27 | [`micro-interactions-and-cursor`](../../skills/micro-interactions-and-cursor/), [`responsive-phone-pc-parity`](../../skills/responsive-phone-pc-parity/) |
 | I13 | Sound: opt-in only | MA Part F item 13 §6; MA Part E Structure 14.3; PTS item 19 | [`micro-interactions-and-cursor`](../../skills/micro-interactions-and-cursor/), `accessibility-and-reduced-motion` (next batch) |
-| I14 | Zero dead buttons | MA Part E §11; WBG §6 rule 5 and §7 ("Links and buttons") | [`micro-interactions-and-cursor`](../../skills/micro-interactions-and-cursor/) |
+| I14 | Zero dead buttons | MA Part E §11; WBG §6 rule 5 and §7 ("Links and buttons") | [`micro-interactions-and-cursor`](../../skills/micro-interactions-and-cursor/) · [`interactive-product-configurator`](../../skills/interactive-product-configurator/) |
 | I15 | Command palette and toast engine | MA Part E §11 | [`micro-interactions-and-cursor`](../../skills/micro-interactions-and-cursor/) |
 | P1 | Phone guardrails | MA Part E §2 Step 6 | [`performance-desktop-max-and-mobile`](../../skills/performance-desktop-max-and-mobile/), [`responsive-phone-pc-parity`](../../skills/responsive-phone-pc-parity/) |
 | P2 | Build for low-end Android | MA Part F item 2 "PERFORMANCE"; BOLO "PERFORMANCE" | [`performance-desktop-max-and-mobile`](../../skills/performance-desktop-max-and-mobile/), [`responsive-phone-pc-parity`](../../skills/responsive-phone-pc-parity/) |
@@ -99,20 +99,20 @@ Status on 2026-10-30 05:17 UTC: 10 skills shipped.
 | A2 | Reduced motion that still makes sense | BOLO "ACCESSIBILITY / REDUCED MOTION"; WBG §7 ("Heavy animation stops, content readable") | `accessibility-and-reduced-motion` (next batch) |
 | A3 | Keyboard works | MA Part B ("Keyboard"); MA Part E §11 (Escape handler) | `accessibility-and-reduced-motion` (next batch) |
 | A4 | Touch targets | CHK "Responsive design"; MA Part F item 13 §7 | `accessibility-and-reduced-motion` (next batch), [`responsive-phone-pc-parity`](../../skills/responsive-phone-pc-parity/) |
-| A5 | Design every state, not only the happy path | CHK "UX states"; MA Part F item 13 §5 | `accessibility-and-reduced-motion` (next batch), [`micro-interactions-and-cursor`](../../skills/micro-interactions-and-cursor/) |
+| A5 | Design every state, not only the happy path | CHK "UX states"; MA Part F item 13 §5 | `accessibility-and-reduced-motion` (next batch), [`micro-interactions-and-cursor`](../../skills/micro-interactions-and-cursor/) · [`interactive-product-configurator`](../../skills/interactive-product-configurator/) |
 | H1 | Real proof or nothing | CHK "Real proof"; WBG §2 ("Trust numbers…" row), §5 note, §6 rule 3; MA Part B ("Trust") | `copywriting-for-premium-sites` (next batch), [`premium-tiers-normal-advanced-premium`](../../skills/premium-tiers-normal-advanced-premium/) |
-| H2 | Show the real thing, not decoration | CHK "Real product visuals"; IDX §1; MMG §17 | `imagery-assets-licensing` (next batch), [`unique-idea-and-concept`](../../skills/unique-idea-and-concept/) |
+| H2 | Show the real thing, not decoration | CHK "Real product visuals"; IDX §1; MMG §17 | [`imagery-assets-licensing`](../../skills/imagery-assets-licensing/), [`unique-idea-and-concept`](../../skills/unique-idea-and-concept/) |
 | H3 | Concrete copy, no filler | MA Part E §1 table ("Generic Marketing Fluff"); MA Part F item 1 | `copywriting-for-premium-sites` (next batch) |
-| H4 | Nothing on the page says or looks AI | IDX §1; MA Part F item 13 §3 | `imagery-assets-licensing` (next batch), `copywriting-for-premium-sites` (next batch) |
+| H4 | Nothing on the page says or looks AI | IDX §1; MA Part F item 13 §3 | [`imagery-assets-licensing`](../../skills/imagery-assets-licensing/), `copywriting-for-premium-sites` (next batch) |
 | H5 | Concepts are labelled and original | IDX §2; MA Part F item 13 §2h | `client-site-delivery-workflow` (next batch), [`unique-idea-and-concept`](../../skills/unique-idea-and-concept/) |
 | H6 | Legal pages exist | MA Part F item 1; CHK "Trust + legal" | `seo-and-meta` (next batch), `client-site-delivery-workflow` (next batch) |
 | H7 | Never claim an award | MA Part C; WBG header; MA intro ("Honest scope") | `client-site-delivery-workflow` (next batch), [`premium-tiers-normal-advanced-premium`](../../skills/premium-tiers-normal-advanced-premium/) |
-| H8 | Licence before copying; unclear means write it yourself | MA Part F item 14 (rule + E); WBG §5b "Rules" | `imagery-assets-licensing` (next batch) |
-| H9 | Free only; for mixed libraries only the free part | MA Part F item 13 §3 and item 14 A; WBG §5b | `imagery-assets-licensing` (next batch) |
-| H10 | Photo licences have edges | MA Part C ("Unsplash licence"); WBG §8 | `imagery-assets-licensing` (next batch) |
+| H8 | Licence before copying; unclear means write it yourself | MA Part F item 14 (rule + E); WBG §5b "Rules" | [`imagery-assets-licensing`](../../skills/imagery-assets-licensing/) |
+| H9 | Free only; for mixed libraries only the free part | MA Part F item 13 §3 and item 14 A; WBG §5b | [`imagery-assets-licensing`](../../skills/imagery-assets-licensing/) |
+| H10 | Photo licences have edges | MA Part C ("Unsplash licence"); WBG §8 | [`imagery-assets-licensing`](../../skills/imagery-assets-licensing/) |
 | H11 | One consistent language per site | CHK "Brand consistency" | `copywriting-for-premium-sites` (next batch) |
 | H12 | Calm, specific CTAs | CHK "CTA design" | `copywriting-for-premium-sites` (next batch) |
-| H13 | Icons: Phosphor, Tabler or custom SVG, never Lucide, no sparkles or decorative arrows | MA Part F item 14 C; WBG §2 ("Lucide icons" row) and §5b; avoid list ("lucide icons", "sparkle icons", "animated arrows") | `imagery-assets-licensing` (next batch) |
+| H13 | Icons: Phosphor, Tabler or custom SVG, never Lucide, no sparkles or decorative arrows | MA Part F item 14 C; WBG §2 ("Lucide icons" row) and §5b; avoid list ("lucide icons", "sparkle icons", "animated arrows") | [`imagery-assets-licensing`](../../skills/imagery-assets-licensing/) |
 | Q1 | Write the brief before any code | MA Part F item 13 §5; MA Part E §0 rule 3; WBG §6 "ORDER OF WORK a" | [`unique-idea-and-concept`](../../skills/unique-idea-and-concept/), `client-site-delivery-workflow` (next batch) |
 | Q2 | Name the style | MA Part F item 13 §1; IDX §2 ("Per-project styles") | [`unique-idea-and-concept`](../../skills/unique-idea-and-concept/) |
 | Q3 | Analyse each reference before building | MA Part F item 13 §2 | [`unique-idea-and-concept`](../../skills/unique-idea-and-concept/), `award-site-teardown-method` (next batch) |
@@ -163,4 +163,10 @@ SKILL L694-699; template L5 | [`motion-and-scroll-storytelling`](../../skills/mo
 | SW-T21 | Re-roll the one failure, not the batch; run long jobs detached and poll | SKILL L68-71, L246-247, L462-463; pipeline L26-28 | [`motion-and-scroll-storytelling`](../../skills/motion-and-scroll-storytelling/), `client-site-delivery-workflow` (next batch) |
 | SW-T22 | Ask the subject openly, then only what can't be defaulted | SKILL L80-88 | [`unique-idea-and-concept`](../../skills/unique-idea-and-concept/), `premium-website-playbook` (next batch), `client-site-delivery-workflow` (next batch) |
 | SW-T23 | knockout.py: border-connected flood fill | knockout L1-21,
-L39-79 | `imagery-assets-licensing` (next batch) |
+L39-79 | [`imagery-assets-licensing`](../../skills/imagery-assets-licensing/) |
+
+## Later references (30 Oct 2026)
+
+| Reference | Where it went |
+|---|---|
+| Reel by @online.by.annie (Instagram DfGDN_fIZsC): a pizza-builder site branded "Tondo" (tray of real-photo bowls, drag onto the base, bake, order card), sent by Sujon 10:42 AM IST | [`interactive-product-configurator`](../../skills/interactive-product-configurator/) (lead example) and concept [P041 Hotcoal Kitchen](../../site/library/p/P041/) |

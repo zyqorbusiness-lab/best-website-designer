@@ -46,8 +46,10 @@ Each skill is a folder an agent can read (`SKILL.md` with frontmatter, rules wit
 | [`micro-interactions-and-cursor`](skills/micro-interactions-and-cursor/) | State matrix for every control, magnetic button, labelled cursor, border light, press feedback, squish toggle, odometer, accordion, toasts, opt-in sound, touch versions. |
 | [`responsive-phone-pc-parity`](skills/responsive-phone-pc-parity/) | Desktop-first composition recomposed for phones: viewport matrix, svh, safe areas, art direction, video/3D per aspect. `parity-check.mjs` tests 10 sizes. |
 | [`performance-desktop-max-and-mobile`](skills/performance-desktop-max-and-mobile/) | Speed without lowering quality: tier budgets, Core Web Vitals, critical path, media recipes, 60-120 fps rules, long tasks. `budget-check.mjs` measures a URL. |
+| [`imagery-assets-licensing`](skills/imagery-assets-licensing/) | Real photos, video, 3D, icons and fonts: free sources, licence limits, credit files, grading, crops, knockouts; no AI images. |
+| [`interactive-product-configurator`](skills/interactive-product-configurator/) | Drag-to-build product configurators (pizza builder): real photo layers, drag + tap, live ticket, bake transition. Concept P041. |
 
-Coming in the next batches today: imagery and licensing, copywriting, SEO and meta, accessibility and reduced motion, award-site teardown, client delivery workflow, and the master playbook.
+Coming in the next batches today: copywriting, SEO and meta, accessibility and reduced motion, award-site teardown, client delivery workflow, and the master playbook.
 
 The tool skills (qa-harness, liquid-glass-ui, model-optimisation-phone, scroll-video-hero, unique-concepts, web-security) are listed in [`skills/README.md`](skills/README.md).
 

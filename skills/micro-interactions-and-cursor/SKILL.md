@@ -97,6 +97,7 @@ Lock button width while the label changes (`min-width` from the widest label) so
 | Drag (gallery, slider) | momentum + friction, small skew | velocity x 0.93 per frame, skew clamp ±3.5° |
 | Copy (email) | compress, swap label to "Copied", revert | 90 ms / 1.5 s |
 | Number change (configurator) | odometer roll | easeOutQuart, 1600 ms on enter, 600 ms on change |
+| Build the product (drag ingredients onto a base) | drag with a snap ring on desktop, tap-to-add on phone, pieces fly in with a 38 ms stagger | see [`interactive-product-configurator`](../interactive-product-configurator/) and concept P041 |
 
 ---
 
@@ -327,6 +328,7 @@ Sound belongs where it is the brand (a music school's strings, a hi-fi deck); el
 | File | What |
 |---|---|
 | `examples/index.html` | magnetic CTA, cursor with labels, border light + tilt, copy with press feedback, squish toggle, odometer, accordion, toast, opt-in sound with equaliser mute, form states, skeleton; self-tests for dead buttons and target sizes |
+| `../interactive-product-configurator/` | drag-to-build configurators (pizza builder lead example, concept P041) |
 | `../../site/components/` | 14 production components (live: https://zyqor-concepts.sites.tab.bot/components/) |
 
 ## Sources

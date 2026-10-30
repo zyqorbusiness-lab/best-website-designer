@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>imagery-assets-licensing: treatments demo</title>
+<meta name="theme-color" content="#F2EDE0">
+<style>
+@font-face{font-family:"Instrument Serif";src:url(../../typography-premium/examples/fonts/instrumentserif-400.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"Archivo";src:url(../../typography-premium/examples/fonts/archivo-var.woff2) format("woff2");font-weight:100 900;font-display:swap}
+:root{--c-canvas:#F2EDE0;--c-ink:#17332E;--c-accent:#9A5A22;--c-muted:#4F6660;--c-hairline:#17332E1C;--gutter:clamp(1.25rem,5vw,5rem)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--c-canvas);color:var(--c-ink);font:400 clamp(1rem,.96rem + .19vw,1.125rem)/1.6 "Archivo",ui-sans-serif,sans-serif}
+:focus-visible{outline:2px solid var(--c-accent);outline-offset:3px}
+h1,h2{font-family:"Instrument Serif",serif;font-weight:400;letter-spacing:-.02em;line-height:1.02;text-wrap:balance}
+.wrap{max-width:1440px;margin:0 auto;padding:0 var(--gutter)}
+.eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--c-muted)}
+.hero{position:relative;min-height:88svh;display:grid;align-items:end;color:#F2EDE0;overflow:hidden}
+.hero picture,.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+.hero img{filter:saturate(.82) contrast(1.06) sepia(.06)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(23,51,46,.62),rgba(23,51,46,0) 55%)}
+.hero .copy{position:relative;z-index:1;padding:0 var(--gutter) clamp(2rem,6vw,5rem);max-width:1440px;margin:0 auto;width:100%}
+.hero h1{font-size:clamp(2.8rem,1.4rem + 6vw,7.5rem);max-width:12ch}
+.hero .eyebrow{color:#e9e2d0}
+section{padding:clamp(3rem,7vw,6rem) 0;display:grid;gap:1.4rem;border-bottom:1px solid var(--c-hairline)}
+section h2{font-size:clamp(1.9rem,1.3rem + 2.4vw,3.6rem)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:1rem}
+figure{display:grid;gap:.6rem}
+figure .frame{aspect-ratio:4/5;overflow:hidden;border-radius:12px;position:relative;background:#e3dccb}
+figure img{width:100%;height:100%;object-fit:cover;display:block}
+figcaption{font-size:.9rem;color:var(--c-muted)}
+.duo img{filter:url(#duo)}
+.graded img{filter:saturate(.82) contrast(1.06) sepia(.06)}
+.grain::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.07;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.credits{font-size:.9rem;color:var(--c-muted);display:grid;gap:.4rem;max-width:60rem}
+.credits a{color:inherit}
+footer{padding:2rem var(--gutter) 4rem;color:var(--c-muted);font-size:.9rem}footer a{color:inherit;display:inline-flex;align-items:center;min-height:44px}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="duo" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values=".33 .33 .33 0 0  .33 .33 .33 0 0  .33 .33 .33 0 0  0 0 0 1 0"/><feComponentTransfer><feFuncR type="table" tableValues="0.09 0.95"/><feFuncG type="table" tableValues="0.20 0.93"/><feFuncB type="table" tableValues="0.18 0.88"/></feComponentTransfer></filter></svg>
+<header class="hero">
+  <picture><source media="(max-width: 47.99em)" srcset="../../../site/library/n/N005/pines.webp"><img src="../../../site/library/n/N005/pines.webp" width="2048" height="1280" alt="Pine forest in morning mist" fetchpriority="high"></picture>
+  <div class="copy"><p class="eyebrow">Imagery // one real photograph, graded into the palette</p><h1>Real places, one light, one grade.</h1></div>
+</header>
+<main class="wrap">
+  <section aria-labelledby="h-t"><p class="eyebrow">Treatments on the same CC0 photo</p><h2 id="h-t">Original, graded, duotone, grain.</h2>
+    <div class="grid">
+      <figure><div class="frame"><img src="../../../site/library/n/N003/img/salt-flakes.webp" alt="Salt crystals, close-up" loading="lazy"></div><figcaption>Original</figcaption></figure>
+      <figure class="graded"><div class="frame"><img src="../../../site/library/n/N003/img/salt-flakes.webp" alt="" loading="lazy"></div><figcaption>Unified grade (saturate .82, contrast 1.06, sepia .06)</figcaption></figure>
+      <figure class="duo"><div class="frame"><img src="../../../site/library/n/N003/img/salt-flakes.webp" alt="" loading="lazy"></div><figcaption>Duotone: ink #17332E to canvas #F2EDE0</figcaption></figure>
+      <figure class="graded"><div class="frame grain"><img src="../../../site/library/n/N003/img/salt-flakes.webp" alt="" loading="lazy"></div><figcaption>Grade + 7% grain</figcaption></figure>
+    </div></section>
+  <section aria-labelledby="h-c"><p class="eyebrow">Art-directed crop</p><h2 id="h-c">The same file, a different focus per frame.</h2>
+    <div class="grid"><figure><div class="frame" style="aspect-ratio:16/9"><img src="../../../site/library/n/N005/pines.webp" alt="" loading="lazy" style="object-position:30% 50%"></div><figcaption>Desktop 16:9, object-position 30% 50%</figcaption></figure>
+    <figure><div class="frame" style="aspect-ratio:9/16;max-width:16rem"><img src="../../../site/library/n/N005/pines.webp" alt="" loading="lazy" style="object-position:62% 40%"></div><figcaption>Phone 9:16, object-position 62% 40%</figcaption></figure></div></section>
+  <section aria-labelledby="h-cr"><p class="eyebrow">Credits block (every site has one)</p><h2 id="h-cr">Credits</h2>
+    <div class="credits" id="credits">
+      <p>"Misty Pines" by Greg Zaal, <a href="https://polyhaven.com/a/misty_pines">Poly Haven</a>, CC0 1.0 (reprojected from the HDRI, resized, WebP).</p>
+      <p>"Salt-crystals" by Nate Steiner, via <a href="https://commons.wikimedia.org/wiki/File:Salt-crystals.jpg">Wikimedia Commons</a>, CC0 1.0 (cropped, resized, WebP).</p>
+      <p>Fonts: Instrument Serif (Rodrigo Fuenzalida, Jordan Egstad), Archivo (Omnibus-Type), SIL OFL 1.1.</p>
+    </div></section>
+</main>
+<footer>Demo code MIT. <a href="../SKILL.md">Read the skill</a>.</footer>
+<script>
+const T = { pass: 0, fail: 0, notes: [] }; const ok = (c, n) => (c ? T.pass++ : (T.fail++, T.notes.push(n)));
+window.addEventListener('load', () => {
+  const imgs = [...document.images]; ok(imgs.every((i) => i.hasAttribute('alt')), 'image without alt');
+  const hero = document.querySelector('.hero img'); ok(hero.complete && hero.naturalWidth > 0, 'hero image failed'); ok(hero.loading !== 'lazy', 'hero is lazy');
+  ok(/Greg Zaal/.test(document.getElementById('credits').textContent) && /Nate Steiner/.test(document.getElementById('credits').textContent), 'credits missing');
+  ok(!/\bAI\b/.test(document.body.innerText), 'the page mentions AI');
+  window.__skillTest = T;
+});
+</script>
+</body>
+</html>
