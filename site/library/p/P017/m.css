@@ -46,3 +46,6 @@ main>section{position:relative;z-index:1}
 .tp-steps{grid-row:3}
 .in-in{display:grid;gap:var(--s4)}.in-head{display:grid;gap:var(--s3)}
 .inside{background:color-mix(in oklab,var(--c2) 90%,transparent)}
+
+/* footer above the fixed deck stage (the stage sits in the hero's z-index:1 context) */
+.zk-foot{position:relative;z-index:2}

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pricing switcher &middot; Zyqor Components</title>
+<meta name="description" content="Zyqor Studio&#x27;s real starting prices in one switcher: a pill that squishes as it slides, a price that rolls digit by digit, and real keyboard tabs.">
+<meta name="theme-color" content="#F2EBDD">
+<meta property="og:title" content="Pricing switcher &middot; Zyqor Components">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../_shared/base.css">
+<link rel="stylesheet" href="pricing-table.css">
+<style>:root{--bg:#F2EBDD;--ink:#1E2B26;--acc:#E8553B}</style>
+
+</head>
+<body class="">
+<a class="skip" href="#demo">Skip to the demo</a>
+<header class="cx-top">
+  <a href="../"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg><span>All components</span></a>
+  <span class="cx-brand">Zyqor <span class="serif">Components</span></span>
+  <nav><a class="cx-hide-s" href="https://github.com/zyqorbusiness-lab/best-website-designer/tree/main/site/components/pricing-table" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.3-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6.2 0C6.6 2.8 5.6 3.1 5.6 3.1a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.2 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg><span>Source</span></a></nav>
+</header>
+<main id="main">
+<section class="cx-intro">
+  <p class="mono">Component &middot; pricing-table</p>
+  <h1>Pricing <span class="serif">switcher</span></h1>
+  <p class="lead">Zyqor Studio's real starting prices in one switcher: a pill that squishes as it slides, a price that rolls digit by digit, and real keyboard tabs.</p>
+  <div class="cx-chips"><span>Vanilla JS</span><span>1.9 KB</span><span>ARIA tabs</span><span>Odometer</span><span>Reduced motion</span></div>
+</section>
+<section class="cx-stage" id="demo" aria-label="Live demo">
+
+<div class="cx-panel">
+<div class="pr" data-pricing data-start="1">
+  <div class="pr-side">
+    <div class="pr-seg" role="tablist" aria-label="Zyqor Studio plans">
+      <span class="pr-pill" aria-hidden="true"></span>
+      <button type="button" role="tab" id="t-s" aria-controls="p-s" data-price="300">Simple</button>
+      <button type="button" role="tab" id="t-3" aria-controls="p-3" data-price="1000">Scroll 3D</button>
+      <button type="button" role="tab" id="t-e" aria-controls="p-e" data-price="10000">Everything</button>
+    </div>
+    <p class="pr-price" aria-live="polite"></p>
+    <p class="pr-unit">starting price, USD</p>
+    <p class="lead2">Zyqor Studio's real starting prices, in Sujon's own words. The exact scope is agreed for each project before any work starts.</p>
+  </div>
+  <div>
+    <section class="pr-plan" role="tabpanel" id="p-s" aria-labelledby="t-s" hidden><h3>A simple site that still feels <span class="serif">premium.</span></h3><ul><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span>One clean, premium website</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span>Built for phone and desktop</span></li></ul></section>
+    <section class="pr-plan" role="tabpanel" id="p-3" aria-labelledby="t-3" hidden><h3>Scroll-based <span class="serif">3D,</span> premium.</h3><ul><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span>A scroll-driven 3D website</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span>Premium design, phone gets the same quality</span></li></ul></section>
+    <section class="pr-plan" role="tabpanel" id="p-e" aria-labelledby="t-e" hidden><h3><span class="serif">Everything.</span></h3><ul><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span>Content included</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span>Top quality throughout</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span>Fast delivery</span></li></ul></section>
+    <div class="pr-cta"><a class="pr-main" href="https://wa.me/919547908593" target="_blank" rel="noopener noreferrer">WhatsApp Sujon</a><a href="mailto:zyqorbusiness@gmail.com">Email</a></div>
+    <p class="pr-note">Three tiers are on Sujon's own list of things to avoid, but these are his real prices, so they are shown as one switcher rather than three cards in a row.</p>
+  </div>
+</div>
+</div>
+</section>
+<section class="cx-doc" aria-labelledby="use-h">
+  <div>
+    <h2 id="use-h">Use it</h2>
+    <p>Copy the folder <code>pricing-table/</code> (the <code>.js</code> and <code>.css</code> files) into your project. No build step and no framework.</p>
+    <h3>Behaviour</h3>
+    <ul><li>Real ARIA tabs: arrow keys, Home and End move between plans; only the selected tab is in the tab order.</li><li>The price rolls digit by digit; screen readers hear the plain price once (<code>aria-label</code> + polite live region).</li><li>Feature rows use a short SVG dash, not checkmarks (Sujon's avoid list).</li><li>Phone: the switcher spans the width and the plan sits under the price; same animation.</li><li><code>prefers-reduced-motion</code>: no slide, no roll, no squish.</li></ul>
+    <h3>Credits</h3>
+    <ul><li>Prices and plan descriptions: Sujon Hoque, Zyqor Studio (Oct 2026). Exact scope is agreed per project.</li><li>Spec from his Drive guide: liquid squish segmented toggle (MA 6.2 item 1) and rolling odometer numbers for real numbers only (MA 6.2 item 4). Written from scratch.</li></ul>
+  </div>
+  <div>
+    <div class="cx-code"><pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;pricing-table.css&quot;&gt;
+&lt;div class=&quot;pr&quot; data-pricing data-start=&quot;0&quot;&gt;
+  &lt;div&gt;
+    &lt;div class=&quot;pr-seg&quot; role=&quot;tablist&quot; aria-label=&quot;Plans&quot;&gt;
+      &lt;span class=&quot;pr-pill&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+      &lt;button type=&quot;button&quot; role=&quot;tab&quot; id=&quot;t1&quot; aria-controls=&quot;p1&quot; data-price=&quot;300&quot;&gt;Simple&lt;/button&gt;
+      &lt;button type=&quot;button&quot; role=&quot;tab&quot; id=&quot;t2&quot; aria-controls=&quot;p2&quot; data-price=&quot;1000&quot;&gt;Scroll 3D&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;p class=&quot;pr-price&quot; aria-live=&quot;polite&quot;&gt;&lt;/p&gt;&lt;p class=&quot;pr-unit&quot;&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;section class=&quot;pr-plan&quot; role=&quot;tabpanel&quot; id=&quot;p1&quot; aria-labelledby=&quot;t1&quot; hidden&gt;...&lt;/section&gt;
+    &lt;section class=&quot;pr-plan&quot; role=&quot;tabpanel&quot; id=&quot;p2&quot; aria-labelledby=&quot;t2&quot; hidden&gt;...&lt;/section&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;script type=&quot;module&quot; src=&quot;pricing-table.js&quot;&gt;&lt;/script&gt;</code></pre></div>
+    <div class="cx-tablewrap"><table class="cx-table"><thead><tr><th>Option</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td>data-price</td><td></td><td>Price for that plan (a number); the odometer formats it as $1,000.</td></tr><tr><td>data-unit</td><td>&quot;starting price&quot;</td><td>Small label under the price for that plan.</td></tr><tr><td>data-start</td><td>0</td><td>Plan selected on load.</td></tr></tbody></table></div>
+  </div>
+</section>
+</main>
+<footer class="cx-foot">
+  <div><a class="cx-hire" href="https://zyqor-portfolio-v3.sites.tab.bot/" target="_blank" rel="noopener noreferrer">Hire Zyqor Studio <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><p>Websites from $300. Code in this folder is MIT.</p></div>
+  <ul><li><a href="mailto:zyqorbusiness@gmail.com">zyqorbusiness@gmail.com</a></li><li><a href="https://wa.me/919547908593" target="_blank" rel="noopener noreferrer">WhatsApp +91 95479 08593</a></li></ul>
+  <ul><li><a href="../">All components</a></li><li><a href="../../library/">Concept library</a></li><li><a href="https://github.com/zyqorbusiness-lab/best-website-designer/tree/main/site/components/pricing-table" target="_blank" rel="noopener noreferrer">Source on GitHub</a></li></ul>
+</footer>
+<script src="../_shared/base.js" defer></script>
+<script type="module" src="pricing-table.js"></script>
+</body>
+</html>

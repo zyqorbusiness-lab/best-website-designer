@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Magnetic button &middot; Zyqor Components</title>
+<meta name="description" content="A button that leans toward the pointer, fills with colour from the exact point you enter and rolls its label. Tuned to the spec in Sujon&#x27;s own design guide, and just as good by touch.">
+<meta name="theme-color" content="#EDE6DA">
+<meta property="og:title" content="Magnetic button &middot; Zyqor Components">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../_shared/base.css">
+<link rel="stylesheet" href="magnetic-button.css">
+<style>:root{--bg:#EDE6DA;--ink:#1F3B2D;--acc:#D2643A}</style>
+
+</head>
+<body class="">
+<a class="skip" href="#demo">Skip to the demo</a>
+<header class="cx-top">
+  <a href="../"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg><span>All components</span></a>
+  <span class="cx-brand">Zyqor <span class="serif">Components</span></span>
+  <nav><a class="cx-hide-s" href="https://github.com/zyqorbusiness-lab/best-website-designer/tree/main/site/components/magnetic-button" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.3-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6.2 0C6.6 2.8 5.6 3.1 5.6 3.1a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.2 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg><span>Source</span></a></nav>
+</header>
+<main id="main">
+<section class="cx-intro">
+  <p class="mono">Component &middot; magnetic-button</p>
+  <h1>Magnetic <span class="serif">button</span></h1>
+  <p class="lead">A button that leans toward the pointer, fills with colour from the exact point you enter and rolls its label. Tuned to the spec in Sujon's own design guide, and just as good by touch.</p>
+  <div class="cx-chips"><span>Vanilla JS</span><span>2.4 KB</span><span>Touch press</span><span>Reduced motion</span><span>Keyboard focus</span></div>
+</section>
+<section class="cx-stage" id="demo" aria-label="Live demo">
+
+<div class="cx-panel mb-demo">
+  <div class="mb-hero">
+    <p class="mono">Fieldwork Coffee &middot; Concept</p>
+    <p class="mb-big">Roasted on <span class="serif">Tuesdays,</span> delivered by Friday.</p>
+    <div class="mb-row">
+      <a class="mb" href="#demo" data-magnetic>Start a subscription<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="mb mb--outline" href="#demo" data-magnetic>See the beans</a>
+      <button class="mb mb--round" type="button" data-magnetic data-strength="0.4" data-label="Play film" aria-label="Play film"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg></button>
+    </div>
+  </div>
+  <div class="mb-grid">
+    <div><p class="mono">Small, in a nav</p><a class="mb mb--small" href="#demo" data-magnetic>Menu</a></div>
+    <div><p class="mono">Strong pull</p><a class="mb" href="#demo" data-magnetic data-strength="0.45" data-radius="140">Pull me harder</a></div>
+    <div><p class="mono">No pull, fill only</p><a class="mb mb--outline" href="#demo" data-magnetic data-strength="0">Quiet button</a></div>
+  </div>
+  <p class="mb-note">Move the pointer near a button: it leans toward you before you touch it. The colour fills from the exact point you enter and drains out where you leave. On a phone, tap: the press and the ripple start under your finger.</p>
+</div>
+</section>
+<section class="cx-doc" aria-labelledby="use-h">
+  <div>
+    <h2 id="use-h">Use it</h2>
+    <p>Copy the folder <code>magnetic-button/</code> (the <code>.js</code> and <code>.css</code> files) into your project. No build step and no framework.</p>
+    <h3>Behaviour</h3>
+    <ul><li>Pull, label roll and arrow turn run only on a mouse or trackpad (<code>hover:hover and pointer:fine</code>).</li><li>Touch: a short press (scale .96) and a fill ripple from the tap point; nothing depends on hover.</li><li>Keyboard: <code>:focus-visible</code> shows the fill and the rolled label, so focus is as visible as hover.</li><li><code>prefers-reduced-motion</code>: no movement at all, the fill appears without animation.</li><li>The duplicate label is <code>aria-hidden</code>, so screen readers read the text once.</li><li>One rAF spring per button, and it stops when the button is at rest (no idle loop).</li></ul>
+    <h3>Credits</h3>
+    <ul><li>Spec from Sujon's own Drive guide (Master Award Web Design System, section 6.1: radius pull 0.28, label 0.14, entry-point fill, label slot roll).</li><li>Technique seen on many award sites, for example <a href="https://lusion.co/" target="_blank" rel="noopener noreferrer">Lusion</a> and <a href="https://landonorris.com/" target="_blank" rel="noopener noreferrer">landonorris.com by OFF+BRAND</a>. Written from scratch; no code copied.</li></ul>
+  </div>
+  <div>
+    <div class="cx-code"><pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;magnetic-button.css&quot;&gt;
+&lt;a class=&quot;mb&quot; href=&quot;/contact&quot; data-magnetic&gt;Start a project
+  &lt;svg class=&quot;icon&quot; viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M5 12h14M13 6l6 6-6 6&quot;/&gt;&lt;/svg&gt;
+&lt;/a&gt;
+&lt;button class=&quot;mb mb--outline&quot; type=&quot;button&quot; data-magnetic data-strength=&quot;0.35&quot;&gt;Book a call&lt;/button&gt;
+&lt;script type=&quot;module&quot; src=&quot;magnetic-button.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- or by hand --&gt;
+&lt;script type=&quot;module&quot;&gt;
+  import { magnetic } from &#x27;./magnetic-button.js&#x27;;
+  const ctl = magnetic(document.querySelector(&#x27;#cta&#x27;), { strength: 0.3, radius: 100 });
+  // ctl.destroy() removes the listeners
+&lt;/script&gt;</code></pre></div>
+    <div class="cx-tablewrap"><table class="cx-table"><thead><tr><th>Option</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td>data-strength</td><td>0.28</td><td>How far the button follows the pointer (0 = no pull, fill and roll only).</td></tr><tr><td>data-radius</td><td>80</td><td>Extra px around the button where the pull starts, so it leans toward you before contact.</td></tr><tr><td>data-label</td><td>button text</td><td>Label text when the button has only an icon (it also becomes the rolled label).</td></tr><tr><td>.mb--outline / --round / --small</td><td></td><td>Variants. Colours come from --mb-bg, --mb-fg, --mb-fill, --mb-fill-fg.</td></tr><tr><td>label (JS)</td><td>0.5</td><td>Label parallax as a share of the button move (the Drive spec: 0.28 button, 0.14 label).</td></tr><tr><td>stiffness / damping (JS)</td><td>0.14 / 0.72</td><td>Spring feel. Higher stiffness snaps faster; lower damping wobbles more.</td></tr></tbody></table></div>
+  </div>
+</section>
+</main>
+<footer class="cx-foot">
+  <div><a class="cx-hire" href="https://zyqor-portfolio-v3.sites.tab.bot/" target="_blank" rel="noopener noreferrer">Hire Zyqor Studio <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><p>Websites from $300. Code in this folder is MIT.</p></div>
+  <ul><li><a href="mailto:zyqorbusiness@gmail.com">zyqorbusiness@gmail.com</a></li><li><a href="https://wa.me/919547908593" target="_blank" rel="noopener noreferrer">WhatsApp +91 95479 08593</a></li></ul>
+  <ul><li><a href="../">All components</a></li><li><a href="../../library/">Concept library</a></li><li><a href="https://github.com/zyqorbusiness-lab/best-website-designer/tree/main/site/components/magnetic-button" target="_blank" rel="noopener noreferrer">Source on GitHub</a></li></ul>
+</footer>
+<script src="../_shared/base.js" defer></script>
+<script type="module" src="magnetic-button.js"></script>
+</body>
+</html>

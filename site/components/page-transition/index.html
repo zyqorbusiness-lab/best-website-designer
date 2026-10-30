@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Page transition &middot; Zyqor Components</title>
+<meta name="description" content="Click a card: the next page opens as a circle growing from the exact spot you tapped. Native View Transitions where the browser has them, a light fallback everywhere else, and the same circle for a theme switch.">
+<meta name="theme-color" content="#EEE7DB">
+<meta property="og:title" content="Page transition &middot; Zyqor Components">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../_shared/base.css">
+<link rel="stylesheet" href="page-transition.css">
+<style>:root{--bg:#EEE7DB;--ink:#193F47;--acc:#E46C4A}</style>
+
+</head>
+<body class="">
+<a class="skip" href="#demo">Skip to the demo</a>
+<header class="cx-top">
+  <a href="../"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg><span>All components</span></a>
+  <span class="cx-brand">Zyqor <span class="serif">Components</span></span>
+  <nav><a class="cx-hide-s" href="https://github.com/zyqorbusiness-lab/best-website-designer/tree/main/site/components/page-transition" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.3-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6.2 0C6.6 2.8 5.6 3.1 5.6 3.1a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.2 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg><span>Source</span></a></nav>
+</header>
+<main id="main">
+<section class="cx-intro">
+  <p class="mono">Component &middot; page-transition</p>
+  <h1>Page <span class="serif">transition</span></h1>
+  <p class="lead">Click a card: the next page opens as a circle growing from the exact spot you tapped. Native View Transitions where the browser has them, a light fallback everywhere else, and the same circle for a theme switch.</p>
+  <div class="cx-chips"><span>Vanilla JS</span><span>1.9 KB</span><span>View Transitions API</span><span>Fallback</span><span>Reduced motion</span></div>
+</section>
+<section class="cx-stage" id="demo" aria-label="Live demo">
+
+<div class="cx-panel">
+  <div class="pt-demo" data-pt-scope>
+    <a class="pt-card" href="project.html" data-pt-color="#E46C4A"><span class="mono">Case 01 &middot; Concept</span><div><h3>Harbour <span class="serif">Rowing</span> Club</h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></a>
+    <a class="pt-card" href="project.html" data-pt-color="#193F47"><span class="mono">Case 02 &middot; Concept</span><div><h3>Saltmarsh <span class="serif">Ferries</span></h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></a>
+  </div>
+  <div class="pt-theme"><button class="pt-toggle" type="button" id="pt-theme"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.4 1.4M17.6 17.6L19 19M5 19l1.4-1.4M17.6 6.4L19 5"/></svg><span>Switch to night</span></button><p>Same circle, on one page: the new theme grows out of the button you pressed.</p></div>
+</div>
+</section>
+<section class="cx-doc" aria-labelledby="use-h">
+  <div>
+    <h2 id="use-h">Use it</h2>
+    <p>Copy the folder <code>page-transition/</code> (the <code>.js</code> and <code>.css</code> files) into your project. No build step and no framework.</p>
+    <h3>Behaviour</h3>
+    <ul><li>Chrome and Edge use native cross-document View Transitions: the old page stays on screen until the new one is ready, so there is no white flash.</li><li>Other browsers get a circle cover that grows, navigates, and shrinks away on the next page; the link is a normal link, so it always works.</li><li>Ignored for external links, new tabs, downloads, hash links and Ctrl/Cmd/Shift clicks.</li><li>Back/forward cache safe: a page you return to is never left covered.</li><li><code>prefers-reduced-motion</code>: plain navigation and an instant theme change.</li></ul>
+    <h3>Credits</h3>
+    <ul><li>Spec from Sujon's Drive guide (MA 6.2 item 3: circular clip-path reveal from the click point, 650 ms, fallback = plain switch).</li><li>Seamless page changes are a hallmark of <a href="https://a24.raviklaassens.com/" target="_blank" rel="noopener noreferrer">A24 by Ravi Klaassens</a> (built with Barba.js) and <a href="https://belgradearbor.rs/en" target="_blank" rel="noopener noreferrer">Belgrade Arbor by Square43</a> (Awwwards SOTD Oct 2026). This one uses the browser's View Transitions API instead of a library.</li><li>Harbour Rowing Club and Saltmarsh Ferries are fictional.</li></ul>
+  </div>
+  <div>
+    <div class="cx-code"><pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;page-transition.css&quot;&gt;   &lt;!-- on BOTH pages --&gt;
+&lt;a href=&quot;/work/rowing&quot; data-pt data-pt-color=&quot;#E46C4A&quot;&gt;Harbour Rowing Club&lt;/a&gt;
+&lt;script type=&quot;module&quot; src=&quot;page-transition.js&quot;&gt;&lt;/script&gt;       &lt;!-- on BOTH pages --&gt;
+
+&lt;!-- theme switch with the same circle --&gt;
+&lt;script type=&quot;module&quot;&gt;
+  import { themeReveal } from &#x27;./page-transition.js&#x27;;
+  themeReveal(document.querySelector(&#x27;#theme&#x27;), () =&gt; document.documentElement.classList.toggle(&#x27;night&#x27;));
+&lt;/script&gt;</code></pre></div>
+    <div class="cx-tablewrap"><table class="cx-table"><thead><tr><th>Option</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td>data-pt</td><td></td><td>Animate this link (or put links inside [data-pt-scope]).</td></tr><tr><td>data-pt-color</td><td>accent</td><td>Colour of the fallback cover for that link.</td></tr><tr><td>themeReveal(btn, fn)</td><td></td><td>Run fn inside a view transition and grow the new state from the click point.</td></tr></tbody></table></div>
+  </div>
+</section>
+</main>
+<footer class="cx-foot">
+  <div><a class="cx-hire" href="https://zyqor-portfolio-v3.sites.tab.bot/" target="_blank" rel="noopener noreferrer">Hire Zyqor Studio <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><p>Websites from $300. Code in this folder is MIT.</p></div>
+  <ul><li><a href="mailto:zyqorbusiness@gmail.com">zyqorbusiness@gmail.com</a></li><li><a href="https://wa.me/919547908593" target="_blank" rel="noopener noreferrer">WhatsApp +91 95479 08593</a></li></ul>
+  <ul><li><a href="../">All components</a></li><li><a href="../../library/">Concept library</a></li><li><a href="https://github.com/zyqorbusiness-lab/best-website-designer/tree/main/site/components/page-transition" target="_blank" rel="noopener noreferrer">Source on GitHub</a></li></ul>
+</footer>
+<script src="../_shared/base.js" defer></script>
+<script type="module" src="page-transition.js"></script><script type="module">
+import { themeReveal } from './page-transition.js';
+const b = document.getElementById('pt-theme');
+themeReveal(b, () => { const n = document.documentElement.classList.toggle('pt-night'); b.querySelector('span').textContent = n ? 'Switch to day' : 'Switch to night'; });
+</script>
+</body>
+</html>

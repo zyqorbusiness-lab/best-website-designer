@@ -14,3 +14,8 @@ site/assets/lab/volta/volta.glb
 site/assets/lab/verdant/verdant-plant-d.glb
 site/assets/lab/nook/chair-d.glb
 site/assets/lab/cadence/talus-d.glb
+
+# secrets never go in the repo
+.env
+.env.*
+!.env.example

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sticky storytelling &middot; Zyqor Components</title>
+<meta name="description" content="Chapters scroll while the picture stays pinned; each new chapter wipes its image in, and a rail shows where you are. Built on CSS sticky, so it is smooth on phones too.">
+<meta name="theme-color" content="#EFE8DA">
+<meta property="og:title" content="Sticky storytelling &middot; Zyqor Components">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../_shared/base.css">
+<link rel="stylesheet" href="sticky-story.css">
+<style>:root{--bg:#EFE8DA;--ink:#3B2A20;--acc:#4F7A5A}</style>
+
+</head>
+<body class="">
+<a class="skip" href="#demo">Skip to the demo</a>
+<header class="cx-top">
+  <a href="../"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg><span>All components</span></a>
+  <span class="cx-brand">Zyqor <span class="serif">Components</span></span>
+  <nav><a class="cx-hide-s" href="https://github.com/zyqorbusiness-lab/best-website-designer/tree/main/site/components/sticky-story" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.3-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6.2 0C6.6 2.8 5.6 3.1 5.6 3.1a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.2 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg><span>Source</span></a></nav>
+</header>
+<main id="main">
+<section class="cx-intro">
+  <p class="mono">Component &middot; sticky-story</p>
+  <h1>Sticky <span class="serif">story</span></h1>
+  <p class="lead">Chapters scroll while the picture stays pinned; each new chapter wipes its image in, and a rail shows where you are. Built on CSS sticky, so it is smooth on phones too.</p>
+  <div class="cx-chips"><span>Vanilla JS</span><span>1.6 KB</span><span>CSS sticky</span><span>Phone layout</span><span>Reduced motion</span></div>
+</section>
+<section class="cx-stage" id="demo" aria-label="Live demo">
+
+<div class="ss-wrap">
+<div class="ss" data-sticky-story>
+  <div class="ss-steps">
+    <div class="ss-line" aria-hidden="true"><div class="ss-fill"></div></div>
+    <article class="ss-step"><p class="mono">Step 01</p><h3>One idea</h3><p>Start with one interaction only this brand could have. For a music school, the ukulele strings are the menu: pluck one to open a page.</p></article><article class="ss-step"><p class="mono">Step 02</p><h3>A real model</h3><p>No code-made placeholder shapes. Every object is a real scanned or modelled CC0 / CC-BY asset, credited next to the file.</p></article><article class="ss-step"><p class="mono">Step 03</p><h3>Light and motion</h3><p>HDRI light, a contact shadow and one camera move tied to scroll. The motion explains the product instead of decorating it.</p></article><article class="ss-step"><p class="mono">Step 04</p><h3>Same on the phone</h3><p>The phone page loads the same model, textures and light as the desktop one. Only the layout changes, never the quality.</p></article>
+  </div>
+  <div class="ss-media">
+    <div class="ss-stage">
+      <figure class="ss-frame"><img src="media/n020.webp" alt="Chordline Music School concept page" width="1200" height="750" decoding="async"><figcaption>Chordline Music School</figcaption></figure><figure class="ss-frame"><img src="media/a013.webp" alt="Shelfline Ceramics concept page" width="1200" height="750" decoding="async"><figcaption>Shelfline Ceramics</figcaption></figure><figure class="ss-frame"><img src="media/a027.webp" alt="Cut &amp; Grain Knives concept page" width="1200" height="750" decoding="async"><figcaption>Cut &amp; Grain Knives</figcaption></figure><figure class="ss-frame"><img src="media/p017.webp" alt="Tapehead Hi-Fi concept page" width="1200" height="750" decoding="async"><figcaption>Tapehead Hi-Fi</figcaption></figure>
+      <span class="ss-count" aria-hidden="true">01 / 04</span>
+    </div>
+    <nav class="ss-rail" aria-label="Story steps"></nav>
+  </div>
+</div>
+</div>
+</section>
+<section class="cx-doc" aria-labelledby="use-h">
+  <div>
+    <h2 id="use-h">Use it</h2>
+    <p>Copy the folder <code>sticky-story/</code> (the <code>.js</code> and <code>.css</code> files) into your project. No build step and no framework.</p>
+    <h3>Behaviour</h3>
+    <ul><li>Pinning is pure CSS <code>position: sticky</code>; JavaScript only decides which step is active (IntersectionObserver at the middle of the screen), so it never jitters.</li><li>Phone: the media pins under the top bar and the chapters scroll beneath it, with the same images and wipes.</li><li>Rail buttons have labels and <code>aria-current="step"</code>; inactive frames are <code>aria-hidden</code>.</li><li><code>prefers-reduced-motion</code>: frames switch without the wipe and zoom; smooth scrolling is off.</li></ul>
+    <h3>Credits</h3>
+    <ul><li>Scroll storytelling as used by <a href="https://www.igloo.inc/" target="_blank" rel="noopener noreferrer">Igloo Inc by abeto</a> (Awwwards SOTY 2024) and <a href="http://www.getty.edu/persepolis" target="_blank" rel="noopener noreferrer">Persepolis Reimagined by Monks</a> (SOTY 2022). Written from scratch.</li><li>Images are Zyqor's own concept renders (each model credited on its concept page).</li></ul>
+  </div>
+  <div>
+    <div class="cx-code"><pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;sticky-story.css&quot;&gt;
+
+&lt;div class=&quot;ss&quot; data-sticky-story&gt;
+  &lt;div class=&quot;ss-steps&quot;&gt;
+    &lt;div class=&quot;ss-line&quot;&gt;&lt;div class=&quot;ss-fill&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;article class=&quot;ss-step&quot;&gt;&lt;h3&gt;One idea&lt;/h3&gt;&lt;p&gt;...&lt;/p&gt;&lt;/article&gt;
+    &lt;article class=&quot;ss-step&quot;&gt;&lt;h3&gt;A real model&lt;/h3&gt;&lt;p&gt;...&lt;/p&gt;&lt;/article&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;ss-media&quot;&gt;
+    &lt;div class=&quot;ss-stage&quot;&gt;
+      &lt;figure class=&quot;ss-frame&quot;&gt;&lt;img src=&quot;one.webp&quot; alt=&quot;&quot;&gt;&lt;/figure&gt;
+      &lt;figure class=&quot;ss-frame&quot;&gt;&lt;img src=&quot;two.webp&quot; alt=&quot;&quot;&gt;&lt;/figure&gt;
+      &lt;span class=&quot;ss-count&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;nav class=&quot;ss-rail&quot; aria-label=&quot;Story steps&quot;&gt;&lt;/nav&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;script type=&quot;module&quot; src=&quot;sticky-story.js&quot;&gt;&lt;/script&gt;</code></pre></div>
+    <div class="cx-tablewrap"><table class="cx-table"><thead><tr><th>Option</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td>--ss-ratio</td><td>16/10</td><td>Aspect ratio of the pinned media (desktop and phone).</td></tr><tr><td>.ss-frame</td><td>one per step</td><td>Any content: image, video, canvas. The active one wipes up; earlier ones stay under it.</td></tr><tr><td>.ss-rail</td><td>optional</td><td>Numbered buttons that scroll to each step.</td></tr><tr><td>.ss-count</td><td>optional</td><td>01 / 04 counter.</td></tr></tbody></table></div>
+  </div>
+</section>
+</main>
+<footer class="cx-foot">
+  <div><a class="cx-hire" href="https://zyqor-portfolio-v3.sites.tab.bot/" target="_blank" rel="noopener noreferrer">Hire Zyqor Studio <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><p>Websites from $300. Code in this folder is MIT.</p></div>
+  <ul><li><a href="mailto:zyqorbusiness@gmail.com">zyqorbusiness@gmail.com</a></li><li><a href="https://wa.me/919547908593" target="_blank" rel="noopener noreferrer">WhatsApp +91 95479 08593</a></li></ul>
+  <ul><li><a href="../">All components</a></li><li><a href="../../library/">Concept library</a></li><li><a href="https://github.com/zyqorbusiness-lab/best-website-designer/tree/main/site/components/sticky-story" target="_blank" rel="noopener noreferrer">Source on GitHub</a></li></ul>
+</footer>
+<script src="../_shared/base.js" defer></script>
+<script type="module" src="sticky-story.js"></script>
+</body>
+</html>

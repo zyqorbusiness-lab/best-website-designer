@@ -1,0 +1,29 @@
+/* footer-wordmark: giant rising wordmark footer. Zyqor Components, MIT. */
+.fw{position:relative;overflow:hidden;background:var(--ink,#2C3B2F);color:var(--bg,#E9E1D2);padding:clamp(48px,8vw,104px) var(--pad,32px) 0;border-radius:var(--fw-r,18px) var(--fw-r,18px) 0 0}
+.fw a{color:inherit}
+.fw-top{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:clamp(24px,4vw,56px)}
+.fw-big{font:740 clamp(34px,4.6vw,68px)/.95 var(--display,system-ui);letter-spacing:-.035em;margin:0 0 22px;max-width:12ch}
+.fw-big .serif{color:var(--acc,#E2683C)}
+.fw-actions{display:flex;flex-wrap:wrap;gap:10px}
+.fw-btn{display:inline-flex;align-items:center;gap:10px;min-height:50px;padding:0 20px;border-radius:999px;font:600 15px/1 var(--body,system-ui);text-decoration:none;border:1px solid color-mix(in srgb,var(--bg,#E9E1D2) 40%,transparent);background:none;color:inherit;cursor:pointer;transition:background-color .3s,color .3s,scale .2s}
+.fw-btn.fw-main{background:var(--acc,#E2683C);border-color:var(--acc,#E2683C);color:var(--ink,#2C3B2F)}
+.fw-btn:hover{background:var(--bg,#E9E1D2);color:var(--ink,#2C3B2F)}
+.fw-btn:active{scale:.97}
+.fw-btn.is-done{background:var(--bg,#E9E1D2);color:var(--ink,#2C3B2F)}
+.fw h3{font:400 11px/1 var(--mono,monospace);text-transform:uppercase;letter-spacing:.08em;opacity:.6;margin:0 0 14px}
+.fw ul{list-style:none;margin:0;padding:0}
+.fw li a,.fw li span{display:inline-block;padding:6px 0;font:500 16px/1.3 var(--body,system-ui);text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .4s cubic-bezier(.16,1,.3,1)}
+.fw li a:hover,.fw li a:focus-visible{background-size:100% 1px}
+.fw-time b{font-variant-numeric:tabular-nums}
+.fw-mark{display:flex;justify-content:center;margin:clamp(40px,7vw,90px) 0 0;font:800 var(--fw-size,clamp(80px,27vw,440px))/.78 var(--display,system-ui);letter-spacing:-.06em;font-stretch:76%;white-space:nowrap;user-select:none;transform:translateY(calc((1 - var(--fw-p,1)) * 8%))}
+.fw-l{display:inline-block;transform:translateY(105%);transition:transform 1.1s cubic-bezier(.16,1,.3,1) calc(var(--i) * 55ms)}
+.fw.is-in .fw-l{transform:none}
+.fw-base{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;border-top:1px solid color-mix(in srgb,var(--bg,#E9E1D2) 20%,transparent);padding:18px 0 22px;font:400 13px/1.4 var(--body,system-ui);opacity:.8}
+.fw-base nav{display:flex;gap:18px;flex-wrap:wrap}
+.fw-up{display:inline-flex;align-items:center;gap:8px;background:none;border:0;color:inherit;font:inherit;cursor:pointer;padding:6px 0}
+.fw--static .fw-l{transform:none;transition:none}
+@media (max-width:900px){.fw-top{grid-template-columns:1fr 1fr}.fw-top>div:first-child{grid-column:1/-1}}
+@media (max-width:480px){.fw-top{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.fw-l{transform:none;transition:none}.fw-mark{transform:none}}
+/* demo page only */
+.fw-before{min-height:70vh;display:grid;place-items:center;text-align:center;color:var(--soft)}

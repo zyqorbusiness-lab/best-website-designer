@@ -1,0 +1,24 @@
+/* marquee: seamless, scroll-reactive, draggable marquee. Zyqor Components, MIT. */
+.mq{position:relative;overflow:hidden;touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:grab}
+.mq.is-drag{cursor:grabbing}
+.mq-track{display:flex;width:max-content;will-change:transform}
+.mq-track>*{flex:none}
+.mq--static{overflow-x:auto;cursor:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+.mq--static .mq-track{transform:none!important}
+.mq img{pointer-events:none;-webkit-user-drag:none}
+/* demo page only */
+.mq-demo{display:grid;gap:clamp(20px,4vw,40px);margin:0 calc(var(--pad) * -1)}
+.mq-words{border-block:1px solid var(--line);padding:clamp(10px,2vw,22px) 0}
+.mq-words .mq-item{display:flex;align-items:center;gap:clamp(18px,3vw,44px);padding-right:clamp(18px,3vw,44px);font:780 clamp(56px,11vw,168px)/1 var(--display);letter-spacing:-.045em;font-stretch:80%}
+.mq-words .mq-item .serif{font-weight:400;color:var(--acc);letter-spacing:-.02em}
+.mq-star{width:clamp(30px,5vw,72px);height:clamp(30px,5vw,72px);fill:var(--acc);flex:none}
+.mq-chips .mq-item{display:flex;gap:12px;padding-right:12px}
+.mq-chip{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:999px;padding:14px 20px;font:600 16px/1 var(--body);white-space:nowrap;background:color-mix(in srgb,var(--bg) 60%,#fff 40%);text-decoration:none}
+.mq-chip:hover{border-color:var(--ink)}
+.mq-chip svg{width:18px;height:18px;stroke:var(--acc);fill:none;stroke-width:1.8}
+.mq-imgs .mq-item{display:flex;gap:14px;padding-right:14px}
+.mq-card{width:clamp(240px,30vw,400px);aspect-ratio:16/10;border-radius:8px;overflow:hidden;margin:0;position:relative;background:var(--line)}
+.mq-card img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease-out)}
+.mq-card:hover img{transform:scale(1.04)}
+.mq-card figcaption{position:absolute;left:10px;bottom:10px;font:400 11px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;background:var(--bg);padding:7px 9px;border-radius:999px}
+.mq-label{padding:0 var(--pad);display:flex;justify-content:space-between;gap:12px;color:var(--soft)}

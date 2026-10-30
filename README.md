@@ -13,7 +13,9 @@
   <a href="https://zyqor-portfolio-v3.sites.tab.bot/"><b>Live preview</b></a> &nbsp;&middot;&nbsp;
   <a href="#zyqor-lab">Lab concepts</a> &nbsp;&middot;&nbsp;
   <a href="#zyqor-library-300-3d-concepts-in-progress">300-concept library</a> &nbsp;&middot;&nbsp;
+  <a href="site/components/">Components</a> &nbsp;&middot;&nbsp;
   <a href="skills/">Skills</a> &nbsp;&middot;&nbsp;
+  <a href="#inspiration">Inspiration</a> &nbsp;&middot;&nbsp;
   <a href="#run-it-locally">Run locally</a> &nbsp;&middot;&nbsp;
   <a href="#deploy-on-vercel">Deploy</a> &nbsp;&middot;&nbsp;
   <a href="mailto:zyqorbusiness@gmail.com">Hire me</a>
@@ -49,7 +51,7 @@ A growing library of **300 interactive 3D concept pages**, each a complete mini 
 | **Advanced** | Scroll-driven 3D scenes, shaders, physics, particles, frame sequences from our own renders | 100 |
 | **Premium** | Detailed real CC0/CC-BY models, PBR materials, HDRI lighting, liquid glass, cinematic scroll | 100 |
 
-Open it at [`site/library/`](site/library/) (live preview: `/library/`). The index filters by tier, category and technique; concepts that are not built yet show as palette cards marked *Coming*, and concepts in review show *In QA*. **Live now: 18** (N001 Loomhouse Tailors, N002 Kiln & Quiet, N003 Tidewell Salt, N004 Morrow Light, N005 Fieldnote Optics, N006 Quarry Type Foundry, N007 Brasswick Diya, N008 Northpine Cabins, N009 Glasskit Toggles, N010 Rootline Citrus, N014 Glint Eyewear, N020 Chordline Music School, N025 Bathtime Duck, N048 Ironbark Barbers, A013 Shelfline Ceramics, A018 Tranquility Base, A027 Cut & Grain Knives, and the first premium concept, P017 Tapehead Hi-Fi). Concepts go live in batches of 25, each only after it passes QA at 1440 / 390 / 360 with 0 console errors, and each has a desktop page and a phone page that load the **same** models, textures and lighting. Every concept is also checked by a separate reviewer against a 118-point requirements list, and every asset ships with a credit file next to it (`<asset>.credit.json`: exact licence and version, source page, required attribution, changes), gated by `node tools/credits-check.mjs`.
+Open it at [`site/library/`](site/library/) (live preview: `/library/`). The index filters by tier, category and technique; concepts that are not built yet show as palette cards marked *Coming*, and concepts in review show *In QA*. **Live now: 18** (N001 Loomhouse Tailors, N002 Kiln & Quiet, N003 Tidewell Salt, N004 Morrow Light, N005 Fieldnote Optics, N006 Quarry Type Foundry, N007 Brasswick Diya, N008 Northpine Cabins, N009 Glasskit Toggles, N010 Rootline Citrus, N014 Glint Eyewear, N020 Chordline Music School, N025 Bathtime Duck, N048 Ironbark Barbers, A013 Shelfline Ceramics, A018 Tranquility Base, A027 Cut & Grain Knives, and the first premium concept, P017 Tapehead Hi-Fi). Concepts go live in batches of 25, each only after it passes QA at 1440 / 390 / 360 with 0 console errors, and each has a desktop page and a phone page that load the **same** models, textures and lighting. Every concept is also checked against a 118-point requirements list (a second QA pass after the build, written up in `docs/beast/`), and every asset ships with a credit file next to it (`<asset>.credit.json`: exact licence and version, source page, required attribution, changes), gated by `node tools/credits-check.mjs`.
 
 <p>
   <img src="site/library/n/N002/thumb.webp" alt="N002 Kiln &amp; Quiet: a real ceramic vase on a potter's wheel" width="49%">
@@ -58,9 +60,46 @@ Open it at [`site/library/`](site/library/) (live preview: `/library/`). The ind
 
 Built with a shared kit (`site/library/_kit/`: one-call three.js stage with HDRI, ACES, contact shadow, lazy loading, pause off-screen and poster fallback; concept chrome; interaction modules) and a batch QA harness (`tools/qa-library.mjs`). How to add a concept: [`site/library/README.md`](site/library/README.md). The rules every concept follows: [`docs/beast/DESIGN_RULES.md`](docs/beast/DESIGN_RULES.md).
 
+## Components: 14 detailed UI pieces
+
+[`site/components/`](site/components/) is a free library of 14 reusable components, each with a live demo page that works the same on desktop and phone, plain HTML/CSS/JS (no framework, no build step), keyboard and touch support, reduced-motion handling, SVG icons and its own README with credits. **Live gallery: https://zyqor-concepts.sites.tab.bot/components/**
+
+<p><img src="site/components/scroll-3d-stage/preview.webp" alt="Scroll 3D stage component: a real scanned model carried through four chapters" width="49%"> <img src="site/components/pricing-table/preview.webp" alt="Pricing switcher component with a rolling price" width="49%"></p>
+
+| Component | What it does |
+|---|---|
+| [Scroll-scrubbed 3D stage](site/components/scroll-3d-stage/) | Real CC0 scan + HDRI; camera and model move through chapter keyframes with scroll; lazy, poster fallback. |
+| [Magnetic button](site/components/magnetic-button/) | Leans toward the pointer, fills from the entry point, rolls its label; tap ripple on phones. |
+| [Split text reveal](site/components/split-text/) | Line-mask rise, letter flip and scroll-scrub reading highlight; re-measures lines, screen-reader safe. |
+| [Liquid glass card](site/components/liquid-glass-card/) | Edge refraction via SVG displacement (Chromium), blur fallback, specular highlight, tilt, draggable. |
+| [Sticky storytelling](site/components/sticky-story/) | Pinned media with chapter wipes, progress line, numbered rail; same on phone. |
+| [Marquee](site/components/marquee/) | Seamless loop, speeds up with scroll velocity, flips with scroll direction, drag with inertia. |
+| [Cursor follower](site/components/cursor-follower/) | Dot + lagging ring, label over work, sticky ring on links, hides over inputs, off on touch. |
+| [Image trail and hover reveal](site/components/image-trail/) | Pointer image trail and a hover-reveal project list that turns into a tap accordion on phones. |
+| [Preloader](site/components/preloader/) | Counts real bytes of the model/HDRI/images, never flashes on cached loads, panel-wipe exit. |
+| [Page transition](site/components/page-transition/) | Circle reveal from the click point between pages (native View Transitions + fallback) and for a theme switch. |
+| [Pricing switcher](site/components/pricing-table/) | Zyqor's real $300 / $1k / $10k tiers: squish pill, odometer price, ARIA tabs. |
+| [Quote carousel](site/components/quote-carousel/) | Native scroll-snap swipe, mouse drag with inertia, accessible autoplay with Pause; real quotes, no fake reviews. |
+| [Mega menu](site/components/mega-menu/) | Desktop mega panels with hover intent + keyboard; phone full-screen accordion sheet with focus trap. |
+| [Footer with wordmark](site/components/footer-wordmark/) | Giant per-letter rising wordmark, Gmail-on-desktop / mailto-on-phone, copy email, local time, legal links. |
+
+They were built after a study of current award-winning sites: **[How top designers build unique websites](docs/how-top-designers-build-unique-sites.md)** walks through idea, story, layout, motion, 3D, sound and micro-interactions with named, linked examples (Awwwards Sites of the Year and Sites of the Day, CSS Design Awards) and a section on the techniques of [@ayzz.thedesigner](https://www.instagram.com/ayzz.thedesigner).
+
+## Prices
+
+Zyqor Studio's starting prices (exact scope agreed per project):
+
+| Plan | From | What it is |
+|---|---|---|
+| Simple | **$300** | A simple website that still feels premium |
+| Scroll 3D | **$1,000** | A scroll-based 3D website, premium |
+| Everything | **$10,000** | Everything: content, top quality, fast delivery |
+
+Contact: [zyqorbusiness@gmail.com](mailto:zyqorbusiness@gmail.com) or [WhatsApp](https://wa.me/919547908593).
+
 ## Skills you can download
 
-[`skills/`](skills/) holds free, tested, MIT-licensed skills: a written method (`SKILL.md`), a working example and starter code each. Ready now: **qa-harness**, **liquid-glass-ui**, **model-optimisation-phone**, **unique-concepts**. More are added with every batch; the full list is in [`skills/README.md`](skills/README.md).
+[`skills/`](skills/) holds free, tested, MIT-licensed skills: a written method (`SKILL.md`), a working example and starter code each. Ready now: **qa-harness**, **liquid-glass-ui**, **model-optimisation-phone**, **unique-concepts** (now with the award-site study), **web-security** (build security in from the first file, plus a scanner for a folder or a live URL: `node skills/web-security/check.mjs site`), **scroll-video-hero** (the scroll-scrubbed video at the top of this site, as a downloadable skill with a working example). More are added with every batch; the full list is in [`skills/README.md`](skills/README.md).
 
 ## Zyqor Lab
 
@@ -238,6 +277,18 @@ Shared libraries in `site/vendor/` (three.js, GSAP, Lenis, Matter.js) are self-h
 ## His other work
 
 Sujon's live apps, game and lesson site, with links, source repos and APK sizes: [docs/PROJECTS.md](docs/PROJECTS.md) &middot; all code on [github.com/zyqorbusiness-lab](https://github.com/zyqorbusiness-lab).
+
+## Inspiration
+
+Ideas and techniques in this repo were learned from these designers and sites. Nothing of theirs (code, images, fonts, text) is copied; every technique was rebuilt from scratch, and each component's README names exactly what it studied.
+
+- **[@ayzz.thedesigner](https://www.instagram.com/ayzz.thedesigner)**, Abdul Mutakabar Ayaz (UI/UX designer, zz.studio.design): the colourway morph, giant type behind the product, the travelling hero object, reveal wipes, orbit carousels, callouts, kinetic type and the rising footer wordmark used across the Lab and the components. His work is the biggest single influence on this portfolio.
+- **[scroll-world](https://github.com/oso95/scroll-world)** by cyw (MIT): the scroll-scrubbed camera-flight engine behind the intro, adapted in `site/scrub-engine.js` with the licence kept.
+- **Awwwards Sites of the Year**: [Messenger](https://messenger.abeto.co) and [Igloo Inc](https://www.igloo.inc/) by abeto, [landonorris.com](https://landonorris.com/) by OFF+BRAND, [Lusion v3](https://lusion.co/), [Opal Tadpole](https://www.opalcamera.com/opal-tadpole), [Don't Board Me](https://dontboardme.com) by The First The Last, [Mana Yerba Mate](https://en.manayerbamate.com/), [Pangram Pangram](https://pangrampangram.com/) by Locomotive, Star Atlas by Hello Monday.
+- **Awwwards Sites of the Day, Oct 2026**: [A24 by Ravi Klaassens](https://a24.raviklaassens.com/), [Emotion Agency](https://emotion-agency.com/), [ESR Bespoke](https://www.esrbespoke.au/) by NIGHTJAR, [FORMAT](https://format.obys.agency/) by Obys, [Belgrade Arbor](https://belgradearbor.rs/en) by Square43, [Overworld Audio](https://overworldaudio.com/), [Forge Automotive](https://forgeautomotive.co.uk/), [G. Colombel](https://guillaumecolombel.fr/).
+- **CSS Design Awards** Websites of the Day, Oct 2026 (Eladio Dieste by ++hellohello and others).
+- **UI libraries** studied for component ideas: Unlumen UI, Magic UI, SmoothUI and RetroUI.
+- **Sujon Hoque's own design system** (Master Award Web Design System and Website-Building Guide v6), the rules every page here follows.
 
 ## Credits and licence
 

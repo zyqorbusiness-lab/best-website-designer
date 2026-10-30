@@ -1,0 +1,20 @@
+/* page-transition: circle reveal from the click point. Zyqor Components, MIT. */
+@view-transition{navigation:auto}
+::view-transition-old(root){animation:none}
+::view-transition-new(root){animation:none;mix-blend-mode:normal}
+.pt-cover{position:fixed;inset:0;z-index:9000;background:var(--acc,#E46C4A);clip-path:circle(0px at 50% 50%);pointer-events:none}
+@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}
+/* demo page only */
+.pt-demo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,2vw,24px)}
+.pt-card{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:clamp(240px,30vw,360px);border-radius:12px;padding:clamp(18px,2.4vw,28px);text-decoration:none;color:var(--bg);background:var(--ink);overflow:hidden}
+.pt-card:nth-child(2){background:var(--acc)}
+.pt-card h3{font:740 clamp(30px,4vw,56px)/.95 var(--display);letter-spacing:-.035em;margin:0}
+.pt-card .mono{opacity:.8}
+.pt-card .icon{width:28px;height:28px;transition:transform .5s cubic-bezier(.16,1,.3,1)}
+.pt-card:hover .icon,.pt-card:focus-visible .icon{transform:translateX(6px)}
+.pt-theme{margin-top:clamp(28px,5vw,56px);display:flex;flex-wrap:wrap;align-items:center;gap:18px;border-top:1px solid var(--line);padding-top:24px}
+.pt-theme p{margin:0;color:var(--soft);max-width:52ch}
+.pt-toggle{font:600 15px/1 var(--body);border:1px solid var(--ink);background:transparent;color:var(--ink);border-radius:999px;padding:14px 18px;cursor:pointer;min-height:48px;display:inline-flex;gap:10px;align-items:center}
+html.pt-night{--bg:#193F47;--ink:#EEE7DB;--line:rgb(238 231 219 / .18);--soft:color-mix(in srgb,#EEE7DB 72%,#193F47)}
+html.pt-night .pt-card{color:#193F47}
+@media (max-width:640px){.pt-demo{grid-template-columns:1fr}}

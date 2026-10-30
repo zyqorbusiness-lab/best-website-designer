@@ -1,0 +1,16 @@
+/* scroll-video.css: Zyqor Studio (MIT) */
+.sv{position:relative;height:var(--sv-length,420vh)}
+.sv-pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:var(--sv-bg,#EAE3D6) var(--sv-poster) center/cover no-repeat}
+.sv video{position:absolute;inset:0;width:100%;height:100%;object-fit:var(--sv-fit,cover);opacity:0;transition:opacity .6s}
+.sv--ready video{opacity:1}
+.sv-beat{position:absolute;left:var(--pad,6vw);right:var(--pad,6vw);opacity:0;visibility:hidden;will-change:opacity,transform;pointer-events:none}
+.sv-bar{position:absolute;left:var(--pad,6vw);right:var(--pad,6vw);bottom:28px;height:2px;background:color-mix(in srgb,currentColor 18%,transparent)}
+.sv-bar i{position:absolute;inset:0;background:currentColor;transform-origin:left;transform:scaleX(0)}
+.sv--still{height:auto}
+.sv--still .sv-pin{position:relative;height:auto;display:flex;flex-direction:column;justify-content:center;gap:28px;padding:84px 0 12vh}
+.sv--still .sv-beat{position:relative;opacity:1!important;visibility:visible!important;transform:none!important;left:auto;right:auto;top:auto!important;bottom:auto!important;padding:0 var(--pad,6vw)}
+.sv--still video,.sv--still .sv-bar{display:none}
+.sv--still .sv-pin{background:var(--sv-bg,#EAE3D6)}
+.sv--still .sv-pin::after{content:"";display:block;width:100%;aspect-ratio:16/9;background:var(--sv-poster) center/cover no-repeat;order:-1}
+@media (max-aspect-ratio:4/5),(max-width:700px){.sv--still .sv-pin::after{aspect-ratio:4/5}}
+@media (prefers-reduced-motion:reduce){.sv video{transition:none}}

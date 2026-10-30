@@ -45,3 +45,6 @@ main>section{position:relative;z-index:1}
 .in-in{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--grid-gap)}
 .in-head{grid-column:1 / span 5;display:grid;gap:var(--s3);align-content:start}.in-list{grid-column:7 / span 6}
 .inside{background:color-mix(in oklab,var(--c2) 88%,transparent);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+
+/* footer above the fixed deck stage (the stage sits in the hero's z-index:1 context) */
+.zk-foot{position:relative;z-index:2}

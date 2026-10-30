@@ -1,0 +1,62 @@
+/* Zyqor Components: shared demo chrome (not needed to use a component).
+   Fonts are SIL OFL 1.1, self-hosted from /assets/font (credits next to each file). */
+@font-face{font-family:"Bricolage";src:url("../../assets/font/bricolage-axes.woff2") format("woff2");font-weight:200 800;font-stretch:75% 100%;font-display:swap}
+@font-face{font-family:"Archivo";src:url("../../assets/font/archivo-var.woff2") format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url("../../assets/font/instrumentserif-400-italic.woff2") format("woff2");font-style:italic;font-weight:400;font-display:swap}
+@font-face{font-family:"JetBrains Mono";src:url("../../library/_kit/font/jetbrainsmono-400.woff2") format("woff2");font-weight:400;font-display:swap}
+:root{--bg:#EEE7DB;--ink:#1F2E28;--acc:#D9643A;--line:color-mix(in srgb,var(--ink) 16%,transparent);--soft:color-mix(in srgb,var(--ink) 62%,var(--bg));
+  --display:"Bricolage","Archivo",system-ui,sans-serif;--body:"Archivo",system-ui,sans-serif;--serif:"Instrument Serif",Georgia,serif;--mono:"JetBrains Mono",ui-monospace,monospace;
+  --ease-out:cubic-bezier(.16,1,.3,1);--ease-io:cubic-bezier(.65,0,.35,1);--r:6px;--pad:clamp(18px,4vw,56px)}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 var(--body);-webkit-font-smoothing:antialiased;overflow-x:clip}
+img,svg,canvas,video{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:3px}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip{position:absolute;left:12px;top:-60px;z-index:100;background:var(--ink);color:var(--bg);padding:10px 14px;border-radius:var(--r);text-decoration:none}
+.skip:focus{top:12px}
+.icon{width:1.1em;height:1.1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.mono{font:400 12px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.serif{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:0}
+/* top bar */
+.cx-top{position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px var(--pad);background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.cx-top a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font:500 14px/1 var(--body);min-height:40px}
+.cx-top .cx-brand{font:700 15px/1 var(--display);letter-spacing:-.01em}
+.cx-top nav{display:flex;gap:18px}
+@media (max-width:560px){.cx-top .cx-hide-s{display:none}}
+/* page intro */
+.cx-intro{padding:clamp(40px,8vw,96px) var(--pad) clamp(24px,4vw,40px);max-width:1280px;margin:0 auto}
+.cx-intro .mono{color:var(--soft)}
+.cx-intro h1{font:750 clamp(40px,8.4vw,112px)/.92 var(--display);font-stretch:88%;letter-spacing:-.035em;margin:.25em 0 .2em}
+.cx-intro p.lead{max-width:56ch;font-size:clamp(16px,1.6vw,19px);color:var(--soft);margin:0}
+.cx-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.cx-chips span{font:400 11px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);padding:8px 10px;border-radius:999px}
+/* demo stage */
+.cx-stage{margin:0 auto;max-width:1280px;padding:0 var(--pad)}
+.cx-panel{border:1px solid var(--line);border-radius:10px;padding:clamp(20px,4vw,48px);background:color-mix(in srgb,var(--bg) 70%,#fff 30%)}
+/* docs */
+.cx-doc{max-width:1280px;margin:0 auto;padding:clamp(48px,8vw,104px) var(--pad);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:clamp(24px,5vw,72px)}
+@media (max-width:900px){.cx-doc{grid-template-columns:minmax(0,1fr)}}
+.cx-doc>div{min-width:0}
+.cx-tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.cx-doc h2{font:700 clamp(26px,3.4vw,40px)/1.02 var(--display);letter-spacing:-.025em;margin:0 0 14px}
+.cx-doc h3{font:600 17px/1.2 var(--display);margin:26px 0 8px}
+.cx-doc p,.cx-doc li{color:var(--soft);max-width:62ch}
+.cx-doc ul{padding-left:1.1em;margin:0}
+.cx-doc li{margin:.35em 0}
+.cx-doc code{overflow-wrap:anywhere;font:400 .86em/1 var(--mono);background:color-mix(in srgb,var(--ink) 7%,transparent);padding:.15em .4em;border-radius:4px;color:var(--ink)}
+.cx-code{position:relative;margin:0 0 18px}
+.cx-code pre{margin:0;overflow:auto;background:var(--ink);color:color-mix(in srgb,var(--bg) 92%,var(--acc));font:400 12.5px/1.65 var(--mono);padding:18px 18px 18px;border-radius:8px;max-height:460px;-webkit-overflow-scrolling:touch}
+.cx-code .cx-copy{position:absolute;top:10px;right:10px;font:500 12px/1 var(--body);background:var(--bg);color:var(--ink);border:0;border-radius:999px;padding:9px 12px;cursor:pointer;min-height:34px}
+.cx-table{width:100%;border-collapse:collapse;font-size:14px}
+.cx-table th,.cx-table td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+.cx-table th{font:400 11px/1.2 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--soft)}
+.cx-table td:first-child{font-family:var(--mono);font-size:12.5px;color:var(--ink);overflow-wrap:anywhere;min-width:110px}
+/* footer */
+.cx-foot{border-top:1px solid var(--line);padding:36px var(--pad) 44px;max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;gap:18px 40px;justify-content:space-between;font-size:14px;color:var(--soft)}
+.cx-foot a{color:var(--ink)}
+.cx-foot .cx-hire{font:700 18px/1.1 var(--display);color:var(--ink);text-decoration:none;display:inline-flex;gap:8px;align-items:center}
+.cx-foot ul{list-style:none;padding:0;margin:6px 0 0}
+.cx-foot li{margin:4px 0}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important}}

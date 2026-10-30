@@ -3,7 +3,7 @@ name: unique-concepts
 description: Generate genuinely different 3D / web concept ideas (not "hero + 3 cards" with a new colour) and turn the best ones into a buildable brief. Constraint cards, material x motion x story matrices, credit-safe reference remixing, category inversion, scroll-world fly-through ideas, phone-first composition and a strict 3-colour palette rule, plus the real mistakes we made building 300 concepts and the checks that stop them.
 when_to_use: "I need a unique concept for a brand", "every site I make looks the same", "give me 10 different 3D website ideas", "make a concept library", before writing a brief for any concept / portfolio piece / pitch site
 license: MIT (text and code). Idea sources credited in CREDITS.md.
-version: 1.0.0
+version: 1.1.0
 ---
 
 # Unique concepts
@@ -274,6 +274,24 @@ Copy `examples/brief-template.md` into the concept folder as `brief.md` and fill
 
 `examples/concept-cards.md` shows ten real cards from this library, how each was filtered, and the brief that
 came out of the best one.
+
+## 10b. How top designers build unique sites (study, Oct 2026)
+
+The full study, with every site linked and credited, is [`docs/how-top-designers-build-unique-sites.md`](../../docs/how-top-designers-build-unique-sites.md). The short version, as steps to run on every concept:
+
+| Step | What award winners do | Example (credited) | Zyqor component |
+|---|---|---|---|
+| Idea | One sentence: "[product] as [a thing or a place]" | Messenger by abeto: messaging as a tiny planet you deliver letters on (SOTY 2025) | (this skill, sections 1-3) |
+| Story | 4-6 chapters, something stays on screen between them | Igloo Inc by abeto: one camera move over ice (SOTY 2024) | `sticky-story`, `scroll-3d-stage` |
+| Layout | One oversized element per screen, the grid broken once on purpose | FORMAT by Obys; landonorris.com by OFF+BRAND (SOTY 2025) | `split-text`, `image-trail`, `footer-wordmark` |
+| Motion | Tied to scroll or pointer, one family of easing curves, no self-playing loops | Emotion Agency (SOTD Oct 22 2026); A24 by Ravi Klaassens | `marquee`, `page-transition`, `preloader` |
+| 3D | One real model, studio HDRI, one camera move per chapter, same file on phone | Lusion v3 (SOTY 2023); Opal Tadpole (SOTY 2024) | `scroll-3d-stage` |
+| Sound | Opt-in at the door ("enter with sound"), mute always visible | Overworld Audio, Forge Automotive (SOTD Oct 2026) | N020, P017 concepts |
+| Micro-interactions | Hover, press, focus, done states; the footer designed like the hero | Opal's giant footer wordmark; ESR Bespoke's navigation | `magnetic-button`, `cursor-follower`, `mega-menu`, `pricing-table`, `quote-carousel`, `liquid-glass-card` |
+
+Measured on 20 winners opened in Chrome on Oct 30 2026: 9 use smooth scroll (Lenis), 12 draw on a canvas, 9 are one screen tall (an experience you enter), 4 ask "with sound or without" at the door, and most use two or three colours with one loud one.
+
+**@ayzz.thedesigner techniques** ([instagram.com/ayzz.thedesigner](https://www.instagram.com/ayzz.thedesigner), Abdul Mutakabar Ayaz; patterns only, nothing copied): colourway morph (the variant floods the whole page with its colour), giant type behind the product, the travelling hero object (one product carried through every section while the layout rearranges), physical reveal wipes, orbit carousels, callouts and exploded views, kinetic editorial type with a rising footer wordmark, the product in a small world, micro UI (rolling numbers, liquid-glass lens), process as content, physics and 3D scroll. Give every concept one or two of these letters (A-K in the study) and never reuse the same pair twice in a row.
 
 ## 11. Files
 

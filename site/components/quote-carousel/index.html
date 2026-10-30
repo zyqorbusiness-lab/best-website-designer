@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quote carousel &middot; Zyqor Components</title>
+<meta name="description" content="A testimonial carousel that swipes natively on phones, drags with inertia on desktop, and has an autoplay that stops the moment someone touches it. Demo content is real designer quotes, never fake reviews.">
+<meta name="theme-color" content="#ECE4D4">
+<meta property="og:title" content="Quote carousel &middot; Zyqor Components">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../_shared/base.css">
+<link rel="stylesheet" href="quote-carousel.css">
+<style>:root{--bg:#ECE4D4;--ink:#3D2E2A;--acc:#6E8B74}</style>
+
+</head>
+<body class="">
+<a class="skip" href="#demo">Skip to the demo</a>
+<header class="cx-top">
+  <a href="../"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg><span>All components</span></a>
+  <span class="cx-brand">Zyqor <span class="serif">Components</span></span>
+  <nav><a class="cx-hide-s" href="https://github.com/zyqorbusiness-lab/best-website-designer/tree/main/site/components/quote-carousel" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.3-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6.2 0C6.6 2.8 5.6 3.1 5.6 3.1a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.2 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg><span>Source</span></a></nav>
+</header>
+<main id="main">
+<section class="cx-intro">
+  <p class="mono">Component &middot; quote-carousel</p>
+  <h1>Quote <span class="serif">carousel</span></h1>
+  <p class="lead">A testimonial carousel that swipes natively on phones, drags with inertia on desktop, and has an autoplay that stops the moment someone touches it. Demo content is real designer quotes, never fake reviews.</p>
+  <div class="cx-chips"><span>Vanilla JS</span><span>2.1 KB</span><span>Scroll-snap</span><span>Pause button</span><span>Reduced motion</span></div>
+</section>
+<section class="cx-stage" id="demo" aria-label="Live demo">
+
+<div class="cx-panel">
+<section class="qc" data-quote-carousel data-autoplay="6500" aria-roledescription="carousel" aria-label="Quotes from designers" tabindex="0">
+  <div class="qc-track">
+    <figure class="qc-slide"><blockquote>Good design is as little design <span class="serif">as possible.</span></blockquote><figcaption><span class="qc-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18v-5.5C4 8.4 6.3 6 10 5.5v2.6C8.1 8.6 7.2 9.9 7.1 12H10v6zm9.5 0v-5.5c0-4.1 2.3-6.5 6-7v2.6c-1.9.5-2.8 1.8-2.9 3.9h2.9v6z"/></svg></span><span>Dieter Rams<small>Ten principles for good design</small></span></figcaption></figure><figure class="qc-slide"><blockquote>Styles come and go. Good design is a language, <span class="serif">not a style.</span></blockquote><figcaption><span class="qc-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18v-5.5C4 8.4 6.3 6 10 5.5v2.6C8.1 8.6 7.2 9.9 7.1 12H10v6zm9.5 0v-5.5c0-4.1 2.3-6.5 6-7v2.6c-1.9.5-2.8 1.8-2.9 3.9h2.9v6z"/></svg></span><span>Massimo Vignelli<small>Designer</small></span></figcaption></figure><figure class="qc-slide"><blockquote>Design is not just what it looks like and feels like. Design is <span class="serif">how it works.</span></blockquote><figcaption><span class="qc-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18v-5.5C4 8.4 6.3 6 10 5.5v2.6C8.1 8.6 7.2 9.9 7.1 12H10v6zm9.5 0v-5.5c0-4.1 2.3-6.5 6-7v2.6c-1.9.5-2.8 1.8-2.9 3.9h2.9v6z"/></svg></span><span>Steve Jobs<small>The New York Times, 2003</small></span></figcaption></figure><figure class="qc-slide"><blockquote>Simplicity is not the goal. It is the by-product of a good idea and <span class="serif">modest expectations.</span></blockquote><figcaption><span class="qc-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18v-5.5C4 8.4 6.3 6 10 5.5v2.6C8.1 8.6 7.2 9.9 7.1 12H10v6zm9.5 0v-5.5c0-4.1 2.3-6.5 6-7v2.6c-1.9.5-2.8 1.8-2.9 3.9h2.9v6z"/></svg></span><span>Paul Rand<small>Designer</small></span></figcaption></figure>
+  </div>
+  <div class="qc-ui">
+    <button class="qc-prev" type="button" aria-label="Previous quote"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <button class="qc-next" type="button" aria-label="Next quote"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+    <div class="qc-bar" aria-hidden="true"><i></i></div>
+    <span class="qc-count" aria-hidden="true">01 / 04</span>
+    <button class="qc-play" type="button" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg><span>Pause</span></button>
+  </div>
+</section>
+<p class="qc-note">These are famous public quotes from designers, used here only as sample content. Sujon's rule: no fake testimonials. On a real site, put only real client words in it, with their permission.</p>
+</div>
+</section>
+<section class="cx-doc" aria-labelledby="use-h">
+  <div>
+    <h2 id="use-h">Use it</h2>
+    <p>Copy the folder <code>quote-carousel/</code> (the <code>.js</code> and <code>.css</code> files) into your project. No build step and no framework.</p>
+    <h3>Behaviour</h3>
+    <ul><li>Phone swipe is the browser's own scrolling with scroll-snap: no fighting with vertical page scroll.</li><li>Mouse: drag with inertia that lands on the nearest slide; a drag never triggers a click.</li><li>Autoplay has a visible Pause button, stops for good after any user action, and pauses on hover, focus, off screen and in hidden tabs (WCAG 2.2.2).</li><li>Keyboard: focus the carousel and use the arrow keys; slides are labelled "1 of 4".</li><li><code>prefers-reduced-motion</code>: no autoplay, no smooth scrolling, no scale.</li></ul>
+    <h3>Credits</h3>
+    <ul><li>Quotes: Dieter Rams (from his ten principles for good design), Massimo Vignelli, Steve Jobs (The New York Times Magazine, 2003), Paul Rand. Used as short attributed quotations for demonstration.</li><li>Carousel pattern after the WAI-ARIA Authoring Practices carousel guidance. Written from scratch.</li></ul>
+  </div>
+  <div>
+    <div class="cx-code"><pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;quote-carousel.css&quot;&gt;
+&lt;section class=&quot;qc&quot; data-quote-carousel data-autoplay=&quot;6500&quot; aria-roledescription=&quot;carousel&quot; aria-label=&quot;What clients said&quot; tabindex=&quot;0&quot;&gt;
+  &lt;div class=&quot;qc-track&quot;&gt;
+    &lt;figure class=&quot;qc-slide&quot;&gt;&lt;blockquote&gt;Real words from a real client.&lt;/blockquote&gt;&lt;figcaption&gt;Name&lt;small&gt;Company&lt;/small&gt;&lt;/figcaption&gt;&lt;/figure&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;qc-ui&quot;&gt;
+    &lt;button class=&quot;qc-prev&quot; type=&quot;button&quot; aria-label=&quot;Previous&quot;&gt;...&lt;/button&gt;
+    &lt;button class=&quot;qc-next&quot; type=&quot;button&quot; aria-label=&quot;Next&quot;&gt;...&lt;/button&gt;
+    &lt;div class=&quot;qc-bar&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/div&gt;&lt;span class=&quot;qc-count&quot;&gt;&lt;/span&gt;
+    &lt;button class=&quot;qc-play&quot; type=&quot;button&quot;&gt;&lt;span&gt;Pause&lt;/span&gt;&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+&lt;script type=&quot;module&quot; src=&quot;quote-carousel.js&quot;&gt;&lt;/script&gt;</code></pre></div>
+    <div class="cx-tablewrap"><table class="cx-table"><thead><tr><th>Option</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td>data-autoplay</td><td>off</td><td>Milliseconds between slides; omit for no autoplay.</td></tr><tr><td>.qc-slide flex-basis</td><td>min(78%,720px)</td><td>Slide width; the next slide peeks in so people know they can swipe.</td></tr></tbody></table></div>
+  </div>
+</section>
+</main>
+<footer class="cx-foot">
+  <div><a class="cx-hire" href="https://zyqor-portfolio-v3.sites.tab.bot/" target="_blank" rel="noopener noreferrer">Hire Zyqor Studio <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><p>Websites from $300. Code in this folder is MIT.</p></div>
+  <ul><li><a href="mailto:zyqorbusiness@gmail.com">zyqorbusiness@gmail.com</a></li><li><a href="https://wa.me/919547908593" target="_blank" rel="noopener noreferrer">WhatsApp +91 95479 08593</a></li></ul>
+  <ul><li><a href="../">All components</a></li><li><a href="../../library/">Concept library</a></li><li><a href="https://github.com/zyqorbusiness-lab/best-website-designer/tree/main/site/components/quote-carousel" target="_blank" rel="noopener noreferrer">Source on GitHub</a></li></ul>
+</footer>
+<script src="../_shared/base.js" defer></script>
+<script type="module" src="quote-carousel.js"></script>
+</body>
+</html>

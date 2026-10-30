@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Contact form with honeypot</title>
+<style>body{font:16px/1.5 system-ui;max-width:520px;margin:40px auto;padding:0 18px;background:#F3EEE4;color:#22312C}label{display:block;margin:14px 0 6px;font-weight:600}input,textarea{width:100%;font:inherit;padding:12px;border:1px solid #8A9A90;border-radius:8px;background:#fff;box-sizing:border-box}button{margin-top:18px;min-height:48px;padding:0 22px;border:0;border-radius:999px;background:#22312C;color:#F3EEE4;font:600 16px system-ui}
+/* the honeypot: off screen for people, still in the form for bots (not display:none, which some bots skip) */
+.hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}#status{margin-top:12px;min-height:1.5em}</style></head>
+<body>
+<h1>Contact</h1>
+<!-- Replace the action with your form service or serverless function (https only). The server must ALSO reject a filled "website" field and too-fast submits. -->
+<form id="contact" action="https://formspree.io/f/your-form-id" method="post">
+  <label for="name">Name</label><input id="name" name="name" autocomplete="name" required maxlength="80">
+  <label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="120">
+  <label for="msg">Message</label><textarea id="msg" name="message" rows="5" required maxlength="4000"></textarea>
+  <div class="hp" aria-hidden="true"><label for="website">Leave this empty</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
+  <input type="hidden" name="_t" id="t">
+  <button type="submit">Send</button>
+  <p id="status" role="status"></p>
+</form>
+<script>
+const f = document.getElementById('contact'), t0 = Date.now(); document.getElementById('t').value = t0;
+f.addEventListener('submit', async (e) => {
+  e.preventDefault(); const status = document.getElementById('status');
+  if (f.website.value || Date.now() - t0 < 2500) { status.textContent = 'Thanks!'; return; } // silently drop bots
+  status.textContent = 'Sending...';
+  try { const r = await fetch(f.action, { method: 'POST', body: new FormData(f), headers: { Accept: 'application/json' } });
+    status.textContent = r.ok ? 'Thanks, your message is on its way.' : 'That did not send. Please email us instead.'; if (r.ok) f.reset(); }
+  catch { status.textContent = 'No connection. Please try again.'; }
+});
+</script>
+</body></html>

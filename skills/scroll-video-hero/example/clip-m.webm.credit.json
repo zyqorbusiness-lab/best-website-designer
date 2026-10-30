@@ -1,0 +1,11 @@
+{
+ "title": "Scroll clip (phone, 720x1280) for the scroll-video-hero example",
+ "author": "Derek Wight (model), Zyqor Studio (render)",
+ "author_url": "https://polyhaven.com/all?a=Derek%20Wight",
+ "source_url": "https://polyhaven.com/a/binoculars",
+ "licence": "CC0 1.0",
+ "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+ "attribution": "Render of \"Binoculars\" by Derek Wight, Poly Haven (CC0 1.0), lit with \"Studio Small 09\" by Sergej Majboroda, Poly Haven (CC0 1.0); render by Zyqor Studio",
+ "changes": "120 portrait frames rendered in three.js, same camera move framed for a phone, VP9 WebM keyframe every 4 frames",
+ "downloaded": "2026-10-30"
+}

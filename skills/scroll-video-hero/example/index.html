@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Scroll video hero: example &middot; Zyqor Studio</title>
+<meta name="description" content="A scroll-scrubbed video hero: scroll to fly the camera in. Desktop and phone clips of the same shot, poster fallback, reduced motion.">
+<meta name="theme-color" content="#EAE3D6">
+<link rel="preload" as="image" href="poster-d.webp" media="(min-aspect-ratio: 4/5) and (min-width: 701px)">
+<link rel="preload" as="image" href="poster-m.webp" media="(max-aspect-ratio: 4/5), (max-width: 700px)">
+<link rel="stylesheet" href="scroll-video.css">
+<style>
+:root{--bg:#EAE3D6;--ink:#233A35;--acc:#C8552E;--pad:clamp(20px,6vw,88px)}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.top{position:fixed;inset:0 0 auto;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:18px var(--pad);font-weight:650;letter-spacing:-.01em}
+.top a{color:inherit;text-decoration:none}
+.top span{font:500 12px/1 ui-monospace,Menlo,monospace;letter-spacing:.08em;text-transform:uppercase;opacity:.7}
+.sv{--sv-bg:var(--bg);--sv-fit:contain} /* contain: the clip's background matches the page, so no crop on any screen */
+.sv-beat h1,.sv-beat h2{margin:0;font:700 clamp(40px,7.4vw,112px)/.92 ui-serif,Georgia,"Times New Roman",serif;letter-spacing:-.035em;max-width:11ch}
+.sv-beat h2{font-size:clamp(34px,5.6vw,84px)}
+.sv-beat em{color:var(--acc)}
+.sv-beat p{max-width:34ch;margin:14px 0 0;font-size:clamp(16px,1.4vw,19px)}
+.b1{top:16vh}.b2{bottom:16vh}.b3{top:18vh;text-align:right;display:flex;flex-direction:column;align-items:flex-end}.b4{bottom:14vh}
+.hint{position:absolute;left:50%;bottom:48px;translate:-50% 0;font:500 12px/1 ui-monospace,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase;opacity:calc(.75 - var(--sv-p,0) * 8)}
+.after{padding:16vh var(--pad);max-width:900px}
+.after h2{font:700 clamp(32px,4.4vw,60px)/1 ui-serif,Georgia,serif;letter-spacing:-.03em;margin:0 0 18px}
+.after a{color:var(--acc)}
+.after code{font:500 14px ui-monospace,Menlo,monospace;background:rgb(35 58 53 / .08);padding:2px 6px;border-radius:4px}
+@media (max-width:700px){.b1{top:12vh}.b3{top:12vh}}
+</style>
+</head>
+<body>
+<header class="top"><a href="#main">Fieldglass</a><span>Concept &middot; fictional brand</span></header>
+<main id="main">
+<section class="sv" data-scroll-video data-webm data-src-desktop="clip-d.mp4" data-src-phone="clip-m.mp4" data-poster-desktop="poster-d.webp" data-poster-phone="poster-m.webp" aria-label="Scroll to fly in">
+  <div class="sv-pin">
+    <video muted playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+    <div class="sv-beat b1" data-at="-0.08" data-len="0.3"><h1>See the far <em>side.</em></h1><p>Scroll, and the camera flies in. The scroll position is the video's timeline.</p></div>
+    <div class="sv-beat b2" data-at="0.26" data-len="0.24"><h2>Every angle, at your pace.</h2></div>
+    <div class="sv-beat b3" data-at="0.52" data-len="0.24"><h2>Stop anywhere. <em>Reverse.</em></h2><p>Scroll back and the shot plays backwards, frame accurate.</p></div>
+    <div class="sv-beat b4" data-at="0.78" data-len="0.3"><h2>Right up to the glass.</h2></div>
+    <div class="hint" aria-hidden="true">Scroll to fly in</div>
+    <div class="sv-bar" aria-hidden="true"><i></i></div>
+  </div>
+</section>
+<section class="after">
+  <h2>That was one video, scrubbed by scroll.</h2>
+  <p>The clip is a 4-second render of a real CC0 model (Binoculars by Derek Wight, Poly Haven), framed twice: 1280x720 for desktop (576 KB) and 720x1280 for phones (367 KB). How to make your own: <code>SKILL.md</code> in this folder.</p>
+  <p>Fieldglass is a fictional brand made for this example. Built by <a href="https://zyqor-portfolio-v3.sites.tab.bot/">Zyqor Studio</a>; idea from <a href="https://github.com/oso95/scroll-world" rel="noopener noreferrer" target="_blank">scroll-world</a> by cyw (MIT).</p>
+</section>
+</main>
+<script type="module" src="scroll-video.js"></script>
+</body>
+</html>
