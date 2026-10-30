@@ -1,0 +1,27 @@
+{
+ "brand": "Tally Pad",
+ "id": "P042",
+ "items": [
+  {
+   "what": "3D model",
+   "title": "Tally Pad (procedural)",
+   "author": "Zyqor Studio",
+   "source": "this repo (pad.js)",
+   "licence": "All rights reserved (own work)",
+   "note": "Built in code, no downloaded 3D files.",
+   "files": [
+    "pad.js"
+   ]
+  },
+  {
+   "what": "HDRI",
+   "title": "Studio Small 09",
+   "author": "Sergej Majboroda",
+   "source": "Poly Haven",
+   "url": "https://polyhaven.com/a/studio_small_09",
+   "licence": "CC0 1.0",
+   "note": "shared repo file assets/hdri/studio_1k.hdr",
+   "files": []
+  }
+ ]
+}
