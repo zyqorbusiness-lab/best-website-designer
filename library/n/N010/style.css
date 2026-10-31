@@ -192,3 +192,16 @@ body{background:transparent}
 @media (prefers-reduced-motion:reduce){.photo-stage .ph,.photo-stage .ph.is-out{transform:none;transition:opacity 200ms linear}.cut,.cut.is-swap{transform:none}}
 
 .hero{overflow-x:clip}
+
+/* ---------- Round 2 (Oct 31): the fruit is 3D again (citrus.js). The real photos stay as small cards beside it ---------- */
+.citrus-gl{position:fixed;left:0;top:0;width:100vw;height:100vh;z-index:1;pointer-events:none;visibility:hidden}
+.is-3d .hero-copy,.is-3d .spec,.is-3d .site{z-index:3}
+.is-3d .photo-stage .ph{width:clamp(140px,17%,200px);left:auto;top:auto;right:var(--gutter);bottom:calc(var(--s5) + 18px);translate:none;border-radius:14px;border:4px solid var(--c1);box-shadow:0 14px 30px color-mix(in oklab,var(--c2) 22%,transparent);filter:none;z-index:2;background:var(--c1);aspect-ratio:16/9;object-fit:cover}
+.is-3d .photo-stage .ph.is-on{transform:rotate(-3deg)}
+.is-3d .photo-stage .ph.is-out{transform:rotate(-3deg) translateY(10px)}
+.is-3d .ph-credit{bottom:calc(var(--s5) - 4px)}
+.is-3d .ph-card-tag{display:block}
+.ph-card-tag{display:none;position:absolute;right:var(--gutter);bottom:calc(var(--s5) + 18px + clamp(140px,17%,200px) * .5625 + 10px);margin:0;z-index:2;font-size:.62rem;color:var(--ink-3)}
+.is-3d .cut-disc .cut{position:absolute;right:-4%;bottom:-2%;width:36%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:50%;border:5px solid var(--c1);box-shadow:0 12px 26px color-mix(in oklab,var(--c2) 24%,transparent);transform:none;z-index:2}
+@media (max-width:860px){.is-3d .photo-stage .ph,.is-3d .ph-card-tag,.is-3d .photo-stage .ph-credit{display:none}}
+@media (prefers-reduced-motion:reduce){.is-3d .photo-stage .ph,.is-3d .photo-stage .ph.is-on{transform:none}}

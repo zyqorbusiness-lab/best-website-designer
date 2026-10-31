@@ -1,90 +1,100 @@
 {
-  "brand": "Rootline Citrus",
-  "id": "N010",
-  "items": [
-    {
-      "what": "Poster and thumbnail",
-      "title": "Rootline Citrus poster (WebGL fallback still) and thumbnail",
-      "author": "Zyqor Studio",
-      "licence": "MIT",
-      "files": [
-        "poster.webp",
-        "thumb.webp"
-      ],
-      "note": "Screenshots of this page's own real-time render of the CC0 lime scan. Not AI imagery."
-    },
-    {
-      "what": "Photo",
-      "title": "Lemon-Whole-Split.jpg",
-      "author": "Evan-Amos",
-      "source": "Wikimedia Commons",
-      "url": "https://commons.wikimedia.org/wiki/File:Lemon-Whole-Split.jpg",
-      "licence": "Public domain (author release)",
-      "note": "PD-self. Background removed, resized: the lemon in the hero (whole + cut) and the cut half in The fruit section.",
-      "files": [
-        "img/lemon-hero.webp",
-        "img/lemon-cut.webp"
-      ]
-    },
-    {
-      "what": "Photo",
-      "title": "Lime-Whole-Split.jpg",
-      "author": "Evan-Amos",
-      "source": "Wikimedia Commons",
-      "url": "https://commons.wikimedia.org/wiki/File:Lime-Whole-Split.jpg",
-      "licence": "CC0 1.0",
-      "note": "Background removed, resized: the lime in the hero (whole + cut) and the cut half in The fruit section.",
-      "files": [
-        "img/lime-hero.webp",
-        "img/lime-cut.webp"
-      ]
-    },
-    {
-      "what": "Photo",
-      "title": "Citrus unshiu 20101118 a.jpg + Citrus unshiu 20101118 c.jpg",
-      "author": "Batholith",
-      "source": "Wikimedia Commons",
-      "url": "https://commons.wikimedia.org/wiki/File:Citrus_unshiu_20101118_a.jpg",
-      "licence": "Public domain (author release)",
-      "note": "PD-self, both files (cut half: https://commons.wikimedia.org/wiki/File:Citrus_unshiu_20101118_c.jpg). Backgrounds removed, placed side by side for the hero; the cut half alone in The fruit section.",
-      "files": [
-        "img/mandarin-hero.webp",
-        "img/mandarin-cut.webp"
-      ]
-    },
-    {
-      "what": "Type",
-      "title": "Bricolage Grotesque, DM Sans",
-      "author": "Mathieu Triay; Colophon Foundry / Google",
-      "source": "Google Fonts",
-      "url": "https://fonts.google.com",
-      "licence": "SIL OFL 1.1",
-      "note": "Self-hosted shared files in site/assets/font.",
-      "files": []
-    },
-    {
-      "what": "Type",
-      "title": "Instrument Serif",
-      "author": "Rodrigo Fuenzalida, Jordan Egstad",
-      "source": "GitHub",
-      "url": "https://github.com/Instrument/instrument-serif",
-      "licence": "SIL OFL 1.1"
-    },
-    {
-      "what": "Type",
-      "title": "JetBrains Mono",
-      "author": "The JetBrains Mono Project Authors",
-      "source": "GitHub",
-      "url": "https://github.com/JetBrains/JetBrainsMono",
-      "licence": "SIL OFL 1.1"
-    },
-    {
-      "what": "Engine",
-      "title": "GSAP, Lenis (kit reveals)",
-      "author": "their authors",
-      "source": "npm",
-      "url": "https://gsap.com",
-      "licence": "MIT / GSAP Standard Licence"
-    }
-  ]
+ "brand": "Rootline Citrus",
+ "id": "N010",
+ "items": [
+  {
+   "what": "Poster and thumbnail",
+   "title": "Rootline Citrus poster (WebGL fallback still) and thumbnail",
+   "author": "Zyqor Studio",
+   "licence": "MIT",
+   "files": [
+    "poster.webp",
+    "thumb.webp"
+   ],
+   "note": "Screenshots of this page's own real-time render of the CC0 lime scan. Not AI imagery."
+  },
+  {
+   "what": "3D fruit",
+   "title": "Procedural 3D lemon, lime and mandarin (whole + cut half)",
+   "author": "Zyqor Studio",
+   "licence": "MIT",
+   "files": [
+    "citrus.js"
+   ],
+   "note": "Built in code with three.js r170 (MIT): shaped sphere, oil-gland normal map and mottling drawn on a canvas, custom cut-face shader (segments, membranes, pith, juice sacs, translucent glow). No downloaded models, no AI imagery."
+  },
+  {
+   "what": "Photo",
+   "title": "Lemon-Whole-Split.jpg",
+   "author": "Evan-Amos",
+   "source": "Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/wiki/File:Lemon-Whole-Split.jpg",
+   "licence": "Public domain (author release)",
+   "note": "PD-self. Background removed, resized: the lemon in the hero (whole + cut) and the cut half in The fruit section.",
+   "files": [
+    "img/lemon-hero.webp",
+    "img/lemon-cut.webp"
+   ]
+  },
+  {
+   "what": "Photo",
+   "title": "Lime-Whole-Split.jpg",
+   "author": "Evan-Amos",
+   "source": "Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/wiki/File:Lime-Whole-Split.jpg",
+   "licence": "CC0 1.0",
+   "note": "Background removed, resized: the lime in the hero (whole + cut) and the cut half in The fruit section.",
+   "files": [
+    "img/lime-hero.webp",
+    "img/lime-cut.webp"
+   ]
+  },
+  {
+   "what": "Photo",
+   "title": "Citrus unshiu 20101118 a.jpg + Citrus unshiu 20101118 c.jpg",
+   "author": "Batholith",
+   "source": "Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/wiki/File:Citrus_unshiu_20101118_a.jpg",
+   "licence": "Public domain (author release)",
+   "note": "PD-self, both files (cut half: https://commons.wikimedia.org/wiki/File:Citrus_unshiu_20101118_c.jpg). Backgrounds removed, placed side by side for the hero; the cut half alone in The fruit section.",
+   "files": [
+    "img/mandarin-hero.webp",
+    "img/mandarin-cut.webp"
+   ]
+  },
+  {
+   "what": "Type",
+   "title": "Bricolage Grotesque, DM Sans",
+   "author": "Mathieu Triay; Colophon Foundry / Google",
+   "source": "Google Fonts",
+   "url": "https://fonts.google.com",
+   "licence": "SIL OFL 1.1",
+   "note": "Self-hosted shared files in site/assets/font.",
+   "files": []
+  },
+  {
+   "what": "Type",
+   "title": "Instrument Serif",
+   "author": "Rodrigo Fuenzalida, Jordan Egstad",
+   "source": "GitHub",
+   "url": "https://github.com/Instrument/instrument-serif",
+   "licence": "SIL OFL 1.1"
+  },
+  {
+   "what": "Type",
+   "title": "JetBrains Mono",
+   "author": "The JetBrains Mono Project Authors",
+   "source": "GitHub",
+   "url": "https://github.com/JetBrains/JetBrainsMono",
+   "licence": "SIL OFL 1.1"
+  },
+  {
+   "what": "Engine",
+   "title": "GSAP, Lenis (kit reveals)",
+   "author": "their authors",
+   "source": "npm",
+   "url": "https://gsap.com",
+   "licence": "MIT / GSAP Standard Licence"
+  }
+ ]
 }
