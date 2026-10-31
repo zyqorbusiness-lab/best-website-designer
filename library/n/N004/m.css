@@ -210,3 +210,45 @@ select.input{appearance:none;-webkit-appearance:none;background-image:linear-gra
 .sec-head{margin-bottom:var(--s5)}
 .step{width:44px;height:44px}
 .form[hidden]{display:none}
+
+/* ---- Oct 31 refresh: indigo night -> apricot dawn (no near-black), lamp-brightness cards ---- */
+.hero{
+  --nt:#23305C; --nl:#34477E; --mt:#4E64A3; --ml:#F2A07A; --dt:#FFF4E6; --dl:#FFB677;
+  --sky-top:color-mix(in oklab,color-mix(in oklab,var(--nt),var(--mt) calc(var(--a) * 100%)),var(--dt) calc(var(--b) * 100%));
+  --sky-low:color-mix(in oklab,color-mix(in oklab,var(--nl),var(--ml) calc(var(--a) * 100%)),var(--dl) calc(var(--b) * 100%))}
+.sky{background:linear-gradient(180deg,var(--sky-top) 0%,var(--sky-top) 34%,var(--sky-low) 100%)}
+.hill-b{fill:color-mix(in oklab,#2B3B6E calc(100% - var(--dawn) * 42%),#F3C9A2)}
+.hill-f{fill:color-mix(in oklab,#1F2B55 calc(100% - var(--dawn) * 30%),#E9B58D)}
+.sun-halo{fill:color-mix(in oklab,#FFD9A0 80%,transparent)}
+.title{font-weight:700;letter-spacing:-.045em}
+.title .serif{font-family:var(--f-serif)}
+.h2,.h3{font-weight:600;letter-spacing:-.03em}
+/* the four minutes as cards, each lamp at its own brightness */
+.stops.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s3);border:0}
+.cards li{display:flex}
+.cards .stop{display:grid;grid-template-columns:1fr;align-content:start;gap:var(--s1);padding:var(--s4);border:1px solid var(--line);border-radius:22px;background:color-mix(in oklab,var(--c1) 70%,#fff);box-shadow:var(--spec);transition:background-color var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out),transform var(--dur-fast) var(--ease-out)}
+.cards .stop-m{grid-row:auto;padding-top:var(--s2);color:var(--ink-3)}
+.cards .stop-t{max-width:none}
+.cards .stop[aria-pressed=true]{background:#FFE9CF;border-color:var(--c3)}
+@media (hover:hover) and (pointer:fine){.cards .stop:hover{background:#FFEFDC;transform:translateY(-2px)}}
+.stop-lamp{position:relative;display:block;width:100%;height:150px;border-radius:14px;background:linear-gradient(180deg,#2A3A6E 0%,#3A4C86 100%);overflow:hidden}
+.stop-lamp i{position:absolute;left:50%;top:26px;width:72px;height:72px;margin-left:-36px;border-radius:50%;
+  background:radial-gradient(circle at 42% 38%,#fff 0%,var(--k) 46%,color-mix(in oklab,var(--k) 72%,#7a3b1c) 100%);
+  opacity:var(--ko);box-shadow:0 0 var(--kg) calc(var(--kg) * .45) color-mix(in oklab,var(--k) 70%,transparent),inset 0 -6px 12px #0002}
+.stop-lamp b{position:absolute;left:50%;top:94px;width:66px;height:20px;margin-left:-33px;border-radius:8px 8px 4px 4px;background:linear-gradient(180deg,#8A5A3B,#5E3A24);box-shadow:0 10px 24px calc(var(--kg) * .2) color-mix(in oklab,var(--k) 45%,transparent)}
+.stop-lamp::after{content:"";position:absolute;left:0;right:0;bottom:0;height:22px;background:color-mix(in oklab,#2A3A6E 80%,var(--k))}
+@media (prefers-reduced-motion:reduce){.cards .stop{transition:none}.cards .stop:hover{transform:none}}
+.stops.cards{grid-template-columns:1fr;gap:var(--s2)}
+.cards .stop{grid-template-columns:96px minmax(0,1fr);column-gap:var(--s3);padding:var(--s3)}
+.cards .stop .stop-lamp{grid-row:span 3;height:auto;min-height:118px;align-self:stretch}
+.cards .stop .stop-lamp i{top:18px;width:52px;height:52px;margin-left:-26px}
+.cards .stop .stop-lamp b{top:66px;width:48px;height:15px;margin-left:-24px}
+.cards .stop .stop-lamp::after{height:16px}
+.cards .stop-m{padding-top:0}
+
+.hill-b{fill:color-mix(in oklab,#2B3B6E calc(100% - var(--dawn) * 100%),#F0A77A)}
+.hill-f{fill:color-mix(in oklab,#1F2B55 calc(100% - var(--dawn) * 100%),#DE8C5E)}
+.stop-lamp::after{left:15%;right:15%;bottom:auto;top:108px;height:26px;border-radius:50%;background:radial-gradient(closest-side,color-mix(in oklab,var(--k) calc(var(--ko) * 55%),transparent),transparent)}
+.cards .stop .stop-lamp i{top:calc(50% - 38px)}
+.cards .stop .stop-lamp b{top:calc(50% + 10px)}
+.cards .stop .stop-lamp::after{top:calc(50% + 20px);height:20px}

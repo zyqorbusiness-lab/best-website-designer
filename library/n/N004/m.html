@@ -7,7 +7,7 @@
 <script>document.documentElement.classList.add('js');(function(){var q=location.search;if(/[?&]m=1/.test(q))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height,phone=w<=860||(c&&h>w);if(!phone)location.replace('./'+q+location.hash);})();</script>
 <title>Morrow Light &middot; Concept N004 &middot; Zyqor Library</title>
 <meta name="description" content="Morrow Light is a fictional brand: a normal 3D web concept by Zyqor Studio. A sunrise alarm lamp: one switch sweeps the page from night to dawn while the lamp warms up.">
-<meta name="theme-color" content="#F2E5D7">
+<meta name="theme-color" content="#FFF4E6">
 <meta property="og:title" content="Morrow Light &middot; Concept N004 &middot; Zyqor Library">
 <meta property="og:description" content="A fictional-brand 3D concept by Zyqor Studio.">
 <meta property="og:image" content="https://zyqor-portfolio.vercel.app/library/n/N004/thumb.webp">
@@ -15,7 +15,9 @@
 <link rel="preload" href="../../_kit/stage.js" as="script" crossorigin>
 <link rel="stylesheet" href="../../_kit/concept.css">
 <link rel="stylesheet" href="m.css">
-<style>:root{--c1:#F2E5D7;--c2:#37221B;--c3:#2E63D8}</style>
+<style>@font-face{font-family:"Instrument Sans";src:url("font/instrumentsans-var.woff2") format("woff2");font-weight:400 700;font-stretch:75% 100%;font-display:swap}
+:root{--c1:#FFF4E6;--c2:#23305C;--c3:#C8551F;--f-display:"Instrument Sans","Manrope",system-ui,sans-serif;--f-body:"Instrument Sans","Manrope",system-ui,sans-serif;--f-serif:"Instrument Serif","Fraunces",Georgia,serif}</style>
+<link rel="preload" href="font/instrumentsans-var.woff2" as="font" type="font/woff2" crossorigin>
 <style>@property --dawn{syntax:"<number>";inherits:true;initial-value:0}</style>
 <script type="importmap">{"imports":{"three":"../../../vendor/three/three.module.min.js","three/addons/":"../../../vendor/three/addons/"}}</script>
 <link rel="canonical" href="https://zyqor-portfolio.vercel.app/library/n/N004/">
@@ -88,13 +90,12 @@
         </div>
         <figure class="swatch" data-rv><span class="sw-disc" aria-hidden="true"></span><figcaption class="mono"><b id="sw-k">Lamp off</b><span id="sw-t">06:00</span></figcaption></figure>
       </div>
-      <ol class="stops" role="list">
-        <li data-rv><button class="stop" type="button" data-min="0" aria-pressed="false"><span class="stop-m mono">+00 min</span><span class="stop-n h3">First red</span><span class="stop-t body">The lamp starts at the dimmest ember it can make, about 1800&nbsp;K. You will not notice it, and that is the point.</span></button></li>
-        <li data-rv><button class="stop" type="button" data-min="10" aria-pressed="false"><span class="stop-m mono">+10 min</span><span class="stop-n h3">Amber</span><span class="stop-t body">Ten minutes in, the room is the colour of a candle. Your eyes are still closed, your body is already counting.</span></button></li>
-        <li data-rv><button class="stop" type="button" data-min="20" aria-pressed="false"><span class="stop-m mono">+20 min</span><span class="stop-n h3">Gold</span><span class="stop-t body">Bright enough to read by. Most people are awake here, before any sound.</span></button></li>
-        <li data-rv><button class="stop" type="button" data-min="30" aria-pressed="false"><span class="stop-m mono">+30 min</span><span class="stop-n h3">Alarm</span><span class="stop-t body">Full warm white at 3200&nbsp;K, right on your alarm. If you are still asleep, a soft chime follows.</span></button></li>
+      <ol class="stops cards" role="list">
+        <li data-rv><button class="stop" type="button" data-min="0" aria-pressed="false" style="--k:#E9773F;--kg:10px;--ko:.55"><span class="stop-lamp" aria-hidden="true"><i></i><b></b></span><span class="stop-m mono">+00 min &middot; 1800&nbsp;K</span><span class="stop-n h3">First red</span><span class="stop-t body">The dimmest ember the lamp can make. You will not notice it, and that is the point.</span></button></li>
+        <li data-rv><button class="stop" type="button" data-min="10" aria-pressed="false" style="--k:#F7A04F;--kg:24px;--ko:.75"><span class="stop-lamp" aria-hidden="true"><i></i><b></b></span><span class="stop-m mono">+10 min &middot; 2200&nbsp;K</span><span class="stop-n h3">Amber</span><span class="stop-t body">The room turns the colour of a candle. Eyes closed, body already counting.</span></button></li>
+        <li data-rv><button class="stop" type="button" data-min="20" aria-pressed="false" style="--k:#FFC47C;--kg:40px;--ko:.9"><span class="stop-lamp" aria-hidden="true"><i></i><b></b></span><span class="stop-m mono">+20 min &middot; 2800&nbsp;K</span><span class="stop-n h3">Gold</span><span class="stop-t body">Bright enough to read by. Most people are awake here, before any sound.</span></button></li>
+        <li data-rv><button class="stop" type="button" data-min="30" aria-pressed="false" style="--k:#FFE7C4;--kg:60px;--ko:1"><span class="stop-lamp" aria-hidden="true"><i></i><b></b></span><span class="stop-m mono">+30 min &middot; 3200&nbsp;K</span><span class="stop-n h3">Alarm</span><span class="stop-t body">Full warm white, right on your alarm. Still asleep? A soft chime follows.</span></button></li>
       </ol>
-      <svg class="curve" viewBox="0 0 600 160" aria-hidden="true" data-rv><path class="curve-grid" d="M0 150H600M0 100H600M0 50H600"/><path class="curve-line" d="M0 150 C 200 148 330 120 420 70 S 560 12 600 10"/><circle class="curve-dot" r="6" cx="0" cy="150"/></svg>
     </div>
   </section>
   <section class="section lamp" id="lamp" aria-labelledby="lm-h">
