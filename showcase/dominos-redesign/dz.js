@@ -16,7 +16,7 @@ $$('.seg button').forEach(b=>b.addEventListener('click',()=>{ $$('.seg button').
 function swapTo(btn){
   const src='img/'+btn.dataset.k+'.webp'; const cur=$('img:last-child',stageImg);
   if(cur.getAttribute('src')===src) return;
-  const done=()=>{ const n=document.createElement('img'); n.src=src; n.alt=btn.dataset.alt; n.width=1000; n.height=1000;
+  const done=()=>{ const n=document.createElement('img'); n.src=src; n.alt=btn.dataset.alt; n.width=1200; n.height=1200;
     if(RM){ stageImg.replaceChildren(n); return; }
     n.className='incoming'; stageImg.appendChild(n);
     const go=()=>{ requestAnimationFrame(()=>{ n.classList.add('go'); ring.classList.remove('hit'); void ring.offsetWidth; ring.classList.add('hit'); stage.classList.remove('bump'); void stage.offsetWidth; stage.classList.add('bump'); });
@@ -46,7 +46,7 @@ $$('.drop',drops).forEach(d=>d.style.transform='translate(-50%,-50%)');
 $('#addBtn').addEventListener('click',()=>{ const ex=$$('.drop',drops).map(d=>d.dataset.t); toast(`${size} ${name}${ex.length?' + '+ex.join(', '):''} — concept demo, nothing is ordered.`); });
 // tracker
 const steps=$$('#steps li'), fill=$('#barFill'), timg=$('#trackImg'), tcred=$('#trackCredit');
-const IMG=[['img/prep.webp','A cook placing pepperoni slices on a pizza','Photo: Shixart1985 (CC BY 2.0)'],['img/hero.webp','A hot supreme pizza with melted cheese','Photo: Scott Bauer, USDA ARS (public domain)'],['img/boxes.webp','Three pizza boxes stacked on a table','Photo: Tony Webster (CC BY 2.0)'],['img/boxes.webp','Three pizza boxes stacked on a table','Photo: Tony Webster (CC BY 2.0)']];
+const IMG=[['img/prep.webp','A pizza chef pressing out fresh dough on a floured counter','Photo: Enricomariacosta.75 (CC BY-SA 4.0)'],['img/bake.webp','A cook sliding a pizza into a glowing wood-fired oven','Photo: Dale Cruse (CC BY 2.0)'],['img/box.webp','A sliced pepperoni pizza in an open corrugated box','Photo: Dale Cruse (CC BY 2.0)'],['img/ontheway.webp','A pepperoni and basil pizza in an open delivery box, ready to go','Photo: Dale Cruse (CC BY 2.0)']];
 let tStep=0, timer;
 function setStep(i){ tStep=i; steps.forEach((li,k)=>{ li.classList.toggle('on',k===i); li.classList.toggle('done',k<i); }); fill.style.width=(12+i*29.3)+'%';
   const im=IMG[i]; if(timg.getAttribute('src')!==im[0]){ if(RM){timg.src=im[0];} else { timg.style.opacity=0; setTimeout(()=>{timg.src=im[0];timg.onload=()=>timg.style.opacity=1;},300);} } timg.alt=im[1]; tcred.textContent=im[2]; }
