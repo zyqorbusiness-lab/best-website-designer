@@ -18,12 +18,17 @@ const stage = await createStage({
   camera: { fov: 30, position: [0, 0.4, 2], target: [0, 0, 0] },
   label: 'Cut & Grain: a fish knife with a wooden handle. Scroll to move the camera along it.'
 });
-const chaps = $$('.chap'), bar = $('.prog span');
+const chaps = $$('.chap'), bar = $('.prog span'), heroCopy = $('#hero-copy');
+/* Oct 31 2026: the page opens on the knife itself (hero hold), then the original four-chapter camera path */
+const H = 0.16;
+const clamp01 = (x) => Math.min(1, Math.max(0, x));
 let shownC = -1;
-function caption(p) {
-  const c = Math.min(3, Math.floor(p * 4 + 0.08));
+function caption(P) {
+  const p = clamp01((P - H) / (1 - H));
+  if (heroCopy) heroCopy.style.setProperty('--ho', (1 - smoothstep(0.03, H * 0.75, P)).toFixed(3));
+  const c = P < H * 0.8 ? -1 : Math.min(3, Math.floor(p * 4 + 0.08));
   if (c !== shownC) { shownC = c; chaps.forEach((el, i) => el.classList.toggle('is-on', i === c)); }
-  bar.style.transform = `scaleX(${p.toFixed(4)})`;
+  bar.style.transform = `scaleX(${clamp01(P).toFixed(4)})`;
 }
 caption(0);
 if (stage.failed) { stage.scroll && 0; const sec = $('#edge'); addEventListener('scroll', () => { const r = sec.getBoundingClientRect(); caption(Math.min(1, Math.max(0, -r.top / (r.height - innerHeight)))); }, { passive: true }); }
@@ -37,6 +42,14 @@ else {
   const all = bb(knife), axis = all.y >= all.x && all.y >= all.z ? 'y' : all.x >= all.z ? 'x' : 'z';
   const cm = (o) => (o ? (Math.max(...bb(o).toArray()) * 100) : 0);
   if (blade && handle) { $('#m-blade').textContent = cm(blade).toFixed(1) + ' cm'; $('#m-handle').textContent = cm(handle).toFixed(1) + ' cm'; }
+  /* re-material (Oct 31 2026): the scan's albedo reads rusty and scratched; the blade becomes clean polished steel,
+     the handle keeps its own wood texture warmed toward walnut. Geometry untouched. */
+  knife.traverse((o) => {
+    if (!o.isMesh) return;
+    const m0 = o.material;
+    if (/blade/i.test(o.name)) o.material = new THREE.MeshStandardMaterial({ color: 0xe6e8ea, metalness: 0.88, roughness: 0.27, envMapIntensity: 1.5, side: THREE.DoubleSide });
+    else { const m = m0.clone(); m.color = new THREE.Color(0xb98c68); m.roughness = 0.55; m.metalness = 0; m.metalnessMap = null; m.side = THREE.DoubleSide; m.needsUpdate = true; o.material = m; }
+  });
   const holder = new THREE.Group(); holder.add(knife); stage.add(holder);
   if (axis === 'z') knife.rotation.y = Math.PI / 2;
   if (axis === 'y') { knife.rotation.z = -Math.PI / 2; knife.rotation.x = Math.PI / 2; }   /* the scan stands upright: lay it flat on its side, edge facing the viewer */
@@ -64,20 +77,24 @@ else {
   ];
   const pos = new THREE.Vector3(), tgt = new THREE.Vector3();
   let prog = 0, want = 0;
-  function pose(p) {
+  /* hero pose: the whole knife lying across the lower part of the first screen, three-quarter, under the title */
+  const KH = [side.clone().multiplyScalar(isM ? 7.2 : 3.05).add(E.clone().multiplyScalar(isM ? 0 : -0.12)).setY(isM ? 2.4 : 1.3), new THREE.Vector3(0, isM ? 0.75 : 0.32, 0)];
+  function pose(P) {
+    const p = clamp01((P - H) / (1 - H));
     const f = p * 3, i = Math.min(2, Math.floor(f)), t = smoothstep(0, 1, f - i);
     pos.lerpVectors(K[i][0], K[i + 1][0], t); tgt.lerpVectors(K[i][1], K[i + 1][1], t);
+    if (P < H) { const h = smoothstep(0.04, H, P); pos.lerpVectors(KH[0], K[0][0], h); tgt.lerpVectors(KH[1], K[0][1], h); }
     /* phone layout: in the overhead and side chapters the camera rolls 90 degrees so the long knife runs down the
        tall screen instead of being cropped (a framing change only; same scene, lights and effects) */
-    const roll = isM ? smoothstep(0.08, 0.28, p) * (1 - smoothstep(0.72, 0.9, p)) : 0;
+    const roll = isM ? (P < H ? 0.42 * (1 - smoothstep(0.04, H, P)) : smoothstep(0.08, 0.28, p) * (1 - smoothstep(0.72, 0.9, p))) : 0;
     stage.camera.up.set(0, 1, 0).lerp(E, roll).normalize();
     stage.camera.position.copy(pos); stage.camera.lookAt(tgt);
     const apart = smoothstep(0.18, 0.36, p) * (1 - smoothstep(0.62, 0.86, p));
     if (blade) blade.position.copy(bladeHome).addScaledVector(bDir, apart * sBlade);
     if (handle) handle.position.copy(handleHome).addScaledVector(hDir, -apart * sBlade * 0.5);
     rim.intensity = 2.2 * (1 - smoothstep(0.1, 0.25, p));
-    holder.rotation.y = lerp(0, 0.25, smoothstep(0.7, 1, p));
-    caption(p);
+    holder.rotation.y = P < H ? lerp(0.22, 0, smoothstep(0.04, H, P)) : lerp(0, 0.25, smoothstep(0.7, 1, p));
+    caption(P);
   }
   pose(0);
   stage.scroll('#edge', (p) => { want = p; stage.invalidate(); }, { native: isM });
