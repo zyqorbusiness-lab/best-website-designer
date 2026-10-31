@@ -1,0 +1,13 @@
+{
+ "title": "Playfair Display",
+ "author": "Claus Eggers S\u00f8rensen",
+ "author_url": "https://github.com/clauseggers/Playfair",
+ "source_url": "https://fonts.google.com/specimen/Playfair+Display",
+ "licence": "SIL OFL 1.1",
+ "licence_url": "https://openfontlicense.org/open-font-license-official-text/",
+ "attribution": "Playfair Display by Claus Eggers S\u00f8rensen, SIL Open Font License 1.1 (https://github.com/clauseggers/Playfair)",
+ "changes": "self-hosted variable woff2, Latin subset (via Fontsource); family name unchanged",
+ "downloaded": "2026-10-31",
+ "file": "playfair-var.woff2",
+ "credit_written_by": "portfolio fixes round 1, 2026-10-31"
+}

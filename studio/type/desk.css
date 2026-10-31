@@ -122,14 +122,14 @@
 .track{display:grid;gap:4px}
 .track div{display:grid;grid-template-columns:86px 1fr;align-items:baseline;gap:12px;border-bottom:1px solid var(--rule-2);padding:4px 0;overflow:hidden}
 .track small{font-size:10.5px;font-weight:650;color:var(--ink-60);font-variant-numeric:tabular-nums;line-height:1.3}
-.track p{margin:0;font-family:"Cabinet V";font-weight:800;white-space:nowrap;transition:letter-spacing .6s var(--ease)}
+.track p{margin:0;font-family:"Archivo V";font-weight:800;white-space:nowrap;transition:letter-spacing .6s var(--ease)}
 .nums{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.nums table{width:100%;border-collapse:collapse;font-family:"Satoshi V";font-size:17px}
+.nums table{width:100%;border-collapse:collapse;font-family:"Manrope V";font-size:17px}
 .nums caption{text-align:left;font-size:11px;letter-spacing:.09em;text-transform:uppercase;font-weight:650;padding-bottom:6px}
 .nums td{padding:6px 0;border-bottom:1px solid var(--rule);text-align:right}
 .nums td:first-child{text-align:left;font-size:13px;color:var(--ink-60)}
 .nums .pn td{font-variant-numeric:proportional-nums}.nums .tn td{font-variant-numeric:tabular-nums}
-.frac{display:flex;gap:28px;align-items:baseline;font-family:"Satoshi V";font-size:30px;font-weight:500;border-top:1px solid var(--rule);padding-top:12px}
+.frac{display:flex;gap:28px;align-items:baseline;font-family:"Manrope V";font-size:30px;font-weight:500;border-top:1px solid var(--rule);padding-top:12px}
 .frac small{display:block;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:650;color:var(--ink-60)}
 .frac .on{font-feature-settings:"frac" 1}
 

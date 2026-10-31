@@ -123,7 +123,7 @@ function ringTex(R) {
   const c = document.createElement('canvas'); c.width = 2048; c.height = 2048;
   const g = c.getContext('2d'); g.fillStyle = '#060606'; g.fillRect(0, 0, 2048, 2048);
   g.translate(1024, 1024);
-  g.fillStyle = '#d9d4c8'; g.font = '600 64px "Satoshi", "Helvetica Neue", Arial, sans-serif'; g.textBaseline = 'middle';
+  g.fillStyle = '#d9d4c8'; g.font = '600 64px "Manrope", "Helvetica Neue", Arial, sans-serif'; g.textBaseline = 'middle';
   const txt = 'HALDE OPTIK  \u00b7  SOLVER 1:1.4 / 35  \u00b7  CONCEPT  \u00b7  No 170317  \u00b7  E39  \u00b7  ';
   let a = -Math.PI / 2 - 0.9;
   for (const ch of txt) { const w = g.measureText(ch).width; g.save(); g.rotate(a); g.translate(0, -870); g.fillText(ch, -w / 2, 0); g.restore(); a += (w + 2) / 870; }

@@ -1,11 +1,11 @@
 /* Zyqor Lab UI v2 (design pass, Oct 27 2026). Load AFTER lab.css:
    <link rel="stylesheet" href="../_kit/lab-ui.css">
-   The frame around each concept speaks in the studio's own type (Satoshi for text, Cabinet Grotesk for numbers),
+   The frame around each concept speaks in the studio's own type (Manrope for text, Bricolage Grotesque for numbers),
    so the demo inside keeps its own fonts and palette. Uses the page's --c1 (light) --c2 (dark) --c3 (accent). */
-@font-face{font-family:"Satoshi";src:url("../../assets/font/satoshi-500.woff2") format("woff2");font-weight:500;font-display:swap}
-@font-face{font-family:"Satoshi";src:url("../../assets/font/satoshi-700.woff2") format("woff2");font-weight:700;font-display:swap}
-@font-face{font-family:"Cabinet Grotesk";src:url("../../assets/font/cabinetgrotesk-800.woff2") format("woff2");font-weight:800;font-display:swap}
-:root{--zl-ui:"Satoshi",system-ui,-apple-system,"Segoe UI",sans-serif;--zl-num:"Cabinet Grotesk","Satoshi",system-ui,sans-serif;--zl-ease:cubic-bezier(.2,.8,.2,1)}
+@font-face{font-family:"Manrope";src:url("../../assets/font/manrope-var.woff2") format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Manrope";src:url("../../assets/font/manrope-var.woff2") format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Bricolage Grotesque";src:url("../../assets/font/bricolage-axes.woff2") format("woff2");font-weight:800;font-display:swap}
+:root{--zl-ui:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;--zl-num:"Bricolage Grotesque","Manrope",system-ui,sans-serif;--zl-ease:cubic-bezier(.2,.8,.2,1)}
 
 /* ---------- top chrome: a round back button + a squared spec tag (liquid glass added by chrome.js from assets/glass/) ---------- */
 .zl-bar{top:16px;left:16px;right:16px;align-items:flex-start}

@@ -1,18 +1,18 @@
 /* Colour Theory, by Zyqor Studio — shared styles (desktop + phone) */
-@font-face{font-family:"Cabinet Grotesk";src:url("../assets/font/cabinetgrotesk-800.woff2") format("woff2");font-weight:800;font-display:swap}
-@font-face{font-family:"Cabinet Grotesk";src:url("../assets/font/cabinetgrotesk-700.woff2") format("woff2");font-weight:700;font-display:swap}
-@font-face{font-family:"Cabinet Grotesk";src:url("../assets/font/cabinetgrotesk-500.woff2") format("woff2");font-weight:500;font-display:swap}
-@font-face{font-family:"Satoshi";src:url("../assets/font/satoshi-400.woff2") format("woff2");font-weight:400;font-display:swap}
-@font-face{font-family:"Satoshi";src:url("../assets/font/satoshi-500.woff2") format("woff2");font-weight:500;font-display:swap}
-@font-face{font-family:"Satoshi";src:url("../assets/font/satoshi-700.woff2") format("woff2");font-weight:700;font-display:swap}
-@font-face{font-family:"Zodiak";src:url("../assets/font/zodiak-400i.woff2") format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Bricolage Grotesque";src:url("../assets/font/bricolage-axes.woff2") format("woff2");font-weight:800;font-display:swap}
+@font-face{font-family:"Bricolage Grotesque";src:url("../assets/font/bricolage-axes.woff2") format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Bricolage Grotesque";src:url("../assets/font/bricolage-axes.woff2") format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Manrope";src:url("../assets/font/manrope-var.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Manrope";src:url("../assets/font/manrope-var.woff2") format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Manrope";src:url("../assets/font/manrope-var.woff2") format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Fraunces";src:url("../assets/font/fraunces-italic.woff2") format("woff2");font-weight:400;font-style:italic;font-display:swap}
 
 :root{
   --ivory:#F3EDE1;--paper:#FAF6EE;--pine:#17423C;--pine-2:#0F2F2A;--ochre:#B5832F;--ochre-d:#8F6420;--gold:#D9B56A;
   --bg:#F3EDE1;--ink:#17423C;--acc:#B5832F;--mut:rgba(23,66,60,.66);--line:rgba(23,66,60,.16);
-  --f-d:"Cabinet Grotesk","Satoshi",system-ui,sans-serif;
-  --f-b:"Satoshi",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  --f-s:"Zodiak",Georgia,"Times New Roman",serif;
+  --f-d:"Bricolage Grotesque","Manrope",system-ui,sans-serif;
+  --f-b:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-s:"Fraunces",Georgia,"Times New Roman",serif;
   --ease:cubic-bezier(.19,1,.22,1);--ease-io:cubic-bezier(.77,0,.18,1);
   --pad:clamp(20px,4.2vw,64px);--max:1320px;--r:22px;
 }

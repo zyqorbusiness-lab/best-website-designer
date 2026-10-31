@@ -3,7 +3,7 @@
 @property --bg-a{syntax:"<color>";inherits:true;initial-value:#E6ECEE}
 @property --bg-b{syntax:"<color>";inherits:true;initial-value:#D8E1E4}
 @property --k{syntax:"<number>";inherits:true;initial-value:0}
-:root{--f-display:"Cabinet Grotesk",system-ui,sans-serif;--f-body:"Satoshi",system-ui,sans-serif}
+:root{--f-display:"Bricolage Grotesque",system-ui,sans-serif;--f-body:"Manrope",system-ui,sans-serif}
 body{background:var(--c1)}
 code{font:500 .92em/1 var(--f-mono);padding:.12em .35em;border-radius:6px;background:color-mix(in oklab,var(--c2) 9%,transparent)}
 

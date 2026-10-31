@@ -1,9 +1,9 @@
 
 @font-face{font-family:"Archivo";src:url(../../assets/font/archivo-var.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
-@font-face{font-family:"General Sans";src:url(../../assets/font/generalsans-var.woff2) format("woff2");font-weight:200 700;font-display:swap}
+@font-face{font-family:"Inter Tight";src:url(../../assets/font/intertight-normal.woff2) format("woff2");font-weight:200 700;font-display:swap}
 :root{--c1:#E6E4DF;--c2:#12313A;--c3:#E8553B;
  --page:#DDE3E3;--card:#2B6E8F;--ink:#F1EFEA;--acc:#E8553B;--accInk:#FFF8F2;
- --f-body:"General Sans",system-ui,sans-serif;--f-ui:"General Sans",system-ui,sans-serif;--f-d:"Archivo","Arial Black",sans-serif;
+ --f-body:"Inter Tight",system-ui,sans-serif;--f-ui:"Inter Tight",system-ui,sans-serif;--f-d:"Archivo","Arial Black",sans-serif;
  --e-out:cubic-bezier(.16,1,.3,1);--e-io:cubic-bezier(.77,0,.18,1);
  --cx:max(56px,calc((100vw - 1320px)/2));--ct:68px;--cb:24px}
 html{background:var(--page)}
@@ -186,7 +186,7 @@ html.vt-close::view-transition-old(root){z-index:2}
 html.vt-close::view-transition-new(root){z-index:1}
 html.night .specs,html.night .zl-foot,html.night .m-specs{--c1:#E6E4DF;--c2:#081C21}
 
-/* design pass (Oct 27): Inter Tight -> General Sans for text/UI; Archivo Expanded stays the display face. */
+/* design pass (Oct 27): Inter Tight -> Inter Tight for text/UI; Archivo Expanded stays the display face. */
 .eyebrow,.cw-name small,.t-prog{letter-spacing:.18em;font-weight:500}
 
 /* glass body (helper) */

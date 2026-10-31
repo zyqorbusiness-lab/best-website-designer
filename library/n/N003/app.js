@@ -60,16 +60,16 @@ const stage = await createStage({
 if (!stage.failed) {
   const T = THREE;
   stage.scene.background = new T.Color(C1);
-  await document.fonts.load('800 200px "Cabinet Grotesk"').catch(() => {});
+  await document.fonts.load('800 200px "Bricolage Grotesque"').catch(() => {});
 
   /* outline wordmark bands, drawn once into canvases (wrap-repeat, offset by scroll velocity) */
   function bandTexture(text, { h = 512, size = 400, stroke = 6, fill = false, font = '800', track = -0.04 } = {}) {
     const c = document.createElement('canvas'); const g = c.getContext('2d');
-    g.font = `${font} ${size}px "Cabinet Grotesk", system-ui, sans-serif`;
+    g.font = `${font} ${size}px "Bricolage Grotesque", system-ui, sans-serif`;
     const gap = size * 0.5; let w = 0; const chars = [...text];
     const widths = chars.map((ch) => g.measureText(ch).width + size * track); w = widths.reduce((a, b) => a + b, 0) + gap;
     c.width = Math.min(4096, Math.ceil(w)); c.height = h; const k = c.width / Math.ceil(w);
-    g.scale(k, 1); g.font = `${font} ${size}px "Cabinet Grotesk", system-ui, sans-serif`; g.textBaseline = 'middle';
+    g.scale(k, 1); g.font = `${font} ${size}px "Bricolage Grotesque", system-ui, sans-serif`; g.textBaseline = 'middle';
     g.lineJoin = 'round'; g.lineWidth = stroke / k; g.strokeStyle = C2; g.fillStyle = C2;
     let x = gap / 2;
     chars.forEach((ch, i) => {
@@ -136,7 +136,7 @@ if (!stage.failed) {
   // label: paper wrap with the wordmark, drawn in canvas (palette only)
   const lc = document.createElement('canvas'); lc.width = 1340; lc.height = 300; const lg = lc.getContext('2d');
   lg.fillStyle = C1; lg.fillRect(0, 0, 1340, 300); lg.strokeStyle = C2; lg.lineWidth = 3; lg.strokeRect(18, 18, 1304, 264);
-  lg.fillStyle = C2; lg.textAlign = 'center'; lg.font = '800 120px "Cabinet Grotesk", system-ui'; lg.fillText('TIDEWELL', 670, 160);
+  lg.fillStyle = C2; lg.textAlign = 'center'; lg.font = '800 120px "Bricolage Grotesque", system-ui'; lg.fillText('TIDEWELL', 670, 160);
   lg.font = '500 30px "JetBrains Mono", ui-monospace, monospace'; lg.fillText('FLAKY SEA SALT  \u00B7  180 G', 670, 222);
   lg.fillStyle = C3; lg.fillRect(630, 246, 80, 6);
   const labelTex = new T.CanvasTexture(lc); labelTex.colorSpace = T.SRGBColorSpace; labelTex.anisotropy = 4;

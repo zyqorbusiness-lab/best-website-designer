@@ -1,7 +1,7 @@
 /* N007 Brasswick Diya - desktop. Structure 04 (editorial maison, calm); the lantern hangs into the hero from the top edge. */
 
 /* ---------- shared rules (desktop + phone) ---------- */
-:root{--f-disp:"Zodiak",var(--f-serif);--lit:0;--gx:50%;--gy:40%}
+:root{--f-disp:"Fraunces",var(--f-serif);--lit:0;--gx:50%;--gy:40%}
 body{transition:background-color 900ms var(--ease-io),color 900ms var(--ease-io)}
 body.is-lit{background:color-mix(in oklab,var(--c1) 92%,var(--c3))}
 .h2{font-family:var(--f-disp);font-weight:500;letter-spacing:-.03em;line-height:1}

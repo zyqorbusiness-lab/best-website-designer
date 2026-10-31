@@ -1,10 +1,10 @@
-@font-face{font-family:"Cabinet Grotesk";src:url("../assets/font/cabinetgrotesk-800.woff2") format("woff2");font-weight:800;font-display:swap}
-@font-face{font-family:"Zodiak";src:url("../assets/font/zodiak-400i.woff2") format("woff2");font-weight:400;font-style:italic;font-display:swap}
-@font-face{font-family:"Satoshi";src:url("../assets/font/satoshi-400.woff2") format("woff2");font-weight:400;font-display:swap}
-@font-face{font-family:"Satoshi";src:url("../assets/font/satoshi-500.woff2") format("woff2");font-weight:500;font-display:swap}
-@font-face{font-family:"Satoshi";src:url("../assets/font/satoshi-700.woff2") format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Bricolage Grotesque";src:url("../assets/font/bricolage-axes.woff2") format("woff2");font-weight:800;font-display:swap}
+@font-face{font-family:"Fraunces";src:url("../assets/font/fraunces-italic.woff2") format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Manrope";src:url("../assets/font/manrope-var.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Manrope";src:url("../assets/font/manrope-var.woff2") format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Manrope";src:url("../assets/font/manrope-var.woff2") format("woff2");font-weight:700;font-display:swap}
 :root{--iv:#F3EDE1;--pine:#17423C;--ochre:#B5832F;--ink-2:#4D6863;--rule:color-mix(in srgb,var(--pine) 22%,transparent);
- --d:"Cabinet Grotesk","Satoshi",system-ui,sans-serif;--s:"Zodiak",Georgia,serif;--t:"Satoshi",system-ui,-apple-system,"Segoe UI",sans-serif;
+ --d:"Bricolage Grotesque","Manrope",system-ui,sans-serif;--s:"Fraunces",Georgia,serif;--t:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
  --e:cubic-bezier(.2,.8,.2,1);--g:clamp(20px,3.4vw,56px)}
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth}
