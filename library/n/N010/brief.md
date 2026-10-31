@@ -20,8 +20,8 @@ Fictional brand. A small grove-direct citrus shipper ("from the root line to you
 - --c3 #2E74D9 accent (cool blue, the contrast against warm fruit): about 1%: the primary button (deepened to color-mix 78% c3 / 22% c2 so paper text on it is >= 4.5:1), the focus ring, the active switcher dot, one rule line.
 
 ## Type
-- Display: Cabinet Grotesk 800, -0.04em. The fruit name sits next to it in Instrument Serif italic and swaps with the fruit.
-- Body: Satoshi, 62ch max. Mono tags: JetBrains Mono uppercase +0.06em. Two families plus mono.
+- Display: Bricolage Grotesque 800 (was Cabinet Grotesk until Oct 31), -0.04em. The fruit name sits next to it in Instrument Serif italic and swaps with the fruit.
+- Body: DM Sans (was Satoshi until Oct 31), 62ch max. Mono tags: JetBrains Mono uppercase +0.06em. Two families plus mono.
 
 ## Structure (14 structures)
 - 06 Live sandbox hero (the fruit is the toy) + 02 Swiss exposed-hairline grid below it (spec strip, process columns, crate ledger). Not hero + 3 cards.
@@ -52,3 +52,11 @@ Fictional brand. A small grove-direct citrus shipper ("from the root line to you
 
 ## QA (node tools/qa-library.mjs N010)
 - 0 console errors/warnings, 0 failed requests, 0 overflow at 1440x900 / 390x844 / 360x740, reduced motion pass, same GLBs on phone.
+
+
+## Oct 31 2026 refresh (audit fix, Zyqor Studio)
+- The 3D scans read dark and muddy, so the hero and "Cut one open" are now real fruit photography from Wikimedia Commons. Lemon (Evan-Amos, PD-self) and lime (Evan-Amos, CC0) are each shown whole and split. The satsuma mandarin (Batholith, PD-self) is two photos, whole and cut, placed side by side. Backgrounds are removed so each fruit sits on a plate of its own colour.
+- The interaction is unchanged: the switcher, keys 1/2/3 and crate rows pick a fruit, the photo slides in from the side it was picked (cross-fade only under reduced motion), and the page floods with that fruit's paper. The cut-half photo swaps in the fruit section.
+- Palette, set per fruit as paper/accent: lemon #FFF8DC/#FFE45C, lime #F1F8E4/#8BC34A, mandarin #FFF1E6/#FF8A3D. Ink is #1F3B2C. The CTA is ink with paper text.
+- Type: Bricolage Grotesque (display) + DM Sans (body), both SIL OFL and self-hosted. Instrument Serif italic stays for the fruit name.
+- models/ was removed because nothing on the page loads 3D any more.

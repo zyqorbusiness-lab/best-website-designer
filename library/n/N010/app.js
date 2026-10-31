@@ -1,6 +1,8 @@
 /* N010 Rootline Citrus - one app for index.html (desktop) and m.html (phone).
-   Phone = PC: the same three GLB files, the same HDRI, the same roll, flood and cross-section. Only layout differs. */
-import { createStage, THREE, isM, reduced } from '../../_kit/stage.js';
+   Oct 31 refresh: the fruit is real photography (Wikimedia Commons: Evan-Amos lemon PD + lime CC0, Batholith satsuma PD),
+   whole and cut open, on a plate of the fruit's own colour. Pick a fruit: the photo slides in and the page floods with its paper.
+   Phone = PC: the same photos, the same slide, flood and copy. Only layout differs. */
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 import { reveals, splitAll, press } from '../../_kit/fx/index.js';
 
 const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -10,16 +12,19 @@ const say = (t) => { if (live) live.textContent = t; };
 
 /* ---------- the three fruits (copy is plain and general; no invented numbers) ---------- */
 const FRUIT = {
-  lemon:    { name: 'Lemon',    latin: 'Citrus limon',          paper: '#EEE7B4', file: 'models/lemon.glb',    size: 1.46, rough: 1.3, segs: 9,  seeds: 5,
+  lemon:    { name: 'Lemon',    latin: 'Citrus limon',          paper: '#FFF8DC', accent: '#FFE45C', segs: 9,  seeds: 5,
               peel: 'Thick, oily, bright', taste: 'Sharp, clean acid', season: 'Winter into spring', segText: '8 to 10',
+              credit: 'Photo: Evan-Amos, public domain', cutAlt: 'A real lemon cut in half: 8 to 10 segments and a few seeds', cutWH: [900, 953],
               line: 'The loud one. Zest it before you squeeze it; the oil in the peel carries most of the smell.',
               uses: ['Dressings and curd', 'A squeeze over grilled fish', 'Zest in shortbread'] },
-  lime:     { name: 'Lime',     latin: 'Citrus × latifolia',    paper: '#E2E8C5', file: 'models/lime.glb',     size: 1.22, segs: 10, seeds: 0,
+  lime:     { name: 'Lime',     latin: 'Citrus × latifolia',    paper: '#F1F8E4', accent: '#8BC34A', segs: 10, seeds: 0,
               peel: 'Thin, glossy, deep green', taste: 'Sour, floral, quick', season: 'High summer', segText: 'About 10',
+              credit: 'Photo: Evan-Amos, CC0', cutAlt: 'A real lime cut in half: about 10 segments, seedless', cutWH: [900, 853],
               line: 'Seedless and thin skinned. Roll it under your palm before cutting and it gives up twice as easily.',
               uses: ['Tacos and ceviche', 'Cocktails and soda', 'Green curry'] },
-  mandarin: { name: 'Mandarin', latin: 'Citrus reticulata',     paper: '#F0DCC2', file: 'models/mandarin.glb', size: 1.26, segs: 11, seeds: 0,
+  mandarin: { name: 'Mandarin', latin: 'Citrus reticulata',     paper: '#FFF1E6', accent: '#FF8A3D', segs: 11, seeds: 0,
               peel: 'Loose, zips off by hand', taste: 'Sweet, low acid', season: 'Late autumn to winter', segText: '10 to 12',
+              credit: 'Photo: Batholith, public domain', cutAlt: 'A real satsuma mandarin cut in half: 10 to 12 segments, seedless', cutWH: [900, 689],
               line: 'The easy one. The peel lifts away in one piece and the segments come apart without a knife.',
               uses: ['Lunch boxes', 'Winter salads', 'Eaten whole, standing up'] }
 };
@@ -41,29 +46,6 @@ function setPaper(hex, origin) {
   setPaper.t = setTimeout(() => { root.style.setProperty('--floor', hex); flood.classList.remove('is-on'); }, 760);
 }
 
-/* ---------- cross-section drawn in code: segments, pith ring, seeds ---------- */
-const svg = $('[data-section-svg]');
-function drawSection(key, animate) {
-  if (!svg) return;
-  const f = FRUIT[key], n = f.segs, cx = 160, cy = 160, R = 150, pith = 136, inner = 18, gap = 0.035;
-  const wedge = (a0, a1) => {
-    const p = (r, a) => `${(cx + r * Math.cos(a)).toFixed(2)} ${(cy + r * Math.sin(a)).toFixed(2)}`;
-    const ri = inner + 4, ro = pith - 6, am = (a0 + a1) / 2;
-    return `M${p(ri, a0 + gap * 1.6)} L${p(ro, a0 + gap)} A${ro} ${ro} 0 0 1 ${p(ro, a1 - gap)} L${p(ri, a1 - gap * 1.6)} Q${p(inner - 2, am)} ${p(ri, a0 + gap * 1.6)}Z`;
-  };
-  let segs = '', ves = '', seeds = '';
-  for (let i = 0; i < n; i++) {
-    const a0 = (i / n) * Math.PI * 2 - Math.PI / 2, a1 = ((i + 1) / n) * Math.PI * 2 - Math.PI / 2, am = (a0 + a1) / 2;
-    segs += `<path class="seg" style="--i:${i}" d="${wedge(a0, a1)}"/>`;
-    for (let k = 0; k < 3; k++) { const a = am + (k - 1) * (a1 - a0) * 0.22, r0 = 46 + k * 9, r1 = pith - 22 - k * 6; ves += `<path class="ves" d="M${(cx + r0 * Math.cos(a)).toFixed(1)} ${(cy + r0 * Math.sin(a)).toFixed(1)} L${(cx + r1 * Math.cos(a)).toFixed(1)} ${(cy + r1 * Math.sin(a)).toFixed(1)}"/>`; }
-  }
-  for (let s = 0; s < f.seeds; s++) { const a = ((s * 2 + 1) / n) * Math.PI * 2 - Math.PI / 2 + 0.06, r = 40; const x = cx + r * Math.cos(a), y = cy + r * Math.sin(a); seeds += `<ellipse class="seed" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" rx="3.4" ry="7" transform="rotate(${(a * 180 / Math.PI + 90).toFixed(1)} ${x.toFixed(1)} ${y.toFixed(1)})"/>`; }
-  svg.innerHTML = `<circle class="peel" cx="${cx}" cy="${cy}" r="${R}"/><circle class="pith" cx="${cx}" cy="${cy}" r="${pith}"/><g class="segs">${segs}</g><g class="vess">${ves}</g>${seeds}<circle class="core" cx="${cx}" cy="${cy}" r="${inner - 6}"/>`;
-  svg.setAttribute('aria-label', `Cross-section of a ${f.name.toLowerCase()}: ${n} segments${f.seeds ? ', a few seeds' : ', seedless'}`);
-  svg.classList.toggle('is-draw', !!animate && !reduced);
-  if (animate && !reduced) { void svg.getBoundingClientRect(); requestAnimationFrame(() => svg.classList.remove('is-draw')); }
-}
-
 /* ---------- copy that follows the fruit ---------- */
 function setCopy(key) {
   const f = FRUIT[key];
@@ -81,87 +63,36 @@ function setCopy(key) {
   document.body.dataset.fruit = key;
 }
 
-/* ---------- the stage ---------- */
+/* ---------- the photo stage: real fruit, whole and cut, slides in from the side it was picked ---------- */
 const stageEl = $('[data-stage]');
-const loadEl = $('[data-load]');
-let stage = null, holder = null, spinner = null, shadow = null, turn = null;
-const models = {};                 // key -> Promise<Object3D>
-let rolling = null;                // active roll animation state
-
-function getFruit(key) {
-  if (!stage || stage.failed) return Promise.resolve(null);
-  if (!models[key]) {
-    models[key] = stage.load(new URL(FRUIT[key].file, import.meta.url).href, (e) => {
-      if (key === current && loadEl && e.total) loadEl.textContent = `Picking the ${FRUIT[key].name.toLowerCase()} ${Math.round((e.loaded / e.total) * 100)}%`;
-    }).then((g) => {
-      const o = g.scene;
-      o.traverse((m) => { if (m.isMesh) { m.castShadow = false; if (m.material) { m.material.envMapIntensity = 1.05; m.material.roughness *= (FRUIT[key].rough || 1); m.material.needsUpdate = true; } } });
-      if (key !== 'mandarin') o.rotation.z = Math.PI / 2;            // lemons and limes rest on their side, long axis across the table
-      const wrap = new THREE.Group(); wrap.add(o); stage.fit(wrap, FRUIT[key].size, false);
-      const b = new THREE.Box3().setFromObject(wrap), s = b.getSize(new THREE.Vector3());
-      wrap.userData.r = s.y / 2;                                      // rolling radius = half its height on the table
-      wrap.userData.long = key !== 'mandarin';                        // elongated: turn end-on before it rolls, like a real lemon does
-      return wrap;
-    }).catch(() => null);
-  }
-  return models[key];
-}
-
-const easeIn = (t) => t * t * t, easeOut = (t) => 1 - Math.pow(1 - t, 3);
-function show(wrap, r) {
-  spinner.clear(); spinner.add(wrap); holder.position.set(0, r * 0.985, 0); holder.rotation.set(0, 0, 0); holder.userData.r = r;
-}
+const photos = {}; $$('[data-photo]', stageEl || document).forEach((el) => { photos[el.dataset.photo] = el; });
+const cutImg = $('[data-cut]');
 function fruitScreenPoint() {
-  const rect = stageEl.getBoundingClientRect();
-  if (!stage || stage.failed || !holder) return { x: rect.left + rect.width * 0.62, y: rect.top + rect.height * 0.5 };
-  const v = new THREE.Vector3(0, holder.userData.r || 0.6, 0).project(stage.camera);
-  return { x: rect.left + (v.x * 0.5 + 0.5) * rect.width, y: rect.top + (-v.y * 0.5 + 0.5) * rect.height };
+  const rect = (stageEl || document.body).getBoundingClientRect();
+  return { x: rect.left + rect.width * 0.5, y: rect.top + rect.height * 0.5 };
 }
-
-async function choose(key, { fromUser = true } = {}) {
+function swapPhoto(prev, key) {
+  const dir = ORDER.indexOf(key) > ORDER.indexOf(prev) ? 1 : -1;
+  const out = photos[prev], inn = photos[key];
+  if (inn) { inn.loading = 'eager'; inn.style.setProperty('--d', String(dir)); inn.classList.remove('is-out'); inn.classList.add('is-pre'); void inn.offsetWidth; inn.classList.remove('is-pre'); inn.classList.add('is-on'); }
+  if (out && out !== inn) { out.style.setProperty('--d', String(dir)); out.classList.remove('is-on'); out.classList.add('is-out'); }
+}
+function swapCut(key) {
+  if (!cutImg) return; const f = FRUIT[key];
+  const set = () => { cutImg.src = `img/${key}-cut.webp`; cutImg.width = f.cutWH[0]; cutImg.height = f.cutWH[1]; cutImg.alt = f.cutAlt; };
+  if (reduced) { set(); return; }
+  cutImg.classList.add('is-swap'); setTimeout(() => { set(); const done = () => cutImg.classList.remove('is-swap'); if (cutImg.complete) requestAnimationFrame(done); else cutImg.addEventListener('load', done, { once: true }); }, 200);
+}
+function choose(key, { fromUser = true } = {}) {
   if (!FRUIT[key] || (key === current && fromUser)) return;
   const prev = current; current = key;
-  const origin = fruitScreenPoint();
-  setPaper(FRUIT[key].paper, origin);
-  setCopy(key); drawSection(key, true); drawRing(key);
-  say(`${FRUIT[key].name} selected. The page turns ${key === 'lime' ? 'matcha green' : key === 'lemon' ? 'pale lemon' : 'mandarin cream'}.`);
-  if (!stage || stage.failed) return;
-  const nextP = getFruit(key);
-  if (reduced) { const w = await nextP; if (w && current === key) { show(w, w.userData.r); turn && turn.set(w.userData.long ? 0.42 : 0.6); shadow && shadow.draw(); stage.invalidate(); } return; }
-  /* roll out to the right: rotation = distance / radius, so the peel never slides */
-  const dir = ORDER.indexOf(key) > ORDER.indexOf(prev) ? 1 : -1;
-  const x0 = holder.position.x, r0 = holder.userData.r || 0.6, out = dir * (isM ? 2.6 : 3.4);
-  const a0 = turn ? turn.angle : 0, aim = Math.round((a0 - Math.PI / 2) / Math.PI) * Math.PI + Math.PI / 2;
-  const longNow = !!(spinner.children[0] && spinner.children[0].userData.long);
-  rolling = { phase: 'out', t: 0, dur: 0.46, from: x0, to: out, r: r0, dir, key, next: nextP, a0, aim: longNow ? aim : a0 };
-  stage.invalidate();
+  root.style.setProperty('--c3', FRUIT[key].accent);
+  setPaper(FRUIT[key].paper, fruitScreenPoint());
+  setCopy(key); swapPhoto(prev, key); swapCut(key);
+  say(`${FRUIT[key].name} selected. The page turns ${key === 'lime' ? 'lime green' : key === 'lemon' ? 'pale lemon' : 'mandarin cream'}.`);
 }
-
-function rollFrame(dt) {
-  if (!rolling) return false;
-  const R = rolling; R.t += dt / R.dur; const k = Math.min(1, R.t);
-  if (R.phase === 'out') {
-    const x = R.from + (R.to - R.from) * easeIn(k); holder.position.x = x; holder.rotation.z = -x / R.r;
-    if (turn) { const ang = R.a0 + (R.aim - R.a0) * easeOut(Math.min(1, k * 1.8)); turn.angle = ang; turn.velocity = 0; spinner.rotation.y = ang; }
-    if (k >= 1) {
-      R.phase = 'wait';
-      R.next.then((w) => {
-        if (rolling !== R) return; if (!w) { rolling = null; return; }
-        show(w, w.userData.r); const from = -R.dir * (isM ? 2.6 : 3.4);
-        const endOn = w.userData.long ? Math.PI / 2 : 0, rest = w.userData.long ? 0.42 : 0.6;   // arrives end-on, settles three-quarter
-        Object.assign(R, { phase: 'in', t: 0, dur: 0.66, from, to: 0, r: w.userData.r, inA0: endOn, inA1: rest });
-        if (turn) { turn.angle = endOn; turn.velocity = 0; spinner.rotation.y = endOn; }
-        holder.position.x = from; holder.rotation.z = -from / R.r; stage.invalidate();
-      });
-    }
-  } else if (R.phase === 'in') {
-    const x = R.from + (R.to - R.from) * easeOut(k); holder.position.x = x; holder.rotation.z = -x / R.r;
-    if (turn) { const kk = Math.max(0, (k - 0.55) / 0.45), ang = R.inA0 + (R.inA1 - R.inA0) * (1 - Math.pow(1 - kk, 3)); turn.angle = ang; turn.velocity = 0; spinner.rotation.y = ang; }
-    if (k >= 1) { holder.position.x = 0; holder.rotation.z = 0; rolling = null; shadow && shadow.draw(); return true; }
-  }
-  if (shadow && R.phase !== 'wait') shadow.draw();
-  return true;
-}
+/* warm the other photos once the page is idle */
+(window.requestIdleCallback || ((f) => setTimeout(f, 1200)))(() => { ORDER.forEach((k) => { const i = new Image(); i.src = `img/${k}-cut.webp`; if (photos[k]) photos[k].loading = 'eager'; }); });
 
 /* switcher, keyboard 1/2/3, crate rows */
 $$('.sw').forEach((b) => {
@@ -188,24 +119,6 @@ $$('[data-crate]').forEach((b) => b.addEventListener('click', () => {
 }));
 
 
-/* ---------- the dial ring behind the fruit: one tick per segment, turns with the fruit ---------- */
-const ring = $('[data-ring]');
-function drawRing(key) {
-  if (!ring) return;
-  const n = FRUIT[key].segs; let t = '';
-  for (let i = 0; i < n; i++) { const a = (i / n) * Math.PI * 2; t += `<line x1="${(Math.sin(a) * 88).toFixed(2)}" y1="${(-Math.cos(a) * 88).toFixed(2)}" x2="${(Math.sin(a) * 97).toFixed(2)}" y2="${(-Math.cos(a) * 97).toFixed(2)}"/>`; }
-  for (let i = 0; i < 72; i++) { if (i % (72 / 12)) { const a = (i / 72) * Math.PI * 2; t += `<line class="fine" x1="${(Math.sin(a) * 94).toFixed(2)}" y1="${(-Math.cos(a) * 94).toFixed(2)}" x2="${(Math.sin(a) * 97).toFixed(2)}" y2="${(-Math.cos(a) * 97).toFixed(2)}"/>`; } }
-  ring.querySelector('.ticks').innerHTML = t;
-}
-function placeRing() {
-  if (!ring) return;
-  const rect = stageEl.getBoundingClientRect(), p = fruitScreenPoint();
-  ring.style.left = (p.x - rect.left) + 'px'; ring.style.top = (p.y - rect.top) + 'px';
-}
-drawRing(current);
-
-/* first paint: copy + section for the default fruit, no animation */
-setCopy(current); drawSection(current, false);
 
 /* ---------- phone menu ---------- */
 const menuBtn = $('.menu-btn'), menu = $('#menu');
@@ -263,24 +176,6 @@ if (form) {
   });
 }
 
-/* ---------- 3D: poster first, stage near the viewport, first fruit with real progress, the rest on idle ---------- */
-stage = await createStage({
-  el: stageEl,
-  camera: { fov: isM ? 30 : 26, position: [0, 0.95, isM ? 6.0 : 6.6], target: [0, 0.5, 0] },
-  exposure: 1.02, envIntensity: 1.0, envRotation: 0.6,
-  label: 'Rootline Citrus: the chosen fruit. Drag sideways to turn it, or use the arrow keys.'
-});
-if (!stage.failed) {
-  holder = new THREE.Group(); spinner = new THREE.Group(); holder.add(spinner); stage.add(holder);
-  const key = new THREE.DirectionalLight(0xfff4e0, 1.1); key.position.set(-2.5, 4, 3); stage.add(key);
-  shadow = stage.contactShadow({ size: 3.2, opacity: 0.72, blur: 1.7, darkness: 1.9, height: 0.65, color: 0x1e2522 });
-  turn = stage.spin(spinner, { auto: 0.16, onSpin: (st) => { if (ring) ring.style.setProperty('--a', (st.angle * 57.2958).toFixed(2) + 'deg'); }, label: 'Rootline Citrus: the chosen fruit. Drag sideways to turn it, or use the arrow keys.' });
-  stage.onFrame(rollFrame);
-  const first = await getFruit(current);
-  if (first) { show(first, first.userData.r); turn.set(first.userData.long ? 0.42 : 0.6); shadow && shadow.draw(); }
-  stage.loaded(); placeRing(); ring && ring.classList.add('is-on');
-  new ResizeObserver(() => placeRing()).observe(stageEl);
-  /* the other two fruits load on intent: the moment a pointer, finger or focus reaches a switch (or a crate row), never before */
-  const warm = (e) => { const b = e.target.closest && e.target.closest('[data-fruit]'); if (b && FRUIT[b.dataset.fruit]) getFruit(b.dataset.fruit); };
-  ['pointerover', 'focusin', 'touchstart'].forEach((ev) => document.addEventListener(ev, warm, { passive: true }));
-}
+
+/* first paint: copy for the default fruit, no animation */
+setCopy(current);

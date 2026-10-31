@@ -31,7 +31,10 @@ new MutationObserver(() => { $$('[data-rv]', inkS).forEach((n, i) => { const w =
 $$('[data-rv]', inkW).forEach((n) => n.classList.add('rv-pre'));
 
 /* ---------- divider state: p = share of the width that is winter (0..1) ---------- */
-let p = 0.5, pT = 0.5, tween = null, dragging = false;
+/* desktop: the copy owns the left 40%, the clearing is drawn right of centre (camera view offset), so the resting divider sits on the cabin */
+const SHIFT = isM ? 0 : 0.17, MID = isM ? 0.5 : 0.67, MIDV = Math.round(MID * 100);
+$$('.seg button[data-p="0.5"]').forEach((b) => { b.dataset.p = String(MID); });
+let p = MID, pT = MID, tween = null, dragging = false;
 const W = () => hero.clientWidth;
 function applyDivider() {
   const x = p * W();
@@ -41,7 +44,7 @@ function applyDivider() {
   if (grip.getAttribute('aria-valuenow') !== String(v)) {
     grip.setAttribute('aria-valuenow', v);
     grip.setAttribute('aria-valuetext', v >= 99 ? 'All winter' : v <= 1 ? 'All summer' : `${v}% winter, ${100 - v}% summer`);
-    $$('.seg button').forEach((b) => b.setAttribute('aria-pressed', String(+b.dataset.p === (v >= 99 ? 1 : v <= 1 ? 0 : (v === 50 ? 0.5 : -1)))));
+    $$('.seg button').forEach((b) => b.setAttribute('aria-pressed', String(+b.dataset.p === (v >= 99 ? 1 : v <= 1 ? 0 : (v === MIDV ? MID : -1)))));
   }
 }
 const ease = (t) => (t < 0.5 ? 8 * t ** 4 : 1 - (-2 * t + 2) ** 4 / 2);   // in-out-quart
@@ -139,14 +142,14 @@ form.querySelector('[data-reset]').addEventListener('click', () => {
 /* the season radio follows the divider until the visitor picks one (hand-made detail) */
 let pickedByHand = false;
 form.querySelectorAll('input[name=season]').forEach((r) => { r.addEventListener('pointerdown', () => { pickedByHand = true; }); r.addEventListener('keydown', () => { pickedByHand = true; }); });
-function syncSeason() { if (pickedByHand || form.classList.contains('is-done')) return; const want = p > 0.5 ? 'winter' : p < 0.5 ? 'summer' : null; form.querySelectorAll('input[name=season]').forEach((r) => { r.checked = r.value === want; }); }
+function syncSeason() { if (pickedByHand || form.classList.contains('is-done')) return; const want = p > MID + 0.005 ? 'winter' : p < MID - 0.005 ? 'summer' : null; form.querySelectorAll('input[name=season]').forEach((r) => { r.checked = r.value === want; }); }
 applyDivider();
 addEventListener('resize', applyDivider);
 
 /* ---------- the stage ---------- */
 const stage = await createStage({
   el: stageEl, demand: true, shadows: true, exposure: 1.0, envIntensity: 0.8,
-  camera: { fov: isM ? 30 : 24, position: isM ? [0, 5.2, 13.6] : [0, 4.9, 15.4], target: isM ? [0, 1.25, 0] : [0, 1.55, 0] },
+  camera: { fov: isM ? 30 : 25.5, position: isM ? [0, 5.2, 13.6] : [0, 4.9, 15.4], target: isM ? [0, 1.25, 0] : [0, 1.55, 0] },
   fitFov: true,
   label: 'Northpine Cabins: a small 3D clearing with a cabin, pines, a fire pit and a pond. Left of the divider it is deep winter, right of it high summer.'
 });
@@ -271,14 +274,15 @@ sun.shadow.mapSize.set(1024, 1024); Object.assign(sun.shadow.camera, { left: -3,
 const hemi = new THREE.HemisphereLight(0xffffff, 0x000000, 0.5);
 const glow = new THREE.PointLight(new THREE.Color(C.c3), 0, 2.2, 1.6); glow.position.set(-0.28 + 0.02, TOP + 0.55, 0.62);
 scene.add(sun, hemi, glow);
+scene.fog = new THREE.Fog(new THREE.Color(C.c1), isM ? 13.5 : 15.2, isM ? 24 : 26);   // soft depth haze: the back pines fade into the season's air
 const SEASON = {
-  winter: { snow: 1, sun: col('#cfdcf2', C.c1, 0.12), sunI: 1.5, hemiSky: col('#c7d4e0', C.c1, 0.2), hemiGround: col(C.c2, '#000', 0.2), hemiI: 0.55, env: 0.55, win: 2.4, glow: 1.6 },
-  summer: { snow: 0, sun: col('#fff0dc', C.c1, 0.3), sunI: 2.7, hemiSky: col(C.c1, '#ffffff', 0.3), hemiGround: col(C.c2, C.c1, 0.3), hemiI: 0.6, env: 0.95, win: 0, glow: 0 }
+  winter: { snow: 1, sun: col('#cfdcf2', C.c1, 0.12), sunI: 1.5, hemiSky: col('#c7d4e0', C.c1, 0.2), hemiGround: col(C.c2, '#000', 0.2), hemiI: 0.55, env: 0.55, win: 2.6, glow: 1.9, fog: col(C.c2, C.c1, 0.42) },
+  summer: { snow: 0, sun: col('#fff0dc', C.c1, 0.3), sunI: 2.7, hemiSky: col(C.c1, '#ffffff', 0.3), hemiGround: col(C.c2, C.c1, 0.3), hemiI: 0.6, env: 0.95, win: 0, glow: 0, fog: col(C.c1, C.c3, 0.14) }
 };
 function season(s) {
   const S = SEASON[s]; U.snow.value = S.snow; sun.color.copy(S.sun); sun.intensity = S.sunI;
   hemi.color.copy(S.hemiSky); hemi.groundColor.copy(S.hemiGround); hemi.intensity = S.hemiI; scene.environmentIntensity = S.env;
-  glassMat.emissiveIntensity = S.win; glow.intensity = S.glow; flakes.visible = smoke.visible = lip.visible = s === 'winter';
+  glassMat.emissiveIntensity = S.win; glow.intensity = S.glow; scene.fog.color.copy(S.fog); flakes.visible = smoke.visible = lip.visible = s === 'winter';
 }
 
 /* ---------- winter life: a few falling flakes and chimney smoke (winter pass only) ---------- */
@@ -318,6 +322,7 @@ const rawRender = renderer.render.bind(renderer);
 renderer.render = (sc, cam) => {
   if (sc !== scene || cam !== camera || renderer.getRenderTarget() !== null) return rawRender(sc, cam);
   const w = stage.size.w, h = stage.size.h, xs = Math.round(clamp(p) * w);
+  if (SHIFT && (!camera.view || camera.view.fullWidth !== w || camera.view.fullHeight !== h)) camera.setViewOffset(w, h, -Math.round(SHIFT * w), 0, w, h);
   renderer.setScissorTest(true);
   if (xs > 0) { season('winter'); renderer.setScissor(0, 0, xs, h); renderer.setViewport(0, 0, w, h); rawRender(sc, cam); }
   if (xs < w) { season('summer'); renderer.setScissor(xs, 0, w - xs, h); renderer.setViewport(0, 0, w, h); rawRender(sc, cam); }
@@ -331,7 +336,7 @@ stage.onFrame((dt, t) => {
   let busy = false;
   if (tween) { tween.t += dt / tween.dur; const k = Math.min(1, tween.t); p = tween.from + (tween.to - tween.from) * ease(k); if (k >= 1) { tween = null; p = pT; syncSeason(); } busy = true; }
   else if (dragging || Math.abs(p - pT) > 0.0004) { p = damp(p, pT, 18, dt); busy = true; }
-  else if (introT < 1.6 && !hero.classList.contains('has-moved')) { introT += dt; if (introT > 0) { const k = Math.min(1, introT / 1.6); p = 0.5 + Math.sin(k * Math.PI * 2) * 0.06 * (1 - k * 0.2) * (k < 1 ? 1 : 0); pT = p; } busy = true; }
+  else if (introT < 1.6 && !hero.classList.contains('has-moved')) { introT += dt; if (introT > 0) { const k = Math.min(1, introT / 1.6); p = MID + Math.sin(k * Math.PI * 2) * 0.06 * (1 - k * 0.2) * (k < 1 ? 1 : 0); pT = p; } busy = true; }
   applyDivider();
   if (p > 0.004 && !reduced) {          // winter is on screen: snow falls, smoke drifts
     for (let i = 0; i < NF; i++) { let y = fpos[i * 3 + 1] - fsp[i] * dt; if (y < TOP) y += 4.2; fpos[i * 3 + 1] = y; fpos[i * 3] += Math.sin(t * 0.7 + i) * 0.0012; }

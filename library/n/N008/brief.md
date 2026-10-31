@@ -10,13 +10,13 @@ Written before any code (Sujon's Master Award system, Drive points Q1/W5). Ficti
 - Change from the catalogue row (on review): the row asked for an Unsplash winter/summer photo pair "to be picked". No free photo pair shows the same cabin in both seasons, and two different cabins inside one slider would be a lie, so the 3D clearing is the before/after itself. No photos on the page.
 
 ## Palette roles (one job per colour)
-- --c1 #FCE1D1 peach paper: the summer half of the stage, the page canvas, light type on the winter half.
-- --c2 #193829 bottle green: all type on paper, the winter half of the stage (a coloured dark, never black), the cabin's painted planks (tinted).
-- --c3 #C96926 burnt orange: about 1%. The cabin door, the window glow at night in winter, the divider grip's centre dot, the one CTA, focus ring.
+- --c1 #F4F6F7 snow paper (Oct 31; was peach #FCE1D1): the summer half of the stage, the page canvas, light type on the winter half.
+- --c2 #20412F pine (Oct 31; was #193829): all type on paper, the winter half of the stage (a coloured dark, never black), the cabin's painted planks (tinted).
+- --c3 #D9733B ember (Oct 31; was #C96926), plus --c4 #8A5A3B timber for small accents: about 1%. The cabin door, the window glow at night in winter, the divider grip's centre dot, the one CTA, focus ring.
 - Contrast: c2 on c1 is about 11:1; c1 on c2 the same. c3 never carries body text.
 
 ## Type
-- Display: Zodiak (serif, 700) at -0.04em, for "Northpine" and the season words. Body: Satoshi. Mono tags: JetBrains Mono (kit).
+- Display: Fraunces (serif, 700) at -0.04em, for "Northpine" and the season words. Body: Inter Tight (both OFL, self-hosted; Oct 31 swap from the earlier non-OFL pair). Mono tags: JetBrains Mono (kit).
 
 ## Structure
 - 06 Live sandbox hero (the divider is the page) followed by a short 02 Swiss exposed-hairline grid: a two-column ledger "what changes / what stays", with a hairline down the middle that is the same divider line.

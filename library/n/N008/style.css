@@ -1,6 +1,6 @@
-/* N008 Northpine Cabins - desktop build. Tokens: ../../_kit/concept.css. Palette: peach #FCE1D1 / bottle green #193829 / burnt orange #C96926. */
+/* N008 Northpine Cabins - desktop build. Tokens: ../../_kit/concept.css. Palette (Oct 31 fix): snow #F4F6F7 / pine #20412F / ember #D9733B / timber #8A5A3B. */
 /* ---------- tokens for this page ---------- */
-:root{--f-display:"Fraunces",Georgia,serif;--f-serif:"Fraunces",Georgia,serif;--f-body:"Manrope",system-ui,sans-serif;
+:root{--f-display:"Fraunces",Georgia,serif;--f-serif:"Fraunces",Georgia,serif;--f-body:"Inter Tight",system-ui,sans-serif;
   --c3-ink:color-mix(in srgb,var(--c3) 64%,var(--c2));          /* accent for fills under light text: 4.8:1 with --c1 */
   --winter:var(--c2);--winter-2:color-mix(in oklab,var(--c2) 86%,var(--c1));--x:50%}
 .serif{font-weight:300;font-style:normal;letter-spacing:-.02em}
@@ -11,8 +11,8 @@
 /* ---------- hero: one clearing, two seasons ---------- */
 .hero{position:relative;overflow:hidden;isolation:isolate;touch-action:pan-y;user-select:none;-webkit-user-select:none}
 .season-bg,.season-bg>div,.hero-stage,.ink{position:absolute;inset:0}
-.bg-summer{background:radial-gradient(70% 60% at 62% 58%,color-mix(in oklab,var(--c1) 70%,#fff) 0%,var(--c1) 55%,color-mix(in oklab,var(--c1) 90%,var(--c3)) 100%)}
-.bg-winter{background:radial-gradient(70% 60% at 40% 60%,color-mix(in oklab,var(--c2) 80%,var(--c1)) 0%,var(--c2) 60%,color-mix(in oklab,var(--c2) 88%,#000) 100%);
+.bg-summer{background:radial-gradient(60% 70% at 67% 60%,color-mix(in oklab,var(--c1) 70%,#fff) 0%,color-mix(in oklab,var(--c1) 93%,var(--c4)) 50%,color-mix(in oklab,var(--c1) 84%,var(--c4)) 100%)}
+.bg-winter{background:radial-gradient(60% 70% at 67% 60%,color-mix(in oklab,var(--c2) 78%,var(--c1)) 0%,var(--c2) 55%,color-mix(in oklab,var(--c2) 90%,var(--c4)) 100%);
   clip-path:inset(0 calc(100% - var(--x)) 0 0)}
 .hero-stage{z-index:1}
 .hero-stage .stage-load{color:var(--ink-2)}
@@ -169,3 +169,35 @@
 .is-bad .err{visibility:visible}
 
 .ink--winter .ink-head .lead{color:var(--on-dark)}
+
+/* ---------- Oct 31 fix: copy column left, clearing right, no collision ---------- */
+:root{--fs-title:clamp(4.2rem,.6rem + 6vw,8.4rem)}
+.ink-head{top:50%;left:var(--gutter);right:auto;width:min(38vw,560px);transform:translateY(-54%);text-align:left;justify-items:start;gap:var(--s4)}
+.ink-head .lead{margin-inline:0;max-width:30ch;font-size:1.22rem;line-height:1.5}
+.ink-head .tag{letter-spacing:var(--track-mono)}
+.cap{bottom:100px}
+.cap--s{max-width:none;width:max-content}
+.cap--s .cap-p{max-width:30ch}
+.hero-ui{left:67%}
+.divider{--grip-y:64%}
+/* seasons: four photo cards */
+.scards{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s4)}
+.scard{display:grid;grid-template-rows:auto 1fr;background:var(--paper-2,#fff);border-radius:var(--radius);overflow:hidden;box-shadow:0 0 0 1px var(--line),0 24px 48px -32px color-mix(in oklab,var(--c2) 55%,transparent)}
+.scard-ph{position:relative;margin:0;aspect-ratio:4/5;overflow:hidden;background:var(--winter-2)}
+.scard-ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s var(--ease-out)}
+@media (hover:hover) and (pointer:fine){.scard:hover .scard-ph img{transform:scale(1.04)}}
+.scard-ph figcaption{position:absolute;left:12px;bottom:12px;display:inline-flex;gap:10px;align-items:center;padding:8px 12px;border-radius:var(--pill);background:color-mix(in oklab,var(--c1) 90%,transparent);color:var(--c2);font-size:12px;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.scard-ph figcaption span{color:var(--c3-ink)}
+.scard-dl{margin:0;display:grid}
+.scard-dl>div{padding:var(--s4);display:grid;gap:8px;align-content:start}
+.scard-dl .sw-w{min-height:7.4rem}
+.scard-dl dd{margin:0;font-size:var(--fs-sm);line-height:1.5}
+.scard-dl .sw-w{background:var(--winter);color:var(--c1)}
+.scard-dl .sw-w dd{color:var(--on-dark-2,color-mix(in oklab,var(--c1) 82%,transparent))}
+.scard-dl .sw-s dt{color:var(--c4)}
+.scard-dl .sw-s dd{color:var(--ink-2)}
+.same-band{margin:var(--s5) 0 0;display:flex;flex-wrap:wrap;align-items:baseline;gap:var(--s3) var(--s4);padding:var(--s5) var(--s5);border-radius:var(--radius);background:color-mix(in oklab,var(--c4) 12%,var(--c1));color:var(--c2)}
+.same-band .mono{color:var(--c4)}
+.same-band b{font:400 var(--fs-h3)/1.2 var(--f-serif);letter-spacing:-.02em}
+.ink--winter .ink-head .tag{color:color-mix(in oklab,var(--c1) 78%,var(--c3))}
+@media (prefers-reduced-motion:reduce){.scard-ph img{transition:none}}

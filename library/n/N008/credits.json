@@ -101,12 +101,13 @@
     },
     {
       "what": "Type",
-      "title": "Fraunces, Manrope",
+      "title": "Fraunces, Inter Tight",
       "author": "Undercase Type, Mikhail Sharanda",
       "source": "Google Fonts",
       "url": "https://fonts.google.com",
       "licence": "SIL Open Font License 1.1",
-      "files": []
+      "files": [],
+      "note": " Body switched from Manrope to Inter Tight on Oct 31."
     },
     {
       "what": "Type",
@@ -137,6 +138,58 @@
       "files": [
         "poster.webp",
         "thumb.webp"
+      ]
+    },
+    {
+      "what": "Photo",
+      "title": "The Bond Cabin in winter. (c949ec4b-1500-4972-92c3-a995790ffdee).JPG",
+      "author": "NPS",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:The_Bond_Cabin_in_winter._(c949ec4b-1500-4972-92c3-a995790ffdee).JPG",
+      "licence": "Public domain",
+      "note": "Seasons card 'Getting in'. Cropped 4:5, 720x900 WebP.",
+      "credit_file": "img/season-path.webp.credit.json",
+      "files": [
+        "img/season-path.webp"
+      ]
+    },
+    {
+      "what": "Photo",
+      "title": "Davidof Cabin-Tongass-DJS-02 (52503137245).jpg",
+      "author": "Forest Service Alaska Region, USDA",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Davidof_Cabin-Tongass-DJS-02_(52503137245).jpg",
+      "licence": "Public domain",
+      "note": "Seasons card 'Light'. Cropped 4:5, 720x900 WebP.",
+      "credit_file": "img/season-light.webp.credit.json",
+      "files": [
+        "img/season-light.webp"
+      ]
+    },
+    {
+      "what": "Photo",
+      "title": "Haskell Hut is complete with a wood stove, perfect for warming up by the fire. (71b7b094-3d61-4426-a432-3b883a47cdd9).JPG",
+      "author": "NPS",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Haskell_Hut_is_complete_with_a_wood_stove,_perfect_for_warming_up_by_the_fire._(71b7b094-3d61-4426-a432-3b883a47cdd9).JPG",
+      "licence": "Public domain",
+      "note": "Seasons card 'Warmth'. Cropped 4:5, 720x900 WebP.",
+      "credit_file": "img/season-stove.webp.credit.json",
+      "files": [
+        "img/season-stove.webp"
+      ]
+    },
+    {
+      "what": "Photo",
+      "title": "Lake Creek in snow, Oregon - Flickr - Bonnie Moreland (free images).jpg",
+      "author": "Bonnie Moreland",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Lake_Creek_in_snow,_Oregon_-_Flickr_-_Bonnie_Moreland_(free_images).jpg",
+      "licence": "Public domain",
+      "note": "Seasons card 'The pond'. Cropped 4:5, 720x900 WebP.",
+      "credit_file": "img/season-pond.webp.credit.json",
+      "files": [
+        "img/season-pond.webp"
       ]
     }
   ]
