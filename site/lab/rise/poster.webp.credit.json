@@ -1,13 +1,12 @@
 {
- "title": "4K Video of Colorful Liquid in Space",
- "author": "NASA Johnson Space Center",
- "author_url": "https://www.youtube.com/@ReelNASA",
- "source_url": "https://commons.wikimedia.org/wiki/File:4K_Video_of_Colorful_Liquid_in_Space.webm",
- "licence": "Public domain (NASA)",
- "licence_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
- "attribution": "Footage: \"4K Video of Colorful Liquid in Space\" by NASA Johnson Space Center, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:4K_Video_of_Colorful_Liquid_in_Space.webm), Public domain (NASA)",
+ "title": "Rise No.3 concept, first screen",
+ "author": "Zyqor Studio",
+ "author_url": "https://zyqor-portfolio.vercel.app/",
+ "source_url": "https://zyqor-portfolio.vercel.app/lab/rise/",
+ "licence": "MIT",
+ "licence_url": "https://opensource.org/licenses/MIT",
+ "attribution": "Own render of the page's procedural three.js scene by Zyqor Studio (MIT)",
+ "changes": "screenshot of the page's 3D hero (own three.js render plus the page copy), resized to 1200x750, WebP; used as the Lab card and og:image",
  "downloaded": "2026-10-31",
- "verified_note": "Commons file page read 2026-10-31: {{PD-USGov-NASA}}, source NASA Johnson YouTube bKk_7NIKY3Y (2015-10-09): astronauts on the ISS dissolve an effervescent tablet in a floating ball of coloured water; no NASA insignia or people in the excerpt",
- "changes": "poster = frame 120 of the page's graded frame sequence, cropped to 16:10; 15 s excerpt (0:50-1:05) cut from the original 3840x2026 file, cropped (desktop 16:9; phone 9:14.5 crop that follows the floating water ball), one baked grade (the green water ball recoloured to strawberry red, the station background desaturated and warmed to cream #F8EBCB), cut into WebP frames (200 desktop / 96 phone) for the scroll-scrubbed hero",
  "file": "poster.webp"
 }

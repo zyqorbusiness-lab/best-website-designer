@@ -154,7 +154,7 @@ Every Lab brand is **fictional** and every page says so. Nothing is for sale, no
 | 11 | **Nook** | Furniture | Accordion colour bars, odometer counter | `#EDE5D8` `#5B6B3A` `#B5512E` | [desktop](site/lab/nook/) / [phone](site/lab/nook/m.html) |
 | 12 | **Carmine No.7** | Fountain pen ink | Video flow: scroll-scrubbed real footage | `#F4EFE9` `#2B0A0E` `#D81E2C` | [desktop](site/lab/carmine/) / [phone](site/lab/carmine/m.html) |
 | 13 | **Longway** | Overland road trips | Video flow: scroll-scrubbed real footage | `#E9EDF0` `#16212D` `#F2B42F` | [desktop](site/lab/longway/) / [phone](site/lab/longway/m.html) |
-| 14 | **Rise No.3** | Sparkling strawberry water | Video flow: scroll-scrubbed real footage | `#F8EBCB` `#4A0F1E` `#E3343B` | [desktop](site/lab/rise/) / [phone](site/lab/rise/m.html) |
+| 14 | **Rise No.3** | Sparkling strawberry water | 3D hero: a code-built can, orbiting strawberries and live fizz (three.js), scroll camera | `#F8EBCB` `#4A0F1E` `#E3343B` | [desktop](site/lab/rise/) / [phone](site/lab/rise/m.html) |
 | 15 | **Fumée** | Perfume house | WebGL smoke field, pinned liquid scent swap, kinetic type | `#EEE7DC` `#36302B` `#A44A3F` | [desktop](site/lab/fumee/) / [phone](site/lab/fumee/m.html) |
 | 16 | **Plinth** | Architecture quarterly | Editorial grid, variable-font type, clip reveals, horizontal gallery | `#EDE8DE` `#19233B` `#DA4A2A` | [desktop](site/lab/plinth/) / [phone](site/lab/plinth/m.html) |
 | 17 | **HALDE R1** | Rangefinder camera | Real scanned camera, finish switch, light modes, exploded lens | `#E9E2D6` `#20241F` `#A85537` | [desktop](site/lab/halde/) / [phone](site/lab/halde/m.html) |

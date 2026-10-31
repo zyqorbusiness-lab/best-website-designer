@@ -9,13 +9,15 @@
  ],
  "frames": {
   "d": {
-   "n": 180,
+   "n": 116,
+   "start": 64,
    "w": 1280,
    "h": 720,
    "src": "../../assets/lab/carmine/d/carmine_{i}.webp"
   },
   "m": {
-   "n": 90,
+   "n": 58,
+   "start": 32,
    "w": 448,
    "h": 720,
    "src": "../../assets/lab/carmine/m/carmine_{i}.webp"

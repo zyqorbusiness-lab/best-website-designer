@@ -18,7 +18,7 @@ async function start(main) {
   try { man = await (await fetch(main.dataset.vf, { cache: 'force-cache' })).json(); }
   catch (e) { html.classList.add('vf-reduced'); reveals(); counts(); return; }
   const set = man.frames[isM ? 'm' : 'd'];
-  const url = (i) => set.src.replace('{i}', pad(i));
+  const url = (i) => set.src.replace('{i}', pad(i + (set.start || 0))); /* optional manifest "start": skip the clip's first frames */
   const track = main.querySelector('.vf-track');
   const stage = main.querySelector('.vf-stage');
   const canvas = stage.querySelector('canvas');

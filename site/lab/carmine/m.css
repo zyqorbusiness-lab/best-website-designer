@@ -146,3 +146,10 @@ body{background:var(--c1);color:var(--c2);font-family:var(--f-body)}
 .cm3d-steps li{display:none;font-size:14px}
 .cm3d-steps li.on{display:flex}
 }
+
+/* Oct 31 round 3b: the ink footage is light paper, so the reduced-motion page sets dark ink type on paper */
+.vf-reduced .vf-stage{background:var(--c1);color:var(--c2)}
+.vf-reduced .vf-hero,.vf-reduced .vf-beat{color:var(--c2)}
+.vf-reduced .vf-beat{border-top-color:color-mix(in srgb,var(--c2) 14%,transparent)}
+.vf-reduced .vf-hero h1{text-shadow:0 0 34px color-mix(in srgb,var(--c1) 80%,transparent)}
+.vf-reduced .vf-hero .vf-sub{text-shadow:0 0 16px color-mix(in srgb,var(--c1) 95%,transparent)}

@@ -124,9 +124,8 @@ From the [Khronos glTF Sample Assets](https://github.com/KhronosGroup/glTF-Sampl
 - Fonts: Bricolage Grotesque and Inter Tight, SIL Open Font License.
 
 ### 14 Rise No.3 (Sparkling strawberry water)
-- Code and design: Zyqor Studio (MIT licence for the code). Page generated with Zyqor Video Flow.
-- Footage: [4K Video of Colorful Liquid in Space](https://commons.wikimedia.org/wiki/File:4K_Video_of_Colorful_Liquid_in_Space.webm) by NASA Johnson Space Center, via Wikimedia Commons, public domain (15 s excerpt, cropped, the water ball recoloured strawberry red, cut into frames).
-- 3D can: can, label, strawberries and bubbles modelled in code with three.js (MIT); no downloaded models.
+- Code and design: Zyqor Studio (MIT licence for the code).
+- 3D hero: can, label, strawberries and bubbles modelled in code with three.js (MIT); no downloaded models. Posters and Lab-card images are own renders of that scene. (The NASA fizz footage used briefly on Oct 31 2026 was dropped; no footage remains on this page.)
 - Fonts: Archivo and Inter Tight, SIL Open Font License.
 
 ### 15 Fumée (Perfume house)
