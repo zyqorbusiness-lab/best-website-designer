@@ -12,13 +12,13 @@
    "n": 200,
    "w": 1440,
    "h": 810,
-   "src": "../../assets/lab/longway/d/f{i}.webp"
+   "src": "../../assets/lab/longway/d/lw{i}.webp"
   },
   "m": {
    "n": 90,
    "w": 596,
    "h": 960,
-   "src": "../../assets/lab/longway/m/f{i}.webp"
+   "src": "../../assets/lab/longway/m/lw{i}.webp"
   }
  },
  "scroll": {
@@ -48,10 +48,10 @@
   }
  ],
  "source": {
-  "file": "longway.mp4",
+  "file": "Driving_from_Blenheim_to_Havelock_in_the_Marlborough_Region_of_New_Zealand.webm (Wikimedia Commons, CC BY 3.0)",
   "trim": [
-   0.5,
-   28.5
+   1294,
+   1322
   ]
  }
 }

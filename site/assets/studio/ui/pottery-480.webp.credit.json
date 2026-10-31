@@ -1,15 +1,15 @@
 {
- "title": "Handmade Pottery in White Studio Installation",
- "author": "DS stories",
- "author_url": "https://www.pexels.com/photo/handmade-pottery-in-white-studio-installation-5040792/",
- "source_url": "https://www.pexels.com/photo/handmade-pottery-in-white-studio-installation-5040792/",
- "licence": "Pexels License",
- "licence_url": "https://www.pexels.com/license/",
- "attribution": "\"Handmade Pottery in White Studio Installation\" by DS stories, Pexels (https://www.pexels.com/photo/handmade-pottery-in-white-studio-installation-5040792/), Pexels License (credit optional)",
- "changes": "downloaded once, resized, self-hosted as WebP",
- "downloaded": "2026-10-27",
- "verified": true,
- "verified_note": "photographer name re-read from the photo page in a real browser on 2026-10-28 (matches the Oct 27 record)",
+ "title": "Ceramic Vessel MET 1979.206.697",
+ "author": "The Metropolitan Museum of Art (Open Access)",
+ "author_url": "https://commons.wikimedia.org/wiki/File:Ceramic_Vessel_MET_1979.206.697.jpeg",
+ "source_url": "https://commons.wikimedia.org/wiki/File:Ceramic_Vessel_MET_1979.206.697.jpeg",
+ "licence": "CC0 1.0",
+ "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+ "attribution": "\"Ceramic Vessel MET 1979.206.697\" by The Metropolitan Museum of Art (Open Access), Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Ceramic_Vessel_MET_1979.206.697.jpeg), CC0 1.0",
+ "changes": "cropped to the page frame, resized and re-encoded to WebP (q80)",
+ "downloaded": "2026-10-31",
  "file": "pottery-480.webp",
- "credit_written_by": "credits backfill 2026-10-28 (work/beast/credits/backfill)"
+ "verified": true,
+ "verified_note": "licence read from the Wikimedia Commons file page (structured licence statement + LicenseShortName) on 2026-10-31",
+ "credit_written_by": "hA round 2"
 }
