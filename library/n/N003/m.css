@@ -133,3 +133,39 @@ body.menu-open{overflow:hidden}
 .f-foot .btn{width:100%;min-height:52px}
 .f-ok{padding:var(--s4);flex-direction:column;align-items:flex-start;justify-content:center}
 @media (max-width:370px){.hero-h{font-size:2.6rem}.chip.size{padding:0 .9em}}
+
+/* ---------- Oct 31 refresh: sea-foam / deep sea / coral / sand, Fraunces + Inter Tight, real salt photography ---------- */
+body{background:var(--c1)}
+.btn--salt{--b-bg:var(--c3);--b-fg:var(--cta-ink)}
+.chip.size[aria-pressed=true],.f-ok-i{color:var(--cta-ink)}
+.logo{font-weight:700;letter-spacing:-.02em}
+.hero-h{font-weight:600;letter-spacing:-.035em;font-variation-settings:"opsz" 144,"SOFT" 30}
+.hero-h em,.h2 em{font-style:italic;font-weight:400;color:#C2502F}
+.hero-h em{display:block}
+.h2{font-family:var(--f-display);font-weight:600;letter-spacing:-.03em}
+.hv-h,.f-ok-h{font-weight:600;letter-spacing:-.015em}
+.harvest .h2 em{color:var(--c3)}
+.hero-copy .tag{color:var(--ink-2)}
+.flake-fig img{border-color:transparent;box-shadow:0 30px 60px -30px color-mix(in oklab,var(--c2) 45%,transparent)}
+.order{background:var(--sand);border-color:color-mix(in oklab,var(--c2) 12%,transparent)}
+.f-ok{background:var(--sand)}
+.spec{background:transparent}
+/* the outline wordmark band now lives here in section 2 (not behind the hero headline) */
+.jar{overflow:hidden}
+.band{margin:0 0 clamp(2.5rem,6vw,5rem);white-space:nowrap;pointer-events:none;user-select:none}
+.band-t{display:inline-block;font:700 clamp(4.5rem,13vw,13rem)/.9 var(--f-display);letter-spacing:-.03em;color:transparent;-webkit-text-stroke:1.5px var(--c2);transform:translate3d(var(--bx,0px),0,0);will-change:transform}
+.band-t i{font-style:normal;color:var(--c3);-webkit-text-stroke:0}
+/* real salt pans photo in the harvest band */
+.harvest{background:var(--c2)}
+.pans{margin:0 0 var(--s7);display:grid;gap:var(--s2)}
+.pans img{width:100%;aspect-ratio:21/9;object-fit:cover;border-radius:18px}
+.pans figcaption{color:color-mix(in oklab,var(--c1) 72%,var(--c2))}
+.cc-attr p+p{margin-top:.5em}
+@media (prefers-reduced-motion:reduce){.band-t{transform:none}}
+
+.band{margin-bottom:var(--s5)}
+.band-t{font-size:clamp(3.6rem,22vw,6rem);-webkit-text-stroke-width:1.2px}
+.pans{margin-bottom:var(--s5)}
+.pans img{aspect-ratio:4/3;border-radius:14px}
+.hero-h{font-size:clamp(2.8rem,1rem + 9.6vw,3.7rem)}
+@media (max-width:370px){.hero-h{font-size:2.55rem}}

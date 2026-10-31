@@ -17,14 +17,28 @@
     },
     {
       "what": "Photo",
-      "title": "Salt-crystals.jpg",
-      "author": "Nate Steiner",
+      "title": "Salt Crystals1.jpg",
+      "author": "Donald Olszewski",
       "source": "Wikimedia Commons",
-      "url": "https://commons.wikimedia.org/wiki/File:Salt-crystals.jpg",
-      "licence": "CC0 1.0 (public domain dedication)",
-      "note": "Cropped to 3:4 and colour-graded toward the page palette. Used as the arch card in the 3D scene and in The flake section (same file).",
+      "url": "https://commons.wikimedia.org/wiki/File:Salt_Crystals1.jpg",
+      "licence": "CC BY 4.0",
+      "note": "Three crops of the same file, lightly brightened: the arch card in the 3D scene, the texture of the salt inside the jar, and The crystal section. Licence: https://creativecommons.org/licenses/by/4.0/",
       "files": [
-        "img/salt-flakes.webp"
+        "img/salt-crystals-arch.webp",
+        "img/salt-fill.webp",
+        "img/salt-crystals-macro.webp"
+      ]
+    },
+    {
+      "what": "Photo",
+      "title": "Marakkanam Salt Pans.JPG",
+      "author": "Dey.sandip",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Marakkanam_Salt_Pans.JPG",
+      "licence": "CC BY 3.0",
+      "note": "Resized; the Harvest band. Licence: https://creativecommons.org/licenses/by/3.0/",
+      "files": [
+        "img/salt-pans.webp"
       ]
     },
     {
@@ -42,11 +56,11 @@
     },
     {
       "what": "Type",
-      "title": "Bricolage Grotesque, Manrope",
-      "author": "Mathieu Triay, Mikhail Sharanda",
+      "title": "Fraunces, Inter Tight",
+      "author": "Undercase Type / Phaedra Charles, Flavia Zimbardi; Rasmus Andersson",
       "source": "Google Fonts",
       "url": "https://fonts.google.com",
-      "licence": "SIL Open Font License 1.1",
+      "licence": "SIL OFL 1.1",
       "files": []
     },
     {
@@ -69,12 +83,12 @@
     },
     {
       "what": "3D",
-      "title": "Wrap label, salt flakes, plinth, wordmark band",
+      "title": "Wrap label, salt column, plinth; outline wordmark band (section 2, HTML/CSS)",
       "author": "Zyqor Studio",
       "source": "code-made three.js",
       "url": "",
       "licence": "MIT",
-      "note": "No AI imagery anywhere on this page.",
+      "note": "No generated imagery anywhere on this page.",
       "files": []
     },
     {

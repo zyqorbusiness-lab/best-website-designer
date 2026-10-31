@@ -1,8 +1,7 @@
 /* N003 Tidewell Salt - shared app for index.html (desktop) and m.html (phone).
-   Same photo + HDRI on both builds. The jar is a real CC-BY model (Glass Jar with Marble Lid 2.0, InGameStudio, Sketchfab) re-materialed in the palette;
-   code-made: a wrap label, instanced hollow-pyramid flakes, a stone plinth. The outline wordmark bands and the salt photo are planes
-   INSIDE the scene, behind the jar, so the glass refracts them. The bands move only with scroll velocity (and drag),
-   then settle: no endless loop. */
+   Oct 31 refresh: the arch card and the salt inside the jar are a real photo (Salt Crystals, Donald Olszewski, CC BY 4.0, Wikimedia Commons);
+   the jar is a real CC-BY model (Glass Jar with Marble Lid 2.0, InGameStudio, Sketchfab) re-materialed in the palette; code-made: a wrap label and a stone plinth.
+   The outline wordmark band moved out of the hero into section 2 (DOM, scroll-position driven, static under reduced motion). */
 import { createStage, THREE, isM, reduced, clamp, smoothstep, damp } from '../../_kit/stage.js';
 import { reveals, splitAll, press, magnetic } from '../../_kit/fx/index.js';
 
@@ -47,6 +46,15 @@ if (menuBtn && menu) {
   addEventListener('keydown', (e) => { if (e.key === 'Escape' && !menu.hidden) set(false); });
 }
 
+
+/* ---------------- section 2 outline wordmark band: moves with scroll position, no endless loop ---------------- */
+const bandEl = document.querySelector('[data-band] .band-t');
+if (bandEl && !reduced) {
+  let ticking = false;
+  const upd = () => { ticking = false; const r = bandEl.parentElement.getBoundingClientRect(); const p = (innerHeight - r.top) / (innerHeight + r.height); bandEl.style.setProperty('--bx', `${(-p * 28).toFixed(2)}%`); };
+  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(upd); } }, { passive: true }); upd();
+}
+
 /* ---------------- the 3D scene ---------------- */
 const pin = document.querySelector('.pin');
 const hint = document.querySelector('[data-hint]'), hintWrap = document.querySelector('.pin-hint');
@@ -54,46 +62,17 @@ const stage = await createStage({
   el: '[data-stage]', alpha: false, clearColor: C1, lazy: false,
   camera: { fov: 30, position: [0, 0.62, 5.6], target: [0, 0.42, 0] },
   exposure: 1.0, envIntensity: 0.9, fitFov: true,
-  label: 'A glass jar of sea salt flakes on a stone plinth in front of the Tidewell wordmark. Swipe sideways to turn it.'
+  label: 'A glass jar of crystal sea salt on a stone plinth in front of a macro photo of salt crystals. Swipe sideways to turn it.'
 });
 
 if (!stage.failed) {
   const T = THREE;
   stage.scene.background = new T.Color(C1);
-  await document.fonts.load('800 200px "Bricolage Grotesque"').catch(() => {});
+  await document.fonts.load('600 120px "Fraunces"').catch(() => {});
 
-  /* outline wordmark bands, drawn once into canvases (wrap-repeat, offset by scroll velocity) */
-  function bandTexture(text, { h = 512, size = 400, stroke = 6, fill = false, font = '800', track = -0.04 } = {}) {
-    const c = document.createElement('canvas'); const g = c.getContext('2d');
-    g.font = `${font} ${size}px "Bricolage Grotesque", system-ui, sans-serif`;
-    const gap = size * 0.5; let w = 0; const chars = [...text];
-    const widths = chars.map((ch) => g.measureText(ch).width + size * track); w = widths.reduce((a, b) => a + b, 0) + gap;
-    c.width = Math.min(4096, Math.ceil(w)); c.height = h; const k = c.width / Math.ceil(w);
-    g.scale(k, 1); g.font = `${font} ${size}px "Bricolage Grotesque", system-ui, sans-serif`; g.textBaseline = 'middle';
-    g.lineJoin = 'round'; g.lineWidth = stroke / k; g.strokeStyle = C2; g.fillStyle = C2;
-    let x = gap / 2;
-    chars.forEach((ch, i) => {
-      if (fill) g.fillText(ch, x, h * 0.54);
-      else { g.lineWidth = stroke / k; g.strokeStyle = C2; g.strokeText(ch, x, h * 0.54); g.lineWidth = (stroke * 0.42) / k; g.strokeStyle = C1; g.strokeText(ch, x, h * 0.54); }
-      x += widths[i];
-    });
-    const tx = new T.CanvasTexture(c); tx.colorSpace = T.SRGBColorSpace; tx.wrapS = T.RepeatWrapping; tx.anisotropy = 4;
-    return { tx, aspect: Math.ceil(w) / h };
-  }
-  const A = bandTexture('TIDEWELL', { size: 420, stroke: 9 });
-  // the band fades in from its left end so it never runs through the headline column
-  const bandMat = (t) => { const m = new T.MeshBasicMaterial({ map: t.tx, transparent: true, depthWrite: false, toneMapped: false });
-    m.onBeforeCompile = (sh) => {
-      sh.vertexShader = 'varying vec2 vPl;\n' + sh.vertexShader.replace('#include <uv_vertex>', '#include <uv_vertex>\n vPl = uv;');
-      sh.fragmentShader = 'uniform float uFade; varying vec2 vPl;\n' + sh.fragmentShader.replace('#include <map_fragment>', '#include <map_fragment>\n diffuseColor.a *= smoothstep(0.0, uFade, vPl.x);');
-      sh.uniforms.uFade = m.userData.fade;
-    };
-    m.userData.fade = { value: 0.28 }; return m; };
-  const bandA = new T.Mesh(new T.PlaneGeometry(1, 1), bandMat(A));
-  stage.add(bandA);
 
   /* the photo card (arch), real CC0 photo */
-  const photoTex = await stage.loadTexture('img/salt-flakes.webp', { anisotropy: 4 });
+  const photoTex = await stage.loadTexture('img/salt-crystals-arch.webp', { anisotropy: 4 });
   function archGeo(w, h) {
     const s = new T.Shape(); const r = w / 2;
     s.moveTo(-r, 0); s.lineTo(r, 0); s.lineTo(r, h - r); s.absarc(0, h - r, r, 0, Math.PI, false); s.lineTo(-r, 0);
@@ -120,24 +99,24 @@ if (!stage.failed) {
     const mesh = new T.Mesh(g, mat); mesh.castShadow = true; parent.add(mesh); return mesh; };
   bodyM.forEach((m) => place(m, glass, jar));
   const body = jar.children[0];
-  // flakes: hollow square pyramids (open cones with 4 sides), instanced
-  const flakeGeo = new T.ConeGeometry(1, 0.55, 4, 1, true); flakeGeo.rotateX(Math.PI);
-  const flakeMat = new T.MeshStandardMaterial({ color: '#fbf7f1', roughness: 0.32, metalness: 0, side: T.DoubleSide });
-  const N = 420; const flakes = new T.InstancedMesh(flakeGeo, flakeMat, N);
-  const m4 = new T.Matrix4(), q = new T.Quaternion(), e = new T.Euler(), v = new T.Vector3(), sc = new T.Vector3();
-  let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
-  for (let i = 0; i < N; i++) {
-    const a = rnd() * Math.PI * 2, rr = Math.sqrt(rnd()) * (R - 0.07); const top = 0.5 + 0.06 * Math.cos(rr * 5);
-    v.set(Math.cos(a) * rr, 0.03 + rnd() * (top - 0.03), Math.sin(a) * rr);
-    e.set(rnd() * 6.28, rnd() * 6.28, rnd() * 6.28); q.setFromEuler(e); const s = 0.022 + rnd() * 0.03; sc.set(s, s * (0.6 + rnd() * 0.5), s);
-    flakes.setMatrixAt(i, m4.compose(v, q, sc));
-  }
-  jar.add(flakes);
+  // salt fill: the real photo (Salt Crystals, Donald Olszewski, CC BY 4.0) wrapped on a column of salt inside the glass, no code-made cubes
+  const fillTex = await stage.loadTexture('img/salt-fill.webp', { anisotropy: 4 });
+  fillTex.wrapS = T.RepeatWrapping; fillTex.repeat.set(3, 1);
+  const fillTop = fillTex.clone(); fillTop.repeat.set(1, 1); fillTop.needsUpdate = true;
+  const fillMat = new T.MeshStandardMaterial({ map: fillTex, roughness: 0.55, metalness: 0 });
+  const fillH = 0.5, fillR = R - 0.05;
+  const saltCol = new T.Mesh(new T.CylinderGeometry(fillR, fillR - 0.01, fillH, 64, 1, true), fillMat);
+  saltCol.position.y = 0.03 + fillH / 2;
+  const capGeo = new T.CircleGeometry(fillR, 64); capGeo.rotateX(-Math.PI / 2);
+  { const p = capGeo.attributes.position; for (let i = 0; i < p.count; i++) { const x = p.getX(i), z = p.getZ(i), d = Math.hypot(x, z) / fillR; p.setY(i, 0.05 * (1 - d * d)); } capGeo.computeVertexNormals(); }
+  const saltCap = new T.Mesh(capGeo, new T.MeshStandardMaterial({ map: fillTop, roughness: 0.5 }));
+  saltCap.position.y = 0.03 + fillH;
+  jar.add(saltCol, saltCap);
   // label: paper wrap with the wordmark, drawn in canvas (palette only)
   const lc = document.createElement('canvas'); lc.width = 1340; lc.height = 300; const lg = lc.getContext('2d');
-  lg.fillStyle = C1; lg.fillRect(0, 0, 1340, 300); lg.strokeStyle = C2; lg.lineWidth = 3; lg.strokeRect(18, 18, 1304, 264);
-  lg.fillStyle = C2; lg.textAlign = 'center'; lg.font = '800 120px "Bricolage Grotesque", system-ui'; lg.fillText('TIDEWELL', 670, 160);
-  lg.font = '500 30px "JetBrains Mono", ui-monospace, monospace'; lg.fillText('FLAKY SEA SALT  \u00B7  180 G', 670, 222);
+  lg.fillStyle = '#F3E3C8'; lg.fillRect(0, 0, 1340, 300); lg.strokeStyle = C2; lg.lineWidth = 3; lg.strokeRect(18, 18, 1304, 264);
+  lg.fillStyle = C2; lg.textAlign = 'center'; lg.font = '600 118px "Fraunces", Georgia, serif'; lg.fillText('Tidewell', 670, 160);
+  lg.font = '500 30px "JetBrains Mono", ui-monospace, monospace'; lg.fillText('CRYSTAL SEA SALT  \u00B7  180 G', 670, 222);
   lg.fillStyle = C3; lg.fillRect(630, 246, 80, 6);
   const labelTex = new T.CanvasTexture(lc); labelTex.colorSpace = T.SRGBColorSpace; labelTex.anisotropy = 4;
   const label = new T.Mesh(new T.CylinderGeometry(R + 0.004, R + 0.004, 0.3, 64, 1, true, -1.5, 3.0), new T.MeshStandardMaterial({ map: labelTex, roughness: 0.85 }));
@@ -169,13 +148,9 @@ if (!stage.failed) {
     if (!p) {
       base.position.set(1.05, -0.62, 0.3); base.scale.setScalar(1.05);
       photo.position.set(1.05, -0.6, -1.0); photo.scale.setScalar(0.93);
-      bandA.scale.set(4.3, 1.3, 1); bandA.position.set(-0.3 + 4.3 / 2, -0.12, -0.42);
-      A.tx.repeat.x = 4.3 / (1.3 * A.aspect); bandA.material.userData.fade.value = 0.3;
     } else {
       base.position.set(0, -1.34, 0.3); base.scale.setScalar(0.86);
       photo.position.set(0, -1.28, -1.0); photo.scale.setScalar(0.78);
-      bandA.scale.set(4.2, 0.95, 1); bandA.position.set(0, -0.9, -0.42);
-      A.tx.repeat.x = 4.2 / (0.95 * A.aspect); bandA.material.userData.fade.value = 0.12;
     }
     shadow?.draw();
   }
@@ -191,7 +166,6 @@ if (!stage.failed) {
     const y = scrollY; const dy = y - lastY; lastY = y;
     if (!reduced) { const target = dy / Math.max(dt, 1 / 120) * 0.00011 + turn.velocity * 0.6; vel = damp(vel, target, 5, dt); }
     offA += vel * dt;
-    A.tx.offset.x = offA;
     jar.rotation.y = turn.angle + prog * Math.PI;
     const lt = reduced ? 1 : smoothstep(0.3, 0.62, prog);
     lid.position.set(lt * 0.16, lidY + lt * 0.34, 0); lid.rotation.z = -lt * 0.55;

@@ -1,16 +1,16 @@
 {
  "id": "N003",
- "date": "2026-10-29T20:19:08.817Z",
+ "date": "2026-10-31T11:19:04.192Z",
  "kit": 2,
  "verdict": "PASS",
  "tier": "normal",
  "budgetKB": 1536,
- "ownKB": 469,
- "sharedKB": 1627,
- "phoneOwnKB": 460,
- "phoneSharedKB": 1609,
- "weightKB": 2216,
- "phoneWeightKB": 2188,
+ "ownKB": 1069,
+ "sharedKB": 1634,
+ "phoneOwnKB": 1059,
+ "phoneSharedKB": 1616,
+ "weightKB": 2823,
+ "phoneWeightKB": 2794,
  "sameAssets": true,
  "assetDiff": {
   "desktopOnly": [],
@@ -19,7 +19,8 @@
  "assets3d": [
   "/assets/hdri/studio_512.hdr",
   "/library/_assets/models/glass_jar_marble_lid.glb",
-  "/library/n/N003/img/salt-flakes.webp"
+  "/library/n/N003/img/salt-crystals-arch.webp",
+  "/library/n/N003/img/salt-fill.webp"
  ],
  "sameEffects": true,
  "effectDiff": [],
@@ -43,11 +44,15 @@
  "nowebgl": true,
  "credit": {
   "pass": true,
-  "files": 8,
+  "files": 13,
   "missing": [],
   "incomplete": [],
   "ccby": [
-   "/library/_assets/models/glass_jar_marble_lid.glb"
+   "/library/_assets/models/glass_jar_marble_lid.glb",
+   "/library/n/N003/img/salt-crystals-arch.webp",
+   "/library/n/N003/img/salt-crystals-macro.webp",
+   "/library/n/N003/img/salt-fill.webp",
+   "/library/n/N003/img/salt-pans.webp"
   ],
   "ccbyNotVisible": [],
   "unlisted": []
@@ -60,8 +65,8 @@
    "failed": 0,
    "overflow": 0,
    "webgl": true,
-   "ownKB": 469,
-   "sharedKB": 1627
+   "ownKB": 1069,
+   "sharedKB": 1634
   },
   "m390": {
    "pass": true,
@@ -70,8 +75,8 @@
    "failed": 0,
    "overflow": 0,
    "webgl": true,
-   "ownKB": 460,
-   "sharedKB": 1609
+   "ownKB": 1059,
+   "sharedKB": 1616
   },
   "m360": {
    "pass": true,
@@ -80,8 +85,8 @@
    "failed": 0,
    "overflow": 0,
    "webgl": true,
-   "ownKB": 472,
-   "sharedKB": 1609
+   "ownKB": 1072,
+   "sharedKB": 1616
   },
   "rd1440": {
    "pass": true,
@@ -90,8 +95,8 @@
    "failed": 0,
    "overflow": 0,
    "webgl": true,
-   "ownKB": 469,
-   "sharedKB": 1648
+   "ownKB": 1069,
+   "sharedKB": 1655
   },
   "rm390": {
    "pass": true,
@@ -100,8 +105,8 @@
    "failed": 0,
    "overflow": 0,
    "webgl": true,
-   "ownKB": 472,
-   "sharedKB": 1629
+   "ownKB": 1072,
+   "sharedKB": 1616
   },
   "nd1440": {
    "pass": true,
@@ -111,8 +116,8 @@
    "overflow": 0,
    "webgl": false,
    "poster": true,
-   "ownKB": 198,
-   "sharedKB": 948
+   "ownKB": 617,
+   "sharedKB": 955
   },
   "nm390": {
    "pass": true,
@@ -122,8 +127,8 @@
    "overflow": 0,
    "webgl": false,
    "poster": true,
-   "ownKB": 201,
-   "sharedKB": 929
+   "ownKB": 620,
+   "sharedKB": 936
   }
  }
 }
