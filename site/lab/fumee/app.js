@@ -94,7 +94,7 @@ function run() {
     mf.words.forEach((w) => { if (key.has(w.textContent.trim())) w.dataset.key = '1'; });
     const tl = gsap.timeline({ scrollTrigger: { trigger: '.manifesto', start: 'top top', end: '+=130%', pin: '.mf-pin', scrub: .5,
       onUpdate: (s) => smoke && smoke.setMood(1 + s.progress * 1.6) } });
-    tl.to(mf.words, { color: (i, w) => (w.dataset.key ? '#C9705F' : '#EEE7DC'), stagger: .12, ease: 'none', duration: .6 })
+    tl.to(mf.words, { color: (i, w) => (w.dataset.key ? '#9E4A3A' : '#3F2B24'), stagger: .12, ease: 'none', duration: .6 })
       .from('.mf-sign', { autoAlpha: 0, y: 20, duration: .6 }, '>-0.2');
   }
 

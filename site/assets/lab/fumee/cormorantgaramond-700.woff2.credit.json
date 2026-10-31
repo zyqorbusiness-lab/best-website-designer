@@ -1,0 +1,13 @@
+{
+ "title": "Cormorant Garamond",
+ "author": "Christian Thalmann (Catharsis Fonts)",
+ "author_url": "https://github.com/CatharsisFonts/Cormorant",
+ "source_url": "https://fonts.google.com/specimen/Cormorant+Garamond",
+ "licence": "SIL OFL 1.1",
+ "licence_url": "https://openfontlicense.org/open-font-license-official-text/",
+ "attribution": "Cormorant Garamond by Christian Thalmann (Catharsis Fonts), SIL Open Font License 1.1 (https://github.com/CatharsisFonts/Cormorant)",
+ "changes": "self-hosted woff2, Latin subset (via Fontsource, https://cdn.jsdelivr.net/fontsource/fonts/cormorant-garamond@latest/latin-700-normal.woff2); OFL permits subsetting and conversion; family name unchanged",
+ "downloaded": "2026-10-31",
+ "file": "cormorantgaramond-700.woff2",
+ "credit_written_by": "portfolio fixes round 1, 2026-10-31"
+}

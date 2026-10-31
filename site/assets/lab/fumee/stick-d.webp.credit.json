@@ -1,15 +1,15 @@
 {
- "title": "Brown wooden stick with black smoke",
- "author": "petr sidorov",
- "author_url": "https://unsplash.com/@m_malkovich",
- "source_url": "https://unsplash.com/photos/brown-wooden-stick-with-black-smoke-d_YI6RQdyoE",
- "licence": "Unsplash License",
- "licence_url": "https://unsplash.com/license",
- "attribution": "\"Brown wooden stick with black smoke\" by petr sidorov, Unsplash (https://unsplash.com/photos/brown-wooden-stick-with-black-smoke-d_YI6RQdyoE), Unsplash License (credit optional)",
- "changes": "cropped, resized, converted to WebP",
- "downloaded": "2026-10-27",
+ "title": "A burning incense stick at the Songshan Ciyou Temple 2019-04-27",
+ "author": "Mori, Office of the President (Taiwan)",
+ "author_url": "https://www.flickr.com/photos/presidentialoffice/",
+ "source_url": "https://commons.wikimedia.org/wiki/File:A_burning_incense_stick_at_the_Songshan_Ciyou_Temple_2019-04-27.jpg",
+ "licence": "CC BY 2.0",
+ "licence_url": "https://creativecommons.org/licenses/by/2.0/",
+ "attribution": "\"A burning incense stick at the Songshan Ciyou Temple 2019-04-27\" by Mori, Office of the President (Taiwan), Wikimedia Commons (https://commons.wikimedia.org/wiki/File:A_burning_incense_stick_at_the_Songshan_Ciyou_Temple_2019-04-27.jpg), CC BY 2.0",
+ "changes": "cropped to 3:4, resized, converted to WebP",
+ "downloaded": "2026-10-31",
  "verified": true,
- "verified_note": "photographer name and licence read from the photo page in a real browser on 2026-10-28",
+ "verified_note": "licence and author read from the Wikimedia Commons file page API on 2026-10-31",
  "file": "stick-d.webp",
- "credit_written_by": "credits backfill 2026-10-28"
+ "credit_written_by": "portfolio fixes round 1, 2026-10-31"
 }

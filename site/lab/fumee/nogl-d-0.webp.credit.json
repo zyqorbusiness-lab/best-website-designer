@@ -6,8 +6,8 @@
  "licence": "MIT",
  "licence_url": "https://opensource.org/licenses/MIT",
  "attribution": "Zyqor Studio (render of this demo's own 3D scene)",
- "changes": "one frame of the WebGL smoke field at its first-screen state; rendered in the live demo (three.js) with the page hidden, captured by Zyqor Studio, WebP",
- "downloaded": "2026-10-28",
+ "changes": "one frame of the WebGL smoke field at its first-screen state; rendered in the live demo (three.js) with the page hidden, captured by Zyqor Studio, WebP; re-shot 2026-10-31 for the light parchment build",
+ "downloaded": "2026-10-31",
  "file": "nogl-d-0.webp",
  "credit_written_by": "v3 gaps 2026-10-28 (work/beast/v3gaps)"
 }

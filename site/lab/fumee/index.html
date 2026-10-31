@@ -7,17 +7,18 @@
 <script>(function(){if(/[?&]desktop=1/.test(location.search))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height;if(w<=860||(c&&h>w))location.replace('m.html'+location.search+location.hash);})();</script>
 <title>Fumée &middot; Scent, in motion &middot; Zyqor Lab concept</title>
 <meta name="description" content="Fumée is a fictional perfume house: a motion design concept by Zyqor Studio, with a WebGL smoke field, pinned scroll sequences, kinetic type and a liquid transition between three scents.">
-<meta name="theme-color" content="#36302B">
+<meta name="theme-color" content="#EFE6DA">
 <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
-<link rel="preload" href="../../assets/lab/fumee/boska-400i.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="../../assets/lab/fumee/generalsans-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/lab/fumee/cormorantgaramond-500i.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/font/manrope-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/lab/fumee/bottle-d.webp" as="image">
 <script>(function(d){d.classList.add(matchMedia('(prefers-reduced-motion: reduce)').matches?'rm':'js');setTimeout(function(){d.classList.add('ld-done')},12000)})(document.documentElement)</script>
 <link rel="stylesheet" href="../_kit/lab.css">
 <link rel="stylesheet" href="style.css">
 <script type="importmap">{"imports":{"three":"../../vendor/three/three.module.min.js","three/addons/":"../../vendor/three/addons/"}}</script>
 <!-- liquid glass: demo body (helper 4f5eb13e) -->
 <link rel="stylesheet" href="../../assets/glass/liquid-glass.css">
-<script type="application/json" id="lg-map">{"header.brand": "lg lg-pill lg-rim lg--dark", ".btn-solid": "lg lg-btn lg--ink", ".btn-ghost": "lg lg-btn lg--dark", ".arrow": "lg lg-round lg-btn lg--dark"}</script>
+<script type="application/json" id="lg-map">{"header.brand": "lg lg-pill lg-rim", ".btn-solid": "lg lg-btn lg--ink", ".btn-ghost": "lg lg-btn", ".arrow": "lg lg-round lg-btn"}</script>
 <script src="../../assets/glass/liquid-glass.js" defer></script>
 <link rel="canonical" href="https://zyqor-portfolio.vercel.app/lab/fumee/">
 <meta property="og:type" content="website">
@@ -60,6 +61,8 @@
       </div>
     </div>
     <div class="scroll-cue" aria-hidden="true"><span>Scroll</span><i></i></div>
+    <figure class="hero-flacon"><span class="plume" aria-hidden="true"><i></i><i></i><i></i></span><img src="../../assets/lab/fumee/bottle-d.webp" alt="An aqua glass perfume flask with a gilt stopper" width="765" height="1400" fetchpriority="high"></figure>
+    <p class="hero-cap">Flacon study &middot; glass perfume bottle, The Met (CC0)</p>
   </section>
 
   <section class="manifesto" aria-labelledby="mfT">
@@ -78,7 +81,7 @@
       </div>
       <figure class="liq">
         <canvas class="liq-gl" aria-hidden="true"></canvas>
-        <img class="liq-img on" src="../../assets/lab/fumee/fig-d.webp" alt="Halved figs on dark wood" width="1200" height="1600"  data-i="0"><img class="liq-img" src="../../assets/lab/fumee/incense-d.webp" alt="An incense cone smoking beside a window" width="1200" height="1600" loading="lazy" data-i="1"><img class="liq-img" src="../../assets/lab/fumee/jasmine-d.webp" alt="White jasmine flowers against a dark background" width="1200" height="1600" loading="lazy" data-i="2">
+        <img class="liq-img on" src="../../assets/lab/fumee/fig-d.webp" alt="Figs, whole and cut open" width="1200" height="1600"  data-i="0"><img class="liq-img" src="../../assets/lab/fumee/incense-d.webp" alt="Incense sticks smoking at a temple" width="1200" height="1600" loading="lazy" data-i="1"><img class="liq-img" src="../../assets/lab/fumee/jasmine-d.webp" alt="White jasmine flowers among leaves" width="1200" height="1600" loading="lazy" data-i="2">
         <figcaption class="liq-cap"><span class="liq-no">01</span><span class="liq-bar"><i></i></span><span>03</span></figcaption>
       </figure>
       <ol class="col-list" aria-live="polite">
@@ -119,7 +122,7 @@
         </div>
         <article class="nt-card">
           <span class="nt-k">I</span><h3>Top</h3><p>The first ten minutes. Bright, volatile, gone before you notice. Bergamot, pink pepper, neroli.</p>
-          <img src="../../assets/lab/fumee/figs-d.webp" alt="Fresh figs, halved and quartered" width="1200" height="1600" loading="lazy">
+          <img src="../../assets/lab/fumee/figs-d.webp" alt="Fresh purple figs, one cut open" width="1200" height="1600" loading="lazy">
         </article>
         <article class="nt-card nt-card--dark">
           <span class="nt-k">II</span><h3>Heart</h3><p>The hours in between. Fig milk, frankincense, night jasmine. The part people remember you by.</p>
@@ -185,9 +188,8 @@
 </main>
 <template id="credits">
   <li>Code, design, shaders and the flacon drawing: Zyqor Studio (MIT licence for the code). "Fumée" and its three scents are fictional.</li>
-  <li>Photos (Unsplash License, free to use; cropped, resized and converted to WebP): <a href="https://unsplash.com/photos/green-round-fruit-on-brown-wooden-table-vtP7PpYlzzQ" target="_blank" rel="noopener">figs on dark wood</a>, <a href="https://unsplash.com/photos/black-incense-burning-in-room-9M4asMDP7vQ" target="_blank" rel="noopener">incense cone by a window</a>, <a href="https://unsplash.com/photos/delicate-white-jasmine-flowers-bloom-against-dark-background-hp3SP0d5GTw" target="_blank" rel="noopener">jasmine against a dark background</a>, <a href="https://unsplash.com/photos/fresh-figs-halved-and-quartered-on-a-plate-sYTOxXNzLhs" target="_blank" rel="noopener">halved figs</a> and <a href="https://unsplash.com/photos/brown-wooden-stick-with-black-smoke-d_YI6RQdyoE" target="_blank" rel="noopener">incense stick with smoke</a>, all via Unsplash.</li>
-  <li>Photographers on Unsplash, with thanks: figs on dark wood by John Cameron; incense cone by Vandan Patel; jasmine by Daniele Merola; halved figs by Ioana Cristiana; incense stick by petr sidorov.</li>
-  <li>Fonts: Boska and General Sans by the Indian Type Foundry, via Fontshare (ITF Free Font License), self-hosted.</li>
+  <li>Photos, all from Wikimedia Commons (cropped, resized and converted to WebP): <a href="https://commons.wikimedia.org/wiki/File:Perfume_Bottle_MET_DP242904.jpg" target="_blank" rel="noopener">glass perfume bottle</a>, The Metropolitan Museum of Art, CC0 (background removed); <a href="https://commons.wikimedia.org/wiki/File:Ficus_carica_whole_fruits_and_fruit_cut_open.jpg" target="_blank" rel="noopener">figs, whole and cut open</a> by Garitzko, public domain; <a href="https://commons.wikimedia.org/wiki/File:Smoke_of_incenses_Sri_Dalada_Maligawa.jpg" target="_blank" rel="noopener">smoke of incense, Sri Dalada Maligawa</a> by Bergentroll, CC0; <a href="https://commons.wikimedia.org/wiki/File:Jasminum_sambac_is_a_species_of_Jasmine_native_to_tropical_asia.jpg" target="_blank" rel="noopener">Jasminum sambac flowers</a> by Sathiyaraj Durai, CC0; <a href="https://commons.wikimedia.org/wiki/File:Fresh_figs.jpg" target="_blank" rel="noopener">fresh figs</a> by Fumikas Sagisavas, CC0; <a href="https://commons.wikimedia.org/wiki/File:A_burning_incense_stick_at_the_Songshan_Ciyou_Temple_2019-04-27.jpg" target="_blank" rel="noopener">a burning incense stick at the Songshan Ciyou Temple</a> by Mori / Office of the President (Taiwan), <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a>.</li>
+  <li>Fonts: Cormorant Garamond by Christian Thalmann and Manrope by Mikhail Sharanda, both SIL Open Font License 1.1, self-hosted.</li>
   <li>Animation: GSAP 3.15 with ScrollTrigger and SplitText (GreenSock standard licence), Lenis smooth scroll (MIT), three.js r170 (MIT).</li>
 </template>
 <script src="../../vendor/gsap.min.js" defer></script>
