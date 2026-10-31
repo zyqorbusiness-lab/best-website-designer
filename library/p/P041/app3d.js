@@ -69,7 +69,7 @@ else {
       oven.set(0.35 + 0.65 * sstep(0.2, 0.5, f)); st.rim.intensity = 2 + 4 * sstep(0.3, 0.6, f);
       let pos, look, kc = 0;
       if (f < 0.48) { const t = sstep(0, 0.48, f); pos = mix3([1.0, 2.4, 2.5], [0.0, 1.25, OVEN_Z + 5.4], t); look = mix3([0, 0.05, 0], [0, 0.45, OVEN_Z], t); }
-      else { const t = sstep(0.48, 0.82, f); pos = mix3([0.0, 1.25, OVEN_Z + 5.4], [0.55, 0.62, OVEN_Z + 1.25], t); look = mix3([0, 0.45, OVEN_Z], [0, 0.0, OVEN_Z], t); kc = lerp(2.4, 1.25, t); }
+      else { const t = sstep(0.48, 0.82, f); pos = mix3([0.0, 1.25, OVEN_Z + 5.4], [0.55, 0.62, OVEN_Z + 1.25], t); look = mix3([0, 0.45, OVEN_Z], [0, 0.0, OVEN_Z], t); kc = lerp(2.4, 1.5, t); }
       view(pos, look, [0.18, -0.2], instant, kc);
       $('#clock').textContent = String(Math.round(sstep(0.5, 0.93, f) * 90)).padStart(2, '0');
       $('#f-line').textContent = f < 0.5 ? 'Oak burns at the back. The peel slides in and the stone does the rest.' : f < 0.93 ? 'The rim blisters, the cheese pools, the pepperoni cups.' : 'Out in ninety seconds. Now build your own.';
