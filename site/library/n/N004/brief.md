@@ -9,11 +9,11 @@ Written before any code (Sujon's Master Award system, Drive points Q1/W5). Exten
 
 ## Palette roles
 - --c1 #F2E5D7 paper: the day sky, the canvas of every content section, type on the night sky.
-- --c2 #37221B cocoa: the night sky (mixed toward blue at blue hour), type on paper, the dark spec chapter and footer.
+- --c2 #23305C night indigo (was #37221B cocoa until Oct 31): the night sky (lifting to apricot at dawn), type on paper, the dark spec chapter and footer.
 - --c3 #2E63D8 blue: about 1%. Only the blue hour tint in the sky, the switch track when on, the focus ring, the primary button (deepened to 86% with cocoa so paper text reaches 5:1).
 
 ## Type
-- Display Cabinet Grotesk 800 ("Morrow") + Instrument Serif italic ("Light"). Body Satoshi. Readouts JetBrains Mono.
+- Display Instrument Sans 700 ("Morrow") + Instrument Serif italic ("Light"). Body Instrument Sans. Readouts JetBrains Mono. (Oct 31 refresh: Google/OFL only; palette night indigo #23305C, dawn apricot #FFB677 -> cream #FFF4E6, accent #C8551F.)
 
 ## Structure
 - 06 Live sandbox hero (the whole screen is the lamp's sunrise) then 07 split-screen sticky narrative for the ramp, 02 exposed hairline grid for materials + spec, 13 conversion section (one form, no tier cards).

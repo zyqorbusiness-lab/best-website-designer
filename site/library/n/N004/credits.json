@@ -41,11 +41,25 @@
     },
     {
       "what": "Type",
-      "title": "Bricolage Grotesque, Manrope",
-      "author": "Mathieu Triay, Mikhail Sharanda",
+      "title": "Instrument Sans",
+      "author": "Rodrigo Fuenzalida, Jordan Egstad",
       "source": "Google Fonts",
-      "url": "https://fonts.google.com",
-      "licence": "SIL Open Font License 1.1",
+      "url": "https://fonts.google.com/specimen/Instrument+Sans",
+      "licence": "SIL OFL 1.1",
+      "note": "Display and body. Self-hosted variable woff2 (font/instrumentsans-var.woff2).",
+      "credit_file": "font/instrumentsans-var.woff2.credit.json",
+      "files": [
+        "font/instrumentsans-var.woff2"
+      ]
+    },
+    {
+      "what": "Type",
+      "title": "Instrument Serif",
+      "author": "Rodrigo Fuenzalida, Jordan Egstad",
+      "source": "Google Fonts",
+      "url": "https://fonts.google.com/specimen/Instrument+Serif",
+      "licence": "SIL OFL 1.1",
+      "note": "Italic accent (\"Light\"). Shared kit file (site/assets/font).",
       "files": []
     },
     {
