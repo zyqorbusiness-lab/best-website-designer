@@ -454,6 +454,14 @@ Sujon's rule from 31 Oct 2026: every upgrade is a real 3D site, and photos alone
 
 **Check:** run `node --check` on every module before shooting. A single `-x ** 2` (unary minus before `**`) is a SyntaxError that kills the whole module.
 
+## Worked builds: landscape, light and a kiln load in code (Longway, Plinth, Kilnfold; 31 Oct 2026)
+
+These three scenes use no downloaded models. Each one ships in about 8 KB of JS on the vendored r170.
+- **Road trip (Longway):** an fbm heightfield `PlaneGeometry`, with the valley carved where the road passes: lower the height by distance to a `CatmullRomCurve3`. The road is a ribbon extruded along that curve, with yellow dashes as a second thin ribbon. Trees are one `InstancedMesh` (620 on desktop, 260 on phone), and the vehicle is placed with `curve.getPointAt(t)` / `getTangentAt(t)`. Scroll drives `t`, and the camera blends overview → chase → pull-out. Stop pins are projected to HTML labels with `vector.project(camera)`, so the text stays crisp.
+- **Light as the subject (Plinth):** an `ExtrudeGeometry` wall with round-headed arch `holes` and one `DirectionalLight` whose azimuth and elevation follow scroll (07:40 → 18:20, warm → white → warm). The arch shadows travel across the floor, and that motion is the whole show. Soft shadows: `PCFSoftShadowMap`, a 2048 map on desktop and 1024 on phone. Tighten the shadow camera to the set, or the shadows go blurry.
+- **Products on a turntable (Kilnfold):** three `LatheGeometry` pieces (vase, bowl, cup) with thick walls and a rolled lip. The glaze/clay split and the drips are vertex colours, glazes use `MeshPhysicalMaterial` clearcoat, reflections come from `RoomEnvironment` through PMREM, and drag spins the wheel. A 3D element must never sit on top of a caption or photo credit: an earlier version put a bowl disc over the hero photo's corner and covered the credit on phone. Give it its own figure block.
+- **All three:** render on demand (only while in view and while the scroll value is still settling), phone DPR 1.5, a static frame under reduced motion, and a poster rendered from the scene itself as the no-WebGL fallback.
+
 ## Sources
 
 - Sujon Hoque (Zyqor Studio): WhatsApp 27 Oct 2026 6:22 PM (real premium models, no code-made look), 27 Oct 2026 8:23 PM (phone same models and quality, compressed), 28 Oct 2026 9:42 AM (new websites use real models), 30 Oct 2026 ("PC me no compromise"), 15 Oct 2026 (no endless loops).

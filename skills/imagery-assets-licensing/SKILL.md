@@ -260,6 +260,14 @@ rig and save stills (the components' `scroll-3d-stage/poster.webp` is a CC0 mode
 - **Preview before you pick:** grab frames straight from Commons' transcoded WebM with `ffmpeg -ss <t> -i <…webm.480p.vp9.webm> -frames:v 1` at several times, and look at them. Send a User-Agent with contact info. Pick by light, sharpness and colour (warm and sunny beats flat and overcast for travel), then download only the segment you use.
 - **Grade into the palette** with ffmpeg (`colorbalance`, `eq=saturation:contrast:gamma`), and say "graded, cropped, re-encoded" in `changes`. Credit the author, licence and file page on the page and in CREDITS.md. Delete the replaced files and their CREDITS rows in the same push.
 
+## Footage swap checklist (Longway, 31 Oct 2026)
+
+1. Look for road footage on Wikimedia Commons (video search, "Media of the day" picks are a good start) and preview it before you choose. A dashboard POV with hands in frame looks cheap, and agency clips (BLM, NPS) are often not driving POV. The chosen clip was "Driving from Blenheim to Havelock…" by NewZealandRoadTrips, CC BY 3.0. Cut a 20-30 s excerpt from the highest-resolution original.
+2. Write the credit with the exact excerpt times (e.g. 21:34-22:02), the crop and the grade.
+3. Rename the frames (e.g. `lw0001.webp`, not `f0001.webp`). `credits-check` matches a generic `d/f0001.webp` path against other pages' rows and reports false clashes.
+4. Delete every old frame in the same commit, then remove the old row and any "under review" mention from CREDITS.md.
+5. Re-grade gently: heavy sepia plus saturate turned the clouds brown. Use a light warm grade and put contrast in the headline scrim, not in the footage.
+
 ## Sources
 
 - Sujon Hoque (Zyqor Studio): credit rule and licence allow-list (28 Oct 2026), real premium assets only and no AI (27 Oct 2026), WhatsApp 30 Oct 2026 ("PC me no compromise").
