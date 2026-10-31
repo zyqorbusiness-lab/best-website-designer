@@ -6,8 +6,8 @@
 <!-- phone -> m.html (separate phone build). ?desktop=1 keeps this page -->
 <script>document.documentElement.classList.add('js');(function(){var q=location.search;if(/[?&]desktop=1/.test(q))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height,phone=w<=860||(c&&h>w);if(phone)location.replace('m.html'+q+location.hash);})();</script>
 <title>Tidewell Salt &middot; Concept N003 &middot; Zyqor Library</title>
-<meta name="description" content="Tidewell Salt is a fictional brand: a normal 3D web concept by Zyqor Studio. A glass jar of flaky sea salt turns in front of a giant outline wordmark that moves only at the speed you scroll.">
-<meta name="theme-color" content="#F9DDC7">
+<meta name="description" content="Tidewell Salt is a fictional brand: a normal 3D web concept by Zyqor Studio. A glass jar of crystal sea salt turns in front of a real macro photo of the crystals; scroll and the lid lifts.">
+<meta name="theme-color" content="#E6F1EC">
 <meta property="og:title" content="Tidewell Salt &middot; Concept N003 &middot; Zyqor Library">
 <meta property="og:description" content="A fictional-brand 3D concept by Zyqor Studio.">
 <meta property="og:image" content="https://zyqor-portfolio.vercel.app/library/n/N003/thumb.webp">
@@ -15,9 +15,9 @@
 <link rel="preload" href="../../_kit/stage.js" as="script" crossorigin>
 <link rel="stylesheet" href="../../_kit/concept.css">
 <link rel="stylesheet" href="style.css">
-<link rel="preload" href="img/salt-flakes.webp" as="image" type="image/webp">
+<link rel="preload" href="../../../assets/font/fraunces-axes.woff2" as="font" type="font/woff2" crossorigin>
 
-<style>:root{--c1:#F9DDC7;--c2:#1B3A2F;--c3:#E48B62}</style>
+<style>:root{--c1:#E6F1EC;--c2:#1D4E5F;--c3:#E8735A;--sand:#F3E3C8;--cta-ink:#10303B;--f-display:"Fraunces",Georgia,serif;--f-body:"Inter Tight","Manrope",system-ui,sans-serif}@font-face{font-family:"Fraunces";src:url("../../../assets/font/fraunces-italic.woff2") format("woff2");font-weight:100 900;font-style:italic;font-display:swap}</style>
 <script type="importmap">{"imports":{"three":"../../../vendor/three/three.module.min.js","three/addons/":"../../../vendor/three/addons/"}}</script>
 <link rel="canonical" href="https://zyqor-portfolio.vercel.app/library/n/N003/">
 <link rel="alternate" media="only screen and (max-width: 640px)" href="https://zyqor-portfolio.vercel.app/library/n/N003/m.html">
@@ -39,9 +39,9 @@
         <noscript><img class="poster" src="poster.webp" alt="A glass jar of sea salt flakes in front of a giant outline wordmark"></noscript>
       </div>
       <div class="hero-copy wrap">
-        <p class="tag" data-rv>Flaky sea salt &middot; Concept</p>
-        <h1 class="hero-h" id="hero-h" data-rv>Raked at <span>low tide.</span></h1>
-        <p class="lead" data-rv>Hollow pyramid flakes, grown on warm brine and lifted off by hand. Scroll and the jar opens.</p>
+        <p class="tag" data-rv>Crystal sea salt &middot; Concept</p>
+        <h1 class="hero-h" id="hero-h" data-rv>Raked at <em>low tide.</em></h1>
+        <p class="lead" data-rv>Blush salt crystals, grown slowly in shallow brine pans and raked by hand. Scroll and the jar opens.</p>
         <div class="hero-cta" data-rv>
           <a class="btn btn--salt" href="#order" data-press>Order a jar <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <a class="btn btn--ghost" href="#flake" data-press>See the flake <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
@@ -53,24 +53,25 @@
 
   <section class="section flake" id="flake" aria-labelledby="flake-h">
     <div class="wrap flake-in">
-      <figure class="flake-fig" data-rv><img src="img/salt-flakes.webp" width="960" height="1280" alt="Close-up of white sea-salt crystals piled on a dark surface" loading="lazy" decoding="async"><figcaption class="mono">Real salt crystals, photographed by Nate Steiner (CC0)</figcaption></figure>
+      <figure class="flake-fig" data-rv><img src="img/salt-crystals-macro.webp" width="720" height="960" alt="Macro photo of coarse blush-pink salt crystals heaped in a spoon" loading="lazy" decoding="async"><figcaption class="mono">Real salt crystals &middot; photo: Donald Olszewski, CC BY 4.0</figcaption></figure>
       <div class="flake-copy">
-        <p class="tag" data-rv>01 &middot; The flake</p>
-        <h2 class="h2" id="flake-h" data-rv>Hollow, thin, <span class="out">loud.</span></h2>
-        <p class="body" data-rv>Each flake grows as an upside-down pyramid floating on the brine. That hollow shape is why it crunches, and why a pinch looks generous on the plate.</p>
-        <ul class="notes" role="list" data-rv-group><li data-rv><span class="mono">01 &middot; Crunch</span><p>A pyramid flake shatters between the teeth instead of dissolving straight away.</p></li><li data-rv><span class="mono">02 &middot; Finish</span><p>Scatter it last, on tomatoes, on chocolate, on a fried egg.</p></li><li data-rv><span class="mono">03 &middot; Pinch</span><p>Wide flakes are easy to see, so you salt less and taste more.</p></li></ul>
+        <p class="tag" data-rv>01 &middot; The crystal</p>
+        <h2 class="h2" id="flake-h" data-rv>Coarse, clear, <em>loud.</em></h2>
+        <p class="body" data-rv>Each crystal grows slowly in the shallow pans, so it stays big, clear and crunchy. The faint blush comes from the brine itself, not from anything added.</p>
+        <ul class="notes" role="list" data-rv-group><li data-rv><span class="mono">01 &middot; Crunch</span><p>A coarse crystal cracks between the teeth instead of dissolving straight away.</p></li><li data-rv><span class="mono">02 &middot; Finish</span><p>Scatter it last, on tomatoes, on chocolate, on a fried egg.</p></li><li data-rv><span class="mono">03 &middot; Pinch</span><p>Big crystals are easy to see, so you salt less and taste more.</p></li></ul>
       </div>
     </div>
   </section>
 
   <section class="section jar" id="jar" aria-labelledby="jar-h">
+    <div class="band" aria-hidden="true" data-band><div class="band-t">TIDEWELL <i>&middot;</i> TIDEWELL <i>&middot;</i> TIDEWELL <i>&middot;</i> TIDEWELL <i>&middot;</i> TIDEWELL <i>&middot;</i> TIDEWELL <i>&middot;</i></div></div>
     <div class="wrap jar-in">
       <div class="sec-head">
         <p class="tag" data-rv>02 &middot; The jar</p>
-        <h2 class="h2" id="jar-h" data-rv>A jar you leave <span class="out">out.</span></h2>
+        <h2 class="h2" id="jar-h" data-rv>A jar you leave <em>out.</em></h2>
         <p class="body" data-rv>Clear so you can see how much is left, wide so your fingers fit, heavy enough to stay put next to the stove.</p>
       </div>
-      <dl class="specs"><div class="spec" data-rv><dt class="mono">Contents</dt><dd>Flaky sea salt, hand raked</dd></div><div class="spec" data-rv><dt class="mono">Glass</dt><dd>Clear soda-lime, wide mouth so fingers fit</dd></div><div class="spec" data-rv><dt class="mono">Lid</dt><dd>Stoneware, coral glaze, cork seal</dd></div><div class="spec" data-rv><dt class="mono">Sizes</dt><dd>90 g jar, 180 g jar, 500 g refill pouch</dd></div><div class="spec" data-rv><dt class="mono">Keeps</dt><dd>Dry and loose for two years in the jar</dd></div><div class="spec" data-rv><dt class="mono">Made</dt><dd>Fictional brand, concept only</dd></div></dl>
+      <dl class="specs"><div class="spec" data-rv><dt class="mono">Contents</dt><dd>Crystal sea salt, hand raked</dd></div><div class="spec" data-rv><dt class="mono">Glass</dt><dd>Clear soda-lime, wide mouth so fingers fit</dd></div><div class="spec" data-rv><dt class="mono">Lid</dt><dd>Stoneware, coral glaze, cork seal</dd></div><div class="spec" data-rv><dt class="mono">Sizes</dt><dd>90 g jar, 180 g jar, 500 g refill pouch</dd></div><div class="spec" data-rv><dt class="mono">Keeps</dt><dd>Dry and loose for two years in the jar</dd></div><div class="spec" data-rv><dt class="mono">Made</dt><dd>Fictional brand, concept only</dd></div></dl>
     </div>
   </section>
 
@@ -78,9 +79,10 @@
     <div class="wrap">
       <div class="sec-head">
         <p class="tag" data-rv>03 &middot; Harvest</p>
-        <h2 class="h2" id="harvest-h" data-rv>Sun, wind, <span class="out">a rake.</span></h2>
+        <h2 class="h2" id="harvest-h" data-rv>Sun, wind, <em>a rake.</em></h2>
       </div>
-      <ol class="hvs" role="list" data-rv-group><li class="hv" data-rv><span class="hv-i"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 15c3 0 3-3 6-3s3 3 6 3 3-3 6-3"/><path d="M3 19c3 0 3-3 6-3s3 3 6 3 3-3 6-3"/></svg></span><span class="mono">01</span><h3 class="hv-h">Let the tide in</h3><p class="hv-p">Sea water is let into shallow clay beds on a spring tide and left to the sun and wind.</p></li><li class="hv" data-rv><span class="hv-i"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg></span><span class="mono">02</span><h3 class="hv-h">Wait for the crust</h3><p class="hv-p">As the brine warms, hollow pyramid crystals grow on the surface and float there.</p></li><li class="hv" data-rv><span class="hv-i"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20 15 9"/><path d="M12 6l6 6M14 4l6 6"/><path d="M15 3.5 20.5 9"/></svg></span><span class="mono">03</span><h3 class="hv-h">Rake it by hand</h3><p class="hv-p">The flakes are lifted off the surface before they sink, then dried in moving air.</p></li></ol>
+      <figure class="pans" data-rv><img src="img/salt-pans.webp" width="1400" height="930" alt="Shallow salt pans at Marakkanam, India, with white salt raked into heaps along the edges" loading="lazy" decoding="async"><figcaption class="mono">Real salt pans at Marakkanam &middot; photo: Dey.sandip, CC BY 3.0</figcaption></figure>
+      <ol class="hvs" role="list" data-rv-group><li class="hv" data-rv><span class="hv-i"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 15c3 0 3-3 6-3s3 3 6 3 3-3 6-3"/><path d="M3 19c3 0 3-3 6-3s3 3 6 3 3-3 6-3"/></svg></span><span class="mono">01</span><h3 class="hv-h">Let the tide in</h3><p class="hv-p">Sea water is let into shallow clay beds on a spring tide and left to the sun and wind.</p></li><li class="hv" data-rv><span class="hv-i"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg></span><span class="mono">02</span><h3 class="hv-h">Wait for the crust</h3><p class="hv-p">As the brine warms and thickens, crystals grow slowly along the bottom and edges of the pan.</p></li><li class="hv" data-rv><span class="hv-i"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20 15 9"/><path d="M12 6l6 6M14 4l6 6"/><path d="M15 3.5 20.5 9"/></svg></span><span class="mono">03</span><h3 class="hv-h">Rake it by hand</h3><p class="hv-p">The crystals are raked into low heaps at the edge of the pan, then dried in moving air.</p></li></ol>
     </div>
   </section>
 
@@ -88,7 +90,7 @@
     <div class="wrap order-in">
       <div class="order-copy">
         <p class="tag" data-rv>04 &middot; Order</p>
-        <h2 class="h2" id="order-h" data-rv>Put a jar <span class="out">on the table.</span></h2>
+        <h2 class="h2" id="order-h" data-rv>Put a jar <em>on the table.</em></h2>
         <p class="body" data-rv>Pick a size and how many. This is a concept, so the form works but nothing leaves this page.</p>
       </div>
       <form class="order" id="order-form" novalidate data-rv>
@@ -122,7 +124,7 @@
         </form>
     </div>
   </section>
-<aside class="cc-attr" aria-label="3D model credits"><p><span>3D models:</span> &ldquo;Glass Jar with Marble Lid 2.0&rdquo; by <a href="https://sketchfab.com/ingamestudio" target="_blank" rel="noopener noreferrer">InGameStudio</a> (<a href="https://sketchfab.com/3d-models/glass-jar-with-marble-lid-20-f5383b6b32eb4439b874473b6d52df0c" target="_blank" rel="noopener noreferrer">Sketchfab</a>), licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>. Optimised and re-materialed for this page.</p></aside>
+<aside class="cc-attr" aria-label="Photo and 3D model credits"><p><span>Photos:</span> &ldquo;Salt Crystals&rdquo; by Donald Olszewski (<a href="https://commons.wikimedia.org/wiki/File:Salt_Crystals1.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>), <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>, cropped and lightly brightened; &ldquo;Marakkanam Salt Pans&rdquo; by Dey.sandip (<a href="https://commons.wikimedia.org/wiki/File:Marakkanam_Salt_Pans.JPG" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>), <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener noreferrer">CC BY 3.0</a>, resized.</p><p><span>3D models:</span> &ldquo;Glass Jar with Marble Lid 2.0&rdquo; by <a href="https://sketchfab.com/ingamestudio" target="_blank" rel="noopener noreferrer">InGameStudio</a> (<a href="https://sketchfab.com/3d-models/glass-jar-with-marble-lid-20-f5383b6b32eb4439b874473b6d52df0c" target="_blank" rel="noopener noreferrer">Sketchfab</a>), licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>. Optimised and re-materialed for this page.</p></aside>
 </main>
 <script src="../../../vendor/gsap.min.js" defer></script>
 <script src="../../../vendor/ScrollTrigger.min.js" defer></script>

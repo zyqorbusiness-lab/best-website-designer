@@ -16,7 +16,7 @@ Written before any code (Sujon's Master Award system, Drive points Q1/W5), 28 Oc
 - Contrast (computed): c2 on c1 9.57:1; c2 text on c3 fill 4.83:1 (so the CTA is coral with bottle-green text); c1 on c3 is 1.98:1, never used for text.
 
 ## Type
-- Cabinet Grotesk 800 (wordmark, headings, the outline band) + Satoshi body; JetBrains Mono tags.
+- Oct 31 refresh: Fraunces (display, italic accents) + Inter Tight body (both SIL OFL, self-hosted in site/assets/font); JetBrains Mono tags. Palette moved to sea-foam #E6F1EC / deep sea #1D4E5F / coral #E8735A (CTA text #10303B) / sand #F3E3C8 panels. The arch card and the salt inside the jar are a real photo (Salt Crystals, Donald Olszewski, CC BY 4.0); the outline TIDEWELL band moved out of the hero into section 2; the harvest band carries a real salt-pans photo (Marakkanam Salt Pans, Dey.sandip, CC BY 3.0).
 
 ## Structure: 10 Kinetic typography manifesto
 Header nav (wordmark, The salt, The jar, Harvest, Order) -> pinned hero (240svh scroll: jar turns, lid lifts, band moves with your scroll) -> The flake (macro photo + three short notes) -> The jar (hairline spec sheet) -> Harvest (dark bottle-green band, three steps) -> Order (size chips, quantity stepper, email; validation; honest "Concept: not sent" success) -> chrome footer.

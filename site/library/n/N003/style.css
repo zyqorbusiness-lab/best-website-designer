@@ -1,4 +1,4 @@
-/* N003 Tidewell Salt - desktop build. Tokens: ../../_kit/concept.css. Palette: peach #F9DDC7 / bottle green #1B3A2F / coral #E48B62. */
+/* N003 Tidewell Salt - desktop build. Tokens: ../../_kit/concept.css. Palette (Oct 31): sea-foam #E6F1EC / deep sea #1D4E5F / coral #E8735A / sand #F3E3C8. */
 /* ---------- header ---------- */
 .site{position:relative;z-index:3;display:flex;align-items:center;gap:var(--s5);padding-top:76px;padding-bottom:var(--s3)}
 .logo{display:inline-flex;align-items:center;gap:.45em;text-decoration:none;font:800 1.4rem/1 var(--f-display);letter-spacing:-.035em;color:var(--ink)}
@@ -98,3 +98,32 @@ fieldset.f{border:0;margin:0;padding:0;min-width:0}
 @media (prefers-reduced-motion:reduce){.pin{height:auto}.pin-sticky{position:relative}}
 
 @media (max-width:1100px){.flake-in,.jar-in,.order-in{gap:var(--s6)}.notes li{grid-template-columns:120px 1fr}}
+
+/* ---------- Oct 31 refresh: sea-foam / deep sea / coral / sand, Fraunces + Inter Tight, real salt photography ---------- */
+body{background:var(--c1)}
+.btn--salt{--b-bg:var(--c3);--b-fg:var(--cta-ink)}
+.chip.size[aria-pressed=true],.f-ok-i{color:var(--cta-ink)}
+.logo{font-weight:700;letter-spacing:-.02em}
+.hero-h{font-weight:600;letter-spacing:-.035em;font-variation-settings:"opsz" 144,"SOFT" 30}
+.hero-h em,.h2 em{font-style:italic;font-weight:400;color:#C2502F}
+.hero-h em{display:block}
+.h2{font-family:var(--f-display);font-weight:600;letter-spacing:-.03em}
+.hv-h,.f-ok-h{font-weight:600;letter-spacing:-.015em}
+.harvest .h2 em{color:var(--c3)}
+.hero-copy .tag{color:var(--ink-2)}
+.flake-fig img{border-color:transparent;box-shadow:0 30px 60px -30px color-mix(in oklab,var(--c2) 45%,transparent)}
+.order{background:var(--sand);border-color:color-mix(in oklab,var(--c2) 12%,transparent)}
+.f-ok{background:var(--sand)}
+.spec{background:transparent}
+/* the outline wordmark band now lives here in section 2 (not behind the hero headline) */
+.jar{overflow:hidden}
+.band{margin:0 0 clamp(2.5rem,6vw,5rem);white-space:nowrap;pointer-events:none;user-select:none}
+.band-t{display:inline-block;font:700 clamp(4.5rem,13vw,13rem)/.9 var(--f-display);letter-spacing:-.03em;color:transparent;-webkit-text-stroke:1.5px var(--c2);transform:translate3d(var(--bx,0px),0,0);will-change:transform}
+.band-t i{font-style:normal;color:var(--c3);-webkit-text-stroke:0}
+/* real salt pans photo in the harvest band */
+.harvest{background:var(--c2)}
+.pans{margin:0 0 var(--s7);display:grid;gap:var(--s2)}
+.pans img{width:100%;aspect-ratio:21/9;object-fit:cover;border-radius:18px}
+.pans figcaption{color:color-mix(in oklab,var(--c1) 72%,var(--c2))}
+.cc-attr p+p{margin-top:.5em}
+@media (prefers-reduced-motion:reduce){.band-t{transform:none}}
