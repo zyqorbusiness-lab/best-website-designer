@@ -85,11 +85,17 @@
     },
     {
       "what": "Type",
-      "title": "Bricolage Grotesque, Manrope",
-      "author": "Mathieu Triay, Mikhail Sharanda",
+      "title": "Fraunces, Manrope",
+      "author": "Undercase Type (Fraunces); Mikhail Sharanda (Manrope)",
       "source": "Google Fonts",
-      "url": "https://fonts.google.com",
-      "licence": "SIL Open Font License 1.1"
+      "url": "https://fonts.google.com/specimen/Fraunces",
+      "licence": "SIL OFL 1.1",
+      "note": "Shared self-hosted files.",
+      "files": [
+        "../../../assets/font/fraunces-axes.woff2",
+        "../../../assets/font/fraunces-italic.woff2",
+        "../../../assets/font/manrope-var.woff2"
+      ]
     },
     {
       "what": "Type",
@@ -114,6 +120,19 @@
       "source": "npm",
       "url": "https://threejs.org",
       "licence": "MIT / GSAP Standard Licence"
+    },
+    {
+      "what": "Texture",
+      "title": "Plastered Wall",
+      "author": "Amal Kumar",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/plastered_wall",
+      "licence": "CC0 1.0",
+      "note": "1K colour map, WebP, tinted warm plaster on the shelf wall.",
+      "credit_file": "tex/plastered_wall_diff_1k.webp.credit.json",
+      "files": [
+        "tex/plastered_wall_diff_1k.webp"
+      ]
     }
   ]
 }

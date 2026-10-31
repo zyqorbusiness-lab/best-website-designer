@@ -18,7 +18,7 @@
 Code-made: the shelf plank box and the wall plane (props; real CC0 wood texture).
 
 ## Palette
---c1 #ECD6CE clay pink (also the wall), --c2 #2F2316 umber, --c3 #E64B76 glaze pink (heights, active tick, CTA). palette-check PASS.
+(Oct 31) --c1 #F3ECE4 plaster (wall, with Poly Haven Plastered Wall texture), --c2 #2B2A28 ink, --c3 #C65D3B terracotta, sage #9AAE8C; was clay pink / umber / glaze pink (heights, active tick, CTA). palette-check PASS.
 
 ## Frames
 - Phone: one vase per screen, camera centred, captions over a paper scrim in the thumb zone.
