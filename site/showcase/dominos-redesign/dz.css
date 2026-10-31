@@ -181,3 +181,17 @@ h2{font:800 clamp(38px,5vw,76px)/.98 var(--disp);letter-spacing:-.04em;margin:0 
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
   .rv{opacity:1;transform:none}
 }
+
+/* 3D layer (dz3d.js): one canvas that moves between the hero, the builder stage and the tracker */
+.dz3{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:1;touch-action:pan-y}
+.has3d .hero-media{background:radial-gradient(110% 90% at 50% 40%,#FBF7F1 0%,var(--surface) 70%)}
+.has3d .hero-media picture{opacity:0}
+.has3d .hero-media .hero-chip,.has3d .hero-media .credit{z-index:2}
+.has3d .stage-img,.has3d .drops{opacity:0}
+.has3d .stage{cursor:grab;overflow:visible}
+.has3d .stage .dz3{border-radius:50%;inset:-6%;width:112%;height:112%}
+.has3d .stage-label,.has3d .stage-credit{z-index:2}
+.has3d .track-media{background:radial-gradient(120% 100% at 50% 30%,#0b4a57 0%,#043440 80%)}
+.has3d .track-media > img#trackImg{opacity:0!important}
+.track-media .track-inset{position:absolute;right:14px;bottom:14px;z-index:2;width:30%;height:auto;transition:none;aspect-ratio:3/2;object-fit:cover;border-radius:16px;box-shadow:0 14px 30px -14px #000a;border:3px solid var(--paper)}
+@media (max-width:760px){.track-media .track-inset{width:36%;right:10px;bottom:10px;border-radius:12px}}
