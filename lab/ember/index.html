@@ -7,7 +7,7 @@
 <script>(function(){if(/[?&]desktop=1/.test(location.search))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height;if(w<=860||(c&&h>w))location.replace('m.html'+location.search+location.hash);})();</script>
 <title>Ember &amp; Oak &middot; Concept 04 &middot; Zyqor Lab</title>
 <meta name="description" content="Ember &amp; Oak is a fictional coffee roastery: a design concept by Zyqor Studio (paper-tear reveal, travelling cup, outline giant type).">
-<meta name="theme-color" content="#2B1A12">
+<meta name="theme-color" content="#B8754A">
 <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
 <link rel="preload" href="../../assets/font/fraunces-axes.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../_kit/lab.css">
@@ -52,12 +52,13 @@
   <div class="t-cue" aria-hidden="true"><span>Scroll to tear it open</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
 </div>
 
-<canvas class="cupgl" aria-hidden="true"></canvas>
+<canvas class="cupgl" aria-hidden="true" hidden></canvas>
+<div class="pcup" aria-hidden="true"><img src="img/espresso-cup.webp" alt="" width="1000" height="968" decoding="async" fetchpriority="high"></div>
 <div class="cursor" aria-hidden="true"><span></span></div>
 
 <main id="main">
   <div class="stage" id="stage">
-    <div class="hero-back" aria-hidden="true"><p class="h-word">EMBER</p><img class="ep ep-cups" src="../../assets/lab/ember/poster-cups.webp" alt="" decoding="async" loading="lazy"></div>
+    <div class="hero-back" aria-hidden="true"><p class="h-word">EMBER</p></div>
     <section class="hero" aria-labelledby="hero-h">
       <div class="cup-a h-cup" data-cup="hero" data-s="1" data-tilt="0.22"></div>
       <div class="h-left">
@@ -145,7 +146,7 @@
       <p data-rv="up" data-rv-d="1">The first roast list opens soon. Leave your name at the counter and we will save you a bag.</p>
       <a class="btn big mag" href="#order" id="cta" data-cursor="Join">Join the first roast <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <p class="toast" id="toast" role="status" aria-live="polite"></p>
-      <p class="attr">3D models: <a href="https://sketchfab.com/3d-models/cup-of-cappuccino-2beccb20ab744cabaeaddb36487f5cd7" target="_blank" rel="noopener">&ldquo;Cup of Cappuccino&rdquo;</a> by Krzysztof Mazia and <a href="https://sketchfab.com/3d-models/coffee-beans-8146e99925fb4b49839e4fa7ace83f0f" target="_blank" rel="noopener">&ldquo;Coffee beans&rdquo;</a> by kouitimizuno, both <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>, modified by Zyqor Studio.</p>
+      <p class="attr">Photos: <a href="https://commons.wikimedia.org/wiki/File:Espresso_Coffee_01.jpg" target="_blank" rel="noopener">&ldquo;Espresso Coffee 01&rdquo;</a> by Jubair1985 and <a href="https://commons.wikimedia.org/wiki/File:Roasted_arabica_coffee_beans_Minca.jpg" target="_blank" rel="noopener">&ldquo;Roasted arabica coffee beans Minca&rdquo;</a> by Roger Burger, both <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener">CC0</a> via Wikimedia Commons. 3D bean scan: <a href="https://sketchfab.com/3d-models/coffee-beans-8146e99925fb4b49839e4fa7ace83f0f" target="_blank" rel="noopener">&ldquo;Coffee beans&rdquo;</a> by kouitimizuno, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>, modified by Zyqor Studio.</p>
     </div>
   </section>
 </main>
@@ -153,9 +154,10 @@
 
 
 <template id="credits">
-  <li>3D cup and saucer: <a href="https://sketchfab.com/3d-models/cup-of-cappuccino-2beccb20ab744cabaeaddb36487f5cd7" target="_blank" rel="noopener">"Cup of Cappuccino"</a> by <a href="https://sketchfab.com/mazia" target="_blank" rel="noopener">Krzysztof Mazia</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>. Modified: coffee and foam removed, re-glazed in the Ember roast colours, compressed.</li>
+  <li>Espresso cup photo: <a href="https://commons.wikimedia.org/wiki/File:Espresso_Coffee_01.jpg" target="_blank" rel="noopener">"Espresso Coffee 01"</a> by Jubair1985, Wikimedia Commons, <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener">CC0 1.0</a>. Modified: cut out from the tablecloth, resized, graded per roast level.</li>
+  <li>Roasted beans photo: <a href="https://commons.wikimedia.org/wiki/File:Roasted_arabica_coffee_beans_Minca.jpg" target="_blank" rel="noopener">"Roasted arabica coffee beans Minca"</a> by Roger Burger, Wikimedia Commons, <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener">CC0 1.0</a>. Modified: resized, round crop.</li>
   <li>3D coffee bean: <a href="https://sketchfab.com/3d-models/coffee-beans-8146e99925fb4b49839e4fa7ace83f0f" target="_blank" rel="noopener">"Coffee beans"</a> photogrammetry scan by <a href="https://sketchfab.com/kouitimizuno" target="_blank" rel="noopener">kouitimizuno</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>. Modified: recoloured per roast, maps resized, compressed.</li>
-  <li>Code and design (crema and latte art, steam, ember sparks, glaze shading): Zyqor Studio, three.js (MIT licence for the code).</li>
+  <li>Code and design (paper tear, travelling cup motion, ember sparks, roast grade): Zyqor Studio, three.js (MIT licence for the code).</li>
   <li>Studio lighting: <a href="https://polyhaven.com/a/studio_small_09" target="_blank" rel="noopener">"Studio Small 09"</a> HDRI by Sergej Majboroda, Poly Haven, CC0 1.0.</li>
   <li>Fonts: Fraunces (Undercase Type), Manrope (Mikhail Sharanda) and Bricolage Grotesque (Mathieu Triay), via Google Fonts, SIL Open Font License 1.1 (self-hosted).</li>
   <li>Inspiration: paper-tear and travelling-object patterns from Instagram design reels; no assets reused.</li>

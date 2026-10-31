@@ -1,7 +1,7 @@
 @font-face{font-family:"Fraunces";src:url("../../assets/font/fraunces-axes.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
 @font-face{font-family:"Fraunces";src:url("../../assets/font/fraunces-italic.woff2") format("woff2");font-weight:400 700;font-style:italic;font-display:swap}
 @font-face{font-family:"Manrope";src:url("../../assets/font/manrope-var.woff2") format("woff2");font-weight:300 900;font-display:swap}
-:root{--c1:#2B1A12;--c2:#F2E6D3;--c3:#C26A3D;--esp:#2B1A12;--crema:#F2E6D3;--acc:#C26A3D;--ink:#2B1A12;
+:root{--c1:#6B3E2E;--c2:#F2E6D3;--c3:#C26A3D;--esp:#6B3E2E;--crema:#F2E6D3;--acc:#C26A3D;--ink:#3B2418;--caramel:#B8754A;
  --f-disp:"Fraunces",Georgia,serif;--f-body:"Manrope",system-ui,sans-serif;
  --ease:cubic-bezier(.16,1,.3,1);--ease2:cubic-bezier(.76,0,.24,1);
  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
@@ -29,7 +29,7 @@ em{font-style:normal;color:var(--acc);transition:color .8s var(--ease)}
 .half{position:absolute;inset:0}
 .paper{position:absolute;inset:0;background:
  radial-gradient(60% 70% at 72% 52%,rgba(214,112,52,.30),rgba(120,52,20,.10) 45%,transparent 70%),
- radial-gradient(120% 90% at 20% 0%,#3b2418 0%,#2B1A12 55%,#22140d 100%);color:var(--crema);overflow:hidden}
+ radial-gradient(120% 90% at 20% 0%,#3b2418 0%,#3B2418 55%,#6B3E2E 100%);color:var(--crema);overflow:hidden}
 .paper::after{content:"";position:absolute;inset:0;background:var(--grain);opacity:.22;mix-blend-mode:overlay}
 .paper-in{position:absolute;left:clamp(24px,6vw,96px);top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;gap:22px;max-width:min(62vw,880px)}
 .k{font:600 12px/1 var(--f-body);letter-spacing:.22em;text-transform:uppercase;color:#E9A274}
@@ -119,8 +119,8 @@ h2{font:400 clamp(44px,5.6vw,92px)/.92 var(--f-disp);text-transform:uppercase;le
 .seg button[aria-checked="true"]{color:var(--crema)}
 .seg-k{position:absolute;top:5px;bottom:5px;left:5px;width:calc((100% - 10px)/3);border-radius:999px;background:var(--esp);transition:transform .6s var(--ease)}
 .r-range input{width:100%;-webkit-appearance:none;appearance:none;height:28px;background:transparent;cursor:grab}
-.r-range input::-webkit-slider-runnable-track{height:8px;border-radius:9px;background:linear-gradient(90deg,#B9824E,#7A4325 50%,#2E1A10)}
-.r-range input::-moz-range-track{height:8px;border-radius:9px;background:linear-gradient(90deg,#B9824E,#7A4325 50%,#2E1A10)}
+.r-range input::-webkit-slider-runnable-track{height:8px;border-radius:9px;background:linear-gradient(90deg,#B9824E,#7A4325 50%,#5C3526)}
+.r-range input::-moz-range-track{height:8px;border-radius:9px;background:linear-gradient(90deg,#B9824E,#7A4325 50%,#5C3526)}
 .r-range input::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;margin-top:-9px;border-radius:50%;background:var(--crema);border:6px solid var(--acc);box-shadow:0 4px 14px rgba(43,26,18,.35)}
 .r-range input::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--crema);border:6px solid var(--acc)}
 .r-hint{font-size:12px;opacity:.55}
@@ -160,7 +160,7 @@ h2{font:400 clamp(44px,5.6vw,92px)/.92 var(--f-disp);text-transform:uppercase;le
 .nav{display:none}
 .logo{height:30px;font-size:14px}
 .tw{filter:drop-shadow(0 14px 18px rgba(30,14,6,.45))}
-.paper{background:radial-gradient(90% 50% at 60% 62%,rgba(214,112,52,.32),transparent 70%),radial-gradient(140% 90% at 20% 0%,#3b2418 0%,#2B1A12 55%,#22140d 100%)}
+.paper{background:radial-gradient(90% 50% at 60% 62%,rgba(214,112,52,.32),transparent 70%),radial-gradient(140% 90% at 20% 0%,#3b2418 0%,#3B2418 55%,#6B3E2E 100%)}
 .paper-in{left:22px;right:22px;top:auto;bottom:96px;justify-content:flex-end;max-width:none;gap:14px}
 .t-h1{font-size:19vw}
 .t-sub{font-size:15px}
@@ -226,27 +226,27 @@ html.r-light .roast{background:linear-gradient(#FAF3E8,color-mix(in srgb,var(--a
 html.r-light .stats li,html.r-light .steps li{background:#fffdf8}
 /* Dark roast: the whole page goes espresso */
 html.r-dark{--ink:#F2E6D3}
-html.r-dark,html.r-dark body{background:#22140D}
+html.r-dark,html.r-dark body{background:#6B3E2E}
 html.r-dark body::after{mix-blend-mode:overlay;opacity:.1}
-html.r-dark .hero-back{background:radial-gradient(70% 60% at 50% 58%,#4a2a19 0%,#2a180f 55%,#1b0f09 100%)}
-html.r-dark .roast{background:linear-gradient(#22140D,color-mix(in srgb,var(--acc) 22%,#22140D) 50%,#22140D)}
-html.r-dark .order{background:#170D08}
+html.r-dark .hero-back{background:radial-gradient(70% 60% at 50% 58%,#8A5233 0%,#6B3E2E 55%,#5C3526 100%)}
+html.r-dark .roast{background:linear-gradient(#6B3E2E,color-mix(in srgb,var(--acc) 22%,#6B3E2E) 50%,#6B3E2E)}
+html.r-dark .order{background:#5C3526}
 html.r-dark .pill-k,html.r-dark .seg,html.r-dark .bar{background:rgba(242,230,211,.08)}
 html.r-dark .h-chips li,html.r-dark .o-copy,html.r-dark .r-notes,html.r-dark .r-ctrl{background:rgba(58,34,22,.62);border-color:rgba(242,230,211,.1)}
-html.r-dark .stats li,html.r-dark .steps li{background:#2e1b12;border-color:rgba(242,230,211,.08)}
-html.r-dark .steps li:hover{background:#352016}
+html.r-dark .stats li,html.r-dark .steps li{background:#7A4A33;border-color:rgba(242,230,211,.08)}
+html.r-dark .steps li:hover{background:#87563B}
 html.r-dark .btn.ghost{box-shadow:inset 0 0 0 1.5px rgba(242,230,211,.35)}
-html.r-dark .btn.ghost:hover{background:var(--crema);color:#2B1A12}
+html.r-dark .btn.ghost:hover{background:var(--crema);color:#3B2418}
 html.r-dark .o-type p{-webkit-text-stroke:1.5px rgba(242,230,211,.16)}
 html.r-dark .seg-k{background:var(--acc)}
 html.r-dark .seg button[aria-checked="true"]{color:#FFF6EA}
-html.r-dark .rdock{background:color-mix(in srgb,#3a2216 88%,transparent);box-shadow:0 20px 50px -20px rgba(0,0,0,.6),inset 0 0 0 1px rgba(242,230,211,.14)}
+html.r-dark .rdock{background:color-mix(in srgb,#5C3526 88%,transparent);box-shadow:0 20px 50px -20px rgba(0,0,0,.6),inset 0 0 0 1px rgba(242,230,211,.14)}
 @media (prefers-reduced-motion:reduce){.rdock{transition:none}}
 /* mode switch view transition */
 ::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
 html.vt-close::view-transition-old(root){z-index:2}
 html.vt-close::view-transition-new(root){z-index:1}
-html.r-dark .btn:not(.big):not(.ghost){background:var(--crema);color:#2B1A12}
+html.r-dark .btn:not(.big):not(.ghost){background:var(--crema);color:#3B2418}
 html.r-dark .btn:not(.big):not(.ghost):hover{background:var(--acc);color:#FFF6EA}
 .tear{overflow:hidden}
 html,body{overflow-x:clip}
@@ -293,3 +293,24 @@ header.brand.lg{--lg-alpha:80%}
 /* visible CC BY attribution for the two Sketchfab models (licence requires it on the page) */
 .order .attr{margin-top:22px;max-width:46ch;font-size:12px;line-height:1.5;opacity:.78}
 .order .attr a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+
+/* ===== Oct 31 fix: no near-black. Roasted caramel #B8754A paper, crema #F2E6D3 page, walnut #6B3E2E for dark surfaces,
+   espresso ink #3B2418 for text only; the travelling cup is a real CC0 photo (img/espresso-cup.webp). ===== */
+.paper{background:radial-gradient(55% 65% at 74% 50%,rgba(255,214,160,.38),rgba(255,214,160,0) 70%),radial-gradient(90% 80% at 10% 0%,rgba(122,66,32,.28),rgba(122,66,32,0) 60%),linear-gradient(160deg,#C98654 0%,#B8754A 48%,#A9663E 100%);color:#3B2418}
+.paper::after{opacity:.16}
+.tw{filter:drop-shadow(0 26px 34px rgba(92,48,22,.38))}
+.paper .k{color:#FFF1DE}
+.paper .t-h1{color:#3B2418}
+.paper .t-h1 .acc{color:#FFF1DE}
+.paper .t-sub{color:#2F1A10;opacity:1}
+.t-cue{border-color:rgba(255,241,222,.4);color:#FFF1DE;background:rgba(92,48,22,.38)}
+.pcup{position:fixed;left:0;top:0;z-index:5;pointer-events:none;will-change:transform;--lift:0}
+.pcup::before{content:"";position:absolute;left:7%;right:3%;top:8%;bottom:1%;border-radius:50%;
+ box-shadow:0 calc(22px + var(--lift) * 34px) calc(44px + var(--lift) * 36px) rgba(74,38,18,.34),0 6px 14px rgba(74,38,18,.22)}
+.pcup img{position:relative;display:block;width:100%;height:100%;object-fit:contain;will-change:transform,filter}
+.no-gl .pcup{display:block}
+.r-cup{position:relative}
+.r-cup::before{content:"";position:absolute;left:50%;top:50%;width:min(33svh,76vw);aspect-ratio:1;border-radius:50%;transform:translate(-50%,-50%);
+ background:url("img/roasted-beans-m.webp") center 40%/cover;box-shadow:inset 0 0 0 10px rgba(242,230,211,.55),0 30px 60px -20px rgba(74,38,18,.45);filter:saturate(1.3) contrast(1.08) sepia(.18) brightness(.98)}
+html.r-dark .r-cup::before{box-shadow:inset 0 0 0 10px rgba(242,230,211,.18),0 30px 60px -20px rgba(40,20,10,.5)}
+.brand{border-color:rgba(242,230,211,.22)}
