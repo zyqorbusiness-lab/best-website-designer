@@ -1,15 +1,15 @@
 {
- "title": "Mountain Lake in Early Morning",
- "author": "John Callery",
- "author_url": "https://www.pexels.com/photo/mountain-lake-in-early-morning-5645309/",
- "source_url": "https://www.pexels.com/photo/mountain-lake-in-early-morning-5645309/",
- "licence": "Pexels License",
- "licence_url": "https://www.pexels.com/license/",
- "attribution": "\"Mountain Lake in Early Morning\" by John Callery, Pexels (https://www.pexels.com/photo/mountain-lake-in-early-morning-5645309/), Pexels License (credit optional)",
- "changes": "downloaded once, resized, self-hosted as WebP",
- "downloaded": "2026-10-27",
- "verified": true,
- "verified_note": "photographer name re-read from the photo page in a real browser on 2026-10-28 (matches the Oct 27 record)",
+ "title": "Morning Mist",
+ "author": "Glacier National Park (U.S. National Park Service)",
+ "author_url": "https://commons.wikimedia.org/wiki/File:Morning_Mist_(20696678001).jpg",
+ "source_url": "https://commons.wikimedia.org/wiki/File:Morning_Mist_(20696678001).jpg",
+ "licence": "Public domain (NPS)",
+ "licence_url": "https://www.nps.gov/aboutus/disclaimer.htm",
+ "attribution": "\"Morning Mist\" by Glacier National Park (U.S. National Park Service), Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Morning_Mist_(20696678001).jpg), Public domain (NPS)",
+ "changes": "cropped to the page frame, resized and re-encoded to WebP (q80)",
+ "downloaded": "2026-10-31",
  "file": "lake-820.webp",
- "credit_written_by": "credits backfill 2026-10-28 (work/beast/credits/backfill)"
+ "verified": true,
+ "verified_note": "licence read from the Wikimedia Commons file page (structured licence statement + LicenseShortName) on 2026-10-31",
+ "credit_written_by": "hA round 2"
 }
