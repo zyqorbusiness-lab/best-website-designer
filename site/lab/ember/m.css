@@ -309,8 +309,10 @@ header.brand.lg{--lg-alpha:80%}
  box-shadow:0 calc(22px + var(--lift) * 34px) calc(44px + var(--lift) * 36px) rgba(74,38,18,.34),0 6px 14px rgba(74,38,18,.22)}
 .pcup img{position:relative;display:block;width:100%;height:100%;object-fit:contain;will-change:transform,filter}
 .no-gl .pcup{display:block}
-.r-cup{position:relative}
-.r-cup::before{content:"";position:absolute;left:50%;top:50%;width:min(33svh,76vw);aspect-ratio:1;border-radius:50%;transform:translate(-50%,-50%);
- background:url("img/roasted-beans-m.webp") center 40%/cover;box-shadow:inset 0 0 0 10px rgba(242,230,211,.55),0 30px 60px -20px rgba(74,38,18,.45);filter:saturate(1.3) contrast(1.08) sepia(.18) brightness(.98)}
-html.r-dark .r-cup::before{box-shadow:inset 0 0 0 10px rgba(242,230,211,.18),0 30px 60px -20px rgba(40,20,10,.5)}
 .brand{border-color:rgba(242,230,211,.22)}
+/* bean bed: its own fixed layer under the travelling cup (z 4 < cup 5), pinned to the Roast anchor by app.js */
+.pbed{position:fixed;left:0;top:0;z-index:4;width:min(33svh,76vw);aspect-ratio:1;border-radius:50%;pointer-events:none;visibility:hidden;
+ background:url("img/roasted-beans-m.webp") center 40%/cover;box-shadow:inset 0 0 0 10px rgba(242,230,211,.55),0 30px 60px -20px rgba(74,38,18,.45);filter:saturate(1.3) contrast(1.08) sepia(.18) brightness(.98)}
+html.r-dark .pbed{box-shadow:inset 0 0 0 10px rgba(242,230,211,.18),0 30px 60px -20px rgba(40,20,10,.5)}
+/* phone: the hero beans live in the top half, the type below stays clear and readable (no bean over the eyebrow, headline or body line) */
+.tear .beans,.tear .ep-beans{transform:translateY(-6%) scale(.7);transform-origin:50% 0}

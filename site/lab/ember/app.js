@@ -295,7 +295,7 @@ function cupFrame(t, p, mx, my) {
    A real top-down espresso (CC0 photo, cut out) travels between the same .cup-a anchors the 3D cup used:
    it arcs between sections, spins a full turn like a saucer slid across a counter, and the roast level
    warms or deepens the coffee through a light colour grade. */
-const PC = $('.pcup'), PCI = PC ? PC.querySelector('img') : null;
+const PC = $('.pcup'), PCI = PC ? PC.querySelector('img') : null, PB = $('.pbed');
 const PRY = { hero: -8, origin: 14, roast: -4, brew: 22, order: 6 };
 function photoCup(t, p, mx, my) {
   if (!PC) return;
@@ -305,7 +305,7 @@ function photoCup(t, p, mx, my) {
   let k = 0;
   if (A[0].y > vc) k = 0; else if (i < A.length - 1) k = clamp((vc - A[i].y) / (A[i + 1].y - A[i].y));
   const a0 = A[i], a1 = A[Math.min(i + 1, A.length - 1)], e = eio(k);
-  const dia = (o) => Math.min(o.h * 0.86, o.w * 0.9, isM ? W * 0.74 : 560) * o.a.s;
+  const dia = (o) => Math.min(o.h * 0.86, isM ? W * 0.74 : 560) * o.a.s; // anchors are empty boxes: size from height only, like the 3D cup did
   const x = lerp(a0.x, a1.x, e), y = lerp(a0.y, a1.y, e) - Math.sin(e * Math.PI) * H * 0.06;
   const d = lerp(dia(a0), dia(a1), e);
   const rev = reduced ? 1 : ss(0.3, 0.95, p);
@@ -313,6 +313,11 @@ function photoCup(t, p, mx, my) {
   const spin = reduced ? 0 : e * 360 * (k > 0 && k < 1 ? 1 : 0);
   const rot = lerp(PRY[a0.a.key] || 0, PRY[a1.a.key] || 0, e) + spin + (reduced ? 0 : Math.sin(t * 0.45) * 3 + mx * 6) + (1 - rev) * -24;
   const lift = Math.sin(e * Math.PI) * (i === 0 && k === 0 ? 0 : 1);
+  if (PB) { // the round bed of real beans sits under the cup at the Roast anchor
+    const R = A.find((o) => o.a.key === 'roast');
+    if (R) { const bw = PB.offsetWidth, on = R.y > -bw && R.y < H + bw; PB.style.visibility = on ? 'visible' : 'hidden';
+      if (on) PB.style.transform = `translate3d(${(R.x - bw / 2).toFixed(1)}px,${(R.y - bw / 2).toFixed(1)}px,0)`; }
+  }
   PC.style.width = PC.style.height = d.toFixed(1) + 'px';
   PC.style.transform = `translate3d(${(x - d / 2).toFixed(1)}px,${(yy - d / 2).toFixed(1)}px,0) scale(${(1 + lift * 0.06).toFixed(3)})`;
   if (PCI) PCI.style.transform = `rotate(${rot.toFixed(2)}deg)`;
