@@ -431,6 +431,29 @@ The poster (shown before WebGL starts, and as the no-WebGL fallback) must be the
 - a run with reduced motion at 360 px, clicking the finish and light buttons;
 - console errors and failed requests: 0 on all four runs, locally and on the live host.
 
+## Worked build: translucent food in code + a DOM-anchored scroll camera (N010 Rootline Citrus and Kilnfold bowl, Oct 31 2026)
+
+Sujon's rule from 31 Oct 2026: every upgrade is a real 3D site, and photos alone are not enough. When no good CC0 scan exists, build the object in code and use the photos as supporting cards beside it.
+
+**Citrus (whole fruit + cut half), no downloaded model.**
+- Shape: a `SphereGeometry` pushed per fruit on the CPU, then `computeVertexNormals()`. Lemon: `y*1.22` plus `pow(|y|,10)` tips. Mandarin: `y*0.82` and a sunken top. Lime: nearly round. Re-run the push when the user switches fruit. Do it at the half-turn of a 0.9 s spin, so the swap hides inside the motion.
+- Peel: draw a canvas height map (thousands of tiny gaussian dimples = oil glands), Sobel it into a normal map and add a pale mottling map. Use `MeshPhysicalMaterial` with `normalScale 0.5`, `clearcoat 0.45`, `envMapIntensity 0.55`. Big dimples or full normal strength look like hail. A strong sheen/clearcoat turns the peel frosted white, so keep peel colours deep and saturated (lime #3F8A1C, lemon #EBB300, mandarin #F2700C).
+- The cut half: a hemisphere (`thetaLength: PI/2`) rotated `x = -PI/2`, so the dome points away and the open side faces the camera. A `CircleGeometry` cap sits at z=0.001 with a custom `ShaderMaterial`, all in polar UV:
+  - segment index `floor(angle/2π*N)`, membrane where the arc distance to a segment edge is under ~0.009, rounded lobe ends, pith ring, peel ring, core;
+  - juice sacs = Worley cells stretched along the radius (`vec2(r*8.5, arcPos*…)`, F2–F1 for the walls);
+  - wet look: a height from the sacs, turned into a normal with `dFdx/dFdy`, then a tight Blinn spec (pow 140);
+  - translucency: a back-lit glow `flesh*flesh*trans`, stronger at the centre and inside each sac, plus a little emissive on the pith so it doesn't go grey;
+  - end with `#include <tonemapping_fragment>` and `#include <colorspace_fragment>`. Without them the colours are wrong next to `MeshPhysicalMaterial`.
+- Keep the cut face saturated. ACES desaturates bright values, so lower the diffuse term before you add spec, not after.
+
+**Stoneware bowl (lathe).** Run a `CatmullRomCurve3` profile (foot → outer wall → rim → inner wall → centre) through `LatheGeometry`. Paint the glaze, drips, raw-clay foot and speckle on a canvas, with x = around and y = along the profile. Glaze vs clay use separate `roughnessMap` and `clearcoatMap`. Gotcha: `CanvasTexture` has `flipY = true`, so a canvas painted top-down lands upside down on a lathe (the foot clay ends up inside the bowl). Set `t.flipY = false`. Also, `getPoints()` spaces UV v per control point, not by arc length, so read the break heights off the control-point index.
+
+**DOM-anchored scroll camera (works on every layout).** Use one fixed full-screen transparent canvas. Each frame, read the rect of a DOM anchor: the hero stage for state A, the colour disc in the next section for state B. Turn its centre and size into world units at z=0 (`visH = 2·d·tan(fov/2)`). Then lerp position, scale and quaternion between A and B by section progress. The 3D lands exactly on the layout's slot at 1440, 390 and 360 without any per-breakpoint numbers. After landing, a second progress value orbits the object round its side (camera feel), driven by the anchor's scroll. Hide the canvas and stop rendering once both anchors are off screen. Reduced motion: snap to A or B (no flight) and turn off idle spin.
+
+**Fallback.** Create the renderer inside try/catch. Only add `html.is-3d` once it works, and let CSS swap the photos into small cards under that class. Without WebGL the old photo layout stays untouched (no poster needed).
+
+**Check:** run `node --check` on every module before shooting. A single `-x ** 2` (unary minus before `**`) is a SyntaxError that kills the whole module.
+
 ## Sources
 
 - Sujon Hoque (Zyqor Studio): WhatsApp 27 Oct 2026 6:22 PM (real premium models, no code-made look), 27 Oct 2026 8:23 PM (phone same models and quality, compressed), 28 Oct 2026 9:42 AM (new websites use real models), 30 Oct 2026 ("PC me no compromise"), 15 Oct 2026 (no endless loops).

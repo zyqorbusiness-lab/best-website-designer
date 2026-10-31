@@ -253,6 +253,13 @@ rig and save stills (the components' `scroll-3d-stage/poster.webp` is a CC0 mode
 | `scripts/knockout.py` | border-connected flood-fill knockout (Pillow), keeps inner same-colour areas and the contact shadow, soft edge |
 | `examples/index.html` | grade, duotone, grain, art-directed crops and a credits block on two real CC0 photos; self-tests |
 
+## Footage licensing (Oct 31 2026)
+
+- **Not allowed** for Zyqor pages, the repo or reels: Mixkit (its own licence, not CC, no redistribution in a repo), Pexels and Unsplash (their own licences, not CC). `credits-check` lists them under their licence names. Treat any of these as a blocker to replace, not a pass.
+- **Allowed:** Wikimedia Commons video with CC0 / CC BY / CC BY-SA (BY-SA is flagged for review) or public domain. US federal sources (NPS, BLM, NASA, USFWS) are PD; check the file page, not the search result.
+- **Preview before you pick:** grab frames straight from Commons' transcoded WebM with `ffmpeg -ss <t> -i <…webm.480p.vp9.webm> -frames:v 1` at several times, and look at them. Send a User-Agent with contact info. Pick by light, sharpness and colour (warm and sunny beats flat and overcast for travel), then download only the segment you use.
+- **Grade into the palette** with ffmpeg (`colorbalance`, `eq=saturation:contrast:gamma`), and say "graded, cropped, re-encoded" in `changes`. Credit the author, licence and file page on the page and in CREDITS.md. Delete the replaced files and their CREDITS rows in the same push.
+
 ## Sources
 
 - Sujon Hoque (Zyqor Studio): credit rule and licence allow-list (28 Oct 2026), real premium assets only and no AI (27 Oct 2026), WhatsApp 30 Oct 2026 ("PC me no compromise").

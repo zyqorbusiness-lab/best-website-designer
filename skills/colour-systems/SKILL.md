@@ -370,6 +370,16 @@ missing the colours switch instantly, which is an acceptable fallback.
 | `examples/index.html` | live playground: hue slider, mode and accent switch, contrast table, a sample page section, grain, a chapter inversion. Runs the same module, plus self-tests (`window.__skillTest`). |
 | `CREDITS.md` | sources |
 
+## Dark page → cream page with coloured panels (P017 Tapehead, Oct 31 2026)
+
+The audit asked for "cream page, walnut only for panels" on a page whose tokens were inverted (`--c1` cream used as type, `--c2` walnut as the page). Changing the page from dark to light by recolouring every rule takes hours. What worked in minutes was one appended block at the end of the page CSS (both `style.css` and `m.css`):
+- `body` → cream gradient #FAF5EC → #F2EBDD → #EADFCB, type → walnut-ink #3E2A20 (dark text is fine, dark backgrounds are not);
+- every heading or label that used `--c1` gets the ink colour, and secondary text gets `color-mix(in oklab, ink 76%, cream)`;
+- the accent that was mustard on dark moves to tape red on cream (mustard #E5C61A on cream fails contrast), and mustard stays inside the walnut panels;
+- the panels (deck controls, the stats card) get the old dark: walnut #6B3E2E with cream type, `border-radius 28px` and a soft walnut shadow. Over a 3D scene on phone, use 0.72–0.8 alpha + `backdrop-filter` so the model still shows through;
+- `theme-color` meta → cream.
+Then re-shoot the no-WebGL poster, because it still shows the old dark stage. Hide everything but the canvas: `*{visibility:hidden!important} canvas{visibility:visible!important}` (the body background still paints), then clip to the stage rect. An element screenshot of a hidden element times out, so use `page.screenshot({clip})`.
+
 ## Sources
 
 - Sujon Hoque (Zyqor Studio), WhatsApp, 27 Oct 2026 12:15 IST: three colours, no black, no purple, premium colour; 30 Oct 2026: "PC me no compromise".
