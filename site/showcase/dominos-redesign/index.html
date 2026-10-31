@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Domino's redesign concept (unofficial) | Zyqor Studio</title>
+<meta name="description" content="An unofficial redesign concept for Domino's by Zyqor Studio: real food photography, a three-tap pizza builder and a calmer order tracker. Not affiliated with Domino's.">
+<link rel="canonical" href="https://zyqor-portfolio.vercel.app/showcase/dominos-redesign/">
+<meta name="theme-color" content="#F5EEE4">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Domino's redesign concept (unofficial) | Zyqor Studio">
+<meta property="og:description" content="Real pizza photography, a three-tap builder and a tracker you can read at a glance. Unofficial concept, not affiliated with Domino's.">
+<meta property="og:url" content="https://zyqor-portfolio.vercel.app/showcase/dominos-redesign/">
+<meta property="og:image" content="https://zyqor-portfolio.vercel.app/showcase/dominos-redesign/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="img/hero-m.webp" media="(max-width: 760px)">
+<link rel="preload" as="image" href="img/hero.webp" media="(min-width: 761px)">
+<link rel="stylesheet" href="dz.css">
+</head>
+<body>
+<a class="skip" href="#build">Skip to the pizza builder</a>
+<div class="strip" role="note"><span class="tag">CONCEPT</span><span>Unofficial redesign concept — not affiliated with Domino's</span></div>
+
+<header class="top" id="top">
+  <a class="brand" href="#top" aria-label="Domino's redesign concept, back to top"><svg class="logo-mark" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="18.5 18.2 162.9 163.7" > <path fill="#FFFFFF" d="M71,70.9l49.6-49.6c3.7-3.7,7.9-4.4,12.4,0l46.1,46.1c3.3,3.3,3,8.3,0,11.3L78.8,178.9 c-3.6,3.6-8.3,4.2-12.5,0l-45.1-45.1c-3.6-3.6-3.3-9.3,0-12.6L71,70.9z"/> <path fill="#006491" d="M71.8,76l51.9,51.9l-47.2,47.2c-2.9,2.9-5.9,3-8.9,0l-43.2-43.2c-2.7-2.7-2.5-5.7,0-8.2 L71.8,76z"/> <path fill="#E31837" d="M127,124.8L75.1,72.9l47.2-47.2c2.9-2.9,5.9-3,8.9,0l43.2,43.2c2.7,2.7,2.5,5.7,0,8.2 L127,124.8z"/> <circle fill="#FFFFFF" cx="126.7" cy="73" r="12.8"/> <circle fill="#FFFFFF" cx="90.8" cy="127.9" r="12.8"/> <circle fill="#FFFFFF" cx="53.4" cy="127.9" r="12.8"/> </svg><span class="wm">Domino's</span></a>
+  <nav class="nav" aria-label="Sections">
+    <a href="#build">Build</a><a href="#track">Tracker</a><a href="#notes">Design notes</a>
+  </nav>
+  <a class="btn btn-sm" href="#build">Start an order</a>
+</header>
+
+<main>
+<section class="hero" aria-labelledby="h1">
+  <div class="hero-copy">
+    <p class="eyebrow"><span class="dot" aria-hidden="true"></span>A redesign concept by Zyqor Studio</p>
+    <h1 id="h1"><span class="ln">Hot pizza,</span> <span class="ln">three taps <em>away.</em></span></h1>
+    <p class="lede">What if ordering Domino's felt as good as the first bite? Real food photography, one-thumb choices and a tracker you can read from across the room.</p>
+    <div class="cta-row">
+      <a class="btn" href="#build">Build a pizza <span aria-hidden="true">→</span></a>
+      <a class="btn btn-ghost" href="#track">See the tracker</a>
+    </div>
+    <ul class="facts" aria-label="What this concept changes">
+      <li><b>3</b><span>taps to order</span></li>
+      <li><b>4</b><span>tracker steps</span></li>
+      <li><b>1</b><span>thumb on phone</span></li>
+    </ul>
+  </div>
+  <figure class="hero-media">
+    <picture>
+      <source media="(max-width: 760px)" srcset="img/hero-m.webp" width="900" height="1350">
+      <img src="img/hero.webp" width="2400" height="1608" alt="A hot supreme pizza, one slice lifted with stretching melted cheese, mushrooms, peppers and olives" fetchpriority="high">
+    </picture>
+    <div class="hero-chip" aria-hidden="true"><span class="pulse"></span><span><b>Large supreme</b><small>In the oven · step 2 of 4</small></span></div>
+    <figcaption class="credit">Photo: Scott Bauer, USDA ARS (public domain)</figcaption>
+  </figure>
+</section>
+
+<section class="build" id="build" aria-labelledby="h2b">
+  <div class="sec-head">
+    <p class="kicker">01 · The builder</p>
+    <h2 id="h2b">Build it in three taps.</h2>
+    <p class="sub">Pick a size, pick a pizza, drop on extras. Every choice is a real photo, so you see what you get.</p>
+  </div>
+  <div class="builder">
+    <div class="stage-wrap"><div class="stage" id="stage" aria-live="polite">
+      <div class="stage-img" id="stageImg"><img src="img/pepperoni.webp" width="1000" height="1000" alt="A whole pepperoni pizza in an open box, seen from above" id="stageA"></div>
+      <div class="ring" id="ring" aria-hidden="true"></div>
+      <div class="drops" id="drops" aria-hidden="true"></div>
+      <div class="stage-label"><span id="stageSize">Large</span> · <span id="stageName">Pepperoni</span></div>
+      <p class="credit stage-credit" id="stageCredit">Photo: Kurt Kaiser (CC0)</p>
+    </div></div>
+    <div class="controls">
+      <fieldset class="step">
+        <legend><span class="num">1</span>Size</legend>
+        <div class="seg" role="radiogroup" aria-label="Size">
+          <button type="button" role="radio" aria-checked="false" data-size="Small">Small</button>
+          <button type="button" role="radio" aria-checked="false" data-size="Medium">Medium</button>
+          <button type="button" role="radio" aria-checked="true" data-size="Large">Large</button>
+        </div>
+      </fieldset>
+      <fieldset class="step">
+        <legend><span class="num">2</span>Pizza</legend>
+        <div class="styles" role="radiogroup" aria-label="Pizza">
+          <button type="button" role="radio" class="sty" aria-checked="true" data-k="pepperoni" data-name="Pepperoni" data-alt="A whole pepperoni pizza in an open box, seen from above" data-credit="Photo: Kurt Kaiser (CC0)"><img src="img/pepperoni.webp" alt="" width="1000" height="1000" loading="lazy"><span>Pepperoni</span></button>
+          <button type="button" role="radio" class="sty" aria-checked="false" data-k="cheesepull" data-name="Extra cheese" data-alt="A slice being lifted from a cheese pizza with a long stretch of melted mozzarella" data-credit="Photo: Foodie Moodie (CC0)"><img src="img/cheesepull.webp" alt="" width="1000" height="1000" loading="lazy"><span>Extra cheese</span></button>
+          <button type="button" role="radio" class="sty" aria-checked="false" data-k="garden" data-name="Garden" data-alt="A bubbling cheese pizza with tomato slices and basil" data-credit="Photo: jeffreyw (CC BY 2.0)"><img src="img/garden.webp" alt="" width="1000" height="1000" loading="lazy"><span>Garden</span></button>
+          <button type="button" role="radio" class="sty" aria-checked="false" data-k="supreme" data-name="Supreme" data-alt="A supreme pizza with mushrooms, peppers, olives and melted cheese" data-credit="Photo: Scott Bauer, USDA ARS (public domain)"><img src="img/supreme.webp" alt="" width="1000" height="1000" loading="lazy"><span>Supreme</span></button>
+        </div>
+      </fieldset>
+      <fieldset class="step">
+        <legend><span class="num">3</span>Drop on extras</legend>
+        <div class="tops" aria-label="Extras">
+          <button type="button" class="top-btn" aria-pressed="false" data-t="Mushrooms">Mushrooms</button>
+          <button type="button" class="top-btn" aria-pressed="false" data-t="Olives">Olives</button>
+          <button type="button" class="top-btn" aria-pressed="false" data-t="Jalapeños">Jalapeños</button>
+          <button type="button" class="top-btn" aria-pressed="false" data-t="Onions">Onions</button>
+          <button type="button" class="top-btn" aria-pressed="false" data-t="Extra sauce">Extra sauce</button>
+        </div>
+      </fieldset>
+      <button type="button" class="btn btn-wide" id="addBtn">Add to order <span aria-hidden="true">→</span></button>
+      <p class="fine">Concept demo: nothing is ordered and no prices are shown.</p>
+    </div>
+  </div>
+</section>
+
+<section class="track" id="track" aria-labelledby="h2t">
+  <div class="track-in">
+    <div class="sec-head light">
+      <p class="kicker">02 · The tracker</p>
+      <h2 id="h2t">Read it from across the room.</h2>
+      <p class="sub">Four big steps, one moving line and a photo of what is happening right now. No tiny status text to squint at.</p>
+    </div>
+    <div class="tracker">
+      <figure class="track-media">
+        <img id="trackImg" src="img/prep.webp" width="1400" height="935" alt="A cook placing pepperoni slices on a pizza" loading="lazy">
+        <figcaption class="credit" id="trackCredit">Photo: Shixart1985 (CC BY 2.0)</figcaption>
+      </figure>
+      <div class="track-ui">
+        <div class="bar" aria-hidden="true"><i id="barFill"></i></div>
+        <ol class="steps" id="steps">
+          <li class="on"><span class="sn">1</span><b>Prep</b><small>Dough stretched, sauce on</small></li>
+          <li><span class="sn">2</span><b>Bake</b><small>Into the oven</small></li>
+          <li><span class="sn">3</span><b>Box</b><small>Sliced and checked</small></li>
+          <li><span class="sn">4</span><b>On the way</b><small>Out the door to you</small></li>
+        </ol>
+        <button type="button" class="btn btn-light" id="playTrack">Play the demo <span aria-hidden="true">↻</span></button>
+        <p class="fine light">Demo timeline: not live order data.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="notes" id="notes" aria-labelledby="h2n">
+  <div class="sec-head">
+    <p class="kicker">03 · Design notes</p>
+    <h2 id="h2n">What this redesign changes.</h2>
+  </div>
+  <div class="cards">
+    <article class="card"><span class="cn">A</span><h3>Food first</h3><p>The pizza is the hero: real, hot, cheesy photography instead of cut-outs and banners.</p></article>
+    <article class="card"><span class="cn">B</span><h3>One thumb</h3><p>On phones every choice sits in the lower half of the screen, with a sticky order button.</p></article>
+    <article class="card"><span class="cn">C</span><h3>Calm colour</h3><p>Warm paper, deep ocean blue and a baked-crust orange. The famous blue and red stay in the logo.</p></article>
+  </div>
+  <figure class="boxes">
+    <img src="img/boxes.webp" width="1400" height="1050" alt="Three pizza boxes stacked on a table" loading="lazy">
+    <figcaption class="credit">Photo: Tony Webster (CC BY 2.0)</figcaption>
+  </figure>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="foot-in">
+    <p class="disc"><span class="tag tag-dark">CONCEPT</span> Unofficial redesign concept — not affiliated with Domino's. The Domino's name and logo belong to their owner and appear here only as the subject of this design study. Nothing on this page takes real orders.</p>
+    <p class="creds">Photos from Wikimedia Commons: supreme pizza by Scott Bauer, USDA ARS (public domain); pepperoni pizza by Kurt Kaiser (CC0); cheese pull by Foodie Moodie (CC0); garden pizza by jeffreyw (CC BY 2.0); cook with pepperoni by Shixart1985 (CC BY 2.0); pizza boxes by Tony Webster (CC BY 2.0). Fonts: Bricolage Grotesque and DM Sans (SIL OFL). Full list in CREDITS.md.</p>
+    <p class="by">Concept design and code by <a href="/">Zyqor Studio</a> · <a href="/">Back to the portfolio</a></p>
+  </div>
+</footer>
+
+<div class="dock" id="dock"><a class="btn btn-wide" href="#build">Build a pizza <span aria-hidden="true">→</span></a></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="dz.js" defer></script>
+</body>
+</html>
