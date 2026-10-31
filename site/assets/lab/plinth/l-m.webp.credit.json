@@ -1,15 +1,15 @@
 {
- "title": "Elegant spiral staircase in modern architecture",
- "author": "Rudi Chandra",
- "author_url": "https://www.pexels.com/@rudi-chandra-1981866/",
- "source_url": "https://www.pexels.com/photo/elegant-spiral-staircase-in-modern-architecture-38064798/",
- "licence": "Pexels License",
- "licence_url": "https://www.pexels.com/license/",
- "attribution": "\"Elegant spiral staircase in modern architecture\" by Rudi Chandra, Pexels (https://www.pexels.com/photo/elegant-spiral-staircase-in-modern-architecture-38064798/), Pexels License (credit optional)",
- "changes": "resized and re-encoded to WebP (1600 px desktop, 820 px phone)",
- "downloaded": "2026-10-27",
- "verified": true,
- "verified_note": "photographer name and licence read from the photo page in a real browser on 2026-10-28",
+ "title": "Spiral Staircase, Keck Center (U.S. National Academies) (Portrait View)",
+ "author": "Jorge Mendoza",
+ "author_url": "https://commons.wikimedia.org/wiki/File:Spiral_Staircase,_Keck_Center_(U.S._National_Academies)_(Portrait_View).jpg",
+ "source_url": "https://commons.wikimedia.org/wiki/File:Spiral_Staircase,_Keck_Center_(U.S._National_Academies)_(Portrait_View).jpg",
+ "licence": "CC0 1.0",
+ "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+ "attribution": "\"Spiral Staircase, Keck Center (U.S. National Academies) (Portrait View)\" by Jorge Mendoza, Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Spiral_Staircase,_Keck_Center_(U.S._National_Academies)_(Portrait_View).jpg), CC0 1.0",
+ "changes": "cropped to the page frame, resized and re-encoded to WebP (q80)",
+ "downloaded": "2026-10-31",
  "file": "l-m.webp",
- "credit_written_by": "credits backfill 2026-10-28"
+ "verified": true,
+ "verified_note": "licence read from the Wikimedia Commons file page (structured licence statement + LicenseShortName) on 2026-10-31",
+ "credit_written_by": "hA round 2"
 }

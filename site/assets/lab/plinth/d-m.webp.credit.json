@@ -1,15 +1,15 @@
 {
- "title": "Minimalist concrete staircase with shadows",
- "author": "Mantas Sinkevičius",
- "author_url": "https://www.pexels.com/@mantasink/",
- "source_url": "https://www.pexels.com/photo/minimalist-concrete-staircase-with-shadows-39031396/",
- "licence": "Pexels License",
- "licence_url": "https://www.pexels.com/license/",
- "attribution": "\"Minimalist concrete staircase with shadows\" by Mantas Sinkevičius, Pexels (https://www.pexels.com/photo/minimalist-concrete-staircase-with-shadows-39031396/), Pexels License (credit optional)",
- "changes": "resized and re-encoded to WebP (1600 px desktop, 820 px phone)",
- "downloaded": "2026-10-27",
- "verified": true,
- "verified_note": "photographer name and licence read from the photo page in a real browser on 2026-10-28",
+ "title": "Dogwood52 week9 Shadows",
+ "author": "Felipe Valduga",
+ "author_url": "https://commons.wikimedia.org/wiki/File:Dogwood52_week9_Shadows.jpg",
+ "source_url": "https://commons.wikimedia.org/wiki/File:Dogwood52_week9_Shadows.jpg",
+ "licence": "CC BY 2.0",
+ "licence_url": "https://creativecommons.org/licenses/by/2.0/",
+ "attribution": "\"Dogwood52 week9 Shadows\" by Felipe Valduga, Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Dogwood52_week9_Shadows.jpg), CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/)",
+ "changes": "cropped to the page frame, resized and re-encoded to WebP (q80)",
+ "downloaded": "2026-10-31",
  "file": "d-m.webp",
- "credit_written_by": "credits backfill 2026-10-28"
+ "verified": true,
+ "verified_note": "licence read from the Wikimedia Commons file page (structured licence statement + LicenseShortName) on 2026-10-31",
+ "credit_written_by": "hA round 2"
 }
