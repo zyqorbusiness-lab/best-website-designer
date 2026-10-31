@@ -167,3 +167,15 @@ i,em{font-style:italic}
 /* glass body (helper) */
 .pill-acc.lg{--lg-ink:#B53A1A}
 .lg.lg--ink{--_al:96%}
+
+/* R3 "The sun crosses" - sticky real-time 3D plate */
+.sun{position:relative;height:300vh;background:#EDE8DE}.sun-stage{position:sticky;top:0;height:100vh;overflow:hidden}
+.sun-gl{position:absolute;inset:0;width:100%;height:100%;display:block}.sun-still{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.sun-still[hidden]{display:none}
+.sun-txt{position:absolute;z-index:2;left:clamp(24px,6vw,96px);top:clamp(80px,14vh,150px);max-width:min(420px,34vw);color:#19233B}
+.sun-k{font:600 11px/1.4 var(--f-ui,Inter,sans-serif);letter-spacing:.18em;text-transform:uppercase;color:#DA4A2A;margin:0 0 18px}
+.sun-txt h2{font:400 clamp(56px,6vw,104px)/.92 var(--f-disp,Fraunces,serif);letter-spacing:-.03em;margin:0}.sun-txt h2 i{color:#DA4A2A}
+.sun-p{font:400 17px/1.55 var(--f-ui,Inter,sans-serif);margin:22px 0 0;max-width:330px}
+.sun-clock{display:flex;align-items:center;gap:14px;margin-top:28px;font:500 13px var(--f-ui,Inter,sans-serif);letter-spacing:.12em}.sun-bar{width:120px;height:1px;background:rgba(25,35,59,.25);position:relative}
+.sun-nogl .sun-clock{display:none}.sun-nogl .sun-txt{background:rgba(237,232,222,.92);padding:22px 24px}
+@media (max-width:860px){.sun{height:260svh}.sun-stage{height:100svh}.sun-txt{left:20px;right:20px;top:calc(env(safe-area-inset-top) + 64px);max-width:none}.sun-txt h2{font-size:clamp(46px,13vw,60px)}.sun-p{font-size:15px;margin-top:12px}.sun-clock{margin-top:14px}}
+@media (prefers-reduced-motion:reduce){.sun{height:auto}.sun-stage{position:relative;height:100vh;min-height:620px}}

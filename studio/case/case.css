@@ -325,12 +325,16 @@ ul.credits{list-style:none;padding:0}
   .pcard:hover .pcard-img img{transform:none}
 }
 
-/* Round 2 (Oct 31, 3D rule): a code-built 3D stoneware bowl (vessel.js) sits on the hero photo's corner; the scroll camera tilts into it */
-.hero-media{position:relative}
-.hero-3d{position:absolute;right:clamp(16px,4vw,72px);bottom:clamp(-150px,-9vw,-60px);width:min(30vw,440px);aspect-ratio:1;pointer-events:none;z-index:3;opacity:0;transition:opacity .8s var(--ease)}
-.hero-3d{border-radius:50%;overflow:hidden;background:radial-gradient(circle at 50% 38%,#F6F0E6,var(--c1) 62%,var(--c1b));box-shadow:0 30px 60px -28px color-mix(in srgb,var(--c2) 45%,transparent),inset 0 0 0 1px color-mix(in srgb,var(--c2) 10%,transparent)}
-.hero-3d.is-on{opacity:1}
-.hero-3d canvas{width:100%!important;height:100%!important;display:block}
-.hero-3d-cap{position:absolute;right:clamp(16px,4vw,72px);bottom:calc(clamp(-150px,-9vw,-60px) - 26px);margin:0;font-size:.62rem;color:var(--mute);z-index:3}
-@media (max-width:860px){.hero-3d{width:54vw;right:12px;bottom:-48px}.hero-3d-cap{right:14px;bottom:-78px}}
-@media (prefers-reduced-motion:reduce){.hero-3d{transition:none}}
+/* ---------- Oct 31 round 2: 3D hero (vessel3d.js) ---------- */
+.hero-3d{margin:clamp(28px,4vw,56px) 0 0}
+.h3-stage{position:relative;height:clamp(340px,52vh,560px);border-radius:var(--r,10px);overflow:hidden;background:radial-gradient(120% 90% at 50% 30%,color-mix(in srgb,var(--c1) 70%,#fff) 0%,var(--c1) 60%,color-mix(in srgb,var(--c1) 88%,var(--c2)) 100%)}
+.h3-stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:pan-y;cursor:grab;opacity:0;transition:opacity .6s ease}
+.h3-stage canvas:active{cursor:grabbing}
+.h3-ready .h3-stage canvas{opacity:1}
+.h3-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .6s ease}
+.h3-ready .h3-poster{opacity:0}
+.h3-nogl .h3-stage canvas{display:none}
+.h3-nogl .h3-hint{display:none}
+.hero-3d figcaption{display:flex;justify-content:space-between;gap:16px;margin-top:12px;color:var(--mute)}
+.h3-hint{color:var(--c3);white-space:nowrap}
+@media (max-width:760px){.h3-stage{height:clamp(300px,46vh,420px)}.hero-3d figcaption{flex-direction:column;gap:4px}}
