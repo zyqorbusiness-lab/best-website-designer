@@ -1,11 +1,11 @@
 {
-  "title": "Tapehead Hi-Fi thumbnail",
-  "author": "Zyqor Studio",
-  "author_url": "https://github.com/zyqorbusiness-lab",
-  "source_url": "https://github.com/zyqorbusiness-lab/best-website-designer",
-  "licence": "MIT",
-  "licence_url": "https://opensource.org/license/mit",
-  "attribution": "Tapehead Hi-Fi thumbnail, Zyqor Studio (MIT). Shows Cassette Player (Poly Haven, CC0).",
-  "changes": "rendered by tools/qa-library.mjs from this concept's own page: a screenshot of the real-time render on the page, saved as WebP. Not AI imagery.",
-  "downloaded": "2026-10-30"
+ "title": "Tapehead Hi-Fi thumbnail",
+ "author": "Zyqor Studio",
+ "author_url": "https://github.com/zyqorbusiness-lab",
+ "source_url": "https://github.com/zyqorbusiness-lab/best-website-designer",
+ "licence": "MIT",
+ "licence_url": "https://opensource.org/license/mit",
+ "attribution": "Tapehead Hi-Fi thumbnail, Zyqor Studio (MIT). Shows Cassette Player (Poly Haven, CC0).",
+ "changes": "rendered by tools/qa-library.mjs from this concept's own page: a screenshot of the real-time render on the page, saved as WebP. Not AI imagery. Re-shot 2026-10-31 after the palette fix (h5), 1440x900 frame resized to 640x400 WebP.",
+ "downloaded": "2026-10-31"
 }
