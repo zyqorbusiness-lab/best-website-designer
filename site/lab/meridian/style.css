@@ -133,9 +133,9 @@ html.lume .cursor.big span{color:#0F2A21}
 html.vt-close::view-transition-old(root){z-index:2}
 html.vt-close::view-transition-new(root){z-index:1}
 html.lume .bx-in{color:var(--c2)}
-@font-face{font-family:"General Sans";src:url("../../assets/font/generalsans-var.woff2") format("woff2");font-weight:200 700;font-display:swap}
+@font-face{font-family:"Inter Tight";src:url("../../assets/font/intertight-normal.woff2") format("woff2");font-weight:200 700;font-display:swap}
 @font-face{font-family:"Archivo";src:url("../../assets/font/archivo-var.woff2") format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
-:root{--f-body:"General Sans",system-ui,sans-serif;--f-ui:"General Sans",system-ui,sans-serif}
+:root{--f-body:"Inter Tight",system-ui,sans-serif;--f-ui:"Inter Tight",system-ui,sans-serif}
 /* Anton face stays: the watch dial canvas draws with it (and Inter Tight). CTAs as a jeweller's tag: 2px rectangle, hairline gold underline on hover. Eyebrows small caps. */
 .pill{border-radius:2px;position:relative;letter-spacing:.06em;text-transform:uppercase;font-size:12.5px;font-weight:600}
 .pill::after{content:"";position:absolute;left:18px;right:18px;bottom:9px;height:1px;background:#C9A24A;transform:scaleX(0);transform-origin:left;transition:transform .45s var(--e-out)}

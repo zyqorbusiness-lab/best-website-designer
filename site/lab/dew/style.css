@@ -1,9 +1,9 @@
-@font-face{font-family:"Satoshi";src:url("../../assets/font/satoshi-var.woff2") format("woff2");font-weight:300 900;font-display:swap}
+@font-face{font-family:"Manrope";src:url("../../assets/font/manrope-var.woff2") format("woff2");font-weight:300 900;font-display:swap}
 @font-face{font-family:"Instrument Serif";src:url("../../assets/font/instrumentserif-400.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
 @font-face{font-family:"Instrument Serif";src:url("../../assets/font/instrumentserif-italic.woff2") format("woff2");font-weight:400;font-style:italic;font-display:swap}
 @font-face{font-family:"Inter Tight";src:url("../../assets/font/intertight-normal.woff2") format("woff2");font-weight:400 700;font-display:swap}
 :root{--c1:#F6E3DF;--c2:#B85C5C;--c3:#4A2E2A;--blush:#F6E3DF;--rose:#B85C5C;--cocoa:#4A2E2A;
- --f-disp:"Instrument Serif",Georgia,serif;--f-body:"Satoshi",system-ui,sans-serif;--ease:cubic-bezier(.16,1,.3,1)}
+ --f-disp:"Instrument Serif",Georgia,serif;--f-body:"Manrope",system-ui,sans-serif;--ease:cubic-bezier(.16,1,.3,1)}
 body{font:400 16px/1.55 var(--f-body);color:var(--cocoa);background:var(--blush)}
 h1,h2,h3,p{margin:0}
 em{font-style:italic;color:var(--rose)}
@@ -139,7 +139,7 @@ html.pm .toast{color:#E79A8F}
 @media (prefers-reduced-motion:reduce){.mode-k{transition:none}}
 
 /* design pass apply (7994e000, Oct 27) */
-/* body Inter Tight -> Satoshi (Inter Tight face kept: the 3D label canvas draws with it). CTAs: one filled + one ghost, tracked. */
+/* body Inter Tight -> Manrope (Inter Tight face kept: the 3D label canvas draws with it). CTAs: one filled + one ghost, tracked. */
 body{font-feature-settings:"ss02" 0}
 .pill{font-weight:500;letter-spacing:.04em}
 .pill.glass{background:transparent;-webkit-backdrop-filter:none;backdrop-filter:none;border:1px solid color-mix(in srgb,var(--cocoa) 42%,transparent);color:var(--cocoa)}

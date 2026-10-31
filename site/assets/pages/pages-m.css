@@ -1,11 +1,11 @@
 /* Zyqor Studio - Process + Services pages, light phone build. No smooth-scroll lib, no GSAP. */
-@font-face{font-family:"Cabinet Grotesk";src:url(/assets/font/cabinetgrotesk-800.woff2) format("woff2");font-weight:800;font-display:swap}
-@font-face{font-family:"Cabinet Grotesk";src:url(/assets/font/cabinetgrotesk-700.woff2) format("woff2");font-weight:600 700;font-display:swap}
-@font-face{font-family:"Satoshi";src:url(/assets/font/satoshi-400.woff2) format("woff2");font-weight:400;font-display:swap}
-@font-face{font-family:"Satoshi";src:url(/assets/font/satoshi-700.woff2) format("woff2");font-weight:600 900;font-display:swap}
-@font-face{font-family:"Zodiak";src:url(/assets/font/zodiak-400i.woff2) format("woff2");font-style:italic;font-weight:300 700;font-display:swap}
+@font-face{font-family:"Bricolage Grotesque";src:url(/assets/font/bricolage-axes.woff2) format("woff2");font-weight:800;font-display:swap}
+@font-face{font-family:"Bricolage Grotesque";src:url(/assets/font/bricolage-axes.woff2) format("woff2");font-weight:600 700;font-display:swap}
+@font-face{font-family:"Manrope";src:url(/assets/font/manrope-var.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Manrope";src:url(/assets/font/manrope-var.woff2) format("woff2");font-weight:600 900;font-display:swap}
+@font-face{font-family:"Fraunces";src:url(/assets/font/fraunces-italic.woff2) format("woff2");font-style:italic;font-weight:300 700;font-display:swap}
 :root{--ivory:#F3EDE1;--paper:#FBF8F2;--pine:#17423C;--ochre:#B5832F;--ochre-d:#8A5F1C;--gold:#D9B56A;--ink:#17423C;--muted:#4A6A64;--hair:rgba(23,66,60,.16);--hair-2:rgba(23,66,60,.08);
---fd:"Cabinet Grotesk","Helvetica Neue",Arial,sans-serif;--fb:"Satoshi",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;--fs:"Zodiak",Georgia,serif;--ease:cubic-bezier(.19,1,.22,1);--g:20px}
+--fd:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;--fb:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;--fs:"Fraunces",Georgia,serif;--ease:cubic-bezier(.19,1,.22,1);--g:20px}
 *,*::before,*::after{box-sizing:border-box}
 html{background:var(--ivory);color:var(--ink);-webkit-text-size-adjust:100%}
 body{margin:0;font:400 16px/1.6 var(--fb);overflow-x:hidden}

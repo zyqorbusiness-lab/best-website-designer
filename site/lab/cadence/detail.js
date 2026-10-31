@@ -124,7 +124,7 @@ export function addDecals(model, root) {
   const frames = []; model.traverse((o) => { if (o.isMesh && o.material && o.material.name === 'Frame') frames.push(o); });
   if (!frames.length) return [];
   root.updateMatrixWorld(true);
-  const ink = '#1E2422', ochre = '#B5832F', F = '"Bricolage","Arial Black",sans-serif', B = '"Satoshi","Helvetica Neue",Arial,sans-serif';
+  const ink = '#1E2422', ochre = '#B5832F', F = '"Bricolage","Arial Black",sans-serif', B = '"Manrope","Helvetica Neue",Arial,sans-serif';
   const big = decalTex([
     { font: `800 300px ${F}`, fill: ink, t: 'TALUS', x: 0.03, y: 0.52, track: '6px' },
     { rect: [0.80, 0.30, 0.008, 0.42], fill: ochre, font: '10px sans-serif' },

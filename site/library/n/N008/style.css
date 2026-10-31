@@ -1,6 +1,6 @@
 /* N008 Northpine Cabins - desktop build. Tokens: ../../_kit/concept.css. Palette: peach #FCE1D1 / bottle green #193829 / burnt orange #C96926. */
 /* ---------- tokens for this page ---------- */
-:root{--f-display:"Zodiak",Georgia,serif;--f-serif:"Zodiak",Georgia,serif;--f-body:"Satoshi",system-ui,sans-serif;
+:root{--f-display:"Fraunces",Georgia,serif;--f-serif:"Fraunces",Georgia,serif;--f-body:"Manrope",system-ui,sans-serif;
   --c3-ink:color-mix(in srgb,var(--c3) 64%,var(--c2));          /* accent for fills under light text: 4.8:1 with --c1 */
   --winter:var(--c2);--winter-2:color-mix(in oklab,var(--c2) 86%,var(--c1));--x:50%}
 .serif{font-weight:300;font-style:normal;letter-spacing:-.02em}

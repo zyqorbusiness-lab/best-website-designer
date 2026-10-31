@@ -1,10 +1,10 @@
 /* Zyqor Studio — Type Specimen. Shared tokens + components (desktop + phone). */
 @font-face{font-family:"Bricolage V";src:url(../../assets/font/bricolage-axes.woff2) format("woff2");font-weight:200 800;font-stretch:75% 100%;font-display:swap}
 @font-face{font-family:"Fraunces V";src:url(../../assets/font/fraunces-axes.woff2) format("woff2");font-weight:100 900;font-display:swap}
-@font-face{font-family:"Satoshi V";src:url(../../assets/font/satoshi-var.woff2) format("woff2");font-weight:300 900;font-display:swap}
-@font-face{font-family:"Cabinet V";src:url(../../assets/font/cabinetgrotesk-var.woff2) format("woff2");font-weight:100 900;font-display:swap}
-@font-face{font-family:"Zodiak V";src:url(../../assets/font/zodiak-var.woff2) format("woff2");font-weight:100 900;font-display:swap}
-@font-face{font-family:"General Sans V";src:url(../../assets/font/generalsans-var.woff2) format("woff2");font-weight:200 700;font-display:swap}
+@font-face{font-family:"Manrope V";src:url(../../assets/font/manrope-var.woff2) format("woff2");font-weight:300 900;font-display:swap}
+@font-face{font-family:"Archivo V";src:url(../../assets/font/archivo-var.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Playfair V";src:url(../../assets/font/playfair-var.woff2) format("woff2");font-weight:400 900;font-display:swap}
+@font-face{font-family:"Inter Tight V";src:url(../../assets/font/intertight-normal.woff2) format("woff2");font-weight:200 700;font-display:swap}
 @font-face{font-family:"Instrument Serif";src:url(../../assets/font/instrumentserif-400.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
 @font-face{font-family:"Instrument Serif";src:url(../../assets/font/instrumentserif-400-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
 
@@ -13,7 +13,7 @@
   --paper-2:#E9E2D4; --paper-3:#DFD6C5;
   --ink-80:rgba(28,43,38,.8); --ink-60:rgba(28,43,38,.7);--red-txt:#B83A18; --ink-40:rgba(28,43,38,.4); --rule:rgba(28,43,38,.16); --rule-2:rgba(28,43,38,.08);
   --red-12:rgba(226,83,45,.12);
-  --f-display:"Bricolage V",system-ui,sans-serif; --f-serif:"Fraunces V",Georgia,serif; --f-text:"Satoshi V",system-ui,sans-serif;
+  --f-display:"Bricolage V",system-ui,sans-serif; --f-serif:"Fraunces V",Georgia,serif; --f-text:"Manrope V",system-ui,sans-serif;
   --ease:cubic-bezier(.2,.75,.15,1); --ease-io:cubic-bezier(.7,0,.2,1);
   --pad:clamp(18px,3vw,44px);
 }
@@ -94,19 +94,19 @@ input[type=range]:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 4px var(-
 .pc .tag{position:absolute;top:14px;right:14px;z-index:2;background:rgba(241,236,226,.9);color:var(--ink);border-color:var(--rule)}
 .stage{position:relative;overflow:hidden}
 
-/* 1 product — Cabinet + Satoshi */
+/* 1 product — Archivo + Manrope */
 .p1{background:#E3DCCD;padding:22px 24px 26px;min-height:100%;display:flex;flex-direction:column;justify-content:space-between;gap:28px}
-.p1 .top{display:flex;justify-content:space-between;align-items:center;font-family:"Satoshi V";font-size:12px;font-weight:600}
-.p1 .top b{font-family:"Cabinet V";font-weight:800;font-size:17px;letter-spacing:-.03em}
-.p1 h3{margin:0;font-family:"Cabinet V";font-weight:800;font-size:clamp(40px,4.6vw,74px);line-height:.88;letter-spacing:-.045em}
+.p1 .top{display:flex;justify-content:space-between;align-items:center;font-family:"Manrope V";font-size:12px;font-weight:600}
+.p1 .top b{font-family:"Archivo V";font-weight:800;font-size:17px;letter-spacing:-.03em}
+.p1 h3{margin:0;font-family:"Archivo V";font-weight:800;font-size:clamp(40px,4.6vw,74px);line-height:.88;letter-spacing:-.045em}
 .p1 h3 span{color:var(--red)}
-.p1 .spec{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;border-top:1px solid var(--ink);padding-top:12px;font-family:"Satoshi V";font-size:12.5px;line-height:1.35}
-.p1 .spec b{display:block;font-family:"Cabinet V";font-weight:700;font-size:22px;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
-.p1 .row{display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:"Satoshi V";font-size:13px}
+.p1 .spec{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;border-top:1px solid var(--ink);padding-top:12px;font-family:"Manrope V";font-size:12.5px;line-height:1.35}
+.p1 .spec b{display:block;font-family:"Archivo V";font-weight:700;font-size:22px;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.p1 .row{display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:"Manrope V";font-size:13px}
 .p1 .row a{display:inline-flex;height:38px;align-items:center;padding:0 16px;border-radius:999px;background:var(--ink);color:var(--paper);text-decoration:none;font-weight:600}
 
-/* 2 menu — Fraunces + General Sans */
-.p2{background:#F5F0E6;padding:26px 28px;font-family:"General Sans V"}
+/* 2 menu — Fraunces + Inter Tight */
+.p2{background:#F5F0E6;padding:26px 28px;font-family:"Inter Tight V"}
 .p2 .m-h{text-align:center;border-bottom:1px solid var(--ink);padding-bottom:14px;margin-bottom:12px}
 .p2 .m-h small{display:block;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;font-weight:560}
 .p2 .m-h h3{margin:6px 0 2px;font-family:"Fraunces V";font-weight:560;font-variation-settings:"opsz" 144,"SOFT" 100,"WONK" 1;font-size:clamp(34px,3.3vw,50px);line-height:.95;letter-spacing:-.02em}
@@ -118,21 +118,21 @@ input[type=range]:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 4px var(-
 .p2 li em{font-style:normal;font-size:15px;font-weight:560;font-variant-numeric:tabular-nums}
 .p2 li span{grid-column:1/-1;font-size:12px;color:var(--ink-60);line-height:1.4}
 
-/* 3 magazine — Instrument Serif + Satoshi */
+/* 3 magazine — Instrument Serif + Manrope */
 .p3{background:#EDE6D8;padding:24px 26px;display:grid;grid-template-columns:1.05fr 1fr;gap:22px;min-height:100%}
-.p3 .k{font-family:"Satoshi V";font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;display:flex;justify-content:space-between;grid-column:1/-1;border-bottom:1px solid var(--ink);padding-bottom:10px}
+.p3 .k{font-family:"Manrope V";font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;display:flex;justify-content:space-between;grid-column:1/-1;border-bottom:1px solid var(--ink);padding-bottom:10px}
 .p3 h3{margin:0;font-family:"Instrument Serif";font-weight:400;font-size:clamp(46px,4.8vw,80px);line-height:.86;letter-spacing:-.025em}
 .p3 h3 i{color:var(--red)}
 .p3 .deck{font-family:"Instrument Serif";font-style:italic;font-size:19px;line-height:1.2;margin:14px 0 0}
-.p3 .by{font-family:"Satoshi V";font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:650;margin-top:14px}
-.p3 .body{font-family:"Satoshi V";font-size:12.5px;line-height:1.55;columns:2;column-gap:16px;color:var(--ink-80)}
+.p3 .by{font-family:"Manrope V";font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:650;margin-top:14px}
+.p3 .body{font-family:"Manrope V";font-size:12.5px;line-height:1.55;columns:2;column-gap:16px;color:var(--ink-80)}
 .p3 .body p{margin:0 0 8px}
 .p3 .body p:first-child::first-letter{float:left;font-family:"Instrument Serif";font-size:52px;line-height:.8;padding:4px 6px 0 0;color:var(--ink)}
 
-/* 4 app — Bricolage narrow + Satoshi tabular */
+/* 4 app — Bricolage narrow + Manrope tabular */
 .p4{background:#DCD3C1;display:grid;place-items:center;padding:26px 16px;min-height:100%}
 .phone{width:min(268px,100%);border-radius:34px;background:var(--ink);padding:9px;box-shadow:0 30px 60px -30px rgba(28,43,38,.55)}
-.phone .scr{border-radius:26px;background:var(--paper);overflow:hidden;font-family:"Satoshi V"}
+.phone .scr{border-radius:26px;background:var(--paper);overflow:hidden;font-family:"Manrope V"}
 .phone .st{display:flex;justify-content:space-between;padding:10px 18px 4px;font-size:11px;font-weight:700;font-variant-numeric:tabular-nums}
 .phone .hd{padding:6px 18px 12px}
 .phone .hd small{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:650;color:var(--ink-60)}
@@ -146,10 +146,10 @@ input[type=range]:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 4px var(-
 .phone li span{font-family:"Bricolage V";font-stretch:80%;font-variation-settings:"opsz" 14;font-weight:560}
 .phone li em{font-style:normal;color:var(--ink-60);font-size:12px;font-variant-numeric:tabular-nums}
 
-/* 5 poster — Zodiak + Bricolage condensed */
+/* 5 poster — Fraunces + Bricolage condensed */
 .p5{background:var(--red);color:var(--paper);padding:22px 24px;display:flex;flex-direction:column;justify-content:space-between;min-height:100%;gap:18px}
 .p5 .t{display:flex;justify-content:space-between;font-family:"Bricolage V";font-stretch:75%;font-variation-settings:"opsz" 14;font-weight:620;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
-.p5 h3{margin:0;font-family:"Zodiak V";font-weight:880;font-size:clamp(60px,6vw,104px);line-height:.8;letter-spacing:-.045em}
+.p5 h3{margin:0;font-family:"Fraunces V";font-weight:880;font-size:clamp(60px,6vw,104px);line-height:.8;letter-spacing:-.045em}
 .p5 h3 i{font-style:normal;font-weight:200;display:block}
 .p5 .f{display:grid;grid-template-columns:repeat(3,auto);justify-content:space-between;gap:10px;font-family:"Bricolage V";font-stretch:75%;font-variation-settings:"opsz" 20;font-weight:700;font-size:20px;line-height:1;text-transform:uppercase;border-top:2px solid var(--paper);padding-top:10px}
 .p5 .f small{display:block;font-size:10px;font-weight:500;letter-spacing:.08em;margin-bottom:4px;opacity:.8}

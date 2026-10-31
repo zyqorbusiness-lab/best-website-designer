@@ -1,10 +1,10 @@
-@font-face{font-family:"Cabinet Grotesk";src:url("../../assets/font/cabinetgrotesk-800.woff2") format("woff2");font-weight:800 900;font-display:swap}
-@font-face{font-family:"General Sans";src:url("../../assets/font/generalsans-var.woff2") format("woff2");font-weight:200 700;font-display:swap}
+@font-face{font-family:"Bricolage Grotesque";src:url("../../assets/font/bricolage-axes.woff2") format("woff2");font-weight:800 900;font-display:swap}
+@font-face{font-family:"Inter Tight";src:url("../../assets/font/intertight-normal.woff2") format("woff2");font-weight:200 700;font-display:swap}
 
 @font-face{font-family:"Anton";src:url("../../assets/font/anton-400.woff2") format("woff2");font-weight:400;font-display:swap}
 @font-face{font-family:"Inter Tight";src:url("../../assets/font/intertight-normal.woff2") format("woff2");font-weight:400 700;font-display:swap}
 :root{--c1:#10243E;--c2:#C6F432;--c3:#FF9F1C;--navy:#10243E;--lime:#C6F432;--mango:#FF9F1C;--cyan:#4FD8FF;
- --bg:#C6F432;--ink:#10243E;--acc:#FF9F1C;--f-body:"General Sans",system-ui,sans-serif;--f-d:"Anton","Impact",sans-serif;
+ --bg:#C6F432;--ink:#10243E;--acc:#FF9F1C;--f-body:"Inter Tight",system-ui,sans-serif;--f-d:"Anton","Impact",sans-serif;
  --ease:cubic-bezier(.16,1,.3,1);--ease2:cubic-bezier(.76,0,.24,1)}
 html{background:var(--navy)}
 body{background:var(--navy);color:var(--lime)}
@@ -152,8 +152,8 @@ html.charged .hero{background-image:linear-gradient(color-mix(in srgb,var(--lime
 html.charged .hero::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(70% 60% at 50% 55%,transparent 30%,#050F1D 100%);z-index:0}
 
 /* design pass apply (7994e000, Oct 27) */
-/* Anton stays only as the VOLT wordmark (hero + can print share it; the hero gap math measures Anton). Headlines -> Cabinet Grotesk 800 caps, body -> General Sans. */
-:root{--f-h:"Cabinet Grotesk","Arial Black",sans-serif}
+/* Anton stays only as the VOLT wordmark (hero + can print share it; the hero gap math measures Anton). Headlines -> Bricolage Grotesque 800 caps, body -> Inter Tight. */
+:root{--f-h:"Bricolage Grotesque","Arial Black",sans-serif}
 .fname,.in-head h2,.cta-h,.st,.num,.ghost-t{font-family:var(--f-h);font-weight:800;letter-spacing:-.02em}
 .fname{font-size:clamp(46px,5.2vw,86px)}
 .in-head h2{font-size:clamp(50px,5.8vw,98px)}

@@ -60,7 +60,7 @@
     {
       "what": "Earth",
       "title": "Blue Marble: Land Surface, Shallow Water, and Shaded Topography",
-      "author": "NASA Goddard Space Flight Center (Reto St\u00f6ckli)",
+      "author": "NASA Goddard Space Flight Center (Reto Stöckli)",
       "source": "NASA Visible Earth",
       "url": "https://visibleearth.nasa.gov/images/57752",
       "licence": "Public domain (NASA)",
@@ -79,11 +79,11 @@
     },
     {
       "what": "Type",
-      "title": "Cabinet Grotesk, Satoshi",
-      "author": "Indian Type Foundry",
-      "source": "Fontshare",
-      "url": "https://www.fontshare.com",
-      "licence": "ITF Free Font License 2.0",
+      "title": "Bricolage Grotesque, Manrope",
+      "author": "Mathieu Triay, Mikhail Sharanda",
+      "source": "Google Fonts",
+      "url": "https://fonts.google.com",
+      "licence": "SIL Open Font License 1.1",
       "files": []
     },
     {
