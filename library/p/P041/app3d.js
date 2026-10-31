@@ -25,6 +25,29 @@ else {
   const fit = () => { const a = innerWidth / innerHeight; return a < 1 ? Math.min(2.4, 0.85 / a + 0.3) : a < 1.3 ? 1.15 : 1; };
   const view = (pos, look, sh, instant, kcap) => { const k = kcap ? Math.min(fit(), kcap) : fit(); const p = pos.map((v, i) => look[i] + (v - look[i]) * k); st.view(p, look, phone ? [0, sh[1]] : [sh[0], 0], instant); };
 
+
+  /* text never sits on the pizza (Oct 31 polish): project the pizza disc to the screen every frame and fade any copy panel
+     that would touch it - hero copy scrolling up, the story card, the oven card - on phone and desktop alike. */
+  const GUARD = [...$$('.hero3-copy > *').filter((e) => !e.classList.contains('sr-only')), ...$$('.story-copy, .fire-copy')]; /* hero text has no card: fade line by line; the frosted cards fade whole */ const gv = new st.THREE.Vector3(), gw = new st.THREE.Vector3();
+  const gAlpha = new Map(); window.__guard = { box: null, hits: 0 };
+  function guardText() {
+    const cam = st.camera; cam.updateMatrixWorld(); st.pizza.getWorldPosition(gw);
+    const W = innerWidth, Hh = innerHeight; let x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
+    if (stageEl.classList.contains('off')) { x0 = y0 = 1e9; x1 = y1 = -1e9; }
+    else for (let i = 0; i < 24; i++) { const an = (i / 24) * Math.PI * 2;
+      for (const h of [0, 0.14]) { gv.set(gw.x + Math.cos(an) * 0.86, gw.y + h, gw.z + Math.sin(an) * 0.86).project(cam); if (gv.z > 1 || gv.z < -1) continue;
+        const sx = (gv.x + 1) * 0.5 * W, sy = (1 - gv.y) * 0.5 * Hh; x0 = Math.min(x0, sx); x1 = Math.max(x1, sx); y0 = Math.min(y0, sy); y1 = Math.max(y1, sy); } }
+    window.__guard.box = [x0, y0, x1, y1].map(Math.round); const pad = 14;
+    for (const el of GUARD) {
+      const r = el.getBoundingClientRect(); let al = 1;
+      if (r.bottom > 0 && r.top < Hh && x1 > x0) { const ox = Math.min(r.right, x1 + pad) - Math.max(r.left, x0 - pad), oy = Math.min(r.bottom, y1 + pad) - Math.max(r.top, y0 - pad);
+        if (ox > 0 && r.top < y1 + pad && (phone || r.bottom > y0 - pad)) al = 1 - clamp01((y1 + pad - r.top) / 56); }
+      const prev = gAlpha.get(el) ?? 1; if (Math.abs(prev - al) < 0.01) continue; gAlpha.set(el, al);
+      el.style.opacity = al < 0.999 ? al.toFixed(3) : ''; el.style.visibility = al < 0.02 ? 'hidden' : '';
+      if (al < 0.999) window.__guard.hits++;
+    }
+  }
+  st.tick(() => { guardText(); return false; });
   let mode = ''; let boardRot = Math.PI + 0.6; let userSet = []; let makeBake = 0, makeHeat = 0; let spin = 0, spinV = reduced ? 0 : 0.18, drag = null;
   function useStory() { st.clear(); STORY.forEach(([k, , , n]) => st.add(k, n, { instant: true })); }
   function useUser() { st.clear(); for (const u of userSet) st.add(u.kind, u.n, { instant: true, at: u.at }); }
@@ -48,7 +71,7 @@ else {
       view([0, 1.75, 3.35], [0, 0, 0], [0.22, -0.2], instant);
     } else if (rF.top > vh * 0.5) { /* story */
       setMode('story'); const p = prog(S); boardRot = lerp(Math.PI + 0.6, Math.PI * 2, sstep(0.8, 1, p));
-      st.set({ uBall: 1 - sstep(0.02, 0.2, p), uSauce: sstep(0.2, 0.36, p), uCheese: sstep(0.38, 0.52, p), uMelt: 0.12 + 0.18 * sstep(0.45, 0.6, p), uBake: 0, uHeat: 0 });
+      st.set({ uBall: 1 - sstep(0.02, 0.2, p), uSauce: sstep(0.2, 0.36, p), uCheese: sstep(0.38, 0.52, p), uMelt: 0.55 + 0.35 * sstep(0.45, 0.6, p), uBake: 0, uHeat: 0 });
       STORY.forEach(([k, a, b]) => st.setScrub(k, sstep(a, b, p)));
       st.pizza.position.z = 0; st.board.position.z = 0; st.rim.intensity = 2;
       const c0 = [0, 1.9, 2.8], c1 = [0, 3.4, 1.3], c2 = [1.0, 2.4, 2.5];
@@ -65,11 +88,12 @@ else {
       const z = lerp(0, OVEN_Z, sstep(0.04, 0.48, f));
       st.pizza.position.z = z; st.board.position.z = z;
       const bake = sstep(0.5, 0.93, f);
-      st.set({ uBall: 0, uSauce: 1, uCheese: 1, uMelt: 0.08 + 0.92 * sstep(0.5, 0.75, f), uBake: bake, uHeat: sstep(0.45, 0.6, f) * (1 - 0.6 * sstep(0.93, 1, f)) });
+      st.set({ uBall: 0, uSauce: 1, uCheese: 1, uMelt: 0.6 + 0.4 * sstep(0.5, 0.75, f), uBake: bake, uHeat: sstep(0.45, 0.6, f) * (1 - 0.6 * sstep(0.93, 1, f)) });
       oven.set(0.35 + 0.65 * sstep(0.2, 0.5, f)); st.rim.intensity = 2 + 4 * sstep(0.3, 0.6, f);
       let pos, look, kc = 0;
       if (f < 0.48) { const t = sstep(0, 0.48, f); pos = mix3([1.0, 2.4, 2.5], [0.0, 1.25, OVEN_Z + 5.4], t); look = mix3([0, 0.05, 0], [0, 0.45, OVEN_Z], t); }
-      else { const t = sstep(0.48, 0.82, f); pos = mix3([0.0, 1.25, OVEN_Z + 5.4], [0.55, 0.62, OVEN_Z + 1.25], t); look = mix3([0, 0.45, OVEN_Z], [0, 0.0, OVEN_Z], t); kc = lerp(2.4, 1.5, t); }
+      else { /* end wide (Oct 31 polish): a slow crane up and back so the whole brick mouth, the dome and the fire read, pizza glowing inside */
+        const t = sstep(0.48, 0.86, f); pos = mix3([0.0, 1.25, OVEN_Z + 5.4], [0.7, 1.9, OVEN_Z + 6.2], t); look = mix3([0, 0.45, OVEN_Z], [0, 0.55, OVEN_Z + 0.3], t); }
       view(pos, look, [0.18, -0.2], instant, kc);
       $('#clock').textContent = String(Math.round(sstep(0.5, 0.93, f) * 90)).padStart(2, '0');
       $('#f-line').textContent = f < 0.5 ? 'Oak burns at the back. The peel slides in and the stone does the rest.' : f < 0.93 ? 'The rim blisters, the cheese pools, the pepperoni cups.' : 'Out in ninety seconds. Now build your own.';
@@ -134,7 +158,7 @@ else {
     });
     chip.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); addUser(chip.dataset.type); } });
   });
-  let raf = 0; const onScroll = () => { if (!raf) raf = requestAnimationFrame(() => { raf = 0; update(); }); };
+  let raf = 0; const onScroll = () => { if (!raf) raf = requestAnimationFrame(() => { raf = 0; update(); guardText(); }); };
   addEventListener('scroll', onScroll, { passive: true }); addEventListener('resize', () => update(true));
   update(true); ticket();
 }

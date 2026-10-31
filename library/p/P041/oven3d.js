@@ -39,7 +39,22 @@ export function buildOven(ctx) {
   const arch = new THREE.Shape(); const ow = MW / 2 + 0.34, iw = MW / 2;
   arch.moveTo(-ow, 0); arch.lineTo(-ow, MH - 0.2); arch.absarc(0, MH - 0.2, ow, Math.PI, 0, true); arch.lineTo(ow, 0); arch.lineTo(iw, 0); arch.lineTo(iw, MH - 0.2); arch.absarc(0, MH - 0.2, iw, 0, Math.PI, false); arch.lineTo(-iw, 0);
   const archGeo = new THREE.ExtrudeGeometry(arch, { depth: 0.55, bevelEnabled: true, bevelSize: 0.03, bevelThickness: 0.03, bevelSegments: 2, curveSegments: 32 });
-  const archM = new THREE.Mesh(archGeo, new THREE.MeshStandardMaterial({ color: 0x8a3b22, roughness: 0.85 })); archM.position.set(0, 0, R - 0.42); archM.castShadow = true; g.add(archM);
+  /* arch face (Oct 31 polish): fired-brick voussoirs + mortar in the shader so the mouth reads as brick, not a plastic ring */
+  const archMat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.9 });
+  archMat.onBeforeCompile = (s) => {
+    s.vertexShader = s.vertexShader.replace('#include <common>', '#include <common>\nvarying vec3 vAP;').replace('#include <begin_vertex>', '#include <begin_vertex>\nvAP = position;');
+    s.fragmentShader = s.fragmentShader.replace('#include <common>', '#include <common>\nvarying vec3 vAP; float ah(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }')
+      .replace('#include <color_fragment>', `#include <color_fragment>
+        vec2 q = vAP.xy - vec2(0.0, ${(MH - 0.2).toFixed(3)}); float ang = atan(q.y, q.x); float rr = length(q);
+        vec2 cell; float m;
+        if (q.y > 0.0) { float a = ang / 0.15; cell = vec2(floor(a), 7.0); m = min(fract(a), 1.0 - fract(a)) * 0.15 * rr; m = min(m, abs(rr - ${(MW / 2 + 0.17).toFixed(3)}) ); }
+        else { float row = vAP.y / 0.2; float off = mod(floor(row), 2.0) * 0.5; float col = (vAP.x / 0.17) + off; cell = vec2(floor(col) + 20.0 * sign(vAP.x), floor(row));
+          m = min(min(fract(row), 1.0 - fract(row)) * 0.2, min(fract(col), 1.0 - fract(col)) * 0.17); }
+        float h = ah(cell); vec3 brick = mix(vec3(0.3, 0.085, 0.04), vec3(0.48, 0.19, 0.08), h) * (0.85 + 0.3 * ah(cell + 3.1));
+        float mortar = 1.0 - smoothstep(0.006, 0.013, m);
+        diffuseColor.rgb = mix(brick, vec3(0.5, 0.41, 0.32), mortar);`);
+  };
+  const archM = new THREE.Mesh(archGeo, archMat); archM.position.set(0, 0, R - 0.42); archM.castShadow = true; g.add(archM);
   /* tunnel walls from the arch into the dome so the shells never show through the mouth */
   const tun = new THREE.Mesh(new THREE.CylinderGeometry(iw, iw, 0.9, 32, 1, true, -Math.PI / 2, Math.PI), new THREE.MeshStandardMaterial({ color: 0x6b3322, roughness: 1, side: THREE.BackSide }));
   tun.rotation.x = Math.PI / 2; tun.rotation.z = Math.PI; tun.position.set(0, MH - 0.2, R - 0.55); tun.scale.set(1, 1, 1); g.add(tun);
