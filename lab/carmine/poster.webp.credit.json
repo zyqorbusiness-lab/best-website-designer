@@ -1,15 +1,13 @@
 {
- "title": "Texture of red ink in water on a white background (clip 41999)",
- "author": "Mixkit (Envato)",
- "author_url": "https://mixkit.co/",
- "source_url": "https://mixkit.co/free-stock-video/texture-of-red-ink-in-water-on-a-white-background-41999/",
- "licence": "Mixkit Stock Video Free License",
- "licence_url": "https://mixkit.co/license/#videoFree",
- "attribution": "Footage: \"Texture of red ink in water on a white background (clip 41999)\", Mixkit (https://mixkit.co/free-stock-video/texture-of-red-ink-in-water-on-a-white-background-41999/), Mixkit Stock Video Free License (credit optional)",
- "changes": "poster = a frame of the page built on this footage; trimmed and cut into WebP frames (180 desktop / 90 phone) by Zyqor Video Flow",
- "downloaded": "2026-10-27",
- "licence_flag": "Mixkit Stock Video Free License is not on Sujon's allow-list. Needs a decision (keep with an allow-list exception, or swap for CC0 footage) before push.",
- "file": "poster.webp",
- "credit_written_by": "credits backfill 2026-10-28 (work/beast/credits/backfill)",
- "verified_note": "clip page opened in a real browser on 2026-10-28; title matches; Mixkit lists it as a free stock video under its Stock Video Free License"
+ "title": "Black Ink //FREE FOOTAGE\\ (#00029)",
+ "author": "VFX FOOTAGE (skip1frame.com)",
+ "author_url": "https://vimeo.com/vfxfootage",
+ "source_url": "https://commons.wikimedia.org/wiki/File:Black_Ink_--FREE_FOOTAGE--.webm",
+ "licence": "CC BY 3.0",
+ "licence_url": "https://creativecommons.org/licenses/by/3.0/",
+ "attribution": "Footage: \"Black Ink //FREE FOOTAGE\\ (#00029)\" by VFX FOOTAGE (skip1frame.com), via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Black_Ink_--FREE_FOOTAGE--.webm), CC BY 3.0",
+ "downloaded": "2026-10-31",
+ "verified_note": "Commons file page read 2026-10-31: {{cc-by-3.0|VFX FOOTAGE}} with a passed {{VimeoReview}} (Vimeo 29754685, archived 2020-06-07); uploaded via video2commons",
+ "changes": "poster = frame 150 of the page's graded frame sequence, cropped to 16:10; 15 s excerpt (0:16-0:31) cut from the original 1280x720 file, cropped (desktop 16:9 / phone 9:14.5), one baked duotone grade (black ink mapped to carmine #96122A, the grey water to paper #F4EFE9), cut into WebP frames (180 desktop / 90 phone) for the scroll-scrubbed hero",
+ "file": "poster.webp"
 }

@@ -181,3 +181,5 @@ body{background:var(--c1);color:var(--c2);font-family:var(--f-body)}
 .lw-odo b{font-size:30px}
 .lw-lab{font-size:12px;padding:6px 9px}
 }
+
+@media (max-width:860px){.vf-hero .vf-sub{color:var(--c2);background:color-mix(in srgb,var(--c1) 86%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);padding:10px 16px;border-radius:14px;opacity:1;font-weight:500;text-shadow:none!important;box-shadow:0 8px 24px rgba(31,42,51,.12)}}
