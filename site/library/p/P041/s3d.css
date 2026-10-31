@@ -90,7 +90,8 @@ main{position:relative;z-index:1}
   .steps .body,.fire-copy .body{font-size:.92rem;margin-top:8px}
   .bar{margin-top:14px}
   .clk{margin-top:10px}.clk b{font-size:3.2rem}
-  .make{display:block;padding:calc(48svh) 12px 24px}
+  .make{display:block;padding:calc(44svh) 12px 16px;min-height:100svh}
+  .make-copy{max-height:calc(56svh - 28px);overflow-y:auto;-webkit-overflow-scrolling:touch}
   .make-copy{width:100%;padding:20px 18px;border-radius:22px}
   .make-copy .d-l{font-size:1.8rem}
   .m-help{font-size:.92rem}
