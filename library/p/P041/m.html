@@ -13,7 +13,7 @@
 <meta property="og:description" content="A wood-fired pizzeria whose website is the order. A fictional-brand concept by Zyqor Studio.">
 <meta property="og:image" content="https://zyqor-portfolio.vercel.app/library/p/P041/thumb.webp">
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
-<link rel="preload" href="poster.webp" as="image" fetchpriority="high">
+<link rel="preload" href="img/hero-pizza.webp" as="image" imagesrcset="img/hero-pizza-m.webp 1000w, img/hero-pizza.webp 1100w" imagesizes="(max-width: 860px) 92vw, 48vw" fetchpriority="high">
 <link rel="preload" href="../../../assets/font/fraunces-axes.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../../../assets/font/intertight-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../../_kit/chrome.css">
@@ -34,7 +34,7 @@
   
   <a class="btn btn--accent nav-cta" href="#visit" data-press>Order</a>
   <button class="btn btn--line nav-menu" type="button" id="nav-menu" aria-expanded="false" aria-controls="nav-sheet">Menu</button>
-  <div class="nav-sheet" id="nav-sheet" hidden><nav aria-label="Sections"><a href="#dough">Dough</a><a href="#build">Build</a><a href="#fire">Fire</a><a href="#menu">Menu</a><a href="#visit">Visit</a></nav></div>
+  <div class="nav-sheet" id="nav-sheet" hidden><nav aria-label="Sections"><a href="#build">Build</a><a href="#dough">Dough</a><a href="#fire">Fire</a><a href="#menu">Menu</a><a href="#visit">Visit</a></nav></div>
 </header>
 <main id="main">
   <section class="hero" id="hero" aria-labelledby="h-h">
@@ -45,35 +45,17 @@
       <div class="btns" data-rv><a class="btn btn--accent" href="#build" data-press>Build yours</a><a class="btn btn--line" href="#menu" data-press>See the menu</a></div>
       <p class="hours-chip mono" id="hours-chip" data-rv><i aria-hidden="true"></i><span>Open today 11 to 10</span><small>sample hours</small></p>
     </div>
-    <div class="hero-stage" aria-hidden="true">
-      <div class="peel"><span class="peel-handle"></span><img class="peel-board" src="img/board-900.webp" alt="" width="900" height="900" decoding="async"></div>
-      <div class="hero-pie"><img class="poster" src="poster.webp" alt="" width="760" height="760" fetchpriority="high"><canvas class="pie-cv" id="hero-cv"></canvas></div>
+    <figure class="hero-photo">
+      <div class="hp-card" id="hp-card"><img class="hp-img" src="img/hero-pizza.webp" srcset="img/hero-pizza-m.webp 1000w, img/hero-pizza.webp 1100w" sizes="(max-width: 860px) 92vw, 48vw" alt="A hot wood-fired pizza just out of the oven on a floured board: bubbling mozzarella, salami and pepperoni" width="1100" height="1203" fetchpriority="high" decoding="async"><span class="hp-heat" aria-hidden="true"></span></div>
+      <p class="hp-chip mono" aria-hidden="true"><i></i>Straight from the oven</p>
+      <p class="hp-stamp" aria-hidden="true"><b>90</b><span class="mono">seconds<br>at 485&deg;C</span></p>
+      <figcaption class="hp-cred mono">Photo: Nenad Stojkovic, CC BY 2.0</figcaption>
       <div class="sparks"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-    </div>
+    </figure>
   </section>
-
-  <section class="pin dough" id="dough" aria-labelledby="d-h">
-    <div class="sticky">
-      <div class="dough-copy">
-        <p class="tag mono">01 &middot; The dough</p>
-        <h2 id="d-h" class="d-l">It starts as a ball <em>of dough.</em></h2>
-        <p class="body">Scroll to stretch it. Every base is opened by hand on a floured bench, never rolled, so the rim keeps its air.</p>
-      </div>
-      <div class="dough-stage">
-        <img class="dough-base" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/base-raw-1024.webp" alt="" width="1024" height="1024" decoding="async">
-        <img class="dough-ball" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/dough.webp" alt="A ball of pizza dough" width="1024" height="1024" decoding="async">
-      </div>
-      <ol class="d-labels" role="list">
-        <li><svg viewBox="0 0 120 2" aria-hidden="true"><line x1="0" y1="1" x2="120" y2="1"/></svg><b class="mono">Flour, water, salt, yeast</b><span>Four things. Nothing else in it.</span></li>
-        <li><svg viewBox="0 0 120 2" aria-hidden="true"><line x1="0" y1="1" x2="120" y2="1"/></svg><b class="mono">48-hour rise</b><span>Two days cold, so it tears like bread.</span></li>
-        <li><svg viewBox="0 0 120 2" aria-hidden="true"><line x1="0" y1="1" x2="120" y2="1"/></svg><b class="mono">Stretched by hand</b><span>Opened from the middle out.</span></li>
-      </ol>
-    </div>
-  </section>
-
   <section class="build" id="build" aria-labelledby="b-h">
     <div class="b-head">
-      <p class="tag mono" data-rv>02 &middot; Build yours</p>
+      <p class="tag mono" data-rv>01 &middot; Build yours</p>
       <h2 id="b-h" class="d-l" data-rv>Drop it where <em>you want it.</em></h2>
       <p class="body" data-rv>Tap a bowl to add a handful. Tap again for more, up to three.</p>
     </div>
@@ -106,6 +88,25 @@
         <a class="btn btn--accent t-fire" href="#fire" id="t-fire" data-press>Fire it</a>
         <button class="btn btn--line t-clear" type="button" id="t-clear" disabled>Clear the board</button>
       </aside>
+    </div>
+  </section>
+
+  <section class="dough" id="dough" aria-labelledby="d-h">
+    <div class="dg-in">
+      <figure class="dg-photo" data-rv>
+        <img src="img/oven-fire.webp" srcset="img/oven-fire-m.webp 900w, img/oven-fire.webp 1600w" sizes="(max-width: 860px) 92vw, 58vw" alt="A pizza on a wooden peel sliding into a white clay wood-fired oven, the oak fire glowing at the back" width="1600" height="1067" loading="lazy" decoding="async">
+        <figcaption class="mono">Photo: Jared Tarbell, CC BY 2.0</figcaption>
+      </figure>
+      <div class="dough-copy">
+        <p class="tag mono" data-rv>02 &middot; The dough</p>
+        <h2 id="d-h" class="d-l" data-rv>It starts as a ball <em>of dough.</em></h2>
+        <p class="body" data-rv>Every base is opened by hand on a floured bench, never rolled, so the rim keeps its air. Then it rides the peel into a clay dome with an oak fire at the back.</p>
+        <ol class="d-labels" role="list">
+          <li data-rv><svg viewBox="0 0 120 2" aria-hidden="true"><line x1="0" y1="1" x2="120" y2="1"/></svg><b class="mono">Flour, water, salt, yeast</b><span>Four things. Nothing else in it.</span></li>
+          <li data-rv><svg viewBox="0 0 120 2" aria-hidden="true"><line x1="0" y1="1" x2="120" y2="1"/></svg><b class="mono">48-hour rise</b><span>Two days cold, so it tears like bread.</span></li>
+          <li data-rv><svg viewBox="0 0 120 2" aria-hidden="true"><line x1="0" y1="1" x2="120" y2="1"/></svg><b class="mono">Stretched by hand, fired in oak</b><span>Opened from the middle out, then onto the peel.</span></li>
+        </ol>
+      </div>
     </div>
   </section>
 
@@ -191,7 +192,7 @@
     <p class="foot-t">Hotcoal Kitchen is not a real restaurant. It is a concept site by Zyqor Studio: the menu, prices, hours, address and phone number are samples, and no order is ever sent.</p>
     <div class="foot-cta"><p class="d-m">Want a site like this?</p>
       <div class="btns"><a class="btn btn--flour" href="mailto:zyqorbusiness@gmail.com?subject=A%20site%20like%20Hotcoal%20Kitchen" target="_blank" rel="noopener" data-press>Email Zyqor Studio</a><a class="btn btn--line-l" href="https://wa.me/919547908593" target="_blank" rel="noopener" data-press>WhatsApp</a><button class="btn btn--line-l" type="button" id="open-credits">Credits</button></div></div>
-    <p class="foot-cred mono">Photos: crust, melted mozzarella and basil from "Neapolitan pizza at Trappica" by Bex Walton, Wikimedia Commons, CC BY 2.0 (creativecommons.org/licenses/by/2.0); raw mozzarella from "Mozzarella" by Dezidor, Wikimedia Commons, CC BY 3.0 (creativecommons.org/licenses/by/3.0); melted cheese sheet from "Mellow Mushroom cheese pizza" by Baron Maddock, Wikimedia Commons, CC BY 4.0 (creativecommons.org/licenses/by/4.0); sliced mushrooms from "Sliced champignons" by frank wouters, Wikimedia Commons, CC BY 2.0; roasted pepper strips from "Roasted Bell Peppers" by Ryan Snyder, Wikimedia Commons, CC BY 2.0. CC0 / public domain: sauce "Pizza marinara (Napoli)" by Ruthven; pepperoni from "Luigis Pizza &amp; Pasta - Pepperoni pizza" and raw mushrooms from "Pizza veggie by Arthur" by Beno&icirc;t Prieur; cherry tomatoes by Raju C Reddy; black olives from "Supreme pizza" by Scott Bauer, USDA ARS; red onion from "Red onion rings" by Sebastian Wallroth; artichoke by Daderot. Board: "Kitchen Wood" by Rob Tuytel, Poly Haven (CC0); counter: "Marble 012", ambientCG (CC0); pizza slicer by Evan-Amos (public domain); chili flakes (CC0). Every photo cut out, re-lit and baked by Zyqor Studio; the dough ball is drawn in code. Fonts: Fraunces, Inter Tight, JetBrains Mono (SIL OFL 1.1).</p>
+    <p class="foot-cred mono">Photos: hero pizza from "Homemade cheese pizza with pepperoni and salami" by Nenad Stojkovic, Wikimedia Commons, CC BY 2.0 (creativecommons.org/licenses/by/2.0); wood-fired oven from "Pizza baking in Wood-fired oven" by Jared Tarbell, Wikimedia Commons, CC BY 2.0. Builder: crust, melted mozzarella and basil from "Neapolitan pizza at Trappica" by Bex Walton, Wikimedia Commons, CC BY 2.0 (creativecommons.org/licenses/by/2.0); raw mozzarella from "Mozzarella" by Dezidor, Wikimedia Commons, CC BY 3.0 (creativecommons.org/licenses/by/3.0); melted cheese sheet from "Mellow Mushroom cheese pizza" by Baron Maddock, Wikimedia Commons, CC BY 4.0 (creativecommons.org/licenses/by/4.0); sliced mushrooms from "Sliced champignons" by frank wouters, Wikimedia Commons, CC BY 2.0; roasted pepper strips from "Roasted Bell Peppers" by Ryan Snyder, Wikimedia Commons, CC BY 2.0. CC0 / public domain: sauce "Pizza marinara (Napoli)" by Ruthven; pepperoni from "Luigis Pizza &amp; Pasta - Pepperoni pizza" and raw mushrooms from "Pizza veggie by Arthur" by Beno&icirc;t Prieur; cherry tomatoes by Raju C Reddy; black olives from "Supreme pizza" by Scott Bauer, USDA ARS; red onion from "Red onion rings" by Sebastian Wallroth; artichoke by Daderot. Board: "Kitchen Wood" by Rob Tuytel, Poly Haven (CC0); counter: "Marble 012", ambientCG (CC0); pizza slicer by Evan-Amos (public domain); chili flakes (CC0). The hero and oven photos are cropped only; the builder ingredients are cut out, re-lit and baked by Zyqor Studio. Fonts: Fraunces, Inter Tight, JetBrains Mono (SIL OFL 1.1).</p>
   </div>
 </footer>
 <div class="m-bar" id="m-bar"><span class="mono">Total <b>$<span id="mb-total">9.00</span></b></span><a class="btn btn--accent" href="#fire" id="mb-fire">Fire it</a></div>
