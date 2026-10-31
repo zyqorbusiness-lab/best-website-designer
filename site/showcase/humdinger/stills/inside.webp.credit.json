@@ -1,0 +1,12 @@
+{
+ "author": "Zyqor Studio",
+ "author_url": "https://github.com/zyqorbusiness-lab",
+ "source_url": "https://github.com/zyqorbusiness-lab/best-website-designer",
+ "licence": "MIT",
+ "licence_url": "https://opensource.org/license/mit",
+ "downloaded": "2026-10-31",
+ "title": "Humdinger H-1 still: inside (WebGL-off fallback)",
+ "attribution": "Humdinger H-1 still (inside), Zyqor Studio (MIT). The device is built in code (three.js geometry); no downloaded model.",
+ "changes": "rendered from this page's own real-time three.js scene (?still mode) in headless Chrome, transparent PNG saved as WebP 640 px. Real-time render, no generated imagery.",
+ "file": "inside.webp"
+}

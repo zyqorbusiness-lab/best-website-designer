@@ -1,0 +1,12 @@
+{
+ "author": "Zyqor Studio",
+ "author_url": "https://github.com/zyqorbusiness-lab",
+ "source_url": "https://github.com/zyqorbusiness-lab/best-website-designer",
+ "licence": "MIT",
+ "licence_url": "https://opensource.org/license/mit",
+ "downloaded": "2026-10-31",
+ "title": "Hotcoal Kitchen screen recording (desktop, 1280x800 page)",
+ "attribution": "Hotcoal Kitchen screen recording (desktop, 1280x800 page), Zyqor Studio (MIT). Recorded from the concept's own live page (/library/p/P041/); the assets inside it are credited on that page and under its section in this file.",
+ "changes": "recorded frame by frame in headless Chrome from the page served from this repo (scripted scroll, page clock slowed for smooth motion), encoded to H.264 MP4 / WebP. No generated imagery.",
+ "file": "hotcoal-d.mp4"
+}

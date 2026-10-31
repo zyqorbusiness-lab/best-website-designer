@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://zyqor-portfolio.vercel.app/</loc></url>
+  <url><loc>https://zyqor-portfolio.vercel.app/best/</loc></url>
   <url><loc>https://zyqor-portfolio.vercel.app/color/</loc></url>
   <url><loc>https://zyqor-portfolio.vercel.app/components/</loc></url>
   <url><loc>https://zyqor-portfolio.vercel.app/components/cursor-follower/</loc></url>
@@ -61,6 +62,7 @@
   <url><loc>https://zyqor-portfolio.vercel.app/privacy.html</loc></url>
   <url><loc>https://zyqor-portfolio.vercel.app/process/</loc></url>
   <url><loc>https://zyqor-portfolio.vercel.app/services/</loc></url>
+  <url><loc>https://zyqor-portfolio.vercel.app/showcase/humdinger/</loc></url>
   <url><loc>https://zyqor-portfolio.vercel.app/studio/case/</loc></url>
   <url><loc>https://zyqor-portfolio.vercel.app/studio/type/</loc></url>
   <url><loc>https://zyqor-portfolio.vercel.app/studio/ui/</loc></url>
