@@ -20,7 +20,8 @@ function swapTo(btn){
     if(RM){ stageImg.replaceChildren(n); return; }
     n.className='incoming'; stageImg.appendChild(n);
     const go=()=>{ requestAnimationFrame(()=>{ n.classList.add('go'); ring.classList.remove('hit'); void ring.offsetWidth; ring.classList.add('hit'); stage.classList.remove('bump'); void stage.offsetWidth; stage.classList.add('bump'); });
-      setTimeout(()=>{ n.classList.remove('incoming','go'); [...stageImg.children].forEach(c=>{ if(c!==n) c.remove(); }); busy=false; },760); };
+      let fin=false; const end=()=>{ if(fin) return; fin=true; n.classList.remove('incoming','go'); [...stageImg.children].forEach(c=>{ if(c!==n) c.remove(); }); busy=false; };
+      n.addEventListener('transitionend',end,{once:true}); setTimeout(end,4000); };
     if(n.complete) go(); else { n.onload=go; n.onerror=go; } };
   if(RM){ done(); return; }
   // fly the thumbnail into the pizza stage, then reveal from the centre
@@ -37,7 +38,7 @@ const SPOTS=[[22,24],[66,20],[16,62],[70,64],[44,80]];
 function layoutDrops(){ $$('.drop',drops).forEach((d,i)=>{ const p=SPOTS[i%SPOTS.length]; d.style.left=p[0]+'%'; d.style.top=p[1]+'%'; }); }
 $$('.top-btn').forEach(b=>b.addEventListener('click',()=>{ const on=b.getAttribute('aria-pressed')!=='true'; b.setAttribute('aria-pressed',String(on)); const t=b.dataset.t;
   if(on){ const d=document.createElement('span'); d.className='drop'; d.dataset.t=t; d.textContent=t; drops.appendChild(d); layoutDrops();
-    if(!RM){ d.animate([{transform:'translate(-50%,-260%) rotate(-8deg)',opacity:0},{transform:'translate(-50%,-50%) rotate(3deg)',opacity:1,offset:.62},{transform:'translate(-50%,-62%) rotate(-1deg)',offset:.8},{transform:'translate(-50%,-50%) rotate(0deg)',opacity:1}],{duration:620,easing:'cubic-bezier(.3,.7,.3,1)'}); setTimeout(()=>{ring.classList.remove('hit');void ring.offsetWidth;ring.classList.add('hit');},380); }
+    if(!RM){ d.animate([{transform:'translate(-50%,-260%) rotate(-8deg)',opacity:0},{transform:'translate(-50%,-50%) rotate(3deg)',opacity:1,offset:.62},{transform:'translate(-50%,-62%) rotate(-1deg)',offset:.8},{transform:'translate(-50%,-50%) rotate(0deg)',opacity:1}],{duration:620,easing:'cubic-bezier(.3,.7,.3,1)'}); d.getAnimations()[0]?.finished.then(()=>{ring.classList.remove('hit');void ring.offsetWidth;ring.classList.add('hit');}); }
     else d.style.transform='translate(-50%,-50%)';
   } else { const d=$$('.drop',drops).find(x=>x.dataset.t===t); if(d){ if(RM) d.remove(); else d.animate([{opacity:1},{opacity:0,transform:'translate(-50%,-90%)'}],{duration:240}).onfinish=()=>{d.remove();layoutDrops();}; if(RM) layoutDrops(); } }
 }));
