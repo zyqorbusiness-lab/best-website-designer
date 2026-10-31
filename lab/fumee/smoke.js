@@ -1,5 +1,5 @@
 /* Fumée - WebGL smoke field (desktop). A feedback "ink" buffer advected by curl noise and fed by the cursor,
-   composited over a domain-warped fbm smoke. Cursor velocity stirs it, scroll speed adds turbulence, scroll depth shifts the mood. */
+   composited over a domain-warped fbm smoke. Light build (Oct 31): rose-taupe smoke on warm parchment. Cursor velocity stirs it, scroll speed adds turbulence, scroll depth shifts the mood. */
 import * as THREE from 'three';
 
 const NOISE = /* glsl */`
@@ -65,7 +65,7 @@ void main(){
   vec3 inkCol=mix(mix(uC2,uC1,0.8),mix(uC1,uC3,0.5),clamp(ink.g*1.2,0.0,1.0));
   col=mix(col,inkCol,wisp*0.42);
   float vig=smoothstep(1.35,0.2,length((uv-vec2(0.5,0.6))*vec2(1.0,1.25)));
-  col*=mix(0.8,1.03,vig);
+  col*=mix(0.95,1.015,vig);
   gl_FragColor=vec4(col,1.0);
   #include <colorspace_fragment>
 }`;
@@ -84,7 +84,7 @@ export function createSmoke(canvas, { scale = 0.55, simScale = 0.25, still = fal
     uniforms: { uPrev: { value: null }, uMouse: { value: new THREE.Vector2(.5, .5) }, uVel: { value: new THREE.Vector2() }, uTime: { value: 0 }, uAspect: { value: 1 }, uTurb: { value: 0 }, uDecay: { value: .975 } } });
   const dispMat = new THREE.ShaderMaterial({ vertexShader: VERT, fragmentShader: DISP, depthTest: false, depthWrite: false,
     uniforms: { uInk: { value: null }, uTime: { value: 0 }, uAspect: { value: 1 }, uScroll: { value: 0 }, uTurb: { value: 0 }, uMouse: { value: new THREE.Vector2(.5, .5) }, uMood: { value: 1 },
-      uC1: { value: hex('#EEE7DC') }, uC2: { value: hex('#4A413A') }, uC2d: { value: hex('#2A2521') }, uC3: { value: hex('#A44A3F') } } });
+      uC1: { value: hex('#9A6A5C') }, uC2: { value: hex('#F2EAE0') }, uC2d: { value: hex('#E3D3C0') }, uC3: { value: hex('#C9705F') } } });
   const simScene = new THREE.Scene(); simScene.add(new THREE.Mesh(quad, simMat));
   const dispScene = new THREE.Scene(); dispScene.add(new THREE.Mesh(quad, dispMat));
 

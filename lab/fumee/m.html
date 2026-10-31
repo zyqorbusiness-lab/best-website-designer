@@ -7,15 +7,15 @@
 <script>(function(){if(/[?&]m=1/.test(location.search))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height;if(w>860&&!(c&&h>w))location.replace('./'+location.search+location.hash);})();</script>
 <title>Fumée &middot; Scent, in motion &middot; Zyqor Lab concept</title>
 <meta name="description" content="Fumée is a fictional perfume house: a motion design concept by Zyqor Studio, with a WebGL smoke field, pinned scroll sequences, kinetic type and a liquid transition between three scents.">
-<meta name="theme-color" content="#36302B">
+<meta name="theme-color" content="#EFE6DA">
 <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
-<link rel="preload" href="../../assets/lab/fumee/boska-400i.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="../../assets/lab/fumee/generalsans-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/lab/fumee/cormorantgaramond-500i.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/font/manrope-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../_kit/lab.css">
 <link rel="stylesheet" href="m.css">
 <!-- liquid glass: demo body (helper 4f5eb13e) -->
 <link rel="stylesheet" href="../../assets/glass/liquid-glass.css">
-<script type="application/json" id="lg-map">{".btn-solid": "lg lg-btn lg--ink", ".btn-ghost": "lg lg-btn lg--dark", ".arrow": "lg lg-round lg-btn lg--dark"}</script>
+<script type="application/json" id="lg-map">{".btn-solid": "lg lg-btn lg--ink", ".btn-ghost": "lg lg-btn", ".arrow": "lg lg-round lg-btn"}</script>
 <script src="../../assets/glass/liquid-glass.js" defer></script>
 <link rel="canonical" href="https://zyqor-portfolio.vercel.app/lab/fumee/">
 <meta property="og:type" content="website">
@@ -34,6 +34,7 @@
 <main id="main">
   <section class="hero" id="top">
     <a class="brand-mark" href="#top" aria-label="Fumée">Fumée</a>
+    <figure class="hero-flacon"><span class="plume" aria-hidden="true"><i></i><i></i><i></i></span><img src="../../assets/lab/fumee/bottle-m.webp" alt="An aqua glass perfume flask with a gilt stopper" width="448" height="820" fetchpriority="high"></figure>
     <h1 class="hero-title"><span class="ht-a"><span class="c" style="--i:0">S</span><span class="c" style="--i:1">c</span><span class="c" style="--i:2">e</span><span class="c" style="--i:3">n</span><span class="c" style="--i:4">t</span><span class="c" style="--i:5">,</span></span><span class="ht-b"><span class="c" style="--i:6">i</span><span class="c" style="--i:7">n</span> <span class="c" style="--i:8">m</span><span class="c" style="--i:9">o</span><span class="c" style="--i:10">t</span><span class="c" style="--i:11">i</span><span class="c" style="--i:12">o</span><span class="c" style="--i:13">n</span><span class="c acc" style="--i:14">.</span></span></h1>
     <p class="hero-copy">Three eaux de parfum built on one idea: a fragrance is not an object, it is a movement.</p>
     <a class="btn btn-solid" href="#collection"><span>Discover the three</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -48,19 +49,19 @@
     <div class="col-head"><p class="eyebrow"><span class="ln"></span>The collection</p><h2 id="colT" class="col-title">Three trails</h2></div>
     <ol class="m-rail" aria-live="polite">
       <li class="mc" id="m-fig">
-        <figure class="mc-img"><img src="../../assets/lab/fumee/fig-m.webp" alt="Halved figs on dark wood" width="720" height="960" ></figure>
+        <figure class="mc-img"><img src="../../assets/lab/fumee/fig-m.webp" alt="Figs, whole and cut open" width="720" height="960" ></figure>
         <p class="cs-no">No. 01 <span>/ 03</span></p>
         <h3 class="cs-name">Figue Noire</h3>
         <p class="cs-line">A split fig left on warm wood at the end of August.</p>
         <dl class="cs-notes"><div><dt>Top</dt><dd>Fig leaf, bergamot</dd></div><div><dt>Heart</dt><dd>Fig milk, cassis bud</dd></div><div><dt>Base</dt><dd>Cedar, soft musk</dd></div></dl>
       </li><li class="mc" id="m-incense">
-        <figure class="mc-img"><img src="../../assets/lab/fumee/incense-m.webp" alt="An incense cone smoking beside a window" width="720" height="960" loading="lazy"></figure>
+        <figure class="mc-img"><img src="../../assets/lab/fumee/incense-m.webp" alt="Incense sticks smoking at a temple" width="720" height="960" loading="lazy"></figure>
         <p class="cs-no">No. 02 <span>/ 03</span></p>
         <h3 class="cs-name">Encens Clair</h3>
         <p class="cs-line">One cone of incense, a window open, the room going quiet.</p>
         <dl class="cs-notes"><div><dt>Top</dt><dd>Pink pepper, elemi</dd></div><div><dt>Heart</dt><dd>Frankincense, iris</dd></div><div><dt>Base</dt><dd>Labdanum, papyrus</dd></div></dl>
       </li><li class="mc" id="m-jasmine">
-        <figure class="mc-img"><img src="../../assets/lab/fumee/jasmine-m.webp" alt="White jasmine flowers against a dark background" width="720" height="960" loading="lazy"></figure>
+        <figure class="mc-img"><img src="../../assets/lab/fumee/jasmine-m.webp" alt="White jasmine flowers among leaves" width="720" height="960" loading="lazy"></figure>
         <p class="cs-no">No. 03 <span>/ 03</span></p>
         <h3 class="cs-name">Jasmin de Nuit</h3>
         <p class="cs-line">The flower that waits for dark before it says anything.</p>
@@ -73,7 +74,7 @@
   <section class="notes" id="notes" aria-labelledby="ntT">
     <p class="eyebrow"><span class="ln"></span>How a trail is built</p>
     <h2 id="ntT" class="nt-title">Top, heart, base. Then the part that follows you out of the room.</h2>
-    <article class="nt-card" data-rv><span class="nt-k">I</span><h3>Top</h3><p>The first ten minutes. Bergamot, pink pepper, neroli.</p><img src="../../assets/lab/fumee/figs-m.webp" alt="Fresh figs, halved and quartered" width="720" height="960" loading="lazy"></article>
+    <article class="nt-card" data-rv><span class="nt-k">I</span><h3>Top</h3><p>The first ten minutes. Bergamot, pink pepper, neroli.</p><img src="../../assets/lab/fumee/figs-m.webp" alt="Fresh purple figs, one cut open" width="720" height="960" loading="lazy"></article>
     <article class="nt-card nt-card--dark" data-rv><span class="nt-k">II</span><h3>Heart</h3><p>The hours in between. Fig milk, frankincense, night jasmine.</p></article>
     <article class="nt-card" data-rv><span class="nt-k">III</span><h3>Base</h3><p>What is still there at midnight. Cedar, labdanum, benzoin.</p><img src="../../assets/lab/fumee/stick-m.webp" alt="A burning incense stick with a curl of smoke" width="720" height="960" loading="lazy"></article>
     <article class="nt-card nt-card--accent" data-rv><span class="nt-k">IV</span><h3>Sillage</h3><p>The trail a perfume leaves behind you. We design for it first.</p></article>
@@ -123,9 +124,8 @@
 </main>
 <template id="credits">
   <li>Code, design, shaders and the flacon drawing: Zyqor Studio (MIT licence for the code). "Fumée" and its three scents are fictional.</li>
-  <li>Photos (Unsplash License, free to use; cropped, resized and converted to WebP): <a href="https://unsplash.com/photos/green-round-fruit-on-brown-wooden-table-vtP7PpYlzzQ" target="_blank" rel="noopener">figs on dark wood</a>, <a href="https://unsplash.com/photos/black-incense-burning-in-room-9M4asMDP7vQ" target="_blank" rel="noopener">incense cone by a window</a>, <a href="https://unsplash.com/photos/delicate-white-jasmine-flowers-bloom-against-dark-background-hp3SP0d5GTw" target="_blank" rel="noopener">jasmine against a dark background</a>, <a href="https://unsplash.com/photos/fresh-figs-halved-and-quartered-on-a-plate-sYTOxXNzLhs" target="_blank" rel="noopener">halved figs</a> and <a href="https://unsplash.com/photos/brown-wooden-stick-with-black-smoke-d_YI6RQdyoE" target="_blank" rel="noopener">incense stick with smoke</a>, all via Unsplash.</li>
-  <li>Photographers on Unsplash, with thanks: figs on dark wood by John Cameron; incense cone by Vandan Patel; jasmine by Daniele Merola; halved figs by Ioana Cristiana; incense stick by petr sidorov.</li>
-  <li>Fonts: Boska and General Sans by the Indian Type Foundry, via Fontshare (ITF Free Font License), self-hosted.</li>
+  <li>Photos, all from Wikimedia Commons (cropped, resized and converted to WebP): <a href="https://commons.wikimedia.org/wiki/File:Perfume_Bottle_MET_DP242904.jpg" target="_blank" rel="noopener">glass perfume bottle</a>, The Metropolitan Museum of Art, CC0 (background removed); <a href="https://commons.wikimedia.org/wiki/File:Ficus_carica_whole_fruits_and_fruit_cut_open.jpg" target="_blank" rel="noopener">figs, whole and cut open</a> by Garitzko, public domain; <a href="https://commons.wikimedia.org/wiki/File:Smoke_of_incenses_Sri_Dalada_Maligawa.jpg" target="_blank" rel="noopener">smoke of incense, Sri Dalada Maligawa</a> by Bergentroll, CC0; <a href="https://commons.wikimedia.org/wiki/File:Jasminum_sambac_is_a_species_of_Jasmine_native_to_tropical_asia.jpg" target="_blank" rel="noopener">Jasminum sambac flowers</a> by Sathiyaraj Durai, CC0; <a href="https://commons.wikimedia.org/wiki/File:Fresh_figs.jpg" target="_blank" rel="noopener">fresh figs</a> by Fumikas Sagisavas, CC0; <a href="https://commons.wikimedia.org/wiki/File:A_burning_incense_stick_at_the_Songshan_Ciyou_Temple_2019-04-27.jpg" target="_blank" rel="noopener">a burning incense stick at the Songshan Ciyou Temple</a> by Mori / Office of the President (Taiwan), <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a>.</li>
+  <li>Fonts: Cormorant Garamond by Christian Thalmann and Manrope by Mikhail Sharanda, both SIL Open Font License 1.1, self-hosted.</li>
   <li>Animation: GSAP 3.15 with ScrollTrigger and SplitText (GreenSock standard licence), Lenis smooth scroll (MIT), three.js r170 (MIT).</li>
 </template>
 <script type="module" src="../_kit/chrome.js"></script>

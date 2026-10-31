@@ -1,15 +1,15 @@
 {
- "title": "Delicate white jasmine flowers bloom against dark background",
- "author": "Daniele Merola",
- "author_url": "https://unsplash.com/@dmflyshots",
- "source_url": "https://unsplash.com/photos/delicate-white-jasmine-flowers-bloom-against-dark-background-hp3SP0d5GTw",
- "licence": "Unsplash License",
- "licence_url": "https://unsplash.com/license",
- "attribution": "\"Delicate white jasmine flowers bloom against dark background\" by Daniele Merola, Unsplash (https://unsplash.com/photos/delicate-white-jasmine-flowers-bloom-against-dark-background-hp3SP0d5GTw), Unsplash License (credit optional)",
- "changes": "cropped, resized, converted to WebP",
- "downloaded": "2026-10-27",
+ "title": "Jasminum sambac is a species of Jasmine native to tropical Asia",
+ "author": "Sathiyaraj Durai",
+ "author_url": "https://commons.wikimedia.org/wiki/User:Sathiyaraj_Durai",
+ "source_url": "https://commons.wikimedia.org/wiki/File:Jasminum_sambac_is_a_species_of_Jasmine_native_to_tropical_asia.jpg",
+ "licence": "CC0 1.0",
+ "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+ "attribution": "\"Jasminum sambac is a species of Jasmine native to tropical Asia\" by Sathiyaraj Durai, Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Jasminum_sambac_is_a_species_of_Jasmine_native_to_tropical_asia.jpg), CC0",
+ "changes": "cropped to 3:4, resized, converted to WebP",
+ "downloaded": "2026-10-31",
  "verified": true,
- "verified_note": "photographer name and licence read from the photo page in a real browser on 2026-10-28",
+ "verified_note": "licence and author read from the Wikimedia Commons file page API on 2026-10-31",
  "file": "jasmine-m.webp",
- "credit_written_by": "credits backfill 2026-10-28"
+ "credit_written_by": "portfolio fixes round 1, 2026-10-31"
 }
