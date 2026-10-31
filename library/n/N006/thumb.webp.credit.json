@@ -6,8 +6,8 @@
  "licence": "MIT",
  "licence_url": "https://opensource.org/licenses/MIT",
  "attribution": "Zyqor Studio (screenshot / render of its own page)",
- "changes": "screenshot or real-time render of a Zyqor Studio page, re-encoded; no AI imagery",
- "downloaded": "2026-10-28",
+ "changes": "screenshot or real-time render of a Zyqor Studio page, re-encoded; no AI imagery Re-shot 2026-10-31 after the palette fix (h5), 1440x900 frame resized to 640x400 WebP.",
+ "downloaded": "2026-10-31",
  "file": "thumb.webp",
  "credit_written_by": "credits backfill 2026-10-28 (work/beast/credits/backfill)"
 }

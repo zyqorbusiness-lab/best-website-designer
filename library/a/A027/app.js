@@ -78,7 +78,7 @@ else {
   const pos = new THREE.Vector3(), tgt = new THREE.Vector3();
   let prog = 0, want = 0;
   /* hero pose: the whole knife lying across the lower part of the first screen, three-quarter, under the title */
-  const KH = [side.clone().multiplyScalar(isM ? 7.2 : 3.05).add(E.clone().multiplyScalar(isM ? 0 : -0.12)).setY(isM ? 2.4 : 1.3), new THREE.Vector3(0, isM ? 0.75 : 0.32, 0)];
+  const KH = [side.clone().multiplyScalar(isM ? 9.4 : 3.05).add(E.clone().multiplyScalar(isM ? 0 : -0.12)).setY(isM ? 2.4 : 1.3), new THREE.Vector3(0, isM ? 0 : 0.32, 0)];
   function pose(P) {
     const p = clamp01((P - H) / (1 - H));
     const f = p * 3, i = Math.min(2, Math.floor(f)), t = smoothstep(0, 1, f - i);
@@ -89,6 +89,8 @@ else {
     const roll = isM ? (P < H ? 0.42 * (1 - smoothstep(0.04, H, P)) : smoothstep(0.08, 0.28, p) * (1 - smoothstep(0.72, 0.9, p))) : 0;
     stage.camera.up.set(0, 1, 0).lerp(E, roll).normalize();
     stage.camera.position.copy(pos); stage.camera.lookAt(tgt);
+    /* phone hero: slide the frame up along the rolled screen-up so the whole knife sits under the title */
+    if (isM && P < H) { const k = 1 - smoothstep(0.04, H, P); stage.camera.position.addScaledVector(new THREE.Vector3(0, 1, 0).applyQuaternion(stage.camera.quaternion), 0.95 * k); }
     const apart = smoothstep(0.18, 0.36, p) * (1 - smoothstep(0.62, 0.86, p));
     if (blade) blade.position.copy(bladeHome).addScaledVector(bDir, apart * sBlade);
     if (handle) handle.position.copy(handleHome).addScaledVector(hDir, -apart * sBlade * 0.5);
