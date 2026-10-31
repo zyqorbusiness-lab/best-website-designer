@@ -53,3 +53,16 @@ html{scroll-padding-top:120px}
 .stage{min-height:132px}
 .ro-tl{margin-top:18px}.ro-i{height:56px}
 .gbar{top:0;padding-top:58px;flex-direction:row;align-items:center;flex-wrap:wrap}.gbar .filters{flex:1 1 100%}.gcount{display:none}
+
+/* R3 "One stack" - sticky real-time 3D card stack */
+.stack{position:relative;height:260vh}.stack-stage{position:sticky;top:0;height:100vh;overflow:hidden}
+.stack-gl{position:absolute;inset:0;width:100%;height:100%;display:block}
+.stack-txt{position:absolute;z-index:2;left:clamp(24px,3.4vw,56px);top:clamp(90px,16vh,170px);max-width:min(400px,32vw);color:#17403A}
+.stack-k{font:600 12px/1.4 Manrope,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#C8603A;margin:0 0 16px}
+.stack-txt h2{font:400 clamp(52px,5.4vw,92px)/.95 "Instrument Serif",Georgia,serif;letter-spacing:-.02em;margin:0}.stack-txt h2 em{color:#C8603A}
+.stack-txt p:not(.stack-k){font:400 17px/1.6 Manrope,sans-serif;margin:20px 0 0;max-width:340px;color:#3E5A54}
+.stack-flat{display:none}.stack-nogl .stack-flat{display:flex;flex-wrap:wrap;gap:12px;list-style:none;margin:0;padding:0;position:absolute;left:clamp(24px,3.4vw,56px);right:clamp(24px,3.4vw,56px);bottom:12vh}
+.stack-nogl .stack-flat li{background:#F6F1E8;border:1px solid rgba(23,64,58,.14);border-radius:16px;padding:22px 26px;font:600 16px Manrope,sans-serif;color:#17403A;box-shadow:0 18px 40px -24px rgba(58,48,34,.45)}
+.stack-nogl{height:auto}.stack-nogl .stack-stage{position:relative;height:80vh;min-height:560px}
+@media (max-width:860px){.stack{height:240svh}.stack-stage{height:100svh}.stack-txt{left:20px;right:20px;top:calc(env(safe-area-inset-top) + 74px);max-width:none}.stack-txt h2{font-size:clamp(42px,12vw,56px)}.stack-txt p:not(.stack-k){font-size:15px;margin-top:12px}.stack-nogl .stack-flat{bottom:6vh}.stack-nogl .stack-flat li{padding:14px 16px;font-size:14px}}
+@media (prefers-reduced-motion:reduce){.stack{height:auto}.stack-stage{position:relative;height:100vh;min-height:620px}}
