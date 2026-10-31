@@ -45,3 +45,8 @@ h2{font-size:2.2rem}
 
 /* audit fix (a073e146): the fixed 'scroll to fly' hint sat on top of the hero CTAs on 360-390px phones; the hero copy already invites the scroll */
 .sw-hint{display:none!important}
+
+/* Best concepts button (phone): a 40px round star button left of "Start a project"; the word "Best" shows from 421px up */
+html body .hd .nav a.nav-best{display:inline-flex;justify-content:center;width:40px;min-height:40px;padding:0;font-size:.84rem}
+.nav-best span{display:none}
+@media (min-width:421px){html body .hd .nav a.nav-best{width:auto;padding:0 12px}.nav-best span{display:inline}}

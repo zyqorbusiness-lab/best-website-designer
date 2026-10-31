@@ -1,0 +1,57 @@
+/* Humdinger: phone build overrides (390 / 360). Same 3D, same sounds; layout re-flowed for a phone. */
+body{font-size:17px}
+.mono{font-size:12px}
+.sec{height:calc(100svh + var(--pin) * 1svh)}
+.stick{height:100svh}.stick.bk+.stick{margin-top:-100svh}
+#rings,#gl,#leaders{height:100lvh}
+.top{padding:12px 16px;padding-top:max(12px,env(safe-area-inset-top))}
+.pills{display:none}
+.logo{font-size:22px}
+.concept{padding:8px 10px}
+.snd{padding:7px 12px 7px 9px;min-height:40px}
+.h2{font-size:44px}
+/* hero: two-line wordmark across the top third, device in the middle, intro at the bottom */
+.wordmark{top:74px;transform:none;font-size:26vw;line-height:.8;white-space:normal}
+.wordmark span{display:block}
+.intro{left:20px;right:20px;bottom:max(22px,env(safe-area-inset-bottom))}
+.lead{font-size:22px}
+.hint-pad{white-space:nowrap;letter-spacing:.04em;bottom:calc(max(22px,env(safe-area-inset-bottom)) + 92px)}
+.hint-scroll{display:none}
+/* flip: labels at the bottom, one active at a time, under the device */
+#flip .h2,#inside .h2{left:20px;top:72px;transform:none;text-align:left}
+.flip-l{left:20px;right:20px;top:auto;bottom:max(24px,env(safe-area-inset-bottom));width:auto;gap:8px}
+.flip-l li{font-size:19px;display:none}.flip-l li.on{display:block}
+.flip-l li b{margin-bottom:4px}
+/* inside: numbered dots on the layers + the 5 labels as a list at the bottom */
+.parts{inset:auto 20px max(20px,env(safe-area-inset-bottom)) 20px;display:grid;gap:6px}
+.parts li{position:static;width:auto;opacity:.3;transform:none;display:grid;grid-template-columns:118px 1fr;gap:8px;align-items:baseline}
+.parts li.on{opacity:1}
+.parts li b{margin:0}.parts li span{font-size:14px;line-height:1.3}
+/* play: device top, steps + controls at the bottom */
+.play-c{left:20px;right:20px;top:auto;bottom:max(18px,env(safe-area-inset-bottom));transform:none;width:auto}
+.play-c .h2{font-size:36px}
+.steps{grid-template-columns:1fr 1fr;margin:10px 0 2px;gap:0 12px}
+.steps li{font-size:21px;gap:8px}.steps li b{width:24px;height:24px;font-size:11px;transform:translateY(-3px)}
+.song{font-size:15px;margin:2px 0 10px}
+.ctl{gap:8px}.btn{font-size:15px;padding:12px 18px}.tb{width:36px;height:36px}
+.modes{margin:10px 0 0}.keys{display:none}
+html.nogl .padgrid{left:20px;right:20px;top:120px;transform:none;grid-template-columns:repeat(4,1fr)}
+/* anywhere: the scenes stack vertically and slide up */
+#anywhere .h2{left:0;right:0;top:0;padding:72px 20px 14px;background:var(--cream)}
+.strip{flex-direction:column;width:100vw;height:300svh}
+.scene{height:100svh}.scene svg{inset:auto;left:50%;top:50%;width:170vw;height:auto;transform:translate(-50%,-50%)}
+.scene figcaption{left:20px;bottom:auto;top:150px;font-size:40px}
+/* specs: device top, the sheet below */
+.spec-c{left:20px;right:20px;top:auto;bottom:max(16px,env(safe-area-inset-bottom));transform:none;width:auto}
+.spec-c .h2{font-size:34px}
+.sheet{margin-top:12px}.sheet div{grid-template-columns:78px 1fr;gap:10px;padding:7px 0}.sheet dd{font-size:13px}
+/* pocket */
+.pk-c{left:20px;right:20px;top:72px;transform:none;max-width:none}
+.pk-c .btn{margin-top:16px}
+.pocket{left:5vw;width:90vw;bottom:4svh}
+.sticker{right:-2%;top:6%}
+/* footer */
+.foot{padding:84px 20px calc(40px + env(safe-area-inset-bottom))}
+.foot-big{font-size:21vw}.foot-note{font-size:17px}
+.foot-links{flex-direction:column;gap:12px}
+@media (max-width:370px){.h2{font-size:40px}.lead{font-size:20px}.parts li{grid-template-columns:104px 1fr}.parts li span{font-size:13px}.steps li{font-size:19px}.sheet dd{font-size:12.5px}.logo{font-size:20px}.snd{padding:6px 10px 6px 8px}}

@@ -165,3 +165,17 @@ img[loading="lazy"].is-loaded{opacity:1}
 .hd:not(.is-solid) .logo{background:rgba(250,247,239,.78);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-radius:999px;padding:5px 14px 5px 5px}
 .nav a:not(.btn){color:#2E544E}
 .sw-copy__title{font-size:clamp(2rem,3.5vw,3.05rem)!important;line-height:1.04}
+
+/* Best concepts button (Oct 31 2026): an outline pill left of "Start a project". Not a .btn, so the glass map keeps it plain:
+   ivory fill, pine outline; on hover it fills ochre and the star turns 45deg. */
+html body .hd .nav a.nav-best{display:inline-flex;align-items:center;gap:7px;min-height:40px;padding:0 16px;border-radius:999px;background:#FAF6EE!important;color:#17423C!important;box-shadow:inset 0 0 0 1.5px #17423C;font-size:.88rem;font-weight:650;letter-spacing:.02em;text-transform:none;white-space:nowrap;text-decoration:none;transition:background-color .2s ease,color .2s ease,box-shadow .2s ease}
+html body .hd .nav a.nav-best::after{display:none}
+html body .hd .nav a.nav-best:hover,html body .hd .nav a.nav-best:focus-visible{background:#8F6420!important;color:#FAF6EE!important;box-shadow:inset 0 0 0 1.5px #8F6420}
+.nav-best .star4{width:15px;height:15px;transition:transform .3s ease}
+.nav-best:hover .star4{transform:rotate(45deg)}
+.hd .nav .btn{white-space:nowrap}
+@media (max-width:1380px){.nav-best .nb-w{display:none}}
+.best-link{display:block;margin-top:14px}
+.best-link a{display:inline-flex;align-items:center;gap:8px;font-weight:650;color:var(--teal);text-decoration:none;border-bottom:1.5px solid currentColor;padding-bottom:2px}
+.best-link a span{transition:transform .25s ease}.best-link a:hover span{transform:translateX(4px)}
+@media (prefers-reduced-motion:reduce){.nav-best .star4,.best-link a span{transition:none}}

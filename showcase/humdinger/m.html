@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en" data-build="m">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>document.documentElement.classList.add('js');(function(){var q=location.search;if(/[?&]m=1/.test(q))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height,phone=w<=860||(c&&h>w);if(!phone&&!/[?&]still=/.test(q))location.replace('./'+q.replace(/[?&]m=1/,'')+location.hash);})();</script>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' data: blob:; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'none'">
+<title>Humdinger H-1 &middot; Pocket groovebox &middot; Concept by Zyqor Studio</title>
+<meta name="description" content="Humdinger is a fictional brand: a concept site by Zyqor Studio. A pocket groovebox built in 3D that flips, opens up and plays real sound right in your browser.">
+<meta name="theme-color" content="#C6F03C">
+<meta property="og:title" content="Humdinger H-1 &middot; A concept by Zyqor Studio">
+<meta property="og:description" content="A whole band that fits in your jeans pocket. A playable 3D concept site for a fictional brand.">
+<meta property="og:image" content="https://zyqor-portfolio.vercel.app/showcase/humdinger/og.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zyqor-portfolio.vercel.app/showcase/humdinger/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://zyqor-portfolio.vercel.app/showcase/humdinger/">
+<link rel="alternate" media="only screen and (max-width: 640px)" href="https://zyqor-portfolio.vercel.app/showcase/humdinger/m.html">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/bricolage-hd.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/dmsans-hd.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="modulepreload" href="../../vendor/three/three.module.min.js">
+<link rel="stylesheet" href="hd.css">
+<link rel="stylesheet" href="hd-m.css">
+<script type="importmap">{"imports":{"three":"../../vendor/three/three.module.min.js","three/addons/":"../../vendor/three/addons/"}}</script>
+</head>
+<body>
+<a class="skip" href="#play">Skip to the playable pads</a>
+<div id="boot" aria-hidden="true"><div class="dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><p class="mono boot-t">booting your band&hellip; <b id="boot-n">0</b></p><canvas id="wipe"></canvas></div>
+<canvas id="rings" aria-hidden="true"></canvas>
+<canvas id="gl" aria-label="The Humdinger H-1, a 3D pocket groovebox built in code. Tap its pads to play." role="img"></canvas>
+<div id="still" aria-hidden="true"><img alt="" data-k="a"><img alt="" data-k="b"></div>
+<div id="cur" aria-hidden="true"><span>TAP</span></div>
+<svg id="leaders" aria-hidden="true"></svg>
+<header class="top">
+  <a class="logo" href="#hero" aria-label="Humdinger, back to top">humdinger<span class="dot"></span></a>
+  <nav class="pills" aria-label="Sections"><a href="#inside" data-screen="INSIDE">Inside</a><a href="#play" data-screen="PATTERN">Play</a><a href="#specs" data-screen="SPECS">Specs</a></nav>
+  <div class="top-r"><span class="concept mono" title="Fictional brand, concept site">Concept</span><button type="button" class="snd mono" aria-pressed="false"><i aria-hidden="true"></i><span>Sound off</span></button></div>
+</header>
+<main id="main">
+<section class="sec bg-lime" id="hero" data-sec="hero" style="--pin:0">
+  <div class="stick bk"><h1 class="wordmark" aria-label="Humdinger"><span>Hum</span><span>dinger</span></h1></div>
+  <div class="stick">
+    <div class="intro rv"><p class="lead">A whole band that fits in your jeans pocket.</p><p class="mono sub">Humdinger H-1 pocket groovebox &middot; a concept</p></div>
+    <p class="mono hint-pad rv">Tap a pad. It plays.</p>
+    <p class="mono hint-scroll rv">Scroll to flip it <span aria-hidden="true">&darr;</span></p>
+  </div>
+</section>
+<section class="sec bg-cream wave" id="flip" data-sec="flip" style="--pin:126">
+  <div class="stick">
+    <h2 class="h2 rv">Turn it over.</h2>
+    <ol class="flip-l">
+      <li data-a="pads"><b class="mono">01</b> Rubber you can drum on.</li>
+      <li data-a="door"><b class="mono">02</b> A battery door with real screws.</li>
+      <li data-a="loop"><b class="mono">03</b> A loop for your keys, your bag, your neck.</li>
+    </ol>
+  </div>
+</section>
+<section class="sec bg-cream" id="inside" data-sec="inside" style="--pin:154">
+  <div class="stick">
+    <h2 class="h2 rv">Open it up.</h2>
+    <ul class="parts">
+      <li data-a="face" class="r"><b class="mono">01 Faceplate</b><span>Glossy, printed, holds the screen and both knobs.</span></li>
+      <li data-a="pads" class="l"><b class="mono">02 16 pads</b><span>Soft rubber. Every pad is a sound.</span></li>
+      <li data-a="board" class="r"><b class="mono">03 Board</b><span>Where every sound gets made.</span></li>
+      <li data-a="battery" class="l"><b class="mono">04 Battery</b><span>Sits behind a door with real screws.</span></li>
+      <li data-a="shell" class="r"><b class="mono">05 Shell</b><span>Rubber feet and a lanyard loop.</span></li>
+    </ul>
+  </div>
+</section>
+<section class="sec bg-lime wave" id="play" data-sec="play" style="--pin:175">
+  <div class="stick">
+    <div class="play-c">
+      <h2 class="h2 rv">Play it.</h2>
+      <ol class="steps">
+        <li data-l="0"><b class="mono">1</b> Kick.</li><li data-l="1"><b class="mono">2</b> Snare + hat.</li><li data-l="2"><b class="mono">3</b> Bass.</li><li data-l="3"><b class="mono">4</b> Lead.</li>
+      </ol>
+      <p class="song">That&rsquo;s a song.</p>
+      <div class="ctl">
+        <button type="button" class="btn btn-ink seq-b" aria-pressed="false"><span>Play the beat</span></button>
+        <div class="tempo" role="group" aria-label="Tempo"><button type="button" class="tb" data-d="-6" aria-label="Slower">&minus;</button><output class="mono" id="bpm">112 BPM</output><button type="button" class="tb" data-d="6" aria-label="Faster">+</button></div>
+      </div>
+      <p class="mono modes"><span data-m="rec">REC</span><span data-m="shift">SHIFT</span><span data-m="fx">FX</span></p>
+      <p class="mono keys">Tap the pads on the device. Drag the TEMPO knob.</p>
+    </div>
+    <div class="padgrid" role="group" aria-label="H-1 pads"><button type="button" class="pb" data-pad="0" aria-label="Kick"><span>Kick</span><kbd>1</kbd></button><button type="button" class="pb" data-pad="1" aria-label="Snare"><span>Snare</span><kbd>2</kbd></button><button type="button" class="pb" data-pad="2" aria-label="Hat"><span>Hat</span><kbd>3</kbd></button><button type="button" class="pb" data-pad="3" aria-label="Clap"><span>Clap</span><kbd>4</kbd></button><button type="button" class="pb" data-pad="4" aria-label="Bass 1"><span>Bass 1</span><kbd>5</kbd></button><button type="button" class="pb" data-pad="5" aria-label="Bass 2"><span>Bass 2</span><kbd>6</kbd></button><button type="button" class="pb" data-pad="6" aria-label="Bass 3"><span>Bass 3</span><kbd>7</kbd></button><button type="button" class="pb" data-pad="7" aria-label="Bass 4"><span>Bass 4</span><kbd>8</kbd></button><button type="button" class="pb" data-pad="8" aria-label="Lead 1"><span>Lead 1</span><kbd>Q</kbd></button><button type="button" class="pb" data-pad="9" aria-label="Lead 2"><span>Lead 2</span><kbd>W</kbd></button><button type="button" class="pb" data-pad="10" aria-label="Lead 3"><span>Lead 3</span><kbd>E</kbd></button><button type="button" class="pb" data-pad="11" aria-label="Lead 4"><span>Lead 4</span><kbd>R</kbd></button><button type="button" class="pb" data-pad="12" aria-label="Play"><span>Play</span><kbd>T</kbd></button><button type="button" class="pb" data-pad="13" aria-label="Rec"><span>Rec</span><kbd>Y</kbd></button><button type="button" class="pb" data-pad="14" aria-label="Shift"><span>Shift</span><kbd>U</kbd></button><button type="button" class="pb" data-pad="15" aria-label="FX"><span>FX</span><kbd>I</kbd></button></div>
+  </div>
+</section>
+<section class="sec bg-cream wave" id="anywhere" data-sec="anywhere" style="--pin:210">
+  <div class="stick bk"><div class="strip">
+      <figure class="scene"><svg viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><g fill="none" stroke="#1B2340" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="600" cy="360" r="170" fill="#C6F03C" stroke="none"/>
+<rect x="110" y="120" width="440" height="300" rx="46"/><rect x="650" y="120" width="440" height="300" rx="46"/>
+<path d="M150 360 Q 260 300 330 330 T 510 300" stroke-dasharray="2 18"/><path d="M700 330 L 780 290 L 840 320 L 930 260 L 1040 300" stroke-dasharray="2 18"/>
+<path d="M60 470 H1140"/><path d="M60 92 H1140"/><path d="M300 92 V60 M900 92 V60"/><circle cx="300" cy="52" r="10"/><circle cx="900" cy="52" r="10"/>
+<path d="M140 470 V640 M140 560 H420 Q 460 560 460 600 V640"/><path d="M760 470 V640 M760 560 H1040 Q 1080 560 1080 600 V640"/></g></svg><figcaption>On the bus.</figcaption></figure>
+      <figure class="scene"><svg viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><g fill="none" stroke="#1B2340" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="600" cy="360" r="170" fill="#C6F03C" stroke="none"/>
+<path d="M80 520 H1120"/><path d="M150 520 V690 M1050 520 V690"/>
+<path d="M880 520 L 930 500 L 900 330 L 1010 230"/><path d="M1010 230 l 70 40 l -40 70 z"/><path d="M1040 340 q 30 60 -20 110" stroke-dasharray="4 16"/>
+<rect x="160" y="300" width="250" height="170" rx="12"/><path d="M200 470 L 180 520 M370 470 L 390 520"/><path d="M200 350 H370 M200 390 H330 M200 430 H350" stroke-dasharray="2 14"/>
+<path d="M760 520 v-60 h70 v60"/><path d="M830 475 q 30 0 30 22 q 0 22 -30 22"/><path d="M780 440 q 10 -20 0 -40 M805 440 q 10 -20 0 -40" stroke-dasharray="3 10"/></g></svg><figcaption>On your desk.</figcaption></figure>
+      <figure class="scene"><svg viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><g fill="none" stroke="#1B2340" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="600" cy="360" r="170" fill="#C6F03C" stroke="none"/>
+<path d="M60 560 Q 300 520 600 560 T 1140 540"/><path d="M80 560 L 220 360 L 360 560"/><path d="M220 360 V300 l 50 18 l -50 18"/><path d="M220 560 V470"/>
+<path d="M860 560 L 1010 330 L 1150 560"/><path d="M1010 330 V270 l 50 18 l -50 18"/><path d="M1010 560 V460"/>
+<path d="M60 150 Q 330 230 600 140 T 1140 170"/><path d="M150 168 l 18 40 l 22 -32 M330 205 l 18 40 l 22 -34 M520 160 l 18 40 l 22 -34 M720 145 l 18 40 l 22 -34 M920 172 l 18 40 l 22 -34"/>
+<path d="M420 640 l 20 -40 l 20 40 M760 650 l 20 -40 l 20 40" /></g></svg><figcaption>In the field.</figcaption></figure>
+    </div>
+  </div>
+  <div class="stick">
+    <h2 class="h2 rv">Take it anywhere.</h2>
+  </div>
+</section>
+<section class="sec bg-lime wave" id="specs" data-sec="specs" style="--pin:50">
+  <div class="stick">
+    <div class="spec-c">
+      <h2 class="h2 rv">The H-1, plainly.</h2>
+      <dl class="sheet mono">
+        <div><dt>Pads</dt><dd>16 rubber pads: 4 drums, 4 bass, 4 lead, 4 function</dd></div>
+        <div><dt>Knobs</dt><dd>2: tempo and tone</dd></div>
+        <div><dt>Screen</dt><dd>Pixel screen with a 16-step grid</dd></div>
+        <div><dt>Speaker</dt><dd>Built in, front-facing</dd></div>
+        <div><dt>Charging</dt><dd>USB-C</dd></div>
+        <div><dt>Carry</dt><dd>Lanyard loop, fits a jeans pocket</dd></div>
+        <div><dt>Status</dt><dd>Concept. Not for sale.</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+<section class="sec bg-cream wave" id="pocket" data-sec="pocket" style="--pin:84">
+  <div class="stick bk"><div class="pocket"><svg class="pk-back" viewBox="0 0 600 520" aria-hidden="true"><g fill="none" stroke="#1B2340" stroke-width="5" stroke-linecap="round"><path d="M20 40 H580" /><path d="M20 70 H580" stroke-dasharray="3 14"/><path d="M60 40 V0 M540 40 V0"/></g></svg></div></div>
+  <div class="stick">
+    <div class="pk-c">
+      <h2 class="h2 rv">Pocket a band.</h2>
+      <button type="button" class="btn btn-ink wl">Join the waitlist (concept)</button>
+    </div>
+    <div class="pocket"><svg class="pk-front" viewBox="0 0 600 520" aria-hidden="true"><path d="M70 110 H530 V360 Q 530 400 494 420 L 300 510 L 106 420 Q 70 400 70 360 Z" fill="#C6F03C" stroke="#1B2340" stroke-width="5" stroke-linejoin="round"/><path d="M92 132 H508 V352 Q 508 386 480 402 L 300 486 L 120 402 Q 92 386 92 352 Z" fill="none" stroke="#1B2340" stroke-width="3" stroke-dasharray="10 9"/><circle cx="100" cy="128" r="9" fill="#FFF4E2" stroke="#1B2340" stroke-width="4"/><circle cx="500" cy="128" r="9" fill="#FFF4E2" stroke="#1B2340" stroke-width="4"/><path d="M200 250 q 100 -46 200 0 M200 300 q 100 -46 200 0" fill="none" stroke="#1B2340" stroke-width="3"/></svg><span class="sticker mono">Concept</span></div>
+  </div>
+</section>
+</main>
+<footer class="foot bg-lime wave">
+  <div class="foot-in">
+    <p class="foot-big">humdinger</p>
+    <p class="foot-note">Humdinger is a fictional brand. A concept site by <b>Zyqor Studio</b>, Sujon Hoque. Nothing here is for sale.</p>
+    <p class="foot-links"><a href="mailto:zyqorbusiness@gmail.com?subject=A%20site%20like%20Humdinger">Email Zyqor</a><a href="https://wa.me/919547908593" target="_blank" rel="noopener">WhatsApp +91 95479 08593</a><a href="../../best/">&starf; Best concepts</a><a href="../../">Zyqor portfolio</a></p>
+    <p class="mono credits">3D model built in code &middot; every sound made live in your browser, no audio files &middot; Fonts: Bricolage Grotesque (Mathieu Triay), DM Sans (Colophon Foundry), JetBrains Mono (JetBrains), all SIL OFL 1.1 &middot; three.js (MIT), Lenis (MIT) &middot; <a href="CREDITS.md">Full credits</a></p>
+  </div>
+</footer>
+<dialog id="note"><p class="h3">It&rsquo;s a concept.</p><p>Humdinger is a fictional brand and the H-1 isn&rsquo;t real, so there&rsquo;s no waitlist and nothing to buy. This page was designed and built by Zyqor Studio to show what a product site can feel like.</p><p><a class="btn btn-ink" href="../../#contact">Want one for your business?</a></p><form method="dialog"><button class="btn btn-line" type="submit">Close</button></form></dialog>
+<script src="../../vendor/lenis.min.js" defer></script>
+<script type="module" src="js/story.js"></script>
+</body>
+</html>
