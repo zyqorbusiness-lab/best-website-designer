@@ -6,18 +6,19 @@
 <!-- desktop -> phone build when ?m=1 is absent -->
 <script>document.documentElement.classList.add('js');(function(){var q=location.search;if(/[?&]m=1/.test(q))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height,phone=w<=860||(c&&h>w);if(!phone)location.replace('./'+q+location.hash);})();</script>
 <title>Fieldnote Optics &middot; Concept N005 &middot; Zyqor Library</title>
-<meta name="description" content="Fieldnote Optics is a fictional brand: a normal 3D web concept by Zyqor Studio. A misty pine forest you can only see properly through a pair of binoculars that follow your pointer.">
-<meta name="theme-color" content="#E4EAC9">
+<meta name="description" content="Fieldnote Optics is a fictional brand: a normal 3D web concept by Zyqor Studio. A foggy river valley at sunrise you can only see properly through a pair of binoculars that follow your pointer.">
+<meta name="theme-color" content="#F7F3E8">
 <meta property="og:title" content="Fieldnote Optics &middot; Concept N005 &middot; Zyqor Library">
 <meta property="og:description" content="A fictional-brand 3D concept by Zyqor Studio.">
 <meta property="og:image" content="https://zyqor-portfolio.vercel.app/library/n/N005/thumb.webp">
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
 <link rel="preload" href="../../_kit/stage.js" as="script" crossorigin>
-<link rel="preload" href="pines.webp" as="image" fetchpriority="high">
+<link rel="preload" href="valley.webp" as="image" fetchpriority="high">
 <link rel="preload" href="../../_assets/models/binoculars.glb" as="fetch" crossorigin>
 <link rel="stylesheet" href="../../_kit/concept.css">
 <link rel="stylesheet" href="m.css">
-<style>:root{--c1:#E4EAC9;--c2:#1C2120;--c3:#D7597E}</style>
+<style>@font-face{font-family:"Archivo";src:url("../../../assets/font/archivo-var.woff2") format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+:root{--c1:#F7F3E8;--c2:#2F4B3A;--c3:#F4A259;--meadow:#A8C686;--f-display:"Archivo","Bricolage Grotesque",system-ui,sans-serif;--f-body:"Inter Tight","Manrope",system-ui,sans-serif}</style>
 <script type="importmap">{"imports":{"three":"../../../vendor/three/three.module.min.js","three/addons/":"../../../vendor/three/addons/"}}</script>
 <link rel="canonical" href="https://zyqor-portfolio.vercel.app/library/n/N005/">
 <meta property="og:type" content="website">
@@ -58,31 +59,31 @@
       <div class="hero-copy">
         <p class="tag" data-rv>Nature &middot; Concept N005</p>
         <h1 class="title" data-rv><span class="t1">Fieldnote</span> <span class="t2 serif">Optics</span></h1>
-        <p class="lead" data-rv>A forest in fog, and one pair of glasses. The mist only clears where you look.</p>
+        <p class="lead" data-rv>A valley in fog at first light, and one pair of glasses. The mist only clears where you look.</p>
         <p class="found mono" data-rv><span class="found-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span><b id="found">0</b> of 4 field notes found</span></p>
       </div>
-    <div class="viewer" data-viewer tabindex="0" role="application" aria-roledescription="binocular viewer" aria-label="Misty pine forest. Move the pointer, drag the lens, or use the arrow keys to look around. Plus and minus change magnification.">
-      <img class="ph ph-out" src="pines.webp" alt="" width="2048" height="1280" decoding="async" fetchpriority="high">
+    <div class="viewer" data-viewer tabindex="0" role="application" aria-roledescription="binocular viewer" aria-label="Foggy sunrise over a river valley. Move the pointer, drag the lens, or use the arrow keys to look around. Plus and minus change magnification.">
+      <img class="ph ph-out" src="valley.webp" alt="" width="2048" height="1280" decoding="async" fetchpriority="high">
       <div class="mist" aria-hidden="true"></div>
       <div class="lens-layer" aria-hidden="true">
-        <img class="ph ph-in" src="pines.webp" alt="" width="2048" height="1280" decoding="async">
+        <img class="ph ph-in" src="valley.webp" alt="" width="2048" height="1280" decoding="async">
         <div class="vign"></div>
         <div class="notes">
-        <div class="fn fn--right" data-x="0.615" data-y="0.4" id="n1">
+        <div class="fn fn--right" data-x="0.36" data-y="0.37" id="n1">
           <svg class="fn-ring" viewBox="0 0 64 64" aria-hidden="true"><path pathLength="1" d="M33 6c14 1 25 11 25 25 0 15-12 27-27 27C17 58 6 47 6 33 6 19 17 7 31 6c3 0 6 1 8 2"/></svg>
-          <p class="fn-t"><span class="fn-n mono">01</span>Nearest trunk. Bark in long vertical plates; everything behind it is mist.</p>
+          <p class="fn-t"><span class="fn-n mono">01</span>Bare cottonwood. Every twig drawn against the sunrise; the leaves are long gone.</p>
         </div>
-        <div class="fn fn--left" data-x="0.8" data-y="0.52" id="n2">
+        <div class="fn fn--left" data-x="0.53" data-y="0.47" id="n2">
           <svg class="fn-ring" viewBox="0 0 64 64" aria-hidden="true"><path pathLength="1" d="M33 6c14 1 25 11 25 25 0 15-12 27-27 27C17 58 6 47 6 33 6 19 17 7 31 6c3 0 6 1 8 2"/></svg>
-          <p class="fn-t"><span class="fn-n mono">02</span>Fog line. By the fourth row of trunks the forest is gone.</p>
+          <p class="fn-t"><span class="fn-n mono">02</span>Fog line. One crown floats on the mist; its trunk is already lost.</p>
         </div>
-        <div class="fn fn--right" data-x="0.3" data-y="0.3" id="n3">
+        <div class="fn fn--right" data-x="0.84" data-y="0.53" id="n3">
           <svg class="fn-ring" viewBox="0 0 64 64" aria-hidden="true"><path pathLength="1" d="M33 6c14 1 25 11 25 25 0 15-12 27-27 27C17 58 6 47 6 33 6 19 17 7 31 6c3 0 6 1 8 2"/></svg>
-          <p class="fn-t"><span class="fn-n mono">03</span>Light from straight above. Overcast morning, no shadows on the bark.</p>
+          <p class="fn-t"><span class="fn-n mono">03</span>Far treeline. A mile of river bottom, reduced to outlines.</p>
         </div>
-        <div class="fn fn--right" data-x="0.17" data-y="0.86" id="n4">
+        <div class="fn fn--right" data-x="0.2" data-y="0.8" id="n4">
           <svg class="fn-ring" viewBox="0 0 64 64" aria-hidden="true"><path pathLength="1" d="M33 6c14 1 25 11 25 25 0 15-12 27-27 27C17 58 6 47 6 33 6 19 17 7 31 6c3 0 6 1 8 2"/></svg>
-          <p class="fn-t"><span class="fn-n mono">04</span>Green undergrowth only where the canopy opens.</p>
+          <p class="fn-t"><span class="fn-n mono">04</span>Ground still in shadow. The frost on the meadow has not burned off yet.</p>
         </div>
         </div>
       </div>
@@ -122,19 +123,19 @@
         <li class="mag" data-rv>
           <span class="mag-x num">6&times;</span>
           <div class="mag-t"><h3 class="h3">Wide</h3><p class="body">For forest and low light. The widest view and the brightest image, and the easiest to hold still.</p></div>
-          <svg class="fov" viewBox="0 0 140 90" aria-hidden="true"><circle cx="40.9" cy="45" r="39.3"/><circle cx="99.1" cy="45" r="39.3"/><circle class="fov-dot" cx="99.1" cy="45" r="2.5"/></svg>
+          <svg class="fov" viewBox="0 0 140 90" aria-hidden="true"><defs><clipPath id="fv409"><circle cx="40.9" cy="45" r="39.3"/><circle cx="99.1" cy="45" r="39.3"/></clipPath></defs><g clip-path="url(#fv409)"><image href="valley.webp" x="-71.6" y="-33.5" width="267.2" height="167.0" preserveAspectRatio="xMidYMid slice"/></g><circle class="fov-rim" cx="40.9" cy="45" r="39.3"/><circle class="fov-rim" cx="99.1" cy="45" r="39.3"/><circle class="fov-dot" cx="99.1" cy="45" r="2.5"/></svg>
           <button class="btn btn--ghost" type="button" data-try="6" data-press>Try 6&times; in the lens</button>
         </li>
         <li class="mag" data-rv>
           <span class="mag-x num">8&times;</span>
           <div class="mag-t"><h3 class="h3">Field</h3><p class="body">The all-rounder. Enough reach to read the bark across a clearing, still steady in one hand.</p></div>
-          <svg class="fov" viewBox="0 0 140 90" aria-hidden="true"><circle cx="44.8" cy="45" r="34.0"/><circle cx="95.2" cy="45" r="34.0"/><circle class="fov-dot" cx="95.2" cy="45" r="2.5"/></svg>
+          <svg class="fov" viewBox="0 0 140 90" aria-hidden="true"><defs><clipPath id="fv448"><circle cx="44.8" cy="45" r="34.0"/><circle cx="95.2" cy="45" r="34.0"/></clipPath></defs><g clip-path="url(#fv448)"><image href="valley.webp" x="-93.7" y="-45.7" width="308.8" height="193.0" preserveAspectRatio="xMidYMid slice"/></g><circle class="fov-rim" cx="44.8" cy="45" r="34.0"/><circle class="fov-rim" cx="95.2" cy="45" r="34.0"/><circle class="fov-dot" cx="95.2" cy="45" r="2.5"/></svg>
           <button class="btn btn--ghost" type="button" data-try="8" data-press>Try 8&times; in the lens</button>
         </li>
         <li class="mag" data-rv>
           <span class="mag-x num">10&times;</span>
           <div class="mag-t"><h3 class="h3">Reach</h3><p class="body">For open valleys and far ridges. The narrowest view of the three; brace your elbows.</p></div>
-          <svg class="fov" viewBox="0 0 140 90" aria-hidden="true"><circle cx="47.5" cy="45" r="30.4"/><circle cx="92.5" cy="45" r="30.4"/><circle class="fov-dot" cx="92.5" cy="45" r="2.5"/></svg>
+          <svg class="fov" viewBox="0 0 140 90" aria-hidden="true"><defs><clipPath id="fv475"><circle cx="47.5" cy="45" r="30.4"/><circle cx="92.5" cy="45" r="30.4"/></clipPath></defs><g clip-path="url(#fv475)"><image href="valley.webp" x="-113.1" y="-56.5" width="345.4" height="215.9" preserveAspectRatio="xMidYMid slice"/></g><circle class="fov-rim" cx="47.5" cy="45" r="30.4"/><circle class="fov-rim" cx="92.5" cy="45" r="30.4"/><circle class="fov-dot" cx="92.5" cy="45" r="2.5"/></svg>
           <button class="btn btn--ghost" type="button" data-try="10" data-press>Try 10&times; in the lens</button>
         </li>
       </ol>
@@ -150,22 +151,22 @@
       <ol class="jr" role="list">
         <li class="jr-i" data-note="n1" data-rv>
           <span class="jr-n num">01</span>
-          <p class="jr-t"><span class="jr-lock">Not found yet. Keep looking.</span><span class="jr-txt">Nearest trunk. Bark in long vertical plates; everything behind it is mist.</span></p>
+          <p class="jr-t"><span class="jr-lock">Not found yet. Keep looking.</span><span class="jr-txt">Bare cottonwood. Every twig drawn against the sunrise; the leaves are long gone.</span></p>
           <button class="btn btn--ghost jr-btn" type="button" data-show="n1" data-press><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="12" r="5"/><circle cx="15" cy="12" r="5"/></svg>Show me</button>
         </li>
         <li class="jr-i" data-note="n2" data-rv>
           <span class="jr-n num">02</span>
-          <p class="jr-t"><span class="jr-lock">Not found yet. Keep looking.</span><span class="jr-txt">Fog line. By the fourth row of trunks the forest is gone.</span></p>
+          <p class="jr-t"><span class="jr-lock">Not found yet. Keep looking.</span><span class="jr-txt">Fog line. One crown floats on the mist; its trunk is already lost.</span></p>
           <button class="btn btn--ghost jr-btn" type="button" data-show="n2" data-press><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="12" r="5"/><circle cx="15" cy="12" r="5"/></svg>Show me</button>
         </li>
         <li class="jr-i" data-note="n3" data-rv>
           <span class="jr-n num">03</span>
-          <p class="jr-t"><span class="jr-lock">Not found yet. Keep looking.</span><span class="jr-txt">Light from straight above. Overcast morning, no shadows on the bark.</span></p>
+          <p class="jr-t"><span class="jr-lock">Not found yet. Keep looking.</span><span class="jr-txt">Far treeline. A mile of river bottom, reduced to outlines.</span></p>
           <button class="btn btn--ghost jr-btn" type="button" data-show="n3" data-press><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="12" r="5"/><circle cx="15" cy="12" r="5"/></svg>Show me</button>
         </li>
         <li class="jr-i" data-note="n4" data-rv>
           <span class="jr-n num">04</span>
-          <p class="jr-t"><span class="jr-lock">Not found yet. Keep looking.</span><span class="jr-txt">Green undergrowth only where the canopy opens.</span></p>
+          <p class="jr-t"><span class="jr-lock">Not found yet. Keep looking.</span><span class="jr-txt">Ground still in shadow. The frost on the meadow has not burned off yet.</span></p>
           <button class="btn btn--ghost jr-btn" type="button" data-show="n4" data-press><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="12" r="5"/><circle cx="15" cy="12" r="5"/></svg>Show me</button>
         </li>
       </ol>
@@ -187,7 +188,7 @@
       <dl class="ledger" data-rv>
         <div class="cell"><dt class="mono">Magnification</dt><dd class="v num"><b id="lg-mag">8</b>&times;<small id="lg-fov">lens radius 100%</small></dd></div>
         <div class="cell"><dt class="mono">Focus</dt><dd class="v" id="lg-focus">Sharp<small>wheel at 62 of 100</small></dd></div>
-        <div class="cell"><dt class="mono">Photo</dt><dd class="v">Misty Pines<small>Greg Zaal &middot; Poly Haven, CC0 &middot; Mpumalanga, South Africa</small></dd></div>
+        <div class="cell"><dt class="mono">Photo</dt><dd class="v">Foggy Sunrise<small>USFWS Mountain-Prairie &middot; Wikimedia Commons, public domain &middot; Seedskadee NWR, Wyoming</small></dd></div>
         <div class="cell"><dt class="mono">Object</dt><dd class="v">Binoculars<small>Derek Wight &middot; Poly Haven, CC0 &middot; 19,248 triangles</small></dd></div>
       </dl>
     </div>
@@ -231,9 +232,9 @@
           <li><a href="#book">Book a field morning</a></li>
         </ul></div>
       <div><h4>Sources</h4><ul>
-          <li><a href="https://polyhaven.com/a/misty_pines" target="_blank" rel="noopener noreferrer">Photo: Misty Pines, Poly Haven</a></li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Foggy_Sunrise_over_Seedskadee_National_Wildlife_Refuge_(21355263813).jpg" target="_blank" rel="noopener noreferrer">Photo: Foggy Sunrise over Seedskadee National Wildlife Refuge, USFWS Mountain-Prairie (public domain)</a></li>
           <li><a href="https://polyhaven.com/a/binoculars" target="_blank" rel="noopener noreferrer">Model: Binoculars, Poly Haven</a></li>
-          <li><span class="lic mono">Both CC0 1.0</span></li>
+          <li><span class="lic mono">Photo public domain &middot; model CC0 1.0</span></li>
         </ul></div>
       <p class="bfoot-legal">Fieldnote Optics is a fictional brand: Concept N005 in the Zyqor Library by Zyqor Studio. No product is for sale, nothing on this page is sent anywhere, and no customer, review or number on it is real unless its source is named.</p>
     </div>

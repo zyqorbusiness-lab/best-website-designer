@@ -17,15 +17,15 @@
     },
     {
       "what": "Photo",
-      "title": "Misty Pines (HDRI, tonemapped JPG)",
-      "author": "Greg Zaal",
-      "source": "Poly Haven",
-      "url": "https://polyhaven.com/a/misty_pines",
-      "licence": "CC0 1.0",
-      "note": "Reprojected by Zyqor Studio from the 8K equirectangular tonemapped JPG into an 88 degree rectilinear view (pines.webp, 2048x1280). Photographed in Mpumalanga, South Africa.",
-      "credit_file": "pines.webp.credit.json",
+      "title": "Foggy Sunrise over Seedskadee National Wildlife Refuge",
+      "author": "USFWS Mountain-Prairie",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Foggy_Sunrise_over_Seedskadee_National_Wildlife_Refuge_(21355263813).jpg",
+      "licence": "Public domain",
+      "note": "Work of the U.S. Fish and Wildlife Service. Cropped to 16:10, shadows lifted, resized to 2048x1280 WebP (valley.webp, 52 KB). Seedskadee NWR, Wyoming.",
+      "credit_file": "valley.webp.credit.json",
       "files": [
-        "pines.webp"
+        "valley.webp"
       ]
     },
     {
@@ -44,11 +44,22 @@
     },
     {
       "what": "Type",
-      "title": "Bricolage Grotesque, Manrope",
-      "author": "Mathieu Triay, Mikhail Sharanda",
+      "title": "Archivo",
+      "author": "Omnibus-Type",
       "source": "Google Fonts",
-      "url": "https://fonts.google.com",
-      "licence": "SIL Open Font License 1.1",
+      "url": "https://fonts.google.com/specimen/Archivo",
+      "licence": "SIL OFL 1.1",
+      "note": "Display. Shared self-hosted file (site/assets/font/archivo-var.woff2).",
+      "files": []
+    },
+    {
+      "what": "Type",
+      "title": "Inter Tight, Instrument Serif",
+      "author": "Rasmus Andersson; Rodrigo Fuenzalida, Jordan Egstad",
+      "source": "Google Fonts",
+      "url": "https://fonts.google.com/specimen/Inter+Tight",
+      "licence": "SIL OFL 1.1",
+      "note": "Body and italic accent. Shared self-hosted files (site/assets/font).",
       "files": []
     },
     {
