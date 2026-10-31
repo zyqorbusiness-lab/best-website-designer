@@ -15,9 +15,9 @@ Written before any code (Sujon's Master Award system, Drive points Q1/W5).
 - --c3 #F4A259 sunrise (Oct 31 refresh; was #D7597E rose): about 1%. Meadow #A8C686 as a tint on row hover. The reticle centre dot, the pencil circle around a note once found, the notes-found counter, focus ring.
 
 ## Type
-- Display: Archivo 800 ("Fieldnote") + Instrument Serif italic ("Optics"), -0.04em (Google/OFL; was Cabinet Grotesk).
+- Display: Archivo 800 ("Fieldnote") + Instrument Serif italic ("Optics"), -0.04em (Google/OFL).
 - Field notes in the photo: Instrument Serif italic (a pencil hand, not a font pretending to be handwriting).
-- Body Inter Tight, 62ch (was Satoshi). Mono tags JetBrains Mono uppercase.
+- Body Inter Tight, 62ch. Mono tags JetBrains Mono uppercase.
 
 ## Structure
 - 06 Live sandbox hero (the whole first screen is the instrument) followed by 02 Swiss exposed-hairline grid for the "how it works" ledger on a dark charcoal chapter. Not hero + 3 cards.

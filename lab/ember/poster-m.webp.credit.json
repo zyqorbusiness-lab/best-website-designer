@@ -1,11 +1,12 @@
 {
- "title": "EMBER demo poster / share image (phone)",
- "author": "Zyqor Studio (render); models by Krzysztof Mazia and kouitimizuno",
- "author_url": "https://sketchfab.com/mazia ; https://sketchfab.com/kouitimizuno",
- "source_url": "https://sketchfab.com/3d-models/cup-of-cappuccino-2beccb20ab744cabaeaddb36487f5cd7 ; https://sketchfab.com/3d-models/coffee-beans-8146e99925fb4b49839e4fa7ace83f0f",
- "licence": "CC BY 4.0",
- "licence_url": "https://creativecommons.org/licenses/by/4.0/",
- "attribution": "Still rendered by Zyqor Studio from \"Cup of Cappuccino\" by Krzysztof Mazia (https://sketchfab.com/3d-models/cup-of-cappuccino-2beccb20ab744cabaeaddb36487f5cd7), licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/) and \"Coffee beans\" by kouitimizuno (https://sketchfab.com/3d-models/coffee-beans-8146e99925fb4b49839e4fa7ace83f0f), licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Modified by Zyqor Studio.",
- "changes": "Screenshot of the phone build of the EMBER concept page showing the modified models.",
- "downloaded": "2026-10-28"
+ "title": "EMBER share image (phone)",
+ "author": "Zyqor Studio (page screenshot); espresso photo by Jubair1985",
+ "author_url": "https://commons.wikimedia.org/wiki/User:Jubair1985",
+ "source_url": "https://commons.wikimedia.org/wiki/File:Espresso_Coffee_01.jpg",
+ "licence": "CC0 1.0 (photo) / MIT (page)",
+ "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+ "attribution": "Screenshot of the Zyqor Studio EMBER concept page showing \"Espresso Coffee 01\" by Jubair1985 (Wikimedia Commons, CC0 1.0).",
+ "changes": "Screenshot of the page's hero after the Oct 31 fix (real photo cup), resized, WebP. Not AI imagery.",
+ "downloaded": "2026-10-31",
+ "file": "poster-m.webp"
 }
