@@ -267,6 +267,12 @@ rig and save stills (the components' `scroll-3d-stage/poster.webp` is a CC0 mode
 3. Rename the frames (e.g. `lw0001.webp`, not `f0001.webp`). `credits-check` matches a generic `d/f0001.webp` path against other pages' rows and reports false clashes.
 4. Delete every old frame in the same commit, then remove the old row and any "under review" mention from CREDITS.md.
 5. Re-grade gently: heavy sepia plus saturate turned the clouds brown. Use a light warm grade and put contrast in the headline scrim, not in the footage.
+6. Search Commons with plain nouns plus `filetype:video` (the search is literal: "ink" finds clips, "ink diffusion" finds none), then read `LicenseShortName` from the API (`prop=imageinfo&iiprop=url|size|extmetadata`). CC BY-SA is not on the allow-list, so skip it at this step. Open the file page wikitext (`action=raw`) and check the review template: `{{VimeoReview}}` or `{{YouTube CC-BY}}` must have passed, and `{{PD-USGov-NASA}}` covers NASA footage.
+7. Download the original once with `requests`, a named User-Agent and a few seconds between files, then cut locally. Remote `ffmpeg -ss` seeks against upload.wikimedia.org came back as 4XX errors (rate limit) after a few requests.
+8. When the right subject comes in the wrong colour, recolour it instead of settling for an off-concept clip. One baked grade, no CSS filter on top:
+   - Black-and-white footage (ink in water): use a duotone LUT, `format=gray,format=rgb24,lutrgb=r='C+(P-C)*pow(clip((val-26)/82,0,1),1.25)':g=...:b=...`. Separate the channels with `:`, not `,`, and set the white point from the measured background level.
+   - Colour footage (the NASA green water ball, made strawberry red): use a hue-selective grade in numpy/OpenCV with a soft spatial mask (dilate, close, blur). ffmpeg `huesaturation colors=` posterised the near-neutral background into bands.
+   Both used on lab/carmine and lab/rise, Oct 31 2026.
 
 ## Sources
 

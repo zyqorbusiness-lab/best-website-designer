@@ -473,6 +473,15 @@ Review of the first 3D pizza found three things a still screenshot hides and a s
 - **Plain extruded shapes read as plastic.** The oven mouth was a smooth orange `ExtrudeGeometry`. A 15-line shader (voussoirs by angle above the spring line, staggered courses below, hashed colour per brick, mortar lines with smoothstep) made it read as fired brick without any new geometry or texture download.
 - **QA habit that caught all of this:** record 7 s of the real scroll at 30 fps (virtual clock), then look at a 4 fps contact sheet of the whole run, not the stills. Two of these four bugs were invisible in every screenshot and obvious in the sheet.
 
+## Adding a 3D section to a footage (video-flow) page
+
+Lab carmine and rise, Oct 31 2026, done to meet the "every upgrade is real 3D" rule:
+
+- Put one sticky 3D section straight after the film track: `section{height:380vh}` with a sticky 100svh stage, and on phone the copy card pinned to the bottom with only the active step shown. Model the page's own product in code: an eight-sided lathe glass bottle with transmission, a lathe ink solid, an extruded nib with a breather hole, a TubeGeometry line revealed with `setDrawRange`; or a lathe can, a CanvasTexture label redrawn after `document.fonts.load`, instanced strawberry seeds and instanced bubbles.
+- Light glass and metal with `PMREMGenerator.fromScene(new RoomEnvironment())` from `vendor/three/addons/environments/`. Without an env map, transmission glass renders flat grey.
+- Call `init()` at the end of the module. `const root=…; if (root) init(root);` at the top throws "Cannot access 'clamp' before initialization" when `const` helpers are declared below it.
+- Pick the reduced-motion still progress and the poster progress together, so the no-WebGL poster (a headless render of the scene with the copy hidden) shows the same moment. Check close cameras on phone: a camera that frames well at 1440 often fills a 390 screen with one object.
+
 ## Sources
 
 - Sujon Hoque (Zyqor Studio): WhatsApp 27 Oct 2026 6:22 PM (real premium models, no code-made look), 27 Oct 2026 8:23 PM (phone same models and quality, compressed), 28 Oct 2026 9:42 AM (new websites use real models), 30 Oct 2026 ("PC me no compromise"), 15 Oct 2026 (no endless loops).
