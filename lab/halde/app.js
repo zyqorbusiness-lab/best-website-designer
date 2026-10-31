@@ -7,7 +7,9 @@ import { useHDRI } from '../../assets/hdri/hdri.js';
 const $ = (s, r = document) => r.querySelector(s);
 const heroHost = $('.hero-viewport');
 const studioHost = $('#studio-scene');
-const hosts = [heroHost, studioHost].filter(Boolean);
+const scanHost = $('#scan-scene');
+const scanSec = $('#scan');
+const hosts = [heroHost, scanHost, studioHost].filter(Boolean);
 /* R2: the phone build's hero is a still photo; mount a live 3D host over it (the photo stays as the loading poster) */
 let heroLive = null;
 if (isM && !heroHost) {
@@ -26,6 +28,7 @@ const SH = true; /* soft key shadow on both builds (phone uses a 1024 map) */
 /* ---------- renderer: one fixed transparent canvas, scissored into host rects ---------- */
 const canvas = document.createElement('canvas');
 canvas.id = 'gl'; canvas.setAttribute('aria-hidden', 'true');
+canvas.dataset.nogl = 'self'; /* R3: no WebGL -> each host shows its own still (no full-viewport poster on the fixed canvas) */
 document.body.append(canvas);
 /* R2: own renderer so the phone gets the same antialiasing and DPR (capped at 2) as desktop */
 const renderer = glRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
@@ -146,7 +149,6 @@ function buildOptics(front) {
   for (let i = 0; i < ix.count; i++) b.expandByPoint(vv.fromBufferAttribute(pa, ix.getX(i)).applyMatrix4(front.matrixWorld));
   const c = b.getCenter(new THREE.Vector3()), sz = b.getSize(new THREE.Vector3());
   const R = Math.max(sz.x, sz.y) / 2, zf = b.min.z;
-  console.log('dbg optics R', R.toFixed(4), 'zf', zf.toFixed(4), 'zmax', b.max.z.toFixed(4), 'c', c.x.toFixed(4), c.y.toFixed(4));
   const deep = new THREE.Group(), near = new THREE.Group();
   const z0 = b.max.z - 0.0065; /* just behind the front element's rim */
   deep.position.set(c.x, c.y, z0); near.position.set(c.x, c.y, z0);
@@ -268,6 +270,39 @@ const SHOT = (location.search.match(/[?&]shot=(\w+)/) || [])[1];
 if (SHOT === 'close') VIEWS.hero = { yaw: -0.22, el: 0.12, dist: 2.3, tx: 0.1, ty: 0.41, tz: 0.8, fov: 26, off: 0 };
 if (SHOT === 'top') VIEWS.hero = { yaw: 0.5, el: 0.75, dist: 2.6, tx: -0.25, ty: 0.85, tz: 0.1, fov: 26, off: 0 };
 VIEWS.heroM = SHOT ? VIEWS.hero : { ...VIEWS.hero, off: 0, dist: 6.6, ty: 0.34, tz: 0.5 };
+/* R3 scroll scan: three camera beats flown by scroll (body 3/4 -> lens close-up with the front element sliding out -> dials from above -> rear 3/4) */
+const SCAN_K = [
+  { p: 0.04, yaw: -0.95, el: 0.34, dist: 6.6, tx: 0.05, ty: 0.34, tz: 0.42, fov: 26, off: 0.2 },
+  { p: 0.40, yaw: -0.2, el: 0.13, dist: 3.5, tx: 0.1, ty: 0.41, tz: 0.75, fov: 26, off: 0.22 },
+  { p: 0.72, yaw: 0.52, el: 0.8, dist: 4.3, tx: -0.12, ty: 0.78, tz: 0.12, fov: 26, off: 0.27 },
+  { p: 1.00, yaw: 2.45, el: 0.3, dist: 6.4, tx: 0.0, ty: 0.36, tz: 0.3, fov: 26, off: 0.2 },
+];
+const sm = (x) => x * x * (3 - 2 * x);
+const scanV = { ...SCAN_K[0] };
+function scanView(p) {
+  let i = 0; while (i < SCAN_K.length - 2 && p > SCAN_K[i + 1].p) i++;
+  const a = SCAN_K[i], b = SCAN_K[i + 1];
+  const f = sm(Math.min(1, Math.max(0, (p - a.p) / (b.p - a.p))));
+  for (const k of ['yaw', 'el', 'dist', 'tx', 'ty', 'tz', 'fov', 'off']) scanV[k] = a[k] + (b[k] - a[k]) * f;
+  return scanV;
+}
+const beats = scanSec ? [...scanSec.querySelectorAll('.scan-beats li')] : [];
+let scanP = reduced ? 0.4 : 0, scanPT = scanP, beatOn = -1;
+function readScan() {
+  if (!scanSec || reduced) return;
+  const r = scanSec.getBoundingClientRect(), span = Math.max(1, r.height - innerHeight);
+  scanPT = Math.min(1, Math.max(0, -r.top / span));
+  const b = scanPT < 0.24 ? 0 : scanPT < 0.58 ? 1 : 2;
+  if (b !== beatOn) { beatOn = b; beats.forEach((li, j) => li.classList.toggle('on', j === b)); }
+  scanSec.style.setProperty('--sp', scanPT.toFixed(4));
+}
+if (reduced) beats.forEach((li) => li.classList.add('on'));
+addEventListener('scroll', readScan, { passive: true }); readScan();
+if (renderer.isStub) {
+  const sf = scanSec && scanSec.querySelector('.scan-fallback'); if (sf) sf.hidden = false;
+  const hf = $('.scene-fallback'); if (hf) hf.hidden = false;
+  if (studioHost) studioHost.style.cssText += ';background:url(poster.webp) center/contain no-repeat';
+}
 const tmp = new THREE.Vector3();
 function setView(v, rect, yawExtra) {
   cam.fov = v.fov; cam.aspect = rect.width / rect.height;
@@ -315,6 +350,7 @@ function frame() {
   st.t += dt;
   const k = reduced ? 60 : 4.5;
   st.explode = damp(st.explode, st.explodeT, k * 0.8, dt);
+  scanP = reduced ? scanPT : damp(scanP, scanPT, 6, dt);
   st.silver = damp(st.silver, st.silverT, k, dt);
   st.dusk = damp(st.dusk, st.duskT, k * 0.7, dt);
   if (!reduced) { st.dragV *= Math.pow(0.04, dt); st.dragYaw += st.dragV * 0.0; }
@@ -324,11 +360,12 @@ function frame() {
     for (const host of hosts) {
       const r = host.getBoundingClientRect();
       if (r.bottom < 0 || r.top > H || r.width < 2) continue;
-      const isStudio = host === studioHost;
-      const v = isStudio ? VIEWS.studio : (host === heroLive ? VIEWS.heroM : VIEWS.hero);
-      const idle = reduced ? 0 : (isStudio ? 0 : Math.sin(st.t * 0.35) * 0.16 + st.ptrX * 0.25);
+      const isStudio = host === studioHost, isScan = host === scanHost;
+      const v = isScan ? scanView(scanP) : isStudio ? VIEWS.studio : (host === heroLive ? VIEWS.heroM : VIEWS.hero);
+      const idle = reduced ? 0 : (isStudio ? 0 : isScan ? st.ptrX * 0.06 : Math.sin(st.t * 0.35) * 0.16 + st.ptrX * 0.25);
       setView(v, r, isStudio ? st.dragYaw + (reduced ? 0 : st.ptrX * 0.08) : idle);
-      const e = isStudio ? st.explode : 0, du = isStudio ? st.dusk : 0;
+      const lensBump = isScan ? Math.max(0, 1 - Math.abs(scanP - 0.42) / 0.17) : 0;
+      const e = isStudio ? st.explode : lensBump, du = isStudio ? st.dusk : 0;
       applyExplode(e);
       scene.environmentIntensity = 0.9 - du * 0.45;
       key.intensity = 2.1 - du * 1.4; key.color.setRGB(1, 0.945 - du * 0.12, 0.875 - du * 0.1);
@@ -346,7 +383,7 @@ function frame() {
 }
 
 /* lazy: start when the page is idle; render loop pauses itself when the tab is hidden (rAF) */
-const start = () => build().catch((e) => { const fb = $('.scene-fallback'); if (fb) fb.hidden = false; console.warn('HALDE model failed to load', e && e.message); });
+const start = () => renderer.isStub ? null : build().catch((e) => { const fb = $('.scene-fallback'); if (fb) fb.hidden = false; const sf = $('.scan-fallback'); if (sf) sf.hidden = false; console.warn('HALDE model failed to load', e && e.message); });
 if (isM && studioHost && 'IntersectionObserver' in window) {
   const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { io.disconnect(); start(); } }, { rootMargin: '900px 0px' });
   hosts.forEach((h) => io.observe(h)); /* R2: hero on phone runs the same live model too */
