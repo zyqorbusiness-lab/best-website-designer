@@ -113,6 +113,35 @@ rebuilt every element from licensed photos.
 8. **Credit while you build.** v2 needed CC BY 2.0 added to the gate's allow-list and v3 needed two public-domain kinds;
    doing it in the same commit kept `tools/credits-check.mjs` green the whole day.
 
+## v4 (Oct 31 2026, evening): the same pizza as a real 3D site
+
+Sujon's rule from this day on: every upgrade is a real WebGL site, not photos on a 2D canvas. v4 kept every photo
+from v3 and turned them into surfaces on code-built geometry (three.js r170, no downloaded model):
+
+- **Pizza.** `pizza3d.js`: a lathe crust whose profile is UV-mapped to the real crust ring of the base photo, a cheese
+  disc displaced in the vertex shader (shreds -> pooled -> blistered, uniforms `uMelt`, `uBake`, `uHeat`), and every
+  topping an `InstancedMesh` (puck, slice, ring, leaf) textured with the cut-outs. Toppings drop in with a short
+  squash; placement checks spacing against *all* kinds (`(sizeA + sizeB) * 0.42`), not only its own, or pepperoni
+  stacks on tomato and reads as "bitten".
+- **Oven.** `oven3d.js`: an instanced brick dome with a mouth arch, an emissive inner shell, shader flames and ember
+  points. The scroll camera follows the peel in; on phone the portrait framing pull (`fit()`, up to 2.4x distance)
+  must be capped inside the dome (`view(..., kcap)` easing 2.4 -> 1.25) or the camera ends inside the brick wall and
+  the last part of the scene is a flat terracotta screen. Caught only by watching a phone recording to the end.
+- **Builder.** Drag or tap chips; a raycast on the pizza places the topping where it lands. Phone: the panel sits
+  under the pizza (`padding-top: 44svh`, panel `max-height: 56svh` with its own scroll) so the pizza never hides
+  behind the controls.
+- **Fallbacks.** The no-WebGL path needs `img.poster` inside `[data-stage]` (that is what `qa-library.mjs` looks for)
+  and an `is-fallback` class; CC BY credits are checked against `.zk-foot`, so a credit file whose `author` reads
+  "Name from City" fails the match: keep `author` to the name.
+- **Same engine, second brand.** The Domino's concept reused `pizza3d.js` with a box (hinged lid, kraft canvas
+  texture) and a paper-map street for the tracker; one canvas moves between the hero, builder and tracker slots.
+
+**Recording WebGL for reels and proof videos.** A real-time capture of a SwiftShader canvas drops frames. Instead,
+`addInitScript` replaces `performance.now`, `Date.now`, `requestAnimationFrame` and (after load) `setTimeout` /
+`setInterval` with a virtual clock, and the recorder steps it 1/30 s per frame before each screenshot. Every frame is
+exact, taps land at exact page times (so the reel's SFX stay in sync), and CSS animations are slowed with CDP
+`Animation.setPlaybackRate` to roughly match.
+
 ## Credits for the image in this file
 
 Both images are made from screenshots of our own P041 pages (Zyqor Studio, MIT). Photos visible in it:
