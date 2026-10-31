@@ -1,5 +1,5 @@
 /* Ember & Oak - Zyqor Lab concept 04.
-   Paper-tear reveal (dark roast layer tears open), travelling 3D cup (real CC BY models: cup + saucer and scanned beans, see model.js),
+   Paper-tear reveal (caramel roast-paper layer tears open), travelling real photo cup (CC0 photo) and scanned 3D beans (CC BY, see model.js),
    outline giant type, roast-level control that recolours the coffee, the beans and the page. */
 import { THREE, Q, isM, reduced, coarse, makeRenderer, studioEnv, reveals, smooth, clamp, lerp } from '../_kit/kit.js';
 import { modeSwitch } from './mode.js';
@@ -290,11 +290,45 @@ function cupFrame(t, p, mx, my) {
   S.r.render(S.sc, S.cam);
 }
 
+
+/* ------------------------------------------------------------------ travelling photo cup (Oct 31)
+   A real top-down espresso (CC0 photo, cut out) travels between the same .cup-a anchors the 3D cup used:
+   it arcs between sections, spins a full turn like a saucer slid across a counter, and the roast level
+   warms or deepens the coffee through a light colour grade. */
+const PC = $('.pcup'), PCI = PC ? PC.querySelector('img') : null;
+const PRY = { hero: -8, origin: 14, roast: -4, brew: 22, order: 6 };
+function photoCup(t, p, mx, my) {
+  if (!PC) return;
+  const vc = H * 0.5;
+  const A = anchors.map((a) => { const b = a.el.getBoundingClientRect(); return { a, x: b.left + b.width / 2, y: b.top + b.height / 2, h: b.height, w: b.width }; });
+  let i = 0; while (i < A.length - 1 && A[i + 1].y <= vc) i++;
+  let k = 0;
+  if (A[0].y > vc) k = 0; else if (i < A.length - 1) k = clamp((vc - A[i].y) / (A[i + 1].y - A[i].y));
+  const a0 = A[i], a1 = A[Math.min(i + 1, A.length - 1)], e = eio(k);
+  const dia = (o) => Math.min(o.h * 0.86, o.w * 0.9, isM ? W * 0.74 : 560) * o.a.s;
+  const x = lerp(a0.x, a1.x, e), y = lerp(a0.y, a1.y, e) - Math.sin(e * Math.PI) * H * 0.06;
+  const d = lerp(dia(a0), dia(a1), e);
+  const rev = reduced ? 1 : ss(0.3, 0.95, p);
+  const yy = y + (1 - eo(rev)) * H * 0.9;
+  const spin = reduced ? 0 : e * 360 * (k > 0 && k < 1 ? 1 : 0);
+  const rot = lerp(PRY[a0.a.key] || 0, PRY[a1.a.key] || 0, e) + spin + (reduced ? 0 : Math.sin(t * 0.45) * 3 + mx * 6) + (1 - rev) * -24;
+  const lift = Math.sin(e * Math.PI) * (i === 0 && k === 0 ? 0 : 1);
+  PC.style.width = PC.style.height = d.toFixed(1) + 'px';
+  PC.style.transform = `translate3d(${(x - d / 2).toFixed(1)}px,${(yy - d / 2).toFixed(1)}px,0) scale(${(1 + lift * 0.06).toFixed(3)})`;
+  if (PCI) PCI.style.transform = `rotate(${rot.toFixed(2)}deg)`;
+  PC.style.setProperty('--lift', lift.toFixed(3));
+  if (PCI) {
+    const v = roast.v; // 0 light .. 2 dark: a gentle grade, the photo stays a photo
+    const br = v < 1 ? lerp(1.1, 1, v) : lerp(1, 0.84, v - 1), sa = v < 1 ? lerp(0.92, 1.04, v) : lerp(1.04, 1.12, v - 1), se = v < 1 ? lerp(0.14, 0, v) : 0;
+    PCI.style.filter = `brightness(${br.toFixed(3)}) saturate(${sa.toFixed(3)}) sepia(${se.toFixed(3)})`;
+  }
+}
+
 /* ------------------------------------------------------------------ roast control */
 const roast = { v: 1, target: 1, idx: 1 };
 /* roast is also the page mode: Light = airy latte, Medium = house cream, Dark = espresso night */
 const FX = { stir: 0, puff: 0 };
-const THEME = ['r-light', '', 'r-dark'], THEME_BG = ['#FAF3E8', '#F2E6D3', '#22140D'];
+const THEME = ['r-light', '', 'r-dark'], THEME_BG = ['#FAF3E8', '#F2E6D3', '#6B3E2E'];
 let themeIdx = 1, themeBusy = false, themePending = -1;
 function setTheme(i, vt = true) {
   if (i === themeIdx) return;
@@ -347,7 +381,7 @@ let lastAcc = -1;
 function roastFrame(dt) {
   roast.v = reduced ? roast.target : lerp(roast.v, roast.target, 1 - Math.exp(-dt * 5));
   const v = roast.v;
-  if (READY) {
+  if (READY && S.coffee) {
     mixRoast('coffee', v, S.coffee.uniforms.uA.value); mixRoast('crema', v, S.coffee.uniforms.uB.value);
     mixRoast('bean', v, S.bmat.color);
     S.bmat.clearcoat = 0.1 + 0.26 * v; S.bmat.clearcoatRoughness = 0.42 - 0.1 * v; S.bmat.roughness = 0.64 - 0.08 * v;
@@ -464,7 +498,7 @@ function frame(now) {
   const mx = reduced ? 0 : ptr.mx, my = reduced ? 0 : ptr.my;
   if (READY && !tearDone) B.frame(T, p, mx, my);
   roastFrame(dt);
-  if (READY) cupFrame(T, p, mx, my);
+  photoCup(T, p, mx, my);
   if (!reduced) {
     const b = origin.getBoundingClientRect(); const k = (H - b.top) / (H + b.height);
     oL1.style.transform = `translateX(${(-k * 32 + 6)}vw)`; oL2.style.transform = `translateX(${(k * 32 - 38)}vw)`;
@@ -474,7 +508,7 @@ function frame(now) {
 function onResize() {
   const w = innerWidth, h = innerHeight;
   if (isM && w === lastW && Math.abs(h - H) < 140) return; // phone URL bar: ignore
-  W = w; H = h; lastW = w; tearPaths(); if (READY) { B.size(); S.size(); }
+  W = w; H = h; lastW = w; tearPaths(); if (READY) { B.size(); } if (S.size) S.size();
 }
 
 /* poster first: the page, its copy and the poster images paint straight away; the real 3D loads after first paint.
@@ -492,7 +526,7 @@ else {
   de.classList.add('gl-wait');
   const bar = $('.ep-load i');
   const start = () => loadEmber((f) => { if (bar) bar.style.transform = `scaleX(${f})`; }).then((m) => {
-    REAL = m; initBeans(); initCups(); READY = true;
+    REAL = m; initBeans(); READY = true; // Oct 31: the cup is now a real photo (see photoCup), so the 3D cup scene is not built
     if (reduced) B.frame(0, 0, 0, 0);
     if (EPB) EPB.style.opacity = '';
     de.classList.remove('gl-wait'); de.classList.add('gl-on');
