@@ -29,3 +29,21 @@ body{background:var(--c1)}
 .st-list dt{color:var(--c3)}.st-list dd{margin:0}
 
 .st-in{display:grid;gap:var(--s4)}.st-head{display:grid;gap:var(--s3)}
+
+/* Oct 31 2026 fix: the knife is in the first screen (phone). Same palette and type as desktop. */
+:root{--f-display:"Fraunces",Georgia,serif;--f-body:"Inter Tight",system-ui,sans-serif}
+.edge{height:520svh}
+.hero-copy{position:absolute;z-index:3;left:var(--gutter);right:var(--gutter);top:calc(env(safe-area-inset-top) + 136px);display:grid;gap:12px;color:var(--c1);opacity:var(--ho,1);transform:translateY(calc((1 - var(--ho,1)) * -24px));pointer-events:none}
+.hero-copy .tag{color:var(--c3)}
+.hero-copy .title{color:var(--c1);font-size:clamp(3.4rem,17vw,5rem);font-weight:700;letter-spacing:-.035em}
+.hero-copy .title .amp{color:var(--c3)}
+.hero-copy .lead{color:rgba(244,241,234,.84);font-size:1.02rem}
+.hero-copy .scroll-cue{display:none}
+.chap .body{color:rgba(244,241,234,.82)}
+.use-in{display:grid;gap:var(--s4)}
+.use-photo{margin:0;position:relative;border-radius:18px;overflow:hidden;aspect-ratio:1/1}
+.use-photo img{width:100%;height:100%;object-fit:cover}
+.use-photo figcaption{position:absolute;right:10px;bottom:8px;font-size:.5625rem;color:#F4F1EA;text-shadow:0 1px 3px rgba(30,24,16,.7)}
+.use-copy{display:grid;gap:var(--s3)}
+.use-copy .serif,.st-head .serif,.pn-head .serif{color:var(--walnut)}
+.tag{color:var(--walnut)}

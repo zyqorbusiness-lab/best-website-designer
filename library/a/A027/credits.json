@@ -15,6 +15,19 @@
       ]
     },
     {
+      "what": "Photo (in use)",
+      "title": "Oignon tout juste émincé sur une planche de découpe",
+      "author": "Benoît Prieur",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Oignon_tout_juste_%C3%A9minc%C3%A9_sur_une_planche_de_d%C3%A9coupe.jpg",
+      "licence": "CC0 1.0",
+      "note": "Photo by Benoît Prieur, Wikimedia Commons, CC0 1.0 (courtesy credit). Resized and cropped; the maker's mark on the blade softened so no real brand shows.",
+      "files": [
+        "img/board-knife.webp",
+        "img/board-knife-m.webp"
+      ]
+    },
+    {
       "what": "Poster and thumbnail",
       "title": "Cut & Grain Knives poster (WebGL fallback still) and thumbnail",
       "author": "Zyqor Studio",
@@ -36,8 +49,8 @@
     },
     {
       "what": "Type",
-      "title": "Bricolage Grotesque, Manrope",
-      "author": "Mathieu Triay, Mikhail Sharanda",
+      "title": "Fraunces, Inter Tight",
+      "author": "Undercase Type, Phaedra Charles, Flavia Zimbardi (Fraunces); Rasmus Andersson (Inter Tight)",
       "source": "Google Fonts",
       "url": "https://fonts.google.com",
       "licence": "SIL Open Font License 1.1"
