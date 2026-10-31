@@ -3,42 +3,6 @@
   "id": "N010",
   "items": [
     {
-      "what": "3D model",
-      "title": "Lemon",
-      "author": "Kuutti Siitonen",
-      "source": "Poly Haven",
-      "url": "https://polyhaven.com/a/lemon",
-      "licence": "CC0 1.0",
-      "note": "Lemon by Kuutti Siitonen, Poly Haven (CC0 1.0). 2K glTF re-encoded (meshopt, WebP 1024/768 px), 225 KB. Same file on phone and desktop. models/lemon.glb",
-      "files": [
-        "models/lemon.glb"
-      ]
-    },
-    {
-      "what": "3D model",
-      "title": "Food Lime 01",
-      "author": "Oliver Harries",
-      "source": "Poly Haven",
-      "url": "https://polyhaven.com/a/food_lime_01",
-      "licence": "CC0 1.0",
-      "note": "Food Lime 01 by Oliver Harries, Poly Haven (CC0 1.0). 2K glTF re-encoded (meshopt, WebP 1024/768 px), 232 KB. Same file on phone and desktop. models/lime.glb",
-      "files": [
-        "models/lime.glb"
-      ]
-    },
-    {
-      "what": "3D model",
-      "title": "Mandarin",
-      "author": "yaro.pro",
-      "source": "Sketchfab",
-      "url": "https://sketchfab.com/3d-models/mandarin-a03df271d4ed445ca5e80e24ba72f6e7",
-      "licence": "CC BY 4.0",
-      "files": [
-        "models/mandarin.glb"
-      ],
-      "note": "This work is based on \"Mandarin\" by yaro.pro (sketchfab.com/yaro.pro), licensed under CC BY 4.0 (creativecommons.org/licenses/by/4.0). Photogrammetry scan, full geometry; textures resized to 1024/768 px WebP, meshopt: 299 KB. Same file on phone and desktop."
-    },
-    {
       "what": "Poster and thumbnail",
       "title": "Rootline Citrus poster (WebGL fallback still) and thumbnail",
       "author": "Zyqor Studio",
@@ -50,28 +14,53 @@
       "note": "Screenshots of this page's own real-time render of the CC0 lime scan. Not AI imagery."
     },
     {
-      "what": "HDRI",
-      "title": "Studio Small 09",
-      "author": "Sergej Majboroda",
-      "source": "Poly Haven",
-      "url": "https://polyhaven.com/a/studio_small_09",
-      "licence": "CC0 1.0",
-      "note": "Shared kit lighting (site/assets/hdri)."
+      "what": "Photo",
+      "title": "Lemon-Whole-Split.jpg",
+      "author": "Evan-Amos",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Lemon-Whole-Split.jpg",
+      "licence": "Public domain (author release)",
+      "note": "PD-self. Background removed, resized: the lemon in the hero (whole + cut) and the cut half in The fruit section.",
+      "files": [
+        "img/lemon-hero.webp",
+        "img/lemon-cut.webp"
+      ]
     },
     {
-      "what": "Cross-section drawing",
-      "title": "Citrus cross-section",
-      "author": "Zyqor Studio",
-      "licence": "MIT",
-      "note": "Drawn in code (SVG) in app.js; segment counts are typical for each fruit."
+      "what": "Photo",
+      "title": "Lime-Whole-Split.jpg",
+      "author": "Evan-Amos",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Lime-Whole-Split.jpg",
+      "licence": "CC0 1.0",
+      "note": "Background removed, resized: the lime in the hero (whole + cut) and the cut half in The fruit section.",
+      "files": [
+        "img/lime-hero.webp",
+        "img/lime-cut.webp"
+      ]
+    },
+    {
+      "what": "Photo",
+      "title": "Citrus unshiu 20101118 a.jpg + Citrus unshiu 20101118 c.jpg",
+      "author": "Batholith",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Citrus_unshiu_20101118_a.jpg",
+      "licence": "Public domain (author release)",
+      "note": "PD-self, both files (cut half: https://commons.wikimedia.org/wiki/File:Citrus_unshiu_20101118_c.jpg). Backgrounds removed, placed side by side for the hero; the cut half alone in The fruit section.",
+      "files": [
+        "img/mandarin-hero.webp",
+        "img/mandarin-cut.webp"
+      ]
     },
     {
       "what": "Type",
-      "title": "Bricolage Grotesque, Manrope",
-      "author": "Mathieu Triay, Mikhail Sharanda",
+      "title": "Bricolage Grotesque, DM Sans",
+      "author": "Mathieu Triay; Colophon Foundry / Google",
       "source": "Google Fonts",
       "url": "https://fonts.google.com",
-      "licence": "SIL Open Font License 1.1"
+      "licence": "SIL OFL 1.1",
+      "note": "Self-hosted shared files in site/assets/font.",
+      "files": []
     },
     {
       "what": "Type",
@@ -91,10 +80,10 @@
     },
     {
       "what": "Engine",
-      "title": "three.js r170, GSAP, Lenis",
+      "title": "GSAP, Lenis (kit reveals)",
       "author": "their authors",
       "source": "npm",
-      "url": "https://threejs.org",
+      "url": "https://gsap.com",
       "licence": "MIT / GSAP Standard Licence"
     }
   ]

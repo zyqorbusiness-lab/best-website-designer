@@ -1,8 +1,8 @@
 /* N010 Rootline Citrus - shared rules + desktop layout. m.html loads this file plus m.css (phone layout only). */
 
 /* Pattern A: --c1 is one role with three fruit states; registered so every tint derived from it morphs with the flood */
-@property --c1{syntax:'<color>';inherits:true;initial-value:#E2E8C5}
-:root{--floor:#E2E8C5;--accent-deep:color-mix(in oklab,var(--c3) 78%,var(--c2));transition:--c1 700ms var(--ease-out)}
+@property --c1{syntax:'<color>';inherits:true;initial-value:#F1F8E4}
+:root{--floor:#F1F8E4;--accent-deep:color-mix(in oklab,var(--c3) 78%,var(--c2));transition:--c1 700ms var(--ease-out)}
 html{background:var(--floor)}
 body{background:transparent}
 .flood{position:fixed;inset:0;z-index:-1;pointer-events:none;clip-path:circle(0 at var(--fx,60%) var(--fy,40%));visibility:hidden}
@@ -61,9 +61,9 @@ body{background:transparent}
 @media (hover:hover) and (pointer:fine){.sw:hover{background:var(--paper-2);color:var(--ink)}}
 .sw[aria-checked=true]{background:var(--ink);color:var(--c1)}
 .sw-dot{width:14px;height:14px;border-radius:50%;border:1.5px solid currentColor;position:relative}
-.sw[data-fruit=lemon] .sw-dot{background:#EEE7B4}
-.sw[data-fruit=lime] .sw-dot{background:#E2E8C5}
-.sw[data-fruit=mandarin] .sw-dot{background:#F0DCC2}
+.sw[data-fruit=lemon] .sw-dot{background:#FFE45C}
+.sw[data-fruit=lime] .sw-dot{background:#8BC34A}
+.sw[data-fruit=mandarin] .sw-dot{background:#FF8A3D}
 .sw[aria-checked=true] .sw-dot{box-shadow:0 0 0 3px var(--ink),0 0 0 4.5px var(--c3)}
 .sw-k{font-size:.62rem;color:inherit;opacity:.6;border:1px solid currentColor;border-radius:5px;padding:1px 5px;font-family:var(--f-mono)}
 
@@ -116,8 +116,8 @@ body{background:transparent}
 .ledger td:last-child{text-align:right;padding-right:0}
 .ledger .price{font:700 1.25rem/1 var(--f-display);color:var(--ink)}
 .r-dot{display:inline-block;width:12px;height:12px;border-radius:50%;border:1.5px solid var(--ink);margin-right:12px;vertical-align:.05em}
-.r-dot[data-k=lemon]{background:#EEE7B4}.r-dot[data-k=lime]{background:#E2E8C5}.r-dot[data-k=mandarin]{background:#F0DCC2}
-.r-dot[data-k=mix]{background:conic-gradient(#EEE7B4 0 33%,#E2E8C5 0 66%,#F0DCC2 0)}
+.r-dot[data-k=lemon]{background:#FFE45C}.r-dot[data-k=lime]{background:#8BC34A}.r-dot[data-k=mandarin]{background:#FF8A3D}
+.r-dot[data-k=mix]{background:conic-gradient(#FFE45C 0 33%,#8BC34A 0 66%,#FF8A3D 0)}
 @media (hover:hover) and (pointer:fine){.ledger tbody tr:hover{background:color-mix(in oklab,var(--c1) 92%,var(--c2))}}
 
 /* reserve: the dark chapter (c2), paper type */
@@ -169,3 +169,26 @@ body{background:transparent}
 .attrib a{color:var(--ink-2)}
 
 @media (prefers-reduced-motion:reduce){:root{transition:none}.flood{display:none}[data-f],.title em{transition:none}}
+
+/* ---------- Oct 31 refresh: real fruit photography, per-fruit palette (lemon #FFE45C/#FFF8DC, lime #8BC34A/#F1F8E4, mandarin #FF8A3D/#FFF1E6, ink #1F3B2C), Bricolage Grotesque + DM Sans ---------- */
+@property --c3{syntax:'<color>';inherits:true;initial-value:#8BC34A}
+:root{--floor:#F1F8E4;transition:--c1 700ms var(--ease-out),--c3 700ms var(--ease-out)}
+.btn--accent{--b-bg:var(--c2);--b-fg:var(--c1)}
+@media (hover:hover) and (pointer:fine){.btn--accent:hover{--b-bg:color-mix(in oklab,var(--c2) 86%,var(--c3))}}
+.btn:focus-visible,.sw:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline-color:var(--c2)}
+.title .dot{color:color-mix(in oklab,var(--c3) 80%,var(--c2))}
+.photo-stage{display:grid;place-items:center;isolation:isolate;overflow:visible}
+.photo-stage .plate{position:absolute;left:50%;top:50%;width:min(74%,600px);aspect-ratio:1;translate:-50% -50%;border-radius:50%;background:color-mix(in oklab,var(--c3) 46%,var(--c1));z-index:0;transition:background-color 700ms var(--ease-out)}
+.photo-stage .ph{position:absolute;left:50%;top:50%;width:min(100%,940px);height:auto;translate:-50% -50%;z-index:1;opacity:0;transform:translate3d(calc(var(--d,1) * 18%),0,0) rotate(calc(var(--d,1) * 8deg));transition:opacity 420ms var(--ease-out),transform 760ms var(--ease-out);filter:drop-shadow(0 28px 26px color-mix(in oklab,var(--c2) 26%,transparent));pointer-events:none}
+.photo-stage .ph.is-pre{transition:none}
+.photo-stage .ph.is-on{opacity:1;transform:none}
+.photo-stage .ph.is-out{opacity:0;transform:translate3d(calc(var(--d,1) * -18%),0,0) rotate(calc(var(--d,1) * -8deg))}
+.ph-credit{position:absolute;right:var(--gutter);bottom:var(--s3);margin:0;z-index:2;color:var(--ink-3);font-size:.62rem}
+.cut-fig{justify-items:center}
+.cut-disc{position:relative;width:min(100%,480px);aspect-ratio:1;border-radius:50%;background:color-mix(in oklab,var(--c3) 40%,var(--c1));display:grid;place-items:center;transition:background-color 700ms var(--ease-out)}
+.cut{width:84%;height:auto;max-height:84%;object-fit:contain;filter:drop-shadow(0 22px 22px color-mix(in oklab,var(--c2) 24%,transparent));transition:opacity 220ms var(--ease-out),transform 420ms var(--ease-out)}
+.cut.is-swap{opacity:0;transform:scale(.94) rotate(-6deg)}
+.sw[aria-checked=true] .sw-dot{box-shadow:0 0 0 3px var(--ink),0 0 0 4.5px var(--c3)}
+@media (prefers-reduced-motion:reduce){.photo-stage .ph,.photo-stage .ph.is-out{transform:none;transition:opacity 200ms linear}.cut,.cut.is-swap{transform:none}}
+
+.hero{overflow-x:clip}

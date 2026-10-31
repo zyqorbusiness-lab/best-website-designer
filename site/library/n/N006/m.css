@@ -9,7 +9,7 @@ body{font-family:var(--f-flex);font-variation-settings:"opsz" 14}
 .col-type{min-width:0}
 
 .hero{display:flex;flex-direction:column;padding-block:var(--s5) var(--s6);gap:var(--s4)}
-.field{font-family:var(--f-flex);font-size:clamp(3.6rem,18.5vw,6rem);line-height:.88;letter-spacing:-.02em;font-weight:150;font-variation-settings:"wght" 150,"wdth" 100,"GRAD" 0,"opsz" 144;
+.field{font-family:var(--f-flex);font-size:clamp(3rem,15.4vw,5.2rem);line-height:1.02;letter-spacing:-.015em;font-weight:150;font-variation-settings:"wght" 150,"wdth" 100,"GRAD" 0,"opsz" 144;
   color:var(--ink);user-select:none;-webkit-user-select:none;touch-action:pan-y;margin-left:-.04em}
 .field .ln{display:block;white-space:nowrap}
 .field .ch{display:inline-block;font-variation-settings:"wght" 150,"wdth" 100,"GRAD" 0,"opsz" 144}
@@ -140,3 +140,9 @@ input[aria-invalid=true]{border-color:#9c3b2e;box-shadow:0 0 0 3px color-mix(in 
 .cut{gap:6px}
 .cut button{flex:1;min-width:0;min-height:var(--tap)}
 .cut-k{width:100%}
+
+/* Oct 31 fix: phone hero lines no longer collide (descenders of one line met the ascenders of the next at 390/360);
+   swollen letters stay inside the column. Palette: limestone #EEE9E0, quarry slate #3D4A55, chisel orange #E0662F. */
+.field .ln{padding-block:.02em}
+.field{overflow-wrap:normal;max-width:100%}
+.hero .tag{color:var(--ink-2)}

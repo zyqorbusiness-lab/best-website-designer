@@ -1,6 +1,6 @@
 /* N008 Northpine Cabins - phone build (m.html). Same app.js, same models and textures; a layout for a 390px thumb. */
 /* ---------- tokens for this page ---------- */
-:root{--f-display:"Fraunces",Georgia,serif;--f-serif:"Fraunces",Georgia,serif;--f-body:"Manrope",system-ui,sans-serif;
+:root{--f-display:"Fraunces",Georgia,serif;--f-serif:"Fraunces",Georgia,serif;--f-body:"Inter Tight",system-ui,sans-serif;
   --c3-ink:color-mix(in srgb,var(--c3) 64%,var(--c2));          /* accent for fills under light text: 4.8:1 with --c1 */
   --winter:var(--c2);--winter-2:color-mix(in oklab,var(--c2) 86%,var(--c1));--x:50%}
 .serif{font-weight:300;font-style:normal;letter-spacing:-.02em}
@@ -11,8 +11,8 @@
 /* ---------- hero: one clearing, two seasons ---------- */
 .hero{position:relative;overflow:hidden;isolation:isolate;touch-action:pan-y;user-select:none;-webkit-user-select:none}
 .season-bg,.season-bg>div,.hero-stage,.ink{position:absolute;inset:0}
-.bg-summer{background:radial-gradient(70% 60% at 62% 58%,color-mix(in oklab,var(--c1) 70%,#fff) 0%,var(--c1) 55%,color-mix(in oklab,var(--c1) 90%,var(--c3)) 100%)}
-.bg-winter{background:radial-gradient(70% 60% at 40% 60%,color-mix(in oklab,var(--c2) 80%,var(--c1)) 0%,var(--c2) 60%,color-mix(in oklab,var(--c2) 88%,#000) 100%);
+.bg-summer{background:radial-gradient(70% 60% at 50% 60%,color-mix(in oklab,var(--c1) 70%,#fff) 0%,color-mix(in oklab,var(--c1) 93%,var(--c4)) 50%,color-mix(in oklab,var(--c1) 84%,var(--c4)) 100%)}
+.bg-winter{background:radial-gradient(70% 60% at 40% 60%,color-mix(in oklab,var(--c2) 80%,var(--c1)) 0%,var(--c2) 60%,color-mix(in oklab,var(--c2) 90%,var(--c4)) 100%);
   clip-path:inset(0 calc(100% - var(--x)) 0 0)}
 .hero-stage{z-index:1}
 .hero-stage .stage-load{color:var(--ink-2)}
@@ -199,3 +199,25 @@
 /* errors reserve their line so the form never jumps between a press and its release */
 .err{display:flex!important;visibility:hidden;min-height:1.3em}
 .is-bad .err{visibility:visible}
+
+/* ---------- Oct 31 fix: seasons as four photo cards ---------- */
+.scards{list-style:none;margin:0 calc(-1*var(--gutter));padding:0 var(--gutter) 6px;display:grid;grid-auto-flow:column;grid-auto-columns:78%;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--gutter);overscroll-behavior-x:contain;scrollbar-width:none}
+.scards::-webkit-scrollbar{display:none}
+.scard{scroll-snap-align:start;display:grid;grid-template-rows:auto 1fr;background:var(--paper-2,#fff);border-radius:var(--radius);overflow:hidden;box-shadow:0 0 0 1px var(--line)}
+.scard-ph{position:relative;margin:0;aspect-ratio:4/5;overflow:hidden;background:var(--winter-2)}
+.scard-ph img{width:100%;height:100%;object-fit:cover;display:block}
+.scard-ph figcaption{position:absolute;left:10px;bottom:10px;display:inline-flex;gap:8px;align-items:center;padding:7px 11px;border-radius:var(--pill);background:color-mix(in oklab,var(--c1) 90%,transparent);color:var(--c2);font-size:11px}
+.scard-ph figcaption span{color:var(--c3-ink)}
+.scard-dl{margin:0;display:grid}
+.scard-dl>div{padding:14px 16px;display:grid;gap:6px;align-content:start}
+.scard-dl .sw-w{min-height:6.6rem}
+.scard-dl dd{margin:0;font-size:.92rem;line-height:1.45}
+.scard-dl .sw-w{background:var(--winter);color:var(--c1)}
+.scard-dl .sw-w dd{color:var(--on-dark-2,color-mix(in oklab,var(--c1) 82%,transparent))}
+.scard-dl .sw-s dt{color:var(--c4)}
+.scard-dl .sw-s dd{color:var(--ink-2)}
+.same-band{margin:var(--s4) 0 0;display:grid;gap:8px;padding:var(--s4);border-radius:var(--radius);background:color-mix(in oklab,var(--c4) 12%,var(--c1));color:var(--c2)}
+.same-band .mono{color:var(--c4)}
+.same-band b{font:400 1.3rem/1.25 var(--f-serif);letter-spacing:-.02em}
+.scards-hint{margin-top:10px;color:var(--ink-3);font-size:12px}
+.ink--winter .ink-head .tag{color:color-mix(in oklab,var(--c1) 78%,var(--c3))}
