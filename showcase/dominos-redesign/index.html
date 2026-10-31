@@ -61,7 +61,7 @@
   <div class="sec-head">
     <p class="kicker">01 · The builder</p>
     <h2 id="h2b">Build it in three taps.</h2>
-    <p class="sub">Pick a size, pick a pizza, drop on extras. Every choice is a real photo, so you see what you get.</p>
+    <p class="sub">Pick a size, pick a pizza, drop on extras. The pizza is real-time 3D, surfaced with real food photos, so you see what you get.</p>
   </div>
   <div class="builder">
     <div class="stage-wrap"><div class="stage" id="stage" aria-live="polite">
@@ -110,7 +110,7 @@
     <div class="sec-head light">
       <p class="kicker">02 · The tracker</p>
       <h2 id="h2t">Read it from across the room.</h2>
-      <p class="sub">Four big steps, one moving line and a photo of what is happening right now. No tiny status text to squint at.</p>
+      <p class="sub">Four big steps, one moving line and a live 3D view of what is happening right now. No tiny status text to squint at.</p>
     </div>
     <div class="tracker">
       <figure class="track-media">
@@ -152,13 +152,15 @@
 <footer class="foot">
   <div class="foot-in">
     <p class="disc"><span class="tag tag-dark">CONCEPT</span> Unofficial redesign concept — not affiliated with Domino's. The Domino's name and logo belong to their owner and appear here only as the subject of this design study. Nothing on this page takes real orders.</p>
-    <p class="creds">Photos from Wikimedia Commons: supreme pizza hero by Scott Bauer, USDA ARS (public domain); pepperoni pizza, pizza oven and both boxed pizzas by Dale Cruse (CC BY 2.0); Domino's cheese pizza by The Pizza Review (CC BY 2.0); veggie pizza by Waran R Samay (CC BY 4.0); loaded supreme pizza by Jonathan Cutrer (CC BY 2.0); chef with dough by Enricomariacosta.75 (CC BY-SA 4.0). Fonts: Bricolage Grotesque and DM Sans (SIL OFL). Full list in CREDITS.md.</p>
+    <p class="creds">Photos from Wikimedia Commons: supreme pizza hero by Scott Bauer, USDA ARS (public domain); pepperoni pizza, pizza oven and both boxed pizzas by Dale Cruse (CC BY 2.0); Domino's cheese pizza by The Pizza Review (CC BY 2.0); veggie pizza by Waran R Samay (CC BY 4.0); loaded supreme pizza by Jonathan Cutrer (CC BY 2.0); chef with dough by Enricomariacosta.75 (CC BY-SA 4.0). 3D: the pizza, toppings, box and street are built in code by Zyqor Studio (three.js, MIT), surfaced with real photos: crust, sauce and basil from "Neapolitan pizza at Trappica" by Bex Walton (CC BY 2.0) and "Pizza marinara (Napoli)" by Ruthven (CC0); melted cheese from "Mellow Mushroom cheese pizza" by Baron Maddock (CC BY 4.0); mozzarella from "Mozzarella" by Dezidor (CC BY 3.0); pepper strips from "Roasted Bell Peppers" by Ryan Snyder (CC BY 2.0); pepperoni and mushrooms by Beno&icirc;t Prieur (CC0); tomatoes by Raju C Reddy (CC0); red onion by Sebastian Wallroth (public domain); board "Kitchen Wood" by Rob Tuytel, Poly Haven (CC0). Fonts: Bricolage Grotesque and DM Sans (SIL OFL). Full list in CREDITS.md.</p>
     <p class="by">Concept design and code by <a href="/">Zyqor Studio</a> · <a href="/">Back to the portfolio</a></p>
   </div>
 </footer>
 
 <div class="dock" id="dock"><a class="btn btn-wide" href="#build">Build a pizza <span aria-hidden="true">→</span></a></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script type="importmap">{"imports":{"three":"../../vendor/three/three.module.min.js","three/addons/":"../../vendor/three/addons/"}}</script>
 <script src="dz.js" defer></script>
+<script type="module" src="dz3d.js"></script>
 </body>
 </html>
