@@ -93,7 +93,7 @@ else {
       let pos, look, kc = 0;
       if (f < 0.48) { const t = sstep(0, 0.48, f); pos = mix3([1.0, 2.4, 2.5], [0.0, 1.25, OVEN_Z + 5.4], t); look = mix3([0, 0.05, 0], [0, 0.45, OVEN_Z], t); }
       else { /* end wide (Oct 31 polish): a slow crane up and back so the whole brick mouth, the dome and the fire read, pizza glowing inside */
-        const t = sstep(0.48, 0.86, f); pos = mix3([0.0, 1.25, OVEN_Z + 5.4], [0.7, 1.9, OVEN_Z + 6.2], t); look = mix3([0, 0.45, OVEN_Z], [0, 0.55, OVEN_Z + 0.3], t); }
+        const t = sstep(0.48, 0.86, f); pos = mix3([0.0, 1.25, OVEN_Z + 5.4], [0.9, 2.3, OVEN_Z + 7.6], t); look = mix3([0, 0.45, OVEN_Z], [0, phone ? 0.6 : 0.95, OVEN_Z + 0.3], t); kc = lerp(2.4, 1.8, t); }
       view(pos, look, [0.18, -0.2], instant, kc);
       $('#clock').textContent = String(Math.round(sstep(0.5, 0.93, f) * 90)).padStart(2, '0');
       $('#f-line').textContent = f < 0.5 ? 'Oak burns at the back. The peel slides in and the stone does the rest.' : f < 0.93 ? 'The rim blisters, the cheese pools, the pepperoni cups.' : 'Out in ninety seconds. Now build your own.';
