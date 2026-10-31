@@ -3,10 +3,11 @@
  "author": "USFWS Mountain-Prairie (U.S. Fish and Wildlife Service)",
  "author_url": "https://www.flickr.com/people/usfwsmtnprairie/",
  "source_url": "https://commons.wikimedia.org/wiki/File:Foggy_Sunrise_over_Seedskadee_National_Wildlife_Refuge_(21355263813).jpg",
- "licence": "Public domain",
+ "licence": "Public domain (USFWS)",
  "licence_url": "https://creativecommons.org/publicdomain/mark/1.0/",
  "attribution": "\"Foggy Sunrise over Seedskadee National Wildlife Refuge\" by USFWS Mountain-Prairie, public domain (work of the U.S. federal government), via Wikimedia Commons",
  "changes": "cropped to 16:10, shadows lifted (gamma 0.85), saturation -12%, resized to 2048x1280, WebP q84",
  "downloaded": "2026-10-31",
- "file": "valley.webp"
+ "file": "valley.webp",
+ "licence_note": "Work of the U.S. Fish and Wildlife Service, a US federal agency: public domain under 17 U.S.C. 105 (same basis as the NASA/USDA entries)."
 }
