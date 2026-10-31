@@ -1,70 +1,73 @@
 {
  "id": "P041",
- "date": "2026-10-30T21:09:10.634Z",
+ "date": "2026-10-31T12:53:15.892Z",
  "kit": 2,
  "verdict": "PASS",
  "tier": "premium",
  "budgetKB": 6144,
- "ownKB": 3010,
- "sharedKB": 80,
- "phoneOwnKB": 1931,
- "phoneSharedKB": 80,
- "weightKB": 3090,
- "phoneWeightKB": 2011,
+ "ownKB": 2147,
+ "sharedKB": 763,
+ "phoneOwnKB": 2131,
+ "phoneSharedKB": 763,
+ "weightKB": 2911,
+ "phoneWeightKB": 2894,
  "sameAssets": true,
  "assetDiff": {
   "desktopOnly": [],
   "phoneOnly": []
  },
- "assets3d": [],
- "sameEffects": null,
+ "assets3d": [
+  "img/base-baked.webp",
+  "img/base-cheese.webp",
+  "img/base-raw.webp",
+  "img/basil-raw-1.webp",
+  "img/basil-raw-3.webp",
+  "img/basil-raw-4.webp",
+  "img/board.webp",
+  "img/dough.webp",
+  "img/mush-raw-1.webp",
+  "img/mush-raw-2.webp",
+  "img/onion-raw-1.webp",
+  "img/onion-raw-2.webp",
+  "img/pep-raw-1.webp",
+  "img/pep-raw-3.webp",
+  "img/pepper-raw-1.webp",
+  "img/pepper-raw-2.webp"
+ ],
+ "sameEffects": true,
  "effectDiff": [],
+ "effects": {
+  "toneMapping": "ACESFilmic",
+  "exposure": 1.05,
+  "shadows": true,
+  "antialias": true,
+  "passes": [],
+  "dprCap": [
+   null,
+   null
+  ]
+ },
  "nowebgl": true,
  "credit": {
   "pass": true,
-  "files": 75,
+  "files": 26,
   "missing": [],
   "incomplete": [],
   "ccby": [
-   "/library/p/P041/img/base-baked-1024.webp",
    "/library/p/P041/img/base-baked.webp",
-   "/library/p/P041/img/base-cheese-1024.webp",
    "/library/p/P041/img/base-cheese.webp",
-   "/library/p/P041/img/base-raw-1024.webp",
    "/library/p/P041/img/base-raw.webp",
    "/library/p/P041/img/basil-raw-1.webp",
-   "/library/p/P041/img/basil-raw-2.webp",
    "/library/p/P041/img/basil-raw-3.webp",
    "/library/p/P041/img/basil-raw-4.webp",
-   "/library/p/P041/img/mozz-baked-1.webp",
-   "/library/p/P041/img/mozz-baked-2.webp",
-   "/library/p/P041/img/mozz-baked-3.webp",
-   "/library/p/P041/img/mozz-baked-4.webp",
-   "/library/p/P041/img/mozz-baked-5.webp",
-   "/library/p/P041/img/mozz-baked-6.webp",
+   "/library/p/P041/img/hero-pizza-m.webp",
    "/library/p/P041/img/mozz-raw-1.webp",
-   "/library/p/P041/img/mozz-raw-2.webp",
-   "/library/p/P041/img/mozz-raw-3.webp",
-   "/library/p/P041/img/mozz-raw-4.webp",
-   "/library/p/P041/img/mozz-raw-5.webp",
-   "/library/p/P041/img/mozz-raw-6.webp",
-   "/library/p/P041/img/mush-baked-3.webp",
-   "/library/p/P041/img/mush-raw-3.webp",
-   "/library/p/P041/img/pepper-baked-1.webp",
-   "/library/p/P041/img/pepper-baked-2.webp",
-   "/library/p/P041/img/pepper-baked-3.webp",
-   "/library/p/P041/img/pepper-baked-4.webp",
-   "/library/p/P041/img/pepper-baked-5.webp",
+   "/library/p/P041/img/oven-fire-m.webp",
    "/library/p/P041/img/pepper-raw-1.webp",
-   "/library/p/P041/img/pepper-raw-2.webp",
-   "/library/p/P041/img/pepper-raw-3.webp",
-   "/library/p/P041/img/pepper-raw-4.webp",
-   "/library/p/P041/img/pepper-raw-5.webp"
+   "/library/p/P041/img/pepper-raw-2.webp"
   ],
   "ccbyNotVisible": [],
-  "unlisted": [
-   "/library/p/P041/img/board-900.webp"
-  ]
+  "unlisted": []
  },
  "runs": {
   "d1440": {
@@ -73,9 +76,9 @@
    "warnings": 0,
    "failed": 0,
    "overflow": 0,
-   "webgl": null,
-   "ownKB": 3010,
-   "sharedKB": 80
+   "webgl": true,
+   "ownKB": 2147,
+   "sharedKB": 763
   },
   "m390": {
    "pass": true,
@@ -83,9 +86,9 @@
    "warnings": 0,
    "failed": 0,
    "overflow": 0,
-   "webgl": null,
-   "ownKB": 1931,
-   "sharedKB": 80
+   "webgl": true,
+   "ownKB": 2131,
+   "sharedKB": 763
   },
   "m360": {
    "pass": true,
@@ -93,9 +96,9 @@
    "warnings": 0,
    "failed": 0,
    "overflow": 0,
-   "webgl": null,
-   "ownKB": 1955,
-   "sharedKB": 80
+   "webgl": true,
+   "ownKB": 2147,
+   "sharedKB": 763
   },
   "rd1440": {
    "pass": true,
@@ -103,9 +106,9 @@
    "warnings": 0,
    "failed": 0,
    "overflow": 0,
-   "webgl": null,
-   "ownKB": 3010,
-   "sharedKB": 80
+   "webgl": true,
+   "ownKB": 2147,
+   "sharedKB": 763
   },
   "rm390": {
    "pass": true,
@@ -113,9 +116,9 @@
    "warnings": 0,
    "failed": 0,
    "overflow": 0,
-   "webgl": null,
-   "ownKB": 1955,
-   "sharedKB": 80
+   "webgl": true,
+   "ownKB": 2147,
+   "sharedKB": 763
   },
   "nd1440": {
    "pass": true,
@@ -123,10 +126,10 @@
    "warnings": 0,
    "failed": 0,
    "overflow": 0,
-   "webgl": null,
+   "webgl": false,
    "poster": true,
-   "ownKB": 3010,
-   "sharedKB": 80
+   "ownKB": 1090,
+   "sharedKB": 763
   },
   "nm390": {
    "pass": true,
@@ -134,10 +137,10 @@
    "warnings": 0,
    "failed": 0,
    "overflow": 0,
-   "webgl": null,
+   "webgl": false,
    "poster": true,
-   "ownKB": 1955,
-   "sharedKB": 80
+   "ownKB": 1090,
+   "sharedKB": 763
   }
  }
 }

@@ -7,19 +7,22 @@
 <script>document.documentElement.classList.add('js');(function(){var q=location.search;if(/[?&]desktop=1/.test(q))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height,phone=w<=860||(c&&h>w);if(phone)location.replace('m.html'+q+location.hash);})();</script>
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
 <title>Hotcoal Kitchen &middot; Concept P041 &middot; Zyqor Library</title>
-<meta name="description" content="Hotcoal Kitchen is a fictional wood-fired pizzeria: a web concept by Zyqor Studio. Watch the dough stretch, build your pizza from real ingredient photos, scroll to fire it in ninety seconds, then order pickup.">
+<meta name="description" content="Hotcoal Kitchen is a fictional wood-fired pizzeria: a real-time 3D web concept by Zyqor Studio. Watch a 3D pizza come together, fly into a brick oven as it bakes, drop your own toppings on, then order pickup.">
 <meta name="theme-color" content="#F4EDE1">
 <meta property="og:title" content="Hotcoal Kitchen &middot; Concept P041 &middot; Zyqor Library">
 <meta property="og:description" content="A wood-fired pizzeria whose website is the order. A fictional-brand concept by Zyqor Studio.">
 <meta property="og:image" content="https://zyqor-portfolio.vercel.app/library/p/P041/thumb.webp">
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
-<link rel="preload" href="img/hero-pizza.webp" as="image" imagesrcset="img/hero-pizza-m.webp 1000w, img/hero-pizza.webp 1100w" imagesizes="(max-width: 860px) 92vw, 48vw" fetchpriority="high">
+<link rel="preload" href="img/base-baked.webp" as="image" crossorigin fetchpriority="high">
+<link rel="modulepreload" href="../../../vendor/three/three.module.min.js">
 <link rel="preload" href="../../../assets/font/fraunces-axes.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../../../assets/font/intertight-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../../_kit/chrome.css">
 <link rel="stylesheet" href="../../../assets/glass/liquid-glass.css">
 <link rel="stylesheet" href="../../_kit/premium.css">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="s3d.css">
+<script type="importmap">{"imports":{"three":"../../../vendor/three/three.module.min.js","three/addons/":"../../../vendor/three/addons/"}}</script>
 
 <link rel="canonical" href="https://zyqor-portfolio.vercel.app/library/p/P041/">
 <link rel="alternate" media="only screen and (max-width: 640px)" href="https://zyqor-portfolio.vercel.app/library/p/P041/m.html">
@@ -28,121 +31,95 @@
 <meta name="twitter:card" content="summary_large_image">
 </head>
 <body data-id="P041" data-tier="premium" data-name="Hotcoal Kitchen" data-assets="Real photographs" data-pm-off="band heads">
-<a class="skip" href="#build">Skip to the pizza builder</a>
+<a class="skip" href="#make">Skip to the pizza builder</a>
+<div class="stage" data-stage aria-hidden="true">
+  <canvas class="stage-c"></canvas>
+  <img class="stage-poster poster" src="poster.webp" alt="" width="1440" height="900">
+</div>
 <header class="nav" id="top">
   <a class="logo" href="#top" aria-label="Hotcoal Kitchen, back to top">HOTCOAL<span class="badge mono">Concept</span></a>
-  <nav class="nav-links" aria-label="Sections"><a href="#build">Build</a><a href="#dough">Dough</a><a href="#fire">Fire</a><a href="#menu">Menu</a><a href="#visit">Visit</a></nav>
+  <nav class="nav-links" aria-label="Sections"><a href="#story">Dough</a><a href="#fire">Oven</a><a href="#make">Build</a><a href="#real">Real fire</a><a href="#visit">Visit</a></nav>
   <a class="btn btn--accent nav-cta" href="#visit" data-press>Order pickup</a>
-  
 </header>
-<main id="main">
-  <section class="hero" id="hero" aria-labelledby="h-h">
-    <div class="hero-copy">
-      <p class="tag mono" data-rv>Wood-fired pizza &middot; fictional brand</p>
-      <h1 id="h-h" class="d-xl" data-rv><span>Fired hot.</span> <span>Ready in <em>90</em> seconds.</span></h1>
-      <p class="lead" data-rv>Dough that rests for two days, an oak fire at the back of a clay dome, and a pizza you build yourself right here.</p>
-      <div class="btns" data-rv><a class="btn btn--accent" href="#build" data-press>Build yours</a><a class="btn btn--line" href="#menu" data-press>See the menu</a></div>
-      <p class="hours-chip mono" id="hours-chip" data-rv><i aria-hidden="true"></i><span>Open today 11 to 10</span><small>sample hours</small></p>
-    </div>
-    <figure class="hero-photo">
-      <div class="hp-card" id="hp-card"><img class="hp-img" src="img/hero-pizza.webp" srcset="img/hero-pizza-m.webp 1000w, img/hero-pizza.webp 1100w" sizes="(max-width: 860px) 92vw, 48vw" alt="A hot wood-fired pizza just out of the oven on a floured board: bubbling mozzarella, salami and pepperoni" width="1100" height="1203" fetchpriority="high" decoding="async"><span class="hp-heat" aria-hidden="true"></span></div>
-      <p class="hp-chip mono" aria-hidden="true"><i></i>Straight from the oven</p>
-      <p class="hp-stamp" aria-hidden="true"><b>90</b><span class="mono">seconds<br>at 485&deg;C</span></p>
-      <figcaption class="hp-cred mono">Photo: Nenad Stojkovic, CC BY 2.0</figcaption>
-      <div class="sparks"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-    </figure>
-  </section>
-  <section class="build" id="build" aria-labelledby="b-h">
-    <div class="b-head">
-      <p class="tag mono" data-rv>01 &middot; Build yours</p>
-      <h2 id="b-h" class="d-l" data-rv>Drop it where <em>you want it.</em></h2>
-      <p class="body" data-rv>Drag a bowl onto the base, or click it. Pieces land where you drop them. Keyboard: focus a bowl, move the ring with the arrow keys, press Enter.</p>
-    </div>
-    <div class="builder">
-      <ul class="tray" role="list" aria-label="Ingredients">
-<li><button class="bowl" type="button" data-type="mozzarella" aria-label="Add fior di latte, $2.50"><span class="dish" aria-hidden="true"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/mozz-raw-1.webp" alt="" width="64" height="64" decoding="async" draggable="false"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/mozz-raw-3.webp" alt="" width="64" height="64" decoding="async" draggable="false"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/mozz-raw-5.webp" alt="" width="64" height="64" decoding="async" draggable="false"></span><span class="b-name">Fior di latte</span><span class="b-price mono">+$2.50</span><span class="b-n mono" aria-hidden="true"></span></button></li>
-<li><button class="bowl" type="button" data-type="tomato" aria-label="Add cherry tomato, $2.00"><span class="dish" aria-hidden="true"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/tom-raw-1.webp" alt="" width="64" height="64" decoding="async" draggable="false"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/tom-raw-2.webp" alt="" width="64" height="64" decoding="async" draggable="false"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/tom-raw-1.webp" alt="" width="64" height="64" decoding="async" draggable="false"></span><span class="b-name">Cherry tomato</span><span class="b-price mono">+$2.00</span><span class="b-n mono" aria-hidden="true"></span></button></li>
-<li><button class="bowl" type="button" data-type="pepperoni" aria-label="Add pepperoni, $3.00"><span class="dish" aria-hidden="true"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/pep-raw-1.webp" alt="" width="64" height="64" decoding="async" draggable="false"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/pep-raw-2.webp" alt="" width="64" height="64" decoding="async" draggable="false"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/pep-raw-3.webp" alt="" width="64" height="64" decoding="async" draggable="false"></span><span class="b-name">Pepperoni</span><span class="b-price mono">+$3.00</span><span class="b-n mono" aria-hidden="true"></span></button></li>
-<li><button class="bowl" type="button" data-type="mushroom" aria-label="Add mushroom, $2.00"><span class="dish" aria-hidden="true"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/mush-raw-1.webp" alt="" width="64" height="64" decoding="async" draggable="false"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/mush-raw-2.webp" alt="" width="64" height="64" decoding="async" draggable="false"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/mush-raw-3.webp" alt="" width="64" height="64" decoding="async" draggable="false"></span><span class="b-name">Mushroom</span><span class="b-price mono">+$2.00</span><span class="b-n mono" aria-hidden="true"></span></button></li>
-<li><button class="bowl" type="button" data-type="olive" aria-label="Add black olive, $1.50"><span class="dish" aria-hidden="true"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/olive-raw-1.webp" alt="" width="64" height="64" decoding="async" draggable="false"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/olive-raw-2.webp" alt="" width="64" height="64" decoding="async" draggable="false"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/olive-raw-3.webp" alt="" width="64" height="64" decoding="async" draggable="false"></span><span class="b-name">Black olive</span><span class="b-price mono">+$1.50</span><span class="b-n mono" aria-hidden="true"></span></button></li>
-<li><button class="bowl" type="button" data-type="pepper" aria-label="Add roast pepper, $1.50"><span class="dish" aria-hidden="true"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/pepper-raw-1.webp" alt="" width="64" height="64" decoding="async" draggable="false"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/pepper-raw-2.webp" alt="" width="64" height="64" decoding="async" draggable="false"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/pepper-raw-4.webp" alt="" width="64" height="64" decoding="async" draggable="false"></span><span class="b-name">Roast pepper</span><span class="b-price mono">+$1.50</span><span class="b-n mono" aria-hidden="true"></span></button></li>
-<li><button class="bowl" type="button" data-type="onion" aria-label="Add red onion, $1.00"><span class="dish" aria-hidden="true"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/onion-raw-1.webp" alt="" width="64" height="64" decoding="async" draggable="false"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/onion-raw-2.webp" alt="" width="64" height="64" decoding="async" draggable="false"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/onion-raw-4.webp" alt="" width="64" height="64" decoding="async" draggable="false"></span><span class="b-name">Red onion</span><span class="b-price mono">+$1.00</span><span class="b-n mono" aria-hidden="true"></span></button></li>
-<li><button class="bowl" type="button" data-type="basil" aria-label="Add basil, $1.00"><span class="dish" aria-hidden="true"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/basil-raw-1.webp" alt="" width="64" height="64" decoding="async" draggable="false"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/basil-raw-3.webp" alt="" width="64" height="64" decoding="async" draggable="false"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/basil-raw-4.webp" alt="" width="64" height="64" decoding="async" draggable="false"></span><span class="b-name">Basil</span><span class="b-price mono">+$1.00</span><span class="b-n mono" aria-hidden="true"></span></button></li>
-      </ul>
-      <div class="board-wrap">
-        <div class="counter" aria-hidden="true"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/marble.webp" alt="" width="1400" height="1400" loading="lazy" decoding="async"></div>
-        <div class="board" id="board">
-          <img class="board-wood" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/board.webp" alt="" width="1400" height="1400" loading="lazy" decoding="async" draggable="false">
-          <canvas class="pie-cv" id="build-cv" role="img" aria-label="Your pizza: a marinara base"></canvas>
-          <span class="ring" id="ring" aria-hidden="true"></span>
-        </div>
-        <p class="b-flash mono" id="b-flash" aria-live="polite"></p>
-      </div>
-      <aside class="ticket" aria-labelledby="t-h">
-        <p class="mono t-k">Order ticket &middot; sample prices</p>
-        <h3 id="t-h" class="t-title">Your pizza</h3>
-        <ul class="t-lines" id="t-lines" role="list"><li class="t-line"><span>Marinara base</span><span class="mono">$9.00</span></li></ul>
-        <p class="t-empty" id="t-empty">Empty board. Add a topping, or fire it plain.</p>
-        <div class="t-total"><span>Total</span><b class="mono">$<span id="t-total">9.00</span></b></div>
-        <a class="btn btn--accent t-fire" href="#fire" id="t-fire" data-press>Fire it</a>
-        <button class="btn btn--line t-clear" type="button" id="t-clear" disabled>Clear the board</button>
-      </aside>
-    </div>
-  </section>
+<main>
+<section class="s3 hero3" id="hero" aria-labelledby="h-h">
+  <div class="panel hero3-copy">
+    <p class="tag mono">Wood-fired pizza &middot; fictional brand</p>
+    <h1 id="h-h" class="d-xl"><span>Fired hot.</span><span>Ready in <em>90 seconds.</em></span></h1>
+    <p class="lead">Dough that rests for two days, an oak fire at the back of a clay dome, and a pizza you build yourself, right here, in 3D.</p>
+    <div class="btns"><a class="btn btn--accent" href="#make" data-press>Build yours</a><a class="btn btn--line" href="#story" data-press>Watch it come together</a></div>
+    <p class="hint mono"><span class="dot"></span>Drag to turn the pizza &middot; open today 11 to 10, sample hours</p>
+  </div>
+</section>
 
-  <section class="dough" id="dough" aria-labelledby="d-h">
-    <div class="dg-in">
-      <figure class="dg-photo" data-rv>
-        <img src="img/oven-fire.webp" srcset="img/oven-fire-m.webp 900w, img/oven-fire.webp 1600w" sizes="(max-width: 860px) 92vw, 58vw" alt="A pizza on a wooden peel sliding into a white clay wood-fired oven, the oak fire glowing at the back" width="1600" height="1067" loading="lazy" decoding="async">
-        <figcaption class="mono">Photo: Jared Tarbell, CC BY 2.0</figcaption>
-      </figure>
-      <div class="dough-copy">
-        <p class="tag mono" data-rv>02 &middot; The dough</p>
-        <h2 id="d-h" class="d-l" data-rv>It starts as a ball <em>of dough.</em></h2>
-        <p class="body" data-rv>Every base is opened by hand on a floured bench, never rolled, so the rim keeps its air. Then it rides the peel into a clay dome with an oak fire at the back.</p>
-        <ol class="d-labels" role="list">
-          <li data-rv><svg viewBox="0 0 120 2" aria-hidden="true"><line x1="0" y1="1" x2="120" y2="1"/></svg><b class="mono">Flour, water, salt, yeast</b><span>Four things. Nothing else in it.</span></li>
-          <li data-rv><svg viewBox="0 0 120 2" aria-hidden="true"><line x1="0" y1="1" x2="120" y2="1"/></svg><b class="mono">48-hour rise</b><span>Two days cold, so it tears like bread.</span></li>
-          <li data-rv><svg viewBox="0 0 120 2" aria-hidden="true"><line x1="0" y1="1" x2="120" y2="1"/></svg><b class="mono">Stretched by hand, fired in oak</b><span>Opened from the middle out, then onto the peel.</span></li>
-        </ol>
-      </div>
-    </div>
-  </section>
-
-  <section class="pin fire" id="fire" aria-labelledby="f-h">
-    <div class="sticky" id="fire-stage">
-      <div class="f-copy">
-        <p class="tag mono">03 &middot; The oven</p>
-        <h2 id="f-h" class="d-l">Ninety seconds <em>at 485&deg;C.</em></h2>
-        <p class="body f-note" id="f-note">This is the pizza you built.</p>
-      </div>
-      <div class="oven">
-        <svg class="arch" viewBox="0 0 600 420" aria-hidden="true"><path class="arch-fill" d="M40 420 V230 A260 210 0 0 1 560 230 V420 Z"/><path class="arch-line" d="M40 420 V230 A260 210 0 0 1 560 230 V420"/><path class="arch-floor" d="M10 420 H590"/></svg>
-        <div class="f-pie" id="f-pie"><img class="board-wood" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/board-900.webp" alt="" width="900" height="900" loading="lazy" decoding="async"><canvas class="pie-cv" id="fire-cv" role="img" aria-label="Your pizza in the oven"></canvas></div>
-        <svg class="steam" viewBox="0 0 200 160" aria-hidden="true"><path d="M50 150 C30 120 70 100 50 70 S60 30 45 10"/><path d="M100 150 C80 115 120 95 100 60 S112 25 98 4"/><path d="M150 150 C130 120 170 100 150 70 S160 30 146 10"/></svg>
-      </div>
-      <div class="clock" aria-live="off"><span class="clock-n mono" id="clock">00</span><span class="clock-u mono">s</span><p class="mono clock-k" id="clock-k">Into the oven</p></div>
-      <a class="btn btn--accent f-order" id="f-order" href="#visit" data-press>Order this one</a>
-    </div>
-  </section>
-
-  <section class="menu" id="menu" aria-labelledby="mn-h">
-    <div class="mn-in">
-      <p class="tag mono" data-rv>04 &middot; The menu</p>
-      <h2 id="mn-h" class="d-l" data-rv>Six we make <em>every night.</em></h2>
-      <p class="body" data-rv>Sample menu and prices. Load any of them onto your board and change what you like.</p>
-      <ol class="m-list" role="list">
-<li class="m-row" data-rv><h3 class="m-name">Margherita</h3><p class="m-tops">Tomato, fior di latte, basil</p><p class="m-price mono">$14.50<small> sample</small></p><button class="btn btn--line m-load" type="button" data-load="mozzarella,tomato,basil" data-name="Margherita">Load it</button></li>
-<li class="m-row" data-rv><h3 class="m-name">Hotcoal Pepperoni</h3><p class="m-tops">Pepperoni, fior di latte, basil</p><p class="m-price mono">$15.50<small> sample</small></p><button class="btn btn--line m-load" type="button" data-load="mozzarella,pepperoni,basil" data-name="Hotcoal Pepperoni">Load it</button></li>
-<li class="m-row" data-rv><h3 class="m-name">Garden Fire</h3><p class="m-tops">Mushroom, roast pepper, red onion, black olive</p><p class="m-price mono">$15.00<small> sample</small></p><button class="btn btn--line m-load" type="button" data-load="mushroom,pepper,onion,olive" data-name="Garden Fire">Load it</button></li>
-<li class="m-row" data-rv><h3 class="m-name">The Forager</h3><p class="m-tops">Mushroom, fior di latte, basil</p><p class="m-price mono">$14.50<small> sample</small></p><button class="btn btn--line m-load" type="button" data-load="mozzarella,mushroom,basil" data-name="The Forager">Load it</button></li>
-<li class="m-row" data-rv><h3 class="m-name">Ember Spice</h3><p class="m-tops">Pepperoni, roast pepper, red onion</p><p class="m-price mono">$14.50<small> sample</small></p><button class="btn btn--line m-load" type="button" data-load="pepperoni,pepper,onion" data-name="Ember Spice">Load it</button></li>
-<li class="m-row" data-rv><h3 class="m-name">Marinara Plus</h3><p class="m-tops">Cherry tomato, black olive, red onion, basil</p><p class="m-price mono">$14.50<small> sample</small></p><button class="btn btn--line m-load" type="button" data-load="tomato,olive,onion,basil" data-name="Marinara Plus">Load it</button></li>
+<section class="s3 story" id="story" aria-labelledby="s-h">
+  <div class="pin3">
+    <div class="panel story-copy">
+      <p class="tag mono">01 &middot; The dough <span class="st-n" id="st-n">1 / 4</span></p>
+      <h2 id="s-h" class="sr-only">How a Hotcoal pizza comes together</h2>
+      <ol class="steps" id="steps">
+        <li class="on"><h3 class="d-l">A ball of dough, <em>two days cold.</em></h3><p class="body">Flour, water, salt, yeast. Four things, then a 48-hour rise so it tears like bread.</p></li>
+        <li><h3 class="d-l">Opened by hand. <em>Tomato</em> from the middle out.</h3><p class="body">Never rolled, so the rim keeps its air. One ladle of crushed tomato, spiralled out to a thumb from the edge.</p></li>
+        <li><h3 class="d-l">Fior di latte, <em>torn</em>, not grated.</h3><p class="body">Fresh mozzarella in rough pieces, so it melts into pools instead of a sheet.</p></li>
+        <li><h3 class="d-l">Then whatever <em>you</em> like on top.</h3><p class="body">Pepperoni that cups in the heat, cherry tomatoes, olives, and basil.</p></li>
       </ol>
+      <div class="bar" aria-hidden="true"><i id="st-bar"></i></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="visit" id="visit" aria-labelledby="v-h">
+<section class="s3 fire3" id="fire" aria-labelledby="f-h">
+  <div class="pin3">
+    <div class="panel fire-copy">
+      <p class="tag mono">02 &middot; The oven</p>
+      <h2 id="f-h" class="d-l">Into a clay dome at <em>485&deg;C.</em></h2>
+      <p class="body" id="f-line">Oak burns at the back. The peel slides in and the stone does the rest.</p>
+      <div class="clk"><b id="clock">00</b><span class="mono">seconds in the oven</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="s3 make" id="make" aria-labelledby="m-h">
+  <div class="panel make-copy">
+    <p class="tag mono">03 &middot; Build yours</p>
+    <h2 id="m-h" class="d-l">Drop it <em>where you want it.</em></h2>
+    <p class="body m-help">Drag an ingredient onto the pizza, or tap it. Pieces land where you drop them. Or start from one of ours.</p>
+    <div class="presets" role="group" aria-label="Start from a menu pizza"><button class="preset" type="button" data-load="mozzarella,tomato,basil" data-name="Margherita">Margherita</button>
+<button class="preset" type="button" data-load="mozzarella,pepperoni,basil" data-name="Hotcoal Pepperoni">Hotcoal Pepperoni</button>
+<button class="preset" type="button" data-load="mushroom,pepper,onion,olive" data-name="Garden Fire">Garden Fire</button>
+<button class="preset" type="button" data-load="mozzarella,mushroom,basil" data-name="The Forager">The Forager</button>
+<button class="preset" type="button" data-load="pepperoni,pepper,onion" data-name="Ember Spice">Ember Spice</button>
+<button class="preset" type="button" data-load="tomato,olive,onion,basil" data-name="Marinara Plus">Marinara Plus</button></div>
+    <ul class="chips3" role="list" aria-label="Ingredients"><li><button class="chip3" type="button" data-type="mozzarella" aria-label="Add fior di latte, $2.50 sample"><img src="img/mozz-raw-1.webp" alt="" width="48" height="48" loading="lazy"><span>Fior di latte</span><b>+$2.50</b></button></li>
+<li><button class="chip3" type="button" data-type="tomato" aria-label="Add cherry tomato, $2.00 sample"><img src="img/tom-raw-1.webp" alt="" width="48" height="48" loading="lazy"><span>Cherry tomato</span><b>+$2.00</b></button></li>
+<li><button class="chip3" type="button" data-type="pepperoni" aria-label="Add pepperoni, $3.00 sample"><img src="img/pep-raw-1.webp" alt="" width="48" height="48" loading="lazy"><span>Pepperoni</span><b>+$3.00</b></button></li>
+<li><button class="chip3" type="button" data-type="mushroom" aria-label="Add mushroom, $2.00 sample"><img src="img/mush-raw-1.webp" alt="" width="48" height="48" loading="lazy"><span>Mushroom</span><b>+$2.00</b></button></li>
+<li><button class="chip3" type="button" data-type="olive" aria-label="Add black olive, $1.50 sample"><img src="img/olive-raw-1.webp" alt="" width="48" height="48" loading="lazy"><span>Black olive</span><b>+$1.50</b></button></li>
+<li><button class="chip3" type="button" data-type="pepper" aria-label="Add roast pepper, $1.50 sample"><img src="img/pepper-raw-1.webp" alt="" width="48" height="48" loading="lazy"><span>Roast pepper</span><b>+$1.50</b></button></li>
+<li><button class="chip3" type="button" data-type="onion" aria-label="Add red onion, $1.00 sample"><img src="img/onion-raw-1.webp" alt="" width="48" height="48" loading="lazy"><span>Red onion</span><b>+$1.00</b></button></li>
+<li><button class="chip3" type="button" data-type="basil" aria-label="Add basil, $1.00 sample"><img src="img/basil-raw-1.webp" alt="" width="48" height="48" loading="lazy"><span>Basil</span><b>+$1.00</b></button></li></ul>
+    <div class="ticket3" aria-live="polite">
+      <div class="t-row"><span>Marinara base</span><span class="mono">$9.00</span></div>
+      <p class="t-list" id="t-list">Nothing on top yet.</p>
+      <div class="t-tot"><span>Total <small class="mono">sample prices</small></span><b id="t-tot">$9.00</b></div>
+      <div class="t-btns"><button class="btn btn--accent" type="button" id="fire-it" data-press>Fire it</button><button class="btn btn--line" type="button" id="t-clear" disabled>Clear</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="real" id="real" aria-labelledby="r-h">
+  <div class="real-in">
+    <p class="tag mono">04 &middot; The real fire</p>
+    <h2 id="r-h" class="d-l">What the 3D is <em>made from.</em></h2>
+    <p class="body">Every surface on the pizza above is a real photograph: the crust, the sauce, the melted cheese and each topping, cut out and wrapped onto shapes we modelled. This is the kind of pizza, and the kind of oven, they come from.</p>
+    <div class="real-grid">
+      <figure><img src="img/hero-pizza.webp" srcset="img/hero-pizza-m.webp 1000w, img/hero-pizza.webp 1100w" sizes="(max-width: 860px) 92vw, 40vw" alt="A hot pepperoni and salami pizza with melted cheese, just out of the oven" width="1100" height="1203" loading="lazy"><figcaption class="mono">Photo: Nenad Stojkovic, CC BY 2.0</figcaption></figure>
+      <figure><img src="img/oven-fire.webp" srcset="img/oven-fire-m.webp 900w, img/oven-fire.webp 1600w" sizes="(max-width: 860px) 92vw, 40vw" alt="A pizza baking in a wood-fired oven with flames behind it" width="1600" height="1067" loading="lazy"><figcaption class="mono">Photo: Jared Tarbell, CC BY 2.0</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit" aria-labelledby="v-h">
     <div class="v-form">
       <p class="tag mono" data-rv>05 &middot; Pickup</p>
       <h2 id="v-h" class="d-l" data-rv>Pick it up <em>hot.</em></h2>
@@ -191,11 +168,11 @@
     <p class="foot-t">Hotcoal Kitchen is not a real restaurant. It is a concept site by Zyqor Studio: the menu, prices, hours, address and phone number are samples, and no order is ever sent.</p>
     <div class="foot-cta"><p class="d-m">Want a site like this?</p>
       <div class="btns"><a class="btn btn--flour" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=zyqorbusiness@gmail.com&amp;su=A%20site%20like%20Hotcoal%20Kitchen" target="_blank" rel="noopener" data-press>Email Zyqor Studio</a><a class="btn btn--line-l" href="https://wa.me/919547908593" target="_blank" rel="noopener" data-press>WhatsApp</a><button class="btn btn--line-l" type="button" id="open-credits">Credits</button></div></div>
-    <p class="foot-cred mono">Photos: hero pizza from "Homemade cheese pizza with pepperoni and salami" by Nenad Stojkovic, Wikimedia Commons, CC BY 2.0 (creativecommons.org/licenses/by/2.0); wood-fired oven from "Pizza baking in Wood-fired oven" by Jared Tarbell, Wikimedia Commons, CC BY 2.0. Builder: crust, melted mozzarella and basil from "Neapolitan pizza at Trappica" by Bex Walton, Wikimedia Commons, CC BY 2.0 (creativecommons.org/licenses/by/2.0); raw mozzarella from "Mozzarella" by Dezidor, Wikimedia Commons, CC BY 3.0 (creativecommons.org/licenses/by/3.0); melted cheese sheet from "Mellow Mushroom cheese pizza" by Baron Maddock, Wikimedia Commons, CC BY 4.0 (creativecommons.org/licenses/by/4.0); sliced mushrooms from "Sliced champignons" by frank wouters, Wikimedia Commons, CC BY 2.0; roasted pepper strips from "Roasted Bell Peppers" by Ryan Snyder, Wikimedia Commons, CC BY 2.0. CC0 / public domain: sauce "Pizza marinara (Napoli)" by Ruthven; pepperoni from "Luigis Pizza &amp; Pasta - Pepperoni pizza" and raw mushrooms from "Pizza veggie by Arthur" by Beno&icirc;t Prieur; cherry tomatoes by Raju C Reddy; black olives from "Supreme pizza" by Scott Bauer, USDA ARS; red onion from "Red onion rings" by Sebastian Wallroth; artichoke by Daderot. Board: "Kitchen Wood" by Rob Tuytel, Poly Haven (CC0); counter: "Marble 012", ambientCG (CC0); pizza slicer by Evan-Amos (public domain); chili flakes (CC0). The hero and oven photos are cropped only; the builder ingredients are cut out, re-lit and baked by Zyqor Studio. Fonts: Fraunces, Inter Tight, JetBrains Mono (SIL OFL 1.1).</p>
+    <p class="foot-cred mono">3D: the pizza, toppings, peel and brick oven are modelled in code by Zyqor Studio (three.js, MIT) and wrapped in real photographs. Photos: hot pizza from "Homemade cheese pizza with pepperoni and salami" by Nenad Stojkovic, Wikimedia Commons, CC BY 2.0 (creativecommons.org/licenses/by/2.0); wood-fired oven from "Pizza baking in Wood-fired oven" by Jared Tarbell, Wikimedia Commons, CC BY 2.0. Builder: crust, melted mozzarella and basil from "Neapolitan pizza at Trappica" by Bex Walton, Wikimedia Commons, CC BY 2.0 (creativecommons.org/licenses/by/2.0); raw mozzarella from "Mozzarella" by Dezidor, Wikimedia Commons, CC BY 3.0 (creativecommons.org/licenses/by/3.0); melted cheese sheet from "Mellow Mushroom cheese pizza" by Baron Maddock, Wikimedia Commons, CC BY 4.0 (creativecommons.org/licenses/by/4.0); sliced mushrooms from "Sliced champignons" by frank wouters, Wikimedia Commons, CC BY 2.0; roasted pepper strips from "Roasted Bell Peppers" by Ryan Snyder, Wikimedia Commons, CC BY 2.0. CC0 / public domain: sauce "Pizza marinara (Napoli)" by Ruthven; pepperoni from "Luigis Pizza &amp; Pasta - Pepperoni pizza" and raw mushrooms from "Pizza veggie by Arthur" by Beno&icirc;t Prieur; cherry tomatoes by Raju C Reddy; black olives from "Supreme pizza" by Scott Bauer, USDA ARS; red onion from "Red onion rings" by Sebastian Wallroth; artichoke by Daderot. Board: "Kitchen Wood" by Rob Tuytel, Poly Haven (CC0); counter: "Marble 012", ambientCG (CC0); pizza slicer by Evan-Amos (public domain); chili flakes (CC0). The pizza and oven photos are cropped only; the 3D ingredient surfaces are cut out of the photos above by Zyqor Studio. Fonts: Fraunces, Inter Tight, JetBrains Mono (SIL OFL 1.1).</p>
   </div>
 </footer>
 
 <script type="module" src="../../_kit/chrome.js"></script>
-<script type="module" src="app.js"></script>
+<script type="module" src="app3d.js"></script>
 </body>
 </html>

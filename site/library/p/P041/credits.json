@@ -3,6 +3,19 @@
  "id": "P041",
  "items": [
   {
+   "what": "3D (pizza, toppings, peel, brick oven, fire)",
+   "title": "Hotcoal 3D scene",
+   "author": "Zyqor Studio",
+   "source": "this page (pizza3d.js, oven3d.js)",
+   "url": "https://zyqor-portfolio.vercel.app/library/p/P041/",
+   "licence": "MIT",
+   "note": "Geometry and shaders written in three.js (MIT) by Zyqor Studio: lathe crust, live melted-cheese shader, 3D toppings, a peel and a brick-by-brick dome oven with shader flames. No downloaded 3D models; every food surface is one of the photographs below.",
+   "files": [
+    "pizza3d.js",
+    "oven3d.js"
+   ]
+  },
+  {
    "what": "Photo (hero: hot pizza out of the oven)",
    "title": "Homemade cheese pizza with pepperoni and salami. Mix pizza in the restaurant. (49134398781)",
    "author": "Nenad Stojkovic",
