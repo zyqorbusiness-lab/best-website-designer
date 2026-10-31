@@ -1,8 +1,8 @@
 /* Kilnfold case study - shared tokens + components (desktop d.css and phone m.css layer on top)
    Reuse: change the three colour tokens and the two font files; everything else derives from them. */
-@font-face{font-family:"Zodiak";src:url(../../assets/font/zodiak-var.woff2) format("woff2");font-weight:100 900;font-display:swap}
-@font-face{font-family:"Zodiak";src:url(../../assets/font/zodiak-400i.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
-@font-face{font-family:"General Sans";src:url(../../assets/font/generalsans-var.woff2) format("woff2");font-weight:200 700;font-display:swap}
+@font-face{font-family:"Fraunces";src:url(../../assets/font/fraunces-axes.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Fraunces";src:url(../../assets/font/fraunces-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Inter Tight";src:url(../../assets/font/intertight-normal.woff2) format("woff2");font-weight:200 700;font-display:swap}
 html{--bowl:#A9491F;--glaze:#EEE6D9}
 :root{
   --c1:#EEE6D9;   /* Bisque - ground (60) */
@@ -12,8 +12,8 @@ html{--bowl:#A9491F;--glaze:#EEE6D9}
   --c1c:color-mix(in srgb,var(--c1) 78%,var(--c2));
   --line:color-mix(in srgb,var(--c2) 18%,transparent);
   --mute:color-mix(in srgb,var(--c2) 66%,var(--c1));
-  --serif:"Zodiak",Georgia,"Times New Roman",serif;
-  --sans:"General Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Inter Tight",system-ui,-apple-system,"Segoe UI",sans-serif;
   --ease:cubic-bezier(.22,1,.36,1);
   --ease-io:cubic-bezier(.76,0,.24,1);
   --r:6px;

@@ -1,15 +1,13 @@
 {
- "title": "A pile of white dishes sitting on top of a table",
- "author": "Raymond Petrik",
- "author_url": "https://unsplash.com/@raymondpetrik",
- "source_url": "https://unsplash.com/photos/a-pile-of-white-dishes-sitting-on-top-of-a-table-525wpkeJSwg",
- "licence": "Unsplash License",
- "licence_url": "https://unsplash.com/license",
- "attribution": "\"A pile of white dishes sitting on top of a table\" by Raymond Petrik, Unsplash (https://unsplash.com/photos/a-pile-of-white-dishes-sitting-on-top-of-a-table-525wpkeJSwg), Unsplash License (credit optional)",
- "changes": "downloaded at 2400 px, exported to WebP (desktop hero 2000 / moodboard 1100 / product 900 px; phone 900/640/600 px)",
- "downloaded": "2026-10-27",
- "verified": true,
- "verified_note": "photographer name re-read from the photo page in a real browser on 2026-10-28 (matches the Oct 27 record)",
+ "title": "Bernard Leach Pottery Studio St.Ives (3983801685)",
+ "author": "THOR",
+ "author_url": "https://commons.wikimedia.org/wiki/File:Bernard_Leach_Pottery_Studio_St.Ives_(3983801685).jpg",
+ "source_url": "https://commons.wikimedia.org/wiki/File:Bernard_Leach_Pottery_Studio_St.Ives_(3983801685).jpg",
+ "licence": "CC BY 2.0",
+ "licence_url": "https://creativecommons.org/licenses/by/2.0",
+ "attribution": "\"Bernard Leach Pottery Studio St.Ives (3983801685)\" by THOR, Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Bernard_Leach_Pottery_Studio_St.Ives_(3983801685).jpg), CC BY 2.0",
+ "changes": "cropped to the slot's aspect ratio, resized and exported to WebP",
+ "downloaded": "2026-10-31",
  "file": "m_bisque-d.webp",
- "credit_written_by": "credits backfill 2026-10-28 (work/beast/credits/backfill)"
+ "credit_written_by": "portfolio fixes round 1, 2026-10-31 (replaces an earlier placeholder photo)"
 }
