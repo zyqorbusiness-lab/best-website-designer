@@ -7,17 +7,18 @@
 <script>document.documentElement.classList.add('js');(function(){var q=location.search;if(/[?&]desktop=1/.test(q))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height,phone=w<=860||(c&&h>w);if(phone)location.replace('m.html'+q+location.hash);})();</script>
 <title>Tranquility Base &middot; Concept A018 &middot; Zyqor Library</title>
 <meta name="description" content="Tranquility Base is a fictional brand: a advanced 3D web concept by Zyqor Studio. Scroll to land on the Moon among three photo-scanned rocks, then lift the camera for an earthrise.">
-<meta name="theme-color" content="#232F43">
+<meta name="theme-color" content="#F2EBDD">
 <meta property="og:title" content="Tranquility Base &middot; Concept A018 &middot; Zyqor Library">
 <meta property="og:description" content="A fictional-brand 3D concept by Zyqor Studio.">
 <meta property="og:image" content="https://zyqor-portfolio.vercel.app/library/a/A018/thumb.webp">
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="img/earthrise-d.webp" as="image">
 <link rel="preload" href="../../_kit/stage.js" as="script" crossorigin>
 <link rel="preload" href="../../_assets/models/moon_rock_01.glb" as="fetch" crossorigin>
 <link rel="stylesheet" href="../../_kit/concept.css">
 <link rel="stylesheet" href="../../_kit/landing.css">
 <link rel="stylesheet" href="style.css">
-<style>:root{--c1:#EEE0C4;--c2:#232F43;--c3:#D03037}</style>
+<style>:root{--c1:#EEE0C4;--c2:#23304A;--c3:#C9461C}</style>
 <script type="importmap">{"imports":{"three":"../../../vendor/three/three.module.min.js","three/addons/":"../../../vendor/three/addons/"}}</script>
 <link rel="canonical" href="https://zyqor-portfolio.vercel.app/library/a/A018/">
 <link rel="alternate" media="only screen and (max-width: 640px)" href="https://zyqor-portfolio.vercel.app/library/a/A018/m.html">
@@ -25,11 +26,11 @@
 <meta property="og:url" content="https://zyqor-portfolio.vercel.app/library/a/A018/">
 <meta name="twitter:card" content="summary_large_image">
 </head>
-<body class="dark grain" data-id="A018" data-tier="advanced" data-name="Tranquility Base">
+<body class="grain" data-id="A018" data-tier="advanced" data-name="Tranquility Base">
 <a class="skip" href="#main">Skip to content</a>
 <nav class="bnav" aria-label="Tranquility Base">
   <div class="bnav-in">
-    <a class="logo" href="#main" aria-label="Tranquility Base, back to top"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 20c4-2 10-2 14 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="20" cy="11" r="2" fill="var(--c3)"/></svg><span>Tranquility Base</span></a>
+    <a class="logo" href="#top" aria-label="Tranquility Base, back to top"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 20c4-2 10-2 14 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="20" cy="11" r="2" fill="var(--c3)"/></svg><span>Tranquility Base</span></a>
     <ul class="bnav-links"><li><a href="#ch01">Approach</a></li><li><a href="#ch03">Surface</a></li><li><a href="#mission">Mission</a></li><li><a href="#visit">Visit</a></li></ul>
     <a class="btn btn--accent bnav-cta" href="#visit" data-press>Request a viewing</a>
     <button class="menu-btn" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="msheet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>Menu</button>
@@ -44,6 +45,18 @@
 </dialog>
 <main id="main">
   <!-- Structure 03 (scroll-driven 3D showcase): one pinned WebGL scene, five chapters on one camera path. Brief: brief.md -->
+  <section class="intro" id="top" aria-labelledby="intro-h">
+    <div class="intro-in">
+      <div class="intro-copy">
+        <p class="tag">Concept A018 &middot; A travel journal</p>
+        <h1 id="intro-h" class="display">Tranquility <span class="serif">Base</span></h1>
+        <p class="lead">A journey to a place nobody can book: from lunar orbit down to three scanned rocks on the Sea of Tranquility, then home, rising.</p>
+        <div class="intro-cta"><a class="btn btn--accent" href="#ch01" data-press>Scroll to land <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a><a class="btn btn--ghost" href="#visit" data-press>Request a viewing</a></div>
+        <div class="intro-facts"><span><b>0&deg;40&prime;N 23&deg;28&prime;E</b>Landing site</span><span><b>384,400 km</b>Average distance</span><span><b>5 chapters</b>One camera</span></div>
+      </div>
+      <figure class="intro-win"><img src="img/earthrise-d.webp" alt="Earthrise: the Earth rising over the grey lunar horizon, photographed from Apollo 8" width="1200" height="1500" fetchpriority="high"><figcaption><span>Earthrise &middot; Apollo 8 &middot; 24 Dec 1968</span><span>Bill Anders / NASA, public domain</span></figcaption></figure>
+    </div>
+  </section>
   <section class="journey" aria-label="A scroll journey from lunar orbit to the surface and an earthrise">
     <div class="scene" data-stage>
       <noscript><img class="poster" src="poster.webp" alt="The lunar surface with scanned rocks under a navy sky"></noscript>
@@ -53,7 +66,7 @@
     <article class="chapter ch-01" id="ch01" aria-labelledby="ch01-h" data-ch="0">
       <div class="ch-card">
         <p class="tag">01 &middot; Approach</p>
-        <h1 id="ch01-h" class="display">Tranquility <span class="serif">Base</span></h1>
+        <h2 id="ch01-h" class="display">From orbit, <span class="serif">down.</span></h2>
         <p class="lead">Scroll to land. One camera, one continuous shot, from orbit to the surface and back up.</p>
       </div>
     </article>

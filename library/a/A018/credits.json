@@ -79,15 +79,6 @@
     },
     {
       "what": "Type",
-      "title": "Bricolage Grotesque, Manrope",
-      "author": "Mathieu Triay, Mikhail Sharanda",
-      "source": "Google Fonts",
-      "url": "https://fonts.google.com",
-      "licence": "SIL Open Font License 1.1",
-      "files": []
-    },
-    {
-      "what": "Type",
       "title": "Instrument Serif",
       "author": "Rodrigo Fuenzalida, Jordan Egstad",
       "source": "GitHub",
@@ -124,6 +115,46 @@
       "files": [
         "poster.webp",
         "thumb.webp"
+      ]
+    },
+    {
+      "what": "Photo",
+      "title": "Earthrise (Apollo 8, AS8-14-2383)",
+      "author": "NASA / Bill Anders",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:NASA-Apollo8-Dec24-Earthrise.jpg",
+      "licence": "Public domain (NASA)",
+      "note": "Cropped to 4:5 around the Earth and horizon; intro window.",
+      "credit_file": "img/earthrise-d.webp.credit.json",
+      "files": [
+        "img/earthrise-d.webp",
+        "img/earthrise-m.webp"
+      ]
+    },
+    {
+      "what": "Type",
+      "title": "Space Grotesk",
+      "author": "Florian Karsten",
+      "source": "Google Fonts",
+      "url": "https://fonts.google.com/specimen/Space+Grotesk",
+      "licence": "SIL OFL 1.1",
+      "note": "Shared self-hosted file.",
+      "files": [
+        "../../../assets/font/spacegrotesk-300-700.woff2"
+      ]
+    },
+    {
+      "what": "Type",
+      "title": "IBM Plex Mono",
+      "author": "Mike Abbink, IBM",
+      "source": "Google Fonts",
+      "url": "https://fonts.google.com/specimen/IBM+Plex+Mono",
+      "licence": "SIL OFL 1.1",
+      "note": "Self-hosted Latin subset via Fontsource.",
+      "credit_file": "font/ibmplexmono-400.woff2.credit.json",
+      "files": [
+        "font/ibmplexmono-400.woff2",
+        "font/ibmplexmono-500.woff2"
       ]
     }
   ]

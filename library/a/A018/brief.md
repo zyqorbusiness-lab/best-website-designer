@@ -15,8 +15,8 @@ Write this BEFORE any code (Sujon's Master Award system, Drive point Q1/W5). Kee
 - Contrast check: c2 on c1 >= 7:1 for body; c3 used for large type or fills only if under 4.5:1.
 
 ## Type
-- Display: Cabinet Grotesk 800 + Instrument Serif italic accents at -0.04em tracking.
-- Body: Satoshi or General Sans, 62ch max. Mono tags: JetBrains Mono, uppercase, +0.06em.
+- Display: Space Grotesk 600 + Instrument Serif italic accents at -0.04em tracking (Oct 31: OFL swap).
+- Body: Manrope (kit), 62ch max. Mono tags: IBM Plex Mono, uppercase, +0.06em. Page: cream #F2EBDD, ink #23304A, signal orange #E8572A; the navy 3D scene sits in a framed window.
 - Max 2 families on the page.
 
 ## Structure (pick ONE of the 14; never hero + 3 cards + about + contact)

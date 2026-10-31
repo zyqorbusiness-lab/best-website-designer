@@ -1,5 +1,12 @@
-/* A018 Tranquility Base - phone build. Same rocks, regolith and Earth texture as desktop; native scroll, cards for legibility. */
-body{background:var(--c2);color:var(--c1)}
+/* A018 Tranquility Base - phone build. Same rocks, regolith and Earth texture as desktop; native scroll, cards for legibility. Oct 31 lift: cream page, framed scene, real Earthrise intro. */
+@font-face{font-family:"Space Grotesk";src:url("../../../assets/font/spacegrotesk-300-700.woff2") format("woff2");font-weight:300 700;font-display:swap}
+@font-face{font-family:"IBM Plex Mono";src:url("font/ibmplexmono-400.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"IBM Plex Mono";src:url("font/ibmplexmono-500.woff2") format("woff2");font-weight:500;font-display:swap}
+:root{--cream:#F2EBDD;--cream-2:#E9DFCC;--ink:#23304A;--ink-2:#4A5672;--sig:#E8572A;
+ --f-display:"Space Grotesk","Manrope",system-ui,sans-serif;--f-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+body{background:var(--cream);color:var(--ink)}
+.bnav{color:var(--ink)}
+
 .journey{position:relative;height:600svh}
 .scene{position:sticky;top:0;height:100svh;width:100%;background:linear-gradient(180deg,color-mix(in oklab,var(--c2) 70%,#0b1424) 0%,var(--c2) 70%,color-mix(in oklab,var(--c2) 88%,var(--c1)) 100%)}
 .chapters{position:absolute;inset:0;pointer-events:none}
@@ -22,7 +29,7 @@ body{background:var(--c2);color:var(--c1)}
 .rail-track{display:block;height:2px;border-radius:2px;background:color-mix(in oklab,var(--c1) 18%,transparent);position:relative}
 .rail-fill{position:absolute;inset:0 auto 0 0;width:calc(var(--p,0) * 100%);background:var(--c3);border-radius:2px}
 .rail ol{display:none}
-.outro{background:var(--c2);border-top:1px solid var(--line-dark);padding-block:clamp(4.5rem,18vw,6rem)}
+.outro{padding-block:clamp(4.5rem,18vw,6rem)}
 .outro-in{display:grid;gap:var(--s3)}
 .outro .tag{color:var(--on-dark-2)}
 .outro .h2{color:var(--c1);font-size:clamp(2rem,9vw,2.6rem)}
@@ -30,3 +37,32 @@ body{background:var(--c2);color:var(--c1)}
 .outro .body{color:var(--on-dark-2)}
 .outro .btn{justify-self:stretch;min-height:52px}
 @media (prefers-reduced-motion:reduce){.ch-card{opacity:1;transform:none}}
+
+/* the 3D journey sits in a framed window on the cream page (no full-bleed dark) */
+.journey{background:var(--cream)}
+.scene{clip-path:inset(var(--win-t) var(--win-x) var(--win-b) var(--win-x) round var(--win-r))}
+.journey::after{content:"";position:sticky;display:block;top:0;height:0}
+.ch-card .tag::before,.rail-fill{background:var(--sig)}
+/* outro + lower sections: cream, ink */
+.outro{background:var(--cream);border-top:1px solid color-mix(in oklab,var(--ink) 12%,transparent)}
+.outro .tag,.outro .body{color:var(--ink-2)}
+.outro .h2{color:var(--ink)}
+.outro .serif,.intro .serif{color:var(--sig)}
+
+:root{--win-t:64px;--win-x:10px;--win-b:10px;--win-r:22px}
+.intro{padding:92px var(--s3) 40px;background:var(--cream)}
+.intro-in{display:grid;gap:22px}
+.intro-copy{display:contents}
+.intro .tag{color:var(--ink-2);order:1}
+.intro .tag::before{background:var(--sig)}
+.intro .display{order:2;margin:0;font-family:var(--f-display);font-weight:600;font-size:clamp(3rem,15vw,4.4rem);line-height:.88;letter-spacing:-.045em;color:var(--ink)}
+.intro .display .serif{font-style:italic;font-weight:400}
+.intro-win{order:3;margin:4px 0 0;position:relative;width:100%;aspect-ratio:4/5;max-height:62svh;border-radius:22px;overflow:hidden;background:#1d2840;box-shadow:0 30px 60px -34px rgba(35,48,74,.55),0 0 0 6px #fff,0 0 0 7px color-mix(in oklab,var(--ink) 12%,transparent)}
+.intro-win img{width:100%;height:100%;object-fit:cover;display:block}
+.intro-win figcaption{position:absolute;left:10px;right:10px;bottom:10px;display:grid;gap:2px;padding:9px 12px;border-radius:12px;background:rgba(242,235,221,.92);color:var(--ink);font:500 10.5px/1.35 var(--f-mono);letter-spacing:.03em}
+.intro-win figcaption span:last-child{color:var(--ink-2)}
+.intro .lead{order:4;margin:0;color:var(--ink-2);font-size:1rem}
+.intro-cta{order:5;display:grid;gap:10px}
+.intro-cta .btn{min-height:52px;justify-content:center}
+.intro-facts{order:6;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0;padding:14px 0 0;border-top:1px solid color-mix(in oklab,var(--ink) 14%,transparent);font:500 10px/1.35 var(--f-mono);letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2)}
+.intro-facts b{display:block;font:600 13px/1.2 var(--f-display);letter-spacing:-.01em;text-transform:none;color:var(--ink)}

@@ -1,5 +1,12 @@
-/* A018 Tranquility Base - desktop build. Palette: sand #EEE0C4 / navy #232F43 / tomato #D03037 (dark-led page). */
-body{background:var(--c2);color:var(--c1)}
+/* A018 Tranquility Base - desktop build. Palette (Oct 31 lift): cream #F2EBDD page / ink #23304A / signal orange #E8572A; the navy 3D scene lives in a framed window. */
+@font-face{font-family:"Space Grotesk";src:url("../../../assets/font/spacegrotesk-300-700.woff2") format("woff2");font-weight:300 700;font-display:swap}
+@font-face{font-family:"IBM Plex Mono";src:url("font/ibmplexmono-400.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"IBM Plex Mono";src:url("font/ibmplexmono-500.woff2") format("woff2");font-weight:500;font-display:swap}
+:root{--cream:#F2EBDD;--cream-2:#E9DFCC;--ink:#23304A;--ink-2:#4A5672;--sig:#E8572A;
+ --f-display:"Space Grotesk","Manrope",system-ui,sans-serif;--f-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+body{background:var(--cream);color:var(--ink)}
+.bnav{color:var(--ink)}
+
 .journey{position:relative;height:620svh}
 .scene{position:sticky;top:0;height:100svh;width:100%;background:linear-gradient(180deg,color-mix(in oklab,var(--c2) 70%,#0b1424) 0%,var(--c2) 70%,color-mix(in oklab,var(--c2) 88%,var(--c1)) 100%)}
 .scene .stage-load{color:color-mix(in oklab,var(--c1) 60%,var(--c2))}
@@ -28,7 +35,7 @@ body{background:var(--c2);color:var(--c1)}
 .rail .mono{font-size:11px}
 .rail-l{font:600 13px/1 var(--f-body)}
 
-.outro{position:relative;background:var(--c2);border-top:1px solid var(--line-dark)}
+.outro{position:relative}
 .outro-in{display:grid;gap:var(--s4);max-width:900px;margin-left:var(--gutter)}
 .outro .tag{color:var(--on-dark-2)}
 .outro .h2{color:var(--c1)}
@@ -36,3 +43,35 @@ body{background:var(--c2);color:var(--c1)}
 .outro .body{color:var(--on-dark-2)}
 .outro .btn{justify-self:start;margin-top:var(--s2)}
 @media (prefers-reduced-motion:reduce){.ch-card{opacity:1;transform:none}}
+
+/* the 3D journey sits in a framed window on the cream page (no full-bleed dark) */
+.journey{background:var(--cream)}
+.scene{clip-path:inset(var(--win-t) var(--win-x) var(--win-b) var(--win-x) round var(--win-r))}
+.ch-card .tag::before,.rail-fill{background:var(--sig)}
+/* outro + lower sections: cream, ink */
+.outro{background:var(--cream);border-top:1px solid color-mix(in oklab,var(--ink) 12%,transparent)}
+.outro .tag,.outro .body{color:var(--ink-2)}
+.outro .h2{color:var(--ink)}
+.outro .serif,.intro .serif{color:var(--sig)}
+
+:root{--win-t:84px;--win-x:20px;--win-b:20px;--win-r:28px}
+/* intro: cream page, real Earthrise in a framed window */
+.intro{min-height:100svh;box-sizing:border-box;padding:110px var(--gutter) 48px;display:grid;align-items:center;background:var(--cream)}
+.intro-in{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:clamp(32px,5vw,88px);align-items:center;max-width:1320px;margin:0 auto;width:100%}
+.intro .tag{color:var(--ink-2)}
+.intro .tag::before{background:var(--sig)}
+.intro .display{margin:0;font-family:var(--f-display);font-weight:600;font-size:clamp(4rem,1rem + 6.6vw,8.6rem);line-height:.86;letter-spacing:-.045em;color:var(--ink)}
+.intro .display .serif{font-style:italic;font-weight:400;letter-spacing:-.02em}
+.intro .lead{max-width:40ch;color:var(--ink-2);margin:0}
+.intro-copy{display:grid;gap:26px}
+.intro-cta{display:flex;gap:12px;flex-wrap:wrap}
+.intro-facts{display:flex;gap:22px;flex-wrap:wrap;margin:8px 0 0;padding:16px 0 0;border-top:1px solid color-mix(in oklab,var(--ink) 14%,transparent);font:500 12px/1.4 var(--f-mono);letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2)}
+.intro-facts b{display:block;font:500 15px/1.2 var(--f-display);letter-spacing:-.01em;text-transform:none;color:var(--ink)}
+.intro-win{margin:0;position:relative;justify-self:end;width:min(100%,520px);aspect-ratio:4/5;border-radius:28px;overflow:hidden;background:#1d2840;box-shadow:0 40px 90px -40px rgba(35,48,74,.55),0 0 0 10px #fff,0 0 0 11px color-mix(in oklab,var(--ink) 12%,transparent)}
+.intro-win img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.04);animation:drift 18s ease-in-out infinite alternate}
+@keyframes drift{to{transform:scale(1.1) translateY(-1.5%)}}
+.intro-win figcaption{position:absolute;left:14px;right:14px;bottom:14px;display:flex;justify-content:space-between;gap:12px;padding:10px 14px;border-radius:14px;background:rgba(242,235,221,.9);color:var(--ink);font:500 11px/1.35 var(--f-mono);letter-spacing:.04em}
+.intro-win figcaption span:last-child{color:var(--ink-2)}
+.intro-win::before{content:"";position:absolute;top:14px;left:14px;z-index:1;padding:6px 10px;border-radius:999px;background:var(--sig);color:#fff;font:500 11px/1 var(--f-mono);letter-spacing:.08em;content:"LIVE VIEW · ARCHIVE"}
+@media (max-width:1100px){.intro-in{grid-template-columns:1fr}.intro-win{justify-self:start}}
+@media (prefers-reduced-motion:reduce){.intro-win img{animation:none}}
