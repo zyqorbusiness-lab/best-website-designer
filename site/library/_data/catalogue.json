@@ -5929,27 +5929,25 @@
   },
   "P042": {
    "tier": "premium",
-   "name": "Night Market Lane",
-   "label": "Night Market Lane (Concept)",
-   "category": "travel",
-   "idea": "A lamplit night-market lane that comes alive stall by stall as you scroll",
-   "technique": "emissive lamps + scanned props + scroll walk",
-   "asset_source": "Poly Haven model 'Street Lamp 02' (CC0); Poly Haven model 'Wooden Crate 02' (CC0); Poly Haven model 'Wicker Basket 02' (CC0); Poly Haven HDRI 'Rooftop Night' (CC0)",
+   "name": "Tally Pad",
+   "label": "Tally Pad by Tally Works (Concept)",
+   "category": "hardware",
+   "idea": "A three-key macro pad with a knurled dial and a light bar, built in code and driven by scroll: explode it, press the keys, turn the dial, change the light",
+   "technique": "procedural three.js model (pad.js) + scroll explode + key/dial micro-interactions",
+   "asset_source": "Built in code (pad.js, own work); Poly Haven HDRI 'Studio Small 09' (CC0)",
    "assets": [
-    "ph:street_lamp_02",
-    "ph:wooden_crate_02",
-    "ph:wicker_basket_02",
-    "hdri:rooftop_night"
+    "code:pad.js",
+    "hdri:studio_small_09"
    ],
    "palette": [
-    "#D7EDEA",
-    "#133E42",
-    "#DE5966"
+    "#ECE7DE",
+    "#1F3A33",
+    "#E2572B"
    ],
-   "pattern": "H",
-   "pattern_name": "Environment storytelling (product in a world)",
-   "three_d": "real model(s): Poly Haven model 'Street Lamp 02' (CC0); Poly Haven model 'Wooden Crate 02' (CC0); Poly Haven model 'Wicker Basket 02' (CC0)",
-   "hero_source": "real",
+   "pattern": "I",
+   "pattern_name": "Micro-interactions and UI patterns",
+   "three_d": "real-time model built in code (pad.js); no downloaded 3D files",
+   "hero_source": "code",
    "structure": null,
    "batch": 10,
    "first25": false
