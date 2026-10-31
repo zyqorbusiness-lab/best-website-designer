@@ -3,6 +3,32 @@
  "id": "P041",
  "items": [
   {
+   "what": "Photo (hero: hot pizza out of the oven)",
+   "title": "Homemade cheese pizza with pepperoni and salami. Mix pizza in the restaurant. (49134398781)",
+   "author": "Nenad Stojkovic",
+   "source": "Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/wiki/File:Homemade_cheese_pizza_with_pepperoni_and_salami._Mix_pizza_in_the_restaurant._(49134398781).jpg",
+   "licence": "CC BY 2.0",
+   "note": "Photo by Nenad Stojkovic (Flickr, via Wikimedia Commons), CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/). Cropped and resized only.",
+   "files": [
+    "img/hero-pizza.webp",
+    "img/hero-pizza-m.webp"
+   ]
+  },
+  {
+   "what": "Photo (the dough + the wood-fired oven)",
+   "title": "Pizza baking in Wood-fired oven",
+   "author": "Jared Tarbell",
+   "source": "Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/wiki/File:Pizza_baking_in_Wood-fired_oven.jpg",
+   "licence": "CC BY 2.0",
+   "note": "Photo by Jared Tarbell (Flickr, via Wikimedia Commons), CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/). Cropped and resized only.",
+   "files": [
+    "img/oven-fire.webp",
+    "img/oven-fire-m.webp"
+   ]
+  },
+  {
    "what": "Photo (crust, melted mozzarella, basil)",
    "title": "Neapolitan pizza at Trappica",
    "author": "Bex Walton",

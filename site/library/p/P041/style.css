@@ -65,17 +65,8 @@ em{font-style:italic;font-weight:500}
 .hours-chip i{width:8px;height:8px;border-radius:50%;background:var(--tomato)}
 .hours-chip.closed i{background:var(--basil-2)}
 .hours-chip small{font-size:.6875rem;color:var(--basil-2);letter-spacing:.06em}
-.hero-stage{position:absolute;left:70%;top:52%;width:var(--pd);height:var(--pd);transform:translate(-50%,-50%);pointer-events:none}
-.peel{position:absolute;inset:-8%}
-.peel-board{position:absolute;inset:0;width:100%;height:100%;border-radius:50%;filter:drop-shadow(10px 16px 18px rgba(40,58,45,.22))}
-.peel-handle{position:absolute;left:50%;top:50%;width:17%;height:98%;margin-left:-8.5%;transform-origin:50% 0;transform:rotate(-42deg);border-radius:0 0 40px 40px;
   background:url("img/board-900.webp") 50% 50%/600% auto no-repeat;box-shadow:inset 0 -6px 0 rgba(40,58,45,.14),8px 14px 18px rgba(40,58,45,.2)}
-.hero-pie{position:absolute;inset:0;border-radius:50%}
-.hero-pie::before{content:"";position:absolute;inset:3%;border-radius:50%;background:rgba(40,58,45,.22);filter:blur(14px);transform:translate(8px,12px)}
 .poster,.pie-cv{position:absolute;inset:0;width:100%;height:100%;border-radius:50%}
-.hero .pie-cv{opacity:0;transition:opacity 600ms var(--ease-out)}
-.hero.live .pie-cv{opacity:1}
-.sparks{position:absolute;left:-10%;right:-10%;bottom:-6%;height:0}
 .sparks i{position:absolute;bottom:0;width:4px;height:4px;border-radius:50%;background:var(--tomato);opacity:0}
 html.js .sparks.go i{animation:spark 1.2s var(--ease-out) forwards}
 @keyframes spark{0%{opacity:0;transform:translate(0,0)}15%{opacity:.85}100%{opacity:0;transform:translate(var(--dx,0),-220px)}}
@@ -83,20 +74,6 @@ html.js .sparks.go i{animation:spark 1.2s var(--ease-out) forwards}
 /* pinned sections (CSS sticky, no scroll-jacking) */
 .pin{position:relative}
 .sticky{position:sticky;top:0;height:100vh;overflow:hidden}
-.dough{height:200vh}
-.dough-copy{position:absolute;left:var(--side);top:12vh;max-width:30rem;z-index:2}
-.dough-copy .body{margin-top:20px}
-.dough-stage{position:absolute;left:60%;top:52%;width:min(70vh,44vw);aspect-ratio:1;transform:translate(-50%,-50%)}
-.dough-base,.dough-ball{position:absolute;inset:0;width:100%;height:100%}
-.dough-base{clip-path:circle(var(--mask,0%) at 50% 50%);opacity:var(--bo,0)}
-.dough-ball{transform:scale(var(--ds,.3));opacity:var(--da,1);filter:drop-shadow(8px 14px 12px rgba(40,58,45,.2))}
-.d-labels{position:absolute;left:var(--side);top:0;bottom:0;width:30rem;pointer-events:none}
-.d-labels li{position:absolute;left:0;display:grid;grid-template-columns:120px auto;column-gap:16px;align-items:center;opacity:var(--o,0);transform:translateY(calc((1 - var(--o,0)) * 12px))}
-.d-labels li:nth-child(1){top:48%}.d-labels li:nth-child(2){top:62%}.d-labels li:nth-child(3){top:76%}
-.d-labels svg{grid-row:span 2;width:120px;height:2px;overflow:visible}
-.d-labels line{stroke:var(--tomato);stroke-width:2;stroke-dasharray:120;stroke-dashoffset:calc(120 - 120 * var(--o,0))}
-.d-labels b{color:var(--basil);font-weight:400}
-.d-labels span{color:var(--basil-2);font-size:.95rem}
 
 /* builder */
 .build{padding:var(--rhythm) var(--side) calc(var(--rhythm) * .7);max-width:1440px;margin-inline:auto}
@@ -224,7 +201,7 @@ html.js .sparks.go i{animation:spark 1.2s var(--ease-out) forwards}
 .foot-cta .btns{display:flex;gap:12px;flex-wrap:wrap}
 .foot-cred{text-transform:none;letter-spacing:.01em;font-size:.75rem;line-height:1.6;color:rgba(244,237,225,.78);max-width:120ch}
 
-@media (max-width:1200px){.hero{--pd:min(52vh,32vw)}.hero-copy{max-width:42vw}.hero-stage{left:74%}.nav-links{gap:18px}}
+@media (max-width:1200px){.hero-copy{max-width:42vw}.nav-links{gap:18px}}
 
 /* reveals: opacity + 20px rise, 460ms expo-out, 60ms stagger */
 html.js [data-rv]{opacity:0;transform:translateY(20px);transition:opacity 460ms var(--ease-out),transform 460ms var(--ease-out);transition-delay:calc(var(--i,0) * 60ms)}
@@ -233,10 +210,46 @@ html.js [data-rv].in{opacity:1;transform:none}
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   html.js [data-rv]{opacity:1;transform:none}
-  .dough,.fire{height:auto}
+  .fire{height:auto}
   .sticky{position:relative;height:auto;min-height:100vh}
 }
 
 .ghost{position:fixed;left:0;top:0;z-index:200;width:84px;height:84px;margin:-42px 0 0 -42px;pointer-events:none;filter:drop-shadow(6px 12px 10px rgba(40,58,45,.25))}
 .ghost .dish{width:84px}
 html.dragging,html.dragging *{cursor:grabbing!important;user-select:none}
+
+/* ---------- hero photo (Oct 31 2026): a real hot pizza, not a cut-out ---------- */
+.hero{--mozz:#FFF8EC}
+.hero-photo{position:absolute;top:12px;right:var(--side);bottom:40px;width:min(50vw,820px);margin:0;perspective:1400px;z-index:1}
+.hp-card{position:absolute;inset:0;border-radius:28px;overflow:hidden;background:var(--ember);transform:rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transform-style:preserve-3d;transition:transform 120ms linear;box-shadow:0 2px 0 rgba(40,58,45,.06),0 28px 60px -22px rgba(105,40,22,.45),0 10px 24px -12px rgba(40,58,45,.28)}
+.hp-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:46% 50%;transform:scale(1.001)}
+html.js .hp-img{animation:hpin 1.6s var(--ease-out) both}
+@keyframes hpin{from{transform:scale(1.08);filter:saturate(.85) brightness(.96)}to{transform:scale(1.001)}}
+.hp-heat{position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 50% at var(--gx,50%) 0%,rgba(255,236,206,.20),rgba(255,236,206,0) 70%);mix-blend-mode:screen}
+.hp-chip{position:absolute;left:20px;top:20px;display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:999px;background:rgba(255,248,236,.92);color:var(--basil);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);z-index:2;transform:translateZ(40px)}
+.hp-chip i{width:8px;height:8px;border-radius:50%;background:var(--tomato);box-shadow:0 0 0 4px rgba(169,58,35,.18)}
+html.js .hp-chip i{animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(169,58,35,0)}}
+.hp-stamp{position:absolute;left:-46px;bottom:56px;width:132px;height:132px;border-radius:50%;background:var(--tomato);color:var(--mozz);display:grid;place-content:center;text-align:center;z-index:3;box-shadow:0 18px 36px -14px rgba(105,40,22,.55);transform:rotate(-8deg)}
+.hp-stamp b{font:700 3.2rem/.85 var(--f-display);font-variation-settings:"opsz" 144,"SOFT" 50}
+.hp-stamp .mono{font-size:.625rem;letter-spacing:.1em;margin-top:6px;line-height:1.35}
+.hp-cred{position:absolute;right:16px;bottom:14px;z-index:2;color:var(--mozz);font-size:.625rem;opacity:.85;text-shadow:0 1px 3px rgba(40,30,20,.6)}
+.sparks{position:absolute;left:10%;right:10%;bottom:0;height:0;z-index:4}
+.hero-copy{z-index:2}
+
+/* ---------- the dough + the oven (real photo) ---------- */
+.dough{padding:calc(var(--rhythm) * .8) var(--side);background:var(--ember);border-block:1px solid var(--line)}
+.dg-in{max-width:1440px;margin-inline:auto;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(32px,5vw,88px);align-items:center}
+.dg-photo{position:relative;margin:0;border-radius:24px;overflow:hidden;aspect-ratio:3/2;box-shadow:0 30px 60px -28px rgba(105,40,22,.5)}
+.dg-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 55%}
+.dg-photo figcaption{position:absolute;right:14px;bottom:12px;color:var(--mozz,#FFF8EC);font-size:.625rem;opacity:.85;text-shadow:0 1px 3px rgba(40,30,20,.6)}
+.dough-copy .body{margin-top:20px;max-width:36ch;color:var(--basil-2)}
+.d-labels{margin-top:34px;display:grid;gap:18px}
+.d-labels li{display:grid;grid-template-columns:72px auto;column-gap:16px;align-items:center}
+.d-labels svg{grid-row:span 2;width:72px;height:2px;overflow:visible}
+.d-labels line{stroke:var(--tomato);stroke-width:2;stroke-dasharray:120;stroke-dashoffset:120;transition:stroke-dashoffset 900ms var(--ease-out) calc(var(--i,0) * 120ms + 200ms)}
+.d-labels li.in line,html:not(.js) .d-labels line{stroke-dashoffset:0}
+.d-labels b{color:var(--basil);font-weight:400}
+.d-labels span{color:var(--basil-2);font-size:.95rem}
+@media (max-width:1200px){.hero-photo{width:48vw}.hp-stamp{left:-30px;width:112px;height:112px}.hp-stamp b{font-size:2.6rem}}
+@media (prefers-reduced-motion: reduce){.hp-card{transform:none}.d-labels line{stroke-dashoffset:0}}

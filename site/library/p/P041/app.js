@@ -1,7 +1,7 @@
 /* P041 Hotcoal Kitchen, best-4 flagship (Oct 30 2026): app.js, shared by index.html (desktop) and m.html (phone).
    One scroll engine: a single requestAnimationFrame loop reads each pinned section's progress from getBoundingClientRect()
    (CSS position: sticky, no scroll library, no scroll-jacking), lerped 0.12 per frame. Canvases draw only while on screen.
-   Beats: intro poster -> hero pizza turning on the peel -> dough stretches into the base -> build (drag / tap / keyboard)
+   Beats (Oct 31 2026): real hot-pizza photo hero -> build (drag / tap / keyboard) -> the dough + the wood-fired oven (real photo)
    -> the oven: scroll is the clock, 00 to 90 s, your exact pieces bake one handful at a time -> menu rows load onto the board
    -> pickup form that ends in "Concept: not sent". Reduced motion: every pinned section shows its end state as a still. */
 import { ING, ORDER, makeModel, addHandful, count, PieView, warmAll, onImage, sstep, easeOut } from './pizza.js';
@@ -21,7 +21,6 @@ else { const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isI
   rv.forEach((e) => { const sib = [...e.parentElement.children].filter((c) => c.hasAttribute('data-rv')); e.style.setProperty('--i', Math.min(sib.indexOf(e), 6)); io.observe(e); }); }
 
 /* ---------- views ---------- */
-let heroGo = false;
 const views = [];
 const vis = new Map();
 const seen = new IntersectionObserver((es) => es.forEach((e) => { vis.set(e.target, e.isIntersecting); if (e.isIntersecting) dirtyAll(); }), { rootMargin: '200px 0px' });
@@ -29,11 +28,9 @@ function view(cv, model, opt) { const v = new PieView(cv, model, { small: isM, d
 const dirtyAll = () => views.forEach((v) => (v.dirty = true));
 onImage(dirtyAll);
 
-/* hero: a finished pizza on the peel, cut in eight, turning 4 deg/s (phone 2 deg/s) */
-const heroModel = makeModel();
-['mozzarella', 'mozzarella', 'tomato', 'pepperoni', 'basil'].forEach((t) => addHandful(heroModel, t, { now: -1e6, preload: false }));
-const hero = view($('#hero-cv'), heroModel, { small: true }); /* 1024 px bases: the hero pizza is at most ~1040 device px wide */ hero.uniform = 1; hero.slice = 1;
+/* hero (Oct 31 2026): a real photograph of a hot pizza; on a fine pointer the card tilts a few degrees in 3D toward the cursor */
 const heroSec = $('#hero');
+const hpCard = $('#hp-card');
 
 /* builder + oven share one model: the oven bakes exactly the pieces you dropped */
 const model = makeModel();
@@ -118,20 +115,11 @@ $$('[data-load]').forEach((btn) => btn.addEventListener('click', () => {
 }));
 
 /* ---------- the scroll engine ---------- */
-const END = { dough: 1, fire: 0.9 }; /* reduced motion: each pinned section's end state (the oven's is the finished pizza, still inside) */
+const END = { fire: 0.9 }; /* reduced motion: each pinned section's end state (the oven's is the finished pizza, still inside) */
 const pins = $$('.pin').map((el) => ({ el, id: el.id, p: reduced ? END[el.id] : 0, t: 0 }));
-const dough = { ball: $('.dough-ball'), base: $('.dough-base'), labels: $$('.d-labels li') };
 const F = { sec: $('#fire'), pie: $('#f-pie'), clock: $('#clock'), k: $('#clock-k'), order: $('#f-order'), stage: $('#fire-stage'), oven: $('.oven'), steam: $('.steam') };
 const progress = (el) => { const r = el.getBoundingClientRect(), span = r.height - innerHeight; return span > 0 ? clamp(-r.top / span) : (r.top < innerHeight * 0.5 ? 1 : 0); };
 const ioS = (a, b, x) => { const t = clamp((x - a) / (b - a)); return t < .5 ? 8 * t ** 4 : 1 - Math.pow(-2 * t + 2, 4) / 2; };
-function applyDough(p) {
-  const s = sstep(0.15, 0.7, p);
-  dough.ball.style.setProperty('--ds', (0.3 + 0.75 * s).toFixed(4));
-  dough.ball.style.setProperty('--da', (1 - sstep(0.55, 0.75, p)).toFixed(3));
-  dough.base.style.setProperty('--mask', `${(sstep(0.3, 0.72, p) * 50).toFixed(2)}%`);
-  dough.base.style.setProperty('--bo', sstep(0.3, 0.45, p).toFixed(3));
-  [0.30, 0.48, 0.66].forEach((a, i) => dough.labels[i].style.setProperty('--o', clamp((p - a) / 0.06).toFixed(3)));
-}
 const KS = [[0, 'Into the oven'], [1, 'Baking'], [30, 'The cheese melts'], [55, 'Pepperoni cups'], [72, 'Leopard spots'], [90, 'Done. Ninety seconds.']];
 let lastClock = -1;
 function applyFire(p) {
@@ -148,33 +136,31 @@ function applyFire(p) {
   F.order.classList.toggle('on', p >= 0.9); F.order.tabIndex = p >= 0.9 ? 0 : -1;
   fire.dirty = true;
 }
-let t0 = performance.now(), last = t0, pointerL = 0, lightT = 0;
-if (fine && !reduced) heroSec.addEventListener('pointermove', (e) => { const r = heroSec.getBoundingClientRect(); lightT = ((e.clientX - r.left) / r.width - 0.5) * 2 * (6 * Math.PI / 180); }, { passive: true });
+let t0 = performance.now(), last = t0, tx = 0, ty = 0, txT = 0, tyT = 0;
+if (fine && !reduced && hpCard) {
+  heroSec.addEventListener('pointermove', (e) => { const r = heroSec.getBoundingClientRect(); txT = ((e.clientX - r.left) / r.width - 0.5) * 2; tyT = ((e.clientY - r.top) / r.height - 0.5) * 2; }, { passive: true });
+  heroSec.addEventListener('pointerleave', () => { txT = 0; tyT = 0; }, { passive: true });
+}
 function loop(now) {
   const dt = Math.min(64, now - last); last = now;
   for (const P of pins) {
     P.t = reduced ? END[P.id] : progress(P.el);
     const np = reduced ? P.t : P.p + (P.t - P.p) * (1 - Math.pow(1 - 0.12, dt / 16.7));
-    if (Math.abs(np - P.p) > 1e-4 || !P.init) { P.p = Math.abs(P.t - np) < 1e-4 ? P.t : np; P.init = true; if (P.id === 'dough') applyDough(P.p); else applyFire(P.p); }
+    if (Math.abs(np - P.p) > 1e-4 || !P.init) { P.p = Math.abs(P.t - np) < 1e-4 ? P.t : np; P.init = true; if (P.id === 'fire') applyFire(P.p); }
   }
-  if (heroGo && vis.get(hero.el)) {
-    if (!reduced) { hero.rot += (isM ? 2 : 4) * Math.PI / 180 * dt / 1000; pointerL += (lightT - pointerL) * 0.08; hero.light = pointerL; hero.dirty = true; }
-  }
+  if (hpCard && (Math.abs(txT - tx) > 1e-3 || Math.abs(tyT - ty) > 1e-3)) { tx += (txT - tx) * 0.08; ty += (tyT - ty) * 0.08; hpCard.style.setProperty('--ry', `${(tx * 5).toFixed(2)}deg`); hpCard.style.setProperty('--rx', `${(-ty * 4).toFixed(2)}deg`); hpCard.style.setProperty('--gx', `${(50 + tx * 30).toFixed(1)}%`); }
   for (const v of views) {
-    if (!vis.get(v.el) || !v.dirty || (v === hero && !heroGo)) continue;
+    if (!vis.get(v.el) || !v.dirty || false) continue;
     v.dirty = false; if (v.draw(now)) v.dirty = true;
   }
-  if (!heroSec.classList.contains('live') && heroLoaded()) { hero.dirty = true; hero.draw(now); heroSec.classList.add('live'); }
   requestAnimationFrame(loop);
 }
-const heroLoaded = () => heroGo && hero.base.baked.ok && hero.base.cheese.ok;
 requestAnimationFrame(loop);
-/* first screen = poster + board + type; the live hero canvas and the ingredient photos load after the page has settled */
+/* first screen = the hero photo + type; the ingredient photos load after the page has settled */
 const idle = (f, t) => ('requestIdleCallback' in window) ? requestIdleCallback(f, { timeout: t }) : setTimeout(f, 300);
-const go = () => idle(() => { heroGo = true; hero.dirty = true; }, 900);
-document.readyState === 'complete' ? go() : addEventListener('load', go, { once: true });
+heroSec.classList.add('live');
 const warmIO = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { warmIO.disconnect(); idle(warmAll, 1500); } }, { rootMargin: '600px 0px' });
-warmIO.observe($('#dough'));
+warmIO.observe($('#build'));
 /* below-the-fold photos (data-src) are swapped in only when their section is near, so they never compete with the first screen */
 const lazyIO = new IntersectionObserver((es) => es.forEach((e) => { if (!e.isIntersecting) return; $$('img[data-src]', e.target).forEach((i) => { i.src = i.dataset.src; i.removeAttribute('data-src'); }); lazyIO.unobserve(e.target); }), { rootMargin: '400px 0px' });
 $$('.pin, .build').forEach((s) => lazyIO.observe(s));
