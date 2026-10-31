@@ -24,14 +24,15 @@ const caps = $$('.vcap'), ticks = $$('.ticks li');
 let shown = -1;
 const showV = (i) => { if (i === shown) return; shown = i; caps.forEach((c, k) => c.classList.toggle('is-on', k === i)); ticks.forEach((t, k) => t.classList.toggle('is-on', k === i)); };
 showV(0);
-if (stage.failed) { const sec = $('#shelf'); addEventListener('scroll', () => { const r = sec.getBoundingClientRect(); const p = Math.min(1, Math.max(0, -r.top / (r.height - innerHeight))); showV(Math.round(p * (N - 1))); }, { passive: true }); }
+if (stage.failed) { const sec = $('#shelf'); addEventListener('scroll', () => { const r = sec.getBoundingClientRect(); const p = Math.min(1, Math.max(0, -r.top / (r.height - innerHeight))); showV(Math.round(p * (N - 1))); document.body.classList.toggle('walked', p > 0.06); }, { passive: true }); }
 else {
   const [diff, nor] = await Promise.all([stage.loadTexture(stage.asset('tex/dark_planks_diff_512.webp'), { repeat: [6, 1] }), stage.loadTexture(stage.asset('tex/dark_planks_nor_512.webp'), { srgb: false, repeat: [6, 1] })]);
   const plankW = GAP * (N - 1) + 3.2;
   const plank = new THREE.Mesh(new THREE.BoxGeometry(plankW, 0.08, 0.62), new THREE.MeshStandardMaterial({ map: diff, normalMap: nor, roughness: 0.72, color: 0xd9c8bb }));
   plank.position.set(GAP * (N - 1) / 2, -0.04, 0); plank.receiveShadow = true; stage.add(plank);
   const wallC = new THREE.Color(getComputedStyle(document.documentElement).getPropertyValue('--c1').trim());
-  const wall = new THREE.Mesh(new THREE.PlaneGeometry(plankW + 8, 6), new THREE.MeshStandardMaterial({ color: wallC.clone().offsetHSL(0, 0.06, 0.07), roughness: 0.95 }));
+  const wallTex = await stage.loadTexture('tex/plastered_wall_diff_1k.webp', { repeat: [5, 2] }).catch(() => null);   /* Poly Haven 'Plastered Wall' (CC0), tinted warm plaster (Oct 31) */
+  const wall = new THREE.Mesh(new THREE.PlaneGeometry(plankW + 8, 6), new THREE.MeshStandardMaterial({ color: wallTex ? wallC.clone().offsetHSL(0.0, 0.10, 0.02) : wallC.clone().offsetHSL(0, 0.06, 0.07), map: wallTex, emissive: wallTex ? wallC.clone().multiplyScalar(0.2) : 0x000000, roughness: 0.95 }));
   wall.position.set(GAP * (N - 1) / 2, 1.6, -0.45); wall.receiveShadow = true; stage.add(wall);
   const gl = await Promise.all(FILES.map((f) => stage.load(stage.asset(f))));
   const vases = gl.map((g, i) => {
@@ -44,7 +45,7 @@ else {
     const cc = new THREE.Box3().setFromObject(o).getCenter(new THREE.Vector3()); o.position.x -= cc.x; o.position.z -= cc.z;   /* turn about its own axis */
     pivot.position.x = i * GAP; stage.add(pivot); return pivot;
   });
-  const spot = new THREE.SpotLight(0xffe6cf, 26, 6, 0.42, 0.55, 1.6);
+  const spot = new THREE.SpotLight(0xffe2c8, 30, 6, 0.42, 0.55, 1.6);
   spot.castShadow = true; spot.shadow.mapSize.set(1024, 1024); spot.shadow.bias = -0.0004;
   const spotT = new THREE.Object3D(); stage.scene.add(spot, spotT); spot.target = spotT;
   const fill = new THREE.DirectionalLight(0xdfe6ff, 0.35); fill.position.set(-3, 3, 4); stage.scene.add(fill);
@@ -58,7 +59,7 @@ else {
     showV(Math.min(N - 1, Math.round(p * (N - 1))));
   }
   pose(0);
-  stage.scroll('#shelf', (p) => { want = p; stage.invalidate(); }, { native: isM });
+  stage.scroll('#shelf', (p) => { want = p; document.body.classList.toggle('walked', p > 0.06); stage.invalidate(); }, { native: isM });
   stage.onFrame((dt) => {
     if (Math.abs(want - prog) < 0.0004) { if (prog !== want) { prog = want; pose(prog); } return false; }
     prog = reduced ? want : damp(prog, want, 7, dt); pose(prog); return true;

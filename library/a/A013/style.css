@@ -1,4 +1,8 @@
-/* A013 Shelfline Ceramics - desktop. Structure 05, horizontal exhibition: vertical scroll walks the camera along one shelf. Palette: clay pink #ECD6CE / umber #2F2316 / glaze pink #E64B76. */
+/* A013 Shelfline Ceramics - desktop. Structure 05, horizontal exhibition: vertical scroll walks the camera along one shelf. Palette (Oct 31): plaster #F3ECE4 / ink #2B2A28 / terracotta #C65D3B / sage #9AAE8C; Fraunces + Manrope. */
+@font-face{font-family:"Fraunces";src:url("../../../assets/font/fraunces-axes.woff2") format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Fraunces";src:url("../../../assets/font/fraunces-italic.woff2") format("woff2");font-weight:100 900;font-style:italic;font-display:swap}
+:root{--f-display:"Fraunces",Georgia,serif;--f-serif:"Fraunces",Georgia,serif;--f-body:"Manrope",system-ui,sans-serif}
+
 body{background:var(--c1)}
 .intro-in{padding-top:var(--s8)}.lead{max-width:34ch}
 .vcaps{left:var(--gutter);top:calc(var(--s8) + 40px);width:min(26rem,32vw);height:16rem}
@@ -22,3 +26,20 @@ body{background:var(--c1)}
 .ticks{position:absolute;z-index:2;list-style:none;margin:0;padding:0;display:flex;gap:var(--s3)}
 .ticks li{font:500 var(--fs-xs)/1 var(--f-mono);color:var(--ink-3);padding-top:10px;border-top:2px solid var(--line);min-width:3rem;transition:color var(--dur-fast),border-color var(--dur-fast)}
 .ticks li.is-on{color:var(--ink);border-color:var(--c3)}
+
+/* Oct 31: the first screen IS the shelf, vase 1 already lit; the title sits over the scene and steps aside once you walk */
+.shelf{background:linear-gradient(#EFE5D9,var(--c1))}
+.pin-intro{position:absolute;z-index:3;left:var(--gutter);top:calc(var(--s8) + 64px);display:grid;gap:var(--s3);max-width:min(40rem,46vw);transition:opacity .6s var(--ease-out),transform .8s var(--ease-out)}
+.pin-intro .title{font-weight:700;font-variation-settings:"opsz" 144,"SOFT" 50;letter-spacing:-.035em}
+.pin-intro .title .serif{font-weight:400;font-style:italic;color:var(--c3)}
+.pin-intro .tag::before{background:var(--c3)}
+.pin-intro .title{font-size:clamp(4rem,1.4rem + 6.4vw,8.6rem)}
+.pin-intro .lead{max-width:26ch;color:color-mix(in oklab,var(--c2) 80%,var(--c1))}
+.walked .pin-intro{opacity:0;transform:translateY(-24px);pointer-events:none}
+.vcaps{opacity:0;transition:opacity .5s var(--ease-out)}
+.walked .vcaps{opacity:1}
+.vcap .vh{color:var(--c3)}
+.ticks li.is-on{border-color:var(--c3)}
+.ticks li[data-v]:nth-child(odd).is-on{border-color:var(--sage)}
+@media (prefers-reduced-motion:reduce){.pin-intro{transition:none}}
+.vcap .body{color:var(--c2)}.vcap .mono{color:#5E5A53}

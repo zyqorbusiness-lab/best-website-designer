@@ -1,4 +1,8 @@
-/* A013 Shelfline Ceramics - phone build. Same four models, shelf texture, HDRI and camera walk as desktop on native scroll; one vase per screen. */
+/* A013 Shelfline Ceramics - phone build. Same four models, shelf texture, HDRI and camera walk as desktop on native scroll; one vase per screen. Oct 31: plaster/terracotta/sage palette, Fraunces + Manrope, the first screen is the lit vase. */
+@font-face{font-family:"Fraunces";src:url("../../../assets/font/fraunces-axes.woff2") format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Fraunces";src:url("../../../assets/font/fraunces-italic.woff2") format("woff2");font-weight:100 900;font-style:italic;font-display:swap}
+:root{--f-display:"Fraunces",Georgia,serif;--f-serif:"Fraunces",Georgia,serif;--f-body:"Manrope",system-ui,sans-serif}
+
 body{background:var(--c1)}
 .intro{min-height:76svh;padding-top:calc(env(safe-area-inset-top) + 90px)}
 .title{font-size:clamp(3.6rem,19vw,5.4rem)}
@@ -24,3 +28,17 @@ body{background:var(--c1)}
 .ticks li.is-on{color:var(--ink);border-color:var(--c3)}
 .vcap-h{font-size:2.1rem}
 .pin::after{content:"";position:absolute;left:0;right:0;bottom:0;height:46%;z-index:1;pointer-events:none;background:linear-gradient(to top,color-mix(in oklab,var(--c1) 92%,transparent) 55%,transparent)}
+
+.shelf{background:linear-gradient(#EFE5D9,var(--c1))}
+.pin-intro{position:absolute;z-index:3;left:var(--gutter);right:var(--gutter);top:calc(env(safe-area-inset-top) + 122px);display:grid;gap:8px;transition:opacity .6s var(--ease-out),transform .8s var(--ease-out)}
+.pin-intro .title{font-size:clamp(2.8rem,14vw,3.6rem);font-weight:700;letter-spacing:-.035em;line-height:.86}
+.pin-intro .title .serif{font-weight:400;font-style:italic;color:var(--c3)}
+.pin-intro .tag::before{background:var(--c3)}
+.pin-intro .lead{font-size:1rem;max-width:28ch;color:color-mix(in oklab,var(--c2) 80%,var(--c1))}
+.pin-intro .scroll-cue,.pin-intro .lead{display:none}
+.walked .pin-intro{opacity:0;transform:translateY(-20px);pointer-events:none}
+.vcaps{opacity:0;transition:opacity .5s var(--ease-out)}
+.walked .vcaps{opacity:1}
+.ticks li.is-on{border-color:var(--c3)}
+@media (prefers-reduced-motion:reduce){.pin-intro{transition:none}}
+.vcap .body{color:var(--c2)}.vcap .mono{color:#5E5A53}
