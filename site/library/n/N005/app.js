@@ -1,5 +1,5 @@
 /* N005 Fieldnote Optics - shared app for index.html (desktop) and m.html (phone).
-   Signature: a misty pine forest (Poly Haven "Misty Pines", Greg Zaal, CC0) you can only see properly through a twin-circle
+   Signature: a foggy river valley at sunrise (Wikimedia Commons "Foggy Sunrise over Seedskadee National Wildlife Refuge", USFWS Mountain-Prairie, public domain) you can only see properly through a twin-circle
    lens. The lens is a CSS mask of two radial gradients that chase the pointer (or the thumb); inside it the same photo is sharp
    and magnified around the lens centre; a focus wheel blurs or sharpens only the inside. The real model in the card
    (Poly Haven "Binoculars", Derek Wight, CC0) aims at the lens. Hand-made: real magnification + shrinking field of view,
