@@ -5,7 +5,7 @@
  "source_url": "https://github.com/zyqorbusiness-lab/best-website-designer",
  "licence": "MIT",
  "licence_url": "https://opensource.org/license/mit",
- "attribution": "Rootline Citrus poster (WebGL fallback still), Zyqor Studio (MIT). Shows the CC0 Food Lime 01 model by Oliver Harries (Poly Haven).",
- "changes": "Oct 31 2026: re-shot from the refreshed page (real CC0 lime photo by Evan-Amos on the hero; see credits.json). rendered by tools/qa-library.mjs from this concept's own page: a screenshot of the real-time render of the CC0 lime scan on the page, saved as WebP. Not AI imagery.",
+ "attribution": "Rootline Citrus poster, Zyqor Studio (MIT). Shows this page's own procedural 3D lime (citrus.js, three.js).",
+ "changes": "Oct 31 2026 round 2: re-shot from the page's own real-time three.js render of the procedural 3D lime (whole + cut half), cropped and saved as WebP. Not AI imagery.",
  "downloaded": "2026-10-31"
 }
