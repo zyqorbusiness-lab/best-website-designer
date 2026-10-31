@@ -60,3 +60,17 @@ body{background:radial-gradient(120% 80% at 70% 10%,#7D4A36 0%,#6B3E2E 45%,#5F36
 .tp-steps span.is-on{border-color:var(--tape-red)}
 .inside{background:color-mix(in oklab,var(--c2) 92%,transparent)}
 .in-list b{color:var(--c3)}
+
+/* Oct 31 round 2 (audit): a CREAM page, walnut only for panels. Cream #F2EBDD paper, walnut-ink #3E2A20 type,
+   walnut #6B3E2E panels (the deck controls, the "Inside the scan" card), mustard #E5C61A + tape red #C8402F accents.
+   The 3D cassette scan, tape flip and live VU meter are unchanged. */
+body{background:radial-gradient(120% 80% at 70% 0%,#FAF5EC 0%,#F2EBDD 55%,#EADFCB 100%) fixed,#F2EBDD;color:#3E2A20}
+.title{color:#3E2A20}.title .serif{color:#C8402F}
+.hero .tag,.hero .lead,.tape-copy .tag,.tp-b{color:color-mix(in oklab,#3E2A20 76%,#F2EBDD)}
+.tp-h{color:#3E2A20}
+.tp-steps span{color:color-mix(in oklab,#3E2A20 62%,#F2EBDD);border-top-color:color-mix(in oklab,#3E2A20 22%,transparent)}
+.tp-steps span.is-on{color:#3E2A20}
+.deck.glass{background:linear-gradient(180deg,rgba(118,70,47,.9),rgba(107,62,46,.9));-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid #84513A;box-shadow:inset 0 1px 0 rgba(255,240,220,.18),0 24px 48px -22px rgba(62,42,32,.55)}
+.inside{background:transparent;-webkit-backdrop-filter:none;backdrop-filter:none}
+.inside .in-in{background:linear-gradient(180deg,#71432F,#6B3E2E);border-radius:28px;padding:clamp(28px,4.5vw,64px);box-shadow:0 30px 60px -30px rgba(62,42,32,.55)}
+.site,.site a,.site .brand,.site button{color:#3E2A20}
