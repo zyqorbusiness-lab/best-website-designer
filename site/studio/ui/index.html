@@ -42,6 +42,11 @@
   </div>
   <nav class="toc" aria-label="All components"><a href="#c-magnetic"><span>01</span>Magnetic pill</a><a href="#c-morph"><span>02</span>Morphing menu</a><a href="#c-segment"><span>03</span>Segmented control</a><a href="#c-toggle"><span>04</span>Spring toggle</a><a href="#c-cart"><span>05</span>Add to bag</a><a href="#c-range"><span>06</span>Range with bubble</a><a href="#c-copy"><span>07</span>Copy chip</a><a href="#c-otp"><span>08</span>One-time code</a><a href="#c-compare"><span>09</span>Before and after</a><a href="#c-like"><span>10</span>Save with burst</a><a href="#c-toast"><span>11</span>Toast stack</a><a href="#c-reorder"><span>12</span>Drag to reorder</a><a href="#c-tilt"><span>13</span>Tilt with light</a><a href="#c-skeleton"><span>14</span>Skeleton to content</a><a href="#c-theme"><span>15</span>Paper and ink</a><a href="#c-palette"><span>16</span>Command palette</a></nav>
 </section>
+<section class="stack" id="stack" aria-labelledby="stackT"><div class="stack-stage">
+  <canvas class="stack-gl" role="img" aria-label="Six of this page's UI components as physical cards, fanning out from a pile as you scroll"></canvas>
+  <div class="stack-txt"><p class="stack-k">00 &middot; Real time, in 3D</p><h2 id="stackT">One <em>stack</em>, sixteen parts.</h2><p>Scroll and the pile fans out: each card is a live part from the gallery below, drawn on the page as you read.</p></div>
+  <ol class="stack-flat" aria-hidden="true"><li>Magnetic pill</li><li>Spring toggle</li><li>Range with bubble</li><li>Segmented control</li><li>One-time code</li><li>Toast stack</li></ol>
+</div></section>
 <section class="gallery" id="gallery" aria-labelledby="galT">
   <div class="gbar">
     <h2 id="galT" class="sr">Components</h2>
@@ -160,7 +165,7 @@
   </div>
   <div class="foot-g">
     <div><h4>About this page</h4><p>A concept gallery by Zyqor Studio. Product names on this page (Fieldnote, Kiln &amp; Co.) are fictional and labelled Concept. No clients, reviews or results are shown.</p></div>
-    <div><h4>Photography</h4><ul> <li>“Morning Mist”, Glacier National Park (U.S. National Park Service), <a href="https://commons.wikimedia.org/wiki/File:Morning_Mist_(20696678001).jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, <a href="https://www.nps.gov/aboutus/disclaimer.htm" target="_blank" rel="noopener">Public domain (NPS)</a></li> <li>“Vase By TSUJI Ichido”, Bindyeyes, <a href="https://commons.wikimedia.org/wiki/File:Vase_By_TSUJI_Ichido.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></li> <li>“Ceramic Vessel MET 1979.206.697”, The Metropolitan Museum of Art (Open Access), <a href="https://commons.wikimedia.org/wiki/File:Ceramic_Vessel_MET_1979.206.697.jpeg" target="_blank" rel="noopener">Wikimedia Commons</a>, <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener">CC0 1.0</a></li> </ul></div>
+    <div><h4>Photography</h4><ul> <li>“Morning Mist”, Glacier National Park (U.S. National Park Service), <a href="https://commons.wikimedia.org/wiki/File:Morning_Mist_(20696678001).jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, <a href="https://www.nps.gov/aboutus/disclaimer.htm" target="_blank" rel="noopener">Public domain (NPS)</a></li> <li>“Vase By TSUJI Ichido”, Bindyeyes, <a href="https://commons.wikimedia.org/wiki/File:Vase_By_TSUJI_Ichido.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></li> <li>“Ceramic Vessel MET 1979.206.697”, The Metropolitan Museum of Art (Open Access), <a href="https://commons.wikimedia.org/wiki/File:Ceramic_Vessel_MET_1979.206.697.jpeg" target="_blank" rel="noopener">Wikimedia Commons</a>, <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener">CC0 1.0</a></li>  <li>"One stack" 3D cards: modelled and drawn in three.js by Zyqor Studio (own work, MIT)</li></ul></div>
     <div><h4>Type and code</h4><ul>
       <li>Manrope by Mikhail Sharanda, <a href="https://fonts.google.com/specimen/Manrope" target="_blank" rel="noopener">Google Fonts</a>, SIL Open Font License 1.1</li>
       <li>Instrument Serif, Rodrigo Fuenzalida and Jordan Egstad, <a href="https://fonts.google.com/specimen/Instrument+Serif" target="_blank" rel="noopener">Google Fonts</a>, SIL OFL 1.1</li>
@@ -177,6 +182,6 @@
     <p class="pal-f"><span><kbd class="kbd">↑</kbd><kbd class="kbd">↓</kbd> move</span><span><kbd class="kbd">Enter</kbd> jump</span><span class="pal-n"></span></p>
   </div>
 </div>
-<script src="ui.js" defer></script>
+<script src="ui.js" defer></script><script type="module" src="stack.js"></script>
 </body>
 </html>
