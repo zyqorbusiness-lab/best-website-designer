@@ -1,15 +1,13 @@
 {
- "title": "A person shaping clay on a spinning pottery wheel with tools in nearby bowls",
- "author": "Taylor Heery",
- "author_url": "https://unsplash.com/@taylorheeryphoto",
- "source_url": "https://unsplash.com/photos/pottery-wheel-with-clay-and-tools-ZSgWcW70cTs",
- "licence": "Unsplash License",
- "licence_url": "https://unsplash.com/license",
- "attribution": "\"A person shaping clay on a spinning pottery wheel with tools in nearby bowls\" by Taylor Heery, Unsplash (https://unsplash.com/photos/pottery-wheel-with-clay-and-tools-ZSgWcW70cTs), Unsplash License (credit optional)",
- "changes": "downloaded at 2400 px, exported to WebP (desktop hero 2000 / moodboard 1100 / product 900 px; phone 900/640/600 px)",
- "downloaded": "2026-10-27",
- "verified": true,
- "verified_note": "photographer name re-read from the photo page in a real browser on 2026-10-28 (matches the Oct 27 record)",
+ "title": "Okopod - Pottery Studio",
+ "author": "Lorna Satchell",
+ "author_url": "https://commons.wikimedia.org/wiki/File:Okopod_-_Pottery_Studio.jpg",
+ "source_url": "https://commons.wikimedia.org/wiki/File:Okopod_-_Pottery_Studio.jpg",
+ "licence": "CC BY 4.0",
+ "licence_url": "https://creativecommons.org/licenses/by/4.0",
+ "attribution": "\"Okopod - Pottery Studio\" by Lorna Satchell, Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Okopod_-_Pottery_Studio.jpg), CC BY 4.0",
+ "changes": "cropped to the slot's aspect ratio, resized and exported to WebP",
+ "downloaded": "2026-10-31",
  "file": "m_wheel-m.webp",
- "credit_written_by": "credits backfill 2026-10-28 (work/beast/credits/backfill)"
+ "credit_written_by": "portfolio fixes round 1, 2026-10-31 (replaces an earlier placeholder photo)"
 }
