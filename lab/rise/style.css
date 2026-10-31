@@ -2,7 +2,7 @@
 @font-face{font-family:"Archivo";src:url("../../assets/font/archivo-800.woff2") format("woff2");font-weight:800;font-style:normal;font-display:swap}
 @font-face{font-family:"Inter Tight";src:url("../../assets/font/intertight-normal.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
 :root{--c1:#F8EBCB;--c2:#4A0F1E;--c3:#E3343B;--f-display:"Archivo",Impact,"Arial Narrow",sans-serif;--f-body:"Inter Tight",system-ui,sans-serif;--dw:800;--ease:cubic-bezier(.16,1,.3,1);--on3:var(--c1);--scrim:0.16;--scrimd:0.5}
-html{background:var(--c2)}
+html{background:var(--c1)}
 body{background:var(--c1);color:var(--c2);font-family:var(--f-body)}
 .vf-d{font-family:var(--f-display);font-weight:var(--dw);text-transform:uppercase;letter-spacing:-0.045em;line-height:.86}
 .vf-w{display:inline-block;overflow:hidden;vertical-align:top;padding:.04em .02em .02em;margin:-.04em -.02em -.02em}
@@ -122,34 +122,55 @@ body{background:var(--c1);color:var(--c2);font-family:var(--f-body)}
 .vf-ctas .vf-pill.solid.lg{--lg-ink:#C42A31}
 .lg.lg--ink{--_al:96%}
 
-/* ---------- Oct 31 round 3: 3D section (rs3d) ---------- */
-.rs3d{position:relative;height:380vh;background:#F8EBCB;color:#4A0F1E}
+/* ---------- Oct 31 round 3b: the 3D can is the hero ---------- */
+.rs3d{position:relative;height:300vh;background:#F8EBCB;color:#4A0F1E}
 .rs3d-stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#F8EBCB}
-.rs3d-stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0;transition:opacity .6s ease}
+.rs3d-stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0;transition:opacity .5s ease}
 .rs3d-ready .rs3d-stage canvas{opacity:1}
-.rs3d-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .6s ease}
+.rs3d-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .5s ease}
 .rs3d-ready .rs3d-poster{opacity:0}
-.rs3d-copy{position:absolute;left:clamp(20px,5vw,80px);top:clamp(90px,14vh,150px);width:min(400px,34vw);padding:26px 28px 22px;border-radius:22px;background:color-mix(in srgb,#F8EBCB 82%,transparent);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:0 18px 50px color-mix(in srgb,#4A0F1E 12%,transparent)}
-.rs3d-copy .vf-eyebrow{margin:0 0 10px;color:#4A0F1E}
-.rs3d-copy h2{font-size:clamp(40px,4.4vw,72px);margin:0 0 14px;color:#4A0F1E}
-.rs3d-sub{margin:0 0 18px;font-size:16px;line-height:1.5;color:#4A0F1E}
-.rs3d-steps{list-style:none;margin:0;padding:0;display:grid;gap:6px}
-.rs3d-steps li{display:flex;gap:12px;align-items:baseline;font-size:15px;padding:8px 12px;border-radius:12px;opacity:.6;transition:opacity .3s,background .3s,color .3s}
-.rs3d-steps li b{font-weight:700;min-width:26px}
-.rs3d-steps li.on{opacity:1;background:#E3343B;color:#F8EBCB}
+.rs-copy{position:absolute;z-index:2;left:clamp(24px,6vw,104px);top:50%;transform:translateY(-50%);width:min(520px,40vw);color:#4A0F1E}
+.rs-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.rs-copy .vf-tag{color:#4A0F1E}
+.rs-copy .vf-tag i{width:8px;height:8px;border-radius:50%;background:#E3343B}
+.rs-copy h1{margin:0;font-size:clamp(110px,13vw,220px);color:#4A0F1E;line-height:.8}
+.rs-kick{margin:14px 0 0;font-size:clamp(26px,2.6vw,42px);color:#E3343B;letter-spacing:-.02em}
+.rs-sub{margin:18px 0 26px;font-size:18px;line-height:1.5;max-width:30ch}
+.rs-copy .vf-ctas{justify-content:flex-start}
+.rs-copy .vf-pill:not(.solid){color:#4A0F1E}
+.rs3d-steps{list-style:none;margin:30px 0 0;padding:0;display:flex;gap:8px;flex-wrap:wrap}
+.rs3d-steps li{display:flex;gap:8px;align-items:baseline;font-size:13px;padding:7px 12px;border-radius:999px;border:1px solid color-mix(in srgb,#4A0F1E 22%,transparent);opacity:.65;transition:opacity .3s,background .3s,color .3s,border-color .3s}
+.rs3d-steps li b{font-weight:700}
+.rs3d-steps li.on{opacity:1;background:#E3343B;border-color:#E3343B;color:#F8EBCB}
+.rs-cue{position:absolute;z-index:2;left:50%;bottom:22px;transform:translateX(-50%);display:flex;align-items:center;gap:8px;font:600 12px/1 var(--f-body);letter-spacing:.16em;text-transform:uppercase;color:#4A0F1E;opacity:calc(1 - var(--p,0)*8)}
+.rs-cue svg{width:16px;height:16px;animation:rsCue 1.8s ease-in-out infinite}
+@keyframes rsCue{50%{transform:translateY(5px)}}
 .rs3d-still,.rs3d-nogl{height:auto}
-.rs3d-still .rs3d-stage,.rs3d-nogl .rs3d-stage{position:relative;height:88vh;height:88svh}
+.rs3d-still .rs3d-stage,.rs3d-nogl .rs3d-stage{position:relative}
 .rs3d-nogl canvas{display:none}
 .rs3d-nogl .rs3d-poster{opacity:1}
+.rs3d-still .rs-cue,.rs3d-nogl .rs-cue{display:none}
+/* the notes under the hero */
+.rs-notes{background:#F8EBCB;color:#4A0F1E}
+.rs-list{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:60px}
+.rs-list article{padding:28px 26px 30px;border-radius:24px;background:#fff7e6;border:1px solid color-mix(in srgb,#4A0F1E 12%,transparent)}
+.rs-list b{display:block;font:700 13px/1 var(--f-body);letter-spacing:.14em;color:#E3343B;margin-bottom:26px}
+.rs-list h3{margin:0 0 12px;font-size:clamp(28px,2.4vw,40px);line-height:.92}
+.rs-list p{margin:0;font-size:16px;line-height:1.55}
+@media (max-width:1100px){.rs-list{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:860px){
-.rs3d{height:340vh}
-.rs3d-copy{left:14px;right:14px;top:auto;bottom:18px;width:auto;padding:16px 16px 12px;border-radius:18px}
-.rs3d-copy h2{font-size:38px;margin-bottom:8px}
-.rs3d-sub{font-size:14px;margin-bottom:10px}
-.rs3d-steps li{display:none;font-size:14px}
-.rs3d-steps li.on{display:flex}
+.rs3d{height:260vh}
+.rs-copy{left:20px;right:20px;top:calc(env(safe-area-inset-top,0px) + 64px);transform:none;width:auto;text-align:center}
+.rs-tags{justify-content:center;margin-bottom:14px}
+.rs-copy .vf-tag{height:26px;padding:0 11px;font-size:10.5px}
+.rs-copy h1{font-size:clamp(84px,27vw,118px)}
+.rs-kick{margin-top:8px;font-size:24px}
+.rs-sub{margin:10px auto 14px;font-size:15px;max-width:32ch}
+.rs-copy .vf-ctas{justify-content:center;gap:8px}
+.rs-copy .vf-pill{height:44px;padding:0 18px;font-size:14px}
+.rs3d-steps{display:none}
+.rs-cue{bottom:14px}
+.rs-list{grid-template-columns:1fr;gap:12px;margin-top:36px}
+.rs-list article{padding:22px 20px}
+.rs-list b{margin-bottom:14px}
 }
-
-/* Oct 31 round 3: the hero title and subline sit on a soft cream plate so they read over the dark water ball */
-.vf-hero h1{background:color-mix(in srgb,var(--c1) 82%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);padding:.08em .24em .02em;border-radius:.14em;text-shadow:none!important}
-.vf-hero .vf-sub{background:color-mix(in srgb,var(--c1) 84%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);padding:10px 16px;border-radius:14px;opacity:1;text-shadow:none!important}

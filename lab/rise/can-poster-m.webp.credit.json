@@ -1,12 +1,12 @@
 {
- "title": "Rise No.3 3D can, poster frame",
+ "title": "Rise No.3 3D hero, phone poster frame (scene only)",
  "author": "Zyqor Studio",
  "author_url": "https://zyqor-portfolio.vercel.app/",
  "source_url": "https://zyqor-portfolio.vercel.app/lab/rise/",
  "licence": "MIT",
  "licence_url": "https://opensource.org/licenses/MIT",
  "attribution": "Own render of the page's procedural three.js scene by Zyqor Studio (MIT)",
- "changes": "headless render of can3d.js, saved as WebP; used as the loading poster and the no-WebGL fallback",
+ "changes": "headless render of can3d.js on the phone page (the 3D hero at its first frame), saved as WebP; used as the loading poster and the no-WebGL fallback",
  "downloaded": "2026-10-31",
  "file": "can-poster-m.webp"
 }

@@ -1,7 +1,8 @@
-/* Rise No.3: the can, in 3D. An aluminium can with a printed label, whole strawberries and rising bubbles, all modelled
-   in code with three.js (Zyqor Studio, MIT; no downloaded models). Scroll: the berries tumble in, the tab pops, the fizz
-   rises out of the can. Phone: same scene, fewer bubbles, DPR capped at 1.5. Reduced motion: one still frame (tab open).
-   No WebGL: the poster image stays. */
+/* Rise No.3: the hero is the can, in 3D. An aluminium can with a printed label, whole strawberries orbiting it and
+   bubbles fizzing out of the open tab, all modelled in code with three.js (Zyqor Studio, MIT; no downloaded models).
+   Time: the berries orbit and tumble, the fizz never stops. Scroll: the camera circles from the hero view to the open
+   tab and back out. Phone: same scene and models, fewer bubbles, DPR capped at 1.5, the can framed below the headline.
+   Reduced motion: one still frame. No WebGL: the poster image (an own render of this scene) stays. */
 import * as THREE from 'three';
 import { RoomEnvironment } from '../../vendor/three/addons/environments/RoomEnvironment.js';
 
@@ -96,74 +97,128 @@ function init(root) {
     const stem = new THREE.Mesh(new THREE.CylinderGeometry(0.012, 0.016, 0.1, 6), leafMat); stem.position.y = 0.35; g.add(stem);
     return g;
   }
+  /* berries orbit the can on a tilted ring, each at its own height and tumble */
   const berries = [];
-  const spots = [[-1.25, 0.31, 0.5, 0.4], [1.2, 0.31, 0.75, -0.6], [0.95, 0.31, -0.9, 2.2], [-0.9, 0.31, -0.75, 3.6], [-1.75, 0.31, -0.25, 1.1]];
-  spots.forEach(([x, y, z, r], i) => { const b = makeBerry(); b.userData = { x, y, z, r, d: 0.12 * i }; scene.add(b); berries.push(b); });
+  const NBR = 6;
+  for (let i = 0; i < NBR; i++) { const b = makeBerry(); b.userData = { a: i / NBR * Math.PI * 2 + hash(i) * 0.4, y: 0.75 + hash(i * 3.3) * 1.25, s: 0.85 + hash(i * 6.1) * 0.35, sp: 0.8 + hash(i * 1.7) * 0.4, ph: hash(i * 8.2) * 6.28 }; b.scale.setScalar(b.userData.s); scene.add(b); berries.push(b); }
 
-  /* bubbles: instanced, they rise out of the open can */
-  const NB = isM ? 70 : 140;
-  const bub = new THREE.InstancedMesh(new THREE.SphereGeometry(1, 12, 8), new THREE.MeshPhysicalMaterial({ color: 0xffffff, roughness: 0.05, transmission: 0.9, thickness: 0.05, transparent: true, opacity: 0.75, clearcoat: 1 }), NB);
+  /* bubbles: instanced; most fizz out of the open tab, the rest drift up around the can */
+  const NB = isM ? 90 : 170;
+  const bub = new THREE.InstancedMesh(new THREE.SphereGeometry(1, 12, 8), new THREE.MeshPhysicalMaterial({ color: 0xffffff, roughness: 0.05, transmission: 0.9, thickness: 0.05, transparent: true, opacity: 0.8, clearcoat: 1 }), NB);
   bub.frustumCulled = false; scene.add(bub);
   const bm = new THREE.Matrix4(), bq = new THREE.Quaternion(), bs = new THREE.Vector3(), bp = new THREE.Vector3();
+  /* the tab is open from the first frame */
+  tabPivot.rotation.x = -1.1; hole.scale.set(1, 1, 1);
 
-  /* story */
+  /* story: three camera keys, eased by scroll */
   const steps = [...root.querySelectorAll('.rs3d-steps li')];
   let lastStep = -1;
-  const camA = new THREE.Vector3(isM ? 0 : 0.6, isM ? 2.3 : 1.9, isM ? 8.2 : 6.6), lookA = new THREE.Vector3(isM ? 0 : -0.55, 1.05, 0);
-  const camB = new THREE.Vector3(1.4, isM ? 6.0 : 5.3, isM ? 6.2 : 4.8), lookB = new THREE.Vector3(0, H - 0.05, 0.05);
-  const camC = new THREE.Vector3(isM ? 0.4 : 1.2, isM ? 3.1 : 2.6, isM ? 6.4 : 4.6), lookC = new THREE.Vector3(isM ? 0 : -0.4, 2.2, 0);
+  const keys = isM ? [
+    { c: [0.0, 2.2, 9.6], l: [0, 1.45, 0] },
+    { c: [2.4, 7.4, 7.0], l: [0, 1.7, 0] },
+    { c: [-1.8, 2.6, 9.8], l: [0, 1.55, 0] },
+  ] : [
+    { c: [0.6, 2.0, 7.4], l: [0, 1.4, 0] },
+    { c: [2.8, 6.4, 6.0], l: [0, 1.75, 0] },
+    { c: [-2.3, 2.5, 7.8], l: [0, 1.6, 0] },
+  ];
+  const kv = keys.map((k) => ({ c: new THREE.Vector3(...k.c), l: new THREE.Vector3(...k.l) }));
   const cp = new THREE.Vector3(), lk = new THREE.Vector3();
-  function place(p) {
-    const tumble = smooth(0.0, 0.3, p);
-    berries.forEach((b, i) => { const u = b.userData; const t = smooth(u.d, u.d + 0.3, p * 1.1); b.position.set(u.x, u.y + (1 - t) * (3.5 + i * 0.4) + Math.abs(Math.sin(t * Math.PI * 2)) * 0.15 * (1 - t), u.z); b.rotation.set(1.35 + (1 - t) * 3, u.r + (1 - t) * 4, 0.3); });
-    const pop = smooth(0.36, 0.5, p);
-    tabPivot.rotation.x = -pop * 1.1; hole.scale.z = Math.max(0.001, smooth(0.42, 0.5, p)); hole.scale.x = hole.scale.z;
-    can.rotation.y = -0.5 + tumble * 0.7 + smooth(0.6, 1, p) * 0.6;
-    const fizz = smooth(0.46, 0.6, p);
+  /* where the can's centre sits on screen (fractions of the stage): right of the copy on desktop, under it on phone */
+  let fx = 0.66, fy = 0.5;
+  function frame() {
+    const w = stage.clientWidth, h = stage.clientHeight;
+    if (isM || w / h < 1.05) { fx = 0.5; const copy = root.querySelector('.rs-copy'); const cb = copy ? (copy.getBoundingClientRect().bottom - stage.getBoundingClientRect().top) / h : 0.45; fy = Math.min(0.74, Math.max(0.6, cb + (1 - cb) * 0.5)); }
+    else { fx = w > 1100 ? 0.7 : 0.71; fy = 0.53; }
+    camera.setViewOffset(w, h, (0.5 - fx) * w, (0.5 - fy) * h, w, h);
+  }
+  function place(p, t) {
+    /* berries: orbit + tumble + bob */
+    const ringR = (isM ? 1.18 : 1.36) + 0.12 * Math.sin(p * Math.PI);
+    berries.forEach((b, i) => {
+      const u = b.userData; const a = u.a + t * 0.32 * u.sp;
+      b.position.set(Math.cos(a) * ringR, u.y + Math.sin(t * 0.9 + u.ph) * 0.12 + Math.sin(a) * 0.18, Math.sin(a) * ringR * 0.92);
+      b.rotation.set(1.2 + Math.sin(t * 0.7 + u.ph) * 0.6, a * 1.4 + u.ph, 0.35 + t * 0.25 * u.sp);
+    });
+    can.rotation.y = -0.45 + Math.sin(t * 0.35) * 0.22 + p * 0.9;
+    can.position.y = Math.sin(t * 0.8) * 0.04;
+    /* bubbles */
+    const nTab = Math.floor(NB * 0.62);
     for (let i = 0; i < NB; i++) {
       const ph = hash(i * 3.1), sp = 0.5 + hash(i * 5.7);
-      const life = ((p - 0.46) * 6 * sp + ph) % 1; const on = fizz > 0 && p > 0.46;
-      const a = hash(i * 9.1) * Math.PI * 2, r = 0.02 + hash(i * 2.3) * 0.09 + life * 0.25;
-      bp.set(Math.cos(a) * r, H + 0.02 + life * (2.4 + hash(i) * 1.2), 0.22 + Math.sin(a) * r);
-      const sz = on ? (0.012 + hash(i * 4.4) * 0.03) * (1 - life * 0.3) * fizz : 0.00001;
-      bs.set(sz, sz, sz); bm.compose(bp, bq, bs); bub.setMatrixAt(i, bm);
+      let sz;
+      if (i < nTab) {
+        const life = (t * 0.32 * sp + ph) % 1;
+        const a = hash(i * 9.1) * Math.PI * 2, r = 0.02 + hash(i * 2.3) * 0.08 + life * 0.3;
+        bp.set(Math.cos(a) * r + Math.sin(life * 9 + i) * 0.03, H + 0.02 + can.position.y + life * (isM ? 1.25 + hash(i) * 0.7 : 2.0 + hash(i) * 1.4), 0.22 + Math.sin(a) * r);
+        sz = (0.014 + hash(i * 4.4) * 0.032) * (1 - life * 0.35) * Math.min(1, life * 12);
+      } else {
+        const life = (t * 0.09 * sp + ph) % 1;
+        const a = hash(i * 9.1) * Math.PI * 2, r = 0.9 + hash(i * 2.3) * 1.6;
+        bp.set(Math.cos(a) * r + Math.sin(life * 6 + i) * 0.05, -0.1 + life * (isM ? 3.2 : 4.4), Math.sin(a) * r * 0.7);
+        sz = (0.012 + hash(i * 4.4) * 0.03) * Math.min(1, life * 8, (1 - life) * 8);
+      }
+      bs.setScalar(Math.max(sz, 0.00001)); bm.compose(bp, bq, bs); bub.setMatrixAt(i, bm);
     }
     bub.instanceMatrix.needsUpdate = true;
-    const wB = smooth(0.3, 0.45, p) - smooth(0.6, 0.78, p), wC = smooth(0.6, 0.8, p);
-    cp.copy(camA).lerp(camB, wB).lerp(camC, wC * (1 - wB));
-    lk.copy(lookA).lerp(lookB, wB).lerp(lookC, wC * (1 - wB));
+    const w1 = smooth(0.18, 0.5, p), w2 = smooth(0.58, 0.92, p);
+    cp.copy(kv[0].c).lerp(kv[1].c, w1).lerp(kv[2].c, w2);
+    lk.copy(kv[0].l).lerp(kv[1].l, w1).lerp(kv[2].l, w2);
     camera.position.copy(cp); camera.lookAt(lk);
-    const si = p < 0.32 ? 0 : p < 0.56 ? 1 : 2;
+    const si = p < 0.34 ? 0 : p < 0.67 ? 1 : 2;
     if (si !== lastStep) { steps.forEach((s, i) => s.classList.toggle('on', i === si)); lastStep = si; }
   }
   let ready = false;
+  const T0 = performance.now();
+  const STILL_T = 2.2;
+  function now() { return reduced ? STILL_T : (window.__riseT != null ? window.__riseT : (performance.now() - T0) / 1000 + STILL_T); }
   function render() {
-    place(cur); renderer.render(scene, camera); ready = true;
+    place(cur, now()); renderer.render(scene, camera); ready = true;
     if (!root.classList.contains('rs3d-ready')) root.classList.add('rs3d-ready');
   }
   function progress() {
-    if (reduced) return 0.62;
+    if (reduced) return 0;
     const r = root.getBoundingClientRect(); const span = root.offsetHeight - innerHeight;
     return span > 0 ? clamp(-r.top / span) : 0;
   }
-  let cur = progress(), target = cur, inView = false, raf = 0;
+  let cur = progress(), target = cur, inView = true, raf = 0;
+  root.style.setProperty('--p', cur.toFixed(3));
   function tick() {
     raf = 0; target = progress();
-    cur += (target - cur) * 0.14; if (Math.abs(target - cur) < 0.0004) cur = target;
+    cur += (target - cur) * 0.12; if (Math.abs(target - cur) < 0.0004) cur = target;
+    root.style.setProperty('--p', cur.toFixed(3));
     render();
-    if (inView && cur !== target) raf = requestAnimationFrame(tick);
+    if (inView && !document.hidden && !reduced) raf = requestAnimationFrame(tick);
   }
   const kick = () => { if (inView && !raf) raf = requestAnimationFrame(tick); };
   function resize() {
     const w = stage.clientWidth, h = stage.clientHeight; if (!w || !h) return;
-    renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix(); render();
+    renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix(); frame(); render();
   }
   new ResizeObserver(resize).observe(stage);
-  new IntersectionObserver((es) => { inView = es[0].isIntersecting; if (inView) { cur = target = progress(); kick(); } }, { rootMargin: '200px 0px' }).observe(root);
+  new IntersectionObserver((es) => { inView = es[0].isIntersecting; if (inView) kick(); }, { rootMargin: '100px 0px' }).observe(root);
   addEventListener('scroll', kick, { passive: true });
   document.addEventListener('visibilitychange', () => { if (!document.hidden) kick(); });
-  resize();
+  resize(); kick();
 }
 
 const root = document.querySelector('.rs3d');
 if (root) init(root);
+
+/* page helpers (the page no longer loads the footage runtime): [data-rv] reveals, [data-count] rolls, magnetic pills */
+{
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isM = document.documentElement.dataset.build === 'm';
+  const els = [...document.querySelectorAll('[data-rv]')];
+  if (reduced || !('IntersectionObserver' in window)) els.forEach((e) => e.classList.add('rv-in'));
+  else { const io = new IntersectionObserver((ents) => ents.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('rv-in'); io.unobserve(en.target); } }), { rootMargin: '0px 0px -8% 0px', threshold: 0.12 }); els.forEach((e) => io.observe(e)); }
+  const ease = (t) => 1 - Math.pow(1 - t, 3);
+  const run = (el) => { const end = +el.dataset.count; if (reduced) { el.textContent = String(end); return; } const t0 = performance.now(); const tk = (tt) => { const k = ease(clamp((tt - t0) / 1400)); el.textContent = Math.round(end * k); if (k < 1) requestAnimationFrame(tk); }; requestAnimationFrame(tk); };
+  const cs = [...document.querySelectorAll('[data-count]')];
+  if (!('IntersectionObserver' in window)) cs.forEach(run);
+  else { const io2 = new IntersectionObserver((ents) => ents.forEach((en) => { if (en.isIntersecting) { run(en.target); io2.unobserve(en.target); } }), { threshold: 0.5 }); cs.forEach((e) => io2.observe(e)); }
+  if (!reduced && !isM && matchMedia('(hover: hover)').matches) document.querySelectorAll('.vf-mag').forEach((el) => {
+    el.addEventListener('pointermove', (e) => { const r = el.getBoundingClientRect(); el.style.transform = `translate(${((e.clientX - r.left) / r.width - 0.5) * 14}px,${((e.clientY - r.top) / r.height - 0.5) * 10}px)`; });
+    el.addEventListener('pointerleave', () => { el.style.transform = ''; });
+  });
+}
