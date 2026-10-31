@@ -15,7 +15,7 @@
 Code-made: the water surface (a prop) and the SVG size drawings. The duck is the real scan.
 
 ## Palette
---c1 #FBE7DA peach paper, --c2 #164234 bath green (also the water's base colour), --c3 #C59B24 mustard (buttons, field-note numbers). palette-check PASS.
+--c1 #E8F6FB bubble, --c2 #12384A ink, --c3 #F5C518 duck yellow (buttons, field-note numbers); water bath blue #7EC8E3 -> #BDE6F2 in a tile-white tub (Oct 31 refresh; was peach #FBE7DA / bath green #164234 / mustard #C59B24). Fonts Bricolage Grotesque + DM Sans. palette-check PASS.
 
 ## Frames
 - Phone: water + duck in the top 54%, plate title, then the readout and a full-width "Make a splash" button (thumb zone).

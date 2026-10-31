@@ -3,8 +3,8 @@
    click the water: a ring ripple starts exactly there, and when its front reaches the duck the duck heels over and drifts
    away from it, then a soft spring brings it back to the middle. Hand-made details: (1) the readout is the simulation's
    own state (heel angle from the water slope under the duck, drift in cm at the duck's real 9 cm scale), (2) the duck
-   rides the same wave formula the shader draws, so it never floats above or sinks through a crest, (3) the water fades
-   into the paper at its edge instead of ending in a hard square. Code-made: only the water surface (a prop).
+   rides the same wave formula the shader draws, so it never floats above or sinks through a crest, (3) the water is a full-bleed
+   bath-blue tub (#7EC8E3 to #BDE6F2) with foam on the crests and a soft contact shadow under the duck (Oct 31 refresh). Code-made: only the water surface (a prop).
    Same model, water mesh (160 x 160 segments), shader and HDRI on phone and desktop. */
 import { createStage, THREE, isM, reduced, clamp } from '../../_kit/stage.js';
 import { reveals, press } from '../../_kit/fx/index.js';
@@ -42,17 +42,17 @@ float hAt(vec2 p){
 if (!stage.failed) {
   /* water (prop, code-made): a dense plane displaced in the vertex shader, normals from the same function */
   const geo = new THREE.PlaneGeometry(9, 9, 160, 160).rotateX(-Math.PI / 2);
-  const water = new THREE.MeshPhysicalMaterial({ color: new THREE.Color(C.c2).offsetHSL(0.0, 0.06, 0.1), emissive: new THREE.Color(C.c2), emissiveIntensity: 0.35, roughness: 0.03, metalness: 0, ior: 1.333, specularIntensity: 1, clearcoat: 0, transparent: true, envMapIntensity: 0.9 });
-  const U = { uT: { value: 0 }, uR: { value: rip }, uA: { value: ambient } };
+  const water = new THREE.MeshPhysicalMaterial({ color: new THREE.Color('#6CC0E0'), emissive: new THREE.Color('#7EC8E3'), emissiveIntensity: 0.55, roughness: 0.12, metalness: 0, ior: 1.333, specularIntensity: 0.35, clearcoat: 0, transparent: true, envMapIntensity: 0.12 });
+  const U = { uT: { value: 0 }, uR: { value: rip }, uA: { value: ambient }, uD: { value: new THREE.Vector2(0, 0) }, uEdge: { value: new THREE.Color('#BDE6F2') }, uFoam: { value: new THREE.Color('#FFFFFF') } };
   water.onBeforeCompile = (sh) => {
     Object.assign(sh.uniforms, U);
-    sh.vertexShader = GLSL + '\nvarying vec2 vXZ;\n' + sh.vertexShader
+    sh.vertexShader = GLSL + '\nvarying vec2 vXZ; varying float vH;\n' + sh.vertexShader
       .replace('#include <beginnormal_vertex>', `vec2 p0=position.xz; float e=0.02; float hc=hAt(p0); vec3 objectNormal=normalize(vec3(-(hAt(p0+vec2(e,0.0))-hc)/e,1.0,-(hAt(p0+vec2(0.0,e))-hc)/e));
 #ifdef USE_TANGENT
 vec3 objectTangent = vec3( tangent.xyz );
 #endif`)
-      .replace('#include <begin_vertex>', 'vec3 transformed = position; transformed.y += hc; vXZ = position.xz;');
-    sh.fragmentShader = 'varying vec2 vXZ;\n' + sh.fragmentShader.replace('#include <alphatest_fragment>', 'diffuseColor.a *= 1.0 - smoothstep(0.95, 1.95, length(vXZ));\n#include <alphatest_fragment>');
+      .replace('#include <begin_vertex>', 'vec3 transformed = position; transformed.y += hc; vXZ = position.xz; vH = hc;');
+    sh.fragmentShader = 'uniform vec2 uD; uniform vec3 uEdge; uniform vec3 uFoam;\nvarying vec2 vXZ; varying float vH;\n' + sh.fragmentShader.replace('#include <alphatest_fragment>', 'float rr = length(vXZ); diffuseColor.rgb = mix(diffuseColor.rgb, uEdge, smoothstep(0.9, 3.2, rr));\nfloat foam = smoothstep(0.022, 0.06, vH); diffuseColor.rgb = mix(diffuseColor.rgb, uFoam, foam * 0.85);\nfloat shd = 1.0 - 0.42 * exp(-pow(distance(vXZ, uD) * 2.3, 2.0));\n diffuseColor.rgb *= shd;\ndiffuseColor.a *= 1.0 - smoothstep(3.4, 4.4, rr);\n#include <alphatest_fragment>').replace('#include <emissivemap_fragment>', '#include <emissivemap_fragment>\n totalEmissiveRadiance = mix(totalEmissiveRadiance, uEdge * 0.62, smoothstep(0.9, 3.2, rr)) * shd + uFoam * foam * 0.25;');
   };
   const sea = new THREE.Mesh(geo, water); sea.renderOrder = 0; stage.add(sea);
 
@@ -95,7 +95,7 @@ vec3 objectTangent = vec3( tangent.xyz );
     const h = heightAt(st.x, st.z, t), e = 0.05;
     n.set(-(heightAt(st.x + e, st.z, t) - h) / e, 1, -(heightAt(st.x, st.z + e, t) - h) / e).normalize();
     q.setFromUnitVectors(up, n);
-    holder.position.set(st.x, h, st.z); holder.quaternion.slerp(q, 1 - Math.exp(-dt * 6));
+    holder.position.set(st.x, h, st.z); U.uD.value.set(st.x + 0.06, st.z + 0.08); holder.quaternion.slerp(q, 1 - Math.exp(-dt * 6));
     const tilt = THREE.MathUtils.radToDeg(up.angleTo(new THREE.Vector3(0, 1, 0).applyQuaternion(holder.quaternion)));
     const txt = tilt.toFixed(1) + '|' + (Math.hypot(st.x, st.z) * 9).toFixed(1);
     if (txt !== shown) { shown = txt; const [a, b] = txt.split('|'); roT.textContent = a; roD.textContent = b; }

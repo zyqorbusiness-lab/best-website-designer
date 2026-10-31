@@ -30,7 +30,7 @@
       "title": "Bath water shader",
       "author": "Zyqor Studio",
       "licence": "MIT",
-      "note": "Made in code (a prop, not the product): a 160 x 160 plane displaced by ripple rings in the vertex shader; the duck rides the same formula in JavaScript."
+      "note": "Made in code (a prop, not the product): a 160 x 160 plane displaced by ripple rings in the vertex shader, bath blue #7EC8E3 to #BDE6F2 with foam on the crests and a soft contact shadow under the duck; the duck rides the same formula in JavaScript."
     },
     {
       "what": "Size drawings",
@@ -50,11 +50,19 @@
     },
     {
       "what": "Type",
-      "title": "Bricolage Grotesque, Manrope",
-      "author": "Mathieu Triay, Mikhail Sharanda",
+      "title": "Bricolage Grotesque",
+      "author": "Mathieu Triay",
       "source": "Google Fonts",
-      "url": "https://fonts.google.com",
-      "licence": "SIL Open Font License 1.1"
+      "url": "https://fonts.google.com/specimen/Bricolage+Grotesque",
+      "licence": "SIL OFL 1.1"
+    },
+    {
+      "what": "Type",
+      "title": "DM Sans",
+      "author": "Colophon Foundry",
+      "source": "Google Fonts",
+      "url": "https://fonts.google.com/specimen/DM+Sans",
+      "licence": "SIL OFL 1.1"
     },
     {
       "what": "Type",
