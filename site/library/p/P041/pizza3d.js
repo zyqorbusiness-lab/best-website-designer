@@ -124,36 +124,51 @@ export async function createStage(opt) {
   };
   const crust = new THREE.Mesh(crustGeometry(seg), crustMat); crust.castShadow = true; crust.receiveShadow = true; pizza.add(crust);
 
-  const cheeseMat = new THREE.MeshPhysicalMaterial({ map: tCheese, roughness: 0.42, metalness: 0, clearcoat: 0.35, clearcoatRoughness: 0.35, sheen: 0.4, sheenColor: new THREE.Color(0xfff2c8), transparent: false, alphaTest: 0.5 });
+  /* cheese v2 (Oct 31 polish): one continuous melted sheet at every build stage - no raw white shreds, no sauce holes.
+     Gloss from a low-roughness clearcoat, body from a fragment bump (bubbles + pooled ridges), browning only where bubbles rise. */
+  const cheeseMat = new THREE.MeshPhysicalMaterial({ map: tCheese, roughness: 0.3, metalness: 0, clearcoat: 0.8, clearcoatRoughness: 0.18, sheen: 0.35, sheenColor: new THREE.Color(0xfff0c0), transparent: false, alphaTest: 0.5 });
   cheeseMat.onBeforeCompile = (s) => {
     Object.assign(s.uniforms, U);
     s.vertexShader = s.vertexShader.replace('#include <common>', '#include <common>\n' + NOISE + 'uniform float uMelt, uBake, uCheese, uBall; varying vec2 vP;')
       .replace('#include <begin_vertex>', `#include <begin_vertex>
         vP = position.xz; float r0 = length(position.xz);
-        float shred = smoothstep(0.47, 0.6, fbm(position.xz * 5.5 + 1.7));
         float bub = pow(fbm(position.xz * 7.0 + 3.1), 2.0);
         float edge = 1.0 - smoothstep(0.66, 0.815, r0);
-        transformed.y = 0.036 + edge * (mix(0.028 * shred, 0.004 + bub * 0.045, uMelt) + uBake * bub * 0.03);
+        transformed.y = 0.036 + edge * (0.006 + bub * mix(0.022, 0.04, uMelt) + uBake * bub * 0.026);
         transformed.xz *= 1.0 - 0.6 * uBall;`);
-    s.fragmentShader = s.fragmentShader.replace('#include <common>', '#include <common>\n' + NOISE + 'uniform float uMelt, uBake, uCheese, uHeat, uTime; varying vec2 vP;')
+    s.fragmentShader = s.fragmentShader.replace('#include <common>', '#include <common>\n' + NOISE + `uniform float uMelt, uBake, uCheese, uHeat, uTime; varying vec2 vP;
+        float chH(vec2 p){ float b = fbm(p * 7.0 + 3.1); float ridge = fbm(p * 15.0 + 7.3); return b * b * 0.9 + ridge * 0.25; }`)
       .replace('#include <map_fragment>', `
         vec4 c = texture2D(map, vMapUv);
         float r0 = length(vP);
-        float shred = smoothstep(0.5, 0.53, fbm(vP * 5.5 + 1.7) + 0.06 * vn(vP * 40.0));
-        float spread = smoothstep(uCheese * 0.86 + 0.02, uCheese * 0.86 - 0.04, r0 + (fbm(vP * 6.0) - 0.5) * 0.18);
-        float cover = mix(shred, 1.0, smoothstep(0.15, 0.85, uMelt)) * spread * step(0.001, uCheese);
+        float spread = smoothstep(uCheese * 0.86 + 0.02, uCheese * 0.86 - 0.05, r0 + (fbm(vP * 6.0) - 0.5) * 0.16);
         float edgeN = fbm(vP * 7.0 + 2.0);
         float rim = 1.0 - smoothstep(0.765, 0.8, r0 + (edgeN - 0.5) * 0.1);
-        float gaps = mix(1.0, smoothstep(0.18, 0.24, fbm(vP * 4.5 + 9.0)), uMelt);
-        float a = c.a * cover * rim * gaps;
-        vec3 rawCh = mix(vec3(0.98, 0.95, 0.86), c.rgb, 0.22);
-        vec3 meltCh = mix(vec3(0.99, 0.9, 0.62), c.rgb, 0.5);
-        vec3 col = mix(rawCh, meltCh, uMelt);
-        col = mix(col, c.rgb * vec3(1.07, 0.97, 0.82), uBake);
-        col *= 1.0 - uBake * 0.38 * smoothstep(0.6, 0.8, fbm(vP * 5.5 + 4.0));
+        float a = c.a * spread * rim * step(0.001, uCheese);
+        float hgt = chH(vP);
+        float thin = 1.0 - smoothstep(0.28, 0.5, fbm(vP * 5.0 + 11.0));
+        vec3 cd = clamp((c.rgb - 0.62) * 1.5 + 0.62, 0.0, 1.0);
+        vec3 melt = mix(vec3(1.0, 0.85, 0.52), cd * vec3(1.06, 0.97, 0.8), 0.62);
+        melt = mix(melt, vec3(0.97, 0.66, 0.26), thin * 0.3);
+        melt *= 0.86 + 0.2 * hgt;
+        vec3 fresh = mix(vec3(0.99, 0.9, 0.68), melt, 0.7);
+        vec3 col = mix(fresh, melt, smoothstep(0.0, 0.9, uMelt));
+        float edgeT = smoothstep(0.0, 0.07, (uCheese * 0.86 - r0)) * smoothstep(0.0, 0.05, 0.8 - r0);
+        col = mix(vec3(0.95, 0.6, 0.3) * col, col, 0.55 + 0.45 * edgeT);
+        float spots = smoothstep(0.5, 0.78, hgt + (fbm(vP * 11.0 + 4.0) - 0.5) * 0.35);
+        col = mix(col, col * vec3(1.0, 0.86, 0.62), uBake * 0.55);
+        col = mix(col, vec3(0.72, 0.42, 0.17), uBake * spots * 0.62);
         diffuseColor.rgb *= col; diffuseColor.a *= a;`)
+      .replace('#include <normal_fragment_maps>', `#include <normal_fragment_maps>
+        { float hb = chH(vP) * (0.055 + 0.02 * uMelt + 0.025 * uBake);
+          vec3 sX = dFdx(-vViewPosition), sY = dFdy(-vViewPosition); vec3 R1 = cross(sY, normal), R2 = cross(normal, sX);
+          float det = dot(sX, R1); vec2 dH = vec2(dFdx(hb), dFdy(hb));
+          vec3 grad = sign(det) * (dH.x * R1 + dH.y * R2); normal = normalize(abs(det) * normal - grad); }`)
+      .replace('#include <roughnessmap_fragment>', `#include <roughnessmap_fragment>
+        roughnessFactor = clamp(roughnessFactor - 0.12 * chH(vP) + 0.18 * uBake * smoothstep(0.55, 0.8, chH(vP)), 0.12, 0.9);`)
       .replace('#include <emissivemap_fragment>', `#include <emissivemap_fragment>
-        totalEmissiveRadiance += uHeat * vec3(0.4, 0.17, 0.03) * fbm(vP * 9.0 + uTime * 0.3);`);
+        totalEmissiveRadiance += uHeat * vec3(0.4, 0.17, 0.03) * fbm(vP * 9.0 + uTime * 0.3);
+        { float pool = smoothstep(0.6, 0.78, fbm(vP * 9.0 + 1.3)) * (1.0 - 0.6 * uBake); totalEmissiveRadiance += vec3(1.0, 0.93, 0.74) * pool * 0.1 * uMelt; }`);
   };
   const cheese = new THREE.Mesh(cheeseGeometry(seg), cheeseMat); cheese.castShadow = true; cheese.receiveShadow = true; pizza.add(cheese);
   cheeseMat.customDepthMaterial = undefined;

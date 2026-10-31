@@ -90,8 +90,8 @@ if (glOK()) {
       } else {
         box.street.visible = tStep >= 3; st.emberMat.uniforms.uAmt.value = tStep === 1 ? 1 : 0;
         const t = tT; const s = tStep;
-        if (s <= 0) { st.set({ uBall: 1 - sstep(0, 0.45, t), uSauce: sstep(0.35, 0.7, t), uCheese: sstep(0.6, 1, t), uMelt: 0.15, uBake: 0, uHeat: 0 }); box.group.visible = false; }
-        else if (s === 1) { st.set({ uBall: 0, uSauce: 1, uCheese: 1, uMelt: 0.15 + 0.85 * sstep(0, 0.6, t), uBake: sstep(0, 1, t), uHeat: Math.sin(Math.min(1, t) * Math.PI) * 0.9 }); box.group.visible = false; }
+        if (s <= 0) { st.set({ uBall: 1 - sstep(0, 0.45, t), uSauce: sstep(0.35, 0.7, t), uCheese: sstep(0.6, 1, t), uMelt: 0.6, uBake: 0, uHeat: 0 }); box.group.visible = false; }
+        else if (s === 1) { st.set({ uBall: 0, uSauce: 1, uCheese: 1, uMelt: 0.6 + 0.4 * sstep(0, 0.6, t), uBake: sstep(0, 1, t), uHeat: Math.sin(Math.min(1, t) * Math.PI) * 0.9 }); box.group.visible = false; }
         else { st.set({ uBall: 0, uSauce: 1, uCheese: 1, uMelt: 1, uBake: 1, uHeat: 0 }); box.group.visible = true; box.setLid(s === 2 ? lerp(1.95, 0, sstep(0.1, 0.9, t)) : 0); }
         const bx = s >= 3 ? lerp(0, 4.2, sstep(0, 1, t)) : 0; box.group.position.set(bx, -0.03, 0); st.pizza.position.set(bx, 0, 0); st.pizza.scale.setScalar(0.96);
         if (s >= 3) V([lerp(0.5, 3.0, sstep(0, 1, t)), 4.4, 5.4], [lerp(0, 3.2, sstep(0, 1, t)), 0, 0]);
