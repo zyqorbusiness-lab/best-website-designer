@@ -324,3 +324,13 @@ ul.credits{list-style:none;padding:0}
   *{scroll-behavior:auto!important}
   .pcard:hover .pcard-img img{transform:none}
 }
+
+/* Round 2 (Oct 31, 3D rule): a code-built 3D stoneware bowl (vessel.js) sits on the hero photo's corner; the scroll camera tilts into it */
+.hero-media{position:relative}
+.hero-3d{position:absolute;right:clamp(16px,4vw,72px);bottom:clamp(-150px,-9vw,-60px);width:min(30vw,440px);aspect-ratio:1;pointer-events:none;z-index:3;opacity:0;transition:opacity .8s var(--ease)}
+.hero-3d{border-radius:50%;overflow:hidden;background:radial-gradient(circle at 50% 38%,#F6F0E6,var(--c1) 62%,var(--c1b));box-shadow:0 30px 60px -28px color-mix(in srgb,var(--c2) 45%,transparent),inset 0 0 0 1px color-mix(in srgb,var(--c2) 10%,transparent)}
+.hero-3d.is-on{opacity:1}
+.hero-3d canvas{width:100%!important;height:100%!important;display:block}
+.hero-3d-cap{position:absolute;right:clamp(16px,4vw,72px);bottom:calc(clamp(-150px,-9vw,-60px) - 26px);margin:0;font-size:.62rem;color:var(--mute);z-index:3}
+@media (max-width:860px){.hero-3d{width:54vw;right:12px;bottom:-48px}.hero-3d-cap{right:14px;bottom:-78px}}
+@media (prefers-reduced-motion:reduce){.hero-3d{transition:none}}
