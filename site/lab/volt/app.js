@@ -11,11 +11,11 @@ const root = document.documentElement;
 const G = () => window.gsap;
 
 const FL = [
-  { name: 'Lime Bolt', bg: '#C6F432', ink: '#10243E', acc: '#FF9F1C', can: '#C6F432', canHi: '#D6FF4D', txt: '#10243E', stripe: '#10243E', bolt: '#FF9F1C', rim: 0xC6F432,
+  { name: 'Lime Bolt', bg: '#C6F432', ink: '#1F4FD8', acc: '#FF9F1C', can: '#C6F432', canHi: '#D6FF4D', txt: '#1F4FD8', stripe: '#1F4FD8', bolt: '#FF9F1C', rim: 0xC6F432,
     notes: 'Key lime, yuzu zest and a sharp ginger finish.', chips: ['Citrus', 'Ginger', 'Ice cold'] },
-  { name: 'Mango Rush', bg: '#FF9F1C', ink: '#10243E', acc: '#C6F432', can: '#FF9F1C', canHi: '#FFB23F', txt: '#10243E', stripe: '#10243E', bolt: '#C6F432', rim: 0xFF9F1C,
+  { name: 'Mango Rush', bg: '#FF9F1C', ink: '#1F4FD8', acc: '#C6F432', can: '#FF9F1C', canHi: '#FFB23F', txt: '#1F4FD8', stripe: '#1F4FD8', bolt: '#C6F432', rim: 0xFF9F1C,
     notes: 'Ripe mango, passion fruit and a pinch of chilli heat.', chips: ['Tropical', 'Chilli', 'Juicy'] },
-  { name: 'Blue Surge', bg: '#10243E', ink: '#4FD8FF', acc: '#C6F432', can: '#123A66', canHi: '#184C84', txt: '#4FD8FF', stripe: '#4FD8FF', bolt: '#C6F432', rim: 0x4FD8FF,
+  { name: 'Blue Surge', bg: '#1F4FD8', ink: '#4FD8FF', acc: '#C6F432', can: '#123A66', canHi: '#184C84', txt: '#4FD8FF', stripe: '#4FD8FF', bolt: '#C6F432', rim: 0x4FD8FF,
     notes: 'Blue raspberry, cold mint and a flash of lemon.', chips: ['Berry', 'Mint', 'Electric'] },
 ];
 let active = 0;
@@ -176,7 +176,7 @@ const flood = $('.flood'), ghostT = $('.ghost-t'), fnameT = $('.fname-t'), fnum 
 const meta = document.querySelector('meta[name="theme-color"]');
 /* CHARGED mode: every flavour flips to a dark field with its own neon ink */
 let charged = false;
-const CHG = { 'Lime Bolt': { bg: '#0B1C31', ink: '#C6F432' }, 'Mango Rush': { bg: '#13213A', ink: '#FF9F1C' }, 'Blue Surge': { bg: '#071526', ink: '#4FD8FF' } };
+const CHG = { 'Lime Bolt': { bg: '#1A44C2', ink: '#C6F432' }, 'Mango Rush': { bg: '#2340B0', ink: '#FF9F1C' }, 'Blue Surge': { bg: '#163BA8', ink: '#4FD8FF' } };
 const cv = (f) => (charged ? { ...f, ...CHG[f.name] } : f);
 function applyVars(f0) { const f = cv(f0); root.style.setProperty('--bg', f.bg); root.style.setProperty('--ink', f.ink); root.style.setProperty('--acc', f.acc); }
 function setText(f, n) {
@@ -306,8 +306,10 @@ function frame(now) {
         const hx = hcx, hy = hcy - drop * VH * 0.9;
         const idle = reduced ? 0 : Math.sin(T * 0.8) * 0.45;
         sx = lerp(hx, cx, e); sy = lerp(hy, cy, e); sh = lerp(hpx * (1 + drop * 0.5), L.s, e);
-        ry = lerp(idle + px * 0.8 - drop * Math.PI * 5, ry, e);
-        rz = lerp(drop * 0.6, rz, e); rx = lerp(py * 0.25, 0, e);
+        /* R3: scroll beat - the hero can barrel-turns once and tips toward the camera as it travels into the carousel */
+        const sb = reduced ? 0 : Math.sin(e * Math.PI);
+        ry = lerp(idle + px * 0.8 - drop * Math.PI * 5, ry, e) + (reduced ? 0 : e * Math.PI * 2);
+        rz = lerp(drop * 0.6, rz, e) + sb * 0.22; rx = lerp(py * 0.25, 0, e) + sb * 0.42;
         z = lerp(0.6, z, e); shOp = 0.5 * e;
       } else {
         sx = cx + sl * (1 - e) * VW * 0.7; sy = cy; sh = L.s; ry += (1 - e) * sl * 2.4;

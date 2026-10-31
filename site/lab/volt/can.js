@@ -215,7 +215,7 @@ export function drawWrap(f, W, pass) {
   g.font = `700 ${14 * s}px "Inter Tight", sans-serif`;
   g.fillText('CONCEPT CAN  \u00B7  NOT FOR SALE', 40 * s, H * 0.3 + 30 * s); g.fillText('ZYQOR LAB 07', 40 * s, H * 0.3 + 52 * s);
   g.fillStyle = P('#F4F7FA', ORM.white); g.fillRect(W - 190 * s, H * 0.62, 150 * s, 92 * s);
-  g.fillStyle = P('#10243E', ORM.matteInk);
+  g.fillStyle = P('#1A3FB0', ORM.matteInk);
   let bx = W - 180 * s; let seed = 7; while (bx < W - 52 * s) { seed = (seed * 9301 + 49297) % 233280; const bw = (1 + (seed % 3)) * 2 * s; g.fillRect(bx, H * 0.62 + 10 * s, bw, 62 * s); bx += bw + 3 * s; }
 
   /* ---- micro-print (holds up at close range: 3 px per unit at 3072) ---- */
@@ -263,7 +263,7 @@ export function drawWrap(f, W, pass) {
       g.beginPath(); g.moveTo(R2 * 0.56, R2 * 0.42); g.lineTo(R2 * 0.3, R2 * 0.24); g.lineTo(R2 * 0.3, R2 * 0.6); g.closePath(); g.fill(); g.restore(); }
     g.font = `800 ${9 * s}px "Inter Tight", Arial, sans-serif`; g.textAlign = 'center'; g.fillText('ALU', 0, R2 + 13 * s); g.restore(); }
   // barcode digits under the bars
-  g.fillStyle = P('#10243E', ORM.matteInk); g.font = `600 ${9 * s}px "Inter Tight", Arial, sans-serif`; g.textAlign = 'center';
+  g.fillStyle = P('#1A3FB0', ORM.matteInk); g.font = `600 ${9 * s}px "Inter Tight", Arial, sans-serif`; g.textAlign = 'center';
   g.fillText('5 0 1 2 3 4 5   6 7 8 9 0 7', W - 115 * s, H * 0.62 + 84 * s);
   // dot-matrix batch code (inkjet) just above the bottom band
   { const code = 'L07 26' + (10 + f.name.length) + ' 14:32  BB 10/2027', dot = 1.25 * s; g.fillStyle = P('#0b1220', ORM.matteInk, 1);
