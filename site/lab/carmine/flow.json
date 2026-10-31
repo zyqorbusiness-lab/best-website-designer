@@ -10,15 +10,15 @@
  "frames": {
   "d": {
    "n": 180,
-   "w": 1600,
-   "h": 900,
-   "src": "../../assets/lab/carmine/d/f{i}.webp"
+   "w": 1280,
+   "h": 720,
+   "src": "../../assets/lab/carmine/d/carmine_{i}.webp"
   },
   "m": {
    "n": 90,
-   "w": 646,
-   "h": 1040,
-   "src": "../../assets/lab/carmine/m/f{i}.webp"
+   "w": 448,
+   "h": 720,
+   "src": "../../assets/lab/carmine/m/carmine_{i}.webp"
   }
  },
  "scroll": {
@@ -48,10 +48,10 @@
   }
  ],
  "source": {
-  "file": "carmine.mp4",
+  "file": "Black_Ink_--FREE_FOOTAGE--.webm (Wikimedia Commons, CC BY 3.0)",
   "trim": [
-   0.2,
-   14.6
+   16.0,
+   31.0
   ]
  }
 }

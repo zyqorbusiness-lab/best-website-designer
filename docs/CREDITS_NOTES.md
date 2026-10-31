@@ -113,17 +113,20 @@ From the [Khronos glTF Sample Assets](https://github.com/KhronosGroup/glTF-Sampl
 
 ### 12 Carmine No.7 (Fountain pen ink)
 - Code and design: Zyqor Studio (MIT licence for the code). Page generated with Zyqor Video Flow.
-- Footage: [Texture of red ink in water on a white background (clip 41999)](https://mixkit.co/free-stock-video/texture-of-red-ink-in-water-on-a-white-background-41999/) by Mixkit, Mixkit Stock Video Free License (trimmed and cut into frames).
+- Footage: [Black Ink //FREE FOOTAGE\ (#00029)](https://commons.wikimedia.org/wiki/File:Black_Ink_--FREE_FOOTAGE--.webm) by VFX FOOTAGE (skip1frame.com), via Wikimedia Commons, CC BY 3.0 (15 s excerpt, cropped, recoloured carmine on paper, cut into frames).
+- 3D bottle: glass bottle, ink, fountain pen and paper modelled in code with three.js (MIT); no downloaded models.
 - Fonts: Anton and Space Grotesk, SIL Open Font License.
 
 ### 13 Longway (Overland road trips)
 - Code and design: Zyqor Studio (MIT licence for the code). Page generated with Zyqor Video Flow.
-- Footage: [Going down a curved highway through a mountain range (clip 41576)](https://mixkit.co/free-stock-video/going-down-a-curved-highway-through-a-mountain-range-41576/) by Mixkit, Mixkit Stock Video Free License (trimmed and cut into frames).
+- Footage: [Driving from Blenheim to Havelock in the Marlborough Region of New Zealand](https://commons.wikimedia.org/wiki/File:Driving_from_Blenheim_to_Havelock_in_the_Marlborough_Region_of_New_Zealand.webm) by NewZealandRoadTrips, via Wikimedia Commons, CC BY 3.0 (28 s excerpt, cropped, graded, cut into frames).
+- 3D route: valley, road, 4x4 and stops modelled in code with three.js (MIT); no downloaded models.
 - Fonts: Bricolage Grotesque and Inter Tight, SIL Open Font License.
 
 ### 14 Rise No.3 (Sparkling strawberry water)
 - Code and design: Zyqor Studio (MIT licence for the code). Page generated with Zyqor Video Flow.
-- Footage: [Strawberries Splashing With Yellow Backdrop (clip 101341)](https://mixkit.co/free-stock-video/strawberries-splashing-with-yellow-backdrop-101341/) by Mixkit, Mixkit Stock Video Free License (cut into frames).
+- Footage: [4K Video of Colorful Liquid in Space](https://commons.wikimedia.org/wiki/File:4K_Video_of_Colorful_Liquid_in_Space.webm) by NASA Johnson Space Center, via Wikimedia Commons, public domain (15 s excerpt, cropped, the water ball recoloured strawberry red, cut into frames).
+- 3D can: can, label, strawberries and bubbles modelled in code with three.js (MIT); no downloaded models.
 - Fonts: Archivo and Inter Tight, SIL Open Font License.
 
 ### 15 Fumée (Perfume house)

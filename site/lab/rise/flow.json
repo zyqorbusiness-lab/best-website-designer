@@ -12,13 +12,13 @@
    "n": 200,
    "w": 1280,
    "h": 720,
-   "src": "../../assets/lab/rise/d/f{i}.webp"
+   "src": "../../assets/lab/rise/d/rise_{i}.webp"
   },
   "m": {
    "n": 96,
    "w": 446,
    "h": 720,
-   "src": "../../assets/lab/rise/m/f{i}.webp"
+   "src": "../../assets/lab/rise/m/rise_{i}.webp"
   }
  },
  "scroll": {
@@ -48,10 +48,10 @@
   }
  ],
  "source": {
-  "file": "rise.mp4",
+  "file": "4K_Video_of_Colorful_Liquid_in_Space.webm (Wikimedia Commons, NASA, public domain)",
   "trim": [
-   0,
-   26.6
+   50.0,
+   65.0
   ]
  }
 }
