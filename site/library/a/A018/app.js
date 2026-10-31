@@ -15,20 +15,20 @@ const $ = (s) => document.querySelector(s);
 const journey = $('.journey'), rail = $('.rail');
 
 const stage = await createStage({
-  el: '.scene', lazy: false, hdri: 0, envIntensity: 0.1, exposure: 1.08, shadows: true,
+  el: '.scene', lazy: false, hdri: 0, envIntensity: 0.1, exposure: 1.2, shadows: true,
   camera: { fov: isM ? 52 : 40, near: 0.05, far: 1200, position: [0, 40, 30], target: [0, 0, -5] },
   label: 'Tranquility Base: a camera flies from lunar orbit down to scanned moon rocks, then rises to an earthrise as you scroll.'
 });
 const { scene, camera, renderer } = stage;
 if (!stage.failed) { renderer.shadowMap.type = THREE.PCFSoftShadowMap; }
-const skyCol = C2.clone().lerp(new THREE.Color('#0d1626'), 0.35);
+const skyCol = C2.clone().lerp(new THREE.Color('#1b2a4a'), 0.25);   // navy, lifted (Oct 31)
 const horizonCol = C2.clone().lerp(C1, 0.035);
 scene.fog = new THREE.Fog(horizonCol, 22, 62);
 
 /* --- sky dome (navy, never black) + starfield (code-made) --- */
 const sky = new THREE.Mesh(new THREE.SphereGeometry(1000, 32, 16), new THREE.ShaderMaterial({
   side: THREE.BackSide, depthWrite: false, fog: false,
-  uniforms: { top: { value: skyCol.clone().multiplyScalar(0.55) }, horizon: { value: horizonCol } },
+  uniforms: { top: { value: skyCol.clone().multiplyScalar(0.78) }, horizon: { value: horizonCol } },
   vertexShader: 'varying vec3 vP; void main(){ vP = normalize(position); gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }',
   fragmentShader: 'uniform vec3 top; uniform vec3 horizon; varying vec3 vP; void main(){ float h = smoothstep(-0.05, 0.55, vP.y); gl_FragColor = vec4(mix(horizon, top, h), 1.0);\n#include <colorspace_fragment>\n}'
 }));
@@ -69,7 +69,7 @@ for (let i = 0; i < pos.count; i++) {
   pos.setY(i, h);
 }
 G.computeVertexNormals();
-const groundMat = new THREE.MeshStandardMaterial({ color: 0xc2bfba, map: diff, normalMap: nor, normalScale: new THREE.Vector2(1.7, 1.7), roughnessMap: arm, aoMap: arm, roughness: 1, metalness: 0 });
+const groundMat = new THREE.MeshStandardMaterial({ color: 0xdcd5ca, map: diff, normalMap: nor, normalScale: new THREE.Vector2(1.7, 1.7), roughnessMap: arm, aoMap: arm, roughness: 1, metalness: 0 });
 const ground = new THREE.Mesh(G, groundMat); ground.receiveShadow = true; scene.add(ground);
 /* the apron to the horizon: same maps, UVs scaled so the tiling matches (5 units per tile) */
 const ring = new THREE.RingGeometry(SIZE * 0.5 - 6, 900, 96, 1).rotateX(-Math.PI / 2);

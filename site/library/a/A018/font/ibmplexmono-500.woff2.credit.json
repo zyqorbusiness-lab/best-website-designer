@@ -1,0 +1,13 @@
+{
+ "title": "IBM Plex Mono",
+ "author": "Mike Abbink, IBM (Bold Monday)",
+ "author_url": "https://github.com/IBM/plex",
+ "source_url": "https://fonts.google.com/specimen/IBM+Plex+Mono",
+ "licence": "SIL OFL 1.1",
+ "licence_url": "https://openfontlicense.org/open-font-license-official-text/",
+ "attribution": "IBM Plex Mono by Mike Abbink / IBM, SIL Open Font License 1.1 (https://github.com/IBM/plex)",
+ "changes": "self-hosted woff2, Latin subset (via Fontsource, https://cdn.jsdelivr.net/fontsource/fonts/ibm-plex-mono@latest/latin-500-normal.woff2); OFL permits subsetting and conversion; family name unchanged",
+ "downloaded": "2026-10-31",
+ "file": "ibmplexmono-500.woff2",
+ "credit_written_by": "portfolio fixes round 1, 2026-10-31"
+}
