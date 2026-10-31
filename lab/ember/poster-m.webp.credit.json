@@ -3,10 +3,11 @@
  "author": "Zyqor Studio (page screenshot); espresso photo by Jubair1985",
  "author_url": "https://commons.wikimedia.org/wiki/User:Jubair1985",
  "source_url": "https://commons.wikimedia.org/wiki/File:Espresso_Coffee_01.jpg",
- "licence": "CC0 1.0 (photo) / MIT (page)",
- "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+ "licence": "MIT",
+ "licence_url": "https://opensource.org/licenses/MIT",
  "attribution": "Screenshot of the Zyqor Studio EMBER concept page showing \"Espresso Coffee 01\" by Jubair1985 (Wikimedia Commons, CC0 1.0).",
  "changes": "Screenshot of the page's hero after the Oct 31 fix (real photo cup), resized, WebP. Not AI imagery.",
  "downloaded": "2026-10-31",
- "file": "poster-m.webp"
+ "file": "poster-m.webp",
+ "licence_note": "Page screenshot (MIT). The pictured espresso photo is CC0 1.0 (Jubair1985, Wikimedia Commons), so no extra terms apply."
 }
