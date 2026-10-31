@@ -14,10 +14,11 @@
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
 <link rel="preload" href="../../_kit/stage.js" as="script" crossorigin>
 <link rel="preload" href="../../_assets/models/cassette_player.glb" as="fetch" crossorigin>
+<link rel="preload" href="../../../assets/font/spacegrotesk-300-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../../_kit/concept.css">
 <link rel="stylesheet" href="../../_kit/landing.css">
 <link rel="stylesheet" href="m.css">
-<style>:root{--c1:#F2EBDD;--c2:#3A1F1A;--c3:#E5C61A}</style>
+<style>:root{--c1:#F2EBDD;--c2:#6B3E2E;--c3:#E5C61A;--tape-red:#C8402F}</style>
 <script type="importmap">{"imports":{"three":"../../../vendor/three/three.module.min.js","three/addons/":"../../../vendor/three/addons/"}}</script>
 <link rel="canonical" href="https://zyqor-portfolio.vercel.app/library/p/P017/">
 <meta property="og:type" content="website">
@@ -49,7 +50,7 @@
     <div class="hero-copy">
       <p class="tag" data-rv>Hi-fi &middot; Concept P017</p>
       <h1 id="h1" class="title" data-rv>Tape<span class="serif">head</span></h1>
-      <p class="lead" data-rv>One portable deck, scanned down to the screws. Press play: the meter reads the sound your browser is making, live.</p>
+      <p class="lead" data-rv>One portable deck, scanned down to the screws.</p>
     </div>
     <div class="deck glass" role="group" aria-label="Deck controls" data-rv>
       <div class="vu" aria-hidden="true">
@@ -62,6 +63,7 @@
         <button class="key" type="button" data-key="stop"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="1"/></svg><span>Stop</span></button>
         <button class="key" type="button" data-key="eject" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 15l7-9 7 9zM5 19h14"/></svg><span>Eject</span></button>
       </div>
+      <p class="deck-hint">Press play: the meter reads the sound your browser is making, live.</p>
       <p class="mono deck-s" id="deck-s" aria-live="polite">Stopped &middot; tape in</p>
     </div>
   </section>

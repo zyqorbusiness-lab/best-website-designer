@@ -1,4 +1,4 @@
-/* P017 Tapehead Hi-Fi - desktop. Structure 14, multi-scene WebGL portal: one fixed scene behind the page, the deck at the centre of three chapters. Palette: cream #F2EBDD / oxblood #3A1F1A / signal yellow #E5C61A. */
+/* P017 Tapehead Hi-Fi - desktop. Structure 14, multi-scene WebGL portal: one fixed scene behind the page, the deck at the centre of three chapters. Palette: cream #F2EBDD / walnut #6B3E2E / signal yellow #E5C61A. */
 
 body{background:var(--c2);color:var(--c1)}
 .hero{position:relative;min-height:max(100svh,820px);overflow:hidden}
@@ -48,3 +48,15 @@ main>section{position:relative;z-index:1}
 
 /* footer above the fixed deck stage (the stage sits in the hero's z-index:1 context) */
 .zk-foot{position:relative;z-index:2}
+
+/* Oct 31 fix: off near-black. Warm walnut #6B3E2E (was oxblood #3A1F1A) with cream #F2EBDD type, mustard #E5C61A and
+   tape red #C8402F accents; the only deep tone left is inside the deck's VU screen. Display face: Space Grotesk (OFL). */
+@font-face{font-family:"Space Grotesk";src:url("../../../assets/font/spacegrotesk-300-700.woff2") format("woff2");font-weight:300 700;font-display:swap}
+:root{--f-display:"Space Grotesk","Manrope",system-ui,sans-serif}
+body{background:radial-gradient(120% 80% at 70% 10%,#7D4A36 0%,#6B3E2E 45%,#5F3628 100%) fixed,#6B3E2E}
+.title{font-weight:700;letter-spacing:-.045em}
+.vu-red{stroke:var(--tape-red)}
+.vu{background:color-mix(in oklab,#2E3A36 82%,var(--c2));border-radius:14px;padding:6px 8px}
+.tp-steps span.is-on{border-color:var(--tape-red)}
+.inside{background:color-mix(in oklab,var(--c2) 92%,transparent)}
+.in-list b{color:var(--c3)}
