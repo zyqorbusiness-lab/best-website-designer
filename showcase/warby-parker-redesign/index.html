@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Warby Parker redesign concept (unofficial) | Zyqor Studio</title>
+<meta name="description" content="An unofficial redesign concept for Warby Parker by Zyqor Studio: a real 3D frame you can turn, four finishes, a lens slider that tints the street you see through the lenses, and Home Try-On in five. Not affiliated with Warby Parker.">
+<meta name="theme-color" content="#F6F9F8">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Warby Parker, redesigned (unofficial concept) | Zyqor Studio">
+<meta property="og:description" content="A real 3D frame, four finishes and a lens slider you can see through. Unofficial concept by Zyqor Studio, not affiliated with Warby Parker.">
+<meta property="og:image" content="og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/jakarta-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="wp.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23123532'/%3E%3Ccircle cx='21' cy='34' r='10' fill='none' stroke='%23F6F9F8' stroke-width='4'/%3E%3Ccircle cx='43' cy='34' r='10' fill='none' stroke='%23F6F9F8' stroke-width='4'/%3E%3Cpath d='M31 33q1-3 2 0' stroke='%23F6F9F8' stroke-width='4' fill='none'/%3E%3C/svg%3E">
+</head>
+<body>
+<canvas id="gl" aria-hidden="true"></canvas>
+<img class="poster" src="og.jpg" alt="A tortoiseshell frame, three-quarter view" width="1200" height="630">
+
+<header class="nav">
+  <a class="brand" href="#top" aria-label="Warby Parker concept, home">Warby Parker</a>
+  <nav aria-label="Main"><a href="#finish">Eyeglasses</a><a href="#lens">Sunglasses</a><a href="#tryon">Home Try-On</a><a href="#exam">Eye exams</a></nav>
+  <span class="chip" title="Unofficial redesign concept by Zyqor Studio. Not affiliated with Warby Parker.">Unofficial concept</span>
+  <a class="btn btn-s" href="#tryon">Try 5 at home</a>
+</header>
+
+<main id="top">
+  <section id="hero" class="hero">
+    <div class="hero-in">
+      <p class="eyebrow">Eyeglasses and sunglasses</p>
+      <h1 class="h1"><span class="ln"><span>See it all,</span></span> <span class="ln"><span><em>clearly.</em></span></span></h1>
+      <p class="lede">Frames you can turn in your hand, lenses made for the way you spend your day, and five pairs to try at home before you choose.</p>
+      <div class="ctas"><a class="btn" href="#finish">Find your frame</a><a class="btn btn-ghost" href="#tryon">Try 5 at home, free</a></div>
+      <ul class="facts">
+        <li><b>5 frames, 5 days</b><span>Home Try-On</span></li>
+        <li><b>Buy a Pair, Give a Pair</b><span>The program, front and centre</span></li>
+        <li><b>Eye exams</b><span>Book in two taps</span></li>
+      </ul>
+    </div>
+    <p class="scrollhint" aria-hidden="true"><span></span>Scroll to turn the frame</p>
+  </section>
+
+  <section id="finish" class="finish">
+    <div class="finish-in">
+      <p class="eyebrow">01 · Finish studio</p>
+      <h2 class="h2">Pick a finish. <em>Turn it</em> in your hand.</h2>
+      <p class="body">Every frame is a real 3D model, lit like a studio shot. Choose the acetate and watch it change on the frame itself, not on a flat swatch.</p>
+      <div class="swatches" role="radiogroup" aria-label="Frame finish">
+        <button class="sw on" role="radio" aria-checked="true" data-f="0"><i style="--a:#3a1d0c;--b:#b47431"></i>Whiskey Tortoise</button>
+        <button class="sw" role="radio" aria-checked="false" data-f="1"><i style="--a:#121414;--b:#2a2e2e"></i>Jet Black</button>
+        <button class="sw" role="radio" aria-checked="false" data-f="2"><i style="--a:#dfe7e6;--b:#ffffff"></i>Crystal</button>
+        <button class="sw" role="radio" aria-checked="false" data-f="3"><i style="--a:#2f8a7e;--b:#7cc2b6"></i>Sea Glass</button>
+      </div>
+      <p class="finish-name" aria-live="polite"><span id="fname">Whiskey Tortoise</span> · acetate, polished</p>
+    </div>
+    <div id="turnzone" class="turnzone" aria-label="Drag to turn the frame"><span>Drag to turn</span></div>
+  </section>
+
+  <section id="lens" class="lens">
+    <div class="lens-pin">
+      <div class="lens-panel">
+        <p class="eyebrow">02 · Lens lab</p>
+        <h2 class="h2">Slide to see <em>through</em> the lens.</h2>
+        <div class="slider">
+          <input id="lensr" type="range" min="0" max="300" value="0" step="1" aria-label="Lens type" aria-valuetext="Clear">
+          <div class="stops"><button data-v="0" class="on">Clear</button><button data-v="100">Blue-light</button><button data-v="200">Light-responsive</button><button data-v="300">Sun</button></div>
+        </div>
+        <p class="lens-note" aria-live="polite" id="lnote">Clear. Everyday lenses, anti-reflective, scratch-resistant.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="tryon" class="tryon">
+    <div class="tryon-in">
+      <p class="eyebrow">03 · Home Try-On</p>
+      <h2 class="h2">Five frames. Five days. <em>Free.</em></h2>
+      <ol class="steps">
+        <li><b>1</b><span><strong>Pick five</strong> you like, in any finish.</span></li>
+        <li><b>2</b><span><strong>Wear them</strong> at home, at work, in the mirror.</span></li>
+        <li><b>3</b><span><strong>Keep your favourite</strong>, send the box back.</span></li>
+      </ol>
+      <div class="ctas"><a class="btn" href="#exam">Start Home Try-On</a></div>
+    </div>
+  </section>
+
+  <section id="exam" class="exam">
+    <div class="exam-in">
+      <h2 class="h2">Ready when <em>your eyes</em> are.</h2>
+      <div class="cards">
+        <article><h3>Eye exams</h3><p>Pick a store, pick a time. Two taps, no phone tag.</p><div class="times" role="group" aria-label="Sample times"><button>Today 4:30</button><button>Tomorrow 10:00</button><button>Sat 11:15</button></div></article>
+        <article><h3>Buy a Pair, Give a Pair</h3><p>The program that started it all, told up front instead of in the footer.</p></article>
+        <article><h3>Your prescription</h3><p>Upload it once, see every frame that fits it, sorted by face width.</p></article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot-in">
+    <p class="disc"><b>Unofficial redesign concept by Zyqor Studio.</b> Not affiliated with, endorsed by or sponsored by Warby Parker. Warby Parker and its logos are trademarks of their owner. This page is a design study; nothing here is for sale, and the copy is ours.</p>
+    <p class="cred">3D frame: “Sunglasses Khronos” by Eric Chadwick, Darmstadt Graphics Group, <a href="https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/SunglassesKhronos">glTF Sample Assets</a>, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> (geometry only; its logo texture is not used, finishes and lenses are rebuilt in code). Street photo: Rico Cilliers, Poly Haven “Venetian Crossroads” backplate, CC0. Type: Fraunces (Undercase Type) and Plus Jakarta Sans (Tokotype), SIL OFL 1.1. Built with three.js (MIT).</p>
+    <p class="by">Designed and built by <a href="https://zyqor-portfolio.vercel.app/">Zyqor Studio</a> · zyqor.studio</p>
+  </div>
+</footer>
+
+<script type="importmap">{"imports":{"three":"../../vendor/three/three.module.min.js","three/addons/":"../../vendor/three/addons/"}}</script>
+<script src="wp.js" defer></script>
+<script type="module" src="wp3d.js"></script>
+</body>
+</html>
