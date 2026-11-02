@@ -82,7 +82,7 @@ function applyFinish(m, f, k = 1) { // k = blend amount toward f (for tweening f
    with a studio env it paints magenta smudges on the lens (and purple is off-palette). */
 const LENS = [
   { c: '#ffffff', iri: 0.0, env: 0.5 },
-  { c: '#fff2cf', iri: 0.0, env: 0.6 },
+  { c: '#fff4da', iri: 0.0, env: 0.6 },
   { c: '#a9b0ab', iri: 0.0, env: 0.7 },
   { c: '#56665b', iri: 0.0, env: 0.8 },   // ~10% of the light through, like a real category-3 sun lens
 ];
@@ -123,7 +123,7 @@ let dirty = true;
 const TRY = [3, 1, 0, 2, 3]; // finishes of the five try-on frames (slot 2 = the hero frame, keeps the chosen finish)
 const TRYF = [FINISHES[3], FINISHES[1], null, FINISHES[2], FINISHES[0]];
 
-const TRYLENS = ['#ffffff', '#56665b', null, '#fff2cf', '#7a6450']; // clear, sun green, (hero), blue-light, sun brown
+const TRYLENS = ['#ffffff', '#56665b', null, '#fff7e4', '#7a6450']; // clear, sun green, (hero), blue-light, sun brown
 const lensClones = [];
 function fixedLens(c, outer) { const m = lensMat.clone(); lensClones.push(m); m.color.set(outer ? c : '#ffffff'); m.iridescence = 0; return m; }
 function buildFrame(src, finish, lensC) {
@@ -199,13 +199,13 @@ Promise.all([
 /* each key: world width to fit (w), screen offset of the frame (dx desktop, dy phone, in frame widths), turn (ry, rx),
    street plane opacity (st), try-on lineup amount (tr) */
 const KEYS = { // w desktop fit width, wm portrait-phone fit width
-  hero:   { w: 0.50, wm: 0.255, dx: 0.25, dy: 0.235, ry: -0.62, rx: 0.16, st: 0, tr: 0 },
-  hero2:  { w: 0.48, wm: 0.255, dx: 0.25, dy: 0.235, ry: -2.2, rx: 0.10, st: 0, tr: 0 },
-  finish: { w: 0.36, wm: 0.23, dx: -0.26, dy: 0.26, ry: 0.55, rx: 0.12, st: 0, tr: 0 },
+  hero:   { w: 0.44, wm: 0.255, dx: 0.23, dy: 0.235, ry: -0.62, rx: 0.16, st: 0, tr: 0 },
+  hero2:  { w: 0.44, wm: 0.255, dx: 0.23, dy: 0.235, ry: -2.2, rx: 0.10, st: 0, tr: 0 },
+  finish: { w: 0.42, wm: 0.23, dx: -0.22, dy: 0.26, ry: 0.55, rx: 0.12, st: 0, tr: 0 },
   lens:   { w: 0.205, wm: 0.17, dx: 0, dy: 0.10, ry: 0, rx: 0.0, st: 1, tr: 0 },
   lens2:  { w: 0.19, wm: 0.16, dx: 0, dy: 0.10, ry: 0, rx: 0.0, st: 1, tr: 0 },
-  tryon:  { w: 1.16, wm: 0.56, dx: 0, dy: 0.12, ry: -0.35, rx: 0.22, st: 0, tr: 1 },
-  end:    { w: 1.16, wm: 0.56, dx: 0, dy: 0.06, ry: -0.35, rx: 0.22, st: 0, tr: 1 },
+  tryon:  { w: 1.1, wm: 0.56, dx: 0, dy: 0.12, ry: -0.35, rx: 0.22, st: 0, tr: 1 },
+  end:    { w: 1.1, wm: 0.56, dx: 0, dy: 0.06, ry: -0.35, rx: 0.22, st: 0, tr: 1 },
 };
 let stops = [];
 function measure() {
