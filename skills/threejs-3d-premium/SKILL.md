@@ -502,3 +502,31 @@ Lab carmine and rise, Oct 31 2026, done to meet the "every upgrade is real 3D" r
 - **Dropping footage is a page-level change:** remove the frame folders and the manifest, the scrub runtime script and its vendor scripts (GSAP/Lenis if only it used them), the frame preload, the footage credit row (page, CREDITS.md, CREDITS_NOTES.md), the README concept line, and re-shoot every image that showed the footage (Lab card `poster.webp`/`poster-m.webp`, og:image, no-WebGL poster) from the new 3D hero. If the page relied on the runtime's helpers (`[data-rv]` reveals, `[data-count]` rolls, magnetic pills), copy those few lines into the 3D module.
 - **Footage that starts empty:** Carmine's ink clip opened on bare paper until the drop arrived. Videoflow manifests now take an optional `"start"` per frame set (`{"n":116,"start":64,...}`): the scrub begins on frame 65 with the drop already blooming. Update the preload, the poster frame, the filmstrip frames/labels and the frame counter to match. Also re-check the reduced-motion page: footage that is light paper needs dark type there (the generated reduced styles assume dark footage).
 - **Posters:** render the scene-only poster by hiding the copy and freezing time (`window.__riseT = 2.2`) before the screenshot, so the loading poster and the first live frame match exactly.
+
+
+## Worked build: glass you look through, a lens slider over a real photo (Warby Parker redesign concept, Nov 2 2026)
+
+Site: `site/showcase/warby-parker-redesign/` (unofficial concept). One real glTF frame (Khronos "Sunglasses Khronos", CC BY 4.0,
+geometry only), a procedural tortoiseshell shader, and a lens slider (Clear, Blue-light, Light-responsive, Sun) that tints
+what you see THROUGH the lenses while the street around them stays bright. What it taught, each one found on a screenshot:
+
+| Problem seen | Cause | Fix that worked |
+|---|---|---|
+| Clear lenses looked milky grey on the paper canvas | ACES tone-maps the transmitted colour, but a `scene.background` colour is not tone-mapped, so paper seen through glass is darker than paper around it | `renderer.toneMapping = THREE.NeutralToneMapping` for product-on-paper scenes with glass |
+| The street photo never appeared inside the lenses (lenses went dark) | three.js renders **only opaque objects** into the transmission pass; a `transparent: true` plane is skipped | keep the plane opaque; fade it in and out with a paper-coloured transparent veil in front of it (the lenses keep seeing the street while the veil fades) |
+| Sun lens was pure black | both lens surfaces (outer + inner shell) were tinted, so the tint multiplied twice; and hex colours are sRGB, so `#27302a` is about 2% in linear light | tint the outer surface only; pick the tint by its linear value (`#56665b` is about 10% through, like a real category-3 sun lens) |
+| White smudges in the middle of every lens | `RoomEnvironment` light boxes reflect as soft white rectangles on near-zero roughness glass | give the glass its own environment: `pmrem.fromScene()` of a big back-side sphere with a dark-to-light vertical gradient; keep RoomEnvironment for the frame |
+| Magenta streaks on the Sun lens | `iridescence` under a studio env paints pink/purple (and purple is off-palette, colour-systems R5) | drop iridescence; a mirror look, if wanted, comes from env intensity, not a thin-film coat |
+| Frame cut off on phones | one fit width for every aspect | each camera key carries `w` (desktop) and `wm` (portrait) world widths; the distance is solved from the width: `dist = (w/2)/tan(hfov/2)` with `hfov = 2*atan(tan(vfov/2)*aspect)`; the try-on lineup switches to 3-over-2 on portrait |
+
+Other moves worth reusing:
+- **Fold the temples about their hinge**: find the hinge mesh, put a pivot `Group` at its bounding-box centre, `attach()` the hinge
+  and arm to it (keeps world transforms), then rotate the pivot. An unfold on load (0 to 1 in 1.6 s) is the hero's first beat.
+- **Finish swaps without recompiles**: one `onBeforeCompile` acetate material whose finish lives in uniforms (tortoise amount,
+  three tortoise colours) plus `color / roughness / transmission`; a swap tweens from the current values over 650 ms.
+- **Procedural tortoiseshell** (no UVs on the model): object-space fbm, domain-warped once (`fbm(q + 2*fbm(q*0.6))`), dark spots
+  by `smoothstep(0.42, 0.62, n)` over a honey-to-amber base, a low-frequency glow layer at 35%.
+- **A capture hook**: `window.__wp3d = { setLens, setFinish }` and `window.__wp = { glide }` let a recording script drive the
+  slider in virtual time; the DOM slider and the 3D stay one state.
+- **Weight**: frame GLB 371 KB, street photo 355 KB (desktop) / 101 KB (phone), no HDR (the 1.6 MB studio HDR was dropped for
+  RoomEnvironment + the gradient lens env with no visible loss).

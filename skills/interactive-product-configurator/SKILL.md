@@ -308,6 +308,15 @@ handfuls, total $20.50, fired, 0 errors at 1440, 390 and 360.
 | `examples/index.html` | compact builder on P041's real photo layers: drag, click, tap, remove, fire, reduced motion, self-tests |
 | `../../site/library/p/P041/` | the full concept (desktop `index.html`, phone `m.html`, `app.js`, credits) |
 
+## Worked example: a "see-through" option slider (lens type, Warby Parker concept, Nov 2 2026)
+
+When the option changes what the product does rather than how it looks (lens tint, glass, a filter), show its effect on the
+world, not on a swatch: put a real photo behind the product in 3D and let the product's material change what is seen through
+it. The slider is a native `<input type="range">` (0..300, four labelled stops that glide to their value in 900 ms), its
+caption changes per stop (`aria-live="polite"`, `aria-valuetext` set to the stop name), and the 3D reads the same value
+(`setLens(v/100)`). The stops snap only on label taps; dragging stays continuous so the tint can be scrubbed. The three.js
+side (opaque photo plane, outer-surface-only tint, a glass-only env) is in `skills/threejs-3d-premium` under the same worked build.
+
 ## Sources
 
 - Reel by @online.by.annie (Annie | Web Design Tips), Instagram, https://www.instagram.com/reel/DfGDN_fIZsC/ (inspiration only; the pizza site shown, branded "Tondo", could not be traced to its designer by search on 30 Oct 2026).
