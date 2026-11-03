@@ -18,7 +18,7 @@ def find(name):
     for d in [os.environ.get("ZQ_SFX_DIR", ""), "sfx_premium", "sfx_v2", "../sfx", "Motion-Graphics-starter-kit/sfx"]:
         if not d: continue
         d = d if os.path.isabs(d) else os.path.join(KIT, d)
-        for ext in (".mp3", ".wav"):
+        for ext in (".mp3", ".wav", ".m4a", ".aac", ".ogg", ".flac"):
             p = os.path.join(d, name + ext)
             if os.path.exists(p): return p
     raise FileNotFoundError(name)
