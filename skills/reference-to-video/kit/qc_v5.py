@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""qc_v5.py — Zyqor Motion Kit v5 QUALITY GATE. A render that fails here is NOT sent to anyone. (Sujon, Nov 3 2026: "strictly")
+"""qc_v5.py — Zyqor Motion Kit v5.2 QUALITY GATE. A render that fails here is NOT sent to anyone. (Sujon, Nov 3 2026: "strictly")
   python3 qc_v5.py --video out.mp4 --spec shots.json [--jsx build/reel.jsx]
   python3 qc_v5.py --jsx some_comp.jsx            (audit an old/hand-made comp for glow + banned colours only)
 HARD FAILS (exit code 1):
@@ -9,9 +9,14 @@ HARD FAILS (exit code 1):
   F4 a gradient preset that is not in zq_config.json, or one whose colours fall in the banned purple/blue/cyan range
   F5 banned "AI" palette on screen: purple/blue/cyan neon covers more than 6 % of any sampled frame
   F6 Blender used for text/titles/captions/effects (Blender = real 3D objects only)
-  F7 an sfx/music file that is not listed in a LICENSES.txt next to it
+  F7 an sfx/music file whose source is not logged (Pinterest pin in assets/pinterest/SOURCES.txt via pin_download.py, or a LICENSES.txt line)
   F8 loudness outside -14 +/-1 LUFS or true peak above -1 dBTP;  F9 not 1080x1920 / 30 fps
   F10 captions outside the 90 % safe area, or caption size under 40 px
+  F11 (v5.2) no 60 fps frame breakdown of the reference: spec "breakdowns" must list ref_breakdown.py folders whose
+      breakdown.json exists and has >= 80 % of its seconds filled in (effect/animation/text/colour/glow/bg/subject/...)
+  F12 (v5.2) a category with no Pinterest pin logged: music, sfx, broll, subject, effect, background each need >= 1 pin URL
+      (spec "pinterest_sources", the breakdown.json files, or assets/pinterest/assets_log.json written by pin_download.py)
+  F13 (v5.2) fewer than 3 "make_it_ours" changes written (never copy a reference 1:1)
 WARNINGS: a dead-still second (no motion), more than 4 sfx per second, captions longer than 4 words per line.
 """
 import sys, os, json, re, argparse, subprocess, colorsys, glob
@@ -32,7 +37,7 @@ if S is not None:
     for r in refs:
         for base in (SD, KIT, os.path.join(KIT, ".."), os.path.join(KIT, "..", "..")):
             p = os.path.join(base, r.split(" ")[0])
-            if os.path.exists(os.path.join(p, "pins.json")) or os.path.exists(os.path.join(p, "style.json")) or glob.glob(os.path.join(p, "*.info.json")): found.append(r); break
+            if os.path.exists(os.path.join(p, "pins.json")) or os.path.exists(os.path.join(p, "breakdown.json")) or os.path.exists(os.path.join(p, "style.json")) or glob.glob(os.path.join(p, "*.info.json")): found.append(r); break
     (ok if found else F)("F1", f"Pinterest/reference research pulled first: {len(found)} of {len(refs)} ref folders found" if found else "no Pinterest references pulled - run pinterest_refs.mjs \"<topic>\" first and list the folder in spec.refs")
 # F2 glow
 if a.jsx and os.path.exists(a.jsx):
@@ -69,16 +74,52 @@ if S is not None:
     blob = json.dumps(S).lower()
     if re.search(r'blender[^"]*(text|title|caption|save|glow|effect)', blob) or S.get("blender_text"): F("F6", "Blender used for text/effects")
     else: ok("F6", "no Blender text/effects (EffectCraft does text + effects)")
-# F7 licences
+# F11-F13 (v5.2): 60 fps breakdown, Pinterest for every category, make it ours
+CATS = ["music", "sfx", "broll", "subject", "effect", "background"]
+if S is not None:
+    import importlib.util
+    spec_rb = importlib.util.spec_from_file_location("ref_breakdown", os.path.join(KIT, "ref_breakdown.py")); RB = importlib.util.module_from_spec(spec_rb); spec_rb.loader.exec_module(RB)
+    bds = S.get("breakdowns") or []; bad = []; bjs = []
+    for b in bds:
+        d = None
+        for base in (SD, KIT, os.path.join(KIT, "..")):
+            p = os.path.join(base, b); p = os.path.dirname(p) if p.endswith(".json") else p
+            if os.path.exists(os.path.join(p, "breakdown.json")): d = p; break
+        if not d: bad.append(f"{b}: no breakdown.json"); continue
+        r = RB.check(d); bjs.append(json.load(open(os.path.join(d, "breakdown.json"))))
+        if r["filled_seconds"] < max(1, 0.8 * r["seconds"]): bad.append(f"{b}: only {r['filled_seconds']}/{r['seconds']} seconds filled")
+    if not bds: F("F11", "no frame breakdown - run ref_breakdown.py on the main reference, fill breakdown.json, list the folder in spec.breakdowns")
+    elif bad: F("F11", "; ".join(bad))
+    else: ok("F11", f"{len(bds)} reference(s) broken down at 60 fps and filled in")
+    pins = {k: [] for k in CATS}
+    def addp(src):
+        for k in CATS:
+            for it in (src or {}).get(k, []) or []:
+                u = it.get("pin_url", "") if isinstance(it, dict) else str(it)
+                if "pinterest." in u or "pin.it" in u: pins[k].append(u)
+    addp(S.get("pinterest_sources"))
+    for bj in bjs: addp(bj.get("pinterest_sources"))
+    lg = os.path.join(SD, "assets", "pinterest", "assets_log.json")
+    if os.path.exists(lg):
+        for row in json.load(open(lg)):
+            if row.get("category") in pins and "pinterest" in row.get("pin_url", ""): pins[row["category"]].append(row["pin_url"])
+    miss = [k for k in CATS if not pins[k]]
+    (F if miss else ok)("F12", ("no Pinterest pin logged for: " + ", ".join(miss) + " (pin_download.py --cat <category> --breakdown ...)") if miss else "Pinterest pin logged for music, sfx, b-roll, subject, effect, background")
+    mio = [x for x in (S.get("make_it_ours") or []) if str(x).strip()]
+    for bj in bjs: mio += [x for x in (bj.get("make_it_ours") or []) if str(x).strip()]
+    (ok if len(mio) >= 3 else F)("F13", f"{len(mio)} make-it-ours changes written" if len(mio) >= 3 else f"only {len(mio)} make-it-ours changes - write at least 3 (colour, transition, text/layout, b-roll angle ...)")
+# F7 sources
 if a.spec:
     ev = os.path.join(SD, "build", "sfx_events.json"); used = []
     if os.path.exists(ev): used = sorted({e["sfx"] for e in json.load(open(ev))})
     if S and S.get("music"): used.append(S["music"]["file"])
     lic_text = ""
-    for p in glob.glob(os.path.join(KIT, "**", "LICENSES.txt"), recursive=True) + glob.glob(os.path.join(KIT, "..", "*", "LICENSES.txt")) + [os.path.join(os.environ.get("ZQ_SFX_DIR", "/nonexistent"), "LICENSES.txt")]:
+    sfxd = os.environ.get("ZQ_SFX_DIR", "/nonexistent")
+    for p in glob.glob(os.path.join(KIT, "**", "LICENSES.txt"), recursive=True) + glob.glob(os.path.join(KIT, "..", "*", "LICENSES.txt")) + \
+             [os.path.join(sfxd, "LICENSES.txt"), os.path.join(sfxd, "..", "SOURCES.txt"), os.path.join(SD, "assets", "pinterest", "SOURCES.txt")]:
         if os.path.exists(p): lic_text += open(p, errors="ignore").read()
     missing = [u for u in used if os.path.basename(u).split(".")[0] not in lic_text]
-    (F if missing else ok)("F7", ("not in any LICENSES.txt: " + ", ".join(missing)) if missing else f"{len(used)} sound files, all listed in LICENSES.txt")
+    (F if missing else ok)("F7", ("source not logged for: " + ", ".join(missing) + " (pin_download.py logs it)") if missing else f"{len(used)} sound files, source logged (Pinterest pin / sources list)")
 # video checks
 if a.video:
     pr = json.loads(subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height,r_frame_rate:format=duration", "-of", "json", a.video], capture_output=True, text=True).stdout)
