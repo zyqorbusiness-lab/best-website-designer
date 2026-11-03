@@ -3,7 +3,7 @@ name: sound-design
 description: Sound design for reels and promos — which sound on which visual event, how early, how loud, how many per second — plus a scripted mix (sfx events → track, music with drop sync and ducking, voice cleanup, exact −14 LUFS). Numbers measured from Pinterest sound-design references and Sujon's reference reels.
 when_to_use: "add sound effects", "sfx on every beat", "whoosh/pop/click timing", "music ducking", "loudness for Instagram", "noise removal on my voice", any edit that feels flat or silent
 license: MIT (code and text). Sound files are NOT included: download them yourself under their licence (list below).
-version: 1.0.0
+version: 1.1.0
 ---
 
 # Sound design (scripted)
@@ -37,3 +37,10 @@ Never use unlicensed music or ripped sound packs; for brand campaigns use only t
 
 ## 4. Example: the 16 s SaaS hero (46 events = 2.9 hits/s)
 impact + bass at 0.00 (hook) · whoosh into line 2 · 3 pops for the sticky notes · riser + zoom_vacuum into the zoom-through, impact + bass on the music drop at 2.10 · bass when the device lands · whoosh before every camera zoom · click + pop on each click, typing for 0.75 s · whoosh_fast on the whip · tech_slide when the board fills · click + ding on "done" · whoosh_fast + bass + pop on each feature slam · impact + bass on the CTA type · pops on the CTA pills. Final: −14.2 LUFS, −2.2 dBTP, LRA 1.9.
+
+## v4 (Nov 3 2026) — sound measured on the 6 references
+- Sound hits per second (spectral-flux onsets): ref 1 ~2.3 · ref 2 ~2.6 · ref 3 ~2 (one per visual event) · ref 4 ~2.9 (almost all in the edited half) · ref 5 ~2.6 · ref 6 ~2.7. Target 2–3 per second, every hit tied to something you see.
+- Loudness: all −14.1 to −15.4 LUFS. Ref 2 peaks at +4.3 dBTP and ref 3 at +0.5 (clipping) — don't copy that; master to −14 LUFS / ≤ −1 dBTP.
+- Ref 4 trick: the raw clip's sound is levelled to −20 LUFS so the edited half feels bigger (run_ref4.sh).
+- Licensed audio only. Mixkit files can't be re-shared, so the kit ships `kit/get_audio.sh` (Mixkit ids + URLs, checked byte-for-byte Nov 3 2026) instead of the files.
+- Per-reference sfx placement: in each breakdown's "Look" section, [`docs/motion-references/`](../../docs/motion-references/README.md).

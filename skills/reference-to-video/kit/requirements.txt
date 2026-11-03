@@ -1,0 +1,5 @@
+numpy
+pillow
+opencv-python   # face detection in analyze_ref.py / build_ref3.py
+faster-whisper  # word timings (transcribe_words.py)
+markdown

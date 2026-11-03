@@ -163,3 +163,39 @@ Pack names worth matching from our licensed library (shown in sfx:04/06/10): who
 12. https://www.pinterest.com/pin/1147643917677607792/ — Hormozi editing breakdown: flash cuts, text out of blur (reel:05)
 Also: framed talking head template https://www.pinterest.com/pin/671599363236283537/ (reel:01) for ref 3.
 Clips of these 12 are kept in their topic's vids/ folder (others deleted for disk; strips + frames + measure.json remain).
+
+
+---
+
+## v4 additions (Nov 3) — 6 new topics for Sujon's 5 reference reels
+Signed in, read only, 16 pins per topic (8 for glossy UI cards), 4 clips per topic measured with analyze_ref.py (measure/NN/style.json). Full recipes + pin links in each topic's STYLE.md; one-line list in research/pinterest_v4_topics.md.
+
+### Soft 3D explainer (→ ref 1) — references/soft_3d_explainer_animation/
+- Never cut: 0–1 hard cuts in 30 s; change scenes by gliding the camera 20–40 % of width (ease-in-out cubic, 0.8–1.2 s) while objects pop in.
+- Pop-in 0→110→100 % in 9 frames @30 fps + pop sfx on frame 1; then float sine ±3 % height, 2.5 s period, phase-offset.
+- Palettes measured: pastel UI #926bdf / #87abee / #2c40a6 / #efe2df / #f2aea0; studio grey #c2c2c4–#d2d2d4; warm clay #ccbdb2 / #a69e96 / #e3d1c8.
+- Clay roughness 0.55–0.7 for characters, glossy plastic 0.2 for icons/phones; DOF f/1.8–2.8 on the hero. Sound 1–2 onsets/s, −15 LUFS on Pinterest → master −14.
+
+### SaaS promo (→ refs 2, 5) — references/saas_promo_video_after_effects/
+- Hook: 2–4 bold-sans words ≤3 s, then product. Screenshot on a rounded card (radius 3–4 %), Y-tilt 8–15°, top-edge rim glow.
+- Brand-promo cut curve (WizArt, measured): shots 6.9 / 6.1 / 3.5 / 3.2 / 1.5 / 1.1 / 1.1 s → accelerate into the CTA, flash frame on the last cuts.
+- UI-scroll pieces: 0 cuts, slow scroll 3–6 % of height/s, light sweep every 2–3 s, 24–34 % still frames. Palettes: #4f00af purple + #fdfdfd; #09160c near-black + #ddcdf3 lilac.
+
+### Before / after showcase (→ ref 4) — references/before_after_video_editing_showcase/
+- Side-by-side overlapping 9:16 cards on 720×1280: Before x87–287 y470–811; After x274–645 y298–955 (scale ×1.5 for 1080 wide). Radius ~4 %, shadow blur ~30 px 25 %.
+- Backgrounds: #f9f9f9 + two #fea101 blobs, or the clip blurred (sigma 40) at 30 % brightness. Optional editing-timeline screenshot as proof.
+- After card changes something every 1–2 s; Before stays dull. −14.3…−14.6 LUFS.
+
+### Talking-head reel editing (→ ref 3) — references/talking_head_reel_editing/
+- Continuous take, B-roll inserted inside the frame every 2–3 s (B&W/desaturated so the speaker is the only warm colour).
+- Small word-by-word captions low-centre + 1 emphasis word in italic serif; for lists, alternate speaker ↔ white text card (black words + 1 red word + icon) every ~2 s (RivoZen: cuts at 1.7/3.7/6.8/9.3/11.3 s).
+- Calmer than ref 3: 1.6–2.0 onsets/s. Ref 3 = the hyper version (~2 events/s).
+
+### 3D glossy UI cards (→ ref 5, ref 2 end card) — references/3d_glossy_ui_cards_motion/
+- Glass over solid: frosted card (transmission 0.9, roughness 0.05, IOR 1.45, white→lilac) 8–12 % in front of a solid card. Dark variant: metal cards (metallic 1, roughness 0.3, #2b2633) on #000.
+- Move fast, hold long: 0.4 s ease-out (cubic-bezier .2,.8,.2,1) then ~1 s hold with only a specular sheen moving. 0 cuts; 5–7 s seamless loops. Cursor tilt 8–10°, click pulse 100→96→100 % in 6 frames.
+
+### Kinetic typography (→ captions of refs 1–3) — references/kinetic_typography_reels/
+- Two faces: heavy grotesk + italic serif for the 1 emphasis word (1.5–2.5× size). 3-colour systems: red #bb0000 / white / black; cream #cabcad / blue / red; cream on green #73805a.
+- Video inside letters (track matte), then scale the word 100→800 % in 0.5 s (ease-in expo) to reveal the next shot.
+- Page flip every 2–3 s with 2-frame double cuts on strong beats; each word slides 40–80 px over 6–8 frames or pops 0→105→100 %, landing on an onset ±2 frames.

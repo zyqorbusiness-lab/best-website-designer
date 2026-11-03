@@ -1,0 +1,27 @@
+LICENSES — motion-kit v2 audio (checked Nov 3 2026)
+All from Mixkit (mixkit.co). Sound effects: Mixkit Sound Effects Free License (https://mixkit.co/license/#sfxFree) — free for commercial and personal projects, no attribution required, can't be redistributed as standalone files.
+Music: Mixkit Stock Music Free License (https://mixkit.co/license/#musicFree) — same terms; checked on the page metadata (copyrightNotice "Mixkit Stock Music Free License") on Nov 3 2026.
+
+sfx_v2/whoosh.mp3       Mixkit #1490 Fast whoosh transition
+sfx_v2/whoosh2.mp3      Mixkit #1489 Air woosh
+sfx_v2/whoosh_fast.mp3  Mixkit #1492 Cinematic whoosh fast transition
+sfx_v2/sweep_small.mp3  Mixkit #166  Fast small sweep transition
+sfx_v2/tech_slide.mp3   Mixkit #3120 Technology transition slide
+sfx_v2/zoom_vacuum.mp3  Mixkit #2608 Air zoom vacuum
+sfx_v2/pop.mp3          Mixkit #2364 Hard pop click
+sfx_v2/pop2.mp3         Mixkit #3005 Explainer video pops whoosh light pop
+sfx_v2/click.mp3        Mixkit #2568 Cool interface click tone
+sfx_v2/typing.mp3       Mixkit #1393 Smartphone typing
+sfx_v2/riser.mp3        Mixkit #1144 Short space stutter intro riser
+sfx_v2/impact.mp3       Mixkit #1143 Cinematic whoosh deep impact
+sfx_v2/bass.mp3         Mixkit #2299 Short bass hit
+sfx_v2/notif.mp3        Mixkit #2354 Message pop alert
+sfx_v2/ding.mp3         Mixkit #2870 Correct answer tone
+sfx_v2/glitch_text.mp3  Mixkit #2950 Intro text glitch
+sfx_v2/glitch_break.mp3 Mixkit #2951 Digital glitch break
+sfx_v2/cash.mp3, shutter.mp3  from zyqor_style_preset/sfx (Mixkit, see zyqor_style_preset/v4/zyqor_reel_v4_asset_sources.txt)
+Kit's own sfx (Motion-Graphics-starter-kit/sfx: chime, counter, fill, pop, snap, star, success, switch, tick) — shipped in Sujon's starter kit.
+
+music/uplifting_bass_726.mp3   Mixkit #726 "Uplifting Bass"   https://assets.mixkit.co/music/726/726.mp3
+music/digital_clouds_175.mp3   Mixkit #175 "Digital Clouds"   https://assets.mixkit.co/music/175/175.mp3
+music/better_times_173.mp3     Mixkit #173 "Better Times are Coming" https://assets.mixkit.co/music/173/173.mp3

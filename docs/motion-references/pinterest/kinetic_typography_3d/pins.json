@@ -1,0 +1,693 @@
+{
+ "topic": "kinetic typography 3d",
+ "slug": "kinetic_typography_3d",
+ "scope": "videos",
+ "searched_at": "2026-11-03T05:34:48.571Z",
+ "mode": "signed-in",
+ "count": 16,
+ "videos_downloaded": 4,
+ "pins": [
+  {
+   "n": "01",
+   "id": "771593348681235758",
+   "pin_url": "https://www.pinterest.com/pin/771593348681235758/",
+   "title": null,
+   "description": "The Designers List by @slobzheninov\u2060 TYPEONE Magazine #06\u2060 \u2060 Continuing our insight into issue #06\u2019s Designer\u2019s list, next up we have Ksawery Komputery (@ksawerykomputery) a creative coding artist, and author of many interactive installations, generative animations, music videos and phygital sculptures.\u2060 \u2060 #type01 #typeonmag #type01 #animatedtype #kinetictype #kinetictypography #animation #motionlovers #movingtype",
+   "creator": {
+    "username": "type_01",
+    "name": "TYPE01",
+    "followers": 7176,
+    "profile": "https://www.pinterest.com/type_01/"
+   },
+   "board": {
+    "name": "Digital Mockups",
+    "url": "https://www.pinterest.com/type_01/digital-mockups/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/1e/1a/0a/1e1a0a277c86208b4589f572bfbe447b.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/v2/20/a3/e7/20a3e7ee5b0b1e8b3345802e3b930c91.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/v2/20/a3/e7/20a3e7ee5b0b1e8b3345802e3b930c91.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 5.6,
+   "saves": null,
+   "created_at": "Sun, 07 May 2023 11:00:37 +0000",
+   "dominant_color": "#000eff",
+   "thumb": "thumbs/01.jpg",
+   "frames": [
+    {
+     "t": 0.46,
+     "file": "frames/01_1.jpg"
+    },
+    {
+     "t": 1.39,
+     "file": "frames/01_2.jpg"
+    },
+    {
+     "t": 2.32,
+     "file": "frames/01_3.jpg"
+    },
+    {
+     "t": 3.25,
+     "file": "frames/01_4.jpg"
+    },
+    {
+     "t": 4.18,
+     "file": "frames/01_5.jpg"
+    },
+    {
+     "t": 5.11,
+     "file": "frames/01_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 21,
+    "cut_times_s": [
+     0.27,
+     0.4,
+     0.83,
+     0.97,
+     1.13,
+     1.37,
+     1.47,
+     1.53,
+     2.43,
+     3.03,
+     3.1,
+     3.33,
+     3.37,
+     3.6,
+     3.67,
+     4.17,
+     4.23,
+     4.47,
+     4.73,
+     5.23,
+     5.33
+    ],
+    "avg_shot_s": 0.25
+   },
+   "audio": {
+    "integrated_lufs": -9.3
+   },
+   "downloaded": {
+    "resolution": "720,1280",
+    "seconds": 5.6,
+    "bytes": 3038187,
+    "kept": true
+   },
+   "local_video": "vids/01.mp4"
+  },
+  {
+   "n": "02",
+   "id": "796363146629224816",
+   "pin_url": "https://www.pinterest.com/pin/796363146629224816/",
+   "title": "3d Typography Tunnel",
+   "description": "kinetic typography animation I created in After Effects.using 3d layers function and animated the camera in the loop. Please Check out my other projects too. Instagram Behance Press L to appriciate",
+   "creator": {
+    "username": "priyangidesai",
+    "name": "Priyangi Desai",
+    "followers": 1,
+    "profile": "https://www.pinterest.com/priyangidesai/"
+   },
+   "board": {
+    "name": "Quick saves",
+    "url": "https://www.pinterest.com/priyangidesai/_quick_saves/"
+   },
+   "outbound_link": "https://bento.me/jatin",
+   "domain": "bento.me",
+   "image_url": "https://i.pinimg.com/originals/ee/7e/2f/ee7e2f1deef4adab18c6748fff3db54b.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/d1/ef/92/d1ef92833dcf731efc75ac26fe1e5378.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/d1/ef/92/d1ef92833dcf731efc75ac26fe1e5378.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 15,
+   "saves": null,
+   "created_at": "Wed, 19 Apr 2023 05:33:01 +0000",
+   "dominant_color": "#171717",
+   "thumb": "thumbs/02.jpg",
+   "frames": [
+    {
+     "t": 1.25,
+     "file": "frames/02_1.jpg"
+    },
+    {
+     "t": 3.75,
+     "file": "frames/02_2.jpg"
+    },
+    {
+     "t": 6.25,
+     "file": "frames/02_3.jpg"
+    },
+    {
+     "t": 8.75,
+     "file": "frames/02_4.jpg"
+    },
+    {
+     "t": 11.25,
+     "file": "frames/02_5.jpg"
+    },
+    {
+     "t": 13.75,
+     "file": "frames/02_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 0,
+    "cut_times_s": [],
+    "avg_shot_s": 15
+   },
+   "audio": {
+    "integrated_lufs": -17.5
+   },
+   "downloaded": {
+    "resolution": "720,1280",
+    "seconds": 15,
+    "bytes": 2769676,
+    "kept": true
+   },
+   "local_video": "vids/02.mp4"
+  },
+  {
+   "n": "03",
+   "id": "42080577759067462",
+   "pin_url": "https://www.pinterest.com/pin/42080577759067462/",
+   "title": "Focus",
+   "description": "Animated typography by Svmn. #kinetictypography #motiongraphics #cinema4d #aftereffects #loop #graphicdesign #motiondesign",
+   "creator": {
+    "username": "svmn_studio",
+    "name": "Svmn",
+    "followers": 1462,
+    "profile": "https://www.pinterest.com/svmn_studio/"
+   },
+   "board": {
+    "name": "Animations",
+    "url": "https://www.pinterest.com/svmn_studio/animations/"
+   },
+   "outbound_link": "https://svmn.world/kinetic-typography",
+   "domain": "svmn.world",
+   "image_url": "https://i.pinimg.com/originals/f5/fe/b2/f5feb2f496b7654c4073d4dacf17be38.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/mc/expMp4/92/24/e6/9224e6379ce7e41f10e87f2cca9567b8_t1.mp4",
+   "video_hls": "https://v1.pinimg.com/videos/mc/hls/92/24/e6/9224e6379ce7e41f10e87f2cca9567b8.m3u8",
+   "video_mp4": "https://v1.pinimg.com/videos/mc/expMp4/92/24/e6/9224e6379ce7e41f10e87f2cca9567b8_t1.mp4",
+   "video_w": 1080,
+   "video_h": 1080,
+   "duration_s": 20,
+   "saves": null,
+   "created_at": "Wed, 01 Jul 2020 16:11:11 +0000",
+   "dominant_color": "#f91b25",
+   "thumb": "thumbs/03.jpg",
+   "frames": [
+    {
+     "t": 1.67,
+     "file": "frames/03_1.jpg"
+    },
+    {
+     "t": 5,
+     "file": "frames/03_2.jpg"
+    },
+    {
+     "t": 8.33,
+     "file": "frames/03_3.jpg"
+    },
+    {
+     "t": 11.67,
+     "file": "frames/03_4.jpg"
+    },
+    {
+     "t": 15,
+     "file": "frames/03_5.jpg"
+    },
+    {
+     "t": 18.33,
+     "file": "frames/03_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 0,
+    "cut_times_s": [],
+    "avg_shot_s": 20
+   },
+   "audio": {
+    "integrated_lufs": -70
+   },
+   "downloaded": {
+    "resolution": "540,540",
+    "seconds": 20,
+    "bytes": 1848529,
+    "kept": true
+   },
+   "local_video": "vids/03.mp4"
+  },
+  {
+   "n": "04",
+   "id": "3518505950578167",
+   "pin_url": "https://www.pinterest.com/pin/3518505950578167/",
+   "title": null,
+   "description": " ",
+   "creator": {
+    "username": "MrGlewisJones",
+    "name": "George",
+    "followers": 70,
+    "profile": "https://www.pinterest.com/MrGlewisJones/"
+   },
+   "board": {
+    "name": "Kinetic Type",
+    "url": "https://www.pinterest.com/MrGlewisJones/kinetic-type/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/ab/42/88/ab428800669177438fb6b6aa38be4c1b.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/mc/hls/22/ab/ff/22abff0b377d412b7bd9343aeb8f13e6.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/mc/hls/22/ab/ff/22abff0b377d412b7bd9343aeb8f13e6.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1080,
+   "duration_s": 60.7,
+   "saves": null,
+   "created_at": "Wed, 26 Jan 2022 11:07:44 +0000",
+   "dominant_color": "#000000",
+   "thumb": "thumbs/04.jpg",
+   "frames": [
+    {
+     "t": 2.51,
+     "file": "frames/04_1.jpg"
+    },
+    {
+     "t": 7.52,
+     "file": "frames/04_2.jpg"
+    },
+    {
+     "t": 12.53,
+     "file": "frames/04_3.jpg"
+    },
+    {
+     "t": 17.54,
+     "file": "frames/04_4.jpg"
+    },
+    {
+     "t": 22.55,
+     "file": "frames/04_5.jpg"
+    },
+    {
+     "t": 27.57,
+     "file": "frames/04_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 0,
+    "cut_times_s": [],
+    "avg_shot_s": 30.07
+   },
+   "audio": {
+    "integrated_lufs": -70
+   },
+   "downloaded": {
+    "resolution": "720,720",
+    "seconds": 30.1,
+    "bytes": 9378911,
+    "kept": true
+   },
+   "local_video": "vids/04.mp4"
+  },
+  {
+   "n": "05",
+   "id": "924645367271311940",
+   "pin_url": "https://www.pinterest.com/pin/924645367271311940/",
+   "title": null,
+   "description": "the official @oliveyoung_us site drop is... \ud83d\udc40",
+   "creator": {
+    "username": "ginnijoie",
+    "name": "Ginni",
+    "followers": 1656,
+    "profile": "https://www.pinterest.com/ginnijoie/"
+   },
+   "board": {
+    "name": "Social",
+    "url": "https://www.pinterest.com/ginnijoie/_tpd_social/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DYCnkY-JcRa/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/5d/21/41/5d2141a19caf32f1af1c3582407d12cb.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/92/01/28/9201283c09f844152743ea1f2c4bf288.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/92/01/28/9201283c09f844152743ea1f2c4bf288.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 11.6,
+   "saves": null,
+   "created_at": "Fri, 08 May 2026 03:18:59 +0000",
+   "dominant_color": "#7cabdd",
+   "thumb": "thumbs/05.jpg"
+  },
+  {
+   "n": "06",
+   "id": "636766834850915635",
+   "pin_url": "https://www.pinterest.com/pin/636766834850915635/",
+   "title": null,
+   "description": "Show up for YOURSELF \u270c\ufe0f\n\nHad a busy couple of weeks and had to slow down on my own projects. Time to get back into routine \ud83d\ude4c \n\n#animation #typography #Adobe #adobevideo #aftereffects #motiongraphics #freelance #design #creative #digitaldrawing #artistsoninstagram #designer #femaleartists #mograph #kinetictypography #typographicdesign",
+   "creator": {
+    "username": "Pauline_Baines",
+    "name": "Paula Baines",
+    "followers": 1560,
+    "profile": "https://www.pinterest.com/Pauline_Baines/"
+   },
+   "board": {
+    "name": "Motion design animation Tutorials",
+    "url": "https://www.pinterest.com/Pauline_Baines/motion-design-animation-tutorials/"
+   },
+   "outbound_link": "https://www.instagram.com/p/DIKFc8Mi2jL/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/bc/f5/be/bcf5be244afdfa3ba1540bb9f694b2bc.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/b3/de/9e/b3de9e5906f26d80a17f75196e393a88.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/b3/de/9e/b3de9e5906f26d80a17f75196e393a88.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1350,
+   "duration_s": 5.6,
+   "saves": null,
+   "created_at": "Wed, 09 Apr 2025 06:27:34 +0000",
+   "dominant_color": "#f74756",
+   "thumb": "thumbs/06.jpg"
+  },
+  {
+   "n": "07",
+   "id": "402368547964791124",
+   "pin_url": "https://www.pinterest.com/pin/402368547964791124/",
+   "title": "Rockwell",
+   "description": "Rockwell type inside a cylinder. * Take a look at my courses at Domestika to learn how to animate typographies. Kinetic type is so much fun!",
+   "creator": {
+    "username": "holke79",
+    "name": "Holke79",
+    "followers": 6589,
+    "profile": "https://www.pinterest.com/holke79/"
+   },
+   "board": {
+    "name": "Holke79 -",
+    "url": "https://www.pinterest.com/holke79/holke79-/"
+   },
+   "outbound_link": "http://www.domestika.org/es/courses/806-animacion-para-composiciones-tipograficas/holke79",
+   "domain": "domestika.org",
+   "image_url": "https://i.pinimg.com/originals/3e/57/4e/3e574ef61badfcd34b8bbd75810367af.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/mc/hls/57/15/47/571547aaab17bd18a979eb94cf5ff2ad.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/mc/hls/57/15/47/571547aaab17bd18a979eb94cf5ff2ad.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1080,
+   "duration_s": 12,
+   "saves": null,
+   "created_at": "Thu, 08 Oct 2020 16:22:49 +0000",
+   "dominant_color": "#000000",
+   "thumb": "thumbs/07.jpg"
+  },
+  {
+   "n": "08",
+   "id": "550354016977306736",
+   "pin_url": "https://www.pinterest.com/pin/550354016977306736/",
+   "title": "Animated Poster & Glass Effect Tutorial",
+   "description": "An extended tutorial on animated poster in After Effects and 3D animated glass letter in Cinema4D + Octane Render. Check out the full tutorial on Patreon!",
+   "creator": {
+    "username": "pantervision",
+    "name": "P A N T E R",
+    "followers": 40749,
+    "profile": "https://www.pinterest.com/pantervision/"
+   },
+   "board": {
+    "name": "PAV Stuff",
+    "url": "https://www.pinterest.com/pantervision/pav-stuff/"
+   },
+   "outbound_link": "https://patreon.com/pantervision?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=creatorshare_creator&utm_content=join_link",
+   "domain": "patreon.com",
+   "image_url": "https://i.pinimg.com/originals/4a/22/6c/4a226c354726de918dca23468a14f734.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/mc/hls/d5/54/58/d554585a6eab60ab5f8893a46f1f00dd.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/mc/hls/d5/54/58/d554585a6eab60ab5f8893a46f1f00dd.m3u8",
+   "video_mp4": null,
+   "video_w": 1088,
+   "video_h": 1920,
+   "duration_s": 11,
+   "saves": null,
+   "created_at": "Tue, 11 Jul 2023 07:05:07 +0000",
+   "dominant_color": "#020102",
+   "thumb": "thumbs/08.jpg"
+  },
+  {
+   "n": "09",
+   "id": "1142155155497577371",
+   "pin_url": "https://www.pinterest.com/pin/1142155155497577371/",
+   "title": "Kinetic Typography",
+   "description": "\ud83d\ude80 In our Online Master\u2019s in Motion Graphics, students immerse themselves in Kinetic Typography: from designing hand-drawn typography in Adobe Illustrator to animating it seamlessly in After Effects, bringing their creations to life with movement and style.\n\n\ud83d\udd25 This is a fun punky exercise by Felipe Peters for the 2D Kinetic Type course in our Online Master\u2019s in Motion Graphics. So cool!",
+   "creator": {
+    "username": "labasad_design",
+    "name": "LABASAD",
+    "followers": 297,
+    "profile": "https://www.pinterest.com/labasad_design/"
+   },
+   "board": {
+    "name": "Motion Graphics",
+    "url": "https://www.pinterest.com/labasad_design/motion-graphics/"
+   },
+   "outbound_link": "https://www.labasad.com/en/master/online-master-in-motion-graphics/",
+   "domain": "labasad.com",
+   "image_url": "https://i.pinimg.com/originals/4f/e9/47/4fe9476b412bfe74a282258a7d6405f3.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/42/6a/c8/426ac87e02af025e1eded7ad0203f3b9.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/42/6a/c8/426ac87e02af025e1eded7ad0203f3b9.m3u8",
+   "video_mp4": null,
+   "video_w": 1920,
+   "video_h": 1080,
+   "duration_s": 8,
+   "saves": null,
+   "created_at": "Thu, 05 Dec 2024 14:02:04 +0000",
+   "dominant_color": "#1a1a1a",
+   "thumb": "thumbs/09.jpg"
+  },
+  {
+   "n": "10",
+   "id": "1112248439254245210",
+   "pin_url": "https://www.pinterest.com/pin/1112248439254245210/",
+   "title": "kinetic typography on a spinning sphere \u2014 3d type loop",
+   "description": "kinetic typography on a rotating sphere \u2014 3d type animation looping seamlessly. made in the doppio lab; set your own type in motion at doppio.design.",
+   "creator": {
+    "username": "doppio__design",
+    "name": "doppio | your designs, served strong.",
+    "followers": 3,
+    "profile": "https://www.pinterest.com/doppio__design/"
+   },
+   "board": {
+    "name": "brand",
+    "url": "https://www.pinterest.com/doppio__design/brand/"
+   },
+   "outbound_link": "https://doppio.design/?utm_source=pinterest&utm_medium=social&utm_campaign=lab&utm_content=lab-globe",
+   "domain": "doppio.design",
+   "image_url": "https://i.pinimg.com/originals/4c/92/56/4c9256e45bf8795a13ad37b8fac45e12.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/e7/e7/73/e7e773753bda3ae7d9cc03254ebe7f57.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/e7/e7/73/e7e773753bda3ae7d9cc03254ebe7f57.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1080,
+   "duration_s": 10,
+   "saves": null,
+   "created_at": "Fri, 07 Aug 2026 06:31:15 +0000",
+   "dominant_color": "#e2e2e2",
+   "thumb": "thumbs/10.jpg"
+  },
+  {
+   "n": "11",
+   "id": "549298485822291332",
+   "pin_url": "https://www.pinterest.com/pin/549298485822291332/",
+   "title": null,
+   "description": "H O P E #c4d #motiongraphics #redshift #hope #3dletters #3danimation #c4dart #motion #motionlovers #instaartist #aftereffects #RenderNetwork #masterclass #loop #greyscalestudio",
+   "creator": {
+    "username": "camilociprian",
+    "name": "Camilo Ciprian",
+    "followers": 265,
+    "profile": "https://www.pinterest.com/camilociprian/"
+   },
+   "board": {
+    "name": "My Portfolio",
+    "url": "https://www.pinterest.com/camilociprian/my-portfolio/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DDeqiNFRp3p/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/f5/d6/be/f5d6be24165ba0bf2df8d61755e23007.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/0d/a3/4e/0da34e153e3897d46cbfcd42f311f934.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/0d/a3/4e/0da34e153e3897d46cbfcd42f311f934.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1278,
+   "duration_s": 24.2,
+   "saves": null,
+   "created_at": "Fri, 13 Dec 2024 01:13:06 +0000",
+   "dominant_color": "#357a9d",
+   "thumb": "thumbs/11.jpg"
+  },
+  {
+   "n": "12",
+   "id": "4644405860371807",
+   "pin_url": "https://www.pinterest.com/pin/4644405860371807/",
+   "title": null,
+   "description": "KINETISM VOL 1 \u2014 66 Type Animated templates in after effects to bring your animations to a top tiene level motion designer. [motion design, motion, type, animated type, typography]",
+   "creator": {
+    "username": "MuZsofi",
+    "name": "Zs\u00f3fi Munk\u00e1csi",
+    "followers": 140,
+    "profile": "https://www.pinterest.com/MuZsofi/"
+   },
+   "board": {
+    "name": "Anim\u00e1ci\u00f3",
+    "url": "https://www.pinterest.com/MuZsofi/anim%C3%A1ci%C3%B3/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/C_NdfbUN0Il/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/4c/1a/d3/4c1ad3f82d62251ed07e2ea00fec2033.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/fb/5f/e7/fb5fe76b8cce52c7970f9b42438379ae.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/fb/5f/e7/fb5fe76b8cce52c7970f9b42438379ae.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 10,
+   "saves": null,
+   "created_at": "Tue, 13 May 2025 05:07:44 +0000",
+   "dominant_color": "#141318",
+   "thumb": "thumbs/12.jpg"
+  },
+  {
+   "n": "13",
+   "id": "362258363782294374",
+   "pin_url": "https://www.pinterest.com/pin/362258363782294374/",
+   "title": null,
+   "description": "Dia Studio \u2014 https://dia.tv/",
+   "creator": {
+    "username": "work_play_think",
+    "name": "work_play_think",
+    "followers": 7213,
+    "profile": "https://www.pinterest.com/work_play_think/"
+   },
+   "board": {
+    "name": "16.0 \u2014 KINETIC TYPOGRAPHY",
+    "url": "https://www.pinterest.com/work_play_think/160-kinetic-typography/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/f3/7d/52/f37d527983b8687ac112ce75b141c9a6.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/mc/hls/64/0d/5d/640d5daa3033608dd4dd62219f773aea.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/mc/hls/64/0d/5d/640d5daa3033608dd4dd62219f773aea.m3u8",
+   "video_mp4": null,
+   "video_w": 640,
+   "video_h": 640,
+   "duration_s": 5,
+   "saves": null,
+   "created_at": "Sat, 14 Nov 2020 14:07:28 +0000",
+   "dominant_color": "#e0ced7",
+   "thumb": "thumbs/13.jpg"
+  },
+  {
+   "n": "14",
+   "id": "127578601937147569",
+   "pin_url": "https://www.pinterest.com/pin/127578601937147569/",
+   "title": null,
+   "description": "Follow us on instagram @motiondesigners.pro @2d.pete #3d #vfx #cgi #digitalart #blender #motion",
+   "creator": {
+    "username": "motiondesignerspro",
+    "name": "MotionDesigners.Pro",
+    "followers": 17705,
+    "profile": "https://www.pinterest.com/motiondesignerspro/"
+   },
+   "board": {
+    "name": "Best Motion Designers Visual Inspiration",
+    "url": "https://www.pinterest.com/motiondesignerspro/best-motion-designers-visual-inspiration/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/db/80/90/db80907a2729278aff88a1a4e50ffa36.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/ff/b2/df/ffb2df354d0dc21f835dacd114fc2bcd.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/ff/b2/df/ffb2df354d0dc21f835dacd114fc2bcd.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 8,
+   "saves": null,
+   "created_at": "Thu, 04 Jan 2024 20:30:41 +0000",
+   "dominant_color": "#8c988f",
+   "thumb": "thumbs/14.jpg"
+  },
+  {
+   "n": "15",
+   "id": "549298485821832510",
+   "pin_url": "https://www.pinterest.com/pin/549298485821832510/",
+   "title": null,
+   "description": "H O P E What is the word that represents you lately? #c4d #motiongraphics #redshift #hope #3dletters #3danimation #c4dart #motion #motionlovers #instaartist #aftereffects",
+   "creator": {
+    "username": "camilociprian",
+    "name": "Camilo Ciprian",
+    "followers": 265,
+    "profile": "https://www.pinterest.com/camilociprian/"
+   },
+   "board": {
+    "name": "My Portfolio",
+    "url": "https://www.pinterest.com/camilociprian/my-portfolio/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DBd-nTqx8Fn/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/72/20/95/7220957627c359ada3a7106eab48ab9d.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/03/32/dd/0332dd796415559963717962274d4db6.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/03/32/dd/0332dd796415559963717962274d4db6.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1278,
+   "duration_s": 12.7,
+   "saves": null,
+   "created_at": "Wed, 30 Oct 2024 04:16:31 +0000",
+   "dominant_color": "#826a71",
+   "thumb": "thumbs/15.jpg"
+  },
+  {
+   "n": "16",
+   "id": "630715122858762422",
+   "pin_url": "https://www.pinterest.com/pin/630715122858762422/",
+   "title": null,
+   "description": "\u201cEXTEND\u201d Kinetic Typography Experiment \u2022 \u2022 \u2022 \u2022 \u2022 #motion #motiongraphics #motiondesign #kinetic #kineticdesign #kineticmotions #typography #typedesign #type #animation #createeveryday2022 #adobeaftereffects #aftereffects #creative #create #posterdesign #poster #posteranimation",
+   "creator": {
+    "username": "marjetalloshi",
+    "name": "Marjeta Lloshi",
+    "followers": 42,
+    "profile": "https://www.pinterest.com/marjetalloshi/"
+   },
+   "board": {
+    "name": "My Designs",
+    "url": "https://www.pinterest.com/marjetalloshi/my-designs/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/C5dpsYisGds/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/3b/76/05/3b7605a4afb4d656ff500bf644fe0a61.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/ec/97/dd/ec97dd532e7a5ad0d029ccb5eb674f5c.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/ec/97/dd/ec97dd532e7a5ad0d029ccb5eb674f5c.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 720,
+   "duration_s": 12,
+   "saves": null,
+   "created_at": "Sun, 21 Apr 2024 13:54:42 +0000",
+   "dominant_color": "#000000",
+   "thumb": "thumbs/16.jpg"
+  }
+ ]
+}

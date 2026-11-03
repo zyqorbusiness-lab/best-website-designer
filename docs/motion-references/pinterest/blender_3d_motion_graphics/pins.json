@@ -1,0 +1,688 @@
+{
+ "topic": "blender 3d motion graphics",
+ "slug": "blender_3d_motion_graphics",
+ "scope": "videos",
+ "searched_at": "2026-11-03T05:32:09.706Z",
+ "mode": "signed-in",
+ "count": 16,
+ "videos_downloaded": 4,
+ "pins": [
+  {
+   "n": "01",
+   "id": "8585055532940183",
+   "pin_url": "https://www.pinterest.com/pin/8585055532940183/",
+   "title": "Blender 3D Architecture #blender #blender3d",
+   "description": "YouTube: @adamdereli",
+   "creator": {
+    "username": "1314MM",
+    "name": "1314MM 1314MM",
+    "followers": 35,
+    "profile": "https://www.pinterest.com/1314MM/"
+   },
+   "board": {
+    "name": "Blender",
+    "url": "https://www.pinterest.com/1314MM/blender/"
+   },
+   "outbound_link": "https://www.youtube.com/@WonderCraft1/videos",
+   "domain": "youtube.com",
+   "image_url": "https://i.pinimg.com/originals/82/fb/e4/82fbe42f42a43cd8578debd5c0299e0a.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/d2/73/ac/d273ac3fd2499d42ecd6d5145a914f00.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/d2/73/ac/d273ac3fd2499d42ecd6d5145a914f00.m3u8",
+   "video_mp4": null,
+   "video_w": 1400,
+   "video_h": 1920,
+   "duration_s": 59.9,
+   "saves": null,
+   "created_at": "Mon, 04 Mar 2024 21:59:46 +0000",
+   "dominant_color": "#514e46",
+   "thumb": "thumbs/01.jpg",
+   "frames": [
+    {
+     "t": 2.51,
+     "file": "frames/01_1.jpg"
+    },
+    {
+     "t": 7.53,
+     "file": "frames/01_2.jpg"
+    },
+    {
+     "t": 12.55,
+     "file": "frames/01_3.jpg"
+    },
+    {
+     "t": 17.57,
+     "file": "frames/01_4.jpg"
+    },
+    {
+     "t": 22.59,
+     "file": "frames/01_5.jpg"
+    },
+    {
+     "t": 27.61,
+     "file": "frames/01_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 2,
+    "cut_times_s": [
+     22.73,
+     26.98
+    ],
+    "avg_shot_s": 10.04
+   },
+   "audio": {
+    "integrated_lufs": -18.3
+   },
+   "downloaded": {
+    "resolution": "700,960",
+    "seconds": 30.1,
+    "bytes": 3923337,
+    "kept": true
+   },
+   "local_video": "vids/01.mp4"
+  },
+  {
+   "n": "02",
+   "id": "3940718419920753",
+   "pin_url": "https://www.pinterest.com/pin/3940718419920753/",
+   "title": null,
+   "description": "Follow us on instagram @motiondesigners.pro #3d #vfx #cgi #digitalart #blender #motion",
+   "creator": {
+    "username": "byjul",
+    "name": "Jungmi Kim",
+    "followers": 91,
+    "profile": "https://www.pinterest.com/byjul/"
+   },
+   "board": {
+    "name": "\ubaa8\uc158 \ub514\uc790\uc778",
+    "url": "https://www.pinterest.com/byjul/%EB%AA%A8%EC%85%98-%EB%94%94%EC%9E%90%EC%9D%B8/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/92/e9/89/92e989c5494755ca837e5632f879e85f.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/8b/a1/bc/8ba1bca1b83cee44060537c378ad174d.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/8b/a1/bc/8ba1bca1b83cee44060537c378ad174d.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 11,
+   "saves": null,
+   "created_at": "Mon, 10 Mar 2025 08:42:41 +0000",
+   "dominant_color": "#c6c5c7",
+   "thumb": "thumbs/02.jpg",
+   "frames": [
+    {
+     "t": 0.92,
+     "file": "frames/02_1.jpg"
+    },
+    {
+     "t": 2.76,
+     "file": "frames/02_2.jpg"
+    },
+    {
+     "t": 4.61,
+     "file": "frames/02_3.jpg"
+    },
+    {
+     "t": 6.45,
+     "file": "frames/02_4.jpg"
+    },
+    {
+     "t": 8.29,
+     "file": "frames/02_5.jpg"
+    },
+    {
+     "t": 10.13,
+     "file": "frames/02_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 0,
+    "cut_times_s": [],
+    "avg_shot_s": 11.05
+   },
+   "audio": {
+    "integrated_lufs": -15.3
+   },
+   "downloaded": {
+    "resolution": "720,1280",
+    "seconds": 11.1,
+    "bytes": 497171,
+    "kept": true
+   },
+   "local_video": "vids/02.mp4"
+  },
+  {
+   "n": "03",
+   "id": "127578601937749602",
+   "pin_url": "https://www.pinterest.com/pin/127578601937749602/",
+   "title": null,
+   "description": "Follow us on instagram\n@motiondesigners.pro\n@piri3d\n#3d #vfx #cgi #digitalart #blender #motion",
+   "creator": {
+    "username": "motiondesignerspro",
+    "name": "MotionDesigners.Pro",
+    "followers": 17705,
+    "profile": "https://www.pinterest.com/motiondesignerspro/"
+   },
+   "board": {
+    "name": "Best Motion Designers Visual Inspiration",
+    "url": "https://www.pinterest.com/motiondesignerspro/best-motion-designers-visual-inspiration/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/b0/10/2e/b0102ef9d229e4163ccb40877a3f9644.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/23/83/c8/2383c84a3ae89c466d2b886ec4e8ed98.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/23/83/c8/2383c84a3ae89c466d2b886ec4e8ed98.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 8,
+   "saves": null,
+   "created_at": "Wed, 07 Aug 2024 19:30:44 +0000",
+   "dominant_color": "#c5b4a9",
+   "thumb": "thumbs/03.jpg",
+   "frames": [
+    {
+     "t": 0.67,
+     "file": "frames/03_1.jpg"
+    },
+    {
+     "t": 2,
+     "file": "frames/03_2.jpg"
+    },
+    {
+     "t": 3.33,
+     "file": "frames/03_3.jpg"
+    },
+    {
+     "t": 4.66,
+     "file": "frames/03_4.jpg"
+    },
+    {
+     "t": 5.99,
+     "file": "frames/03_5.jpg"
+    },
+    {
+     "t": 7.32,
+     "file": "frames/03_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 1,
+    "cut_times_s": [
+     7.47
+    ],
+    "avg_shot_s": 3.99
+   },
+   "audio": {
+    "integrated_lufs": -14.3
+   },
+   "downloaded": {
+    "resolution": "720,1280",
+    "seconds": 8,
+    "bytes": 851158,
+    "kept": true
+   },
+   "local_video": "vids/03.mp4"
+  },
+  {
+   "n": "04",
+   "id": "127578601938525446",
+   "pin_url": "https://www.pinterest.com/pin/127578601938525446/",
+   "title": "Motion inspiration - Fluid",
+   "description": "Subscribe to @motiondesigners.pro\n@productshade\n\nSee more on www.MotionDesigners.Pro\n\n#3d #vfx #cgi #digitalart #blender #motion #animation #c4d #cinema4d #houdini #aftereffects #motiondesign #ae #render #3dartist #houdinifx #sidefx #3danimation #tracking #octane #render",
+   "creator": {
+    "username": "motiondesignerspro",
+    "name": "MotionDesigners.Pro",
+    "followers": 17705,
+    "profile": "https://www.pinterest.com/motiondesignerspro/"
+   },
+   "board": {
+    "name": "Best Motion Designers Visual Inspiration",
+    "url": "https://www.pinterest.com/motiondesignerspro/best-motion-designers-visual-inspiration/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/3d/fc/06/3dfc0654c351a6733a6c4d1cd1e7a373.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/b7/7e/df/b77edf96612531369ebc7f374da53358.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/b7/7e/df/b77edf96612531369ebc7f374da53358.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 31.4,
+   "saves": null,
+   "created_at": "Wed, 14 May 2025 11:35:17 +0000",
+   "dominant_color": "#3f3f3f",
+   "thumb": "thumbs/04.jpg",
+   "frames": [
+    {
+     "t": 2.51,
+     "file": "frames/04_1.jpg"
+    },
+    {
+     "t": 7.54,
+     "file": "frames/04_2.jpg"
+    },
+    {
+     "t": 12.57,
+     "file": "frames/04_3.jpg"
+    },
+    {
+     "t": 17.6,
+     "file": "frames/04_4.jpg"
+    },
+    {
+     "t": 22.63,
+     "file": "frames/04_5.jpg"
+    },
+    {
+     "t": 27.65,
+     "file": "frames/04_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 11,
+    "cut_times_s": [
+     1.4,
+     9.27,
+     14.07,
+     15.87,
+     17.57,
+     19.63,
+     21.37,
+     22.73,
+     25.77,
+     27.4,
+     29.4
+    ],
+    "avg_shot_s": 2.51
+   },
+   "audio": {
+    "integrated_lufs": -14.4
+   },
+   "downloaded": {
+    "resolution": "720,1280",
+    "seconds": 30.2,
+    "bytes": 2995313,
+    "kept": true
+   },
+   "local_video": "vids/04.mp4"
+  },
+  {
+   "n": "05",
+   "id": "1104015296153803014",
+   "pin_url": "https://www.pinterest.com/pin/1104015296153803014/",
+   "title": "I will do 3d product animation video, 3d industrial animation, and rendering in blender",
+   "description": "Looking to showcase your products in an engaging and dynamic way? I specialize in creating captivating 3D product animation videos, 3d industrial animation, product design, 3d modeling and 3d rendering that will bring your products to life! With 6+years of experience in the field, I offer top-notch skills in 3D modeling, texturing, lighting, and 3d animation.\nWorkflow:\n\n3d product animation video\n3d animation\n3d industrial animation\n3d explainer\nCosmetic animation\n3d clo\n3d rendering and animation\n3d model\nCgi product animation\n3d rendering\nBlender animation\nIndustrial design and product desig",
+   "creator": {
+    "username": "voxedra3dstudio",
+    "name": "voxedra3dstudio",
+    "followers": 60,
+    "profile": "https://www.pinterest.com/voxedra3dstudio/"
+   },
+   "board": {
+    "name": "Advertising & Marketing Visuals 3D Visualization",
+    "url": "https://www.pinterest.com/voxedra3dstudio/advertising-marketing-visuals-3d-visualization/"
+   },
+   "outbound_link": "https://www.fiverr.com/s/Ay7pN85",
+   "domain": "fiverr.com",
+   "image_url": "https://i.pinimg.com/originals/fa/f8/21/faf821975128a62ffc53faa2a5e1ce44.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/b7/40/93/b74093010f95482ae7ef4c56a31910be.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/b7/40/93/b74093010f95482ae7ef4c56a31910be.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 15,
+   "saves": null,
+   "created_at": "Tue, 21 Jan 2025 05:45:45 +0000",
+   "dominant_color": "#44515d",
+   "thumb": "thumbs/05.jpg"
+  },
+  {
+   "n": "06",
+   "id": "127578601938739672",
+   "pin_url": "https://www.pinterest.com/pin/127578601938739672/",
+   "title": "Motion inspiration - Build",
+   "description": "Subscribe to @motiondesigners.pro\n\nSee more on www.MotionDesigners.Pro\n\n#3d #vfx #cgi #digitalart #blender #motion #animation #c4d #cinema4d #houdini #aftereffects #motiondesign #ae #render #3dartist #houdinifx #sidefx #3danimation #tracking #octane #render",
+   "creator": {
+    "username": "motiondesignerspro",
+    "name": "MotionDesigners.Pro",
+    "followers": 17705,
+    "profile": "https://www.pinterest.com/motiondesignerspro/"
+   },
+   "board": {
+    "name": "Best Motion Designers Visual Inspiration",
+    "url": "https://www.pinterest.com/motiondesignerspro/best-motion-designers-visual-inspiration/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/12/16/12/1216126c811cbedad2429be7a0bbddf5.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/d3/70/38/d37038084436e8acd68626f4ad36ce2e.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/d3/70/38/d37038084436e8acd68626f4ad36ce2e.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 9.9,
+   "saves": null,
+   "created_at": "Sat, 02 Aug 2025 11:36:10 +0000",
+   "dominant_color": "#aaa8ab",
+   "thumb": "thumbs/06.jpg"
+  },
+  {
+   "n": "07",
+   "id": "1042090801287384337",
+   "pin_url": "https://www.pinterest.com/pin/1042090801287384337/",
+   "title": null,
+   "description": "Here\u2019s how a simple concept becomes a sleek 3D product video in Blender \u2014\n\n modeling, shading, lighting & final render.\n \ud83d\ude80 Perfect for brands, ads & e-commerce visual content. \nTap \ud83d\udc4d if you want to see more breakdowns like this!\n\n #BlenderArtist #ProductVisualization #MotionGraphics #3DAdvertising #CGIArt #VideoMarketing #RenderPipeline #ecommercecontent",
+   "creator": {
+    "username": "binarycgi1",
+    "name": "BinaryCGI",
+    "followers": 11,
+    "profile": "https://www.pinterest.com/binarycgi1/"
+   },
+   "board": {
+    "name": "Social",
+    "url": "https://www.pinterest.com/binarycgi1/_tpd_social/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DO3NxLICYpt/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/c3/32/4f/c3324fbdc013329c84df2f3db9468ee4.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/fc/6a/99/fc6a99f301f1a8c423849076ff4f729f.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/fc/6a/99/fc6a99f301f1a8c423849076ff4f729f.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 42.1,
+   "saves": null,
+   "created_at": "Mon, 22 Sep 2025 03:21:06 +0000",
+   "dominant_color": "#dea6b9",
+   "thumb": "thumbs/07.jpg"
+  },
+  {
+   "n": "08",
+   "id": "127578601938165446",
+   "pin_url": "https://www.pinterest.com/pin/127578601938165446/",
+   "title": "Motion inspiration - Joe",
+   "description": "Subscribe to @motiondesigners.pro\n@joe_ryba\n\nSee more on tincumax.com\n#3d #vfx #cgi #digitalart #blender #motion #animation #c4d #cinema4d #houdini #aftereffects #motiondesign #ae #render #3dartist #houdinifx #sidefx #3danimation #tracking #octane #render",
+   "creator": {
+    "username": "motiondesignerspro",
+    "name": "MotionDesigners.Pro",
+    "followers": 17705,
+    "profile": "https://www.pinterest.com/motiondesignerspro/"
+   },
+   "board": {
+    "name": "Best Motion Designers Visual Inspiration",
+    "url": "https://www.pinterest.com/motiondesignerspro/best-motion-designers-visual-inspiration/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/92/fd/a7/92fda74f783decb8d55816c4ee997062.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/41/5d/b6/415db6f74e4733fa6f8880705c128e51.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/41/5d/b6/415db6f74e4733fa6f8880705c128e51.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1358,
+   "duration_s": 16,
+   "saves": null,
+   "created_at": "Sat, 04 Jan 2025 11:31:26 +0000",
+   "dominant_color": "#c6cac9",
+   "thumb": "thumbs/08.jpg"
+  },
+  {
+   "n": "09",
+   "id": "127578601939340367",
+   "pin_url": "https://www.pinterest.com/pin/127578601939340367/",
+   "title": "Motion inspiration - Keyboard",
+   "description": "Subscribe to @motiondesigners.pro\n|greyscalegorilla\n\nSee more on www.MotionDesigners.Pro\n\n#3d #vfx #cgi #digitalart #blender #motion #animation #c4d #cinema4d #houdini #aftereffects #motiondesign #ae #render #3dartist #houdinifx #sidefx #3danimation #tracking #octane #render",
+   "creator": {
+    "username": "motiondesignerspro",
+    "name": "MotionDesigners.Pro",
+    "followers": 17705,
+    "profile": "https://www.pinterest.com/motiondesignerspro/"
+   },
+   "board": {
+    "name": "Best Motion Designers Visual Inspiration",
+    "url": "https://www.pinterest.com/motiondesignerspro/best-motion-designers-visual-inspiration/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/1e/d0/98/1ed09860a794176dbc53b2d09000e6f2.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/91/c6/b4/91c6b41db0be0bdf6f6e2b09f2dd5071.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/91/c6/b4/91c6b41db0be0bdf6f6e2b09f2dd5071.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 28.3,
+   "saves": null,
+   "created_at": "Mon, 09 Mar 2026 21:33:06 +0000",
+   "dominant_color": "#ccbbca",
+   "thumb": "thumbs/09.jpg"
+  },
+  {
+   "n": "10",
+   "id": "3025924744030594",
+   "pin_url": "https://www.pinterest.com/pin/3025924744030594/",
+   "title": "Motion inspiration - Coffee",
+   "description": "Follow us on instagram @motiondesigners.pro @zal3 #3d #vfx #cgi #digitalart #blender #motion",
+   "creator": {
+    "username": "aapoelnil",
+    "name": "Ahmed Apo Elnil",
+    "followers": 321,
+    "profile": "https://www.pinterest.com/aapoelnil/"
+   },
+   "board": {
+    "name": "Drawing",
+    "url": "https://www.pinterest.com/aapoelnil/drawing/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/7d/93/ba/7d93ba0543e71f7f3a6a368d16cf2423.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/11/ab/b9/11abb9ac3560cbabb59c2d46805d5f86.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/11/ab/b9/11abb9ac3560cbabb59c2d46805d5f86.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 8.3,
+   "saves": null,
+   "created_at": "Mon, 11 Nov 2024 20:43:52 +0000",
+   "dominant_color": "#b9b7b4",
+   "thumb": "thumbs/10.jpg"
+  },
+  {
+   "n": "11",
+   "id": "984177324840512259",
+   "pin_url": "https://www.pinterest.com/pin/984177324840512259/",
+   "title": "Motion inspiration - Circles",
+   "description": "Motion inspiration - Circles",
+   "creator": {
+    "username": "bongerzhao23",
+    "name": "Kevin Y",
+    "followers": 0,
+    "profile": "https://www.pinterest.com/bongerzhao23/"
+   },
+   "board": {
+    "name": "08 \u2014 Topology / \u62d3\u6251",
+    "url": "https://www.pinterest.com/bongerzhao23/08-topology-%E6%8B%93%E6%89%91/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/50/c6/d5/50c6d5d336b5774f65778979a9740e1c.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/72/17/4f/72174f4e77fce5a3501b35c9066f785d.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/72/17/4f/72174f4e77fce5a3501b35c9066f785d.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 6.4,
+   "saves": null,
+   "created_at": "Fri, 04 Sep 2026 16:31:37 +0000",
+   "dominant_color": "#a9947e",
+   "thumb": "thumbs/11.jpg"
+  },
+  {
+   "n": "12",
+   "id": "127578601938644350",
+   "pin_url": "https://www.pinterest.com/pin/127578601938644350/",
+   "title": "Motion inspiration - Suitcase",
+   "description": "Subscribe to @motiondesigners.pro\n@dopamine3dart\n\nSee more on www.MotionDesigners.Pro\n\n#3d #vfx #cgi #digitalart #blender #motion #animation #c4d #cinema4d #houdini #aftereffects #motiondesign #ae #render #3dartist #houdinifx #sidefx #3danimation #tracking #octane #render",
+   "creator": {
+    "username": "motiondesignerspro",
+    "name": "MotionDesigners.Pro",
+    "followers": 17705,
+    "profile": "https://www.pinterest.com/motiondesignerspro/"
+   },
+   "board": {
+    "name": "Best Motion Designers Visual Inspiration",
+    "url": "https://www.pinterest.com/motiondesignerspro/best-motion-designers-visual-inspiration/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/1f/e3/ea/1fe3ea7422565d056e6ea77c2aee8dd0.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/99/cb/d9/99cbd9b35f6a1af27bef1460f1747c8d.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/99/cb/d9/99cbd9b35f6a1af27bef1460f1747c8d.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 22.1,
+   "saves": null,
+   "created_at": "Sat, 28 Jun 2025 11:34:10 +0000",
+   "dominant_color": "#686762",
+   "thumb": "thumbs/12.jpg"
+  },
+  {
+   "n": "13",
+   "id": "998110336164424454",
+   "pin_url": "https://www.pinterest.com/pin/998110336164424454/",
+   "title": null,
+   "description": "is there anyone who still doesn\u2019t know?\n\ncheck out my 2D VFX Pack in the shop",
+   "creator": {
+    "username": "synccreation",
+    "name": "synccreation",
+    "followers": 225,
+    "profile": "https://www.pinterest.com/synccreation/"
+   },
+   "board": {
+    "name": "Content",
+    "url": "https://www.pinterest.com/synccreation/content/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DCkDo2CI17B/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/3b/ba/9f/3bba9fd0f1e5e0310d417b09a58b6bcc.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/d1/9d/c6/d19dc6a2529ac354e32a3669e5cdc0da.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/d1/9d/c6/d19dc6a2529ac354e32a3669e5cdc0da.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 8.9,
+   "saves": null,
+   "created_at": "Tue, 24 Dec 2024 09:26:23 +0000",
+   "dominant_color": "#545c5a",
+   "thumb": "thumbs/13.jpg"
+  },
+  {
+   "n": "14",
+   "id": "127578601938401996",
+   "pin_url": "https://www.pinterest.com/pin/127578601938401996/",
+   "title": "Motion inspiration - Particles",
+   "description": "Subscribe to @motiondesigners.pro\n@orlov.it\n\nSee more on www.MotionDesigners.Pro\n\n#3d #vfx #cgi #digitalart #blender #motion #animation #c4d #cinema4d #houdini #aftereffects #motiondesign #ae #render #3dartist #houdinifx #sidefx #3danimation #tracking #octane #render",
+   "creator": {
+    "username": "motiondesignerspro",
+    "name": "MotionDesigners.Pro",
+    "followers": 17705,
+    "profile": "https://www.pinterest.com/motiondesignerspro/"
+   },
+   "board": {
+    "name": "Best Motion Designers Visual Inspiration",
+    "url": "https://www.pinterest.com/motiondesignerspro/best-motion-designers-visual-inspiration/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/b9/e3/1b/b9e31b279c1380e0dc69224c485c82af.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/df/67/46/df674647285697f3070ad16f314d30e6_v2.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/df/67/46/df674647285697f3070ad16f314d30e6_v2.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 10,
+   "saves": null,
+   "created_at": "Thu, 27 Mar 2025 11:34:53 +0000",
+   "dominant_color": "#eba17b",
+   "thumb": "thumbs/14.jpg"
+  },
+  {
+   "n": "15",
+   "id": "774124930015351",
+   "pin_url": "https://www.pinterest.com/pin/774124930015351/",
+   "title": null,
+   "description": "Follow us on instagram @motiondesigners.pro @clim_studio #3d #vfx #cgi #digitalart #blender #motion",
+   "creator": {
+    "username": "eesapochee",
+    "name": "Eesa pochee",
+    "followers": 11,
+    "profile": "https://www.pinterest.com/eesapochee/"
+   },
+   "board": {
+    "name": "Shoe Street",
+    "url": "https://www.pinterest.com/eesapochee/shoe-street/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/42/7f/9a/427f9a4846bca6777eb5b5d7c0f3a9ab.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/d8/4c/ec/d84cec656cda8c57e54ab6bc3e628e0c.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/d8/4c/ec/d84cec656cda8c57e54ab6bc3e628e0c.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 4.8,
+   "saves": null,
+   "created_at": "Tue, 03 Sep 2024 08:25:54 +0000",
+   "dominant_color": "#ac4628",
+   "thumb": "thumbs/15.jpg"
+  },
+  {
+   "n": "16",
+   "id": "5207355813965039",
+   "pin_url": "https://www.pinterest.com/pin/5207355813965039/",
+   "title": null,
+   "description": "Follow us on instagram @motiondesigners.pro @robin_lochmann #3d #vfx #cgi #digitalart #blender #motion",
+   "creator": {
+    "username": "gksdnwls11039",
+    "name": "\uc6b0\uc9c4 \ud55c",
+    "followers": 41,
+    "profile": "https://www.pinterest.com/gksdnwls11039/"
+   },
+   "board": {
+    "name": "R&D",
+    "url": "https://www.pinterest.com/gksdnwls11039/rd/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/f9/05/6c/f9056c87b70188011176669aadfbcb6d.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/mc/hls/2a/2e/d1/2a2ed1709ebc31f459cd552dd04bc729.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/mc/hls/2a/2e/d1/2a2ed1709ebc31f459cd552dd04bc729.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 26.4,
+   "saves": null,
+   "created_at": "Thu, 18 Jul 2024 02:32:26 +0000",
+   "dominant_color": "#a8a6ac",
+   "thumb": "thumbs/16.jpg"
+  }
+ ]
+}

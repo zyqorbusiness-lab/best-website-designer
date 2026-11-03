@@ -1,0 +1,681 @@
+{
+ "topic": "before after video editing showcase",
+ "slug": "before_after_video_editing_showcase",
+ "scope": "videos",
+ "searched_at": "2026-11-03T08:29:09.841Z",
+ "mode": "signed-in",
+ "count": 16,
+ "videos_downloaded": 4,
+ "pins": [
+  {
+   "n": "01",
+   "id": "671599363236225503",
+   "pin_url": "https://www.pinterest.com/pin/671599363236225503/",
+   "title": "Real estate video editing inspiration.",
+   "description": "Real estate video editing inspiration. Talking head footage transformed with motion graphics, dynamic pacing and clean visual storytelling.\n#\u1d20\u026a\u1d05\u1d07\u1d0f\u1d07\u1d05\u026a\u1d1b\u1d0f\u0280 #edit #premierpro #aftereffects #\u043c\u043e\u043d\u0442\u0430\u0436\u0432\u0456\u0434\u0435\u043e",
+   "creator": {
+    "username": "Motion_pet",
+    "name": "Motion Pet",
+    "followers": 186,
+    "profile": "https://www.pinterest.com/Motion_pet/"
+   },
+   "board": {
+    "name": "\u0421\u043e\u0446\u0456\u0430\u043b\u044c\u043d\u0456 \u043c\u0435\u0440\u0435\u0436\u0456",
+    "url": "https://www.pinterest.com/Motion_pet/_tpd_social/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DcF1qNmi_1S/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/14/c6/b5/14c6b51a5d316a0028c9036c3d2483dd.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/9e/a5/30/9ea530f304046085b7ffed0a5d1004f8.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/9e/a5/30/9ea530f304046085b7ffed0a5d1004f8.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 17.1,
+   "saves": null,
+   "created_at": "Sun, 16 Aug 2026 17:11:01 +0000",
+   "dominant_color": "#dfdad9",
+   "thumb": "thumbs/01.jpg",
+   "frames": [
+    {
+     "t": 1.43,
+     "file": "frames/01_1.jpg"
+    },
+    {
+     "t": 4.28,
+     "file": "frames/01_2.jpg"
+    },
+    {
+     "t": 7.14,
+     "file": "frames/01_3.jpg"
+    },
+    {
+     "t": 10,
+     "file": "frames/01_4.jpg"
+    },
+    {
+     "t": 12.85,
+     "file": "frames/01_5.jpg"
+    },
+    {
+     "t": 15.71,
+     "file": "frames/01_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 0,
+    "cut_times_s": [],
+    "avg_shot_s": 17.14
+   },
+   "audio": {
+    "integrated_lufs": -14.1
+   },
+   "downloaded": {
+    "resolution": "720,1280",
+    "seconds": 17.1,
+    "bytes": 1340757,
+    "kept": true
+   },
+   "local_video": "vids/01.mp4"
+  },
+  {
+   "n": "02",
+   "id": "1149403136184229928",
+   "pin_url": "https://www.pinterest.com/pin/1149403136184229928/",
+   "title": "Video Editing Before vs After | The Ultimate Transformation",
+   "description": "Watch an incredible before and after video editing transformation and see how professional editing turns raw footage into cinematic content. From color grading and smooth transitions to stunning visual effects, discover the power of creative video editing. Perfect inspiration for content creators, filmmakers, social media managers, and video editors looking to level up their content.\n\n\n#videoediting #beforeafter #transformation #revuteck",
+   "creator": {
+    "username": "revuteck",
+    "name": "Revuteck",
+    "followers": 29,
+    "profile": "https://www.pinterest.com/revuteck/"
+   },
+   "board": {
+    "name": "Before and after video editing",
+    "url": "https://www.pinterest.com/revuteck/before-and-after-video-editing/"
+   },
+   "outbound_link": "https://www.instagram.com/revuteck_it_solutions/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/41/8a/fb/418afb436fb0b4f45289b628866b54ca.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/47/b2/91/47b2911dafce3ff3bbd7ae0a0217b97c.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/47/b2/91/47b2911dafce3ff3bbd7ae0a0217b97c.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 30.4,
+   "saves": null,
+   "created_at": "Thu, 06 Aug 2026 12:04:00 +0000",
+   "dominant_color": "#2d2923",
+   "thumb": "thumbs/02.jpg",
+   "frames": [
+    {
+     "t": 2.52,
+     "file": "frames/02_1.jpg"
+    },
+    {
+     "t": 7.56,
+     "file": "frames/02_2.jpg"
+    },
+    {
+     "t": 12.6,
+     "file": "frames/02_3.jpg"
+    },
+    {
+     "t": 17.64,
+     "file": "frames/02_4.jpg"
+    },
+    {
+     "t": 22.68,
+     "file": "frames/02_5.jpg"
+    },
+    {
+     "t": 27.71,
+     "file": "frames/02_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 3,
+    "cut_times_s": [
+     3.73,
+     6.77,
+     20.47
+    ],
+    "avg_shot_s": 7.56
+   },
+   "audio": {
+    "integrated_lufs": -7.7
+   },
+   "downloaded": {
+    "resolution": "720,1280",
+    "seconds": 30.2,
+    "bytes": 4590862,
+    "kept": true
+   },
+   "local_video": "vids/02.mp4"
+  },
+  {
+   "n": "03",
+   "id": "591660469841407331",
+   "pin_url": "https://www.pinterest.com/pin/591660469841407331/",
+   "title": null,
+   "description": "Omi.me Edits Breakdown by Pixallow\n\nRaw footage in.\nScroll-stopping content out.\n\n#VideoEditing #ReelEdit #MotionGraphics #EditingWork #CreativeVideo #PostProduction #VideoPortfolio #BrandContent",
+   "creator": {
+    "username": "pixallow",
+    "name": "Pixallow",
+    "followers": 23,
+    "profile": "https://www.pinterest.com/pixallow/"
+   },
+   "board": {
+    "name": "Social",
+    "url": "https://www.pinterest.com/pixallow/_tpd_social/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DXN9YE6iGVw/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/1b/80/67/1b8067e247376beda96361c8a013f578.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/39/c9/6f/39c96ffd88b81d03b8ac72efa477c5b0.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/39/c9/6f/39c96ffd88b81d03b8ac72efa477c5b0.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 960,
+   "duration_s": 31.6,
+   "saves": null,
+   "created_at": "Sun, 19 Apr 2026 19:53:44 +0000",
+   "dominant_color": "#f0efef",
+   "thumb": "thumbs/03.jpg",
+   "frames": [
+    {
+     "t": 2.52,
+     "file": "frames/03_1.jpg"
+    },
+    {
+     "t": 7.57,
+     "file": "frames/03_2.jpg"
+    },
+    {
+     "t": 12.61,
+     "file": "frames/03_3.jpg"
+    },
+    {
+     "t": 17.65,
+     "file": "frames/03_4.jpg"
+    },
+    {
+     "t": 22.7,
+     "file": "frames/03_5.jpg"
+    },
+    {
+     "t": 27.74,
+     "file": "frames/03_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 5,
+    "cut_times_s": [
+     4.87,
+     13.28,
+     13.31,
+     19.75,
+     25.83
+    ],
+    "avg_shot_s": 5.04
+   },
+   "audio": {
+    "integrated_lufs": -14.6
+   },
+   "downloaded": {
+    "resolution": "720,960",
+    "seconds": 30.3,
+    "bytes": 2413242,
+    "kept": true
+   },
+   "local_video": "vids/03.mp4"
+  },
+  {
+   "n": "04",
+   "id": "879820477207025790",
+   "pin_url": "https://www.pinterest.com/pin/879820477207025790/",
+   "title": "Ranveer Podcast into short form Content",
+   "description": "Ranveer Podcast turned into eye-catching Short-form Content,\nDMs are always open, let's work together",
+   "creator": {
+    "username": "Perfectshorts2025",
+    "name": "PerfectShots",
+    "followers": 918,
+    "profile": "https://www.pinterest.com/Perfectshorts2025/"
+   },
+   "board": {
+    "name": "Video Editing",
+    "url": "https://www.pinterest.com/Perfectshorts2025/video-editing/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/8b/e0/f6/8be0f6c1a29e584fb426090e08a34bfa.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/18/ea/66/18ea66952e98c00505618d446cae5aaf_v2.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/18/ea/66/18ea66952e98c00505618d446cae5aaf_v2.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 43,
+   "saves": null,
+   "created_at": "Sat, 29 Mar 2025 14:17:58 +0000",
+   "dominant_color": "#141616",
+   "thumb": "thumbs/04.jpg",
+   "frames": [
+    {
+     "t": 2.5,
+     "file": "frames/04_1.jpg"
+    },
+    {
+     "t": 7.51,
+     "file": "frames/04_2.jpg"
+    },
+    {
+     "t": 12.51,
+     "file": "frames/04_3.jpg"
+    },
+    {
+     "t": 17.52,
+     "file": "frames/04_4.jpg"
+    },
+    {
+     "t": 22.53,
+     "file": "frames/04_5.jpg"
+    },
+    {
+     "t": 27.53,
+     "file": "frames/04_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 0,
+    "cut_times_s": [],
+    "avg_shot_s": 30.03
+   },
+   "audio": {
+    "integrated_lufs": -14
+   },
+   "downloaded": {
+    "resolution": "720,1280",
+    "seconds": 30,
+    "bytes": 4831118,
+    "kept": true
+   },
+   "local_video": "vids/04.mp4"
+  },
+  {
+   "n": "05",
+   "id": "22306960650024141",
+   "pin_url": "https://www.pinterest.com/pin/22306960650024141/",
+   "title": null,
+   "description": "Before & After home office at the Arlenh House \ud83d\ude0d",
+   "creator": {
+    "username": "tom4984",
+    "name": "tom",
+    "followers": 9,
+    "profile": "https://www.pinterest.com/tom4984/"
+   },
+   "board": {
+    "name": "Instagram ideas post",
+    "url": "https://www.pinterest.com/tom4984/instagram-ideas-post/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/C7kKQUHOZZU/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/a2/29/75/a229754ec46bffd83f0cd455f7aeb64a.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/65/2e/cc/652ecc7a5207e356742801b68fa10b6e.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/65/2e/cc/652ecc7a5207e356742801b68fa10b6e.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 10.4,
+   "saves": null,
+   "created_at": "Wed, 07 May 2025 08:02:58 +0000",
+   "dominant_color": "#817161",
+   "thumb": "thumbs/05.jpg"
+  },
+  {
+   "n": "06",
+   "id": "187321665744746997",
+   "pin_url": "https://www.pinterest.com/pin/187321665744746997/",
+   "title": "Before and after editing with a 3D camera and AI images",
+   "description": "Before and after editing with a 3D camera and AI images \ud83d\udd25 What do ya'll think? Big shoutout to this man right here @chasekutley\u00a0for letting me showcase my work for him. Go check him out! . . . #onlinefitnesscoach #onlinefitnesstrainer #videoeditor #videoedits #ads #onlinecoach",
+   "creator": {
+    "username": "matthewventigan",
+    "name": "Matthew Ventigan",
+    "followers": 1313,
+    "profile": "https://www.pinterest.com/matthewventigan/"
+   },
+   "board": {
+    "name": "Client Works",
+    "url": "https://www.pinterest.com/matthewventigan/client-works/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/ad/b6/4a/adb64ad58318c222c180ce3b86a21703.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/3c/7b/bc/3c7bbc0267b9f9a24c191b6144e64fa3.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/3c/7b/bc/3c7bbc0267b9f9a24c191b6144e64fa3.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 33.1,
+   "saves": null,
+   "created_at": "Tue, 13 Feb 2024 13:04:00 +0000",
+   "dominant_color": "#1f1f1d",
+   "thumb": "thumbs/06.jpg"
+  },
+  {
+   "n": "07",
+   "id": "1086986060079822211",
+   "pin_url": "https://www.pinterest.com/pin/1086986060079822211/",
+   "title": "Download After Effects Project Files Built for Video Editors",
+   "description": "They copied your product? Good. \ud83d\ude0f\n\nThey can copy what you make\u2026\nbut they can\u2019t copy who you are \ud83e\udde0\ud83d\udd25\n\n\ud83c\udfac Editors .. Project file available on EarnEdits\ud83d\udd17\ud83d\ude80\nThis After Effects project file shows you how to build strong, identity-driven edits that stand out.\n\nInside you\u2019ll learn how to:\n\ud83d\udd25 Structure bold, scroll-stopping hooks\n\ud83d\udd25 Build authority-style storytelling\n\ud83d\udd25 Use clean typography and pacing\n\ud83d\udd25 Turn simple ideas into premium edits\n\nStudy it. Re-edit it. Make it yours. \u2702\ufe0f\n\n#AfterEffects \ud83c\udfac #VideoEd...",
+   "creator": {
+    "username": "EarnEdits",
+    "name": "EarnEdits.com",
+    "followers": 1060,
+    "profile": "https://www.pinterest.com/EarnEdits/"
+   },
+   "board": {
+    "name": "Social",
+    "url": "https://www.pinterest.com/EarnEdits/_tpd_social/"
+   },
+   "outbound_link": "http://earnedits.com/",
+   "domain": "earnedits.com",
+   "image_url": "https://i.pinimg.com/originals/ba/ab/f1/baabf152ebfd9eceeddf8482d90439d2.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/2b/f8/0e/2bf80e9601413ce1ec266c6b1947c2c7.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/2b/f8/0e/2bf80e9601413ce1ec266c6b1947c2c7.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 36.2,
+   "saves": null,
+   "created_at": "Sat, 28 Mar 2026 01:40:48 +0000",
+   "dominant_color": "#001215",
+   "thumb": "thumbs/07.jpg"
+  },
+  {
+   "n": "08",
+   "id": "987132812086003657",
+   "pin_url": "https://www.pinterest.com/pin/987132812086003657/",
+   "title": null,
+   "description": "\ud83c\udfac Before vs After | Video Editing Transformation\n\nJust finished editing this sample from @aboutoure\u2019s channel to showcase my video editing style.\nI focused on improving pacing, color, and overall storytelling to make the video more engaging.\n\n\ud83c\udfa5 Edited Using: Premiere Pro, After Effects & Photoshop\n\ud83d\udcbc Open To Collaborations \u2014 DM Me Or Check My Portfolio\n\n#VideoEditor #YouTubeEditor #BeforeAfterEdit #PremierePro #AfterEffects #ContentCreator #VideoEditingSkills #IdroEditor",
+   "creator": {
+    "username": "IdroEditor1",
+    "name": "Idro Video Editor",
+    "followers": 2890,
+    "profile": "https://www.pinterest.com/IdroEditor1/"
+   },
+   "board": {
+    "name": "Social",
+    "url": "https://www.pinterest.com/IdroEditor1/_tpd_social/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DPwVVPMAUxI/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/3a/b9/f2/3ab9f293a3b1c6458c0bff37a549acfa.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/f4/b2/fc/f4b2fca3d90f9006695f3f6a5e37c2c7.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/f4/b2/fc/f4b2fca3d90f9006695f3f6a5e37c2c7.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 32.6,
+   "saves": null,
+   "created_at": "Wed, 15 Oct 2025 06:02:15 +0000",
+   "dominant_color": "#4c5050",
+   "thumb": "thumbs/08.jpg"
+  },
+  {
+   "n": "09",
+   "id": "879820477206944267",
+   "pin_url": "https://www.pinterest.com/pin/879820477206944267/",
+   "title": "Before After video Editing Timeline",
+   "description": "Before After Video Editing Timeline\ud83d\ude0d\n\"Client Project\"\nDM are always open, let's work together",
+   "creator": {
+    "username": "Perfectshorts2025",
+    "name": "PerfectShots",
+    "followers": 918,
+    "profile": "https://www.pinterest.com/Perfectshorts2025/"
+   },
+   "board": {
+    "name": "Video Editing",
+    "url": "https://www.pinterest.com/Perfectshorts2025/video-editing/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/21/a2/e0/21a2e0ed1cefd890a30c13f470663c6d.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/1b/5c/e5/1b5ce5989e0d12a6688a129c553cf3b1.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/1b/5c/e5/1b5ce5989e0d12a6688a129c553cf3b1.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 42.4,
+   "saves": null,
+   "created_at": "Thu, 27 Mar 2025 09:16:55 +0000",
+   "dominant_color": "#2b2b29",
+   "thumb": "thumbs/09.jpg"
+  },
+  {
+   "n": "10",
+   "id": "941252390894821479",
+   "pin_url": "https://www.pinterest.com/pin/941252390894821479/",
+   "title": "Before vs After: Automotive Commercial Video Editing & Motion Graphics Showcase",
+   "description": "Stop the scroll! \ud83d\uded1\n\nSee how precise video editing turns a simple explanation into a dynamic experience. The contrast speaks for itself. Need engaging edits for your brand? Let\u2019s connect.",
+   "creator": {
+    "username": "Tanzilcreations2200",
+    "name": "Tanzil Creations",
+    "followers": 1,
+    "profile": "https://www.pinterest.com/Tanzilcreations2200/"
+   },
+   "board": {
+    "name": "Reels Portfolio",
+    "url": "https://www.pinterest.com/Tanzilcreations2200/reels-portfolio/"
+   },
+   "outbound_link": "https://www.instagram.com/tanzil_creations",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/03/61/41/0361412386e00629096fcdf9c6a24b7c.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/15/0f/73/150f73fb8152a68958daf48534cb9212.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/15/0f/73/150f73fb8152a68958daf48534cb9212.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1350,
+   "duration_s": 8,
+   "saves": null,
+   "created_at": "Sun, 16 Aug 2026 06:10:57 +0000",
+   "dominant_color": "#222426",
+   "thumb": "thumbs/10.jpg"
+  },
+  {
+   "n": "11",
+   "id": "920704717577291075",
+   "pin_url": "https://www.pinterest.com/pin/920704717577291075/",
+   "title": null,
+   "description": "The Secret's in the Edit \ud83c\udfa8 | Watch the Process Unfold",
+   "creator": {
+    "username": "snipixagency",
+    "name": "Snipix | Creative Agency | Video Editing",
+    "followers": 150,
+    "profile": "https://www.pinterest.com/snipixagency/"
+   },
+   "board": {
+    "name": "Social",
+    "url": "https://www.pinterest.com/snipixagency/_tpd_social/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/74/8b/29/748b2953502ba7b0b07542d86e05d36d.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/66/88/34/668834394f3284def47366692d53721f.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/66/88/34/668834394f3284def47366692d53721f.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 25.6,
+   "saves": null,
+   "created_at": "Tue, 06 May 2025 07:03:53 +0000",
+   "dominant_color": "#403538",
+   "thumb": "thumbs/11.jpg"
+  },
+  {
+   "n": "12",
+   "id": "810999845416130081",
+   "pin_url": "https://www.pinterest.com/pin/810999845416130081/",
+   "title": "Mosaic Logo Reveal",
+   "description": "- After Effects CC - FULL HD - Color Control - No Plugins Required",
+   "creator": {
+    "username": "Afeffte",
+    "name": "EdgarAFMedia",
+    "followers": 1343,
+    "profile": "https://www.pinterest.com/Afeffte/"
+   },
+   "board": {
+    "name": "After Effects Templates & Projects",
+    "url": "https://www.pinterest.com/Afeffte/after-effects-templates-projects/"
+   },
+   "outbound_link": "https://1.envato.market/c/1274348/298927/4662?u=https://elements.envato.com/mosaic-logo-reveal-RTE4BY9&subid1=Pin&subid2=a23",
+   "domain": "1.envato.market",
+   "image_url": "https://i.pinimg.com/originals/ab/46/a7/ab46a70e57ff61d6f07b05528ba36ce6.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/mc/hls/65/9d/a8/659da88b73668bb0afe3a5b04ba82c54.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/mc/hls/65/9d/a8/659da88b73668bb0afe3a5b04ba82c54.m3u8",
+   "video_mp4": null,
+   "video_w": 1920,
+   "video_h": 1080,
+   "duration_s": 12.1,
+   "saves": null,
+   "created_at": "Sun, 29 Jan 2023 16:00:02 +0000",
+   "dominant_color": "#49453f",
+   "thumb": "thumbs/12.jpg"
+  },
+  {
+   "n": "13",
+   "id": "456622849739263524",
+   "pin_url": "https://www.pinterest.com/pin/456622849739263524/",
+   "title": null,
+   "description": "Who doesn\u2019t love a good before, during and after?\n.\n.\n.\nFollow for more bridal and beauty content! \n.\n.\n.\n.\n.\n.\n.\n#bridalmakeupartist #promua #ocalamua #floridamakeupartist #orlandomakeupartist #gainesvillemakeupartist #tampamakeupartist #makeuptutorial",
+   "creator": {
+    "username": "blendedbabe",
+    "name": "Blended Babe MUA",
+    "followers": 47,
+    "profile": "https://www.pinterest.com/blendedbabe/"
+   },
+   "board": {
+    "name": "Quick Saves",
+    "url": "https://www.pinterest.com/blendedbabe/_quick_saves/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DQNLGPMEZ-E/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/ce/47/fa/ce47faf20caaf5504bb32cc1244e4b9d.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/a0/f0/b4/a0f0b4458506a47f7a867ed60279bb4f.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/a0/f0/b4/a0f0b4458506a47f7a867ed60279bb4f.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 7.6,
+   "saves": null,
+   "created_at": "Sat, 25 Oct 2025 01:47:44 +0000",
+   "dominant_color": "#bb866f",
+   "thumb": "thumbs/13.jpg"
+  },
+  {
+   "n": "14",
+   "id": "1135681231028821248",
+   "pin_url": "https://www.pinterest.com/pin/1135681231028821248/",
+   "title": "See the magic of editing! Before vs After edit of our client",
+   "description": "See the magic of editing! Before vs After edit of our client\n\nOur talented video editor has done it again! Check out the stunning transformation from raw footage to polished final product. The difference is truly amazing. If you're in need of an expert video editor, you know who to message!\n\n#videoediting #beforeandafter #videoeditor #shortformcontent #contentcreation #content",
+   "creator": {
+    "username": "abdulxkarim",
+    "name": "Abdul Karim Juneja",
+    "followers": 139,
+    "profile": "https://www.pinterest.com/abdulxkarim/"
+   },
+   "board": {
+    "name": "Posts",
+    "url": "https://www.pinterest.com/abdulxkarim/posts/"
+   },
+   "outbound_link": "https://www.instagram.com/abdulkarimcreates/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/2b/97/c5/2b97c5574cccb82e72c470896f87bfff.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/04/06/c3/0406c33f5600397b760ffae348647396.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/04/06/c3/0406c33f5600397b760ffae348647396.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 25.3,
+   "saves": null,
+   "created_at": "Tue, 11 Jun 2024 10:44:33 +0000",
+   "dominant_color": "#292c21",
+   "thumb": "thumbs/14.jpg"
+  },
+  {
+   "n": "15",
+   "id": "920704717577135673",
+   "pin_url": "https://www.pinterest.com/pin/920704717577135673/",
+   "title": null,
+   "description": "Before vs. After \ud83c\udfac | The Power of Editing Revealed!",
+   "creator": {
+    "username": "snipixagency",
+    "name": "Snipix | Creative Agency | Video Editing",
+    "followers": 150,
+    "profile": "https://www.pinterest.com/snipixagency/"
+   },
+   "board": {
+    "name": "Social",
+    "url": "https://www.pinterest.com/snipixagency/_tpd_social/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/68/a7/b2/68a7b26a67672f22fd30fa03fbb68bd0.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/81/80/9e/81809e52037cddafc6efb75762d8359a.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/81/80/9e/81809e52037cddafc6efb75762d8359a.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 22.4,
+   "saves": null,
+   "created_at": "Thu, 01 May 2025 17:03:30 +0000",
+   "dominant_color": "#1c1731",
+   "thumb": "thumbs/15.jpg"
+  },
+  {
+   "n": "16",
+   "id": "654640495884010181",
+   "pin_url": "https://www.pinterest.com/pin/654640495884010181/",
+   "title": null,
+   "description": "Aprenda a fazer edi\u00e7\u00e3o de qualidade usando apenas o Capcut, comente \u201cconversa\u201d que eu vou te ensinar!",
+   "creator": {
+    "username": "atilanobre54",
+    "name": "Atila Nobre",
+    "followers": 1,
+    "profile": "https://www.pinterest.com/atilanobre54/"
+   },
+   "board": {
+    "name": "edi\u00e7\u00e3o de v\u00eddeo",
+    "url": "https://www.pinterest.com/atilanobre54/edi%C3%A7%C3%A3o-de-v%C3%ADdeo/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DO9YTdLDQLg/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/c8/20/62/c82062a8d9c3e5aaa8a39493d189231f.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/46/33/10/463310d34d768aa2beece3951ebca024.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/46/33/10/463310d34d768aa2beece3951ebca024.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 61.9,
+   "saves": null,
+   "created_at": "Tue, 28 Oct 2025 17:15:27 +0000",
+   "dominant_color": "#9e8a74",
+   "thumb": "thumbs/16.jpg"
+  }
+ ]
+}

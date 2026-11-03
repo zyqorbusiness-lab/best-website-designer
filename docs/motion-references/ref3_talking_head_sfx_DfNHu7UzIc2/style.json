@@ -1,0 +1,38 @@
+{
+ "source": "https://www.instagram.com/reel/DfNHu7UzIc2/",
+ "duration_s": 11.09,
+ "fps": 30.0,
+ "size": [
+  1080,
+  1920
+ ],
+ "hard_cuts": 0,
+ "cuts": [],
+ "cuts_per_s": 0.0,
+ "motion_mean": 10.57,
+ "motion_p90": 24.51,
+ "still_frac": 0.0,
+ "flash_frames": 0,
+ "brightness": 0.427,
+ "saturation": 0.441,
+ "palette": [
+  "#658fac",
+  "#b2ced6",
+  "#061c2d",
+  "#2f383f",
+  "#5e5253"
+ ],
+ "face_frac": 0.55,
+ "face_size": 0.28,
+ "two_faces_frac": 0.18,
+ "white_card_rows": 0.0,
+ "lufs": -15.41,
+ "true_peak": 0.48,
+ "onsets": 12,
+ "onsets_per_s": 1.08,
+ "template": "framed_talking_head",
+ "pace": {
+  "beat_s": 1.5,
+  "sfx_per_s": 1.5
+ }
+}

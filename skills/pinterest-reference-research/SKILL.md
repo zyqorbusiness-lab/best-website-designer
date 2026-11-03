@@ -3,7 +3,7 @@ name: pinterest-reference-research
 description: Turn Pinterest into a measured style guide before editing. Search a topic, collect the top video pins, extract frames, measure camera moves, cuts, colours, transitions and sound, and write a STYLE.md per topic plus one combined style bible of reproducible recipes.
 when_to_use: "find references", "Pinterest research for this edit", "what style should this video have", before any new video format or brand
 license: MIT (text). Pins belong to their creators: study them, link them, never re-upload them.
-version: 1.0.0
+version: 1.1.0
 ---
 
 # Pinterest reference research
@@ -34,3 +34,8 @@ blender 3d motion graphics · after effects transitions · sound design sfx vide
 
 ## 5. Use it
 Before the beat plan, pick 3–5 references and copy their numbers into the plan (shot length, zoom %, eases, palette, sfx density). After the render, put our frames next to theirs and list where ours is still cheaper.
+
+## v4 (Nov 3 2026)
+- 6 more topics researched to match Sujon's references: soft 3d explainer animation · saas promo video after effects · before after video editing showcase · talking head reel editing · 3d glossy ui cards motion · kinetic typography reels. Recipes appended to [PINTEREST_STYLE_BIBLE.md](PINTEREST_STYLE_BIBLE.md) ("v4 additions"); per-topic STYLE.md + pin links in [`docs/motion-references/pinterest/`](../../docs/motion-references/pinterest/).
+- After Pinterest, measure the reference with `analyze_ref.py` and pick a recipe: [reference-to-video](../reference-to-video/SKILL.md). Tutorials we opened for each style: [`RESEARCH_INDEX.md`](../../docs/motion-references/RESEARCH_INDEX.md).
+- **Who does this step:** Tab. Sujon (or his agent) sends the topic or a Pinterest link to Tab on WhatsApp; Tab returns the pins sheet + STYLE.md. `pinterest_refs.mjs` is optional/advanced (needs a signed-in browser session on Tab's box). With a pin link in hand, anyone can run `make_video.py --ref <pin link>` (yt-dlp downloads video pins).

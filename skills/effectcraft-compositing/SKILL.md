@@ -3,7 +3,7 @@ name: effectcraft-compositing
 description: After-Effects-style compositing and effects with EffectCraft — the free, open-source AE alternative from ArtCraft — driven by JSX scripts from the command line. Gradient worlds, glow, light sweeps, zoom-through and whip blur transitions, RGB split hits, flash cuts, light leaks, impact shake, grain/vignette and animated 2D captions on top of Blender renders. Includes ffmpeg fallbacks for every effect.
 when_to_use: "After Effects free alternative", "add effects/transitions like AE", "glow, glitch, RGB split, light leak, zoom transition", "composite the Blender render", "EffectCraft", scripting an edit end to end without opening a GUI
 license: MIT (code and text)
-version: 1.0.0
+version: 1.1.0
 ---
 
 # Compositing with EffectCraft (free After Effects alternative)
@@ -65,3 +65,10 @@ Other AE-style effects available by the same name: Lens Flare, CC Light Rays, Gr
 
 ## 6. Same effects in ffmpeg (fallback / quick edits)
 glow `split[a][b];[b]gblur=sigma=25[g];[a][g]blend=all_mode=screen:all_opacity=0.45` · RGB split `rgbashift=rh=-8:bh=8` · grain `noise=alls=6:allf=t` · vignette `vignette=PI/5` · whip `dblur=angle=0:radius=40` on 2–4 frames each side of a cut · flash `eq=brightness=0.6` on 2–4 frames · speed ramp `setpts` piecewise · transitions `xfade=transition=zoomin|slideleft|circleopen|pixelize:duration=0.3`.
+
+## v4 (Nov 3 2026) — EffectCraft parts of the 6 reference recipes
+- Generated comps (Python writes the JSX, then `effectcraft-cli script comp.jsx` + `render`): `build_ref1.py` (2.5D world, DOF blur, camera push per beat), `build_ref3.py` (framed card over a blurred blue duotone copy, permanent CTA line, flashes, scribble ring, B&W + grain, stacked kinetic words), `build_ref4.py` (red radial bg, 2 cards, pixel labels, sticker pops, end card), `build_ref5.py` (cards as `threeDLayer` + camera, tilted grid drift, light streaks, rays, toggle). Ref 2: `comp_v4.jsx`.
+- **Gotcha found in v4:** keyframes snap to whole frames — two keys inside one frame collapse into one and a fade "leaks" over seconds. Keep keys ≥ 1 frame (1/30 s) apart.
+- JSX can't find its own path (`$.fileName` is empty): hardcode `var HERE` or let the runner rewrite it (`build_all_v4.sh` does this with sed).
+- Glow threshold 96 (78 washes white UI out). Motion Blur on every 3D word sweep; Zoom Blur for whips.
+- Recipes + tool table: [reference-to-video](../reference-to-video/SKILL.md) · breakdowns: [`docs/motion-references/`](../../docs/motion-references/README.md).

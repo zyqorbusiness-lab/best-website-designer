@@ -1,0 +1,427 @@
+{
+ "topic": "3d glossy ui cards motion",
+ "slug": "3d_glossy_ui_cards_motion",
+ "scope": "videos",
+ "searched_at": "2026-11-03T08:30:08.583Z",
+ "mode": "signed-in",
+ "count": 8,
+ "videos_downloaded": 4,
+ "pins": [
+  {
+   "n": "01",
+   "id": "816629344969284873",
+   "pin_url": "https://www.pinterest.com/pin/816629344969284873/",
+   "title": null,
+   "description": "3D UI fan? \ud83d\udc40\ud83d\udd25 Check out this interactive 3D icon set with a glassy aesthetic, built in Spline by @bigloong2013 using  Glass Layers + Matcaps + a dash of Mouse Hover magic \u2728 \ud83d\udc4c\n\nYou can find this design in the Spline Community!\n\n#3Ddesign #Spline3D #3DUI #Glassmorphism #UI #UX #UXDesign #UIDesign #IXD #MadeInSpline #InteractiveDesign",
+   "creator": {
+    "username": "splinetool",
+    "name": "Spline",
+    "followers": 4830,
+    "profile": "https://www.pinterest.com/splinetool/"
+   },
+   "board": {
+    "name": "Quick Saves",
+    "url": "https://www.pinterest.com/splinetool/_quick_saves/"
+   },
+   "outbound_link": "https://www.instagram.com/p/DH5vbqqgzOX/?img_index=7",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/89/53/9e/89539e7781c95a5e6c4e6966dd23e6f1.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/a9/2d/86/a92d869397073ae98cdcdab7061a6f96.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/a9/2d/86/a92d869397073ae98cdcdab7061a6f96.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1350,
+   "duration_s": 6.5,
+   "saves": null,
+   "created_at": "Tue, 01 Apr 2025 20:39:09 +0000",
+   "dominant_color": "#494751",
+   "thumb": "thumbs/01.jpg",
+   "frames": [
+    {
+     "t": 0.54,
+     "file": "frames/01_1.jpg"
+    },
+    {
+     "t": 1.63,
+     "file": "frames/01_2.jpg"
+    },
+    {
+     "t": 2.71,
+     "file": "frames/01_3.jpg"
+    },
+    {
+     "t": 3.79,
+     "file": "frames/01_4.jpg"
+    },
+    {
+     "t": 4.88,
+     "file": "frames/01_5.jpg"
+    },
+    {
+     "t": 5.96,
+     "file": "frames/01_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 0,
+    "cut_times_s": [],
+    "avg_shot_s": 6.5
+   },
+   "audio": {
+    "integrated_lufs": null,
+    "note": "no audio track"
+   },
+   "downloaded": {
+    "resolution": "720,900",
+    "seconds": 6.5,
+    "bytes": 253396,
+    "kept": true
+   },
+   "local_video": "vids/01.mp4"
+  },
+  {
+   "n": "02",
+   "id": "845832373800023107",
+   "pin_url": "https://www.pinterest.com/pin/845832373800023107/",
+   "title": null,
+   "description": "Rove Card Design\n\n3D renders and modeling created with the help of the talented @mind.of.the.v \n\nProject scope:\nArt Direction\nWeb Design\nApp Design\nCard Design\nDeck Design\n\nDesigned in September 2023\n\n\u2192 vovavindar.com\n\n#vindar #dribbble #figmadesign #muzli #behance #webdesign #ui #ux #webdevelopment #css #visualdesigner #web #layout #untitled #untitledsans #3d #blender #cycles #3dart",
+   "creator": {
+    "username": "vovavindar",
+    "name": "Vova Vindar",
+    "followers": 13,
+    "profile": "https://www.pinterest.com/vovavindar/"
+   },
+   "board": {
+    "name": "Designs",
+    "url": "https://www.pinterest.com/vovavindar/designs/"
+   },
+   "outbound_link": "https://www.instagram.com/p/DElM7Smy2wL/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/67/ae/45/67ae45fd02a754216abe8d63d9babdd9.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/a2/91/c6/a291c656f987cb89b1b0a3f2d05169b5.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/a2/91/c6/a291c656f987cb89b1b0a3f2d05169b5.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1080,
+   "duration_s": 5.2,
+   "saves": null,
+   "created_at": "Wed, 08 Jan 2025 23:59:25 +0000",
+   "dominant_color": "#000000",
+   "thumb": "thumbs/02.jpg",
+   "frames": [
+    {
+     "t": 0.43,
+     "file": "frames/02_1.jpg"
+    },
+    {
+     "t": 1.3,
+     "file": "frames/02_2.jpg"
+    },
+    {
+     "t": 2.17,
+     "file": "frames/02_3.jpg"
+    },
+    {
+     "t": 3.03,
+     "file": "frames/02_4.jpg"
+    },
+    {
+     "t": 3.9,
+     "file": "frames/02_5.jpg"
+    },
+    {
+     "t": 4.77,
+     "file": "frames/02_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 0,
+    "cut_times_s": [],
+    "avg_shot_s": 5.2
+   },
+   "audio": {
+    "integrated_lufs": null,
+    "note": "no audio track"
+   },
+   "downloaded": {
+    "resolution": "720,720",
+    "seconds": 5.2,
+    "bytes": 120600,
+    "kept": true
+   },
+   "local_video": "vids/02.mp4"
+  },
+  {
+   "n": "03",
+   "id": "926052742129752155",
+   "pin_url": "https://www.pinterest.com/pin/926052742129752155/",
+   "title": "Perfect Scroll Animation Lighting effect Figma File Webflow Showcasing Your SaaS App",
+   "description": "Category\n\nAgency\n\nApp\n\nArchitecture\n\nArchitecture\n\nB2B\n\nBank\n\nBeauty\n\nE-Commerce\n\nEntertainment\n\nFinance\n\nGame\n\nGym\n\nHotel\n\nPhotography\n\nPortfolio\n\nPortfolio & Agency\n\nSaaS\n\nTechnology\n\nWellness\n\nWellness\nFeatures\n\nE-Commerce\n\nMulti-Layout\n\nCMS\n\nOther Webflow Templates\nOur team combines creativity with technical precision to deliver visually striking, fully responsive designs tailored to elevate your brand.",
+   "creator": {
+    "username": "WebflowOversight",
+    "name": "Over Sight Webflow",
+    "followers": 74,
+    "profile": "https://www.pinterest.com/WebflowOversight/"
+   },
+   "board": {
+    "name": "Web Design Inspiration",
+    "url": "https://www.pinterest.com/WebflowOversight/web-design-inspiration/"
+   },
+   "outbound_link": "https://webflow.com/templates/html/redsun-website-template?ref=pinterest.com-wt",
+   "domain": "webflow.com",
+   "image_url": "https://i.pinimg.com/originals/2d/be/13/2dbe137c1684a1195b74ff7fa75ade18.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/0f/5d/0c/0f5d0cb994507267b3c0f03d05384c93.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/0f/5d/0c/0f5d0cb994507267b3c0f03d05384c93.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 22.6,
+   "saves": null,
+   "created_at": "Wed, 27 Nov 2024 14:55:42 +0000",
+   "dominant_color": "#070605",
+   "thumb": "thumbs/03.jpg",
+   "frames": [
+    {
+     "t": 1.88,
+     "file": "frames/03_1.jpg"
+    },
+    {
+     "t": 5.65,
+     "file": "frames/03_2.jpg"
+    },
+    {
+     "t": 9.41,
+     "file": "frames/03_3.jpg"
+    },
+    {
+     "t": 13.17,
+     "file": "frames/03_4.jpg"
+    },
+    {
+     "t": 16.94,
+     "file": "frames/03_5.jpg"
+    },
+    {
+     "t": 20.7,
+     "file": "frames/03_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 0,
+    "cut_times_s": [],
+    "avg_shot_s": 22.58
+   },
+   "audio": {
+    "integrated_lufs": null,
+    "note": "no audio track"
+   },
+   "downloaded": {
+    "resolution": "720,1280",
+    "seconds": 22.6,
+    "bytes": 1408120,
+    "kept": true
+   },
+   "local_video": "vids/03.mp4"
+  },
+  {
+   "n": "04",
+   "id": "1110770695653147817",
+   "pin_url": "https://www.pinterest.com/pin/1110770695653147817/",
+   "title": "Binge Gyroscope Interaction: Premium 3D Movie Cover Card Tilt",
+   "description": "Experience the premium Binge movie detail screen featuring a 3D card tilt driven by device gyroscope movement. A glossy metallic glare sweeps across the poster artwork as it rotates, while a gold award badge slides down with a subtle spring. See the full motion breakdown plus 1,900 more shipped interactions at 60fps.design.",
+   "creator": {
+    "username": "60fpsdesign",
+    "name": "60fps",
+    "followers": 507,
+    "profile": "https://www.pinterest.com/60fpsdesign/"
+   },
+   "board": {
+    "name": "Motion design animation",
+    "url": "https://www.pinterest.com/60fpsdesign/motion-design-animation/"
+   },
+   "outbound_link": "https://60fps.design/shots/binge-movie-cover-gyro-glare-interaction",
+   "domain": "60fps.design",
+   "image_url": "https://i.pinimg.com/originals/1b/a3/ec/1ba3ec94451d3c3284c3fba66bd65d06.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/d8/88/ec/d888ecdcf5a62d6febaa9ba17c69026a.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/d8/88/ec/d888ecdcf5a62d6febaa9ba17c69026a.m3u8",
+   "video_mp4": null,
+   "video_w": 2160,
+   "video_h": 2160,
+   "duration_s": 6.2,
+   "saves": null,
+   "created_at": "Sun, 30 Aug 2026 17:01:00 +0000",
+   "dominant_color": "#bcb38f",
+   "thumb": "thumbs/04.jpg",
+   "frames": [
+    {
+     "t": 0.51,
+     "file": "frames/04_1.jpg"
+    },
+    {
+     "t": 1.54,
+     "file": "frames/04_2.jpg"
+    },
+    {
+     "t": 2.57,
+     "file": "frames/04_3.jpg"
+    },
+    {
+     "t": 3.6,
+     "file": "frames/04_4.jpg"
+    },
+    {
+     "t": 4.63,
+     "file": "frames/04_5.jpg"
+    },
+    {
+     "t": 5.65,
+     "file": "frames/04_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 0,
+    "cut_times_s": [],
+    "avg_shot_s": 6.17
+   },
+   "audio": {
+    "integrated_lufs": null,
+    "note": "no audio track"
+   },
+   "downloaded": {
+    "resolution": "720,720",
+    "seconds": 6.2,
+    "bytes": 351767,
+    "kept": true
+   },
+   "local_video": "vids/04.mp4"
+  },
+  {
+   "n": "05",
+   "id": "1105000458573910720",
+   "pin_url": "https://www.pinterest.com/pin/1105000458573910720/",
+   "title": null,
+   "description": "astroospace on tiktok",
+   "creator": {
+    "username": "countiingstarsss",
+    "name": "vids",
+    "followers": 631,
+    "profile": "https://www.pinterest.com/countiingstarsss/"
+   },
+   "board": {
+    "name": "videos I like",
+    "url": "https://www.pinterest.com/countiingstarsss/videos-i-like/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/2d/19/62/2d1962f7ee58ded05a7e7e071a18728f.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/v2/11/0d/81/110d81a03bf148651239a5576cea13fb_v2.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/v2/11/0d/81/110d81a03bf148651239a5576cea13fb_v2.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 9,
+   "saves": null,
+   "created_at": "Fri, 10 Jan 2025 20:49:05 +0000",
+   "dominant_color": "#110b0d",
+   "thumb": "thumbs/05.jpg"
+  },
+  {
+   "n": "06",
+   "id": "550354016977306736",
+   "pin_url": "https://www.pinterest.com/pin/550354016977306736/",
+   "title": "Animated Poster & Glass Effect Tutorial",
+   "description": "An extended tutorial on animated poster in After Effects and 3D animated glass letter in Cinema4D + Octane Render. Check out the full tutorial on Patreon!",
+   "creator": {
+    "username": "pantervision",
+    "name": "P A N T E R",
+    "followers": 40749,
+    "profile": "https://www.pinterest.com/pantervision/"
+   },
+   "board": {
+    "name": "PAV Stuff",
+    "url": "https://www.pinterest.com/pantervision/pav-stuff/"
+   },
+   "outbound_link": "https://patreon.com/pantervision?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=creatorshare_creator&utm_content=join_link",
+   "domain": "patreon.com",
+   "image_url": "https://i.pinimg.com/originals/4a/22/6c/4a226c354726de918dca23468a14f734.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/mc/hls/d5/54/58/d554585a6eab60ab5f8893a46f1f00dd.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/mc/hls/d5/54/58/d554585a6eab60ab5f8893a46f1f00dd.m3u8",
+   "video_mp4": null,
+   "video_w": 1088,
+   "video_h": 1920,
+   "duration_s": 11,
+   "saves": null,
+   "created_at": "Tue, 11 Jul 2023 07:05:07 +0000",
+   "dominant_color": "#020102",
+   "thumb": "thumbs/06.jpg"
+  },
+  {
+   "n": "07",
+   "id": "1107181889671298800",
+   "pin_url": "https://www.pinterest.com/pin/1107181889671298800/",
+   "title": "Liquid cards by @its_sslvr \ud83c\udf00",
+   "description": "Animated shader posters exploring two distinct directions: glossy liquid-like 3D forms paired with bold typography, and a softer shifting gradient in black, blue, white, and beige. A useful art direction reference for designers working with motion, type, and digital form.",
+   "creator": {
+    "username": "detailsdotso",
+    "name": "Details.so",
+    "followers": 143,
+    "profile": "https://www.pinterest.com/detailsdotso/"
+   },
+   "board": {
+    "name": "Website UI Inspiration",
+    "url": "https://www.pinterest.com/detailsdotso/website-ui-inspiration/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/b9/87/76/b98776aeecf1a904faa45993fc117552.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/07/6d/38/076d38e3349ec3203564d309a41c9ee4.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/07/6d/38/076d38e3349ec3203564d309a41c9ee4.m3u8",
+   "video_mp4": null,
+   "video_w": 1920,
+   "video_h": 1080,
+   "duration_s": 10.5,
+   "saves": null,
+   "created_at": "Tue, 18 Aug 2026 03:02:13 +0000",
+   "dominant_color": "#212121",
+   "thumb": "thumbs/07.jpg"
+  },
+  {
+   "n": "08",
+   "id": "753719687666123394",
+   "pin_url": "https://www.pinterest.com/pin/753719687666123394/",
+   "title": "ProjectYuli - Internet Gems: Website Inspiration",
+   "description": "Yuli is an Art Director, designer and strategist. She creates courageous, beautiful and energetic visual experiences for brands and individuals.",
+   "creator": {
+    "username": "ilovecreatives",
+    "name": "ilovecreatives",
+    "followers": 5881,
+    "profile": "https://www.pinterest.com/ilovecreatives/"
+   },
+   "board": {
+    "name": "Website Inspo",
+    "url": "https://www.pinterest.com/ilovecreatives/website-inspo/"
+   },
+   "outbound_link": "https://ilovecreatives.com/internet-gem-websites/project-yuli",
+   "domain": "ilovecreatives.com",
+   "image_url": "https://i.pinimg.com/originals/16/7f/18/167f18366ea89f340fe97186fc034cef.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/mc/hls/9d/75/7f/9d757fa5ff4680c945f6eb549f4bd7f5.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/mc/hls/9d/75/7f/9d757fa5ff4680c945f6eb549f4bd7f5.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1080,
+   "duration_s": 22.7,
+   "saves": null,
+   "created_at": "Fri, 23 Feb 2024 03:26:01 +0000",
+   "dominant_color": "#000000",
+   "thumb": "thumbs/08.jpg"
+  }
+ ]
+}

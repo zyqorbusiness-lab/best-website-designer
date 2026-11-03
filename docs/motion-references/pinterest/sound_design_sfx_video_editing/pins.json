@@ -1,0 +1,682 @@
+{
+ "topic": "sound design sfx video editing",
+ "slug": "sound_design_sfx_video_editing",
+ "scope": "videos",
+ "searched_at": "2026-11-03T05:33:21.233Z",
+ "mode": "signed-in",
+ "count": 16,
+ "videos_downloaded": 4,
+ "pins": [
+  {
+   "n": "01",
+   "id": "1027454102536837052",
+   "pin_url": "https://www.pinterest.com/pin/1027454102536837052/",
+   "title": null,
+   "description": "The magic of sound effects. \n\nDirector/ Editor /VFX/SFX \ud83d\ude4b\ud83c\udffd@yeyofilms\nArt 3D @tripton.xyz \n\n#vfx #soundeffects #timeline #editing #recap",
+   "creator": {
+    "username": "yeyofilmss",
+    "name": "YeyoFilms",
+    "followers": 3,
+    "profile": "https://www.pinterest.com/yeyofilmss/"
+   },
+   "board": {
+    "name": "Social",
+    "url": "https://www.pinterest.com/yeyofilmss/social/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DN3Yw_aYv9b/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/79/02/18/7902180aad6381cd200caf41148cae8c.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/20/92/dd/2092ddacef91fd139441ff06814498c3.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/20/92/dd/2092ddacef91fd139441ff06814498c3.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 57.1,
+   "saves": null,
+   "created_at": "Thu, 16 Jul 2026 00:15:29 +0000",
+   "dominant_color": "#181818",
+   "thumb": "thumbs/01.jpg",
+   "frames": [
+    {
+     "t": 2.52,
+     "file": "frames/01_1.jpg"
+    },
+    {
+     "t": 7.57,
+     "file": "frames/01_2.jpg"
+    },
+    {
+     "t": 12.62,
+     "file": "frames/01_3.jpg"
+    },
+    {
+     "t": 17.67,
+     "file": "frames/01_4.jpg"
+    },
+    {
+     "t": 22.72,
+     "file": "frames/01_5.jpg"
+    },
+    {
+     "t": 27.77,
+     "file": "frames/01_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 2,
+    "cut_times_s": [
+     1.71,
+     20.83
+    ],
+    "avg_shot_s": 10.1
+   },
+   "audio": {
+    "integrated_lufs": -13.5
+   },
+   "downloaded": {
+    "resolution": "720,1280",
+    "seconds": 30.3,
+    "bytes": 5848789,
+    "kept": true
+   },
+   "local_video": "vids/01.mp4"
+  },
+  {
+   "n": "02",
+   "id": "714383559673250251",
+   "pin_url": "https://www.pinterest.com/pin/714383559673250251/",
+   "title": "Timeline Sound Effects",
+   "description": "The Power of sound design . . #vfx #timeline #soundeffects #design #reelviral #trending #youtubepromotion #YouTube #youtuber #youtubers #youtubechannel #influxmedia",
+   "creator": {
+    "username": "mhdi00o",
+    "name": "mhdi",
+    "followers": 19,
+    "profile": "https://www.pinterest.com/mhdi00o/"
+   },
+   "board": {
+    "name": "Photography editing",
+    "url": "https://www.pinterest.com/mhdi00o/photography-editing/"
+   },
+   "outbound_link": "https://www.influxdigitalmedia.net/",
+   "domain": "influxdigitalmedia.net",
+   "image_url": "https://i.pinimg.com/originals/c0/b5/50/c0b550518d82a6d293b7a7f4cee7a845.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/mc/hls/e3/52/83/e35283d43512df6dea45e5474a93d431.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/mc/hls/e3/52/83/e35283d43512df6dea45e5474a93d431.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 26.4,
+   "saves": null,
+   "created_at": "Tue, 13 Aug 2024 00:22:56 +0000",
+   "dominant_color": "#20201f",
+   "thumb": "thumbs/02.jpg",
+   "frames": [
+    {
+     "t": 2.2,
+     "file": "frames/02_1.jpg"
+    },
+    {
+     "t": 6.6,
+     "file": "frames/02_2.jpg"
+    },
+    {
+     "t": 11,
+     "file": "frames/02_3.jpg"
+    },
+    {
+     "t": 15.4,
+     "file": "frames/02_4.jpg"
+    },
+    {
+     "t": 19.8,
+     "file": "frames/02_5.jpg"
+    },
+    {
+     "t": 24.2,
+     "file": "frames/02_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 5,
+    "cut_times_s": [
+     5.73,
+     6.37,
+     10.5,
+     17.5,
+     21.97
+    ],
+    "avg_shot_s": 4.4
+   },
+   "audio": {
+    "integrated_lufs": -13.1
+   },
+   "downloaded": {
+    "resolution": "720,1280",
+    "seconds": 26.4,
+    "bytes": 4462346,
+    "kept": true
+   },
+   "local_video": "vids/02.mp4"
+  },
+  {
+   "n": "03",
+   "id": "1133147956255443620",
+   "pin_url": "https://www.pinterest.com/pin/1133147956255443620/",
+   "title": null,
+   "description": "Comente \u201cSFX\u201d para receber nosso pacote de efeitos sonoros para elevar a edi\u00e7\u00e3o dos seus v\u00eddeos \ud83d\udd25\nEfeitos sonoros virais gr\u00e1tis para os seus v\u00eddeos \u2014 parte 1\ud83d\ude80\n\nSe quiser usar esses efeitos sonoros gratuitos, \u00e9 s\u00f3 baixar este Video em formato mp3 e pronto! \ud83d\ude4c\n\nSiga para mais v\u00eddeos como este! \ud83d\ude4c\n\n#efeitossonoros #soundeffects #sfx #editormobile #edi\u00e7\u00e3odev\u00eddeo #packdeefeitos #transicoes #capcutbrasil #sonsparareels #videomak",
+   "creator": {
+    "username": "dsousaedits",
+    "name": "D Sousa edits",
+    "followers": 44,
+    "profile": "https://www.pinterest.com/dsousaedits/"
+   },
+   "board": {
+    "name": "Instagram",
+    "url": "https://www.pinterest.com/dsousaedits/instagram/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DP1pENRkZ16/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/b8/f3/16/b8f316a54396c046b2f49ac0ec521aba.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/d0/8b/4e/d08b4e897b7f8c9dfb99652400cb21d8.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/d0/8b/4e/d08b4e897b7f8c9dfb99652400cb21d8.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 11.3,
+   "saves": null,
+   "created_at": "Thu, 16 Oct 2025 20:05:31 +0000",
+   "dominant_color": "#473928",
+   "thumb": "thumbs/03.jpg",
+   "frames": [
+    {
+     "t": 0.94,
+     "file": "frames/03_1.jpg"
+    },
+    {
+     "t": 2.83,
+     "file": "frames/03_2.jpg"
+    },
+    {
+     "t": 4.72,
+     "file": "frames/03_3.jpg"
+    },
+    {
+     "t": 6.61,
+     "file": "frames/03_4.jpg"
+    },
+    {
+     "t": 8.5,
+     "file": "frames/03_5.jpg"
+    },
+    {
+     "t": 10.39,
+     "file": "frames/03_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 1,
+    "cut_times_s": [
+     10.17
+    ],
+    "avg_shot_s": 5.67
+   },
+   "audio": {
+    "integrated_lufs": -17.5
+   },
+   "downloaded": {
+    "resolution": "720,1280",
+    "seconds": 11.3,
+    "bytes": 1311940,
+    "kept": true
+   },
+   "local_video": "vids/03.mp4"
+  },
+  {
+   "n": "04",
+   "id": "936959897489127391",
+   "pin_url": "https://www.pinterest.com/pin/936959897489127391/",
+   "title": null,
+   "description": "Comment SFX1 to get our SFX Pack \ud83c\udfa5\n\n#edit #videoediting #soundeffects #sounddesign #explore #explorepage #reels #sfx #soundengineer #soundeffectsforedits \n\nSound effects , video editing , sfx",
+   "creator": {
+    "username": "viamasivideos",
+    "name": "Via Masi I Video Marketing Strategies I Montreal Filmmaking",
+    "followers": 3504,
+    "profile": "https://www.pinterest.com/viamasivideos/"
+   },
+   "board": {
+    "name": "Via Masi Instagram",
+    "url": "https://www.pinterest.com/viamasivideos/via-masi-instagram/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DFYnn3zpz7I/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/df/cc/43/dfcc439e9b816465931ed0e209a37acf.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/0e/d8/7b/0ed87b5073c51775d81e53beda75b8df.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/0e/d8/7b/0ed87b5073c51775d81e53beda75b8df.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 11.4,
+   "saves": null,
+   "created_at": "Wed, 29 Jan 2025 13:35:07 +0000",
+   "dominant_color": "#22201e",
+   "thumb": "thumbs/04.jpg",
+   "frames": [
+    {
+     "t": 0.95,
+     "file": "frames/04_1.jpg"
+    },
+    {
+     "t": 2.86,
+     "file": "frames/04_2.jpg"
+    },
+    {
+     "t": 4.76,
+     "file": "frames/04_3.jpg"
+    },
+    {
+     "t": 6.66,
+     "file": "frames/04_4.jpg"
+    },
+    {
+     "t": 8.57,
+     "file": "frames/04_5.jpg"
+    },
+    {
+     "t": 10.47,
+     "file": "frames/04_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 0,
+    "cut_times_s": [],
+    "avg_shot_s": 11.43
+   },
+   "audio": {
+    "integrated_lufs": -14.6
+   },
+   "downloaded": {
+    "resolution": "720,1280",
+    "seconds": 11.4,
+    "bytes": 914075,
+    "kept": true
+   },
+   "local_video": "vids/04.mp4"
+  },
+  {
+   "n": "05",
+   "id": "700943129512917383",
+   "pin_url": "https://www.pinterest.com/pin/700943129512917383/",
+   "title": null,
+   "description": " ",
+   "creator": {
+    "username": "pravee111",
+    "name": "\u0e1b\u0e23\u0e27\u0e35 \u0e17\u0e31\u0e1e\u0e0b\u0e49\u0e32\u0e22",
+    "followers": 39233,
+    "profile": "https://www.pinterest.com/pravee111/"
+   },
+   "board": {
+    "name": "V  T E C T : vertical video editing design",
+    "url": "https://www.pinterest.com/pravee111/v-t-e-c-t-vertical-video-editing-design/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/d7/95/2d/d7952d2e16943e82a748831bdcb65dc0.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/v2/50/73/f3/5073f346989a46ce05f8e309bf12b3b0.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/v2/50/73/f3/5073f346989a46ce05f8e309bf12b3b0.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 22.1,
+   "saves": null,
+   "created_at": "Fri, 26 Nov 2021 02:30:50 +0000",
+   "dominant_color": "#1d181e",
+   "thumb": "thumbs/05.jpg"
+  },
+  {
+   "n": "06",
+   "id": "936959897490431063",
+   "pin_url": "https://www.pinterest.com/pin/936959897490431063/",
+   "title": null,
+   "description": "Comment SFX1 to get our SFX Pack \ud83c\udfa5\n\n#edit #videoediting #soundeffects #sounddesign #explore #explorepage #reels #sfx #soundengineer #soundeffectsforedits \n\nSound effects , video editing , sfx",
+   "creator": {
+    "username": "viamasivideos",
+    "name": "Via Masi I Video Marketing Strategies I Montreal Filmmaking",
+    "followers": 3504,
+    "profile": "https://www.pinterest.com/viamasivideos/"
+   },
+   "board": {
+    "name": "Via Masi Instagram",
+    "url": "https://www.pinterest.com/viamasivideos/via-masi-instagram/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DFjieThxPDa/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/53/00/93/5300937246bdeb313d7be691236926ed.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/a0/83/2a/a0832a778b8d1badd0dec302f9eca703.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/a0/83/2a/a0832a778b8d1badd0dec302f9eca703.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 11.3,
+   "saves": null,
+   "created_at": "Sun, 02 Feb 2025 13:51:43 +0000",
+   "dominant_color": "#4e4e4d",
+   "thumb": "thumbs/06.jpg"
+  },
+  {
+   "n": "07",
+   "id": "293508100735013660",
+   "pin_url": "https://www.pinterest.com/pin/293508100735013660/",
+   "title": "Sound Waves Frequency in Blue, 4k video",
+   "description": "Abstract video concept of sound waves in blue, viewed from a straight-on angle, illustrating audio frequency and digital sound visualization.",
+   "creator": {
+    "username": "byrawpixel",
+    "name": "rawpixel",
+    "followers": 1699073,
+    "profile": "https://www.pinterest.com/byrawpixel/"
+   },
+   "board": {
+    "name": "Aesthetic Videos",
+    "url": "https://www.pinterest.com/byrawpixel/aesthetic-videos/"
+   },
+   "outbound_link": "http://www.rawpixel.com/",
+   "domain": "rawpixel.com",
+   "image_url": "https://i.pinimg.com/originals/1b/60/b8/1b60b8230852deb1f5ea9b3d6a331f0e.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/04/21/ba/0421ba376d9eaaf5a90744e87371c0b9.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/04/21/ba/0421ba376d9eaaf5a90744e87371c0b9.m3u8",
+   "video_mp4": null,
+   "video_w": 3840,
+   "video_h": 2160,
+   "duration_s": 10,
+   "saves": null,
+   "created_at": "Mon, 28 Apr 2025 04:23:12 +0000",
+   "dominant_color": "#080c15",
+   "thumb": "thumbs/07.jpg"
+  },
+  {
+   "n": "08",
+   "id": "935482153875524125",
+   "pin_url": "https://www.pinterest.com/pin/935482153875524125/",
+   "title": null,
+   "description": "-\nTrajectory\n\n#touchdesigner#newmediaart#creativecoding#modularsynth#vcvrack",
+   "creator": {
+    "username": "kaitoasai__",
+    "name": "Kaito Asai",
+    "followers": 90,
+    "profile": "https://www.pinterest.com/kaitoasai__/"
+   },
+   "board": {
+    "name": "\u30bd\u30fc\u30b7\u30e3\u30eb",
+    "url": "https://www.pinterest.com/kaitoasai__/_tpd_social/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DP4nRlxj44p/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/c0/d3/87/c0d3874752372cff1132a9dd73eb0d5f.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/7c/00/0d/7c000d1b297945ae6c3b0af4916dd8e2.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/7c/00/0d/7c000d1b297945ae6c3b0af4916dd8e2.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 32,
+   "saves": null,
+   "created_at": "Fri, 17 Oct 2025 21:14:53 +0000",
+   "dominant_color": "#060606",
+   "thumb": "thumbs/08.jpg"
+  },
+  {
+   "n": "09",
+   "id": "684054630910559450",
+   "pin_url": "https://www.pinterest.com/pin/684054630910559450/",
+   "title": null,
+   "description": "\ud83c\udf86 Untitled \u30fbAlex Guevara Credits : @alex.g.u.e.v.a.r.a \u30fb\u2060 \u30fb\u2060 \u30fb\u2060 #abstract #touchdesigner #glsl #generativeart #visualarts #creativetechnology #technologyart #artandtechnology #art #contemporaryart #codeart #digitalart #36degres",
+   "creator": {
+    "username": "36degres_",
+    "name": "36 degr\u00e9s",
+    "followers": 45905,
+    "profile": "https://www.pinterest.com/36degres_/"
+   },
+   "board": {
+    "name": "www.36degres.art",
+    "url": "https://www.pinterest.com/36degres_/www36degresart/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/57/f4/13/57f41372a4ceb0f80d24ebc41c8e2539.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/mc/hls/51/70/a4/5170a466f4d6f5a78682833d2c0ed63d.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/mc/hls/51/70/a4/5170a466f4d6f5a78682833d2c0ed63d.m3u8",
+   "video_mp4": null,
+   "video_w": 640,
+   "video_h": 798,
+   "duration_s": 38.5,
+   "saves": null,
+   "created_at": "Thu, 30 Dec 2021 14:01:20 +0000",
+   "dominant_color": "#383838",
+   "thumb": "thumbs/09.jpg"
+  },
+  {
+   "n": "10",
+   "id": "936959897490930138",
+   "pin_url": "https://www.pinterest.com/pin/936959897490930138/",
+   "title": null,
+   "description": "Comment SFX1 to get our SFX Pack \ud83c\udfa5\n\n#edit #videoediting #soundeffects #sounddesign #explore #explorepage #reels #sfx #soundengineer #soundeffectsforedits \n\nSound effects , video editing , sfx",
+   "creator": {
+    "username": "viamasivideos",
+    "name": "Via Masi I Video Marketing Strategies I Montreal Filmmaking",
+    "followers": 3504,
+    "profile": "https://www.pinterest.com/viamasivideos/"
+   },
+   "board": {
+    "name": "Via Masi Instagram",
+    "url": "https://www.pinterest.com/viamasivideos/via-masi-instagram/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DF7oNZlxf30/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/61/73/f7/6173f750970a6b8421ab4e66b0540974.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/88/c6/84/88c684f5e6ecc620fe2c27d7a414e344.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/88/c6/84/88c684f5e6ecc620fe2c27d7a414e344.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 5.5,
+   "saves": null,
+   "created_at": "Tue, 11 Feb 2025 13:59:04 +0000",
+   "dominant_color": "#21261c",
+   "thumb": "thumbs/10.jpg"
+  },
+  {
+   "n": "11",
+   "id": "482940760054796644",
+   "pin_url": "https://www.pinterest.com/pin/482940760054796644/",
+   "title": null,
+   "description": " ",
+   "creator": {
+    "username": "juxsnz",
+    "name": "Jubs;",
+    "followers": 5487,
+    "profile": "https://www.pinterest.com/juxsnz/"
+   },
+   "board": {
+    "name": "overlay v\u00eddeo",
+    "url": "https://www.pinterest.com/juxsnz/overlay-v%C3%ADdeo/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/ed/e5/3b/ede53b24d5fab1d4c59c0532f8b5ab89.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/48/19/33/4819336a5f5cde35f9fdf77103c42b8f.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/48/19/33/4819336a5f5cde35f9fdf77103c42b8f.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1080,
+   "duration_s": 10,
+   "saves": null,
+   "created_at": "Wed, 14 Sep 2022 21:17:13 +0000",
+   "dominant_color": "#010b16",
+   "thumb": "thumbs/11.jpg"
+  },
+  {
+   "n": "12",
+   "id": "1196337403686577",
+   "pin_url": "https://www.pinterest.com/pin/1196337403686577/",
+   "title": null,
+   "description": "THE LUNATIC Prod by @websterxwinston Visual by @sozenka #design #graphicdesign #album #cover #albumart #music #motiondesign #graphic #animation #type #aftereffects #3d #analog",
+   "creator": {
+    "username": "ianagj11",
+    "name": "Ian AG",
+    "followers": 22,
+    "profile": "https://www.pinterest.com/ianagj11/"
+   },
+   "board": {
+    "name": "Guardado r\u00e1pido",
+    "url": "https://www.pinterest.com/ianagj11/_quick_saves/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DAoasTjvpyD/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/a9/0f/8c/a90f8cb768c8b678f825f0b75cc6c565.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/ab/82/6a/ab826ac25d88fd202e98406621d33d80.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/ab/82/6a/ab826ac25d88fd202e98406621d33d80.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 14,
+   "saves": null,
+   "created_at": "Mon, 16 Dec 2024 22:02:08 +0000",
+   "dominant_color": "#040356",
+   "thumb": "thumbs/12.jpg"
+  },
+  {
+   "n": "13",
+   "id": "774478467210938065",
+   "pin_url": "https://www.pinterest.com/pin/774478467210938065/",
+   "title": null,
+   "description": "This is not news to you.  You already know this.   Wake up.  Download Alterd.",
+   "creator": {
+    "username": "STBOFFICIAL23",
+    "name": "STB OFFICIAL",
+    "followers": 2,
+    "profile": "https://www.pinterest.com/STBOFFICIAL23/"
+   },
+   "board": {
+    "name": "RELASI",
+    "url": "https://www.pinterest.com/STBOFFICIAL23/relasi/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DQ9xXY_CYxF/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/fa/35/a8/fa35a8e84e22f0792409770b91808ef8.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/bb/6e/4f/bb6e4fe04a2f48eff6937f42fa242f52.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/bb/6e/4f/bb6e4fe04a2f48eff6937f42fa242f52.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 25.3,
+   "saves": null,
+   "created_at": "Sat, 22 Nov 2025 09:41:56 +0000",
+   "dominant_color": "#2b322f",
+   "thumb": "thumbs/13.jpg"
+  },
+  {
+   "n": "14",
+   "id": "1090715603482767751",
+   "pin_url": "https://www.pinterest.com/pin/1090715603482767751/",
+   "title": null,
+   "description": " ",
+   "creator": {
+    "username": "BQ_13",
+    "name": "Coco",
+    "followers": 22944,
+    "profile": "https://www.pinterest.com/BQ_13/"
+   },
+   "board": {
+    "name": "Overlays Packs",
+    "url": "https://www.pinterest.com/BQ_13/overlays-packs/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/3e/c9/a1/3ec9a1b0763e5095651f6bc9aff2d7ad.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/7f/1c/db/7f1cdb532b2a68b5f970f12e6cfe075e.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/7f/1c/db/7f1cdb532b2a68b5f970f12e6cfe075e.m3u8",
+   "video_mp4": null,
+   "video_w": 768,
+   "video_h": 1366,
+   "duration_s": 24.3,
+   "saves": null,
+   "created_at": "Sat, 18 Mar 2023 17:29:53 +0000",
+   "dominant_color": "#020101",
+   "thumb": "thumbs/14.jpg"
+  },
+  {
+   "n": "15",
+   "id": "3588874697336847",
+   "pin_url": "https://www.pinterest.com/pin/3588874697336847/",
+   "title": null,
+   "description": "Discontinued. \u2026 Music by YZA Voku #surreal #digitalart #35mm #negative #motion",
+   "creator": {
+    "username": "araujoa723",
+    "name": "Agustina Araujo",
+    "followers": 31,
+    "profile": "https://www.pinterest.com/araujoa723/"
+   },
+   "board": {
+    "name": "GRAFICAS LCB",
+    "url": "https://www.pinterest.com/araujoa723/graficas-lcb/"
+   },
+   "outbound_link": "https://www.instagram.com/p/DBeJiUSI4hX/?img_index=7",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/89/a4/64/89a464ee023702c36b81aa79992182e4.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/11/4f/1a/114f1aee0012a8e280b95f700ac6e66e.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/11/4f/1a/114f1aee0012a8e280b95f700ac6e66e.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1350,
+   "duration_s": 11.3,
+   "saves": null,
+   "created_at": "Mon, 31 Mar 2025 20:33:21 +0000",
+   "dominant_color": "#b7b7b7",
+   "thumb": "thumbs/15.jpg"
+  },
+  {
+   "n": "16",
+   "id": "52424783156545427",
+   "pin_url": "https://www.pinterest.com/pin/52424783156545427/",
+   "title": "Yap\u0131m\u0131 hesab\u0131mda var\ud83e\udd0d",
+   "description": "Bana ait bal\u0131m ama cr verme ald\u0131m yaz yeter\ud83e\udd79\ud83d\udc96",
+   "creator": {
+    "username": "58MRO",
+    "name": "mauro rodrigues",
+    "followers": 17,
+    "profile": "https://www.pinterest.com/58MRO/"
+   },
+   "board": {
+    "name": "S\u00f3 PNG FREE",
+    "url": "https://www.pinterest.com/58MRO/s%C3%B3-png-free/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/bc/bc/7c/bcbc7c02634be9632c0606f8ab74f500.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/v2/e4/53/5e/e4535e82108a37cdaf05a137d6949982.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/v2/e4/53/5e/e4535e82108a37cdaf05a137d6949982.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1080,
+   "duration_s": 60.1,
+   "saves": null,
+   "created_at": "Tue, 17 Sep 2024 21:43:53 +0000",
+   "dominant_color": "#19db1a",
+   "thumb": "thumbs/16.jpg"
+  }
+ ]
+}

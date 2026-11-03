@@ -3,7 +3,7 @@ name: motion-graphics-blender
 description: Real 3D motion graphics for reels and SaaS promos, built from Python in Blender (headless, CPU is fine). Glossy extruded 3D type, a tilted floating device/screen with a screen recording on it and a camera that zooms to every click, and a soft-3D floating-objects world. Renders transparent frames with real soft shadows for compositing in EffectCraft (or After Effects).
 when_to_use: "make it look like real 3D / After Effects", "3D text", "SaaS promo with the screen in 3D", "camera zooms into the button", "soft 3D world", "Blender motion graphics", any reel where CSS/HTML fake 3D looks cheap
 license: MIT (code and text). Fonts are not included (SIL OFL, download them). Example stills are Zyqor Studio's own concept renders.
-version: 1.0.0
+version: 1.1.0
 ---
 
 # Motion graphics with Blender (from code)
@@ -92,3 +92,10 @@ Focus points are computed from the screenshot pixels (`focus_world(x, y, t, dist
 
 ## 9. QA
 Contact sheet (2 fps) of every render, title-safe check, compare beat-by-beat with the reference frames, then audio and size checks ([video-editing-reels](../video-editing-reels/) §QA).
+
+## v4 (Nov 3 2026) — Blender parts of the 6 reference recipes
+- `kit/templates/explainer_soft3d_v4/sprites_v4.py` — real 3D objects as transparent seamless 2-s float loops for 2.5D layout in EffectCraft (how soft-3D explainers are really made): `tile` (any glossy icon, `--color --glyph`), `phone_search`, `phone_site` (`--media`), `avatar` (`--tex`), `star`, `pin`, `coin`, `tile_call`, `tile_check`, `tile_globe`. Used by refs 1, 3 (hook icon), 5.
+- `kit/templates/saas_blender_hero_v4/hero_v4.py` — ref 2 v4 fixes: glowing chrome hook text, dark UI on peach, small italic feature words seen straight on, single 3D chat-bubble end card; shadow catcher farther (−3.2) to avoid a muddy blob; RGBA WebP frames (≈0.3–0.6 MB vs 3.5 MB PNG).
+- Ref 6 big bubble words: `blender/text3d.py --text "CRAZYYY" --style plastic --anim slam` → transparent frames, motion blur in EffectCraft.
+- Measured: 1080×1920 Cycles CPU ~10 s/frame at 12 samples → 30 fps full res, not 60, on a CPU box. Test one still (`--still x.png --frame N`) before every long render.
+- Recipes + tool table: [reference-to-video](../reference-to-video/SKILL.md) · breakdowns: [`docs/motion-references/`](../../docs/motion-references/README.md).

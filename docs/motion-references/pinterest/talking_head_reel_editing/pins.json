@@ -1,0 +1,677 @@
+{
+ "topic": "talking head reel editing",
+ "slug": "talking_head_reel_editing",
+ "scope": "videos",
+ "searched_at": "2026-11-03T08:29:03.826Z",
+ "mode": "signed-in",
+ "count": 16,
+ "videos_downloaded": 4,
+ "pins": [
+  {
+   "n": "01",
+   "id": "671599363236283537",
+   "pin_url": "https://www.pinterest.com/pin/671599363236283537/",
+   "title": "Modern talking head",
+   "description": "Modern talking head editing with real estate style subtitles, dynamic typography and smooth transitions.\n\n@nanproperties \n#MotionGraphics #VideoEditing #BeforeAfterEdit #visualstorytelling #aftereffect\n\n#aftereffects #videoeditor #premierepro #motiongraphics #talkingheads",
+   "creator": {
+    "username": "Motion_pet",
+    "name": "Motion Pet",
+    "followers": 186,
+    "profile": "https://www.pinterest.com/Motion_pet/"
+   },
+   "board": {
+    "name": "\u0421\u043e\u0446\u0456\u0430\u043b\u044c\u043d\u0456 \u043c\u0435\u0440\u0435\u0436\u0456",
+    "url": "https://www.pinterest.com/Motion_pet/_tpd_social/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DcOdCYOuaQU/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/b6/d9/ba/b6d9bab7e3fabd20bca82eb83ec097dc.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/ce/f1/ee/cef1eedddcbb543f713eda767bbddc74.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/ce/f1/ee/cef1eedddcbb543f713eda767bbddc74.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 16.7,
+   "saves": null,
+   "created_at": "Wed, 19 Aug 2026 17:12:14 +0000",
+   "dominant_color": "#f8f7f7",
+   "thumb": "thumbs/01.jpg",
+   "frames": [
+    {
+     "t": 1.4,
+     "file": "frames/01_1.jpg"
+    },
+    {
+     "t": 4.19,
+     "file": "frames/01_2.jpg"
+    },
+    {
+     "t": 6.99,
+     "file": "frames/01_3.jpg"
+    },
+    {
+     "t": 9.78,
+     "file": "frames/01_4.jpg"
+    },
+    {
+     "t": 12.57,
+     "file": "frames/01_5.jpg"
+    },
+    {
+     "t": 15.37,
+     "file": "frames/01_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 0,
+    "cut_times_s": [],
+    "avg_shot_s": 16.77
+   },
+   "audio": {
+    "integrated_lufs": -14.5
+   },
+   "downloaded": {
+    "resolution": "720,1280",
+    "seconds": 16.8,
+    "bytes": 1666986,
+    "kept": true
+   },
+   "local_video": "vids/01.mp4"
+  },
+  {
+   "n": "02",
+   "id": "671599363236225503",
+   "pin_url": "https://www.pinterest.com/pin/671599363236225503/",
+   "title": "Real estate video editing inspiration.",
+   "description": "Real estate video editing inspiration. Talking head footage transformed with motion graphics, dynamic pacing and clean visual storytelling.\n#\u1d20\u026a\u1d05\u1d07\u1d0f\u1d07\u1d05\u026a\u1d1b\u1d0f\u0280 #edit #premierpro #aftereffects #\u043c\u043e\u043d\u0442\u0430\u0436\u0432\u0456\u0434\u0435\u043e",
+   "creator": {
+    "username": "Motion_pet",
+    "name": "Motion Pet",
+    "followers": 186,
+    "profile": "https://www.pinterest.com/Motion_pet/"
+   },
+   "board": {
+    "name": "\u0421\u043e\u0446\u0456\u0430\u043b\u044c\u043d\u0456 \u043c\u0435\u0440\u0435\u0436\u0456",
+    "url": "https://www.pinterest.com/Motion_pet/_tpd_social/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DcF1qNmi_1S/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/14/c6/b5/14c6b51a5d316a0028c9036c3d2483dd.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/9e/a5/30/9ea530f304046085b7ffed0a5d1004f8.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/9e/a5/30/9ea530f304046085b7ffed0a5d1004f8.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 17.1,
+   "saves": null,
+   "created_at": "Sun, 16 Aug 2026 17:11:01 +0000",
+   "dominant_color": "#dfdad9",
+   "thumb": "thumbs/02.jpg",
+   "frames": [
+    {
+     "t": 1.43,
+     "file": "frames/02_1.jpg"
+    },
+    {
+     "t": 4.28,
+     "file": "frames/02_2.jpg"
+    },
+    {
+     "t": 7.14,
+     "file": "frames/02_3.jpg"
+    },
+    {
+     "t": 10,
+     "file": "frames/02_4.jpg"
+    },
+    {
+     "t": 12.85,
+     "file": "frames/02_5.jpg"
+    },
+    {
+     "t": 15.71,
+     "file": "frames/02_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 0,
+    "cut_times_s": [],
+    "avg_shot_s": 17.14
+   },
+   "audio": {
+    "integrated_lufs": -14.1
+   },
+   "downloaded": {
+    "resolution": "720,1280",
+    "seconds": 17.1,
+    "bytes": 1340757,
+    "kept": true
+   },
+   "local_video": "vids/02.mp4"
+  },
+  {
+   "n": "03",
+   "id": "671599363236245110",
+   "pin_url": "https://www.pinterest.com/pin/671599363236245110/",
+   "title": "Talking head video",
+   "description": "Talking head video editing in a modern real estate style. Clean cuts, bold captions and smooth motion graphics.\n\n#MotionGraphics #VideoEditing #BeforeAfterEdit #visualstorytelling #aftereffect\n\n#aftereffects #videoeditor #premierepro #motiongraphics #talkingheads",
+   "creator": {
+    "username": "Motion_pet",
+    "name": "Motion Pet",
+    "followers": 186,
+    "profile": "https://www.pinterest.com/Motion_pet/"
+   },
+   "board": {
+    "name": "\u0421\u043e\u0446\u0456\u0430\u043b\u044c\u043d\u0456 \u043c\u0435\u0440\u0435\u0436\u0456",
+    "url": "https://www.pinterest.com/Motion_pet/_tpd_social/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DcIqF-EupQ0/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/cc/f9/73/ccf9738378d1ff6c425518b2ec1c434d.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/a9/66/8e/a9668e0d672eeb6c55ccafd4956160a7.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/a9/66/8e/a9668e0d672eeb6c55ccafd4956160a7.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 19.1,
+   "saves": null,
+   "created_at": "Mon, 17 Aug 2026 17:00:40 +0000",
+   "dominant_color": "#e2dad9",
+   "thumb": "thumbs/03.jpg",
+   "frames": [
+    {
+     "t": 1.59,
+     "file": "frames/03_1.jpg"
+    },
+    {
+     "t": 4.78,
+     "file": "frames/03_2.jpg"
+    },
+    {
+     "t": 7.97,
+     "file": "frames/03_3.jpg"
+    },
+    {
+     "t": 11.16,
+     "file": "frames/03_4.jpg"
+    },
+    {
+     "t": 14.35,
+     "file": "frames/03_5.jpg"
+    },
+    {
+     "t": 17.54,
+     "file": "frames/03_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 0,
+    "cut_times_s": [],
+    "avg_shot_s": 19.13
+   },
+   "audio": {
+    "integrated_lufs": -14.3
+   },
+   "downloaded": {
+    "resolution": "720,1280",
+    "seconds": 19.1,
+    "bytes": 1757795,
+    "kept": true
+   },
+   "local_video": "vids/03.mp4"
+  },
+  {
+   "n": "04",
+   "id": "875176140111922304",
+   "pin_url": "https://www.pinterest.com/pin/875176140111922304/",
+   "title": null,
+   "description": "Another talking head video project done\ud83d\ude09",
+   "creator": {
+    "username": "rivozen_agency",
+    "name": "RivoZen",
+    "followers": 0,
+    "profile": "https://www.pinterest.com/rivozen_agency/"
+   },
+   "board": {
+    "name": "Social",
+    "url": "https://www.pinterest.com/rivozen_agency/_tpd_social/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DV4c7N-Ezt8/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/ca/7c/3b/ca7c3bd95d386298695cf40cfc866673.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/d1/60/a3/d160a349b5d26458ad7f56281d56405f.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/d1/60/a3/d160a349b5d26458ad7f56281d56405f.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 13.3,
+   "saves": null,
+   "created_at": "Fri, 05 Jun 2026 21:41:22 +0000",
+   "dominant_color": "#fafafa",
+   "thumb": "thumbs/04.jpg",
+   "frames": [
+    {
+     "t": 1.11,
+     "file": "frames/04_1.jpg"
+    },
+    {
+     "t": 3.33,
+     "file": "frames/04_2.jpg"
+    },
+    {
+     "t": 5.55,
+     "file": "frames/04_3.jpg"
+    },
+    {
+     "t": 7.78,
+     "file": "frames/04_4.jpg"
+    },
+    {
+     "t": 10,
+     "file": "frames/04_5.jpg"
+    },
+    {
+     "t": 12.22,
+     "file": "frames/04_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 5,
+    "cut_times_s": [
+     1.67,
+     3.73,
+     6.8,
+     9.27,
+     11.33
+    ],
+    "avg_shot_s": 2.22
+   },
+   "audio": {
+    "integrated_lufs": -14.2
+   },
+   "downloaded": {
+    "resolution": "720,1280",
+    "seconds": 13.3,
+    "bytes": 736268,
+    "kept": true
+   },
+   "local_video": "vids/04.mp4"
+  },
+  {
+   "n": "05",
+   "id": "1074390054841549815",
+   "pin_url": "https://www.pinterest.com/pin/1074390054841549815/",
+   "title": "\ud83d\udd31\u203c\ufe0f#imangadzi",
+   "description": " ",
+   "creator": {
+    "username": "syedzain0702",
+    "name": "Syed Zainul",
+    "followers": 1,
+    "profile": "https://www.pinterest.com/syedzain0702/"
+   },
+   "board": {
+    "name": "Quick saves",
+    "url": "https://www.pinterest.com/syedzain0702/_quick_saves/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/28/94/cf/2894cf5061f95778988e8c8f6f12102c.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/03/4e/72/034e722506ad70d3ffd5d9a265a36347.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/03/4e/72/034e722506ad70d3ffd5d9a265a36347.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 60.1,
+   "saves": null,
+   "created_at": "Fri, 10 Nov 2023 00:26:17 +0000",
+   "dominant_color": "#0e070d",
+   "thumb": "thumbs/05.jpg"
+  },
+  {
+   "n": "06",
+   "id": "865887465889683398",
+   "pin_url": "https://www.pinterest.com/pin/865887465889683398/",
+   "title": "This is the cleanest editing style you\u2019ll see",
+   "description": "Smooth motion, clean design, and strong impact. Talking head + motion graphics done right.  #videoediting #motiongraphics #talkinghead #davinciresolve #shorts #edit",
+   "creator": {
+    "username": "prakharparsai7",
+    "name": "Prakhar Parsai",
+    "followers": 74,
+    "profile": "https://www.pinterest.com/prakharparsai7/"
+   },
+   "board": {
+    "name": "Video Editing Portfolio",
+    "url": "https://www.pinterest.com/prakharparsai7/video-editing-portfolio/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/ce/6d/5d/ce6d5dbe7d8c735031ae6b8bb525b076.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/92/72/20/927220e049eb8d45c2a51be7fc038dc2.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/92/72/20/927220e049eb8d45c2a51be7fc038dc2.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 12,
+   "saves": null,
+   "created_at": "Fri, 10 Apr 2026 10:35:10 +0000",
+   "dominant_color": "#a8a737",
+   "thumb": "thumbs/06.jpg"
+  },
+  {
+   "n": "07",
+   "id": "1112037333001680247",
+   "pin_url": "https://www.pinterest.com/pin/1112037333001680247/",
+   "title": null,
+   "description": "Make your video captions pop with this trick \ud83d\udd25\n\n#designtips #designinspiration #personalizedgifts #graphicdesign #madeandstyled",
+   "creator": {
+    "username": "itsmadeandstyled",
+    "name": "Made and Styled",
+    "followers": 1025,
+    "profile": "https://www.pinterest.com/itsmadeandstyled/"
+   },
+   "board": {
+    "name": "Design Inspirations \ud83d\udca1",
+    "url": "https://www.pinterest.com/itsmadeandstyled/design-inspirations/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DHlT6zaPb4i/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/1f/c7/45/1fc745137dd8f11136c8fb0b10fab327.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/32/e3/c6/32e3c6827122e4adf26986d6ed4baae0_v2.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/32/e3/c6/32e3c6827122e4adf26986d6ed4baae0_v2.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 44.5,
+   "saves": null,
+   "created_at": "Mon, 24 Mar 2025 20:46:33 +0000",
+   "dominant_color": "#3c5e6b",
+   "thumb": "thumbs/07.jpg"
+  },
+  {
+   "n": "08",
+   "id": "730849845820418679",
+   "pin_url": "https://www.pinterest.com/pin/730849845820418679/",
+   "title": null,
+   "description": "Um post n\u00e3o vai fazer teu cliente vender mais.\nSem base, sem estrutura e sem funil, n\u00e3o existe milagre.\n\nDeixa claro o papel do teu servi\u00e7o, porque quando o cliente entende, ele para de cobrar resultado de coisa que nem \u00e9 fun\u00e7\u00e3o do post. #marketing #marketingdigital #designgrafico #socialmedia #marketingdeconteudo",
+   "creator": {
+    "username": "odesignerjoao",
+    "name": "Jo\u00e3o Mendes - Studio Astreon",
+    "followers": 255,
+    "profile": "https://www.pinterest.com/odesignerjoao/"
+   },
+   "board": {
+    "name": "Social",
+    "url": "https://www.pinterest.com/odesignerjoao/_tpd_social/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DQzB6tPkYcW/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/9c/90/79/9c907918cec2c453f82353954275110f.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/40/5c/db/405cdbadd47e95dfd6decf07b7df50eb.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/40/5c/db/405cdbadd47e95dfd6decf07b7df50eb.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 49.7,
+   "saves": null,
+   "created_at": "Sat, 08 Nov 2025 16:41:45 +0000",
+   "dominant_color": "#112a20",
+   "thumb": "thumbs/08.jpg"
+  },
+  {
+   "n": "09",
+   "id": "996140011343797595",
+   "pin_url": "https://www.pinterest.com/pin/996140011343797595/",
+   "title": "Truth is honest. Lies are strategic. That\u2019s why humans love them.",
+   "description": " ",
+   "creator": {
+    "username": "comedyfarceofficial",
+    "name": "shiftspark",
+    "followers": 23,
+    "profile": "https://www.pinterest.com/comedyfarceofficial/"
+   },
+   "board": {
+    "name": "Places to visit",
+    "url": "https://www.pinterest.com/comedyfarceofficial/places-to-visit/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/b6/da/95/b6da9591adf159502f073bab2c5bcc99.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/c4/d8/c5/c4d8c5b509c34cea2a0c7d2feb569111.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/c4/d8/c5/c4d8c5b509c34cea2a0c7d2feb569111.m3u8",
+   "video_mp4": null,
+   "video_w": 478,
+   "video_h": 850,
+   "duration_s": 38.9,
+   "saves": null,
+   "created_at": "Sat, 13 Dec 2025 12:51:53 +0000",
+   "dominant_color": "#846d65",
+   "thumb": "thumbs/09.jpg"
+  },
+  {
+   "n": "10",
+   "id": "879820477207025790",
+   "pin_url": "https://www.pinterest.com/pin/879820477207025790/",
+   "title": "Ranveer Podcast into short form Content",
+   "description": "Ranveer Podcast turned into eye-catching Short-form Content,\nDMs are always open, let's work together",
+   "creator": {
+    "username": "Perfectshorts2025",
+    "name": "PerfectShots",
+    "followers": 918,
+    "profile": "https://www.pinterest.com/Perfectshorts2025/"
+   },
+   "board": {
+    "name": "Video Editing",
+    "url": "https://www.pinterest.com/Perfectshorts2025/video-editing/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/8b/e0/f6/8be0f6c1a29e584fb426090e08a34bfa.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/18/ea/66/18ea66952e98c00505618d446cae5aaf_v2.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/18/ea/66/18ea66952e98c00505618d446cae5aaf_v2.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 43,
+   "saves": null,
+   "created_at": "Sat, 29 Mar 2025 14:17:58 +0000",
+   "dominant_color": "#141616",
+   "thumb": "thumbs/10.jpg"
+  },
+  {
+   "n": "11",
+   "id": "1123859282030926332",
+   "pin_url": "https://www.pinterest.com/pin/1123859282030926332/",
+   "title": null,
+   "description": "Overthinking kills more deals than money ever will.\n#MainRealty #SmartInvestment #DubaiRealEstate #PropertyDevelopment #InvestSmart",
+   "creator": {
+    "username": "main_realty",
+    "name": "Main Realty",
+    "followers": 19,
+    "profile": "https://www.pinterest.com/main_realty/"
+   },
+   "board": {
+    "name": "Luxury Home",
+    "url": "https://www.pinterest.com/main_realty/luxury-home/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/2a/a9/7e/2aa97ee8fd645c49367f8da4fed867d3.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/19/f5/40/19f5403083351f955516e067e55da3c6.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/19/f5/40/19f5403083351f955516e067e55da3c6.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 22.3,
+   "saves": null,
+   "created_at": "Thu, 16 Apr 2026 14:07:16 +0000",
+   "dominant_color": "#685e4e",
+   "thumb": "thumbs/11.jpg"
+  },
+  {
+   "n": "12",
+   "id": "859835753921598972",
+   "pin_url": "https://www.pinterest.com/pin/859835753921598972/",
+   "title": null,
+   "description": "Meet Alasdair, Associate at Peak.\n\nArchitecture has been a long-standing interest for Alasdair, shaped by a creative mindset and a genuine enjoyment of the design process.\n\nOne of his biggest strengths is his approach to problem-solving.\n\nHe\u2019s someone who enjoys getting into the details, exploring ideas from different angles, and working through challenges to find the right solution.\n\nThat creativity is an important part of how he works, but always with purpose. Responding to the brief, the s...",
+   "creator": {
+    "username": "Peak_Architects",
+    "name": "Peak Architects",
+    "followers": 246,
+    "profile": "https://www.pinterest.com/Peak_Architects/"
+   },
+   "board": {
+    "name": "Instagram",
+    "url": "https://www.pinterest.com/Peak_Architects/instagram/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DZ4eZxUjbi7/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/cf/5a/a9/cf5aa9f319c1e6b2bd7ae54d779e44b9.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/95/dc/b4/95dcb4fe79d4a09e7d64341e01d90539.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/95/dc/b4/95dcb4fe79d4a09e7d64341e01d90539.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 119.4,
+   "saves": null,
+   "created_at": "Mon, 22 Jun 2026 20:39:18 +0000",
+   "dominant_color": "#211f1b",
+   "thumb": "thumbs/12.jpg"
+  },
+  {
+   "n": "13",
+   "id": "1123859282023678675",
+   "pin_url": "https://www.pinterest.com/pin/1123859282023678675/",
+   "title": null,
+   "description": "Miami vibes. Dubai prestige.\n\nFlow Residences blends both into one modern coastal living.\n\nDesigned for today\u2019s lifestyle, featuring 16 world-class amenities including fitness, wellness, co-working, family facilities, and resort-style leisure.\n\nFlow Residences by Main Realty\nA home. A lifestyle. A community.",
+   "creator": {
+    "username": "main_realty",
+    "name": "Main Realty",
+    "followers": 19,
+    "profile": "https://www.pinterest.com/main_realty/"
+   },
+   "board": {
+    "name": "Luxury Home",
+    "url": "https://www.pinterest.com/main_realty/luxury-home/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/0d/51/ec/0d51ec2e52c5f022a4cbc1ea4d16b4d9.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/28/6c/ee/286ceee8d577b39812652cff7b08ab87.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/28/6c/ee/286ceee8d577b39812652cff7b08ab87.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 35.7,
+   "saves": null,
+   "created_at": "Fri, 05 Dec 2025 14:28:44 +0000",
+   "dominant_color": "#94846c",
+   "thumb": "thumbs/13.jpg"
+  },
+  {
+   "n": "14",
+   "id": "692358142757858672",
+   "pin_url": "https://www.pinterest.com/pin/692358142757858672/",
+   "title": "Nobody Is Coming to Save You. Read That Again.",
+   "description": "\n\nNo one is coming to fix your habits.\nNo one is coming to build your dreams.\nNo one is coming to change your life.\n\nIt\u2019s you. \ud83e\udde0\n\nThe moment you stop waiting\u2026\nis the moment everything shifts.\n\nGrowth starts when excuses end.\nSuccess starts when responsibility begins.\n\nThis cinematic breakdown explains the psychology of self-accountability \u2014 and why it changes everything.\n\n\u26a1 Save this as a wake-up call.\nFollow for powerful mindset & brain-based content.\n\n\n#MindsetShift\n#SelfImprovement\n#SuccessMindset\n#GrowthMindset\n#DisciplineEqualsFreedom\n#PersonalResponsibility\n#EntrepreneurMindset\n#MentalC",
+   "creator": {
+    "username": "videoeditorhire",
+    "name": "Karan Sharma | Video Editor | YouTube Manager |",
+    "followers": 1630,
+    "profile": "https://www.pinterest.com/videoeditorhire/"
+   },
+   "board": {
+    "name": "Editng Work",
+    "url": "https://www.pinterest.com/videoeditorhire/editng-work/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/e6/39/d7/e639d77e2d1b8854dda6f23c979a8315.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/1b/1e/8a/1b1e8a192e8dd09e8773fea55617359f.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/1b/1e/8a/1b1e8a192e8dd09e8773fea55617359f.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 19.8,
+   "saves": null,
+   "created_at": "Fri, 27 Feb 2026 15:28:08 +0000",
+   "dominant_color": "#041f32",
+   "thumb": "thumbs/14.jpg"
+  },
+  {
+   "n": "15",
+   "id": "692358142757858063",
+   "pin_url": "https://www.pinterest.com/pin/692358142757858063/",
+   "title": "Your Brain Is Controlling You (And You Don\u2019t Even Know It)",
+   "description": "\nEver wondered why you scroll longer, shop more, or delay your goals? \ud83e\udde0\nYour brain loves comfort \u2014 not growth.\nThis short breakdown explains hidden psychological triggers that secretly control your decisions every day.\n\nSave this pin if you want to take back control of your mind. \ud83d\ude80\n\nFollow for more deep psychology & self-growth content.\n\n\n",
+   "creator": {
+    "username": "videoeditorhire",
+    "name": "Karan Sharma | Video Editor | YouTube Manager |",
+    "followers": 1630,
+    "profile": "https://www.pinterest.com/videoeditorhire/"
+   },
+   "board": {
+    "name": "Editng Work",
+    "url": "https://www.pinterest.com/videoeditorhire/editng-work/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/41/8c/7c/418c7c443488ac033ea54bb553a95fc7.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/20/e1/3a/20e13a1d0d1b2cace643c320103c1fed.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/20/e1/3a/20e13a1d0d1b2cace643c320103c1fed.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 22.7,
+   "saves": null,
+   "created_at": "Fri, 27 Feb 2026 14:51:41 +0000",
+   "dominant_color": "#9aa6a5",
+   "thumb": "thumbs/15.jpg"
+  },
+  {
+   "n": "16",
+   "id": "486318459783896293",
+   "pin_url": "https://www.pinterest.com/pin/486318459783896293/",
+   "title": null,
+   "description": "Let\u2019s be honest\u2026 \u201cpost and pray\u201d is not marketing \ud83d\ude05\n\nThere\u2019s a strategy behind every listing I take. Who it\u2019s targeted to, how it\u2019s presented, and how we create demand. That\u2019s the difference.\n\n\ud83d\udc8c DM to get started or baileypate.com",
+   "creator": {
+    "username": "baileypatemaine",
+    "name": "Bailey Pate | Maine Realtor",
+    "followers": 67,
+    "profile": "https://www.pinterest.com/baileypatemaine/"
+   },
+   "board": {
+    "name": "Maine's #1 Agent on Social",
+    "url": "https://www.pinterest.com/baileypatemaine/maines-1-agent-on-social/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DXN9WUSANN1/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/87/fd/f8/87fdf8bdf556fea95ff1271d00837b0b.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/4d/ca/1b/4dca1b46786dbd99489efee4da3bdf24.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/4d/ca/1b/4dca1b46786dbd99489efee4da3bdf24.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 36.6,
+   "saves": null,
+   "created_at": "Sat, 18 Apr 2026 23:51:10 +0000",
+   "dominant_color": "#c1c3c0",
+   "thumb": "thumbs/16.jpg"
+  }
+ ]
+}

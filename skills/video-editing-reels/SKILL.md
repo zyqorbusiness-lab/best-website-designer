@@ -3,7 +3,7 @@ name: video-editing-reels
 description: How to edit Instagram reels and short promos at the level of top motion editors — the reference-first workflow, beat plans for the three formats Sujon studies (soft-3D explainer, 3D SaaS promo, framed talking head), pacing, transitions, captions, CTA, and a QA pass that compares every render side by side with its reference.
 when_to_use: "edit a reel", "make a promo video", "why does my edit look cheap", "copy this reel's style", "SaaS promo", "talking head edit", planning any short vertical video
 license: MIT (text)
-version: 1.0.0
+version: 1.1.0
 ---
 
 # Editing reels that don't look like templates
@@ -47,3 +47,39 @@ Concept products say "concept" on screen. No fake users, revenue, reviews or res
 2. **Comparison sheet**: our frames next to the reference's frames at the same beats. Write down exactly where ours is still cheaper (material, lighting, motion, density, type) — that list is the next iteration.
 3. Audio: −14 LUFS ±0.5, true peak ≤ −1 dBTP, no unintended silences.
 4. File: 1080×1920, 30 fps, H.264 + AAC; under 15 MB for WhatsApp previews.
+
+## v4 (Nov 3 2026) — 6 references, the tool table, editing raw footage
+- Sujon's 6 reference reels are broken down shot by shot (times, camera, transitions, effects, fonts, hexes, sfx placement, pacing) in [`docs/motion-references/`](../../docs/motion-references/README.md); each has a recipe in [reference-to-video/recipes](../reference-to-video/recipes/).
+- Formats now covered: **D. Original vs Edited showcase** (ref 4 @crafoo9: red radial bg, two white cards, pixel-font labels, raw first then the edit with sticker pops, "DM to / Edited by / Hire me" end card) · **E. After Effects SaaS card promo** (ref 5: glossy 3D cards as 3D layers, tilted card grid drifting diagonally, light streaks on black, selection box on a headline word, rays + 3D toggle finale) · **F. Gaming "Editing Timeline" reveal** (ref 6: 3 stacked panels — banner, edited clip, the real NLE timeline in sync as proof; 1–2-word captions with lime/yellow fill + black stroke; 3D bubble words with motion blur).
+- Every step is marked with its tool: real 3D → Blender, data/timing/sound/export → code, AE-style effects + final composite → EffectCraft. The master table is in [reference-to-video](../reference-to-video/SKILL.md#which-tool-for-which-job-master-table).
+- Editing your own raw footage, step by step: [reference-to-video → Edit your own raw footage](../reference-to-video/SKILL.md#edit-your-own-raw-footage-talking-head-any-clip).
+- Any new reference: `kit/analyze_ref.py ref.mp4 out/` → `style.json` (template pick) → `kit/make_video.py "topic" --ref <link>` → plan. LOOK at the strip: numbers miss style.
+- Ready prompts for an AI agent (Claude Code etc.): [`recipes/PROMPTS_v4.md`](../reference-to-video/recipes/PROMPTS_v4.md).
+
+## Which tool for which job (master table)
+
+Rule: real 3D → **Blender**. Anything from data, timing, sound or export → **code**. After-Effects-style effects and the final composite → **EffectCraft**.
+
+| Task | Best tool | Why | Command / template |
+|---|---|---|---|
+| Glossy extruded 3D text | Blender | real bevel, reflections, light | `blender/text3d.py` |
+| Device/screen tilted in 3D | Blender | real thickness, shadow, camera | `blender/screen3d.py, hero_v4.py` |
+| Camera zoom to a UI click | Blender | camera aims at the exact pixel | `screen_timeline.json + hero_v4.py` |
+| 3D icons, coins, mascot tile | Blender | transparent loops to reuse | `sprites_v4.py` |
+| Soft-3D floating world, DOF | Blender | soft light, real depth blur | `blender/softworld.py` |
+| Materials + lighting | Blender | physically based | `blender/mk3d.py` |
+| Cut pauses / jump cuts | Code (Python + ffmpeg) | exact, from word timings | `cut_pauses.py` |
+| Clean voice | Code (ffmpeg) | same chain every time | `clean_voice.sh` |
+| Word timings + captions | Code (faster-whisper + PIL) | data-driven, no typing | `transcribe_words.py, build_ref3.py` |
+| Count-ups, pills, comment box | Code (PIL) | text and numbers from data | `build_ref1.py` |
+| Site/app screen capture | Code (headless Chrome) | pixel-exact UI states | `capture_dark.js` |
+| SFX placement + music duck | Code | event list, repeatable | `sfx_mix.py, master_mix.sh` |
+| Loudness master −14 LUFS | Code (ffmpeg) | measured, not by ear | `master_mix.sh` |
+| Batch, export, WhatsApp copy | Code (ffmpeg) | one command | `build_all_v4.sh` |
+| Measure a reference | Code | numbers + template pick | `analyze_ref.py, make_video.py` |
+| Glow, light sweep, light leak | EffectCraft | After-Effects-style effects | `comp_v4.jsx` |
+| RGB split, glitch, flash, B&W | EffectCraft | per-frame effects on hits | `build_ref3.py → comp_ref3.jsx` |
+| Whip/zoom blur, light streaks | EffectCraft | transitions with motion blur | `comp_v4.jsx, comp_ref5.jsx` |
+| Framed card, panels, masks | EffectCraft | layers, mattes, shadows | `build_ref3.py, build_ref4.py` |
+| 3D layers + camera (2.5D) | EffectCraft | fast, no re-render of 3D | `comp_ref1.jsx, comp_ref5.jsx` |
+| Final composite | EffectCraft | Blender + 2D + video in one comp | `every template` |

@@ -1,0 +1,686 @@
+{
+ "topic": "instagram reel editing effects",
+ "slug": "instagram_reel_editing_effects",
+ "scope": "videos",
+ "searched_at": "2026-11-03T05:34:18.024Z",
+ "mode": "signed-in",
+ "count": 16,
+ "videos_downloaded": 4,
+ "pins": [
+  {
+   "n": "01",
+   "id": "671599363236283537",
+   "pin_url": "https://www.pinterest.com/pin/671599363236283537/",
+   "title": "Modern talking head",
+   "description": "Modern talking head editing with real estate style subtitles, dynamic typography and smooth transitions.\n\n@nanproperties \n#MotionGraphics #VideoEditing #BeforeAfterEdit #visualstorytelling #aftereffect\n\n#aftereffects #videoeditor #premierepro #motiongraphics #talkingheads",
+   "creator": {
+    "username": "Motion_pet",
+    "name": "Motion Pet",
+    "followers": 186,
+    "profile": "https://www.pinterest.com/Motion_pet/"
+   },
+   "board": {
+    "name": "\u0421\u043e\u0446\u0456\u0430\u043b\u044c\u043d\u0456 \u043c\u0435\u0440\u0435\u0436\u0456",
+    "url": "https://www.pinterest.com/Motion_pet/_tpd_social/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DcOdCYOuaQU/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/b6/d9/ba/b6d9bab7e3fabd20bca82eb83ec097dc.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/ce/f1/ee/cef1eedddcbb543f713eda767bbddc74.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/ce/f1/ee/cef1eedddcbb543f713eda767bbddc74.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 16.7,
+   "saves": null,
+   "created_at": "Wed, 19 Aug 2026 17:12:14 +0000",
+   "dominant_color": "#f8f7f7",
+   "thumb": "thumbs/01.jpg",
+   "frames": [
+    {
+     "t": 1.4,
+     "file": "frames/01_1.jpg"
+    },
+    {
+     "t": 4.19,
+     "file": "frames/01_2.jpg"
+    },
+    {
+     "t": 6.99,
+     "file": "frames/01_3.jpg"
+    },
+    {
+     "t": 9.78,
+     "file": "frames/01_4.jpg"
+    },
+    {
+     "t": 12.57,
+     "file": "frames/01_5.jpg"
+    },
+    {
+     "t": 15.37,
+     "file": "frames/01_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 0,
+    "cut_times_s": [],
+    "avg_shot_s": 16.77
+   },
+   "audio": {
+    "integrated_lufs": -14.5
+   },
+   "downloaded": {
+    "resolution": "720,1280",
+    "seconds": 16.8,
+    "bytes": 1666986,
+    "kept": true
+   },
+   "local_video": "vids/01.mp4"
+  },
+  {
+   "n": "02",
+   "id": "1082904672928593839",
+   "pin_url": "https://www.pinterest.com/pin/1082904672928593839/",
+   "title": null,
+   "description": "#capcut #vnedits #weekndedits #viral #reels",
+   "creator": {
+    "username": "knitish9126",
+    "name": "nitish",
+    "followers": 42,
+    "profile": "https://www.pinterest.com/knitish9126/"
+   },
+   "board": {
+    "name": "Social",
+    "url": "https://www.pinterest.com/knitish9126/_tpd_social/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DXy3LyOT1Zw/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/79/5e/a8/795ea87d0e0d343f5439a7f4f13cc60e.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/e0/03/b7/e003b70d5868c3d261caf74861ff34cf.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/e0/03/b7/e003b70d5868c3d261caf74861ff34cf.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 9.7,
+   "saves": null,
+   "created_at": "Thu, 14 May 2026 15:41:18 +0000",
+   "dominant_color": "#0f0e0d",
+   "thumb": "thumbs/02.jpg",
+   "frames": [
+    {
+     "t": 0.81,
+     "file": "frames/02_1.jpg"
+    },
+    {
+     "t": 2.43,
+     "file": "frames/02_2.jpg"
+    },
+    {
+     "t": 4.04,
+     "file": "frames/02_3.jpg"
+    },
+    {
+     "t": 5.66,
+     "file": "frames/02_4.jpg"
+    },
+    {
+     "t": 7.28,
+     "file": "frames/02_5.jpg"
+    },
+    {
+     "t": 8.9,
+     "file": "frames/02_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 0,
+    "cut_times_s": [],
+    "avg_shot_s": 9.71
+   },
+   "audio": {
+    "integrated_lufs": -14.2
+   },
+   "downloaded": {
+    "resolution": "720,1280",
+    "seconds": 9.7,
+    "bytes": 1348575,
+    "kept": true
+   },
+   "local_video": "vids/02.mp4"
+  },
+  {
+   "n": "03",
+   "id": "1023794927798348621",
+   "pin_url": "https://www.pinterest.com/pin/1023794927798348621/",
+   "title": null,
+   "description": "Thomas shelby...  #thomasshelby #filmes #edits #cortes #fyy #fouyou",
+   "creator": {
+    "username": "naaaahhh888888",
+    "name": "\u3164\ud835\udc0c\ud835\udc08\ud835\udc02\ud835\udc07\ud835\udc00\ud835\udc04\ud835\udc0b\u3164",
+    "followers": 10,
+    "profile": "https://www.pinterest.com/naaaahhh888888/"
+   },
+   "board": {
+    "name": "\ud835\udc7b\ud835\udc89\ud835\udc86 \ud835\udc7a\ud835\udc8a\ud835\udc8d\ud835\udc86\ud835\udc8f\ud835\udc95 \ud835\udc6c\ud835\udc8e\ud835\udc91\ud835\udc8a\ud835\udc93\ud835\udc86 \ud83c\udf77\u2728",
+    "url": "https://www.pinterest.com/naaaahhh888888/the-silent-empire/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DMu_cCSun9C/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/54/d0/f7/54d0f70ddd95d7f94cc0e1b75178f01a.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/6d/e9/3f/6de93f4912fd68d7f48296c9bda9f39e.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/6d/e9/3f/6de93f4912fd68d7f48296c9bda9f39e.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 38.9,
+   "saves": null,
+   "created_at": "Sat, 27 Sep 2025 18:27:32 +0000",
+   "dominant_color": "#050d0e",
+   "thumb": "thumbs/03.jpg",
+   "frames": [
+    {
+     "t": 2.51,
+     "file": "frames/03_1.jpg"
+    },
+    {
+     "t": 7.54,
+     "file": "frames/03_2.jpg"
+    },
+    {
+     "t": 12.57,
+     "file": "frames/03_3.jpg"
+    },
+    {
+     "t": 17.6,
+     "file": "frames/03_4.jpg"
+    },
+    {
+     "t": 22.63,
+     "file": "frames/03_5.jpg"
+    },
+    {
+     "t": 27.65,
+     "file": "frames/03_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 14,
+    "cut_times_s": [
+     9.77,
+     13.1,
+     14.33,
+     14.53,
+     16.43,
+     18.1,
+     18.93,
+     19.77,
+     22.23,
+     23.1,
+     26.43,
+     27.67,
+     27.87,
+     29.77
+    ],
+    "avg_shot_s": 2.01
+   },
+   "audio": {
+    "integrated_lufs": -14.2
+   },
+   "downloaded": {
+    "resolution": "720,1280",
+    "seconds": 30.2,
+    "bytes": 4138947,
+    "kept": true
+   },
+   "local_video": "vids/03.mp4"
+  },
+  {
+   "n": "04",
+   "id": "1090715603482767751",
+   "pin_url": "https://www.pinterest.com/pin/1090715603482767751/",
+   "title": null,
+   "description": " ",
+   "creator": {
+    "username": "BQ_13",
+    "name": "Coco",
+    "followers": 22944,
+    "profile": "https://www.pinterest.com/BQ_13/"
+   },
+   "board": {
+    "name": "Overlays Packs",
+    "url": "https://www.pinterest.com/BQ_13/overlays-packs/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/3e/c9/a1/3ec9a1b0763e5095651f6bc9aff2d7ad.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/7f/1c/db/7f1cdb532b2a68b5f970f12e6cfe075e.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/7f/1c/db/7f1cdb532b2a68b5f970f12e6cfe075e.m3u8",
+   "video_mp4": null,
+   "video_w": 768,
+   "video_h": 1366,
+   "duration_s": 24.3,
+   "saves": null,
+   "created_at": "Sat, 18 Mar 2023 17:29:53 +0000",
+   "dominant_color": "#020101",
+   "thumb": "thumbs/04.jpg",
+   "frames": [
+    {
+     "t": 2.03,
+     "file": "frames/04_1.jpg"
+    },
+    {
+     "t": 6.08,
+     "file": "frames/04_2.jpg"
+    },
+    {
+     "t": 10.14,
+     "file": "frames/04_3.jpg"
+    },
+    {
+     "t": 14.2,
+     "file": "frames/04_4.jpg"
+    },
+    {
+     "t": 18.25,
+     "file": "frames/04_5.jpg"
+    },
+    {
+     "t": 22.31,
+     "file": "frames/04_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 0,
+    "cut_times_s": [],
+    "avg_shot_s": 24.34
+   },
+   "audio": {
+    "integrated_lufs": -70
+   },
+   "downloaded": {
+    "resolution": "720,1280",
+    "seconds": 24.3,
+    "bytes": 3286347,
+    "kept": true
+   },
+   "local_video": "vids/04.mp4"
+  },
+  {
+   "n": "05",
+   "id": "1147643917677607792",
+   "pin_url": "https://www.pinterest.com/pin/1147643917677607792/",
+   "title": "Alex Hormozi Video Editing Style Breakdown | Viral Retention Strategy #VideoEditing",
+   "description": "Stop copying Alex Hormozi\u2019s bold text. The real secret to his viral Instagram reels and YouTube shorts is Information Density. As a Video Editor & Content Strategist, I break down the psychology of high-retention video editing, motion graphics, and visual pacing. You don't need a massive budget; you need better video engineering to keep viewers hooked.\nWant to engineer your videos to hold attention? Click the link to check out my Instagram for the full breakdown, or DM me \"GROW\" on IG to get the editing blueprint.\n\nVideo Editing\nVideo Editor\nContent Strategy\nSocial Media Marketing\nMotion Graph",
+   "creator": {
+    "username": "iyadramybendridi",
+    "name": "Rami.Visualz",
+    "followers": 12,
+    "profile": "https://www.pinterest.com/iyadramybendridi/"
+   },
+   "board": {
+    "name": "Viral Video Editing Strategies",
+    "url": "https://www.pinterest.com/iyadramybendridi/viral-video-editing-strategies/"
+   },
+   "outbound_link": "https://www.instagram.com/rami.visualz1/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/53/31/0f/53310ff5c37aafef3a38d0194cae7a92.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/ab/16/5e/ab165e51087164983f0a96137b02ed8c.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/ab/16/5e/ab165e51087164983f0a96137b02ed8c.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 28,
+   "saves": null,
+   "created_at": "Fri, 27 Feb 2026 02:31:02 +0000",
+   "dominant_color": "#363636",
+   "thumb": "thumbs/05.jpg"
+  },
+  {
+   "n": "06",
+   "id": "611504455695637591",
+   "pin_url": "https://www.pinterest.com/pin/611504455695637591/",
+   "title": null,
+   "description": "For Template\ud83d\udc47\ud83c\udffb\nFirst things first, FOLLOW me & save this reel\ud83e\udd0d\n\nThen comment \u201ctemplate\u201d and I\u2019ll send you the link, or just drop this video in my dm\ud83d\ude19\n.\n.\n.\n.\n.\n[trial reels, capcut, capcut templates, video templates, explore, fyp, trending audio, asim azhar]",
+   "creator": {
+    "username": "safaxvarin",
+    "name": "Safa Varin",
+    "followers": 1085,
+    "profile": "https://www.pinterest.com/safaxvarin/"
+   },
+   "board": {
+    "name": "Quick Saves",
+    "url": "https://www.pinterest.com/safaxvarin/_quick_saves/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DROo1MdDQUj/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/b0/a8/90/b0a8904fab4a6ae57de9edc4f8550154.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/43/2b/18/432b18e6c4cacbadc6b46ddbdc2acd3c.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/43/2b/18/432b18e6c4cacbadc6b46ddbdc2acd3c.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 16.4,
+   "saves": null,
+   "created_at": "Wed, 19 Nov 2025 16:45:41 +0000",
+   "dominant_color": "#443435",
+   "thumb": "thumbs/06.jpg"
+  },
+  {
+   "n": "07",
+   "id": "1030057745993566220",
+   "pin_url": "https://www.pinterest.com/pin/1030057745993566220/",
+   "title": "Old Film Overlay",
+   "description": "IG : Alifiazahh_ Tiktok : Alifiazahh_",
+   "creator": {
+    "username": "hein76696",
+    "name": "A r s e n i c",
+    "followers": 0,
+    "profile": "https://www.pinterest.com/hein76696/"
+   },
+   "board": {
+    "name": "Quick saves",
+    "url": "https://www.pinterest.com/hein76696/_quick_saves/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/fb/81/b8/fb81b87f32ca63689d97f05f52be6340.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/5b/55/bf/5b55bff8ee557526aa1e6eec7f79e908.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/5b/55/bf/5b55bff8ee557526aa1e6eec7f79e908.m3u8",
+   "video_mp4": null,
+   "video_w": 540,
+   "video_h": 960,
+   "duration_s": 25.7,
+   "saves": null,
+   "created_at": "Tue, 12 Oct 2021 02:09:04 +0000",
+   "dominant_color": "#1c1a1d",
+   "thumb": "thumbs/07.jpg"
+  },
+  {
+   "n": "08",
+   "id": "30117891252303371",
+   "pin_url": "https://www.pinterest.com/pin/30117891252303371/",
+   "title": "Free Reel Editing Guide | Essential Video Editing Resources for Instagram Reels",
+   "description": "These 3 reel editing tips are a must! Learn how to position yourself using the rule of thirds, follow Instagram's guidelines to ensure captions are perfectly placed, and perfect your eye level for seamless transitions. Comment \"\"Guide\"\" on our Instagram post to grab it for FREE and start creating reels that captivate! Follow us for more video marketing tips to supercharge your content creation.",
+   "creator": {
+    "username": "valemoreirac",
+    "name": "Valentina Moreira",
+    "followers": 11,
+    "profile": "https://www.pinterest.com/valemoreirac/"
+   },
+   "board": {
+    "name": "V\u00eddeo Edit",
+    "url": "https://www.pinterest.com/valemoreirac/v%C3%ADdeo-edit/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/C2cSW9-uRMm/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA%3D%3D",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/33/e0/75/33e075123e30bf0d2b2d9ca7f4083b7c.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/a7/b2/9e/a7b29e226251634d5e450689981c9c07.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/a7/b2/9e/a7b29e226251634d5e450689981c9c07.m3u8",
+   "video_mp4": null,
+   "video_w": 608,
+   "video_h": 1080,
+   "duration_s": 5.7,
+   "saves": null,
+   "created_at": "Tue, 18 Mar 2025 18:42:11 +0000",
+   "dominant_color": "#0d1118",
+   "thumb": "thumbs/08.jpg"
+  },
+  {
+   "n": "09",
+   "id": "671599363236245110",
+   "pin_url": "https://www.pinterest.com/pin/671599363236245110/",
+   "title": "Talking head video",
+   "description": "Talking head video editing in a modern real estate style. Clean cuts, bold captions and smooth motion graphics.\n\n#MotionGraphics #VideoEditing #BeforeAfterEdit #visualstorytelling #aftereffect\n\n#aftereffects #videoeditor #premierepro #motiongraphics #talkingheads",
+   "creator": {
+    "username": "Motion_pet",
+    "name": "Motion Pet",
+    "followers": 186,
+    "profile": "https://www.pinterest.com/Motion_pet/"
+   },
+   "board": {
+    "name": "\u0421\u043e\u0446\u0456\u0430\u043b\u044c\u043d\u0456 \u043c\u0435\u0440\u0435\u0436\u0456",
+    "url": "https://www.pinterest.com/Motion_pet/_tpd_social/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DcIqF-EupQ0/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/cc/f9/73/ccf9738378d1ff6c425518b2ec1c434d.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/a9/66/8e/a9668e0d672eeb6c55ccafd4956160a7.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/a9/66/8e/a9668e0d672eeb6c55ccafd4956160a7.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 19.1,
+   "saves": null,
+   "created_at": "Mon, 17 Aug 2026 17:00:40 +0000",
+   "dominant_color": "#e2dad9",
+   "thumb": "thumbs/09.jpg"
+  },
+  {
+   "n": "10",
+   "id": "690387817907263305",
+   "pin_url": "https://www.pinterest.com/pin/690387817907263305/",
+   "title": null,
+   "description": "\u2764\ufe0f . . #reelsinstagram#viralreels#trendingreels#trending #explorepage",
+   "creator": {
+    "username": "ombhavsar58",
+    "name": "Om.",
+    "followers": 4822,
+    "profile": "https://www.pinterest.com/ombhavsar58/"
+   },
+   "board": {
+    "name": "Quick saves",
+    "url": "https://www.pinterest.com/ombhavsar58/_quick_saves/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/C5VvCwtytI3/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/e0/53/a1/e053a10ec23e303fc76c68dd9e884152.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/4d/23/6c/4d236c6cc83a2b732eca8cf83bdce5e7.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/4d/23/6c/4d236c6cc83a2b732eca8cf83bdce5e7.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 13.4,
+   "saves": null,
+   "created_at": "Fri, 03 May 2024 10:58:19 +0000",
+   "dominant_color": "#a28c68",
+   "thumb": "thumbs/10.jpg"
+  },
+  {
+   "n": "11",
+   "id": "875809458808455591",
+   "pin_url": "https://www.pinterest.com/pin/875809458808455591/",
+   "title": "Chalrey Chalrey waal",
+   "description": "Click on Visit Site to get the product links.\n\n\ud83c\udfa8 Trendy CapCut Template for Creative Edits\n\nElevate your videos with the Chalre chalre waal template! Perfect for adding flair to your social media posts or vlogs, it's designed for seamless and stylish edits that will captivate your audience.\n\n\u2705 Fit: Easy-to-use Template\n\u2705 Style: Dynamic & Engaging\n\u2705 Occasion: Social Media / Content Creation\n\n\ud83d\udccc Save this look & tap the link to shop now!  \n#Wishlink #VideoEditing #StyleInspo #CapCut #Templates",
+   "creator": {
+    "username": "mysbella",
+    "name": "Bella",
+    "followers": 78,
+    "profile": "https://www.pinterest.com/mysbella/"
+   },
+   "board": {
+    "name": "Outfit Ideas",
+    "url": "https://www.pinterest.com/mysbella/outfit-ideas/"
+   },
+   "outbound_link": "https://www.wishlink.com/mys.bella/post/9689854?utm_source=pinterest&utm_medium=pinterest&utm_campaign=pinterest",
+   "domain": "wishlink.com",
+   "image_url": "https://i.pinimg.com/originals/dc/0b/b9/dc0bb9cabd6d2ed5827e99621cc1b7b0.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/86/4a/32/864a322e51d132e0a2bee5e054e38edc.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/86/4a/32/864a322e51d132e0a2bee5e054e38edc.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 15.2,
+   "saves": null,
+   "created_at": "Sun, 04 Oct 2026 11:40:56 +0000",
+   "dominant_color": "#86746b",
+   "thumb": "thumbs/11.jpg"
+  },
+  {
+   "n": "12",
+   "id": "1141873680511251897",
+   "pin_url": "https://www.pinterest.com/pin/1141873680511251897/",
+   "title": null,
+   "description": "Blur Effect Video Editing In 1 Click \ud83d\ude31 . . . #videoediting #viralreels #photoediting #portraitphotography #photography #videography #vneditor #vnluts #editing #vnvideoeditor #instareels #reelitfeelit #portraitphotography #ankitedition #ankitsainieditz",
+   "creator": {
+    "username": "ankitmauryaeditz",
+    "name": "Ankit Maurya Editz",
+    "followers": 15851,
+    "profile": "https://www.pinterest.com/ankitmauryaeditz/"
+   },
+   "board": {
+    "name": "Quick saves",
+    "url": "https://www.pinterest.com/ankitmauryaeditz/_quick_saves/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/C4ZyAlsxj_R/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/44/70/22/4470224fc01acacaf824e97af52563da.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/27/f4/2f/27f42fc0577de9a3da24d72905b33460.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/27/f4/2f/27f42fc0577de9a3da24d72905b33460.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 12.1,
+   "saves": null,
+   "created_at": "Sat, 20 Apr 2024 03:17:29 +0000",
+   "dominant_color": "#7e7f69",
+   "thumb": "thumbs/12.jpg"
+  },
+  {
+   "n": "13",
+   "id": "924363892282992611",
+   "pin_url": "https://www.pinterest.com/pin/924363892282992611/",
+   "title": null,
+   "description": "Why do unforgettable brands stick in your mind? \ud83e\udd2f\nIt's not luck.It's strategy in motion. \u265f\ufe0f\u2728\nMotion design is the secret weapon that makes your brand memorable.It uses animated text \u270d\ufe0f\ud83d\udd25 and visual metaphors \ud83e\ude84 to simplify ideas and build feeling.\nThis is strategic movement.This is your story, amplified. \ud83d\ude80\nReady to make your brand unforgettable?\n.\n.\n.\n\n# webrankstudio #motiondesign #brandstrategy #videomarketing #\u1d20\u026as\u1d1c\u1d00\u029fs\u1d1b\u1d0f\u0280\u028f\u1d1b\u1d07\u029f\u029f\u026a\u0274\u0262  #\u0299\u0280\u1d00\u0274\u1d05\u026a\u1d05\u1d07\u0274\u1d1b\u026a\u1d1b\u028f",
+   "creator": {
+    "username": "webrankstudio",
+    "name": "Web Rank Studio",
+    "followers": 329,
+    "profile": "https://www.pinterest.com/webrankstudio/"
+   },
+   "board": {
+    "name": "Social",
+    "url": "https://www.pinterest.com/webrankstudio/_tpd_social/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DSiDOEIkY7b/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/55/e3/27/55e32787c225ee2f244bbdbcb4260157.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/d6/8e/9d/d68e9d9d8e47ce4ded9d7a5c4d67b251.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/d6/8e/9d/d68e9d9d8e47ce4ded9d7a5c4d67b251.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 19.1,
+   "saves": null,
+   "created_at": "Sun, 21 Dec 2025 19:14:33 +0000",
+   "dominant_color": "#ffffff",
+   "thumb": "thumbs/13.jpg"
+  },
+  {
+   "n": "14",
+   "id": "603200943843150335",
+   "pin_url": "https://www.pinterest.com/pin/603200943843150335/",
+   "title": "\u2764\u2764\u2764",
+   "description": " ",
+   "creator": {
+    "username": "happpyhomeee",
+    "name": "\ud83c\udf39\ud83c\udf39\ud83c\udf39",
+    "followers": 89791,
+    "profile": "https://www.pinterest.com/happpyhomeee/"
+   },
+   "board": {
+    "name": "Overlay",
+    "url": "https://www.pinterest.com/happpyhomeee/overlay/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/ab/f6/ac/abf6aca52bccb64e990fd7dbee682567.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/v2/4a/6f/cd/4a6fcdd1ba3440d21ddb8175f85b6dc6.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/v2/4a/6f/cd/4a6fcdd1ba3440d21ddb8175f85b6dc6.m3u8",
+   "video_mp4": null,
+   "video_w": 608,
+   "video_h": 1080,
+   "duration_s": 33.7,
+   "saves": null,
+   "created_at": "Thu, 22 Apr 2021 05:58:12 +0000",
+   "dominant_color": "#941800",
+   "thumb": "thumbs/14.jpg"
+  },
+  {
+   "n": "15",
+   "id": "700943129512917383",
+   "pin_url": "https://www.pinterest.com/pin/700943129512917383/",
+   "title": null,
+   "description": " ",
+   "creator": {
+    "username": "pravee111",
+    "name": "\u0e1b\u0e23\u0e27\u0e35 \u0e17\u0e31\u0e1e\u0e0b\u0e49\u0e32\u0e22",
+    "followers": 39233,
+    "profile": "https://www.pinterest.com/pravee111/"
+   },
+   "board": {
+    "name": "V  T E C T : vertical video editing design",
+    "url": "https://www.pinterest.com/pravee111/v-t-e-c-t-vertical-video-editing-design/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/d7/95/2d/d7952d2e16943e82a748831bdcb65dc0.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/v2/50/73/f3/5073f346989a46ce05f8e309bf12b3b0.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/v2/50/73/f3/5073f346989a46ce05f8e309bf12b3b0.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 22.1,
+   "saves": null,
+   "created_at": "Fri, 26 Nov 2021 02:30:50 +0000",
+   "dominant_color": "#1d181e",
+   "thumb": "thumbs/15.jpg"
+  },
+  {
+   "n": "16",
+   "id": "654640495884010181",
+   "pin_url": "https://www.pinterest.com/pin/654640495884010181/",
+   "title": null,
+   "description": "Aprenda a fazer edi\u00e7\u00e3o de qualidade usando apenas o Capcut, comente \u201cconversa\u201d que eu vou te ensinar!",
+   "creator": {
+    "username": "atilanobre54",
+    "name": "Atila Nobre",
+    "followers": 1,
+    "profile": "https://www.pinterest.com/atilanobre54/"
+   },
+   "board": {
+    "name": "edi\u00e7\u00e3o de v\u00eddeo",
+    "url": "https://www.pinterest.com/atilanobre54/edi%C3%A7%C3%A3o-de-v%C3%ADdeo/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DO9YTdLDQLg/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/c8/20/62/c82062a8d9c3e5aaa8a39493d189231f.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/46/33/10/463310d34d768aa2beece3951ebca024.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/46/33/10/463310d34d768aa2beece3951ebca024.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 61.9,
+   "saves": null,
+   "created_at": "Tue, 28 Oct 2025 17:15:27 +0000",
+   "dominant_color": "#9e8a74",
+   "thumb": "thumbs/16.jpg"
+  }
+ ]
+}

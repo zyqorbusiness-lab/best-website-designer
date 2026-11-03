@@ -28,12 +28,13 @@ Sujon, 30 Oct 2026: teach an AI agent, through many detailed skills, exactly how
 | [`client-site-delivery-workflow`](client-site-delivery-workflow/) | Brief → build → QA → deploy (Vercel / sites.tab.bot) → handover, for client and concept sites: intake questions, scope, staging, evidence, Search Console, credits, handover pack. `brief.mjs`, `handover.mjs`. |
 
 
-## Video, motion graphics and sound (6 skills, added 3 Nov 2026)
+## Video, motion graphics and sound (7 skills, added 3 Nov 2026; v4 the same day)
 
 Sujon, 3 Nov 2026: the HTML/CSS "3D" promos looked cheap next to his reference reels (real 3D + After Effects). These skills replace it with real 3D from Blender, compositing in EffectCraft (the free After Effects alternative from ArtCraft he picked), Pinterest references measured into numbers, and scripted sound design. Order: research → plan → Blender → EffectCraft → sound → QA.
 
 | Skill | What it teaches |
 |---|---|
+| [`reference-to-video`](reference-to-video/) | **v4 — any reference or topic → video.** Sujon's 6 reference reels broken down shot by shot ([`docs/motion-references/`](../docs/motion-references/)), a recipe per reference with every step marked Blender / code / EffectCraft, the "which tool for which job" table, `analyze_ref.py` + `make_video.py`, the full kit code, an edit-your-raw-footage workflow and ready prompts for any AI agent. |
 | [`video-editing-reels`](video-editing-reels/) | **Start here for video.** Reference-first workflow, beat plans for the 3 formats he studies (3D SaaS promo, soft-3D explainer, framed talking head), pacing, transitions, captions, honesty, and the side-by-side-with-the-reference QA. |
 | [`pinterest-reference-research`](pinterest-reference-research/) | Collect the top video pins for a topic and measure them (cuts, zoom %, roll °, blur frames, colours, LUFS, hits/s) into STYLE.md + a combined **PINTEREST_STYLE_BIBLE.md** (6 topics × 16 pins, included). |
 | [`motion-graphics-blender`](motion-graphics-blender/) | Real 3D from Python, headless on a CPU: glossy extruded 3D type, a tilted device with a screen recording and a camera that zooms to every click, a soft-3D floating world, and a full 16 s SaaS promo example. Render settings measured (Cycles ~4 s/frame at 75 %). |

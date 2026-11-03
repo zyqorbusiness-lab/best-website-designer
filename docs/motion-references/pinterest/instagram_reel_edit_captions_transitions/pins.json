@@ -1,0 +1,892 @@
+{
+ "topic": "instagram reel edit captions transitions",
+ "slug": "instagram_reel_edit_captions_transitions",
+ "scope": "videos",
+ "searched_at": "2026-11-03T05:14:12.547Z",
+ "mode": "signed-in",
+ "count": 16,
+ "videos_downloaded": 8,
+ "pins": [
+  {
+   "n": "01",
+   "id": "671599363236245110",
+   "pin_url": "https://www.pinterest.com/pin/671599363236245110/",
+   "title": "Talking head video",
+   "description": "Talking head video editing in a modern real estate style. Clean cuts, bold captions and smooth motion graphics.\n\n#MotionGraphics #VideoEditing #BeforeAfterEdit #visualstorytelling #aftereffect\n\n#aftereffects #videoeditor #premierepro #motiongraphics #talkingheads",
+   "creator": {
+    "username": "Motion_pet",
+    "name": "Motion Pet",
+    "followers": 186,
+    "profile": "https://www.pinterest.com/Motion_pet/"
+   },
+   "board": {
+    "name": "\u0421\u043e\u0446\u0456\u0430\u043b\u044c\u043d\u0456 \u043c\u0435\u0440\u0435\u0436\u0456",
+    "url": "https://www.pinterest.com/Motion_pet/_tpd_social/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DcIqF-EupQ0/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/cc/f9/73/ccf9738378d1ff6c425518b2ec1c434d.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/a9/66/8e/a9668e0d672eeb6c55ccafd4956160a7.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/a9/66/8e/a9668e0d672eeb6c55ccafd4956160a7.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 19.1,
+   "saves": null,
+   "created_at": "Mon, 17 Aug 2026 17:00:40 +0000",
+   "dominant_color": "#e2dad9",
+   "thumb": "thumbs/01.jpg",
+   "frames": [
+    {
+     "t": 1.59,
+     "file": "frames/01_1.jpg"
+    },
+    {
+     "t": 4.78,
+     "file": "frames/01_2.jpg"
+    },
+    {
+     "t": 7.97,
+     "file": "frames/01_3.jpg"
+    },
+    {
+     "t": 11.16,
+     "file": "frames/01_4.jpg"
+    },
+    {
+     "t": 14.35,
+     "file": "frames/01_5.jpg"
+    },
+    {
+     "t": 17.54,
+     "file": "frames/01_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 0,
+    "cut_times_s": [],
+    "avg_shot_s": 19.13
+   },
+   "audio": {
+    "integrated_lufs": -14.3
+   },
+   "downloaded": {
+    "resolution": "720,1280",
+    "seconds": 19.1,
+    "bytes": 1757795,
+    "kept": true
+   },
+   "local_video": "vids/01.mp4"
+  },
+  {
+   "n": "02",
+   "id": "868913321870037337",
+   "pin_url": "https://www.pinterest.com/pin/868913321870037337/",
+   "title": null,
+   "description": "June - a portal. Half way through the year and a complete change of life. \n\nHighlights: \n- moving into a new home I love\n- baking my own bread\n- making my own homemade pasta\n- the incredible retreat in Koh Somui with @we.are.veeda \n- making new friends\n- deepening current friendships \n- a new sofa lol\n- hearing beautiful news from my mum overseas \n- my great nephew in wales wearing his first Manly Longboarders t-shirt\n- discovering Brazilian cheese bread \n- finding a book who\u2019s story moves me...",
+   "creator": {
+    "username": "littlewhimsey",
+    "name": "Little Whimsey Press",
+    "followers": 11,
+    "profile": "https://www.pinterest.com/littlewhimsey/"
+   },
+   "board": {
+    "name": "Social",
+    "url": "https://www.pinterest.com/littlewhimsey/_tpd_social/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DLhRh3ypYq0/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/79/71/1e/79711e41289421d54674a8462bee729f.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/15/c8/95/15c8956be8c2ec363b8ca82044c9573a.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/15/c8/95/15c8956be8c2ec363b8ca82044c9573a.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 24.7,
+   "saves": null,
+   "created_at": "Sat, 23 Aug 2025 04:04:44 +0000",
+   "dominant_color": "#836a47",
+   "thumb": "thumbs/02.jpg",
+   "frames": [
+    {
+     "t": 2.06,
+     "file": "frames/02_1.jpg"
+    },
+    {
+     "t": 6.18,
+     "file": "frames/02_2.jpg"
+    },
+    {
+     "t": 10.29,
+     "file": "frames/02_3.jpg"
+    },
+    {
+     "t": 14.41,
+     "file": "frames/02_4.jpg"
+    },
+    {
+     "t": 18.53,
+     "file": "frames/02_5.jpg"
+    },
+    {
+     "t": 22.65,
+     "file": "frames/02_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 23,
+    "cut_times_s": [
+     5.87,
+     6.47,
+     7.07,
+     8.33,
+     8.83,
+     8.93,
+     9,
+     9.93,
+     12.53,
+     13.77,
+     14.37,
+     14.9,
+     15.57,
+     16.2,
+     16.77,
+     19.2,
+     19.8,
+     21.03,
+     21.63,
+     22.23,
+     22.87,
+     23.5,
+     24.1
+    ],
+    "avg_shot_s": 1.03
+   },
+   "audio": {
+    "integrated_lufs": -14.2
+   },
+   "downloaded": {
+    "resolution": "720,1280",
+    "seconds": 24.7,
+    "bytes": 6852682,
+    "kept": true
+   },
+   "local_video": "vids/02.mp4"
+  },
+  {
+   "n": "03",
+   "id": "671599363236283537",
+   "pin_url": "https://www.pinterest.com/pin/671599363236283537/",
+   "title": "Modern talking head",
+   "description": "Modern talking head editing with real estate style subtitles, dynamic typography and smooth transitions.\n\n@nanproperties \n#MotionGraphics #VideoEditing #BeforeAfterEdit #visualstorytelling #aftereffect\n\n#aftereffects #videoeditor #premierepro #motiongraphics #talkingheads",
+   "creator": {
+    "username": "Motion_pet",
+    "name": "Motion Pet",
+    "followers": 186,
+    "profile": "https://www.pinterest.com/Motion_pet/"
+   },
+   "board": {
+    "name": "\u0421\u043e\u0446\u0456\u0430\u043b\u044c\u043d\u0456 \u043c\u0435\u0440\u0435\u0436\u0456",
+    "url": "https://www.pinterest.com/Motion_pet/_tpd_social/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DcOdCYOuaQU/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/b6/d9/ba/b6d9bab7e3fabd20bca82eb83ec097dc.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/ce/f1/ee/cef1eedddcbb543f713eda767bbddc74.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/ce/f1/ee/cef1eedddcbb543f713eda767bbddc74.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 16.7,
+   "saves": null,
+   "created_at": "Wed, 19 Aug 2026 17:12:14 +0000",
+   "dominant_color": "#f8f7f7",
+   "thumb": "thumbs/03.jpg",
+   "frames": [
+    {
+     "t": 1.4,
+     "file": "frames/03_1.jpg"
+    },
+    {
+     "t": 4.19,
+     "file": "frames/03_2.jpg"
+    },
+    {
+     "t": 6.99,
+     "file": "frames/03_3.jpg"
+    },
+    {
+     "t": 9.78,
+     "file": "frames/03_4.jpg"
+    },
+    {
+     "t": 12.57,
+     "file": "frames/03_5.jpg"
+    },
+    {
+     "t": 15.37,
+     "file": "frames/03_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 0,
+    "cut_times_s": [],
+    "avg_shot_s": 16.77
+   },
+   "audio": {
+    "integrated_lufs": -14.5
+   },
+   "downloaded": {
+    "resolution": "720,1280",
+    "seconds": 16.8,
+    "bytes": 1666986,
+    "kept": true
+   },
+   "local_video": "vids/03.mp4"
+  },
+  {
+   "n": "04",
+   "id": "671599363236225503",
+   "pin_url": "https://www.pinterest.com/pin/671599363236225503/",
+   "title": "Real estate video editing inspiration.",
+   "description": "Real estate video editing inspiration. Talking head footage transformed with motion graphics, dynamic pacing and clean visual storytelling.\n#\u1d20\u026a\u1d05\u1d07\u1d0f\u1d07\u1d05\u026a\u1d1b\u1d0f\u0280 #edit #premierpro #aftereffects #\u043c\u043e\u043d\u0442\u0430\u0436\u0432\u0456\u0434\u0435\u043e",
+   "creator": {
+    "username": "Motion_pet",
+    "name": "Motion Pet",
+    "followers": 186,
+    "profile": "https://www.pinterest.com/Motion_pet/"
+   },
+   "board": {
+    "name": "\u0421\u043e\u0446\u0456\u0430\u043b\u044c\u043d\u0456 \u043c\u0435\u0440\u0435\u0436\u0456",
+    "url": "https://www.pinterest.com/Motion_pet/_tpd_social/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DcF1qNmi_1S/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/14/c6/b5/14c6b51a5d316a0028c9036c3d2483dd.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/9e/a5/30/9ea530f304046085b7ffed0a5d1004f8.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/9e/a5/30/9ea530f304046085b7ffed0a5d1004f8.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 17.1,
+   "saves": null,
+   "created_at": "Sun, 16 Aug 2026 17:11:01 +0000",
+   "dominant_color": "#dfdad9",
+   "thumb": "thumbs/04.jpg",
+   "frames": [
+    {
+     "t": 1.43,
+     "file": "frames/04_1.jpg"
+    },
+    {
+     "t": 4.28,
+     "file": "frames/04_2.jpg"
+    },
+    {
+     "t": 7.14,
+     "file": "frames/04_3.jpg"
+    },
+    {
+     "t": 10,
+     "file": "frames/04_4.jpg"
+    },
+    {
+     "t": 12.85,
+     "file": "frames/04_5.jpg"
+    },
+    {
+     "t": 15.71,
+     "file": "frames/04_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 0,
+    "cut_times_s": [],
+    "avg_shot_s": 17.14
+   },
+   "audio": {
+    "integrated_lufs": -14.1
+   },
+   "downloaded": {
+    "resolution": "720,1280",
+    "seconds": 17.1,
+    "bytes": 1340757,
+    "kept": true
+   },
+   "local_video": "vids/04.mp4"
+  },
+  {
+   "n": "05",
+   "id": "966514770053414471",
+   "pin_url": "https://www.pinterest.com/pin/966514770053414471/",
+   "title": "Want captions that actually pop? Here\u2019s my quick guide!",
+   "description": "Want captions that actually pop? Here\u2019s my quick guide to the fonts and tools I use to make them look pro\u2014no complicated hacks needed!\n\nI break down:\n1\ufe0f\u20e3 Where I get my fonts\n2\ufe0f\u20e3 How I import them to CapCut\n3\ufe0f\u20e3 How I get the to POP!\n\n\ud83d\udca1Pro tip: Stick to 2\u20133 fonts max so your captions stay clean and readable.\n\nTry it out and tag me\u2014I wanna see your caption glow-up!\ud83e\udef6\ud83c\udffc",
+   "creator": {
+    "username": "azhaimarie",
+    "name": "Azhai Boggs",
+    "followers": 4954,
+    "profile": "https://www.pinterest.com/azhaimarie/"
+   },
+   "board": {
+    "name": "Content",
+    "url": "https://www.pinterest.com/azhaimarie/content/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/73/41/f9/7341f96779985af9dc8e21fd01e24e54.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/29/d5/67/29d5671b396689701562ee0522a4899e.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/29/d5/67/29d5671b396689701562ee0522a4899e.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 72.4,
+   "saves": null,
+   "created_at": "Tue, 26 Aug 2025 17:38:44 +0000",
+   "dominant_color": "#5c4532",
+   "thumb": "thumbs/05.jpg",
+   "frames": [
+    {
+     "t": 2.51,
+     "file": "frames/05_1.jpg"
+    },
+    {
+     "t": 7.54,
+     "file": "frames/05_2.jpg"
+    },
+    {
+     "t": 12.57,
+     "file": "frames/05_3.jpg"
+    },
+    {
+     "t": 17.6,
+     "file": "frames/05_4.jpg"
+    },
+    {
+     "t": 22.63,
+     "file": "frames/05_5.jpg"
+    },
+    {
+     "t": 27.65,
+     "file": "frames/05_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 3,
+    "cut_times_s": [
+     16.5,
+     16.6,
+     16.83
+    ],
+    "avg_shot_s": 7.54
+   },
+   "audio": {
+    "integrated_lufs": -22.2
+   },
+   "downloaded": {
+    "resolution": "720,1280",
+    "seconds": 30.2,
+    "bytes": 6016762,
+    "kept": true
+   },
+   "local_video": "vids/05.mp4"
+  },
+  {
+   "n": "06",
+   "id": "1112037333001680247",
+   "pin_url": "https://www.pinterest.com/pin/1112037333001680247/",
+   "title": null,
+   "description": "Make your video captions pop with this trick \ud83d\udd25\n\n#designtips #designinspiration #personalizedgifts #graphicdesign #madeandstyled",
+   "creator": {
+    "username": "itsmadeandstyled",
+    "name": "Made and Styled",
+    "followers": 1025,
+    "profile": "https://www.pinterest.com/itsmadeandstyled/"
+   },
+   "board": {
+    "name": "Design Inspirations \ud83d\udca1",
+    "url": "https://www.pinterest.com/itsmadeandstyled/design-inspirations/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DHlT6zaPb4i/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/1f/c7/45/1fc745137dd8f11136c8fb0b10fab327.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/32/e3/c6/32e3c6827122e4adf26986d6ed4baae0_v2.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/32/e3/c6/32e3c6827122e4adf26986d6ed4baae0_v2.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 44.5,
+   "saves": null,
+   "created_at": "Mon, 24 Mar 2025 20:46:33 +0000",
+   "dominant_color": "#3c5e6b",
+   "thumb": "thumbs/06.jpg",
+   "frames": [
+    {
+     "t": 2.51,
+     "file": "frames/06_1.jpg"
+    },
+    {
+     "t": 7.54,
+     "file": "frames/06_2.jpg"
+    },
+    {
+     "t": 12.57,
+     "file": "frames/06_3.jpg"
+    },
+    {
+     "t": 17.6,
+     "file": "frames/06_4.jpg"
+    },
+    {
+     "t": 22.63,
+     "file": "frames/06_5.jpg"
+    },
+    {
+     "t": 27.65,
+     "file": "frames/06_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 23,
+    "cut_times_s": [
+     3.47,
+     4.53,
+     6.4,
+     6.53,
+     7.03,
+     8.2,
+     9.13,
+     10.47,
+     11.07,
+     12.3,
+     14.6,
+     17.87,
+     18.2,
+     18.57,
+     19.03,
+     19.7,
+     23.07,
+     23.87,
+     25.6,
+     26.4,
+     26.47,
+     26.57,
+     29.13
+    ],
+    "avg_shot_s": 1.26
+   },
+   "audio": {
+    "integrated_lufs": -14.6
+   },
+   "downloaded": {
+    "resolution": "720,1280",
+    "seconds": 30.2,
+    "bytes": 3202436,
+    "kept": true
+   },
+   "local_video": "vids/06.mp4"
+  },
+  {
+   "n": "07",
+   "id": "671458625736063835",
+   "pin_url": "https://www.pinterest.com/pin/671458625736063835/",
+   "title": "\u041b\u0435\u0442\u043e \u0443\u0445\u043e\u0434\u0438\u0442 \u0442\u0438\u0445\u043e, \u043a\u0430\u043a \u0434\u0440\u0443\u0433, \u0441 \u043a\u043e\u0442\u043e\u0440\u044b\u043c \u043d\u0435 \u0443\u0441\u043f\u0435\u043b \u043d\u0430\u0433\u043e\u0432\u043e\u0440\u0438\u0442\u044c\u0441\u044f.",
+   "description": "\n\u0418 \u0432\u043e\u0442 \u0442\u0443\u0442 \u0432\u0430\u0436\u043d\u043e \u2014 \u0435\u0441\u043b\u0438 \u0434\u0435\u043b\u0430\u0435\u043c \u0440\u0438\u043b\u0441 \u0441 \u0438\u0442\u043e\u0433\u0430\u043c\u0438, \u043e\u043d \u0434\u043e\u043b\u0436\u0435\u043d \u0431\u0438\u0442\u044c \u043f\u0440\u044f\u043c\u043e \u0432 \u0441\u0435\u0440\u0434\u0446\u0435.\n\u041d\u0435 \u043d\u0430\u0440\u0435\u0437\u043a\u0430 \u043a\u0430\u0434\u0440\u043e\u0432, \u0430 \u0432\u043e\u0442 \u0438\u043c\u0435\u043d\u043d\u043e \u0442\u0435 \u0441\u0430\u043c\u044b\u0435 \u043c\u043e\u043c\u0435\u043d\u0442\u044b, \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0445\u043e\u0447\u0435\u0442\u0441\u044f \u043f\u0435\u0440\u0435\u0441\u043c\u0430\u0442\u0440\u0438\u0432\u0430\u0442\u044c \u043d\u043e\u0447\u044c\u044e\n\n\u0422\u043e\u043b\u044c\u043a\u043e \u0442\u0430\u043a \u0440\u0438\u043b\u0441 \u0431\u0443\u0434\u0435\u0442 \u0436\u0438\u0442\u044c, \u0430 \u043d\u0435 \u043f\u0440\u043e\u0441\u0442\u043e \u043f\u0440\u043e\u043b\u0435\u0442\u0438\u0442 \u0432 \u043b\u0435\u043d\u0442\u0435.\n\n#\u0441\u043c\u043c\u0430\u0433\u0435\u043d\u0441\u0442\u0432\u043e #digital #smm #smmagency #kitereo #kitereo_agency #video #reels",
+   "creator": {
+    "username": "kitereoagency",
+    "name": "KITEREO",
+    "followers": 159,
+    "profile": "https://www.pinterest.com/kitereoagency/"
+   },
+   "board": {
+    "name": "VIDEO EDITS",
+    "url": "https://www.pinterest.com/kitereoagency/video-edits/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DOnrJG0jJBk/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/35/bd/73/35bd735e60bde605ce003eae765413de.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/94/f9/e5/94f9e576f04788057e110a69cbadb362.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/94/f9/e5/94f9e576f04788057e110a69cbadb362.m3u8",
+   "video_mp4": null,
+   "video_w": 480,
+   "video_h": 854,
+   "duration_s": 20.8,
+   "saves": null,
+   "created_at": "Wed, 15 Oct 2025 17:15:01 +0000",
+   "dominant_color": "#020103",
+   "thumb": "thumbs/07.jpg",
+   "frames": [
+    {
+     "t": 1.73,
+     "file": "frames/07_1.jpg"
+    },
+    {
+     "t": 5.19,
+     "file": "frames/07_2.jpg"
+    },
+    {
+     "t": 8.65,
+     "file": "frames/07_3.jpg"
+    },
+    {
+     "t": 12.11,
+     "file": "frames/07_4.jpg"
+    },
+    {
+     "t": 15.57,
+     "file": "frames/07_5.jpg"
+    },
+    {
+     "t": 19.03,
+     "file": "frames/07_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 2,
+    "cut_times_s": [
+     16.6,
+     20.5
+    ],
+    "avg_shot_s": 6.92
+   },
+   "audio": {
+    "integrated_lufs": -14.4
+   },
+   "downloaded": {
+    "resolution": "486,864",
+    "seconds": 20.8,
+    "bytes": 926684,
+    "kept": true
+   },
+   "local_video": "vids/07.mp4"
+  },
+  {
+   "n": "08",
+   "id": "654640495884010181",
+   "pin_url": "https://www.pinterest.com/pin/654640495884010181/",
+   "title": null,
+   "description": "Aprenda a fazer edi\u00e7\u00e3o de qualidade usando apenas o Capcut, comente \u201cconversa\u201d que eu vou te ensinar!",
+   "creator": {
+    "username": "atilanobre54",
+    "name": "Atila Nobre",
+    "followers": 1,
+    "profile": "https://www.pinterest.com/atilanobre54/"
+   },
+   "board": {
+    "name": "edi\u00e7\u00e3o de v\u00eddeo",
+    "url": "https://www.pinterest.com/atilanobre54/edi%C3%A7%C3%A3o-de-v%C3%ADdeo/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DO9YTdLDQLg/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/c8/20/62/c82062a8d9c3e5aaa8a39493d189231f.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/46/33/10/463310d34d768aa2beece3951ebca024.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/46/33/10/463310d34d768aa2beece3951ebca024.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 61.9,
+   "saves": null,
+   "created_at": "Tue, 28 Oct 2025 17:15:27 +0000",
+   "dominant_color": "#9e8a74",
+   "thumb": "thumbs/08.jpg",
+   "frames": [
+    {
+     "t": 2.52,
+     "file": "frames/08_1.jpg"
+    },
+    {
+     "t": 7.56,
+     "file": "frames/08_2.jpg"
+    },
+    {
+     "t": 12.6,
+     "file": "frames/08_3.jpg"
+    },
+    {
+     "t": 17.64,
+     "file": "frames/08_4.jpg"
+    },
+    {
+     "t": 22.68,
+     "file": "frames/08_5.jpg"
+    },
+    {
+     "t": 27.71,
+     "file": "frames/08_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 1,
+    "cut_times_s": [
+     1.1
+    ],
+    "avg_shot_s": 15.12
+   },
+   "audio": {
+    "integrated_lufs": -14.7
+   },
+   "downloaded": {
+    "resolution": "720,1280",
+    "seconds": 30.2,
+    "bytes": 2800546,
+    "kept": true
+   },
+   "local_video": "vids/08.mp4"
+  },
+  {
+   "n": "09",
+   "id": "933230354045109691",
+   "pin_url": "https://www.pinterest.com/pin/933230354045109691/",
+   "title": "Motion inspiration - 2025",
+   "description": "Subscribe to @motiondesigners.2d\n|lucas.edithh\n\nSee more on www.MotionDesigners.Pro\n\n#logoinspiration #motiongraphics #animation #motiondesign #explainervideo #flatdesign #characters #aftereffects #digital2d #digitalanimation #logoanimation #2danimation #adobeaftereffects #motion #motionlovers",
+   "creator": {
+    "username": "motiondesigners2d",
+    "name": "MotionDesigners.Pro",
+    "followers": 7507,
+    "profile": "https://www.pinterest.com/motiondesigners2d/"
+   },
+   "board": {
+    "name": "Best Motion Designers Visual Inspiration",
+    "url": "https://www.pinterest.com/motiondesigners2d/best-motion-designers-visual-inspiration/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/93/6f/0b/936f0b2a904a2ce4681cbd38d2a15119.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/f1/9e/1e/f19e1e0e9ae254fb94f78fb19b95e2fe.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/f1/9e/1e/f19e1e0e9ae254fb94f78fb19b95e2fe.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 37.8,
+   "saves": null,
+   "created_at": "Wed, 05 Nov 2025 21:33:34 +0000",
+   "dominant_color": "#0a0907",
+   "thumb": "thumbs/09.jpg"
+  },
+  {
+   "n": "10",
+   "id": "801359327489002464",
+   "pin_url": "https://www.pinterest.com/pin/801359327489002464/",
+   "title": null,
+   "description": "\u2764\ufe0f\u200d\ud83e\ude79",
+   "creator": {
+    "username": "vibessss11",
+    "name": "11.11_vibessss",
+    "followers": 2186,
+    "profile": "https://www.pinterest.com/vibessss11/"
+   },
+   "board": {
+    "name": "Social",
+    "url": "https://www.pinterest.com/vibessss11/_tpd_social/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DUoi_Uxkwxr/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/41/34/28/4134283e1a07a97254322bf6cd7085a2.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/2d/42/04/2d420455fdc64206cd64e00b532f6a81.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/2d/42/04/2d420455fdc64206cd64e00b532f6a81.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 14.4,
+   "saves": null,
+   "created_at": "Thu, 12 Feb 2026 20:41:22 +0000",
+   "dominant_color": "#201a16",
+   "thumb": "thumbs/10.jpg"
+  },
+  {
+   "n": "11",
+   "id": "690317449174580866",
+   "pin_url": "https://www.pinterest.com/pin/690317449174580866/",
+   "title": null,
+   "description": "Just learn it from @karanaujla atp",
+   "creator": {
+    "username": "kaur_moh",
+    "name": "kaur_moh",
+    "followers": 59,
+    "profile": "https://www.pinterest.com/kaur_moh/"
+   },
+   "board": {
+    "name": "Social",
+    "url": "https://www.pinterest.com/kaur_moh/_tpd_social/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DWMXw77jr30/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/70/70/a7/7070a76122186e0232e6fd9b74659e42.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/68/57/28/685728421f6bd12111f95abb2e068e7d.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/68/57/28/685728421f6bd12111f95abb2e068e7d.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 4.9,
+   "saves": null,
+   "created_at": "Tue, 24 Mar 2026 10:30:54 +0000",
+   "dominant_color": "#7a6e5d",
+   "thumb": "thumbs/11.jpg"
+  },
+  {
+   "n": "12",
+   "id": "946389309207556125",
+   "pin_url": "https://www.pinterest.com/pin/946389309207556125/",
+   "title": null,
+   "description": "She was right ig  [Mom said, wear something traditional you will look like a princess, desi fit, transition, trending audio, new trend, what eyes, blow up, traditional, ethnic]",
+   "creator": {
+    "username": "darklord186002",
+    "name": "Vanshika",
+    "followers": 0,
+    "profile": "https://www.pinterest.com/darklord186002/"
+   },
+   "board": {
+    "name": "Quick saves",
+    "url": "https://www.pinterest.com/darklord186002/_quick_saves/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DS0KtkGk8U4/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/74/c5/1f/74c51fbcab5d2f6dba07c6bb41999d30.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/f7/6c/52/f76c52a18af74b4586d14138c1e50419.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/f7/6c/52/f76c52a18af74b4586d14138c1e50419.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 7.1,
+   "saves": null,
+   "created_at": "Sat, 10 Jan 2026 09:14:38 +0000",
+   "dominant_color": "#c59b5c",
+   "thumb": "thumbs/12.jpg"
+  },
+  {
+   "n": "13",
+   "id": "1023794927798348621",
+   "pin_url": "https://www.pinterest.com/pin/1023794927798348621/",
+   "title": null,
+   "description": "Thomas shelby...  #thomasshelby #filmes #edits #cortes #fyy #fouyou",
+   "creator": {
+    "username": "naaaahhh888888",
+    "name": "\u3164\ud835\udc0c\ud835\udc08\ud835\udc02\ud835\udc07\ud835\udc00\ud835\udc04\ud835\udc0b\u3164",
+    "followers": 10,
+    "profile": "https://www.pinterest.com/naaaahhh888888/"
+   },
+   "board": {
+    "name": "\ud835\udc7b\ud835\udc89\ud835\udc86 \ud835\udc7a\ud835\udc8a\ud835\udc8d\ud835\udc86\ud835\udc8f\ud835\udc95 \ud835\udc6c\ud835\udc8e\ud835\udc91\ud835\udc8a\ud835\udc93\ud835\udc86 \ud83c\udf77\u2728",
+    "url": "https://www.pinterest.com/naaaahhh888888/the-silent-empire/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DMu_cCSun9C/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/54/d0/f7/54d0f70ddd95d7f94cc0e1b75178f01a.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/6d/e9/3f/6de93f4912fd68d7f48296c9bda9f39e.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/6d/e9/3f/6de93f4912fd68d7f48296c9bda9f39e.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 38.9,
+   "saves": null,
+   "created_at": "Sat, 27 Sep 2025 18:27:32 +0000",
+   "dominant_color": "#050d0e",
+   "thumb": "thumbs/13.jpg"
+  },
+  {
+   "n": "14",
+   "id": "1090715603482767751",
+   "pin_url": "https://www.pinterest.com/pin/1090715603482767751/",
+   "title": null,
+   "description": " ",
+   "creator": {
+    "username": "BQ_13",
+    "name": "Coco",
+    "followers": 22944,
+    "profile": "https://www.pinterest.com/BQ_13/"
+   },
+   "board": {
+    "name": "Overlays Packs",
+    "url": "https://www.pinterest.com/BQ_13/overlays-packs/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/3e/c9/a1/3ec9a1b0763e5095651f6bc9aff2d7ad.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/7f/1c/db/7f1cdb532b2a68b5f970f12e6cfe075e.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/7f/1c/db/7f1cdb532b2a68b5f970f12e6cfe075e.m3u8",
+   "video_mp4": null,
+   "video_w": 768,
+   "video_h": 1366,
+   "duration_s": 24.3,
+   "saves": null,
+   "created_at": "Sat, 18 Mar 2023 17:29:53 +0000",
+   "dominant_color": "#020101",
+   "thumb": "thumbs/14.jpg"
+  },
+  {
+   "n": "15",
+   "id": "758575131031606894",
+   "pin_url": "https://www.pinterest.com/pin/758575131031606894/",
+   "title": null,
+   "description": "\ud83c\udf1f\ud83e\udee0 \n\n(Fits , outfit , traditional, western , trending reels , viral ) \n\n#fypppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp #explorepage #viral #relatable #reelsindia",
+   "creator": {
+    "username": "aayidcore",
+    "name": "Aayid",
+    "followers": 60,
+    "profile": "https://www.pinterest.com/aayidcore/"
+   },
+   "board": {
+    "name": "Social",
+    "url": "https://www.pinterest.com/aayidcore/_tpd_social/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DVYgDz8jwjn/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/61/07/0e/61070e05b5f81486e1ad4223c432e13e.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/df/2f/18/df2f1803eb881f7eff389aaeffc63528.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/df/2f/18/df2f1803eb881f7eff389aaeffc63528.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 10.3,
+   "saves": null,
+   "created_at": "Mon, 02 Mar 2026 23:03:30 +0000",
+   "dominant_color": "#8a6f58",
+   "thumb": "thumbs/15.jpg"
+  },
+  {
+   "n": "16",
+   "id": "933230354043913635",
+   "pin_url": "https://www.pinterest.com/pin/933230354043913635/",
+   "title": "Motion inspiration - Frames",
+   "description": "Subscribe to @motiondesigners.2d\n|imran__visuals\n\nSee more on www.MotionDesigners.Pro\n\n#logoinspiration #motiongraphics #animation #motiondesign #explainervideo #flatdesign #characters #aftereffects #digital2d #digitalanimation #logoanimation #2danimation #adobeaftereffects #motion #motionlovers",
+   "creator": {
+    "username": "motiondesigners2d",
+    "name": "MotionDesigners.Pro",
+    "followers": 7507,
+    "profile": "https://www.pinterest.com/motiondesigners2d/"
+   },
+   "board": {
+    "name": "Best Motion Designers Visual Inspiration",
+    "url": "https://www.pinterest.com/motiondesigners2d/best-motion-designers-visual-inspiration/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/d5/de/da/d5dedade6bd2f031d459bb66a0377230.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/91/55/ec/9155ec81841c2e4acc20a249038e3e32.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/91/55/ec/9155ec81841c2e4acc20a249038e3e32.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 17.8,
+   "saves": null,
+   "created_at": "Thu, 02 Oct 2025 20:32:41 +0000",
+   "dominant_color": "#fcf6f0",
+   "thumb": "thumbs/16.jpg"
+  }
+ ]
+}

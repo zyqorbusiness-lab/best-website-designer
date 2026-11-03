@@ -1,0 +1,676 @@
+{
+ "topic": "soft 3d explainer animation",
+ "slug": "soft_3d_explainer_animation",
+ "scope": "videos",
+ "searched_at": "2026-11-03T08:27:17.668Z",
+ "mode": "signed-in",
+ "count": 16,
+ "videos_downloaded": 4,
+ "pins": [
+  {
+   "n": "01",
+   "id": "492649952344602",
+   "pin_url": "https://www.pinterest.com/pin/492649952344602/",
+   "title": null,
+   "description": " ",
+   "creator": {
+    "username": "zsomborsnagy",
+    "name": "Zsombor Nagy",
+    "followers": 296,
+    "profile": "https://www.pinterest.com/zsomborsnagy/"
+   },
+   "board": {
+    "name": "3D Mograph",
+    "url": "https://www.pinterest.com/zsomborsnagy/3d-mograph/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/25/82/77/25827775dc8ec45d0ee093954f97ca78.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/e9/26/7b/e9267b8e087bacdd1097880063fb4be2.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/e9/26/7b/e9267b8e087bacdd1097880063fb4be2.m3u8",
+   "video_mp4": null,
+   "video_w": 1920,
+   "video_h": 1080,
+   "duration_s": 36.6,
+   "saves": null,
+   "created_at": "Thu, 28 Dec 2023 14:02:53 +0000",
+   "dominant_color": "#7392f9",
+   "thumb": "thumbs/01.jpg",
+   "frames": [
+    {
+     "t": 2.51,
+     "file": "frames/01_1.jpg"
+    },
+    {
+     "t": 7.54,
+     "file": "frames/01_2.jpg"
+    },
+    {
+     "t": 12.57,
+     "file": "frames/01_3.jpg"
+    },
+    {
+     "t": 17.59,
+     "file": "frames/01_4.jpg"
+    },
+    {
+     "t": 22.62,
+     "file": "frames/01_5.jpg"
+    },
+    {
+     "t": 27.65,
+     "file": "frames/01_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 1,
+    "cut_times_s": [
+     14.16
+    ],
+    "avg_shot_s": 15.08
+   },
+   "audio": {
+    "integrated_lufs": -15.4
+   },
+   "downloaded": {
+    "resolution": "736,414",
+    "seconds": 30.2,
+    "bytes": 2220340,
+    "kept": true
+   },
+   "local_video": "vids/01.mp4"
+  },
+  {
+   "n": "02",
+   "id": "3940718419920753",
+   "pin_url": "https://www.pinterest.com/pin/3940718419920753/",
+   "title": null,
+   "description": "Follow us on instagram @motiondesigners.pro #3d #vfx #cgi #digitalart #blender #motion",
+   "creator": {
+    "username": "byjul",
+    "name": "Jungmi Kim",
+    "followers": 91,
+    "profile": "https://www.pinterest.com/byjul/"
+   },
+   "board": {
+    "name": "\ubaa8\uc158 \ub514\uc790\uc778",
+    "url": "https://www.pinterest.com/byjul/%EB%AA%A8%EC%85%98-%EB%94%94%EC%9E%90%EC%9D%B8/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/92/e9/89/92e989c5494755ca837e5632f879e85f.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/8b/a1/bc/8ba1bca1b83cee44060537c378ad174d.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/8b/a1/bc/8ba1bca1b83cee44060537c378ad174d.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 11,
+   "saves": null,
+   "created_at": "Mon, 10 Mar 2025 08:42:41 +0000",
+   "dominant_color": "#c6c5c7",
+   "thumb": "thumbs/02.jpg",
+   "frames": [
+    {
+     "t": 0.92,
+     "file": "frames/02_1.jpg"
+    },
+    {
+     "t": 2.76,
+     "file": "frames/02_2.jpg"
+    },
+    {
+     "t": 4.61,
+     "file": "frames/02_3.jpg"
+    },
+    {
+     "t": 6.45,
+     "file": "frames/02_4.jpg"
+    },
+    {
+     "t": 8.29,
+     "file": "frames/02_5.jpg"
+    },
+    {
+     "t": 10.13,
+     "file": "frames/02_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 0,
+    "cut_times_s": [],
+    "avg_shot_s": 11.05
+   },
+   "audio": {
+    "integrated_lufs": -15.3
+   },
+   "downloaded": {
+    "resolution": "720,1280",
+    "seconds": 11.1,
+    "bytes": 497171,
+    "kept": true
+   },
+   "local_video": "vids/02.mp4"
+  },
+  {
+   "n": "03",
+   "id": "127578601937749602",
+   "pin_url": "https://www.pinterest.com/pin/127578601937749602/",
+   "title": null,
+   "description": "Follow us on instagram\n@motiondesigners.pro\n@piri3d\n#3d #vfx #cgi #digitalart #blender #motion",
+   "creator": {
+    "username": "motiondesignerspro",
+    "name": "MotionDesigners.Pro",
+    "followers": 17707,
+    "profile": "https://www.pinterest.com/motiondesignerspro/"
+   },
+   "board": {
+    "name": "Best Motion Designers Visual Inspiration",
+    "url": "https://www.pinterest.com/motiondesignerspro/best-motion-designers-visual-inspiration/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/b0/10/2e/b0102ef9d229e4163ccb40877a3f9644.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/23/83/c8/2383c84a3ae89c466d2b886ec4e8ed98.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/23/83/c8/2383c84a3ae89c466d2b886ec4e8ed98.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 8,
+   "saves": null,
+   "created_at": "Wed, 07 Aug 2024 19:30:44 +0000",
+   "dominant_color": "#c5b4a9",
+   "thumb": "thumbs/03.jpg",
+   "frames": [
+    {
+     "t": 0.67,
+     "file": "frames/03_1.jpg"
+    },
+    {
+     "t": 2,
+     "file": "frames/03_2.jpg"
+    },
+    {
+     "t": 3.33,
+     "file": "frames/03_3.jpg"
+    },
+    {
+     "t": 4.66,
+     "file": "frames/03_4.jpg"
+    },
+    {
+     "t": 5.99,
+     "file": "frames/03_5.jpg"
+    },
+    {
+     "t": 7.32,
+     "file": "frames/03_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 1,
+    "cut_times_s": [
+     7.47
+    ],
+    "avg_shot_s": 3.99
+   },
+   "audio": {
+    "integrated_lufs": -14.3
+   },
+   "downloaded": {
+    "resolution": "720,1280",
+    "seconds": 8,
+    "bytes": 851158,
+    "kept": true
+   },
+   "local_video": "vids/03.mp4"
+  },
+  {
+   "n": "04",
+   "id": "937452478676022034",
+   "pin_url": "https://www.pinterest.com/pin/937452478676022034/",
+   "title": "How your main goal can effect how you use animation for marketing.",
+   "description": "A balancing tower of shapes that sways from side to side. \n\nCalming, smooth movements.\n\n#techmarketing #animation #motiongraphics",
+   "creator": {
+    "username": "anico_studio",
+    "name": "Ben Newton | Anico Animation Studio",
+    "followers": 340,
+    "profile": "https://www.pinterest.com/anico_studio/"
+   },
+   "board": {
+    "name": "Tech Animation | Motion | Explainer | Marketing",
+    "url": "https://www.pinterest.com/anico_studio/tech-animation-motion-explainer-marketing/"
+   },
+   "outbound_link": "https://anico.studio/",
+   "domain": "anico.studio",
+   "image_url": "https://i.pinimg.com/originals/41/69/e0/4169e0b6d96716a4b9a1a8df6d2961a8.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/29/d1/d5/29d1d53a8b1c01a726580399e3a9f5be.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/29/d1/d5/29d1d53a8b1c01a726580399e3a9f5be.m3u8",
+   "video_mp4": null,
+   "video_w": 1920,
+   "video_h": 2400,
+   "duration_s": 4,
+   "saves": null,
+   "created_at": "Wed, 19 Jun 2024 07:53:29 +0000",
+   "dominant_color": "#320945",
+   "thumb": "thumbs/04.jpg",
+   "frames": [
+    {
+     "t": 0.33,
+     "file": "frames/04_1.jpg"
+    },
+    {
+     "t": 1,
+     "file": "frames/04_2.jpg"
+    },
+    {
+     "t": 1.67,
+     "file": "frames/04_3.jpg"
+    },
+    {
+     "t": 2.34,
+     "file": "frames/04_4.jpg"
+    },
+    {
+     "t": 3.01,
+     "file": "frames/04_5.jpg"
+    },
+    {
+     "t": 3.68,
+     "file": "frames/04_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 0,
+    "cut_times_s": [],
+    "avg_shot_s": 4.02
+   },
+   "audio": {
+    "integrated_lufs": null,
+    "note": "no audio track"
+   },
+   "downloaded": {
+    "resolution": "720,900",
+    "seconds": 4,
+    "bytes": 185384,
+    "kept": true
+   },
+   "local_video": "vids/04.mp4"
+  },
+  {
+   "n": "05",
+   "id": "933230354037717705",
+   "pin_url": "https://www.pinterest.com/pin/933230354037717705/",
+   "title": "Motion inspiration - Forest",
+   "description": "Subscribe to @motiondesigners.2d\n@royboyshaw\n\nSee more on www.MotionDesigners.Pro\n\n#logoinspiration #motiongraphics #animation #motiondesign #explainervideo #flatdesign #characters #aftereffects #digital2d #digitalanimation #logoanimation #2danimation #adobeaftereffects #motion #motionlovers",
+   "creator": {
+    "username": "motiondesigners2d",
+    "name": "MotionDesigners.Pro",
+    "followers": 7507,
+    "profile": "https://www.pinterest.com/motiondesigners2d/"
+   },
+   "board": {
+    "name": "Best Motion Designers Visual Inspiration",
+    "url": "https://www.pinterest.com/motiondesigners2d/best-motion-designers-visual-inspiration/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/7b/99/ff/7b99ff54f02172e3a4f280bf3ae117cc.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/f6/35/3c/f6353ce515b72670d50770d4e3daecb4.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/f6/35/3c/f6353ce515b72670d50770d4e3daecb4.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 10,
+   "saves": null,
+   "created_at": "Fri, 25 Apr 2025 20:32:32 +0000",
+   "dominant_color": "#dbd0bb",
+   "thumb": "thumbs/05.jpg"
+  },
+  {
+   "n": "06",
+   "id": "933230354039234433",
+   "pin_url": "https://www.pinterest.com/pin/933230354039234433/",
+   "title": "Motion inspiration - Shapes",
+   "description": "Subscribe to @motiondesigners.2d\n@madebyfern\n\nSee more on www.MotionDesigners.Pro\n\n#logoinspiration #motiongraphics #animation #motiondesign #explainervideo #flatdesign #characters #aftereffects #digital2d #digitalanimation #logoanimation #2danimation #adobeaftereffects #motion #motionlovers",
+   "creator": {
+    "username": "motiondesigners2d",
+    "name": "MotionDesigners.Pro",
+    "followers": 7507,
+    "profile": "https://www.pinterest.com/motiondesigners2d/"
+   },
+   "board": {
+    "name": "Best Motion Designers Visual Inspiration",
+    "url": "https://www.pinterest.com/motiondesigners2d/best-motion-designers-visual-inspiration/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/82/cf/31/82cf3188d28749fc0f75aba98fac251f.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/02/f6/32/02f63277b1f85db5611af6f840d723c4.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/02/f6/32/02f63277b1f85db5611af6f840d723c4.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 60,
+   "saves": null,
+   "created_at": "Thu, 05 Jun 2025 20:38:42 +0000",
+   "dominant_color": "#f2f1ed",
+   "thumb": "thumbs/06.jpg"
+  },
+  {
+   "n": "07",
+   "id": "653584964689103750",
+   "pin_url": "https://www.pinterest.com/pin/653584964689103750/",
+   "title": "Patreon - Social Media 3D Visuals",
+   "description": "Patreon invited us to create a series of short 3D animations. We decided to create these softy and playful scenes. It was our first project that we did in Houdini and that makes it even more special for us.",
+   "creator": {
+    "username": "arkiworks",
+    "name": "ARKI Studio",
+    "followers": 1121,
+    "profile": "https://www.pinterest.com/arkiworks/"
+   },
+   "board": {
+    "name": "CGI & Product Visualization",
+    "url": "https://www.pinterest.com/arkiworks/cgi-product-visualization/"
+   },
+   "outbound_link": "https://www.behance.net/gallery/154600025/Patreon-Social-Media-Visuals",
+   "domain": "behance.net",
+   "image_url": "https://i.pinimg.com/originals/7a/15/8b/7a158b923e112c279089faad6cfd594e.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/0a/b5/d1/0ab5d1511950cc530a5bc6e3ddfef538.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/0a/b5/d1/0ab5d1511950cc530a5bc6e3ddfef538.m3u8",
+   "video_mp4": null,
+   "video_w": 1920,
+   "video_h": 1920,
+   "duration_s": 23,
+   "saves": null,
+   "created_at": "Tue, 11 Oct 2022 14:07:28 +0000",
+   "dominant_color": "#4b4b8d",
+   "thumb": "thumbs/07.jpg"
+  },
+  {
+   "n": "08",
+   "id": "127578601938414775",
+   "pin_url": "https://www.pinterest.com/pin/127578601938414775/",
+   "title": "Motion inspiration - Antitox",
+   "description": "Subscribe to @motiondesigners.pro\n@tavo_studio\n\nSee more on www.MotionDesigners.Pro\n\n#3d #vfx #cgi #digitalart #blender #motion #animation #c4d #cinema4d #houdini #aftereffects #motiondesign #ae #render #3dartist #houdinifx #sidefx #3danimation #tracking #octane #render",
+   "creator": {
+    "username": "motiondesignerspro",
+    "name": "MotionDesigners.Pro",
+    "followers": 17707,
+    "profile": "https://www.pinterest.com/motiondesignerspro/"
+   },
+   "board": {
+    "name": "Best Motion Designers Visual Inspiration",
+    "url": "https://www.pinterest.com/motiondesignerspro/best-motion-designers-visual-inspiration/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/32/60/75/326075380e8d7862102271aef5e01351.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/6a/8a/55/6a8a557af611b67831bc5c56013d51f0_v2.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/6a/8a/55/6a8a557af611b67831bc5c56013d51f0_v2.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 30,
+   "saves": null,
+   "created_at": "Mon, 31 Mar 2025 20:35:00 +0000",
+   "dominant_color": "#e3e2e0",
+   "thumb": "thumbs/08.jpg"
+  },
+  {
+   "n": "09",
+   "id": "933230354036027525",
+   "pin_url": "https://www.pinterest.com/pin/933230354036027525/",
+   "title": "Motion Inspiration - Viva",
+   "description": "Subscribe to @motiondesigners.2d\n@allmad.tv\n\nSee more on tincumax.com\n#logoinspiration #motiongraphics #animation #motiondesign #explainervideo #flatdesign #characters #aftereffects #digital2d #digitalanimation #logoanimation #2danimation #adobeaftereffects #motion #motionlovers",
+   "creator": {
+    "username": "motiondesigners2d",
+    "name": "MotionDesigners.Pro",
+    "followers": 7507,
+    "profile": "https://www.pinterest.com/motiondesigners2d/"
+   },
+   "board": {
+    "name": "Best Motion Designers Visual Inspiration",
+    "url": "https://www.pinterest.com/motiondesigners2d/best-motion-designers-visual-inspiration/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/c1/21/3e/c1213e67f8775f65f46658e9fb77d06a.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/b3/b4/ae/b3b4aea649f8873a0c6a22b78988c947_v2.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/b3/b4/ae/b3b4aea649f8873a0c6a22b78988c947_v2.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1358,
+   "duration_s": 15,
+   "saves": null,
+   "created_at": "Thu, 13 Mar 2025 11:31:26 +0000",
+   "dominant_color": "#abcdc3",
+   "thumb": "thumbs/09.jpg"
+  },
+  {
+   "n": "10",
+   "id": "933230354036831703",
+   "pin_url": "https://www.pinterest.com/pin/933230354036831703/",
+   "title": "Motion inspiration - Windows",
+   "description": "Subscribe to @motiondesigners.2d\n@\n\nSee more on www.MotionDesigners.Pro\n\n#logoinspiration #motiongraphics #animation #motiondesign #explainervideo #flatdesign #characters #aftereffects #digital2d #digitalanimation #logoanimation #2danimation #adobeaftereffects #motion #motionlovers",
+   "creator": {
+    "username": "motiondesigners2d",
+    "name": "MotionDesigners.Pro",
+    "followers": 7507,
+    "profile": "https://www.pinterest.com/motiondesigners2d/"
+   },
+   "board": {
+    "name": "Best Motion Designers Visual Inspiration",
+    "url": "https://www.pinterest.com/motiondesigners2d/best-motion-designers-visual-inspiration/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/b5/a4/dd/b5a4dd03effc40b549c67758430455fa.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/81/46/82/814682a6213815263cc94bdfdffdaf4d_v2.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/81/46/82/814682a6213815263cc94bdfdffdaf4d_v2.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 4.8,
+   "saves": null,
+   "created_at": "Tue, 01 Apr 2025 19:33:17 +0000",
+   "dominant_color": "#f2efec",
+   "thumb": "thumbs/10.jpg"
+  },
+  {
+   "n": "11",
+   "id": "1086986060078349776",
+   "pin_url": "https://www.pinterest.com/pin/1086986060078349776/",
+   "title": null,
+   "description": "SaaS Explainer Style \u2013 SpatialFlow UI\n\nEmma App After Effects Project File (AEP)\nBuilt with 3D camera movement, depth layering, and smooth UI animation.\n\nIncludes:\nFloating iPhone mockup\nClean fintech dashboard transitions\nSoft gradient lighting\nOrganized, reusable composition structure\n\nPerfect for SaaS demos, fintech promos, and modern product explainers.\n\nAvailable now on EarnEdits \ud83c\udfac\n\n#AfterEffects #SaaS #MotionDesign",
+   "creator": {
+    "username": "EarnEdits",
+    "name": "EarnEdits.com",
+    "followers": 1060,
+    "profile": "https://www.pinterest.com/EarnEdits/"
+   },
+   "board": {
+    "name": "Social",
+    "url": "https://www.pinterest.com/EarnEdits/_tpd_social/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DVbUt7JCH78/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/43/e0/d1/43e0d17fcc3b664af056c26001a0716c.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/26/91/9a/26919af7f7c79d9a40e585fc9c4ea7e2.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/26/91/9a/26919af7f7c79d9a40e585fc9c4ea7e2.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 51.6,
+   "saves": null,
+   "created_at": "Wed, 04 Mar 2026 01:21:30 +0000",
+   "dominant_color": "#0f1e11",
+   "thumb": "thumbs/11.jpg"
+  },
+  {
+   "n": "12",
+   "id": "3025924743419579",
+   "pin_url": "https://www.pinterest.com/pin/3025924743419579/",
+   "title": "2021 IOPE Super Vital Bio Potential Cream",
+   "description": "\uc544\uc774\uc624\ud398\uc758 \ubc14\uc774\uc624\ub294 \uc0b4\uc544\uc788\ub294 \ud53c\ubd80 \uc138\ud3ec \uc0dd\ud0dc\uacc4\ub97c \uc758\ubbf8\ud55c\ub2e4. \uc288\ud37c\ubc14\uc774\ud0c8 \ubc14\uc774\uc624 \ud3ec\ud150\uc15c \ud06c\ub9bc\uc740 \ud53c\ubd80 \uc7a5\ubcbd \ubc0f \uc7a0\uc7ac\ub825\uc744 \uac15\ud654\ud558\uc5ec \ud53c\ubd80 \uc2a4\uc2a4\ub85c \uac15\ud574\uc9c8 \uc218 \uc788\ub294 \ud658\uacbd\uc744 \ub9cc\ub4dc\ub294 \ubc14\uc774\uc624 \uae30\uc220\uc774 \uacb0\ud569\ub41c \uc81c\ud488\uc73c\ub85c \uc774\ub7ec\ud55c \ucd5c\uace0 \uae30\uc220 \uc0c1\ud488\uc5d0 \ub300\ud55c \uc0c1\uc9d5\uc131\uc744 \uc544\uc774\uc624\ud398\ub9cc\uc758 \uc808\uc81c\ub418\uace0 \uc6b0\uc544\ud55c \ubc29\uc2dd\uc73c\ub85c \ud45c\ud604\ud558\uace0\uc790 \ud558\uc600\ub2e4.",
+   "creator": {
+    "username": "abodegacc",
+    "name": "aBodega CC",
+    "followers": 23,
+    "profile": "https://www.pinterest.com/abodegacc/"
+   },
+   "board": {
+    "name": "[mood] one",
+    "url": "https://www.pinterest.com/abodegacc/mood-one/"
+   },
+   "outbound_link": "https://design.amorepacific.com/work/2021/iope/supervitalbio/",
+   "domain": "design.amorepacific.com",
+   "image_url": "https://i.pinimg.com/originals/bc/53/54/bc53547a0d207240882a846e1a452374.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/94/8c/2c/948c2cc5902ea9a7aea250486f35ecee.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/94/8c/2c/948c2cc5902ea9a7aea250486f35ecee.m3u8",
+   "video_mp4": null,
+   "video_w": 1920,
+   "video_h": 1080,
+   "duration_s": 25.4,
+   "saves": null,
+   "created_at": "Wed, 01 May 2024 17:18:56 +0000",
+   "dominant_color": "#e4e5ee",
+   "thumb": "thumbs/12.jpg"
+  },
+  {
+   "n": "13",
+   "id": "925700898420097801",
+   "pin_url": "https://www.pinterest.com/pin/925700898420097801/",
+   "title": null,
+   "description": "This is how we cook \ud83d\udd25\nTurning ideas into motion.\nTurning brands into experiences.\n\n- Motion Design\n- Product Videos\n- Full Animations\n- UX/UI\n- Mascot Creation\n\nEverything design related...\n\nJanuary is already filling up.\nIf you want your brand to hit harder next year,\nnow\u2019s the time to grab your slot.\n\n#MotionDesign #BrandAnimation #DesignStudio #ProductVideo #MascotDesign",
+   "creator": {
+    "username": "wizart_studios",
+    "name": "WizArt Studios",
+    "followers": 75,
+    "profile": "https://www.pinterest.com/wizart_studios/"
+   },
+   "board": {
+    "name": "WizArt Studios",
+    "url": "https://www.pinterest.com/wizart_studios/wizart-studios/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/62/fa/82/62fa8258b909075a1f1049958d183948.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/e4/ed/73/e4ed73245468ccc1795dff1906e8d152.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/e4/ed/73/e4ed73245468ccc1795dff1906e8d152.m3u8",
+   "video_mp4": null,
+   "video_w": 1920,
+   "video_h": 1080,
+   "duration_s": 47,
+   "saves": null,
+   "created_at": "Mon, 15 Dec 2025 11:02:13 +0000",
+   "dominant_color": "#5101b2",
+   "thumb": "thumbs/13.jpg"
+  },
+  {
+   "n": "14",
+   "id": "140806233306755",
+   "pin_url": "https://www.pinterest.com/pin/140806233306755/",
+   "title": null,
+   "description": " ",
+   "creator": {
+    "username": "Danielin_",
+    "name": "Danielin",
+    "followers": 299,
+    "profile": "https://www.pinterest.com/Danielin_/"
+   },
+   "board": {
+    "name": "INSPO TRABAJO",
+    "url": "https://www.pinterest.com/Danielin_/inspo-trabajo/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/f3/9b/fe/f39bfeecd53ce4647c1a80a586c5942c.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/mc/hls/c4/db/0b/c4db0b0576333343c3428e3f28c71e12.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/mc/hls/c4/db/0b/c4db0b0576333343c3428e3f28c71e12.m3u8",
+   "video_mp4": null,
+   "video_w": 1920,
+   "video_h": 1080,
+   "duration_s": 30,
+   "saves": null,
+   "created_at": "Mon, 14 Oct 2024 20:42:01 +0000",
+   "dominant_color": "#2f6a3f",
+   "thumb": "thumbs/14.jpg"
+  },
+  {
+   "n": "15",
+   "id": "735846026639562950",
+   "pin_url": "https://www.pinterest.com/pin/735846026639562950/",
+   "title": "\"No time to explain\"",
+   "description": "Brawl Stars",
+   "creator": {
+    "username": "cesarfabricioneiranoa",
+    "name": "C\u00e9sar Fabricio Neira Noa",
+    "followers": 0,
+    "profile": "https://www.pinterest.com/cesarfabricioneiranoa/"
+   },
+   "board": {
+    "name": "Mis Pines guardados",
+    "url": "https://www.pinterest.com/cesarfabricioneiranoa/mis-pines-guardados/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/28/68/98/286898689a32cb331b663804c62aad8c.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/69/fc/52/69fc524aedb2d1d71fd7786d122a23ce.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/69/fc/52/69fc524aedb2d1d71fd7786d122a23ce.m3u8",
+   "video_mp4": null,
+   "video_w": 480,
+   "video_h": 480,
+   "duration_s": 59.4,
+   "saves": null,
+   "created_at": "Mon, 31 Jul 2023 16:34:56 +0000",
+   "dominant_color": "#b2685f",
+   "thumb": "thumbs/15.jpg"
+  },
+  {
+   "n": "16",
+   "id": "869617009322395442",
+   "pin_url": "https://www.pinterest.com/pin/869617009322395442/",
+   "title": null,
+   "description": "#FridayInspo \u2728\n\nCan you see sound? \ud83d\udd0a\ud83d\udc40\nIn design, sound doesn\u2019t always need to be heard \u2014 it can be felt visually.\nWe love this cool animation by Marko Koma\n\n\ud83d\udd38Movement can show rhythm.\n\ud83d\udd38Shape can express tone.\n\ud83d\udd38Timing can create energy, tension, or flow.\n\n\ud83d\udc49\ud83c\udffb A fast transition can feel sharp and loud. A soft curve can feel smooth and calm. Repetition can create a beat before any audio plays.\nThat\u2019s the power of visual communication: turning something invisible into something people can instantl...",
+   "creator": {
+    "username": "lazohdesign",
+    "name": "Lazoh Design",
+    "followers": 410,
+    "profile": "https://www.pinterest.com/lazohdesign/"
+   },
+   "board": {
+    "name": "Social",
+    "url": "https://www.pinterest.com/lazohdesign/_tpd_social/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DYqHdVLka2e/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/1b/f7/2c/1bf72c2e8fc55f9f55e5be14ba71e989.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/c2/0e/bc/c20ebc7690f47ba4a5b41d4ef546083c.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/c2/0e/bc/c20ebc7690f47ba4a5b41d4ef546083c.m3u8",
+   "video_mp4": null,
+   "video_w": 1276,
+   "video_h": 720,
+   "duration_s": 24.1,
+   "saves": null,
+   "created_at": "Sat, 23 May 2026 12:09:47 +0000",
+   "dominant_color": "#efeae0",
+   "thumb": "thumbs/16.jpg"
+  }
+ ]
+}

@@ -1,0 +1,718 @@
+{
+ "topic": "after effects transitions",
+ "slug": "after_effects_transitions",
+ "scope": "videos",
+ "searched_at": "2026-11-03T05:32:42.839Z",
+ "mode": "signed-in",
+ "count": 16,
+ "videos_downloaded": 4,
+ "pins": [
+  {
+   "n": "01",
+   "id": "1086986060079822211",
+   "pin_url": "https://www.pinterest.com/pin/1086986060079822211/",
+   "title": "Download After Effects Project Files Built for Video Editors",
+   "description": "They copied your product? Good. \ud83d\ude0f\n\nThey can copy what you make\u2026\nbut they can\u2019t copy who you are \ud83e\udde0\ud83d\udd25\n\n\ud83c\udfac Editors .. Project file available on EarnEdits\ud83d\udd17\ud83d\ude80\nThis After Effects project file shows you how to build strong, identity-driven edits that stand out.\n\nInside you\u2019ll learn how to:\n\ud83d\udd25 Structure bold, scroll-stopping hooks\n\ud83d\udd25 Build authority-style storytelling\n\ud83d\udd25 Use clean typography and pacing\n\ud83d\udd25 Turn simple ideas into premium edits\n\nStudy it. Re-edit it. Make it yours. \u2702\ufe0f\n\n#AfterEffects \ud83c\udfac #VideoEd...",
+   "creator": {
+    "username": "EarnEdits",
+    "name": "EarnEdits.com",
+    "followers": 1057,
+    "profile": "https://www.pinterest.com/EarnEdits/"
+   },
+   "board": {
+    "name": "Social",
+    "url": "https://www.pinterest.com/EarnEdits/_tpd_social/"
+   },
+   "outbound_link": "http://earnedits.com/",
+   "domain": "earnedits.com",
+   "image_url": "https://i.pinimg.com/originals/ba/ab/f1/baabf152ebfd9eceeddf8482d90439d2.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/2b/f8/0e/2bf80e9601413ce1ec266c6b1947c2c7.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/2b/f8/0e/2bf80e9601413ce1ec266c6b1947c2c7.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 36.2,
+   "saves": null,
+   "created_at": "Sat, 28 Mar 2026 01:40:48 +0000",
+   "dominant_color": "#001215",
+   "thumb": "thumbs/01.jpg",
+   "frames": [
+    {
+     "t": 2.51,
+     "file": "frames/01_1.jpg"
+    },
+    {
+     "t": 7.54,
+     "file": "frames/01_2.jpg"
+    },
+    {
+     "t": 12.57,
+     "file": "frames/01_3.jpg"
+    },
+    {
+     "t": 17.6,
+     "file": "frames/01_4.jpg"
+    },
+    {
+     "t": 22.63,
+     "file": "frames/01_5.jpg"
+    },
+    {
+     "t": 27.65,
+     "file": "frames/01_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 10,
+    "cut_times_s": [
+     4.93,
+     7.33,
+     7.37,
+     11.27,
+     13.2,
+     23.73,
+     24.83,
+     24.9,
+     25.93,
+     26.93
+    ],
+    "avg_shot_s": 2.74
+   },
+   "audio": {
+    "integrated_lufs": -14.5
+   },
+   "downloaded": {
+    "resolution": "720,1280",
+    "seconds": 30.2,
+    "bytes": 2681959,
+    "kept": true
+   },
+   "local_video": "vids/01.mp4"
+  },
+  {
+   "n": "02",
+   "id": "931471135423209073",
+   "pin_url": "https://www.pinterest.com/pin/931471135423209073/",
+   "title": "Trendy Echo Effect Animation in After Effects",
+   "description": "I'll show you how to create a trendy text animation using the Echo effect and dynamic transitions in Adobe After Effects",
+   "creator": {
+    "username": "Aress_ae",
+    "name": "Aress",
+    "followers": 4181,
+    "profile": "https://www.pinterest.com/Aress_ae/"
+   },
+   "board": {
+    "name": "TEXT ANIMATION",
+    "url": "https://www.pinterest.com/Aress_ae/text-animation/"
+   },
+   "outbound_link": "https://youtu.be/9kurzjs6vR0",
+   "domain": "youtu.be",
+   "image_url": "https://i.pinimg.com/originals/db/26/e3/db26e3ebc2022fd78655a0ed3ad02066.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/e0/a3/9a/e0a39a5eaaa32993fc6b343845f7cd2f.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/e0/a3/9a/e0a39a5eaaa32993fc6b343845f7cd2f.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 60,
+   "saves": null,
+   "created_at": "Thu, 11 Jul 2024 11:15:14 +0000",
+   "dominant_color": "#200f70",
+   "thumb": "thumbs/02.jpg",
+   "frames": [
+    {
+     "t": 2.52,
+     "file": "frames/02_1.jpg"
+    },
+    {
+     "t": 7.57,
+     "file": "frames/02_2.jpg"
+    },
+    {
+     "t": 12.62,
+     "file": "frames/02_3.jpg"
+    },
+    {
+     "t": 17.67,
+     "file": "frames/02_4.jpg"
+    },
+    {
+     "t": 22.72,
+     "file": "frames/02_5.jpg"
+    },
+    {
+     "t": 27.77,
+     "file": "frames/02_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 6,
+    "cut_times_s": [
+     0.96,
+     1.08,
+     2,
+     2.13,
+     3,
+     3.13
+    ],
+    "avg_shot_s": 4.33
+   },
+   "audio": {
+    "integrated_lufs": -12.8
+   },
+   "downloaded": {
+    "resolution": "720,1280",
+    "seconds": 30.3,
+    "bytes": 1319990,
+    "kept": true
+   },
+   "local_video": "vids/02.mp4"
+  },
+  {
+   "n": "03",
+   "id": "1086986060089969292",
+   "pin_url": "https://www.pinterest.com/pin/1086986060089969292/",
+   "title": null,
+   "description": "\ud83d\udce1History remembered her as one of Hollywood\u2019s greatest stars \ud83c\udfac\n\nIt almost forgot she helped invent the technology that connects the modern world \ud83d\udce1\n\nThis After Effects project transforms Hedy Lamarr\u2019s story into a premium documentary-style motion graphics experience. Vintage Hollywood photography, wartime archives, engineering diagrams, patent illustrations, newspaper headlines \ud83c\udf9e\ufe0f\u2728\n\nEvery photograph tells two stories. Every transition uncovers another chapter. Every composition challenges what...",
+   "creator": {
+    "username": "EarnEdits",
+    "name": "EarnEdits.com",
+    "followers": 1057,
+    "profile": "https://www.pinterest.com/EarnEdits/"
+   },
+   "board": {
+    "name": "Social",
+    "url": "https://www.pinterest.com/EarnEdits/_tpd_social/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DcD4mcfIgey/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/5e/74/e8/5e74e8b734a1e807af9a2c95d9926a88.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/df/b2/ac/dfb2aca96387e59e0508f189de79401a.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/df/b2/ac/dfb2aca96387e59e0508f189de79401a.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 32,
+   "saves": null,
+   "created_at": "Mon, 17 Aug 2026 01:13:15 +0000",
+   "dominant_color": "#bdbdbc",
+   "thumb": "thumbs/03.jpg",
+   "frames": [
+    {
+     "t": 2.51,
+     "file": "frames/03_1.jpg"
+    },
+    {
+     "t": 7.54,
+     "file": "frames/03_2.jpg"
+    },
+    {
+     "t": 12.57,
+     "file": "frames/03_3.jpg"
+    },
+    {
+     "t": 17.6,
+     "file": "frames/03_4.jpg"
+    },
+    {
+     "t": 22.63,
+     "file": "frames/03_5.jpg"
+    },
+    {
+     "t": 27.65,
+     "file": "frames/03_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 21,
+    "cut_times_s": [
+     0.67,
+     1.07,
+     1.57,
+     3.07,
+     4.67,
+     5.67,
+     5.77,
+     6.97,
+     8.27,
+     11.97,
+     13.57,
+     14.97,
+     15.07,
+     15.27,
+     15.47,
+     16.77,
+     20.57,
+     23.27,
+     25.27,
+     27.47,
+     28.17
+    ],
+    "avg_shot_s": 1.37
+   },
+   "audio": {
+    "integrated_lufs": -14.1
+   },
+   "downloaded": {
+    "resolution": "720,1280",
+    "seconds": 30.2,
+    "bytes": 4812645,
+    "kept": true
+   },
+   "local_video": "vids/03.mp4"
+  },
+  {
+   "n": "04",
+   "id": "1032168808367375931",
+   "pin_url": "https://www.pinterest.com/pin/1032168808367375931/",
+   "title": null,
+   "description": "Transiciones perfectas en After Effects \ud83d\udd25\n\n#motiongraphics #aftereffects #uianimation #motion",
+   "creator": {
+    "username": "toromotion_",
+    "name": "Andr\u00e9s Toro | Motion Designer",
+    "followers": 3,
+    "profile": "https://www.pinterest.com/toromotion_/"
+   },
+   "board": {
+    "name": "Motion",
+    "url": "https://www.pinterest.com/toromotion_/motion/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DcduvR2ME0P/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/7b/57/57/7b57576bad9551cec88f030e2abeee02.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/4c/76/26/4c762625a5f04ed1726427891c9b46a4.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/4c/76/26/4c762625a5f04ed1726427891c9b46a4.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 34.3,
+   "saves": null,
+   "created_at": "Thu, 27 Aug 2026 15:16:19 +0000",
+   "dominant_color": "#fbfbfb",
+   "thumb": "thumbs/04.jpg",
+   "frames": [
+    {
+     "t": 2.52,
+     "file": "frames/04_1.jpg"
+    },
+    {
+     "t": 7.56,
+     "file": "frames/04_2.jpg"
+    },
+    {
+     "t": 12.6,
+     "file": "frames/04_3.jpg"
+    },
+    {
+     "t": 17.64,
+     "file": "frames/04_4.jpg"
+    },
+    {
+     "t": 22.68,
+     "file": "frames/04_5.jpg"
+    },
+    {
+     "t": 27.71,
+     "file": "frames/04_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 6,
+    "cut_times_s": [
+     4.53,
+     16.87,
+     17.07,
+     21.07,
+     23.8,
+     25.87
+    ],
+    "avg_shot_s": 4.32
+   },
+   "audio": {
+    "integrated_lufs": -14.2
+   },
+   "downloaded": {
+    "resolution": "720,1280",
+    "seconds": 30.2,
+    "bytes": 790453,
+    "kept": true
+   },
+   "local_video": "vids/04.mp4"
+  },
+  {
+   "n": "05",
+   "id": "756604806201382827",
+   "pin_url": "https://www.pinterest.com/pin/756604806201382827/",
+   "title": "200+ Shape Transitions",
+   "description": "200+ Transitions Any resulution and aspect ratio One click to apply Fast Render Works with photo and video Video Tutorial Free support",
+   "creator": {
+    "username": "minchitaj",
+    "name": "Minchita Jan",
+    "followers": 0,
+    "profile": "https://www.pinterest.com/minchitaj/"
+   },
+   "board": {
+    "name": "motion design",
+    "url": "https://www.pinterest.com/minchitaj/motion-design/"
+   },
+   "outbound_link": "https://1.envato.market/c/1274348/298927/4662?u=https://elements.envato.com/200-shape-transitions-GGG5QTK&subid1=Pin&subid2=d22",
+   "domain": "1.envato.market",
+   "image_url": "https://i.pinimg.com/originals/37/5b/cd/375bcdb85177d702e2087bbb2040ccf1.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/mc/hls/de/18/65/de1865e75fbc66e0941ae46be1cc2983.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/mc/hls/de/18/65/de1865e75fbc66e0941ae46be1cc2983.m3u8",
+   "video_mp4": null,
+   "video_w": 1920,
+   "video_h": 1080,
+   "duration_s": 43.8,
+   "saves": null,
+   "created_at": "Wed, 28 Oct 2026 02:37:59 +0000",
+   "dominant_color": "#470126",
+   "thumb": "thumbs/05.jpg"
+  },
+  {
+   "n": "06",
+   "id": "1086986060090796869",
+   "pin_url": "https://www.pinterest.com/pin/1086986060090796869/",
+   "title": null,
+   "description": "\ud83e\udd16 We combined Claude with After Effects for this one \u26a1\nFull breakdown of the AI-assisted workflow \u2014 brainstorming ideas, generating expressions \ud83e\udde0, refining transitions, and animating interface elements \ud83c\udfa8 \u2014 start to finish\nFull tutorial on EarnEdits.com \ud83d\udd17\n\n#EarnEdits #MotionDesign #VideoEditing #aftereffectstutorial #AfterEffects",
+   "creator": {
+    "username": "EarnEdits",
+    "name": "EarnEdits.com",
+    "followers": 1057,
+    "profile": "https://www.pinterest.com/EarnEdits/"
+   },
+   "board": {
+    "name": "Social",
+    "url": "https://www.pinterest.com/EarnEdits/_tpd_social/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DcdkB64oNkC/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/f9/eb/26/f9eb26f7bdc05cbf55acb8fd8ce1a47b.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/37/79/b3/3779b318dfa8f94419f5c01e3ab9b06a.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/37/79/b3/3779b318dfa8f94419f5c01e3ab9b06a.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 41.5,
+   "saves": null,
+   "created_at": "Thu, 27 Aug 2026 01:52:13 +0000",
+   "dominant_color": "#14142e",
+   "thumb": "thumbs/06.jpg"
+  },
+  {
+   "n": "07",
+   "id": "1043990757369769608",
+   "pin_url": "https://www.pinterest.com/pin/1043990757369769608/",
+   "title": null,
+   "description": "Comment \u201cFragment\u201d and I\u2019ll send you the Project File!\ud83c\udfa5 #videoediting #aftereffect #visualeffects",
+   "creator": {
+    "username": "alex_artsemyev",
+    "name": "Alex Arts",
+    "followers": 428,
+    "profile": "https://www.pinterest.com/alex_artsemyev/"
+   },
+   "board": {
+    "name": "Social media",
+    "url": "https://www.pinterest.com/alex_artsemyev/social-media/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DDaTEkzoXA-/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/a5/fd/a5/a5fda5167dd5fc3fc3664111ff7dd3a3.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/a8/08/43/a80843d76a85474a7c2b05ed451e78ae_v2.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/a8/08/43/a80843d76a85474a7c2b05ed451e78ae_v2.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 44,
+   "saves": null,
+   "created_at": "Sun, 26 Jan 2025 18:08:56 +0000",
+   "dominant_color": "#671918",
+   "thumb": "thumbs/07.jpg"
+  },
+  {
+   "n": "08",
+   "id": "1086986060090383822",
+   "pin_url": "https://www.pinterest.com/pin/1086986060090383822/",
+   "title": null,
+   "description": "You\u2019re not out of time \ud83d\udd50 You\u2019re out of focus \u26a1\n\nThis After Effects project transforms a simple message about distraction into a premium cinematic motion graphics experience. Bold typography, social media-inspired visuals, dynamic transitions, dramatic pacing \ud83c\udfac\n\nEvery scroll represents a choice. Every distraction costs time. Every frame asks a question \u2014 are you building your future or just watching someone else\u2019s? \u2728\n\nAnimated phone interfaces, social media feeds, progress comparisons, kinetic...",
+   "creator": {
+    "username": "EarnEdits",
+    "name": "EarnEdits.com",
+    "followers": 1057,
+    "profile": "https://www.pinterest.com/EarnEdits/"
+   },
+   "board": {
+    "name": "Social",
+    "url": "https://www.pinterest.com/EarnEdits/_tpd_social/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DcQh-yhO93J/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/0e/34/27/0e34279f381a3b7e9b632d526d2f2188.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/bf/8b/96/bf8b960aaea39a8e17d03ab0cc633d22.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/bf/8b/96/bf8b960aaea39a8e17d03ab0cc633d22.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 25.4,
+   "saves": null,
+   "created_at": "Sat, 22 Aug 2026 01:31:51 +0000",
+   "dominant_color": "#7f8f64",
+   "thumb": "thumbs/08.jpg"
+  },
+  {
+   "n": "09",
+   "id": "877005727506486694",
+   "pin_url": "https://www.pinterest.com/pin/877005727506486694/",
+   "title": null,
+   "description": "How to make Whip Transition effect in After Effects\n-\n\ud83e\udd14 Want the pack?\nComment \u00abPack\u00bb and get the link\n-\n#motionpulse #themotionpulse\n#howto #Premierepro #Editingtutorial #VideoEditing #FilmmakerTools #VideoTransitions #Whiptransition",
+   "creator": {
+    "username": "themotionpulse",
+    "name": "MotionPulse",
+    "followers": 496,
+    "profile": "https://www.pinterest.com/themotionpulse/"
+   },
+   "board": {
+    "name": "\u0421\u043e\u0446\u0438\u0430\u043b\u044c\u043d\u044b\u0435 \u0441\u0435\u0442\u0438",
+    "url": "https://www.pinterest.com/themotionpulse/_tpd_social/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DeXNMsEzjcP/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/d9/bc/5a/d9bc5a1a9e1dc6f1cfea433a7d1307b5.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/f5/0b/69/f50b69bfbc85dd44fd343e5ea7f8d1cf.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/f5/0b/69/f50b69bfbc85dd44fd343e5ea7f8d1cf.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 61.1,
+   "saves": null,
+   "created_at": "Mon, 12 Oct 2026 06:29:07 +0000",
+   "dominant_color": "#32363a",
+   "thumb": "thumbs/09.jpg"
+  },
+  {
+   "n": "10",
+   "id": "650418371231459800",
+   "pin_url": "https://www.pinterest.com/pin/650418371231459800/",
+   "title": null,
+   "description": "One seamless AI transition after another.\n\nMia typing at her desk \u2013 then suddenly, she's in New York?\ud83d\uddfd\nHer tear hits the desk and becomes a puddle\u2026 and then she's walking straight through an Instagram feed.\n\n\ud83d\udcac Comment \"MIA\" for the prompt!\n\ud83c\udfac Made with Filmora. \n\n#wondershare #filmora15 #MiaAI #TransitionEffect #AIVideo #filmora15 #madewithfilmora #filmoramobile #transition #videoedit #ai #aivideo",
+   "creator": {
+    "username": "Filmora_Video_Editor",
+    "name": "Filmora Video Editor",
+    "followers": 340,
+    "profile": "https://www.pinterest.com/Filmora_Video_Editor/"
+   },
+   "board": {
+    "name": "Social",
+    "url": "https://www.pinterest.com/Filmora_Video_Editor/_tpd_social/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DcUrtB-jpTx/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/79/cf/63/79cf63d91b8c8900fec579cbb230f167.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/05/39/bb/0539bbd71ad41f7c1bfc62ab929f5434.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/05/39/bb/0539bbd71ad41f7c1bfc62ab929f5434.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 24.8,
+   "saves": null,
+   "created_at": "Sat, 22 Aug 2026 16:26:17 +0000",
+   "dominant_color": "#98969b",
+   "thumb": "thumbs/10.jpg"
+  },
+  {
+   "n": "11",
+   "id": "933230354048370225",
+   "pin_url": "https://www.pinterest.com/pin/933230354048370225/",
+   "title": "Motion inspiration - Life",
+   "description": "Subscribe to @motiondesigners.2d\n|ammar_nashawi\n\nSee more on www.MotionDesigners.Pro\n\n#logoinspiration #motiongraphics #animation #motiondesign #explainervideo #flatdesign #characters #aftereffects #digital2d #digitalanimation #logoanimation #2danimation #adobeaftereffects #motion #motionlovers",
+   "creator": {
+    "username": "motiondesigners2d",
+    "name": "MotionDesigners.Pro",
+    "followers": 7507,
+    "profile": "https://www.pinterest.com/motiondesigners2d/"
+   },
+   "board": {
+    "name": "Best Motion Designers Visual Inspiration",
+    "url": "https://www.pinterest.com/motiondesigners2d/best-motion-designers-visual-inspiration/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/e3/e4/4e/e3e44ed07279b0bff12ee6cf86112d93.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/d5/dc/2b/d5dc2b65d55590f32d5a0c5252d895b9.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/d5/dc/2b/d5dc2b65d55590f32d5a0c5252d895b9.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1918,
+   "duration_s": 9.3,
+   "saves": null,
+   "created_at": "Wed, 28 Jan 2026 12:33:22 +0000",
+   "dominant_color": "#160202",
+   "thumb": "thumbs/11.jpg"
+  },
+  {
+   "n": "12",
+   "id": "730498002109552061",
+   "pin_url": "https://www.pinterest.com/pin/730498002109552061/",
+   "title": "Backward Story // Slideshow \u2014 After Effects Template",
+   "description": " ",
+   "creator": {
+    "username": "mukherjeesouhar",
+    "name": "Souharda",
+    "followers": 0,
+    "profile": "https://www.pinterest.com/mukherjeesouhar/"
+   },
+   "board": {
+    "name": "Motion graphic",
+    "url": "https://www.pinterest.com/mukherjeesouhar/motion-graphic/"
+   },
+   "outbound_link": "https://1.envato.market/c/1310965/275988/4415?u=https://videohive.net/item/backward-story-slideshow/23902330",
+   "domain": "1.envato.market",
+   "image_url": "https://i.pinimg.com/originals/5c/b3/2d/5cb32da39dce3608247ac87a1903ddfc.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/v2/hls/44/c0/e4/44c0e499cdb4e45a7070baa5da8fb341_mobile.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/v2/hls/44/c0/e4/44c0e499cdb4e45a7070baa5da8fb341_mobile.m3u8",
+   "video_mp4": null,
+   "video_w": 1920,
+   "video_h": 1080,
+   "duration_s": 53.2,
+   "saves": null,
+   "created_at": "Wed, 28 Oct 2026 01:44:06 +0000",
+   "dominant_color": "#656b7a",
+   "thumb": "thumbs/12.jpg"
+  },
+  {
+   "n": "13",
+   "id": "1055953443851629771",
+   "pin_url": "https://www.pinterest.com/pin/1055953443851629771/",
+   "title": "Paint Brush Transitions Reveal Pack - After Effects",
+   "description": " ",
+   "creator": {
+    "username": "bestcreativedisplays",
+    "name": "Best Creative Displays",
+    "followers": 5,
+    "profile": "https://www.pinterest.com/bestcreativedisplays/"
+   },
+   "board": {
+    "name": "After Effects | Elements",
+    "url": "https://www.pinterest.com/bestcreativedisplays/after-effects-elements/"
+   },
+   "outbound_link": "https://1.envato.market/c/2023570/275988/4415?u=https://videohive.net/item/paint-brush-transitions-reveal-pack/8079190",
+   "domain": "1.envato.market",
+   "image_url": "https://i.pinimg.com/originals/0f/51/4c/0f514c43bcb2089f284036fc1ec15910.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/a9/12/59/a91259f92bad40ced82e22b3bb55ef29.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/a9/12/59/a91259f92bad40ced82e22b3bb55ef29.m3u8",
+   "video_mp4": null,
+   "video_w": 1920,
+   "video_h": 1080,
+   "duration_s": 62.8,
+   "saves": null,
+   "created_at": "Fri, 24 Dec 2021 19:12:43 +0000",
+   "dominant_color": "#ebd33e",
+   "thumb": "thumbs/13.jpg"
+  },
+  {
+   "n": "14",
+   "id": "877005727502986001",
+   "pin_url": "https://www.pinterest.com/pin/877005727502986001/",
+   "title": null,
+   "description": "How to make Dynamic Flicker effect in After Effects\n-\n\ud83e\udd14 Want the pack?\nComment \u00abPack\u00bb and get the link\n-\n#motionpulse #themotionpulse\n#howto #aftereffects #Editingtutorial #VideoEditing #FilmmakerTools #VideoTransitions #Dynamicflicker",
+   "creator": {
+    "username": "themotionpulse",
+    "name": "MotionPulse",
+    "followers": 496,
+    "profile": "https://www.pinterest.com/themotionpulse/"
+   },
+   "board": {
+    "name": "\u0421\u043e\u0446\u0438\u0430\u043b\u044c\u043d\u044b\u0435 \u0441\u0435\u0442\u0438",
+    "url": "https://www.pinterest.com/themotionpulse/_tpd_social/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DZ0Gi5hzc3t/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/a1/15/9a/a1159a1629f331ddc40a85f7d9baf3e8.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/c3/f6/46/c3f646d82df5c97aa299b514135fccc7.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/c3/f6/46/c3f646d82df5c97aa299b514135fccc7.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 65.4,
+   "saves": null,
+   "created_at": "Sun, 21 Jun 2026 06:39:39 +0000",
+   "dominant_color": "#5c5969",
+   "thumb": "thumbs/14.jpg"
+  },
+  {
+   "n": "15",
+   "id": "1090715603482767751",
+   "pin_url": "https://www.pinterest.com/pin/1090715603482767751/",
+   "title": null,
+   "description": " ",
+   "creator": {
+    "username": "BQ_13",
+    "name": "Coco",
+    "followers": 22944,
+    "profile": "https://www.pinterest.com/BQ_13/"
+   },
+   "board": {
+    "name": "Overlays Packs",
+    "url": "https://www.pinterest.com/BQ_13/overlays-packs/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/3e/c9/a1/3ec9a1b0763e5095651f6bc9aff2d7ad.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/7f/1c/db/7f1cdb532b2a68b5f970f12e6cfe075e.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/7f/1c/db/7f1cdb532b2a68b5f970f12e6cfe075e.m3u8",
+   "video_mp4": null,
+   "video_w": 768,
+   "video_h": 1366,
+   "duration_s": 24.3,
+   "saves": null,
+   "created_at": "Sat, 18 Mar 2023 17:29:53 +0000",
+   "dominant_color": "#020101",
+   "thumb": "thumbs/15.jpg"
+  },
+  {
+   "n": "16",
+   "id": "933230354045109691",
+   "pin_url": "https://www.pinterest.com/pin/933230354045109691/",
+   "title": "Motion inspiration - 2025",
+   "description": "Subscribe to @motiondesigners.2d\n|lucas.edithh\n\nSee more on www.MotionDesigners.Pro\n\n#logoinspiration #motiongraphics #animation #motiondesign #explainervideo #flatdesign #characters #aftereffects #digital2d #digitalanimation #logoanimation #2danimation #adobeaftereffects #motion #motionlovers",
+   "creator": {
+    "username": "motiondesigners2d",
+    "name": "MotionDesigners.Pro",
+    "followers": 7507,
+    "profile": "https://www.pinterest.com/motiondesigners2d/"
+   },
+   "board": {
+    "name": "Best Motion Designers Visual Inspiration",
+    "url": "https://www.pinterest.com/motiondesigners2d/best-motion-designers-visual-inspiration/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/93/6f/0b/936f0b2a904a2ce4681cbd38d2a15119.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/f1/9e/1e/f19e1e0e9ae254fb94f78fb19b95e2fe.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/f1/9e/1e/f19e1e0e9ae254fb94f78fb19b95e2fe.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 37.8,
+   "saves": null,
+   "created_at": "Wed, 05 Nov 2025 21:33:34 +0000",
+   "dominant_color": "#0a0907",
+   "thumb": "thumbs/16.jpg"
+  }
+ ]
+}

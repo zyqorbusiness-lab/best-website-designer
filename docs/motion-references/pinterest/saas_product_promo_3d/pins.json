@@ -1,0 +1,683 @@
+{
+ "topic": "saas product promo 3d",
+ "slug": "saas_product_promo_3d",
+ "scope": "videos",
+ "searched_at": "2026-11-03T05:33:47.953Z",
+ "mode": "signed-in",
+ "count": 16,
+ "videos_downloaded": 4,
+ "pins": [
+  {
+   "n": "01",
+   "id": "127578601939225224",
+   "pin_url": "https://www.pinterest.com/pin/127578601939225224/",
+   "title": "Motion inspiration - Glass",
+   "description": "Subscribe to @motiondesigners.pro\n|dooagency\n\nSee more on www.MotionDesigners.Pro\n\n#3d #vfx #cgi #digitalart #blender #motion #animation #c4d #cinema4d #houdini #aftereffects #motiondesign #ae #render #3dartist #houdinifx #sidefx #3danimation #tracking #octane #render",
+   "creator": {
+    "username": "motiondesignerspro",
+    "name": "MotionDesigners.Pro",
+    "followers": 17705,
+    "profile": "https://www.pinterest.com/motiondesignerspro/"
+   },
+   "board": {
+    "name": "Best Motion Designers Visual Inspiration",
+    "url": "https://www.pinterest.com/motiondesignerspro/best-motion-designers-visual-inspiration/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/ce/4d/32/ce4d323ab32526af3808071aca1ba30a.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/93/b5/41/93b541c2e99ed1ca014bd4e33fc3e31d.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/93/b5/41/93b541c2e99ed1ca014bd4e33fc3e31d.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1918,
+   "duration_s": 22,
+   "saves": null,
+   "created_at": "Mon, 26 Jan 2026 21:33:16 +0000",
+   "dominant_color": "#bcbec9",
+   "thumb": "thumbs/01.jpg",
+   "frames": [
+    {
+     "t": 1.83,
+     "file": "frames/01_1.jpg"
+    },
+    {
+     "t": 5.5,
+     "file": "frames/01_2.jpg"
+    },
+    {
+     "t": 9.17,
+     "file": "frames/01_3.jpg"
+    },
+    {
+     "t": 12.84,
+     "file": "frames/01_4.jpg"
+    },
+    {
+     "t": 16.51,
+     "file": "frames/01_5.jpg"
+    },
+    {
+     "t": 20.18,
+     "file": "frames/01_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 8,
+    "cut_times_s": [
+     3.03,
+     4.97,
+     6.97,
+     9,
+     11.2,
+     15.07,
+     16.8,
+     19.3
+    ],
+    "avg_shot_s": 2.45
+   },
+   "audio": {
+    "integrated_lufs": -15.1
+   },
+   "downloaded": {
+    "resolution": "720,1278",
+    "seconds": 22,
+    "bytes": 1683175,
+    "kept": true
+   },
+   "local_video": "vids/01.mp4"
+  },
+  {
+   "n": "02",
+   "id": "926052742129752155",
+   "pin_url": "https://www.pinterest.com/pin/926052742129752155/",
+   "title": "Perfect Scroll Animation Lighting effect Figma File Webflow Showcasing Your SaaS App",
+   "description": "Category\n\nAgency\n\nApp\n\nArchitecture\n\nArchitecture\n\nB2B\n\nBank\n\nBeauty\n\nE-Commerce\n\nEntertainment\n\nFinance\n\nGame\n\nGym\n\nHotel\n\nPhotography\n\nPortfolio\n\nPortfolio & Agency\n\nSaaS\n\nTechnology\n\nWellness\n\nWellness\nFeatures\n\nE-Commerce\n\nMulti-Layout\n\nCMS\n\nOther Webflow Templates\nOur team combines creativity with technical precision to deliver visually striking, fully responsive designs tailored to elevate your brand.",
+   "creator": {
+    "username": "WebflowOversight",
+    "name": "Over Sight Webflow",
+    "followers": 74,
+    "profile": "https://www.pinterest.com/WebflowOversight/"
+   },
+   "board": {
+    "name": "Web Design Inspiration",
+    "url": "https://www.pinterest.com/WebflowOversight/web-design-inspiration/"
+   },
+   "outbound_link": "https://webflow.com/templates/html/redsun-website-template?ref=pinterest.com-wt",
+   "domain": "webflow.com",
+   "image_url": "https://i.pinimg.com/originals/2d/be/13/2dbe137c1684a1195b74ff7fa75ade18.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/0f/5d/0c/0f5d0cb994507267b3c0f03d05384c93.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/0f/5d/0c/0f5d0cb994507267b3c0f03d05384c93.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 22.6,
+   "saves": null,
+   "created_at": "Wed, 27 Nov 2024 14:55:42 +0000",
+   "dominant_color": "#070605",
+   "thumb": "thumbs/02.jpg",
+   "frames": [
+    {
+     "t": 1.88,
+     "file": "frames/02_1.jpg"
+    },
+    {
+     "t": 5.65,
+     "file": "frames/02_2.jpg"
+    },
+    {
+     "t": 9.41,
+     "file": "frames/02_3.jpg"
+    },
+    {
+     "t": 13.17,
+     "file": "frames/02_4.jpg"
+    },
+    {
+     "t": 16.94,
+     "file": "frames/02_5.jpg"
+    },
+    {
+     "t": 20.7,
+     "file": "frames/02_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 0,
+    "cut_times_s": [],
+    "avg_shot_s": 22.58
+   },
+   "audio": {
+    "integrated_lufs": null,
+    "note": "no audio track"
+   },
+   "downloaded": {
+    "resolution": "720,1280",
+    "seconds": 22.6,
+    "bytes": 1408120,
+    "kept": true
+   },
+   "local_video": "vids/02.mp4"
+  },
+  {
+   "n": "03",
+   "id": "1152077148463396779",
+   "pin_url": "https://www.pinterest.com/pin/1152077148463396779/",
+   "title": "Motion Design for Explainer Video with Clean UI Animation and 3D SaaS Demo Elements",
+   "description": "Explainer video combining motion design, UI animation, and 3D product walkthroughs for SaaS healthcare software. Created to boost clarity and user engagement. \n\nWant a similar video for your product? \nGo to our site and send us your request.",
+   "creator": {
+    "username": "pingmotiondesign",
+    "name": "PING Studio",
+    "followers": 10,
+    "profile": "https://www.pinterest.com/pingmotiondesign/"
+   },
+   "board": {
+    "name": "SaaS Explainers",
+    "url": "https://www.pinterest.com/pingmotiondesign/saas-explainers/"
+   },
+   "outbound_link": "https://theping.me/cases/rivet-explainer-video",
+   "domain": "theping.me",
+   "image_url": "https://i.pinimg.com/originals/16/2b/c1/162bc1bbbc66c8f74392fb3fa447b639.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/91/5d/d4/915dd45adfb3f078a9f5478afdabc58a.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/91/5d/d4/915dd45adfb3f078a9f5478afdabc58a.m3u8",
+   "video_mp4": null,
+   "video_w": 1920,
+   "video_h": 1080,
+   "duration_s": 6.6,
+   "saves": null,
+   "created_at": "Fri, 09 May 2025 10:57:20 +0000",
+   "dominant_color": "#b4b1ce",
+   "thumb": "thumbs/03.jpg",
+   "frames": [
+    {
+     "t": 0.55,
+     "file": "frames/03_1.jpg"
+    },
+    {
+     "t": 1.65,
+     "file": "frames/03_2.jpg"
+    },
+    {
+     "t": 2.75,
+     "file": "frames/03_3.jpg"
+    },
+    {
+     "t": 3.85,
+     "file": "frames/03_4.jpg"
+    },
+    {
+     "t": 4.95,
+     "file": "frames/03_5.jpg"
+    },
+    {
+     "t": 6.05,
+     "file": "frames/03_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 0,
+    "cut_times_s": [],
+    "avg_shot_s": 6.59
+   },
+   "audio": {
+    "integrated_lufs": -70
+   },
+   "downloaded": {
+    "resolution": "736,414",
+    "seconds": 6.6,
+    "bytes": 521737,
+    "kept": true
+   },
+   "local_video": "vids/03.mp4"
+  },
+  {
+   "n": "04",
+   "id": "492649952344602",
+   "pin_url": "https://www.pinterest.com/pin/492649952344602/",
+   "title": null,
+   "description": " ",
+   "creator": {
+    "username": "zsomborsnagy",
+    "name": "Zsombor Nagy",
+    "followers": 296,
+    "profile": "https://www.pinterest.com/zsomborsnagy/"
+   },
+   "board": {
+    "name": "3D Mograph",
+    "url": "https://www.pinterest.com/zsomborsnagy/3d-mograph/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/25/82/77/25827775dc8ec45d0ee093954f97ca78.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/e9/26/7b/e9267b8e087bacdd1097880063fb4be2.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/e9/26/7b/e9267b8e087bacdd1097880063fb4be2.m3u8",
+   "video_mp4": null,
+   "video_w": 1920,
+   "video_h": 1080,
+   "duration_s": 36.6,
+   "saves": null,
+   "created_at": "Thu, 28 Dec 2023 14:02:53 +0000",
+   "dominant_color": "#7392f9",
+   "thumb": "thumbs/04.jpg",
+   "frames": [
+    {
+     "t": 2.51,
+     "file": "frames/04_1.jpg"
+    },
+    {
+     "t": 7.54,
+     "file": "frames/04_2.jpg"
+    },
+    {
+     "t": 12.57,
+     "file": "frames/04_3.jpg"
+    },
+    {
+     "t": 17.59,
+     "file": "frames/04_4.jpg"
+    },
+    {
+     "t": 22.62,
+     "file": "frames/04_5.jpg"
+    },
+    {
+     "t": 27.65,
+     "file": "frames/04_6.jpg"
+    }
+   ],
+   "pacing": {
+    "hard_cuts": 1,
+    "cut_times_s": [
+     14.16
+    ],
+    "avg_shot_s": 15.08
+   },
+   "audio": {
+    "integrated_lufs": -15.4
+   },
+   "downloaded": {
+    "resolution": "736,414",
+    "seconds": 30.2,
+    "bytes": 2220340,
+    "kept": true
+   },
+   "local_video": "vids/04.mp4"
+  },
+  {
+   "n": "05",
+   "id": "774124930781997",
+   "pin_url": "https://www.pinterest.com/pin/774124930781997/",
+   "title": null,
+   "description": "Sellix - UI & 3D for web3 eCommerce platform by @rennesis See more designs like these in our bio link. . . . #layers #uidesign #uxdesign #uiux #design #userinterface #appdesign",
+   "creator": {
+    "username": "kolangal06",
+    "name": "Santhi Rajendran",
+    "followers": 843,
+    "profile": "https://www.pinterest.com/kolangal06/"
+   },
+   "board": {
+    "name": "framer template moodboard",
+    "url": "https://www.pinterest.com/kolangal06/framer-template-moodboard/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/C_m1WhXBszq/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/f2/ee/b3/f2eeb33c51355f52df8308aa33a9280d.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/7d/c8/8d/7dc88d496e936db80ee8979924953a51.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/7d/c8/8d/7dc88d496e936db80ee8979924953a51.m3u8",
+   "video_mp4": null,
+   "video_w": 960,
+   "video_h": 720,
+   "duration_s": 35.1,
+   "saves": null,
+   "created_at": "Sat, 24 May 2025 08:14:04 +0000",
+   "dominant_color": "#1b152a",
+   "thumb": "thumbs/05.jpg"
+  },
+  {
+   "n": "06",
+   "id": "816629344972222825",
+   "pin_url": "https://www.pinterest.com/pin/816629344972222825/",
+   "title": null,
+   "description": "Designing a 3D carrusel on Spline Hana!\nYou can project your layers into 3D while maintaining all the animations! Also any change you made in the source layer is updated in realtime on the 3D projection.",
+   "creator": {
+    "username": "splinetool",
+    "name": "Spline",
+    "followers": 4830,
+    "profile": "https://www.pinterest.com/splinetool/"
+   },
+   "board": {
+    "name": "Quick Saves",
+    "url": "https://www.pinterest.com/splinetool/_quick_saves/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DNYMisDgwaF/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/81/8c/cd/818ccd46c973ba76ea11a7839bb3f36f.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/ef/01/3e/ef013e4ebdcf6b21fc90e8517f760144.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/ef/01/3e/ef013e4ebdcf6b21fc90e8517f760144.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 34.2,
+   "saves": null,
+   "created_at": "Fri, 15 Aug 2025 22:09:52 +0000",
+   "dominant_color": "#b3b0cd",
+   "thumb": "thumbs/06.jpg"
+  },
+  {
+   "n": "07",
+   "id": "997477017477596607",
+   "pin_url": "https://www.pinterest.com/pin/997477017477596607/",
+   "title": null,
+   "description": "Control your emotions = stability and happiness \n\n#forex #fx #trading #trader",
+   "creator": {
+    "username": "R3_Fund",
+    "name": "R3_FUND",
+    "followers": 24,
+    "profile": "https://www.pinterest.com/R3_Fund/"
+   },
+   "board": {
+    "name": "\u0421\u043e\u0446\u0438\u0430\u043b\u044c\u043d\u044b\u0435 \u0441\u0435\u0442\u0438",
+    "url": "https://www.pinterest.com/R3_Fund/_tpd_social/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DFUdQZ6PHTP/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/e1/db/f0/e1dbf0839994d9de83fa913c8f48cb46.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/fa/0f/c5/fa0fc5b1e3ce0229a929c0707f12fd31.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/fa/0f/c5/fa0fc5b1e3ce0229a929c0707f12fd31.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1278,
+   "duration_s": 31.6,
+   "saves": null,
+   "created_at": "Thu, 17 Jul 2025 12:11:29 +0000",
+   "dominant_color": "#030104",
+   "thumb": "thumbs/07.jpg"
+  },
+  {
+   "n": "08",
+   "id": "933230354043913635",
+   "pin_url": "https://www.pinterest.com/pin/933230354043913635/",
+   "title": "Motion inspiration - Frames",
+   "description": "Subscribe to @motiondesigners.2d\n|imran__visuals\n\nSee more on www.MotionDesigners.Pro\n\n#logoinspiration #motiongraphics #animation #motiondesign #explainervideo #flatdesign #characters #aftereffects #digital2d #digitalanimation #logoanimation #2danimation #adobeaftereffects #motion #motionlovers",
+   "creator": {
+    "username": "motiondesigners2d",
+    "name": "MotionDesigners.Pro",
+    "followers": 7507,
+    "profile": "https://www.pinterest.com/motiondesigners2d/"
+   },
+   "board": {
+    "name": "Best Motion Designers Visual Inspiration",
+    "url": "https://www.pinterest.com/motiondesigners2d/best-motion-designers-visual-inspiration/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/d5/de/da/d5dedade6bd2f031d459bb66a0377230.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/91/55/ec/9155ec81841c2e4acc20a249038e3e32.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/91/55/ec/9155ec81841c2e4acc20a249038e3e32.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 17.8,
+   "saves": null,
+   "created_at": "Thu, 02 Oct 2025 20:32:41 +0000",
+   "dominant_color": "#fcf6f0",
+   "thumb": "thumbs/08.jpg"
+  },
+  {
+   "n": "09",
+   "id": "933230354041679411",
+   "pin_url": "https://www.pinterest.com/pin/933230354041679411/",
+   "title": "Motion inspiration - Moolah",
+   "description": "Subscribe to @motiondesigners.2d\n|\n\nSee more on www.MotionDesigners.Pro\n\n#logoinspiration #motiongraphics #animation #motiondesign #explainervideo #flatdesign #characters #aftereffects #digital2d #digitalanimation #logoanimation #2danimation #adobeaftereffects #motion #motionlovers",
+   "creator": {
+    "username": "motiondesigners2d",
+    "name": "MotionDesigners.Pro",
+    "followers": 7507,
+    "profile": "https://www.pinterest.com/motiondesigners2d/"
+   },
+   "board": {
+    "name": "Best Motion Designers Visual Inspiration",
+    "url": "https://www.pinterest.com/motiondesigners2d/best-motion-designers-visual-inspiration/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/6f/2a/8c/6f2a8c9c62a24088108678e331cf8742.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/6e/90/b3/6e90b3ba4332515eb76b713d719cf550.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/6e/90/b3/6e90b3ba4332515eb76b713d719cf550.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 15.8,
+   "saves": null,
+   "created_at": "Mon, 04 Aug 2025 11:32:56 +0000",
+   "dominant_color": "#fe9bce",
+   "thumb": "thumbs/09.jpg"
+  },
+  {
+   "n": "10",
+   "id": "127578601938953096",
+   "pin_url": "https://www.pinterest.com/pin/127578601938953096/",
+   "title": "Motion inspiration - Sony Ericsson",
+   "description": "Subscribe to @motiondesigners.pro\n|sony\n\nSee more on www.MotionDesigners.Pro\n\n#3d #vfx #cgi #digitalart #blender #motion #animation #c4d #cinema4d #houdini #aftereffects #motiondesign #ae #render #3dartist #houdinifx #sidefx #3danimation #tracking #octane #render",
+   "creator": {
+    "username": "motiondesignerspro",
+    "name": "MotionDesigners.Pro",
+    "followers": 17705,
+    "profile": "https://www.pinterest.com/motiondesignerspro/"
+   },
+   "board": {
+    "name": "Best Motion Designers Visual Inspiration",
+    "url": "https://www.pinterest.com/motiondesignerspro/best-motion-designers-visual-inspiration/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/16/38/29/163829f83017115e192a666b1a5201d9.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/45/32/fb/4532fbc38cbe71833f64c047b07753d2.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/45/32/fb/4532fbc38cbe71833f64c047b07753d2.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 10.2,
+   "saves": null,
+   "created_at": "Mon, 20 Oct 2025 11:33:31 +0000",
+   "dominant_color": "#3c8364",
+   "thumb": "thumbs/10.jpg"
+  },
+  {
+   "n": "11",
+   "id": "1086986060078349776",
+   "pin_url": "https://www.pinterest.com/pin/1086986060078349776/",
+   "title": null,
+   "description": "SaaS Explainer Style \u2013 SpatialFlow UI\n\nEmma App After Effects Project File (AEP)\nBuilt with 3D camera movement, depth layering, and smooth UI animation.\n\nIncludes:\nFloating iPhone mockup\nClean fintech dashboard transitions\nSoft gradient lighting\nOrganized, reusable composition structure\n\nPerfect for SaaS demos, fintech promos, and modern product explainers.\n\nAvailable now on EarnEdits \ud83c\udfac\n\n#AfterEffects #SaaS #MotionDesign",
+   "creator": {
+    "username": "EarnEdits",
+    "name": "EarnEdits.com",
+    "followers": 1057,
+    "profile": "https://www.pinterest.com/EarnEdits/"
+   },
+   "board": {
+    "name": "Social",
+    "url": "https://www.pinterest.com/EarnEdits/_tpd_social/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DVbUt7JCH78/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/43/e0/d1/43e0d17fcc3b664af056c26001a0716c.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/26/91/9a/26919af7f7c79d9a40e585fc9c4ea7e2.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/26/91/9a/26919af7f7c79d9a40e585fc9c4ea7e2.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 51.6,
+   "saves": null,
+   "created_at": "Wed, 04 Mar 2026 01:21:30 +0000",
+   "dominant_color": "#0f1e11",
+   "thumb": "thumbs/11.jpg"
+  },
+  {
+   "n": "12",
+   "id": "688769336769270909",
+   "pin_url": "https://www.pinterest.com/pin/688769336769270909/",
+   "title": "Acuity Studios",
+   "description": "Acuity is a premium creative agency featuring world-class industry professionals with an unmatched creative flair in the mobile industry. As Acuity Studios' lead motion designer, I was commissioned to create a promotional video that would leave a lasting impression on anyone who saw it. In order for this to work, I needed to develop a set of assets which had connotations around Acuity's brand, which I would use throughout the duration of the promotional video.",
+   "creator": {
+    "username": "wlroo",
+    "name": "Will Taylor",
+    "followers": 634,
+    "profile": "https://www.pinterest.com/wlroo/"
+   },
+   "board": {
+    "name": "My Work",
+    "url": "https://www.pinterest.com/wlroo/my-work/"
+   },
+   "outbound_link": "https://www.behance.net/gallery/110084511/Acuity-Studios",
+   "domain": "behance.net",
+   "image_url": "https://i.pinimg.com/originals/9f/25/7f/9f257fc68898e34cb19bde0505b9d092.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/0a/c9/d4/0ac9d4620f7d7bd4db9ecec030f516eb.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/0a/c9/d4/0ac9d4620f7d7bd4db9ecec030f516eb.m3u8",
+   "video_mp4": null,
+   "video_w": 1920,
+   "video_h": 1080,
+   "duration_s": 25,
+   "saves": null,
+   "created_at": "Thu, 23 Dec 2021 03:31:54 +0000",
+   "dominant_color": "#402d6d",
+   "thumb": "thumbs/12.jpg"
+  },
+  {
+   "n": "13",
+   "id": "1008595279068679614",
+   "pin_url": "https://www.pinterest.com/pin/1008595279068679614/",
+   "title": null,
+   "description": "Ai App Builder Product Demo Video \ud83d\udd25\n\nNeed a similar a video? Just send us a message and get a quick estimate! \n\n#motiondesigner #animation #2danimation #saasmarketing #motiondesign",
+   "creator": {
+    "username": "zeliosagency",
+    "name": "Zelios",
+    "followers": 873,
+    "profile": "https://www.pinterest.com/zeliosagency/"
+   },
+   "board": {
+    "name": "\u0421\u043e\u0446\u0456\u0430\u043b\u044c\u043d\u0456 \u043c\u0435\u0440\u0435\u0436\u0456",
+    "url": "https://www.pinterest.com/zeliosagency/_tpd_social/"
+   },
+   "outbound_link": "https://www.instagram.com/reel/DbYiOiugY90/",
+   "domain": "instagram.com",
+   "image_url": "https://i.pinimg.com/originals/43/7e/b0/437eb0c4288351e0842751e136ca5cf0.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/e9/69/f6/e969f6a466c8c2adcdc7951306a6be57.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/e9/69/f6/e969f6a466c8c2adcdc7951306a6be57.m3u8",
+   "video_mp4": null,
+   "video_w": 720,
+   "video_h": 1280,
+   "duration_s": 54,
+   "saves": null,
+   "created_at": "Thu, 30 Jul 2026 20:10:18 +0000",
+   "dominant_color": "#2a2c27",
+   "thumb": "thumbs/13.jpg"
+  },
+  {
+   "n": "14",
+   "id": "933230354048290966",
+   "pin_url": "https://www.pinterest.com/pin/933230354048290966/",
+   "title": "Motion inspiration - Orange",
+   "description": "Subscribe to @motiondesigners.2d\n|sami.visualz\n\nSee more on www.MotionDesigners.Pro\n\n#logoinspiration #motiongraphics #animation #motiondesign #explainervideo #flatdesign #characters #aftereffects #digital2d #digitalanimation #logoanimation #2danimation #adobeaftereffects #motion #motionlovers",
+   "creator": {
+    "username": "motiondesigners2d",
+    "name": "MotionDesigners.Pro",
+    "followers": 7507,
+    "profile": "https://www.pinterest.com/motiondesigners2d/"
+   },
+   "board": {
+    "name": "Best Motion Designers Visual Inspiration",
+    "url": "https://www.pinterest.com/motiondesigners2d/best-motion-designers-visual-inspiration/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/82/fc/b8/82fcb86e5d6687fa3985708903f6b071.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/28/87/d7/2887d76438379a8ded46df7158fc7d96.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/28/87/d7/2887d76438379a8ded46df7158fc7d96.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1918,
+   "duration_s": 9.5,
+   "saves": null,
+   "created_at": "Mon, 26 Jan 2026 12:32:22 +0000",
+   "dominant_color": "#504033",
+   "thumb": "thumbs/14.jpg"
+  },
+  {
+   "n": "15",
+   "id": "933230354044647413",
+   "pin_url": "https://www.pinterest.com/pin/933230354044647413/",
+   "title": "Motion inspiration - Clip",
+   "description": "Subscribe to @motiondesigners.2d\n|clipmasters.uk\n\nSee more on www.MotionDesigners.Pro\n\n#logoinspiration #motiongraphics #animation #motiondesign #explainervideo #flatdesign #characters #aftereffects #digital2d #digitalanimation #logoanimation #2danimation #adobeaftereffects #motion #motionlovers",
+   "creator": {
+    "username": "motiondesigners2d",
+    "name": "MotionDesigners.Pro",
+    "followers": 7507,
+    "profile": "https://www.pinterest.com/motiondesigners2d/"
+   },
+   "board": {
+    "name": "Best Motion Designers Visual Inspiration",
+    "url": "https://www.pinterest.com/motiondesigners2d/best-motion-designers-visual-inspiration/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/a3/fd/fd/a3fdfdc7e07fa20086e48b5c6ba3783a.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/bd/74/f5/bd74f5cb1ccd24ffd3f26a5ff6139ac9.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/bd/74/f5/bd74f5cb1ccd24ffd3f26a5ff6139ac9.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1920,
+   "duration_s": 30.3,
+   "saves": null,
+   "created_at": "Thu, 23 Oct 2025 20:32:29 +0000",
+   "dominant_color": "#273b38",
+   "thumb": "thumbs/15.jpg"
+  },
+  {
+   "n": "16",
+   "id": "933230354048220904",
+   "pin_url": "https://www.pinterest.com/pin/933230354048220904/",
+   "title": "Motion inspiration - Clip",
+   "description": "Subscribe to @motiondesigners.2d\n|clipmasters.uk\n\nSee more on www.MotionDesigners.Pro\n\n#logoinspiration #motiongraphics #animation #motiondesign #explainervideo #flatdesign #characters #aftereffects #digital2d #digitalanimation #logoanimation #2danimation #adobeaftereffects #motion #motionlovers",
+   "creator": {
+    "username": "motiondesigners2d",
+    "name": "MotionDesigners.Pro",
+    "followers": 7507,
+    "profile": "https://www.pinterest.com/motiondesigners2d/"
+   },
+   "board": {
+    "name": "Best Motion Designers Visual Inspiration",
+    "url": "https://www.pinterest.com/motiondesigners2d/best-motion-designers-visual-inspiration/"
+   },
+   "outbound_link": null,
+   "domain": "Uploaded by user",
+   "image_url": "https://i.pinimg.com/originals/f5/41/ea/f541ea1ad9f3a30db6f09d78c201f0da.jpg",
+   "is_video": true,
+   "video_url": "https://v1.pinimg.com/videos/iht/hls/95/ba/e2/95bae27226625b9332c3ac6ccb06e9df.m3u8",
+   "video_hls": "https://v1.pinimg.com/videos/iht/hls/95/ba/e2/95bae27226625b9332c3ac6ccb06e9df.m3u8",
+   "video_mp4": null,
+   "video_w": 1080,
+   "video_h": 1918,
+   "duration_s": 32.1,
+   "saves": null,
+   "created_at": "Sat, 24 Jan 2026 21:32:40 +0000",
+   "dominant_color": "#d5dbe9",
+   "thumb": "thumbs/16.jpg"
+  }
+ ]
+}
