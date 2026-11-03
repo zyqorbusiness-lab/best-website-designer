@@ -69,14 +69,14 @@
  "banned": {
   "hue_ranges_deg": [
    [
-    185,
-    300
+    175,
+    320
    ]
   ],
   "min_saturation": 0.45,
   "min_value": 0.35,
   "max_frame_share": 0.06,
-  "why": "purple/blue/cyan neon = the generic 'AI' look Sujon rejected (Nov 3, 2026)"
+  "why": "purple / violet / blue neon / cyan glow = the generic 'AI' look Sujon banned (Nov 3, 2026: 'Perpel colour aur a sab ai genetic colour use mat kato'). v5.2 widened the range to 175-320 deg so cyan glow and magenta-purple are caught too."
  },
  "palettes": {
   "warm_paper": {
