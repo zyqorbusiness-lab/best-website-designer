@@ -1,0 +1,1 @@
+Put the TTF fonts here (Archivo Black, Bricolage Grotesque 800, Inter 700, Instrument Serif Italic, Space Grotesk 700 — all SIL OFL on Google Fonts). File names expected by the scripts: ArchivoBlack-400.ttf, BricolageGrotesque-800.ttf, Inter-700.ttf, InstrumentSerif-400-italic.ttf, SpaceGrotesk-700.ttf.

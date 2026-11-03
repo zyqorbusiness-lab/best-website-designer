@@ -27,6 +27,20 @@ Sujon, 30 Oct 2026: teach an AI agent, through many detailed skills, exactly how
 | [`award-site-teardown-method`](award-site-teardown-method/) | How to study Awwwards / FWA / CSSDA sites and extract techniques, not content: the teardown card, DevTools recipes (performance, network, layers), motion timing by frame, what to take and never take. `teardown.mjs` reads a live page's stack. |
 | [`client-site-delivery-workflow`](client-site-delivery-workflow/) | Brief → build → QA → deploy (Vercel / sites.tab.bot) → handover, for client and concept sites: intake questions, scope, staging, evidence, Search Console, credits, handover pack. `brief.mjs`, `handover.mjs`. |
 
+
+## Video, motion graphics and sound (6 skills, added 3 Nov 2026)
+
+Sujon, 3 Nov 2026: the HTML/CSS "3D" promos looked cheap next to his reference reels (real 3D + After Effects). These skills replace it with real 3D from Blender, compositing in EffectCraft (the free After Effects alternative from ArtCraft he picked), Pinterest references measured into numbers, and scripted sound design. Order: research → plan → Blender → EffectCraft → sound → QA.
+
+| Skill | What it teaches |
+|---|---|
+| [`video-editing-reels`](video-editing-reels/) | **Start here for video.** Reference-first workflow, beat plans for the 3 formats he studies (3D SaaS promo, soft-3D explainer, framed talking head), pacing, transitions, captions, honesty, and the side-by-side-with-the-reference QA. |
+| [`pinterest-reference-research`](pinterest-reference-research/) | Collect the top video pins for a topic and measure them (cuts, zoom %, roll °, blur frames, colours, LUFS, hits/s) into STYLE.md + a combined **PINTEREST_STYLE_BIBLE.md** (6 topics × 16 pins, included). |
+| [`motion-graphics-blender`](motion-graphics-blender/) | Real 3D from Python, headless on a CPU: glossy extruded 3D type, a tilted device with a screen recording and a camera that zooms to every click, a soft-3D floating world, and a full 16 s SaaS promo example. Render settings measured (Cycles ~4 s/frame at 75 %). |
+| [`effectcraft-compositing`](effectcraft-compositing/) | After-Effects-style comps from JSX scripts with `effectcraft-cli`: gradient world, glow, light sweep, zoom-through, whip, RGB split, flash, light leak, shake, captions — plus the ffmpeg fallback for each. |
+| [`sound-design`](sound-design/) | Which sound on which visual event, lead times, levels, 2.4–2.9 hits/s for promos, music drop sync, ducking, −14 LUFS / −1 dBTP; `sfx_mix.py`, `master_mix.sh`, `clean_voice.sh`. |
+| [`artcraft-tools`](artcraft-tools/) | The 15 free ArtCraft apps (PhotoCraft … Craft Anything): what each does, which Adobe/Office app it replaces, maturity as of Nov 2026, and where it fits. |
+
 ## Process and delivery (3 skills, added 30 Oct 2026)
 
 Sujon, 30 Oct 2026: before any website, a full spec and storyboard first; real assets only; a clean handover. These three run around the design skills above: one before the build, one during it, one at the client end.
