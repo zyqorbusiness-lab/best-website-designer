@@ -1,0 +1,75 @@
+ZYQOR MOTION KIT v5.2 — MASTER PROMPT (copy everything below into any AI / editor agent)
+=====================================================================================
+
+FILL IN:
+  {topic}      = ______________________________
+  {script/VO}  = ______________________________  (exact words, or "write it")
+  {duration}   = ____ s   (reels: 20-30 s)
+  {language}   = ______   (captions follow the voice language)
+  {reference}  = ______   (main reference reel link; default ref8 https://www.instagram.com/reel/DfR63QgTvNj/)
+
+You are editing a premium Instagram reel for Zyqor Studio with the Zyqor Motion Kit v5.2 (this folder).
+Read AGENT_START_HERE.md fully before anything else. Work in projects/{topic}/. Do the steps IN ORDER.
+Each step ends with a GATE: do not start the next step until the gate file exists and is correct.
+
+1. PINTEREST FIRST — FOR EVERYTHING
+   a. Search Pinterest for {topic} references (reels in the style of {reference}) and, separately, for each
+      category: MUSIC, SFX, B-ROLL, SUBJECT, EFFECTS (light leaks, grain, transitions, overlays), BACKGROUND.
+      Search terms are in the PDF page "Pinterest for everything".
+   b. Download what you will use straight from the pins, best quality first:
+      python3 kit/pin_download.py <pin_url> --cat <music|sfx|broll|subject|effect|background> \
+          --project projects/{topic} --breakdown refs_breakdown/<ref>/breakdown.json [--name whoosh] [--clip A-B]
+   GATE 1: projects/{topic}/assets/pinterest/assets_log.json lists at least one pin for EACH of the 6 categories.
+
+2. 60 FPS BREAKDOWN OF EVERY REFERENCE
+   python3 kit/ref_breakdown.py <reference link or file> -o refs_breakdown/<ref>
+   Open EVERY sheets/sec_NNN.jpg (60 frames = 1 second). For EVERY second fill in breakdown.json:
+   effect, animation, easing, text, font, text_colour, glow, background, subject, broll, transition, camera, sfx, pin_ref.
+   Write "summary" (what to copy). Note every purple/blue/cyan item the tool flags as SKIP.
+   GATE 2: python3 kit/ref_breakdown.py check refs_breakdown/<ref>  shows filled_seconds = seconds.
+
+3. MAKE IT OURS — NEVER COPY 1:1
+   Keep the reference's structure and timing. Change at least 3 visible things (palette preset, transition idea,
+   text treatment / layout, b-roll angle, set, sound) and write them in breakdown.json "make_it_ours".
+   GATE 3: make_it_ours has >= 3 entries.
+
+4. EDIT — projects/{topic}/shots.json → python3 kit/ec_reel.py shots.json
+   - Text, captions, titles and effects in EffectCraft (zq_lib.jsx). NEVER Blender for text or effects;
+     Blender only for a real 3D object, rendered as a plate.
+   - ref8 kinetic captions: 1-3 words on screen (max 4 per line), big (>= 90 px), timed to the voice,
+     base ink #141414 or off-white #FAF7F2 + soft shadow, ONE gradient keyword ("s":"g", a preset from
+     zq_config.json) + ONE italic serif accent word ("s":"i"). One highlight style per video. Two font families
+     only (Inter + Instrument Serif Italic).
+   - Glow OFF. At most one subtle glow on one object per scene; never on captions, cards or backgrounds.
+   - Premium textured background (paper, studio sweep, photo/Pinterest plate) that always moves 4-5 %; never flat black.
+   - Warm grade + grain 0.28 + light vignette.
+   - Something moves before 0.5 s; first word by 0.3 s; nothing still for more than ~1 s; no blank frames.
+   - Cards pop 0->110->100 % with motion blur and float; cursor taps with clicks; scene changes are moves
+     (push, zoom through a screen, warm spin-blur, light-leak burn, glitch with WARM offsets). Mix transitions.
+   - Premium sfx from your Pinterest sounds (ZQ_SFX_DIR=projects/{topic}/assets/pinterest/sfx): pop per card,
+     click per tap, whoosh (3-5 frames early) + low hit per transition, riser into the payoff; 1-3 per second.
+   - Voice on top, music ducked ~10 dB.
+   - Render stills first: --frames-only 1,3,5 and look at them.
+
+5. COLOUR BAN (everywhere, no exceptions)
+   NO purple, violet, purple-blue neon gradients, blue neon, cyan glow, glow-on-black, stock "AI" palettes.
+   (Hue 175-320 deg at saturation >= 45 % is blocked by the QC gate.)
+
+6. EXPORT
+   1080x1920, 30 fps, H.264 CRF 19 (max 9 Mb/s), AAC 192k, +faststart. Captions inside the 90 % title-safe area.
+   -14 LUFS integrated, true peak <= -1 dBTP. WhatsApp copy <= 16 MB.
+
+7. CHECK WHAT YOU MADE
+   a. Contact sheet of the whole render (or run ref_breakdown.py on your own output) and LOOK at every second:
+      any AI colour, glow, blank/dead frame, text outside safe area, cheap figure? Fix it.
+   b. Listen: speech-to-text of the render matches {script/VO}; sound effects audible but under the voice.
+   c. QC gate: python3 kit/qc_v5.py --video out.mp4 --spec projects/{topic}/shots.json --jsx projects/{topic}/build/reel.jsx
+      shots.json must list "refs", "breakdowns" and (here or in breakdown.json) "make_it_ours".
+   GATE 7: QC says PASS (F1-F13). If anything FAILS, fix and re-render. Never send a failed render.
+
+8. OUTPUT (report all of these)
+   - projects/{topic}/out.mp4 (+ _wa.mp4 if over 16 MB) and its contact sheet
+   - refs_breakdown/<ref>/ (sheets, motion_graph.png, breakdown.json/.md)
+   - assets_log.json (every Pinterest pin used, by category)
+   - the make_it_ours list, the QC report (build/qc_report.json), loudness + size
+   - anything you could not do, said plainly.
