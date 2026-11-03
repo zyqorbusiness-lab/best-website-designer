@@ -1,0 +1,1 @@
+ref8 60 fps breakdown (every second filled). The per-second sheets are images of a third-party reel, so they live in the Zyqor Motion Kit v5.2 zip, not in this public repo. Re-create them: python3 ../../ref_breakdown.py https://www.instagram.com/reel/DfR63QgTvNj/ -o . (needs yt-dlp; Instagram may need --ytdlp-arg=--cookies-from-browser --ytdlp-arg=chrome).
