@@ -51,15 +51,24 @@ def page_info(url):
     if not requests: return info
     try: h = requests.get(url, headers=UA, timeout=20).text
     except Exception as e: info["page_error"] = str(e)[:120]; return info
-    def og(p):
-        m = re.search(r'<meta[^>]+property="og:%s"[^>]+content="([^"]*)"' % p, h); return m.group(1) if m else ""
+    def og(p):  # attribute order varies (content= can come before property=)
+        m = re.search(r'<meta[^>]+property="og:%s"[^>]+content="([^"]*)"' % p, h) or re.search(r'<meta[^>]+content="([^"]*)"[^>]+property="og:%s"' % p, h)
+        return m.group(1) if m else ""
     info["title"] = og("title") or og("description")
     mp4 = re.findall(r'https://v1\.pinimg\.com/videos/[^"\\ ]+?\.mp4', h)
     hls = re.findall(r'https://v1\.pinimg\.com/videos/[^"\\ ]+?\.m3u8', h)
     img = re.findall(r'https://i\.pinimg\.com/originals/[^"\\ ]+?\.(?:jpg|png|gif|webp)', h)
     info["video_mp4"] = sorted(set(mp4), key=lambda u: ("720" not in u, "V_EXP" in u))[:1]
     info["video_hls"] = list(dict.fromkeys(hls))[:1]
-    info["image"] = list(dict.fromkeys(img))[:1] or ([og("image")] if og("image") else [])
+    # the pin's OWN image is og:image (736x) -> same hash under /originals/. The first /originals/ URL in the HTML is often
+    # another pin or an avatar (face-lock v4, Nov 3 2026: a 256 px avatar was saved instead of the 736x1318 photo).
+    oi = og("image"); own = []
+    if oi:
+        orig = re.sub(r"i\.pinimg\.com/\d+x/", "i.pinimg.com/originals/", oi)
+        try: ok = requests.head(orig, headers=UA, timeout=15).status_code == 200
+        except Exception: ok = False
+        own = [orig] if ok else [oi]
+    info["image"] = own or list(dict.fromkeys(img))[:1]
     m = re.search(r'"link":"(https?:[^"]+)"', h); info["outbound"] = m.group(1).encode().decode("unicode_escape") if m and "pinterest" not in m.group(1) else ""
     m = re.search(r'"username":"([^"]+)"', h); info["creator"] = m.group(1) if m else ""
     return info

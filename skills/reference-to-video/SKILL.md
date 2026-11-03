@@ -3,7 +3,7 @@ name: reference-to-video
 description: (v5.2) Make a premium vertical reel from any reference or topic with the Zyqor Motion Kit — Pinterest first for everything (refs + actual files), 60 fps frame breakdown of the reference, make it ours (3+ changes), EffectCraft text/effects (never Blender text), ref8 kinetic captions, glow off, no AI colours, QC gate F1-F13.
 when_to_use: "make a video like this reel", "copy this style", "edit my reel", "use this reference", any short vertical video
 license: MIT (text + code). References stay links; downloaded pin media stays in the user's project, never in this repo.
-version: 5.1.0
+version: 5.2.0
 ---
 
 # Reference → video (Zyqor Motion Kit v5.2)
@@ -35,5 +35,20 @@ QC: F1 refs · F2 glow · F3/F4 gradient system + presets · F5 banned colour on
 logged · F8 loudness · F9 format · F10 safe area · F11 60 fps breakdown filled · F12 Pinterest pin per category · F13 ≥ 3 changes.
 Links to every reference used so far: `kit/REFERENCE_LINKS.html`. Worked example: `kit/examples/ref8_breakdown/breakdown.md`.
 
-Changelog: 5.1.0 (Nov 3 2026, kit v5.2) Step 0 = Pinterest for everything + 60 fps breakdown + make-it-ours; new
+
+Lessons from the face-lock v4 reel (Nov 3 2026, `recipes/08_face_lock_real_photos_chat_ui.md`):
+- Real photo faces beat drawn ones: a Pinterest face-consistency reel gave the reference + "same face" results; pull stills
+  from the ORIGINAL post the pin points to (`yt-dlp -S res:1920` on the Instagram link = 1080x1920; the pin HLS was 720p).
+- Never a blank or blurry frame at a cut: the incoming shot's main element is ON screen at the cut (no 0-scale pop at T),
+  pushes are position offsets with motion blur OFF on the pushed layers, outgoing slides 240-260 px up in 0.2 s.
+- EffectCraft: a video plate needs `layer.startTime = shot start` (footage otherwise starts at comp 0 and shows the wrong
+  part or vanishes); parenting a KEYFRAMED layer does not move it - push with an additive position expression instead.
+- Captions on light paper: `ember` keywords wash out; `clay` reads. Keep one gradient preset for captions.
+- No phone frame needed: crisp HTML chat cards (2x, headless Chrome, no logos) floating on the paper set; states swap on the
+  voice's word times (typing, send, result), same position, so it reads as a live screen.
+- Pinterest sfx: "SFX pack" demo pins carry clean isolated hits - find them with an energy envelope + spectrogram, then
+  `--clip A-B --name whoosh|pop2|click|riser|impact|bass|typing|ding` so ec_reel's sfx names resolve to your pins.
+- Paper-tear transition pins: most frames have a blue key area - scan for clean frames and tone them warm for a plate.
+
+Changelog: 5.2.0 (Nov 3 2026) face-lock v4 lessons + pin_download.py takes the pin's own original image. 5.1.0 (Nov 3 2026, kit v5.2) Step 0 = Pinterest for everything + 60 fps breakdown + make-it-ours; new
 ref_breakdown.py, pin_download.py, QC F11-F13, F7 = source logged; banned hue 175-320°; skill made lean. 5.0.0 v5 rules.
