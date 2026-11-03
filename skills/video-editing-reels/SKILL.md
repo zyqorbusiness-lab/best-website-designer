@@ -103,3 +103,12 @@ Rule: real 3D → **Blender**. Anything from data, timing, sound or export → *
 | Framed card, panels, masks | EffectCraft | layers, mattes, shadows | `build_ref3.py, build_ref4.py` |
 | 3D layers + camera (2.5D) | EffectCraft | fast, no re-render of 3D | `comp_ref1.jsx, comp_ref5.jsx` |
 | Final composite | EffectCraft | Blender + 2D + video in one comp | `every template` |
+
+## Face-lock v3 lessons (Nov 3 2026, v5 pipeline, QC PASS)
+- App demos: show a real-looking screen recording (code-built UI, typing synced to the VO, keyboard, taps), zoomed in while
+  typing, captions above the phone, never on top of the app header. See reference-to-video `kit/templates/ui_screen_v5/`.
+- Every 0.4-0.8 s something new lands (a card, a chip, a tap, a caption word); during long UI stretches pop keyword chips
+  beside the phone.
+- No near-blank frames: next shot's first card starts 0.1-0.2 s before the cut, outgoing cards stay until the cut, frame 0 already
+  shows the hero card. Scan frame std-dev + motion and look at a contact sheet of every transition before sending.
+- WhatsApp copy under 15 MB: 2-pass x264 ~3.9 Mbps with -tune grain from the master.

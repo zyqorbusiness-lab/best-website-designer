@@ -83,7 +83,7 @@ function wordOut(t,b){ var P=tr(t,"ADBE Position"); var p=P.valueAtTime(b-0.2,fa
 function marker(comp,t,a,col,b){ var r=measure(t,a+0.3), p=tr(t,"ADBE Position").valueAtTime(a+0.3,false);
   var w=Math.round(r.width+36), h=Math.round(r.height*0.62); var m=span(comp.layers.addSolid(rgb(col),"marker",w,h,1),a,b);
   m.moveAfter(t); tr(m,"ADBE Anchor Point").setValue([0,h/2]); tr(m,"ADBE Position").setValue([p[0]+r.left-18, p[1]+r.top+r.height*0.62]);
-  tr(m,"ADBE Rotation").setValue(-1.5); setv(tr(m,"ADBE Scale"),[[a+0.08,[0,100]],[a+0.38,[100,100]]],"out"); return m; }
+  tr(m,"ADBE Rotate Z").setValue(-1.5); setv(tr(m,"ADBE Scale"),[[a+0.08,[0,100]],[a+0.38,[100,100]]],"out"); return m; }
 // CAPTION LINE: tokens [{w:"tumhara", t:2.09, s:"b"|"r"|"i"|"g"|"m"}], laid out centred at y.  s: b bold, r regular, i serif italic accent, g gradient keyword, m marker keyword
 function captionLine(comp,tokens,y,end,C){ var gap=C.gap||22, layers=[], widths=[], total=0, maxW=ZQ.W*0.78;
   for(var i=0;i<tokens.length;i++){ var k=tokens[i], st={font:C.font, size:C.size, fill:C.fill, tracking:C.tracking};
@@ -120,7 +120,7 @@ function card(comp,file,x,y,a,b,o){ o=o||{}; var L=img(comp,file,a,b,o.name); L.
   tr(L,"ADBE Position").setValue(o.tilt?[x,y,0]:[x,y]); var s=o.scale||100;
   var S=tr(L,"ADBE Scale"); var z=o.tilt?[0,0,100]:[0,0], z1=o.tilt?[s*1.07,s*1.07,100]:[s*1.07,s*1.07], z2=o.tilt?[s,s,100]:[s,s];
   S.setValueAtTime(a,z); S.setValueAtTime(a+0.22,z1); S.setValueAtTime(a+0.42,z2); ease(S,"out");
-  var R=tr(L,o.tilt?"ADBE Rotate Z":"ADBE Rotation"); setv(R,[[a,(o.rot||0)-14],[a+0.42,o.rot||0]],"out");
+  var R=tr(L,o.tilt?"ADBE Rotate Z":"ADBE Rotate Z"); setv(R,[[a,(o.rot||0)-14],[a+0.42,o.rot||0]],"out");
   if(o.tilt){ setv(tr(L,"ADBE Rotate Y"),[[a,o.tilt[0]],[b,o.tilt[0]*0.5]],"linear"); tr(L,"ADBE Rotate X").setValue(o.tilt[1]||0); }
   // idle float: slow drift so nothing is ever a dead still
   var P=tr(L,"ADBE Position"); P.expression="var d="+(o.float||7)+"; value + [0, Math.sin((time-"+a+")*1.7)*d"+(o.tilt?", 0":"")+"]";

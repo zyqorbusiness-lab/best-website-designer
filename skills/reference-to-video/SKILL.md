@@ -32,6 +32,39 @@ python3 qc_v5.py --jsx old_comp.jsx                                     # audit 
 ---
 *Everything below is the v4 text, kept for the 6 recipes; where it says Blender for type or glow on the world, the v5 rules above win.*
 
+## v5 field notes: face-lock reel v3 (Nov 3 2026, first full reel on the v5 pipeline, QC PASS)
+What made it look premium, and the traps found on the way. Apply these on every v5 reel.
+- **Real UI, not a drawn mockup.** Phone/app screens are a code-built screen recording: an HTML/CSS `render(state)` page
+  rendered once per frame in headless Chromium at 3x (1242x2604 RGBA WebP, phone frame included), imported into EffectCraft as
+  ONE image sequence (`ImportOptions.sequence=true`, then `layer.startTime` = time of frame 1). Keyboard with key pop-ups, upload
+  progress ring, typing synced to the VO word times, send, "Creating image" shimmer, blur-to-sharp image reveal. Template:
+  `kit/templates/ui_screen_v5/`. Brand names as text only, never a logo.
+- **Zoom the phone for reading, keep captions clear of it.** Normal: scale 56 %, centre y 1080 (phone top ~350, captions at y 270).
+  Typing: scale 74-80 % and push the phone DOWN (top stays ~345) so the composer sits near y 1360 and the keyboard runs off the
+  bottom. Pushing it up instead puts the captions on top of the app header (looked broken on the first test).
+- **Aim taps from measured rects.** The engine returns each element's rect per frame; comp = phonePos + (css*3 - anchor) * scale.
+  Hold the phone still (equal keyframes) at every tap so the cursor lands exactly on "+", the photo, the send button.
+- **Editorial cards, not simple figures.** Taped polaroid-style photo prints (paper grain, mono file name, colour tag pill),
+  hand-drawn doodle circle revealed with Radial Wipe, coral "wrong" chips and sage "right" chips, a cream sticky note with a
+  serif-italic line. Faces: Open Peeps (CC0) via DiceBear: same seed/features for "reference" and "fixed", change face +
+  facial hair + skin for the "AI changed the face" result. No real person.
+- **Pop-up chips give typing scenes rhythm.** While the prompt types, chips pop next to the phone on the keywords
+  ("SAME chehra / skin tone / facial features", "BADLO kapde / background"): ref8-style cards, one every ~0.4-0.6 s.
+- **No blank frames at cuts.** Cards pop from scale 0, so a card that starts AT the cut leaves 3-5 near-empty frames. Start the
+  next shot's first card 0.1-0.2 s BEFORE the cut (it pops under the zoom/glitch blur), give outgoing cards `stay` (no shrink-out)
+  so the blur has content, and start the very first card at t = -0.25 s so frame 0 already has the hero card (IG thumbnail).
+  Check: frame std-dev scan + a contact sheet of every transition frame.
+- **Gradient contrast:** on paper backgrounds use `clay` (or ember) for keywords; `sunset_rose`'s light amber end washes out on
+  #F1ECE3. sunset_rose is fine on the studio grey. Accent green `sage_mint` for "correct/save" words.
+- **Sfx density:** the cue de-clutter keeps at most 2 sounds per 0.12 s, so a "ding" right after a tap + pop gets dropped:
+  move it 0.2 s later. Mute a card's pop with `"sfx":"none"` when a caption keyword pops at the same moment. Add a low `bass`
+  under glitch and whip cuts too (zoom has it built in). Riser lands on the cut into the CTA (its lead = its length).
+- **WhatsApp size:** final under 15 MB = 2-pass x264 `-b:v 3900k -maxrate 6000k -tune grain` from the EffectCraft master +
+  mix.wav (13.5 MB for 26.4 s), not a re-encode of the CRF 19 mux.
+- **Kit bug fixed (zq_lib.jsx):** EffectCraft 0.19 has no "ADBE Rotation"; 2D rotation is `"ADBE Rotate Z"`. `setv` silently
+  skipped the missing property, so every card's rotation and spin-in was ignored in the v5 demo. Also `comp.layer("name")`
+  throws; look layers up by looping `comp.layer(i).name`.
+
 # Reference → video (Zyqor Motion Kit v4)
 
 Sujon's rule (Nov 3 2026): use the tool that does each job best — *"jo blender par sahi rahega o blender, jo code par sahi rahega o code, jo EffectCraft par sahi rahega o oha"* — and the kit must let **any** AI agent make and edit videos, not only Tab.

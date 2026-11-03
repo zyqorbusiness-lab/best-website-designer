@@ -85,3 +85,14 @@ glow `split[a][b];[b]gblur=sigma=25[g];[a][g]blend=all_mode=screen:all_opacity=0
 - JSX can't find its own path (`$.fileName` is empty): hardcode `var HERE` or let the runner rewrite it (`build_all_v4.sh` does this with sed).
 - Glow threshold 96 (78 washes white UI out). Motion Blur on every 3D word sweep; Zoom Blur for whips.
 - Recipes + tool table: [reference-to-video](../reference-to-video/SKILL.md) · breakdowns: [`docs/motion-references/`](../../docs/motion-references/README.md).
+
+## EffectCraft 0.19 gotchas found on the face-lock v3 reel (Nov 3 2026)
+- 2D rotation is `"ADBE Rotate Z"` (shown as "Rotation"); `"ADBE Rotation"` does not exist and a helper that skips missing
+  properties fails silently. The transform group is: Anchor Point, Position, Scale, Orientation, X/Y Rotation, Rotation (ADBE Rotate Z), Opacity.
+- `comp.layer("name")` throws "cannot convert null to object"; loop `for(i=1..comp.numLayers) comp.layer(i).name`.
+- Image sequences: `var io=new ImportOptions(new File(first)); io.sequence=true;` imports the whole numbered run (WebP RGBA works);
+  set `layer.startTime` to the frame-1 time, then inPoint/outPoint. Frames outside the run are transparent.
+- Parenting works (`child.parent = layer`): child Position is in the parent's layer pixels (origin top-left), so overlays on a
+  card or a phone screen recording stay locked to it through pops, floats and zooms.
+- New layers land on top: move a background-ish layer down with `L.moveBefore(lastBgLayer)`.
+- Speed (16 CPU box): 1080x1920, 135 layers with blur/shadow/grade/grain, 792 frames rendered in ~165 s.
