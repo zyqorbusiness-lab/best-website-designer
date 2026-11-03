@@ -3,8 +3,21 @@ name: sound-design
 description: Sound design for reels and promos — which sound on which visual event, how early, how loud, how many per second — plus a scripted mix (sfx events → track, music with drop sync and ducking, voice cleanup, exact −14 LUFS). Numbers measured from Pinterest sound-design references and Sujon's reference reels.
 when_to_use: "add sound effects", "sfx on every beat", "whoosh/pop/click timing", "music ducking", "loudness for Instagram", "noise removal on my voice", any edit that feels flat or silent
 license: MIT (code and text). Sound files are NOT included: download them yourself under their licence (list below).
-version: 1.1.0
+version: 2.0.0
 ---
+
+## v5: premium sfx (Sujon, Nov 3 2026: "primium sfx") — replaces the old "no whooshes" rule
+| moment | sound | level (vs voice) |
+|---|---|---|
+| card / phone enters | light pop (or soft air whoosh for big objects) | -11 dB |
+| cursor tap | interface click | -8 dB |
+| transition (zoom/whip) | whoosh peaking on the cut (lead 0.22 s) + sub bass hit | -10 / -14 dB |
+| glitch | short glitch | -16 dB |
+| gradient keyword | quiet pop | -16 dB |
+| payoff / title | riser (lead = its length) → soft whoosh; ding on a save icon | -12..-15 dB |
+Rules: 1-3 hits/s overall; never the same sound twice within 0.12 s; max 2 layered at one moment; music bed ducked ~10 dB under voice; master -14 LUFS / ≤ -1 dBTP. Licensed only (Mixkit via get_audio.sh, Pixabay, Freesound CC0, paid Artlist/Epidemic/Motion Array; Pinterest sfx pins are pointers — check the linked pack's licence); every file listed in LICENSES.txt (qc_v5.py F7). `ec_reel.py` places these from the comp's own cue list automatically.
+
+
 
 # Sound design (scripted)
 

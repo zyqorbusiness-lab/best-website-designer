@@ -1,0 +1,207 @@
+{
+ "_about": "Zyqor Motion Kit v5 house style. ec_reel.py and qc_v5.py read this. Change colours HERE, not in scripts.",
+ "gradients": {
+  "ember": {
+   "stops": [
+    "#FFB34D",
+    "#FF5A1F"
+   ],
+   "use_on": "light+dark",
+   "note": "Zyqor brand orange; default keyword gradient"
+  },
+  "sunset_rose": {
+   "stops": [
+    "#FFB35C",
+    "#E84A6F"
+   ],
+   "use_on": "light+dark",
+   "note": "warm, romantic, lifestyle"
+  },
+  "clay": {
+   "stops": [
+    "#E9A27C",
+    "#B5452B"
+   ],
+   "use_on": "light",
+   "note": "earthy, editorial, on paper backgrounds"
+  },
+  "peach_coral": {
+   "stops": [
+    "#FFC2A1",
+    "#FF6F61"
+   ],
+   "use_on": "dark/footage",
+   "note": "soft, friendly; too light for paper"
+  },
+  "lime_teal": {
+   "stops": [
+    "#C9F26B",
+    "#1FB59A"
+   ],
+   "use_on": "dark/footage",
+   "note": "ref8 energy (lime keyword) for tech/creator reels"
+  },
+  "cream_gold": {
+   "stops": [
+    "#FFF0C2",
+    "#E4A72E"
+   ],
+   "use_on": "dark/footage",
+   "note": "premium/luxury, money words"
+  },
+  "sage_mint": {
+   "stops": [
+    "#8FCB7E",
+    "#2E7D5B"
+   ],
+   "use_on": "light+dark",
+   "note": "calm, health, 'right answer' words"
+  },
+  "ink": {
+   "stops": [
+    "#4A4744",
+    "#0E0E0E"
+   ],
+   "use_on": "light",
+   "note": "no colour at all: big titles on paper"
+  }
+ },
+ "banned": {
+  "hue_ranges_deg": [
+   [
+    185,
+    300
+   ]
+  ],
+  "min_saturation": 0.45,
+  "min_value": 0.35,
+  "max_frame_share": 0.06,
+  "why": "purple/blue/cyan neon = the generic 'AI' look Sujon rejected (Nov 3, 2026)"
+ },
+ "palettes": {
+  "warm_paper": {
+   "bg": "#F1ECE3",
+   "bg_light": "#F8F5EF",
+   "ink": "#141414",
+   "muted": "#6E675E",
+   "accent": "ember"
+  },
+  "studio_grey": {
+   "bg": "#C9C2B7",
+   "bg_light": "#F7F5F1",
+   "ink": "#141414",
+   "muted": "#5E5A55",
+   "accent": "ember"
+  },
+  "footage": {
+   "caption": "#FAF7F2",
+   "shadow": "#1B140F",
+   "accent": "lime_teal"
+  }
+ },
+ "caption_default": {
+  "font": "Inter-Bold",
+  "lightFont": "Inter-Medium",
+  "accentFont": "InstrumentSerif-Italic",
+  "size": 92,
+  "fill": "#141414",
+  "accentFill": "#141414",
+  "tracking": -12,
+  "gap": 22,
+  "grad": "ember",
+  "marker": "#FFD25A",
+  "markerInk": "#141414",
+  "rise": 34,
+  "shadow": true,
+  "shadowOpacity": 18,
+  "sfxKey": "pop",
+  "sfxWord": null
+ },
+ "caption_on_footage": {
+  "fill": "#FAF7F2",
+  "accentFill": "#FAF7F2",
+  "shadowOpacity": 45,
+  "grad": "lime_teal"
+ },
+ "grade_default": {
+  "temp": 6,
+  "contrast": 14,
+  "sat": 94,
+  "fade": 4,
+  "vignette": 16,
+  "grain": 0.28
+ },
+ "sfx_map": {
+  "pop": {
+   "file": "pop2",
+   "trim_db": -2,
+   "dur": 0.6
+  },
+  "click": {
+   "file": "click",
+   "trim_db": 0,
+   "dur": 0.5
+  },
+  "whoosh_soft": {
+   "file": "whoosh2",
+   "lead": 0.25,
+   "dur": 0.9,
+   "trim_db": -3
+  },
+  "whoosh": {
+   "file": "whoosh",
+   "lead": 0.22,
+   "dur": 1.0
+  },
+  "whoosh_fast": {
+   "file": "whoosh_fast",
+   "lead": 0.12,
+   "dur": 0.8
+  },
+  "bass": {
+   "file": "bass",
+   "dur": 1.2,
+   "trim_db": -2
+  },
+  "glitch_text": {
+   "file": "glitch_text",
+   "dur": 0.45,
+   "trim_db": -3
+  },
+  "riser": {
+   "file": "riser",
+   "lead": 1.0,
+   "dur": 1.2,
+   "trim_db": -4
+  },
+  "impact": {
+   "file": "impact",
+   "dur": 1.5
+  },
+  "ding": {
+   "file": "ding",
+   "dur": 1.0,
+   "trim_db": -4
+  },
+  "typing": {
+   "file": "typing",
+   "dur": 1.0,
+   "trim_db": -6
+  }
+ },
+ "safe_area": {
+  "x": [
+   108,
+   972
+  ],
+  "y": [
+   192,
+   1690
+  ],
+  "note": "90% title-safe; keep captions above the IG UI (bottom 230 px)"
+ },
+ "loudness": {
+  "lufs": -14,
+  "true_peak_max": -1.0
+ }
+}

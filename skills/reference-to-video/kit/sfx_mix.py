@@ -15,9 +15,11 @@ KIT = os.path.dirname(os.path.abspath(__file__))
 SR = 48000
 def find(name):
     if os.path.exists(name): return name
-    for d in ("sfx_v2", "Motion-Graphics-starter-kit/sfx"):
+    for d in [os.environ.get("ZQ_SFX_DIR", ""), "sfx_premium", "sfx_v2", "../sfx", "Motion-Graphics-starter-kit/sfx"]:
+        if not d: continue
+        d = d if os.path.isabs(d) else os.path.join(KIT, d)
         for ext in (".mp3", ".wav"):
-            p = os.path.join(KIT, d, name + ext)
+            p = os.path.join(d, name + ext)
             if os.path.exists(p): return p
     raise FileNotFoundError(name)
 _cache = {}

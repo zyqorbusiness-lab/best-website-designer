@@ -1,0 +1,1 @@
+v5 (Nov 3 2026): Blender is for real 3D OBJECTS only. text3d.py and any 3D type/titles/glow here are retired; use EffectCraft (templates/ec_kinetic_v5/zq_lib.jsx: title(), captionLine()). qc_v5.py fails a spec that uses Blender for text/effects.

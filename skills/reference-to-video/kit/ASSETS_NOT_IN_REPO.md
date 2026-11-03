@@ -64,3 +64,8 @@ Files skipped here:
 - `templates/saas_blender_hero_v4/assets/shots/s6_done.jpg`
 - `templates/saas_blender_hero_v4/assets/shots_sheet.jpg`
 - `templates/talking_head_v4/assets/haarcascade_frontalface_default.xml`
+
+
+## v5 (Nov 3 2026)
+- `templates/ec_kinetic_v5/assets/*.png` (code-drawn cards, phone mockups, cursor, ripple, bookmark, floor shadow — our own work) ship in the Zyqor Motion Kit v5 zip, not in the repo (the credit gate needs a credit file per image).
+- Premium sfx: put licensed files in `sfx_premium/` with a line each in its LICENSES.txt (qc_v5.py F7).

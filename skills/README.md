@@ -76,3 +76,7 @@ Deeper versions of the existing skills (more worked examples per tier), `scroll-
 To use a skill with an AI coding agent, copy its folder into your agent's skills directory; `SKILL.md` has the name, description and when-to-use at the top.
 
 Code in these folders is MIT (see each `LICENSE`). Third-party models, HDRIs, photos and fonts in the examples keep their own licences, listed in each skill's README.
+
+
+## Nov 3 2026 — Motion Kit v5 (video skills)
+reference-to-video 5.0.0 (EffectCraft text+effects pipeline `kit/ec_reel.py`, `zq_lib.jsx`, `zq_config.json` gradient presets, `qc_v5.py` gate, recipe 07 = ref 8 creator caption edit), video-editing-reels, effectcraft-compositing, motion-graphics-blender (3D objects only), sound-design (premium sfx), pinterest-reference-research (Pinterest first for everything). Hard rules: Pinterest first · no Blender text/effects · glow off · gradient keyword captions · no purple/blue AI look · premium backgrounds · licensed premium sfx.

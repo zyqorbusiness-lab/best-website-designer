@@ -3,8 +3,13 @@ name: pinterest-reference-research
 description: Turn Pinterest into a measured style guide before editing. Search a topic, collect the top video pins, extract frames, measure camera moves, cuts, colours, transitions and sound, and write a STYLE.md per topic plus one combined style bible of reproducible recipes.
 when_to_use: "find references", "Pinterest research for this edit", "what style should this video have", before any new video format or brand
 license: MIT (text). Pins belong to their creators: study them, link them, never re-upload them.
-version: 1.1.0
+version: 2.0.0
 ---
+
+## v5: Pinterest FIRST for everything (Sujon, Nov 3 2026, 6:54/6:58 PM: "har ak chis … pinterest par mil jayega", "pdf me vi bol dena")
+At edit time, before building anything, search Pinterest for: the topic's reference edits (videos), caption styles, gradient/texture backgrounds, light-leak/grain/film overlays, and sfx packs. Look at every sheet, write TAKE/SKIP + what to copy. **Skip purple/blue/cyan neon pins** — on Nov 3, 5 of 16 "aesthetic gradient background reels" results were exactly that banned AI look. Pins usually point to the real asset page (Envato, Motion Array, Patreon, Canva, Instagram "comment SFX" posts): download only free/licensed files and record the licence; sfx audio lives on the linked site, not on Pinterest. Third-party videos stay as links + analysis. Nov 3 board (5 topics, links + verdicts): `docs/motion-references/PINTEREST_V5_BOARD.md`. qc_v5.py F1 fails a video whose spec lists no Pinterest/reference folder.
+
+
 
 # Pinterest reference research
 

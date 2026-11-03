@@ -3,8 +3,21 @@ name: effectcraft-compositing
 description: After-Effects-style compositing and effects with EffectCraft — the free, open-source AE alternative from ArtCraft — driven by JSX scripts from the command line. Gradient worlds, glow, light sweeps, zoom-through and whip blur transitions, RGB split hits, flash cuts, light leaks, impact shake, grain/vignette and animated 2D captions on top of Blender renders. Includes ffmpeg fallbacks for every effect.
 when_to_use: "After Effects free alternative", "add effects/transitions like AE", "glow, glitch, RGB split, light leak, zoom transition", "composite the Blender render", "EffectCraft", scripting an edit end to end without opening a GUI
 license: MIT (code and text)
-version: 1.1.0
+version: 2.0.0
 ---
+
+## v5: EffectCraft is the TEXT + EFFECTS engine (Nov 3 2026)
+`skills/reference-to-video/kit/templates/ec_kinetic_v5/zq_lib.jsx` (ES5, AE object model) — captionLine (each word its own text layer, centred, voice-timed pop, gradient keyword via Gradient Ramp, serif-italic accent, marker bar), title (per-letter layers cascade), card (pop + overshoot + soft Drop Shadow + 7 px float), cursor (glide, tap squash, ripple ring), zoomBlur (CC Radial Fast Blur), whip (Directional Blur), glitch (VR Digital Glitch + VR Chromatic Aberrations), flash (Exposure), background (paper: Gradient Ramp radial + Fractal Noise soft-light fibre + multiply tone; studio: radial sweep + floor shadow; plate), grade (Lumetri temp +6, contrast +14, sat 94, faded film 4 · CC Vignette 8 · Add Grain 0.28 mono). Driven by `kit/ec_reel.py shots.json`.
+Measured gotchas in EffectCraft 0.19 (Nov 3 2026):
+- Scripts cannot write files unless Preferences ▸ Scripting ▸ Allow Scripts to Write Files is on → print JSON with writeLn and parse stdout.
+- **Add Grain "Viewing Mode": 3 = Final Output; 2 renders a white matte over the whole frame** (this blanked a whole render).
+- Text Range Selector offsets misbehave (text visible → hidden → reveal); for per-letter animation use one text layer per letter (title()).
+- Effect points on text/shape layers live in comp-size space centred on the layer origin: point = [W/2 + x − pos.x, H/2 + y − pos.y].
+- A Gaussian Blur on a small solid is clipped by the solid's bounds; use a soft PNG (floor shadow) instead.
+- CC Vignette amount 16 already reads heavy on paper; 8 is enough.
+- Glow: off by default; one focal layer max; never on an adjustment layer (qc_v5.py F2).
+
+
 
 # Compositing with EffectCraft (free After Effects alternative)
 

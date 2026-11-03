@@ -1,0 +1,392 @@
+{
+ "duration": 8.2,
+ "title": "face-lock hook \u2014 v5 demo",
+ "refs": [
+  "../../../references/ref8_ig_DfR63QgTvNj",
+  "../../../references/premium_kinetic_typography_reel"
+ ],
+ "voice": [
+  {
+   "file": "vo/vo_hindi_bunty.mp3",
+   "from": 0.0,
+   "to": 3.15,
+   "at": 0.25
+  },
+  {
+   "file": "vo/vo_hindi_bunty.mp3",
+   "from": 3.25,
+   "to": 5.56,
+   "at": 3.6
+  },
+  {
+   "file": "vo/vo_hindi_bunty.mp3",
+   "from": 22.52,
+   "to": 24.09,
+   "at": 6.1
+  }
+ ],
+ "music": {
+  "file": "../../music/digital_clouds_175.mp3",
+  "db": -12
+ },
+ "shots": [
+  {
+   "a": 0,
+   "b": 3.55,
+   "bg": "paper",
+   "push": 5,
+   "cards": [
+    {
+     "file": "assets/card_ref.png",
+     "x": 330,
+     "y": 800,
+     "t": 0.05,
+     "rot": -7,
+     "scale": 112
+    },
+    {
+     "file": "assets/card_ai.png",
+     "x": 752,
+     "y": 870,
+     "t": 0.62,
+     "rot": 6,
+     "scale": 112
+    }
+   ],
+   "captions": [
+    {
+     "y": 330,
+     "style": {
+      "size": 40,
+      "font": "Inter-Medium",
+      "tracking": 220,
+      "fill": "#6E675E",
+      "shadow": false
+     },
+     "tokens": [
+      {
+       "w": "FACE-LOCK",
+       "t": 0.0,
+       "s": "r"
+      },
+      {
+       "w": "TIP",
+       "t": 0.18,
+       "s": "r"
+      }
+     ],
+     "end": 3.5
+    },
+    {
+     "y": 1420,
+     "end": 1.28,
+     "tokens": [
+      {
+       "w": "AI",
+       "t": 0.25,
+       "s": "b"
+      },
+      {
+       "w": "photo",
+       "t": 0.56,
+       "s": "b"
+      },
+      {
+       "w": "ban",
+       "t": 0.83,
+       "s": "r"
+      },
+      {
+       "w": "gayi...",
+       "t": 1.0,
+       "s": "r"
+      }
+     ]
+    },
+    {
+     "y": 1420,
+     "end": 2.64,
+     "tokens": [
+      {
+       "w": "lekin",
+       "t": 1.57,
+       "s": "r"
+      },
+      {
+       "w": "chehra",
+       "t": 2.0,
+       "s": "b"
+      },
+      {
+       "w": "tumhara",
+       "t": 2.27,
+       "s": "g"
+      }
+     ]
+    },
+    {
+     "y": 1420,
+     "end": 3.5,
+     "tokens": [
+      {
+       "w": "lag",
+       "t": 2.68,
+       "s": "r"
+      },
+      {
+       "w": "hi",
+       "t": 2.83,
+       "s": "r"
+      },
+      {
+       "w": "nahi",
+       "t": 2.92,
+       "s": "i"
+      },
+      {
+       "w": "raha?",
+       "t": 3.05,
+       "s": "b"
+      }
+     ]
+    }
+   ],
+   "cursor": {
+    "path": [
+     [
+      2.45,
+      [
+       1010,
+       1780
+      ]
+     ],
+     [
+      2.95,
+      [
+       812,
+       940
+      ]
+     ]
+    ],
+    "taps": [
+     3.02
+    ],
+    "end": 3.55
+   },
+   "out": {
+    "type": "zoom",
+    "t": 3.55
+   }
+  },
+  {
+   "a": 3.55,
+   "b": 6.0,
+   "bg": "studio",
+   "push": 4,
+   "bg_opts": {
+    "floorY": 1530
+   },
+   "cards": [
+    {
+     "file": "assets/phone0.png",
+     "x": 540,
+     "y": 860,
+     "t": 3.6,
+     "scale": 95,
+     "rot": 0,
+     "float": 4,
+     "sfx": "whoosh_soft"
+    },
+    {
+     "file": "assets/chip.png",
+     "x": 420,
+     "y": 1150,
+     "t": 4.55,
+     "rot": -5,
+     "scale": 90
+    }
+   ],
+   "captions": [
+    {
+     "y": 1680,
+     "end": 4.52,
+     "tokens": [
+      {
+       "w": "ChatGPT",
+       "t": 3.64,
+       "s": "b"
+      },
+      {
+       "w": "ko",
+       "t": 4.18,
+       "s": "r"
+      },
+      {
+       "w": "pehle",
+       "t": 4.33,
+       "s": "r"
+      }
+     ]
+    },
+    {
+     "y": 1680,
+     "end": 5.95,
+     "tokens": [
+      {
+       "w": "apni",
+       "t": 4.55,
+       "s": "r"
+      },
+      {
+       "w": "reference photo",
+       "t": 4.76,
+       "s": "g"
+      },
+      {
+       "w": "do.",
+       "t": 5.5,
+       "s": "b"
+      }
+     ]
+    }
+   ],
+   "cursor": {
+    "path": [
+     [
+      4.0,
+      [
+       1000,
+       1760
+      ]
+     ],
+     [
+      4.42,
+      [
+       330,
+       1362
+      ]
+     ],
+     [
+      5.1,
+      [
+       330,
+       1362
+      ]
+     ],
+     [
+      5.42,
+      [
+       756,
+       1362
+      ]
+     ]
+    ],
+    "taps": [
+     4.48,
+     5.5
+    ],
+    "end": 6.0
+   },
+   "out": {
+    "type": "glitch",
+    "t": 6.0,
+    "flash": false
+   }
+  },
+  {
+   "a": 6.0,
+   "b": 8.2,
+   "bg": "paper",
+   "push": 4,
+   "titles": [
+    {
+     "text": "SAVE",
+     "x": 540,
+     "y": 1010,
+     "t": 6.72,
+     "style": {
+      "font": "Inter-Bold",
+      "size": 330,
+      "fill": "#141414",
+      "tracking": -30,
+      "grad": "ember"
+     },
+     "opts": {
+      "out": false,
+      "sfx": "whoosh_soft"
+     }
+    }
+   ],
+   "captions": [
+    {
+     "y": 700,
+     "end": 8.2,
+     "tokens": [
+      {
+       "w": "ye",
+       "t": 6.15,
+       "s": "r"
+      },
+      {
+       "w": "reel",
+       "t": 6.42,
+       "s": "b"
+      }
+     ]
+    },
+    {
+     "y": 1200,
+     "end": 8.2,
+     "style": {
+      "size": 120
+     },
+     "tokens": [
+      {
+       "w": "kar",
+       "t": 7.02,
+       "s": "i"
+      },
+      {
+       "w": "lo!",
+       "t": 7.18,
+       "s": "i"
+      }
+     ]
+    },
+    {
+     "y": 1640,
+     "end": 8.2,
+     "style": {
+      "size": 46,
+      "font": "Inter-Medium",
+      "tracking": 0
+     },
+     "tokens": [
+      {
+       "w": "@zyqor.studio",
+       "t": 7.45,
+       "s": "r"
+      }
+     ]
+    }
+   ],
+   "cards": [
+    {
+     "file": "assets/bookmark.png",
+     "x": 540,
+     "y": 1420,
+     "t": 7.25,
+     "scale": 52,
+     "sfx": "ding",
+     "stay": true,
+     "float": 5
+    }
+   ]
+  }
+ ],
+ "caption": {
+  "size": 108,
+  "gap": 30
+ },
+ "_note": "Voice: put your VO at vo/vo_hindi_bunty.mp3 (the demo used the face-lock Hindi VO: 0-3.15 s, 3.25-5.56 s, 22.52-24.09 s). Music: run ../../get_audio.sh first."
+}

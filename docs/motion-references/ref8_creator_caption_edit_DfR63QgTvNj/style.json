@@ -1,0 +1,44 @@
+{
+ "duration_s": 32.94,
+ "fps": 30.0,
+ "size": [
+  1080,
+  1920
+ ],
+ "hard_cuts": 6,
+ "cuts": [
+  16.6,
+  26.83,
+  26.9,
+  27.17,
+  27.3,
+  31.83
+ ],
+ "cuts_per_s": 0.182,
+ "motion_mean": 25.16,
+ "motion_p90": 43.92,
+ "still_frac": 0.02,
+ "flash_frames": 5,
+ "brightness": 0.352,
+ "saturation": 0.287,
+ "palette": [
+  "#1f1c21",
+  "#05060a",
+  "#fdfcfa",
+  "#6b4e41",
+  "#ddc7aa"
+ ],
+ "face_frac": 0.71,
+ "face_size": 0.46,
+ "two_faces_frac": 0.29,
+ "white_card_rows": 0.237,
+ "lufs": -14.21,
+ "true_peak": -2.11,
+ "onsets": 51,
+ "onsets_per_s": 1.55,
+ "template": "framed_talking_head",
+ "pace": {
+  "beat_s": 1.29,
+  "sfx_per_s": 1.55
+ }
+}

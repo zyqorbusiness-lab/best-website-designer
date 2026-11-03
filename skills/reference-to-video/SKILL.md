@@ -1,10 +1,36 @@
 ---
 name: reference-to-video
-description: Turn ANY reference reel (Instagram, TikTok, YouTube, Pinterest pin, file) or any topic into a video with real 3D (Blender), code (Python + ffmpeg) and EffectCraft (free After Effects alternative) — measure the reference, pick the closest of 6 proven recipes, build, QA. Includes Sujon's 6 reference breakdowns, the "which tool for which job" table, ready prompts for an AI agent, and an edit-your-raw-footage workflow.
+description: (v5: EffectCraft text+effects, Pinterest first, gradient captions, no glow, QC gate) Turn ANY reference reel (Instagram, TikTok, YouTube, Pinterest pin, file) or any topic into a video with real 3D (Blender), code (Python + ffmpeg) and EffectCraft (free After Effects alternative) — measure the reference, pick the closest of 6 proven recipes, build, QA. Includes Sujon's 6 reference breakdowns, the "which tool for which job" table, ready prompts for an AI agent, and an edit-your-raw-footage workflow.
 when_to_use: "make a video like this reel", "copy this style", "recreate this edit", "use this reference", "edit my raw clip", "soft 3D explainer", "SaaS promo", "talking head edit", "original vs edited", "timeline reveal", any short vertical video from a reference
 license: MIT (text + code)
-version: 4.0.0
+version: 5.0.0
 ---
+
+# Reference → video (Zyqor Motion Kit v5)
+
+## v5 HARD RULES (Sujon, Nov 3 2026, 6:49-6:58 PM IST, after the face-lock v2 reel: "faltu" … "strictly laga")
+These override anything older in this skill. `kit/qc_v5.py` fails a render that breaks one; a failed render is never sent.
+1. **Pinterest FIRST, for everything.** At edit time take references, effects/overlays, textures/backgrounds, caption styles, gradients and sfx-pack pointers from Pinterest before building (*"edit ke time sab kuch pehle Pinterest se lo"*). Pins usually link to the real asset page (Envato, Motion Array, Patreon, Canva, "comment SFX" posts): download only free/licensed files, note the licence, keep third-party video/audio out of the repo (links only).
+2. **Text and effects in EffectCraft, not Blender.** Captions, titles, kinetic type, glow, transitions and grade come from `kit/templates/ec_kinetic_v5/zq_lib.jsx` through `kit/ec_reel.py`. Blender is only for a real 3D object the story needs, rendered as a transparent plate. (v2's Blender 3D "SAVE" and grey tiles read as stock 3D — the main reason it looked cheap.)
+3. **Glow OFF by default.** Max one subtle glow per scene on one focal object, never on captions, cards, backgrounds or an adjustment layer.
+4. **Caption colour system.** Base text = ink #141414 on light, or off-white #FAF7F2 + soft warm shadow on footage; the key word in ONE curated **gradient** preset (`kit/zq_config.json`: ember #FFB34D→#FF5A1F (brand default), sunset_rose, clay, peach_coral, lime_teal, cream_gold, sage_mint, ink). One highlight style per video. 1-4 words per line, voice-synced.
+5. **No AI look.** Purple/blue/cyan neon, glow-on-black and stock "AI" gradients/templates are banned (QC samples frames: >6 % of a frame in hue 185-300° at saturation ≥0.45 = FAIL).
+6. **Premium backgrounds.** Warm paper (fibre noise, soft radial light), studio sweep with floor shadow, photographic plate, or footage — with grain. Never a flat dark fill.
+7. **Premium sfx, licensed.** Pop on cards, click on cursor taps, soft whoosh + sub hit on real transitions, riser into the payoff; 1-3 hits per second, never the same sound twice within 0.12 s. (Replaces the old "no whooshes" rule.)
+8. **Model edit = ref 8** (https://www.instagram.com/reel/DfR63QgTvNj/, Sanidhya): 1-3 word captions with a coloured key word and a serif/script accent, pop-up cards with hand-cursor taps, phone mockup with a real screen recording, speaker cut-out on a clean set, glitch/zoom-blur transitions, warm light leak, natural grade.
+
+## v5 default pipeline
+```
+cd kit
+python3 make_video.py "<topic>" --voice vo.mp3 [--lang hi]      # 4 Pinterest searches -> analyze_ref -> projects_v5/<slug>/shots.json
+python3 ec_reel.py projects_v5/<slug>/shots.json --frames-only 1,3,5   # look at stills first
+python3 ec_reel.py projects_v5/<slug>/shots.json --out reel.mp4        # EffectCraft render + sfx cues + mix + qc_v5.py
+python3 qc_v5.py --jsx old_comp.jsx                                     # audit an old comp (the v4 hero fails: 2 glows, #38c8ff)
+```
+`shots.json`: shots (a, b, bg paper|studio|{plate}), cards (file, x, y, t, rot, scale), cursor (path, taps), captions (y, end, tokens {w, t, s: b|r|i|g|m}), titles, out (zoom|whip|glitch). Measured on the box (Nov 3): the 8 s demo builds 50 layers and renders 246 frames in ~47 s on 16 CPU threads; QC PASS (0 glow, 0 % banned colour, -14.0 LUFS, -2.2 dBTP). Recipe for the ref 8 style: [`recipes/07_ref8_creator_caption_edit.md`](recipes/07_ref8_creator_caption_edit.md).
+
+---
+*Everything below is the v4 text, kept for the 6 recipes; where it says Blender for type or glow on the world, the v5 rules above win.*
 
 # Reference → video (Zyqor Motion Kit v4)
 
@@ -26,7 +52,7 @@ Rule: real 3D → **Blender**. Anything from data, timing, sound or export → *
 
 | Task | Best tool | Why | Command / template |
 |---|---|---|---|
-| Glossy extruded 3D text | Blender | real bevel, reflections, light | `blender/text3d.py` |
+| Glossy extruded 3D text | ~~Blender~~ **EffectCraft (v5)** | v5: kinetic title with gradient preset; Blender type is retired | `zq_lib.jsx title()` (v4: `blender/text3d.py`) |
 | Device/screen tilted in 3D | Blender | real thickness, shadow, camera | `blender/screen3d.py, hero_v4.py` |
 | Camera zoom to a UI click | Blender | camera aims at the exact pixel | `screen_timeline.json + hero_v4.py` |
 | 3D icons, coins, mascot tile | Blender | transparent loops to reuse | `sprites_v4.py` |

@@ -1,10 +1,15 @@
 ---
 name: motion-graphics-blender
-description: Real 3D motion graphics for reels and SaaS promos, built from Python in Blender (headless, CPU is fine). Glossy extruded 3D type, a tilted floating device/screen with a screen recording on it and a camera that zooms to every click, and a soft-3D floating-objects world. Renders transparent frames with real soft shadows for compositing in EffectCraft (or After Effects).
+description: (v5: real 3D OBJECTS only — text, titles, glow and effects go to EffectCraft) Real 3D motion graphics for reels and SaaS promos, built from Python in Blender (headless, CPU is fine). Glossy extruded 3D type, a tilted floating device/screen with a screen recording on it and a camera that zooms to every click, and a soft-3D floating-objects world. Renders transparent frames with real soft shadows for compositing in EffectCraft (or After Effects).
 when_to_use: "make it look like real 3D / After Effects", "3D text", "SaaS promo with the screen in 3D", "camera zooms into the button", "soft 3D world", "Blender motion graphics", any reel where CSS/HTML fake 3D looks cheap
 license: MIT (code and text). Fonts are not included (SIL OFL, download them). Example stills are Zyqor Studio's own concept renders.
-version: 1.1.0
+version: 2.0.0
 ---
+
+## v5 scope (Sujon, Nov 3 2026: "text and effects EffectCraft par… blender kiu use karunga")
+**Blender is for real 3D OBJECTS only** — a product turntable, a device the camera flies around, a 3D logo object — rendered as a transparent PNG/WebP plate and composited in EffectCraft. **Never** use Blender for words/titles/captions (no 3D "SAVE"), glow, light sweeps, flat icons, simple tiles or UI cards: EffectCraft (`skills/reference-to-video/kit/templates/ec_kinetic_v5/zq_lib.jsx`) does those, and qc_v5.py fails a spec that uses Blender for text/effects. `text3d.py` is retired for reels. The face-lock v2 reel (Blender 3D SAVE + grey tiles + glow-on-dark) is the example of what not to ship.
+
+
 
 # Motion graphics with Blender (from code)
 

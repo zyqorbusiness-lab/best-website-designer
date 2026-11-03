@@ -1,3 +1,14 @@
+# zyqor-kit v5 — EffectCraft text + effects pipeline (default)
+| file | job |
+|---|---|
+| ec_reel.py | shots.json -> EffectCraft comp (zq_lib.jsx) -> render -> sfx cues -> sfx_mix + master_mix -> qc_v5.py |
+| templates/ec_kinetic_v5/zq_lib.jsx | captionLine (word pop + gradient keyword + serif accent), title (per-letter cascade), card, cursor tap + ripple, zoomBlur, whip, glitch, flash, background(paper/studio/plate), grade |
+| zq_config.json | gradient presets, banned colours, palettes, caption/grade defaults, sfx map, safe area, loudness |
+| qc_v5.py | hard gate F1-F10 (Pinterest first, glow, caption colour system, banned palette, Blender text, licences, loudness, size, safe area) |
+| make_video.py | any topic: Pinterest first -> analyze_ref -> shots.json starter (make_video_v4.py = old Blender/3D template router) |
+EffectCraft notes (0.19): scripts can't write files (cues come back on stdout); Add Grain "Viewing Mode" 3 = final output (2 = white matte!);
+text Range Selector offsets behave oddly, so titles use one layer per letter; effect points on text layers are in comp-size space centred on the layer origin.
+
 # zyqor-kit — the code (v4)
 
 Real 3D in **Blender** (Python, headless), data/timing/sound/export in **code** (Python + ffmpeg), effects and the final composite in **EffectCraft** (free After Effects alternative, headless JSX).
@@ -19,7 +30,7 @@ Real 3D in **Blender** (Python, headless), data/timing/sound/export in **code** 
 - `blender/` — `mk3d.py` (shared lib), `text3d.py`, `screen3d.py`, `screen_video.py`, `softworld.py`, `bgcomp.py`, fonts
 - Sound: `clean_voice.sh`, `cut_pauses.py`, `transcribe_words.py`, `sfx_mix.py`, `master_mix.sh`
 - Pinterest references: send the topic or a Pinterest link to Tab on WhatsApp — Tab returns the pins sheet + `STYLE.md`. Then `make_video.py --ref <pin link>`. The Pinterest search script is optional/advanced and stays on Tab's box (it needs Tab's browser + your saved Pinterest login), so it is not in this kit.
-- The full v3 technical guide (EffectCraft gotchas, render times, recipes) is Part C of the Zyqor_Motion_Kit_v4.pdf (in the zip).
+- The full v3 technical guide (EffectCraft gotchas, render times, recipes) is Part C of the PDF.
 
 ## Status (honest, Nov 3 2026)
 - End to end and proven: the v3 SaaS hero (`templates/saas_blender_hero/`).
