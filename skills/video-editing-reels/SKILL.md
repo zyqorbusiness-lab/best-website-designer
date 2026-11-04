@@ -112,3 +112,12 @@ Rule: real 3D → **Blender**. Anything from data, timing, sound or export → *
 - No near-blank frames: next shot's first card starts 0.1-0.2 s before the cut, outgoing cards stay until the cut, frame 0 already
   shows the hero card. Scan frame std-dev + motion and look at a contact sheet of every transition before sending.
 - WhatsApp copy under 15 MB: 2-pass x264 ~3.9 Mbps with -tune grain from the master.
+
+## Lessons from the face-lock v5 reel (Nov 4 2026)
+- Version feedback is a spec: "v3 smoother than v4, real typing, v4 hard cuts / 6x less motion / no scramble / two paper tones" became a checklist
+  (transitions overlapped, typing synced to voice words, 7 paper tones, scramble titles, stickers) and each item was verified on frames.
+- Motion check you can run in 5 s: mean frame difference per frame of a 108x192 grey decode; flag stretches >= 0.45 s under 0.5 and spikes > 100.
+- Phone UI + real typing + real photos beats stills of a chat; keep the payoff (result + tick) on screen >= 0.4 s.
+- Backgrounds change every 2-3 s with a wipe, never a plain cut; keep two tones apart in lightness so captions can switch ink/cream with the tone.
+- Reused voice + captions from the previous cut: keep the word-time list, it drives captions, typing and stickers.
+- Full recipe: `skills/reference-to-video/recipes/09_ref8_motion_transitions_phone_typing_devanagari.md`.

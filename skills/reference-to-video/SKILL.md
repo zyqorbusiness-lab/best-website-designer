@@ -72,3 +72,18 @@ Changelog: 5.3.0 (Nov 4 2026) restored prompts/recipes/notes/checklist/honesty r
 (168) + 214 older pins reviewed; portability fixes (ec_reel --dry-run, --help everywhere, pinterest_refs box-only marker,
 get_audio header, demo_shots paths); RULES_COVERAGE 49 rows. 5.2.0 (Nov 3 2026) face-lock v4 lessons + pin_download.py takes the pin's own original image. 5.1.0 (Nov 3 2026, kit v5.2) Step 0 = Pinterest for everything + 60 fps breakdown + make-it-ours; new
 ref_breakdown.py, pin_download.py, QC F11-F13, F7 = source logged; banned hue 175-320°; skill made lean. 5.0.0 v5 rules.
+
+Lessons from the face-lock v5 reel (Nov 4 2026, `recipes/09_ref8_motion_transitions_phone_typing_devanagari.md`, helpers `kit/templates/ec_transitions_v5/`):
+- "Match the reference frame by frame" = a table of ref8 moment -> your moment with TIMING and MOTION numbers (push 0.5 s, spin 0.33 s out /
+  0.35 s in, zoom-through 0.25 s, leak 0.65 s), measured from 30 fps bursts of both videos stacked in one image, plus a frame-difference
+  profile (mean motion ref8 8.9 / v4 1.7 / v5 4.4) - and an honest "partial / no" column.
+- Scenes as rigs: adopt the layers a scene created into a Null, overlap scenes by the transition, keep spin/zoom pads tiny. Hard cuts in v4
+  were really "no overlap"; a transition is two scenes alive at once under a blur adjustment layer.
+- Cyan is a frequent side effect (VR Chromatic Aberrations, RGB-split glitches). Use VR Digital Glitch slice tears + a red/amber tint instead.
+- Extend the outgoing background when the next tone wipes in, or the wipe reveals black (found in the first render, spike of 160 in the
+  frame-difference profile). Spikes > 100 in that profile outside a planned transition are bugs.
+- Show the payoff: do not hide the "same face" result under the zoom-through; compress the typing so it sits on screen >= 0.4 s.
+- Hindi captions in Devanagari work in EffectCraft with Hind + Tiro Devanagari Hindi (PostScript names), view every line as a crop.
+- The kit's QC passes things a viewer still notices (flat white at a leak peak, empty frame 0): look at the contact sheet AND the transition bursts.
+
+Changelog: 5.4.0 (Nov 4 2026) face-lock v5 lessons, recipe 09, ec_transitions_v5 helpers, ui_screen_v5 playwright port + typing_states.py.

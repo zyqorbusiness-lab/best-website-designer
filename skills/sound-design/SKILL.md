@@ -57,3 +57,8 @@ impact + bass at 0.00 (hook) · whoosh into line 2 · 3 pops for the sticky note
 - Ref 4 trick: the raw clip's sound is levelled to −20 LUFS so the edited half feels bigger (run_ref4.sh).
 - Licensed audio only. Mixkit files can't be re-shared, so the kit ships `kit/get_audio.sh` (Mixkit ids + URLs, checked byte-for-byte Nov 3 2026) instead of the files.
 - Per-reference sfx placement: in each breakdown's "Look" section, [`docs/motion-references/`](../../docs/motion-references/README.md).
+
+## Face-lock v5 note (Nov 4 2026)
+- 66 cues in 24 s was fine because they are de-cluttered (same sound never twice within 0.12 s, max 2 layered at one moment); whoosh on every move,
+  pop on keyword/sticker, soft typing bed (-19 dB) while letters land, riser into the light leak, impact on the zoom-through. Loudness -14.1 LUFS / -2.2 dBTP.
+- sfx names in a cue list must exist in the sfx_map of zq_config.json (`whoosh2` was missing and its cues were silently dropped until added).

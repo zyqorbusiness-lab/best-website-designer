@@ -20,3 +20,5 @@ How it works
 5. Aim the hand cursor with rects.json: comp = phonePos + (rect_css*3 - [621,1302]) * scale/100. Hold the phone still
    (equal keyframes) whenever a tap lands, so the maths is exact.
 Photos (p_*.png): square 516x516 images the UI shows. Sample ones (Open Peeps faces, CC0, made with DiceBear) ship in the kit zip, not in this repo: make your own 516x516 PNGs.
+
+v5.4 additions: `frames_pw.js` (playwright-core renderer, PNG frames - use it when puppeteer-core is not installed) and `typing_states.py` (per-frame states from voice word times). The demo p_*.png faces are NOT in the repo; supply your own square 516x516 photos.

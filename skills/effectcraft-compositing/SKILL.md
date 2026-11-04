@@ -96,3 +96,15 @@ glow `split[a][b];[b]gblur=sigma=25[g];[a][g]blend=all_mode=screen:all_opacity=0
   card or a phone screen recording stay locked to it through pops, floats and zooms.
 - New layers land on top: move a background-ish layer down with `L.moveBefore(lastBgLayer)`.
 - Speed (16 CPU box): 1080x1920, 135 layers with blur/shadow/grade/grain, 792 frames rendered in ~165 s.
+
+## EffectCraft 0.19 notes from the face-lock v5 reel (Nov 4 2026)
+- Effects confirmed present (addProperty by display name): Linear Wipe, Radial Wipe, Directional Blur, CC Radial Fast Blur, Radial Blur (Amount, Center, Type),
+  VR Digital Glitch (slice tears; has Color Distortion), Turbulent Displace, Wave Warp, Displacement Map, Gradient Ramp, 4-Color Gradient, Fractal Noise,
+  Exposure, Lumetri Color, Add Grain, CC Vignette, Drop Shadow, Mosaic, Echo, Posterize Time, Block Dissolve, Venetian Blinds. Missing: "RGB Split",
+  "Pixel Sort", "Light Leak", "Hue Saturation" (use "Hue/Saturation"). Unknown effect names THROW from addProperty (wrap in try/catch when probing).
+- Parent a scene to a Null at [540,960]: scale/rotate act about the comp centre and children keep their comp coordinates, so one rig per scene
+  gives push / spin / zoom transitions; collect a scene's layers with `comp.numLayers - n0` (new layers are inserted at index 1).
+- Devanagari: ttf in ~/.fonts, PostScript name in the text document (Hind-Bold, TiroDevaHindi-Italic); shaping of conjuncts, nukta and matras is correct.
+- Image sequences of PNG RGBA frames import with `io.sequence=true`; parent tap rings to the phone layer (Position = css rect centre x3).
+- render-frame (--max-side 720) takes ~0.1-0.25 s: scrub a dozen times before the 3 min full render (720 frames, ~190 s on 16 CPUs).
+- Keys closer than one frame collapse; Linear Wipe completion keys need the outgoing layer to stay alive for the wipe time.
