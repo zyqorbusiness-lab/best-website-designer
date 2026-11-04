@@ -80,3 +80,6 @@ Code in these folders is MIT (see each `LICENSE`). Third-party models, HDRIs, ph
 
 ## Nov 3 2026 — Motion Kit v5 (video skills)
 reference-to-video 5.0.0 (EffectCraft text+effects pipeline `kit/ec_reel.py`, `zq_lib.jsx`, `zq_config.json` gradient presets, `qc_v5.py` gate, recipe 07 = ref 8 creator caption edit), video-editing-reels, effectcraft-compositing, motion-graphics-blender (3D objects only), sound-design (premium sfx), pinterest-reference-research (Pinterest first for everything). Hard rules: Pinterest first · no Blender text/effects · glow off · gradient keyword captions · no purple/blue AI look · premium backgrounds · licensed premium sfx.
+
+## Nov 4 2026 — Motion Kit v5.3 (video skills)
+reference-to-video 5.3.0 (restored the 27 prompts, recipes, ref notes, tick checklist, honesty rule; 10 filled 60 fps breakdowns in `kit/breakdowns/`; 168 music/b-roll/subject/sfx pin links in `kit/pins/` + every older pin reviewed; portability fixes tested from a clean unzip; `kit/RULES_COVERAGE.md` 49 rules), reference-frame-breakdown 1.1.0 (how much was actually viewed), pinterest-reference-research 3.1.0 (what "reviewed" means), and the new [`kit-packaging-and-handoff`](kit-packaging-and-handoff/) (never slim the rules, clean-unzip test, exact claims). No third-party media in the repo - lists are links.

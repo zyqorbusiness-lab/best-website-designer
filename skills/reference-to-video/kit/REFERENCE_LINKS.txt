@@ -1,0 +1,1724 @@
+ZYQOR MOTION KIT v5.3 — REFERENCE LINKS (open REFERENCE_LINKS.html for the clickable version)
+
+7 reference reels · 524 Pinterest pins (356 older + 168 new music/b-roll/subject/sfx lists, all cover-reviewed) · 66 tutorials
+
+
+== his reels ==
+ref8. "I made $150 just by adding captions" — THE model edit for v5 — Sanidhya | Tech Mentor | Editor (@sanidhyadecodes)
+   https://www.instagram.com/reel/DfR63QgTvNj/
+   learn: Something moves every 0.4–0.8 s; scene changes are moves (push-down to a phone set, zoom through the phone, spin-blur) not cuts; cards pop with overshoot + cursor taps; 1 keyword colour; sfx on every 
+   TAKE: structure, pacing, phone push-through, cut-out on clean set, light-leak burn. SKIP: blue glowing orb, cyan RGB glitch, purple glow behind the IG card, glow on SOLVE/CAPTIONS.
+ref1. Faceless soft-3D explainer ("Google review tag") — Deepak Kumar (@d2epak_)
+   https://www.instagram.com/reel/DfJvupgpmeq/
+   learn: One continuous world, zero hard cuts: camera glides, objects pop 0→110→100 % then float; the object is the hook in frame 1.
+   TAKE: glide-don't-cut, pop timing, hook-object. SKIP: Blender for any text/captions (v5 rule).
+ref2. SaaS plugin promo — tilted 3D screen + glossy type — Raieum | Editor (@raieum.edit)
+   https://www.instagram.com/reel/DfPSHbysI7k/
+   learn: Product UI on a tilted panel with slow camera moves; big title hook.
+   TAKE: tilted screen panel + camera move. SKIP: chrome/glow 3D text (glow off, no Blender text).
+ref3. Talking head in a framed card, an effect every ~0.5 s — Sanidhya | Tech Mentor | Editor (@sanidhyadecodes)
+   https://www.instagram.com/reel/DfNHu7UzIc2/
+   learn: Framed talking head over its own blurred copy, permanent CTA line, stacked kinetic words, one sfx per event.
+   TAKE: framed card + punch-in rhythm + sfx per event. SKIP: glowing scribbles, colour flashes in neon.
+ref4. "Original vs Edited" editor showcase — Crafoo (@crafoo9)
+   https://www.instagram.com/reel/DfRKIG-B6FV/
+   learn: Raw clip stays dry, the edited half gets every effect; split/wipe reveal sells the edit.
+   TAKE: before/after wipe structure. SKIP: pixel-font labels if they look gamey for a client.
+ref5. After Effects SaaS card promo — Jekay Valiente (@jekyiesz), recreating a @madebyveduboi tutorial
+   https://www.instagram.com/reel/DfRNLU3N22c/
+   learn: Move fast (0.4 s ease-out), hold long (~1 s) while only a light sweep travels across the card.
+   TAKE: move-fast-hold-long, light sweep, card grid. SKIP: blue/purple UI palette.
+ref6. Gaming "Editing Timeline" reveal — Deep (@dplayz_official16)
+   https://www.instagram.com/reel/DfRIa9ziZIy/
+   learn: Shows the edit timeline itself as the content; word-by-word captions; motion blur on 3D layers.
+   TAKE: timeline reveal idea, motion blur. SKIP: gaming neon colours.
+
+== Motion Kit v5 / v5.1 / aesthetic gradient background reels ==
+01. GRID MOTION BACKGROUND — NISHANT
+   https://www.pinterest.com/pin/1005991635532871182/
+   SKIP: lilac/blue gradient [pink-lilac-blue grid gradient] (reviewed Nov 4: cover thumbnail viewed)
+02. abstract gradient background loop for alight motion motion graphics — Eaglebaba333
+   https://www.pinterest.com/pin/833517843579848310/
+   SKIP: blue shapes [white bg with blue shapes] (reviewed Nov 4: cover thumbnail viewed)
+03. Premium Wave Gradient Background Tutorial | After Effects - 04 — MotionFly
+   https://www.pinterest.com/pin/1070730880249211014/
+   original: https://www.patreon.com/posts/150766480?utm_campaign=postshare_creator&utm_content=android_share
+   TAKE soft coral
+04. Pupple dark 01 — NewYa
+   https://www.pinterest.com/pin/630644754110676670/
+   SKIP — banned colour (purple)
+05. Blue gradient abstract liquid animated BG — ell_ya
+   https://www.pinterest.com/pin/998954761098160041/
+   original: http://instagram.com/ell_ya_graph
+   SKIP — banned colour (blue)
+06. Pink gradient background — Alisa
+   https://www.pinterest.com/pin/51017408272253976/
+   TAKE: warm gradient background [pink-to-red soft gradient] (reviewed Nov 4: cover thumbnail viewed)
+07.  — zxase7
+   https://www.pinterest.com/pin/1123577807041467252/
+   SKIP: blue neon, glow on black [black grid with blue neon glow] (reviewed Nov 4: cover thumbnail viewed)
+08. overly — Internet Wala Aadil
+   https://www.pinterest.com/pin/982629212453903851/
+   TAKE peach grid
+09. Looping Soft Smooth Gradient Motion Background for Wallpaper — FooVector
+   https://www.pinterest.com/pin/761600987022588332/
+   original: https://stock.adobe.com/uk/stock-photo/uk/842278754
+   TAKE: warm ember gradient (crop the violet edge) [dark crimson-orange blur gradient] (reviewed Nov 4: cover thumbnail viewed)
+10. 𝑫𝒐𝒘𝒏𝒍𝒐𝒂𝒅 𝑭𝒓𝒐𝒎 𝑴𝒚 𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎 😇😉 — Ayinioxy
+   https://www.pinterest.com/pin/868420740672700479/
+   TAKE beige-peach
+11. Wavy Gradient Motion Graphic — Phython
+   https://www.pinterest.com/pin/996702961267219028/
+   SKIP: purple/cyan gradient [purple-blue-cyan gradient] (reviewed Nov 4: cover thumbnail viewed)
+12. Purple motion background — Osk
+   https://www.pinterest.com/pin/1115837245191529999/
+   SKIP — banned colour (purple)
+13. Blue background — Alisa
+   https://www.pinterest.com/pin/51017408272137979/
+   SKIP — banned colour (blue)
+14.  — AjuDimple
+   https://www.pinterest.com/pin/1005710160546492677/
+   TAKE: warm fluid texture overlay [orange-black liquid distortion] (reviewed Nov 4: cover thumbnail viewed)
+15. CC:.byzlyn — 𝔦𝔳𝔶 💤
+   https://www.pinterest.com/pin/966796244982623075/
+   TAKE pink-peach
+16. blue gradient motion background for youtube and instagram Vedios — Shami Pack | get best editing material | enrolled now
+   https://www.pinterest.com/pin/1049268413198334150/
+   original: https://hostinger.pk/?REFERRALCODE=webvolt20
+   SKIP — banned colour (blue)
+
+== Motion Kit v5 / v5.1 / light leak overlay grain texture video ==
+01. Video for editing — Kristina Lane
+   https://www.pinterest.com/pin/922815779909720016/
+   TAKE film texture
+02.  — ايساك a.
+   https://www.pinterest.com/pin/706854104018611568/
+   TAKE warm leak
+03.  — Zikimiks
+   https://www.pinterest.com/pin/728246202286883622/
+   TAKE warm leak
+04.  — el cocodrilo dante
+   https://www.pinterest.com/pin/951878071263925843/
+   TAKE: light-leak overlay (teal edge small) [orange/teal film light-leak strip] (reviewed Nov 4: cover thumbnail viewed)
+05.  — DAFI[SN]
+   https://www.pinterest.com/pin/582794008056631754/
+   TAKE warm leak
+06. Old Film Overlay — A r s e n i c
+   https://www.pinterest.com/pin/1030057745993566220/
+   TAKE old film overlay
+07. for video editor — lili𐙚
+   https://www.pinterest.com/pin/1011972978781593867/
+   TAKE: warm light leak [yellow-orange light leak with type] (reviewed Nov 4: cover thumbnail viewed)
+08.  — وحدانية
+   https://www.pinterest.com/pin/1052012794311268931/
+   TAKE: dust overlay [black dust/scratches film overlay] (reviewed Nov 4: cover thumbnail viewed)
+09. Abstract multicolored light leak shine animation background Stock Video Footage — L
+   https://www.pinterest.com/pin/1101059809022877440/
+   original: https://vecteezycom.sjv.io/c/1244576/883105/12240?subId1=pinterestvideos&u=https://www.vecteezy.com/video/24187634-abstract-multicolored-light-leak-shine-animation-background
+   TAKE — Vecteezy stock clip (original link on the pin)
+10. Light leak overlay — 𝓜
+   https://www.pinterest.com/pin/917467755341992522/
+   TAKE: red light leak [deep red light leak] (reviewed Nov 4: cover thumbnail viewed)
+11.  — Pins
+   https://www.pinterest.com/pin/948922584298729047/
+   TAKE warm leak
+12.  — islamicproud
+   https://www.pinterest.com/pin/933300722787511197/
+   TAKE warm leak
+
+== Motion Kit v5 / v5.1 / premium kinetic typography reel ==
+01. Motion inspiration - 2025 — MotionDesigners.Pro
+   https://www.pinterest.com/pin/933230354045109691/
+   TAKE cream paper editorial serif + brush
+02. You’re not out of time 🕐 You’re out of focus ⚡  This After Effects project transforms a si — EarnEdits.com
+   https://www.pinterest.com/pin/1086986060090383822/
+   original: https://www.instagram.com/reel/DcQh-yhO93J/
+   TAKE textured collage
+03. Motion inspiration - Frames — MotionDesigners.Pro
+   https://www.pinterest.com/pin/933230354043913635/
+   TAKE grey editorial bold + script
+04. Motion inspiration - Sable — MotionDesigners.Pro
+   https://www.pinterest.com/pin/933230354032273764/
+   TAKE: clean word card ['Sable.' black on white word card] (reviewed Nov 4: cover thumbnail viewed)
+05. Kinetic Typography Motion Graphics — Luke Cole
+   https://www.pinterest.com/pin/28006828922230638/
+   original: https://www.collectif-team8.com/
+   TAKE: heavy type card ['QUIZZ' black heavy type on white] (reviewed Nov 4: cover thumbnail viewed)
+06. KINETISM VOL 1 — 66 Type Animated templates in after effects to bring your animations to a — Zsófi Munkácsi
+   https://www.pinterest.com/pin/4644405860371807/
+   original: https://www.instagram.com/reel/C_NdfbUN0Il/
+   TAKE: stacked type ['KINETISM' cream type on dark] (reviewed Nov 4: cover thumbnail viewed)
+07. Teste — Rafa Rodrigues
+   https://www.pinterest.com/pin/607774912188463435/
+   TAKE: single-word type ['Big' white on black] (reviewed Nov 4: cover thumbnail viewed)
+08. Motion inspiration - Instagram — MotionDesigners.Pro
+   https://www.pinterest.com/pin/933230354044179376/
+   TAKE: cream editorial poster, red accent [cream poster, 'Content that captures attention' with red eye] (reviewed Nov 4: cover thumbnail viewed)
+09. marketing creative ad | digital marketing | photography — Expo Outdoors
+   https://www.pinterest.com/pin/1012606297478692297/
+   TAKE: yellow word on black ['LOOKING' yellow on black] (reviewed Nov 4: cover thumbnail viewed)
+10. “EXTEND” Kinetic Typography Experiment • • • • • #motion #motiongraphics #motiondesign #ki — Marjeta Lloshi
+   https://www.pinterest.com/pin/630715122858762422/
+   original: https://www.instagram.com/reel/C5dpsYisGds/
+   TAKE: stacked type ['EXTEND' stacked white on black] (reviewed Nov 4: cover thumbnail viewed)
+11. Kinetic Typography | MOGRT Footage Videos Cinematic Night — Footage Videos Earth
+   https://www.pinterest.com/pin/973340538191265716/
+   original: https://videohive.net/item/kinetic-typography-mogrt/37528291?ref=designuser
+   TAKE: minimal type (weak: tiny) [tiny 'DO' on dark] (reviewed Nov 4: cover thumbnail viewed)
+12. We don’t chase trends—we set them. That’s what we do. Do follow us for the wild ride 🦍  ww — The Design Ape
+   https://www.pinterest.com/pin/905293962603637700/
+   original: https://www.instagram.com/reel/DPEXGqeAL63/
+   TAKE: type + red dot ['What We do.' white with red dot on dark] (reviewed Nov 4: cover thumbnail viewed)
+13. Swell – Diego Salinas — 수민 김
+   https://www.pinterest.com/pin/1196337398380708/
+   TAKE: plain type card ['WE DESIGN' white on black] (reviewed Nov 4: cover thumbnail viewed)
+14.  — José Luis Lozano
+   https://www.pinterest.com/pin/310748443041439638/
+   SKIP palette (AI colour)
+15. Motion Design — Muhammad Omar Khan
+   https://www.pinterest.com/pin/640355640789834655/
+   TAKE: italic bold type (lilac-grey bg: recolour) ['WE' italic white on grey-lilac] (reviewed Nov 4: cover thumbnail viewed)
+16. 11/31 days of motion.   Learning AE by doing. #animation #aftereffects #logoanimation #des — fogonglass
+   https://www.pinterest.com/pin/1083749098160412740/
+   original: https://www.instagram.com/reel/DNISyi7omMg/
+   TAKE: sage-green card [green card 'live' dot] (reviewed Nov 4: cover thumbnail viewed)
+
+== Motion Kit v5 / v5.1 / premium sfx pack video editing ==
+01. Premium Video Editing Sound Effects [FREE Download] | SFX for Creators — Digi 24 | Digital Products & Templates
+   https://www.pinterest.com/pin/1145462486510927092/
+   original: https://canva.link/videoeditingsfxassets
+   TAKE — sfx source: free download
+02. 5 essential SFX to level up your edits this week. 🎬 Comment "SFX" below and I’ll DM you th — Echo Grafix
+   https://www.pinterest.com/pin/998321442477942360/
+   TAKE — sfx source: 5 essential sfx
+03. Free SFX part 1 — Vikash | Video Editor
+   https://www.pinterest.com/pin/867576315736656163/
+   original: https://www.instagram.com/vikfx_1?igsh=MWRvZTF0cmxwNnR5cw%3D%3D&utm_source=qr
+   SKIP: magenta/violet UI labels ['SOUND EFFECTS part 1 Swoosh' on laptop, magenta labels] (reviewed Nov 4: cover thumbnail viewed)
+04.  — ปรวี ทัพซ้าย
+   https://www.pinterest.com/pin/700943129512917383/
+   SKIP: blue-teal smoke [dark smoke with embers (blue tint)] (reviewed Nov 4: cover thumbnail viewed)
+05. Free SFX Pack for Reels | Video Editing Sound Effects — Adeshcreation
+   https://www.pinterest.com/pin/1149684611160496985/
+   original: https://t.me/torquetantra
+   SKIP: teal/cyan chip + glow on black ['Premium Sound Effect' with teal chip, black] (reviewed Nov 4: cover thumbnail viewed)
+06. Comment SFX1 to get our SFX Pack 🎥  #edit #videoediting #soundeffects #sounddesign #explor — Via Masi I Video Marketing Strategies I Montreal Filmmaking
+   https://www.pinterest.com/pin/936959897488922352/
+   original: https://www.instagram.com/reel/DCyk5NtRqQN/
+   SKIP: purple glow ['sound effects part 51' green/purple glow] (reviewed Nov 4: cover thumbnail viewed)
+07. sfx for strong video hook - sound effects - sfx premium pack — Graphic House | Branding & Marketing Agency
+   https://www.pinterest.com/pin/1138214505863761721/
+   original: https://www.instagram.com/uc_graphic_house/
+   TAKE — sfx source: Instagram pack
+08. The magic of sound effects.   Director/ Editor /VFX/SFX 🙋🏽@yeyofilms Art 3D @tripton.xyz   — YeyoFilms
+   https://www.pinterest.com/pin/1027454102536837052/
+   original: https://www.instagram.com/reel/DN3Yw_aYv9b/
+   TAKE: timeline screen plate (green) [earth + green timeline screen] (reviewed Nov 4: cover thumbnail viewed)
+09.  — Coco
+   https://www.pinterest.com/pin/1090715603482767751/
+   TAKE: ember particles overlay [black with orange embers] (reviewed Nov 4: cover thumbnail viewed)
+10. Comment SFX to get our SFX Pack #sounddesign #sfx — Vikash | Video Editor
+   https://www.pinterest.com/pin/867576315736773561/
+   original: https://www.instagram.com/reel/DbGH4dAyWEM/?igsh=MTEzNmU1eWM0YW1kNg==
+   SKIP: purple labels ['SOUND EFFECTS part 2' purple labels over crowd] (reviewed Nov 4: cover thumbnail viewed)
+11. Most used SFX Pack — 1Brand Studio
+   https://www.pinterest.com/pin/1001065823432500213/
+   SKIP: teal/blue gradient ['SOUND EFFECTS part 05' teal-blue gradient] (reviewed Nov 4: cover thumbnail viewed)
+12. primium background overlay #editing — Internet Wala Aadil
+   https://www.pinterest.com/pin/982629212448052483/
+   SKIP palette (AI colour)
+13. Exclusive SFX Pack for Editing and Transitions — Lassoued patreon
+   https://www.pinterest.com/pin/1062427368331768575/
+   original: https://www.patreon.com/LASSOUED/shop/exclusive-sfx-pack-for-editing-and-125147?source=storefront
+   TAKE — sfx source: Patreon pack (paid)
+14. Comment SFX to get it 🔥  Follow for more 💖 Premium SFX #sfx #soundeffect #sounds #free #3d — Naweed Hesan
+   https://www.pinterest.com/pin/615796949094228030/
+   original: https://www.instagram.com/reel/DTq3yonjEew/
+   SKIP: blue glow bars ['Premium SOUND' keyboard with blue bars] (reviewed Nov 4: cover thumbnail viewed)
+15. Comment SFX1 to get our SFX Pack 🎥  #edit #videoediting #soundeffects #sounddesign #explor — Via Masi I Video Marketing Strategies I Montreal Filmmaking
+   https://www.pinterest.com/pin/936959897494570842/
+   original: https://www.instagram.com/reel/DHT7d8epVHI/
+   TAKE: sfx pack cover (green, no neon) ['SOUND EFFECTS part 73 Riser Braam' green on dark] (reviewed Nov 4: cover thumbnail viewed)
+16. [Part - 24] Comment SOUND to get our SFX Pack 🎥 #edit #videoediting #soundeffects #soundde — Via Masi I Video Marketing Strategies I Montreal Filmmaking
+   https://www.pinterest.com/pin/936959897485377432/
+   original: https://www.instagram.com/reel/DAMONmApNVj/
+   SKIP: violet strip + glow on black ['sound effects part-24' green/violet strip] (reviewed Nov 4: cover thumbnail viewed)
+
+== Motion Kit v5 / v5.1 / reel caption editing style ==
+01. Talking head video — Motion Pet
+   https://www.pinterest.com/pin/671599363236245110/
+   original: https://www.instagram.com/reel/DcIqF-EupQ0/
+   TAKE framed-card talking head + script accent
+02. Want captions that actually pop? Here’s my quick guide! — Azhai Boggs
+   https://www.pinterest.com/pin/966514770053414471/
+   TAKE caption font guide
+03. Modern talking head — Motion Pet
+   https://www.pinterest.com/pin/671599363236283537/
+   original: https://www.instagram.com/reel/DcOdCYOuaQU/
+   TAKE subtitle style
+04. Real estate video editing inspiration. — Motion Pet
+   https://www.pinterest.com/pin/671599363236225503/
+   original: https://www.instagram.com/reel/DcF1qNmi_1S/
+   TAKE: framed-card layout (same as pin_caption01) [Before/After framed cards, orange blobs, '@motion_pet'] (reviewed Nov 4: cover thumbnail viewed)
+05. Make your video captions pop with this trick 🔥  #designtips #designinspiration #personaliz — Made and Styled
+   https://www.pinterest.com/pin/1112037333001680247/
+   original: https://www.instagram.com/reel/DHlT6zaPb4i/
+   TAKE: pointing subject (teal bg: recolour) [guy pointing 'you' on teal bg] (reviewed Nov 4: cover thumbnail viewed)
+06. Scroll-Stopping Before & After Edit 🔥 Cinematic Video Glow Up — Karan Sharma | Video Editor | YouTube Manager |
+   https://www.pinterest.com/pin/692358142757876554/
+   TAKE: framed card + DM strip [woman in framed card, 'Here's', 'DM FOR EDIT'] (reviewed Nov 4: cover thumbnail viewed)
+07. Entering 2026 feeling ready instead of like life is falling apart😭✨  If you’re the type of — Bash Harry
+   https://www.pinterest.com/pin/451908143883509623/
+   original: https://www.instagram.com/reel/DS7AlIzAf9G/
+   SKIP
+08. Thomas shelby...  #thomasshelby #filmes #edits #cortes #fyy #fouyou — ㅤ𝐌𝐈𝐂𝐇𝐀𝐄𝐋ㅤ
+   https://www.pinterest.com/pin/1023794927798348621/
+   original: https://www.instagram.com/reel/DMu_cCSun9C/
+   SKIP
+09.  — Coco
+   https://www.pinterest.com/pin/1090715603482767751/
+   TAKE: ember overlay [black with orange embers] (reviewed Nov 4: cover thumbnail viewed)
+10. Alex Hormozi Video Editing Style Breakdown | Viral Retention Strategy #VideoEditing — Rami.Visualz
+   https://www.pinterest.com/pin/1147643917677607792/
+   original: https://www.instagram.com/rami.visualz1/
+   TAKE Hormozi-style hierarchy
+11. Aprenda a fazer edição de qualidade usando apenas o Capcut, comente “conversa” que eu vou  — Atila Nobre
+   https://www.pinterest.com/pin/654640495884010181/
+   original: https://www.instagram.com/reel/DO9YTdLDQLg/
+   TAKE: before/after cards + timeline [Antes/Final cards on sand + timeline strip] (reviewed Nov 4: cover thumbnail viewed)
+12. ❤️‍🩹 — 11.11_vibessss
+   https://www.pinterest.com/pin/801359327489002464/
+   original: https://www.instagram.com/reel/DUoi_Uxkwxr/
+   TAKE: serif caption over b-roll (dark teal b-roll: grade warm) [night rain street, yellow serif caption] (reviewed Nov 4: cover thumbnail viewed)
+13. Motion inspiration - Frames — MotionDesigners.Pro
+   https://www.pinterest.com/pin/933230354043913635/
+   TAKE grey editorial bold + script
+14. CapCut TEXT TRICK // 004 📱  In this video, I show you how to create a hollow text effect i — marie.ai
+   https://www.pinterest.com/pin/912119730799258967/
+   original: https://www.instagram.com/reel/DXBd39XjN9T/
+   TAKE: text-behind-subject idea ['HOLLOW TEXT' yellow 3D type behind walking girl] (reviewed Nov 4: cover thumbnail viewed)
+15. The secret is out...THIS is how I get my videos to be crisp and high quality! — Azhai Boggs
+   https://www.pinterest.com/pin/966514770053175725/
+   TAKE crisp yellow keyword
+16. People don't engage with content simply because it's posted. They engage because it's pres — Rovix Studios | Creative Editing Agency
+   https://www.pinterest.com/pin/1102537552557610649/
+   original: https://www.instagram.com/reel/DaTQRCYN8ox/
+   TAKE: clean framed cards ['Our Work' $5 edit white cards on white] (reviewed Nov 4: cover thumbnail viewed)
+
+== Face-lock reel v3 (Hindi) / ai photo editing reel ==
+01. Create photorealistic AI photoshoots of yourself with ChatGPT + Higgsfield 📸🤖 — Dimitri Swan | AI Technoblog 🤖
+   https://www.pinterest.com/pin/902901425313037274/
+   TAKE: host + icon-chip layout [host with AI icons, 'AI PHOTOS THAT LOOK REAL'] (reviewed Nov 4: cover thumbnail viewed)
+02. Beautiful girl 🥰🥰🥰 . . . . . . #trending #trendingreels #viralreels #viral #reelsviral #re — Bhavsar
+   https://www.pinterest.com/pin/868280003153301804/
+   original: https://www.instagram.com/reel/C6aHImfP110/
+   SKIP: purple lighting [girl portrait with purple light] (reviewed Nov 4: cover thumbnail viewed)
+03. A social media video maker that starts with your photos 📱  Pixelcut makes it easy to exper — Pixelcut
+   https://www.pinterest.com/pin/825777281732274901/
+   TAKE: before/after split [AI trend before/after split on a street] (reviewed Nov 4: cover thumbnail viewed)
+04. Comment “AI” to get the link to try 💥  I just found a new Ooen source model that is  outpe — The AI Trigger
+   https://www.pinterest.com/pin/1029705902322903716/
+   original: https://www.instagram.com/reel/DUYvDgtDCgl/
+   SKIP: purple ['Ai HuMo' purple poster] (reviewed Nov 4: cover thumbnail viewed)
+05. Comment “🎥 “ if you want the prompts for this Orbit transition  [TUTORIAL] Here’s how to b — Magnific (formerly Freepik)
+   https://www.pinterest.com/pin/536350636897698383/
+   original: https://www.instagram.com/reel/DUa-seIiDwW/
+   TAKE: orbit transition idea ['ORBIT TRANSITION' subway, green/orange] (reviewed Nov 4: cover thumbnail viewed)
+06. Real estate video editing inspiration. — Motion Pet
+   https://www.pinterest.com/pin/671599363236225503/
+   original: https://www.instagram.com/reel/DcF1qNmi_1S/
+   TAKE: framed-card layout (= pin_caption01 style) [Before/After framed cards on white with orange blobs (@motion_pet)] (reviewed Nov 4: cover thumbnail viewed)
+07. 🎧Stream 'Everything' by @Jeen_Realer & @Epic_Grey on Audiomack📀 🔗 https://audiomack.com/Je — Jeen Realer 🎙
+   https://www.pinterest.com/pin/848365648600477893/
+   original: https://www.instagram.com/reel/DUWGve1jRw0/
+   TAKE: b-roll plate [person lying on grass, aerial plate] (reviewed Nov 4: cover thumbnail viewed)
+08. ⁉️Want to know how to create this effect? 🎥✨ Follow this quick tutorial and learn how to e — VisualVibe
+   https://www.pinterest.com/pin/1045327763510778507/
+   original: https://www.instagram.com/reel/DAy-3QmJ72M/
+   TAKE: UI-card layout idea (dark red; no glow copied) [red hoodie person with red UI widgets] (reviewed Nov 4: cover thumbnail viewed)
+09. travel life 😍 — Wisdom Wellspring
+   https://www.pinterest.com/pin/1003810204445481924/
+   TAKE: collage grid ['TRAVEL DUMP' photo-collage grid] (reviewed Nov 4: cover thumbnail viewed)
+10. Original source. A new creative era of outfit rotation 📸✨ — Max | Fashion & AI Creator
+   https://www.pinterest.com/pin/704109723037062566/
+   original: https://www.instagram.com/reel/DS45NWwiCFv/
+   TAKE: surreal edit idea [man 'levitating' in a street edit] (reviewed Nov 4: cover thumbnail viewed)
+11. Ceiling Fan Outfit Transition Tutorial – Easy AI Method 🔥 — Gen_Muse
+   https://www.pinterest.com/pin/1085086104009311497/
+   original: https://genematic.ai/dashboard
+   TAKE: cinematic top-down subject [woman on a rug, top-down cinematic] (reviewed Nov 4: cover thumbnail viewed)
+12. Make your video captions pop with this trick 🔥  #designtips #designinspiration #personaliz — Made and Styled
+   https://www.pinterest.com/pin/1112037333001680247/
+   original: https://www.instagram.com/reel/DHlT6zaPb4i/
+   TAKE: pointing subject idea (recolour the teal bg) [guy pointing 'you', muted teal bg] (reviewed Nov 4: cover thumbnail viewed)
+13. Frosted Glass Effect with Hidden Face | Photoshop Tutorial 2026 by #ductuyendesign — DucTuyen Design
+   https://www.pinterest.com/pin/1056868237570687696/
+   original: https://www.instagram.com/reel/DSZ2NfSATMp/
+   TAKE: frosted-glass mask idea ['REVEAL' frosted-glass hidden-face poster] (reviewed Nov 4: cover thumbnail viewed)
+14. @adobecreativecloud  To know more Visit our web : www.rcallservices.com  #photoshop #illus — R call
+   https://www.pinterest.com/pin/1128996200364040752/
+   original: https://www.instagram.com/reel/DblbWO6PABB/
+   TAKE: icons-float subject plate [hand on mouse with floating app icons] (reviewed Nov 4: cover thumbnail viewed)
+15. Best way to use AI #AI #reels #viral #hooks #trend #trending — beasturd
+   https://www.pinterest.com/pin/909938299730800030/
+   original: https://www.instagram.com/reel/DXoclPTH2sm/
+   TAKE: caption-over-b-roll idea ['Boring photos? Try this prompt' caption over a seated man] (reviewed Nov 4: cover thumbnail viewed)
+16. Poster Design Idea #Photoshop — Smart Graphics
+   https://www.pinterest.com/pin/366832332168718834/
+   original: https://www.instagram.com/reel/DF5Wv9doYua/
+   TAKE: B&W mask effect idea [Photoshop 'MASK EFFECT' face poster, B&W] (reviewed Nov 4: cover thumbnail viewed)
+
+== Face-lock reel v3 (Hindi) / chatgpt tips instagram reel ==
+01. Using AI as a Creative Tool — Poser Animates
+   https://www.pinterest.com/pin/1140395936913435621/
+   TAKE: logo-on-paper idea (no brand logo in our edits) [ChatGPT logo 3D on light grey] (reviewed Nov 4: cover thumbnail viewed)
+02. Here’s my secret sauce ⤵️ 🚀[FREE DOWNLOAD] Peep the link in my bio to grab your FREE copy  — Amanda Ross Media
+   https://www.pinterest.com/pin/1088674909912945781/
+   original: https://www.instagram.com/reel/C5jFDmZuX-4/
+   TAKE: cream card + serif text layout [cream card 'ChatGPT hack to boost your reel views'] (reviewed Nov 4: cover thumbnail viewed)
+03. Comment 'PROMPTS' 🤖 and I'll send these ChatGPT prompts direct to your DMS 📩  or Save this — Juliet Menabney CEO
+   https://www.pinterest.com/pin/1051098000533272426/
+   original: https://www.instagram.com/reel/DEVtctXNCcX/
+   TAKE: bold text over b-roll ['use ChatGPT to grow your Instagram followers' text over desk] (reviewed Nov 4: cover thumbnail viewed)
+04. Use these tips with ChatGPT, so next time you go viral, comment "X" And I will guide you h — Ahlem | Digital Marketing For Beginners
+   https://www.pinterest.com/pin/1094093303260213034/
+   original: https://www.instagram.com/reel/C-q1GtPt699/
+   TAKE: device b-roll [tablet with ChatGPT prompts, dark] (reviewed Nov 4: cover thumbnail viewed)
+05. Ready to get more out of ChatGPT? 🚀 Our new Chat Guide breaks it down step by step—so you  — Thriftgainsolutions
+   https://www.pinterest.com/pin/1145110643564901951/
+   original: https://www.instagram.com/reel/DOPcu5wgu4m/
+   SKIP: pale blue UI screenshot (brand UI) [ChatGPT capabilities screenshot, pale blue] (reviewed Nov 4: cover thumbnail viewed)
+06. I used this ChatGPT prompt to save so much time creating instagram stories! You need to tr — Esme Mesa
+   https://www.pinterest.com/pin/51791464459480599/
+   original: https://www.instagram.com/reel/C7xohWTPIPW/
+   TAKE: bold serif title over lifestyle b-roll ['ChatGPT Prompt for Stories' woman on sofa] (reviewed Nov 4: cover thumbnail viewed)
+07. Here they are: 👉Follow & Comment 'Guide' to get such details Chatgpt Prompts Guide. 👉Check — Value Vault
+   https://www.pinterest.com/pin/928797123147995187/
+   original: https://www.instagram.com/reel/C-K8PqSIn-K/
+   SKIP: dark teal night scene; weak [dark night street, '3 ChatGPT Prompts' text] (reviewed Nov 4: cover thumbnail viewed)
+08. Have you tried the newest Chat GPT-5? 👀  #chatgpt5 #chatgpt #openai #ai #games #aigame #ma — Unreal to Real | Tech Tips & Digital Planners
+   https://www.pinterest.com/pin/917045542882106094/
+   original: https://www.instagram.com/reel/DNUPH7ssLO_/
+   TAKE: laptop b-roll with caption [laptop on desk with pastel screen, caption 'in 6 seconds'] (reviewed Nov 4: cover thumbnail viewed)
+09. ChatGPT уже может анализировать ваш Instagram и подсказывать, какой контент стоит снимать  — Яна •  про нейро, съемки, reels
+   https://www.pinterest.com/pin/433753007886640844/
+   original: https://www.instagram.com/reel/DdRR9vuhHwQ/
+   TAKE: banner-over-screen idea [Russian 'ChatGPT tip' with orange banner over screen recording] (reviewed Nov 4: cover thumbnail viewed)
+10. The ChatGPT power prompt 🚀 *Follow @momdreammotivation for more business tips and chatGPT  — Mom Dream Motivation
+   https://www.pinterest.com/pin/936959897467824138/
+   original: https://www.instagram.com/reel/C45lf_IAGzq/
+   TAKE: lifestyle b-roll + text [AI power prompt text over flowers and desk] (reviewed Nov 4: cover thumbnail viewed)
+11. Écris “PROMPT” en commentaire et je te l’envoie 💌  Tu manques d’idées pour créer du conten — Jessica - Coach en Marketing Digital
+   https://www.pinterest.com/pin/1076641854688415133/
+   original: https://www.instagram.com/reel/DRdB0fHDIaM/
+   TAKE: serif title over moody b-roll ['Prompt' serif title over dark bag/coffee] (reviewed Nov 4: cover thumbnail viewed)
+12. VEJA COMO O CHATGPT PODE TE AJUDAR A VIRALIZAR NO REELS.  O perfil @ochrisprado mostra com — Vinícius Ragazzi
+   https://www.pinterest.com/pin/620863498676147747/
+   original: https://www.instagram.com/reel/DeUdYFEDlSr/
+   SKIP: purple UI counters [Portuguese talking head with purple/green ChatGPT counters] (reviewed Nov 4: cover thumbnail viewed)
+13. 🚀 Unlock the Power of AI in Marketing with ChatGPT! 🚀 — Digital Laptop Life
+   https://www.pinterest.com/pin/908953137639111146/
+   original: https://l8r.it/IZxq
+   TAKE: orange numeral + laptop b-roll ['6 Prompts to ask ChatGPT' orange numeral over laptop] (reviewed Nov 4: cover thumbnail viewed)
+14. 🚀 Canva hack I bet you didn’t know! 🚀  Create 60 reels in 60 seconds using Canva & ChatGPT — Sarah Shaw | Author Marketing Strategist
+   https://www.pinterest.com/pin/1089589703608679808/
+   original: https://www.instagram.com/reel/DGMAKehTZn8/
+   TAKE: cream card + serif text [pink cream card 'How to create 60 reels in 60 seconds'] (reviewed Nov 4: cover thumbnail viewed)
+15. Stop using Hashtags without keywords ❌ — Instagram Mastermind
+   https://www.pinterest.com/pin/1143421792893659438/
+   SKIP: purple glow [creator with purple '#' glow] (reviewed Nov 4: cover thumbnail viewed)
+16. Copie esses prompts!👇🏻✨  📌Salve para depois e siga @camilacoelhoinsta para aprender mais s — Camila Coelho
+   https://www.pinterest.com/pin/950611433863632632/
+   original: https://www.instagram.com/reel/DFJFbQuy02w/
+   TAKE: desk b-roll with caption [Portuguese text over laptop + coffee] (reviewed Nov 4: cover thumbnail viewed)
+
+== Face-lock reel v3 (Hindi) / editorial collage reel cards ==
+01. before the brand, there’s the feeling👇🏻  o moodboard é onde tudo se conecta: referências,  — OTHÉA — Brand Design
+   https://www.pinterest.com/pin/4785143351686113/
+   original: https://www.instagram.com/reel/DQl_PnJDayW/
+   TAKE: taped paper collage idea [collage face with sunglasses, taped paper, red phone cord] (reviewed Nov 4: cover thumbnail viewed)
+02. Rodebjer is celebrating 25 years   From the bottom of my heart I personally want to thank  — Rodebjer
+   https://www.pinterest.com/pin/413838653280374218/
+   original: https://www.instagram.com/reel/DQ9lbF6DE-l/
+   TAKE: stacked card photos [stacked polaroid-style photos on white] (reviewed Nov 4: cover thumbnail viewed)
+03. NIKE - 50th Anniversary 'Swoosh' +  Waffle — Sori
+   https://www.pinterest.com/pin/650348002465079803/
+   TAKE: newsprint texture [newspaper clipping collage + Nike mark] (reviewed Nov 4: cover thumbnail viewed)
+04. Mentally I’m here - a euro inspired moodboard ✨👙☀️ — sammykons
+   https://www.pinterest.com/pin/705376360433819934/
+   original: https://www.instagram.com/reel/DY15SohxjxO/
+   TAKE: torn-paper collage [coast photo collage, navy + torn paper] (reviewed Nov 4: cover thumbnail viewed)
+05. The magazine where a closer look broadens the horizon, Longue Vue is Polène’s annual publi — POLÈNE
+   https://www.pinterest.com/pin/805792558372903371/
+   original: https://www.instagram.com/reel/DVv19vyDJq6/
+   TAKE: motion-blur finger scroll [blurred finger over tile of photos] (reviewed Nov 4: cover thumbnail viewed)
+06. “It is not just a moving identity, it is an identity you can move in”⁠ #type01 #visualiden — Manny S.
+   https://www.pinterest.com/pin/70437489115645/
+   TAKE: Swiss poster type layout (red/black) [red/black Swiss poster 'Spatial Sound'] (reviewed Nov 4: cover thumbnail viewed)
+07. THE GODARDS. A little snippet for @thegodards branding. This was one of my favourite proje — J E S S | D E L V E S
+   https://www.pinterest.com/pin/110971578313755786/
+   original: https://www.instagram.com/reel/DRkZZWfgRE-/
+   TAKE: striped editorial card ['THE GODARDS' red-striped title card] (reviewed Nov 4: cover thumbnail viewed)
+08. Download After Effects Project Files Built for Video Editors — EarnEdits.com
+   https://www.pinterest.com/pin/1086986060079822211/
+   original: http://earnedits.com/
+   TAKE: dark editorial cards (add texture) [dark orange-card editorial on black] (reviewed Nov 4: cover thumbnail viewed)
+09. OUR FIRST 100 YEARS — Belstaff
+   https://www.pinterest.com/pin/467952217549385659/
+   original: https://www.belstaff.com/uk/our-first-100-years/?utm_source=pinterest?utm_medium=social?utm_campaign=our-first-100-years-campaign
+   TAKE: photo mosaic grid [photo-tile grid with BELSTAFF text] (reviewed Nov 4: cover thumbnail viewed)
+10. more stationery asmr this time with the branding for Verano icecream 🍦   @adobe @adobelive — notblankdesigns
+   https://www.pinterest.com/pin/290482244738220216/
+   original: https://www.instagram.com/reel/DQUrDZTDZkp/
+   TAKE: sticker collage energy [retro ice-cream collage, bright stickers] (reviewed Nov 4: cover thumbnail viewed)
+11. Colagem — gusta
+   https://www.pinterest.com/pin/642888915601310364/
+   original: https://www.instagram.com/reel/DWhqKESjWAb/
+   TAKE: cut-out on red tile bg (cut-out subject) [boy with sunglasses cut-out on red tiles] (reviewed Nov 4: cover thumbnail viewed)
+12. Falar de Arezzo é falar da história da moda brasileira.  É falar daquilo que atravessa o t — AREZZO
+   https://www.pinterest.com/pin/752453050284595540/
+   original: https://www.instagram.com/reel/DUZJxDHjrZJ/
+   TAKE: sepia paper stack [paper-envelope photo stack, sepia] (reviewed Nov 4: cover thumbnail viewed)
+13. A perfect prelude to the most imperfect words. Because my words always are.  leavetowonder — LEAVE TO WONDER
+   https://www.pinterest.com/pin/1095500678111167673/
+   original: https://www.instagram.com/reel/DH25TuUs-tc/
+   TAKE: minimal collage cards (blue bar small, ok) [white card with grey tiles and blue bar] (reviewed Nov 4: cover thumbnail viewed)
+14. 🥂We are celebrating 6 Years of You - RENEWED with Cocktails & Confidence  Mark your calend — Renew Wellness & Aesthetics
+   https://www.pinterest.com/pin/1080582504349363100/
+   original: https://www.instagram.com/reel/DNA4hNNMW87/
+   TAKE: photo wheel layout (B&W) [circular black/white photo wheel invite] (reviewed Nov 4: cover thumbnail viewed)
+15. In the universe of Leave To Wonder we are sincere, curious and communicate in unorthodox w — LEAVE TO WONDER
+   https://www.pinterest.com/pin/1095500678109902929/
+   original: https://www.instagram.com/reel/DGurpAmsbxL/
+   TAKE: minimal collage cards [pale grey card with small photos] (reviewed Nov 4: cover thumbnail viewed)
+16.  — Анастасия Смирнова
+   https://www.pinterest.com/pin/633387443397318/
+   TAKE: tile title row ['ANIM VFX COLOR' three tiles] (reviewed Nov 4: cover thumbnail viewed)
+
+== Face-lock reel v3 (Hindi) / paper texture background ==
+01.  — 𝐞𝐩𝐢𝐠𝐫𝐚𝐟𝐟𝐢𝐬𝐭
+   https://www.pinterest.com/pin/211174976904783/
+   TAKE: dark grain texture (not as a flat bg) [dark fabric/noise texture] (reviewed Nov 4: cover thumbnail viewed)
+02.  — Charli<3
+   https://www.pinterest.com/pin/1024217140226877046/
+   TAKE: paper texture [white crumpled paper] (reviewed Nov 4: cover thumbnail viewed)
+03. Notebook Paper Handwriting (click here) — Tabby
+   https://www.pinterest.com/pin/722405596504412636/
+   original: https://wow.boomlearning.com/store/file/EgziSPN9H4WkBK3gW
+   TAKE: paper texture [notebook paper texture] (reviewed Nov 4: cover thumbnail viewed)
+04. خلفية شبكية متحركة بدقة عالية للمونتاج — سيف
+   https://www.pinterest.com/pin/1095078465795930805/
+   TAKE: grid paper texture [light grid paper, perspective] (reviewed Nov 4: cover thumbnail viewed)
+05. Transition Crumpled Paper — ksetselect
+   https://www.pinterest.com/pin/1091700765919692365/
+   original: https://ksetselect.com/products/paper-effects
+   TAKE: crumple transition [crumpled paper transition frame] (reviewed Nov 4: cover thumbnail viewed)
+06. Que tu outfit y tu ánimo estén impecables hoy. Servicio a domicilio 🚗📱4775541151 #Lavander — 2M lavado y planchado
+   https://www.pinterest.com/pin/927952698228144514/
+   SKIP: blue-lilac tint [crumpled paper with blue-lilac tint] (reviewed Nov 4: cover thumbnail viewed)
+07. خلفيه منقوله للفائده  بدون كتابه — Hlm
+   https://www.pinterest.com/pin/4362930882660025/
+   TAKE: cream paper texture [cream watercolour paper] (reviewed Nov 4: cover thumbnail viewed)
+08. ◩ 𝙽𝚎𝚓𝚒𝚝𝚎𝚗 𝙴𝚍𝚒𝚝◪ — Olivia<3
+   https://www.pinterest.com/pin/409968372349584813/
+   TAKE: paper texture [white crumpled paper] (reviewed Nov 4: cover thumbnail viewed)
+09.  — rayyᥫ᭡
+   https://www.pinterest.com/pin/473440979584794629/
+   TAKE: paper texture [light crumpled paper] (reviewed Nov 4: cover thumbnail viewed)
+10. Story motion — عمود 313
+   https://www.pinterest.com/pin/696087686154308844/
+   TAKE: sage plate with soft shadows [sage-green wall with leaf shadows] (reviewed Nov 4: cover thumbnail viewed)
+11.  — shadi kh
+   https://www.pinterest.com/pin/3588874695603279/
+   TAKE: soft paint texture (pale blue minor) [pastel paint-stroke texture, pink/pale-blue] (reviewed Nov 4: cover thumbnail viewed)
+12.  — Mohamed Ugas
+   https://www.pinterest.com/pin/812266482819963646/
+   TAKE: paper texture [grey crumpled paper] (reviewed Nov 4: cover thumbnail viewed)
+13. Law Of Attraction — Law Of Attraction For Life
+   https://www.pinterest.com/pin/1034490976876712186/
+   TAKE: warm kraft texture [aged kraft-paper texture] (reviewed Nov 4: cover thumbnail viewed)
+14. El 70% de los consumidores prefieren.... — TUUKOOL
+   https://www.pinterest.com/pin/1126111081830506506/
+   TAKE: dark paper texture [black crumpled paper] (reviewed Nov 4: cover thumbnail viewed)
+15.  — Nathalie A. Jadette
+   https://www.pinterest.com/pin/426293921011492018/
+   TAKE: paper texture [white paper] (reviewed Nov 4: cover thumbnail viewed)
+16. Helpful statements - realistic options and clear ideas x — The Website Design Hub
+   https://www.pinterest.com/pin/1137088605919196578/
+   original: https://www.instagram.com/reel/DFp6IKEIrRX/
+   TAKE: paper texture [off-white crumpled paper] (reviewed Nov 4: cover thumbnail viewed)
+
+== Motion Kit v4 research / 3d glossy ui cards motion ==
+01. 3D UI fan? 👀🔥 Check out this interactive 3D icon set with a glassy aesthetic, built in Spl — Spline
+   https://www.pinterest.com/pin/816629344969284873/
+   original: https://www.instagram.com/p/DH5vbqqgzOX/?img_index=7
+   learn: **Glass + solid stack** (01 Spline): a frosted glass chat bubble (white→lilac gradient, ~60 % opacity, blurred refraction) floating over a solid orange #d5ad8c-ish / #ff8a1f bubble, on a dark grey #3e
+   TAKE — used in the topic recipe
+02. Rove Card Design  3D renders and modeling created with the help of the talented @mind.of.t — Vova Vindar
+   https://www.pinterest.com/pin/845832373800023107/
+   original: https://www.instagram.com/p/DElM7Smy2wL/
+   learn: **Dark metal cards** (02 Rove): two credit cards in brushed dark purple metal (#433e4c on #000000), thin specular edge highlights, flip and cross in 3D, then settle flat facing camera. 80 % of frames 
+   TAKE — used in the topic recipe
+03. Perfect Scroll Animation Lighting effect Figma File Webflow Showcasing Your SaaS App — Over Sight Webflow
+   https://www.pinterest.com/pin/926052742129752155/
+   original: https://webflow.com/templates/html/redsun-website-template?ref=pinterest.com-wt
+   learn: **Dark web UI scroll** (03): full-page dark site (#000000 / #06080b) with one orange accent (#ff6a00 buttons/glow), sections slide up as cards with an orange rim glow; brightness 0.04.
+   TAKE — used in the topic recipe
+04. Binge Gyroscope Interaction: Premium 3D Movie Cover Card Tilt — 60fps
+   https://www.pinterest.com/pin/1110770695653147817/
+   original: https://60fps.design/shots/binge-movie-cover-gyro-glare-interaction
+   learn: **Gyroscope phone card** (04 "Binge" 60fps): white page #fdfdfd, a phone mockup with a poster card that tilts ±8–10° with the (fake) device gyroscope and has a moving specular sheen; 33 % still frames
+   TAKE — used in the topic recipe
+05. astroospace on tiktok — vids
+   https://www.pinterest.com/pin/1105000458573910720/
+   TAKE: 3D object-plate idea only (bg too dark to use as is) [dark smoky 3D glass object on black] (reviewed Nov 4: cover thumbnail viewed)
+06. Animated Poster & Glass Effect Tutorial — P A N T E R
+   https://www.pinterest.com/pin/550354016977306736/
+   original: https://patreon.com/pantervision?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=creatorshare_creator&utm_content=join_link
+   TAKE: poster/editorial layout idea [black editorial poster, chrome 3D type, smiley] (reviewed Nov 4: cover thumbnail viewed)
+07. Liquid cards by @its_sslvr 🌀 — Details.so
+   https://www.pinterest.com/pin/1107181889671298800/
+   TAKE: liquid card texture idea [liquid-metal grey cards, dark] (reviewed Nov 4: cover thumbnail viewed)
+08. ProjectYuli - Internet Gems: Website Inspiration — ilovecreatives
+   https://www.pinterest.com/pin/753719687666123394/
+   original: https://ilovecreatives.com/internet-gem-websites/project-yuli
+   TAKE: editorial card + red accent layout [cream card on black, red type, website inspo] (reviewed Nov 4: cover thumbnail viewed)
+
+== Motion Kit v4 research / after effects transitions ==
+01. Download After Effects Project Files Built for Video Editors — EarnEdits.com
+   https://www.pinterest.com/pin/1086986060079822211/
+   original: http://earnedits.com/
+   learn: Transition **blur runs are short**: whip/blur transitions measure 2–4 frames (09 whip tutorial: 2 and 3 frames; 14 flicker: 4/3/2/2 frames; 16: 4–9 frames). Long blur runs (15–60 frames) are deliberat
+   TAKE — used in the topic recipe
+02. Trendy Echo Effect Animation in After Effects — Aress
+   https://www.pinterest.com/pin/931471135423209073/
+   original: https://youtu.be/9kurzjs6vR0
+   learn: Colours: dark cinematic teal-black for promo edits (#0c151a, #001013, 01); white/neutral UI (04 #fbfbfb); acid lime for text promos (02 #cdfe74/#e6f69c); pure black + white type for flicker/whip tutor
+   TAKE — used in the topic recipe
+03. 📡History remembered her as one of Hollywood’s greatest stars 🎬  It almost forgot she helpe — EarnEdits.com
+   https://www.pinterest.com/pin/1086986060089969292/
+   original: https://www.instagram.com/reel/DcD4mcfIgey/
+   learn: 5. Micro-cut bursts: 3–4 cuts 3–6 frames apart to punctuate a beat drop, then back to 1–2 s shots. — 03 https://www.pinterest.com/pin/1086986060089969292/
+   TAKE — used in the topic recipe
+04. Transiciones perfectas en After Effects 🔥  #motiongraphics #aftereffects #uianimation #mot — Andrés Toro | Motion Designer
+   https://www.pinterest.com/pin/1032168808367375931/
+   original: https://www.instagram.com/reel/DcduvR2ME0P/
+   learn: Colours: dark cinematic teal-black for promo edits (#0c151a, #001013, 01); white/neutral UI (04 #fbfbfb); acid lime for text promos (02 #cdfe74/#e6f69c); pure black + white type for flicker/whip tutor
+   TAKE — used in the topic recipe
+05. 200+ Shape Transitions — Minchita Jan
+   https://www.pinterest.com/pin/756604806201382827/
+   original: https://1.envato.market/c/1274348/298927/4662?u=https://elements.envato.com/200-shape-transitions-GGG5QTK&subid1=Pin&subid2=d22
+   learn: 4. Shape/liquid wipe: an organic shape (circle/blob/brush stroke) grows to full frame in ~12–20 frames, ease-in-out, revealing the next shot inside it. — 05 https://www.pinterest.com/pin/7566048062013
+   TAKE — used in the topic recipe
+06. 🤖 We combined Claude with After Effects for this one ⚡ Full breakdown of the AI-assisted w — EarnEdits.com
+   https://www.pinterest.com/pin/1086986060090796869/
+   original: https://www.instagram.com/reel/DcdkB64oNkC/
+   SKIP: purple/blue neon look [AE + Claude promo, purple/blue rocket] (reviewed Nov 4: cover thumbnail viewed)
+07. Comment “Fragment” and I’ll send you the Project File!🎥 #videoediting #aftereffect #visual — Alex Arts
+   https://www.pinterest.com/pin/1043990757369769608/
+   original: https://www.instagram.com/reel/DDaTEkzoXA-/
+   TAKE: before/after layout (red bg) [before/after face compare on red] (reviewed Nov 4: cover thumbnail viewed)
+08. You’re not out of time 🕐 You’re out of focus ⚡  This After Effects project transforms a si — EarnEdits.com
+   https://www.pinterest.com/pin/1086986060090383822/
+   original: https://www.instagram.com/reel/DcQh-yhO93J/
+   TAKE textured collage
+09. How to make Whip Transition effect in After Effects - 🤔 Want the pack? Comment «Pack» and  — MotionPulse
+   https://www.pinterest.com/pin/877005727506486694/
+   original: https://www.instagram.com/reel/DeXNMsEzjcP/
+   learn: Transition **blur runs are short**: whip/blur transitions measure 2–4 frames (09 whip tutorial: 2 and 3 frames; 14 flicker: 4/3/2/2 frames; 16: 4–9 frames). Long blur runs (15–60 frames) are deliberat
+   TAKE — used in the topic recipe
+10. One seamless AI transition after another.  Mia typing at her desk – then suddenly, she's i — Filmora Video Editor
+   https://www.pinterest.com/pin/650418371231459800/
+   original: https://www.instagram.com/reel/DcUrtB-jpTx/
+   TAKE: one-shot transition idea ['One Shot Transition' tutorial, bright room] (reviewed Nov 4: cover thumbnail viewed)
+11. Motion inspiration - Life — MotionDesigners.Pro
+   https://www.pinterest.com/pin/933230354048370225/
+   SKIP: glow on black [red glossy eye logo glowing on black] (reviewed Nov 4: cover thumbnail viewed)
+12. Backward Story // Slideshow — After Effects Template — Souharda
+   https://www.pinterest.com/pin/730498002109552061/
+   original: https://1.envato.market/c/1310965/275988/4415?u=https://videohive.net/item/backward-story-slideshow/23902330
+   TAKE: collage slideshow idea ['Backward Story' B&W/sepia collage template] (reviewed Nov 4: cover thumbnail viewed)
+13. Paint Brush Transitions Reveal Pack - After Effects — Best Creative Displays
+   https://www.pinterest.com/pin/1055953443851629771/
+   original: https://1.envato.market/c/2023570/275988/4415?u=https://videohive.net/item/paint-brush-transitions-reveal-pack/8079190
+   TAKE: paint-reveal transition [yellow 'PAINT' brush-reveal transition pack] (reviewed Nov 4: cover thumbnail viewed)
+14. How to make Dynamic Flicker effect in After Effects - 🤔 Want the pack? Comment «Pack» and  — MotionPulse
+   https://www.pinterest.com/pin/877005727502986001/
+   original: https://www.instagram.com/reel/DZ0Gi5hzc3t/
+   learn: 3. Flicker: 1–2 frame luma spikes (+40…+90/255) in clusters of 2–3 frames around a cut, black-and-white type. — 14 https://www.pinterest.com/pin/877005727502986001/
+   TAKE — used in the topic recipe
+15.  — Coco
+   https://www.pinterest.com/pin/1090715603482767751/
+   TAKE: warm spark overlay [black with orange sparks overlay] (reviewed Nov 4: cover thumbnail viewed)
+16. Motion inspiration - 2025 — MotionDesigners.Pro
+   https://www.pinterest.com/pin/933230354045109691/
+   TAKE cream paper editorial serif + brush
+
+== Motion Kit v4 research / before after video editing showcase ==
+01. Real estate video editing inspiration. — Motion Pet
+   https://www.pinterest.com/pin/671599363236225503/
+   original: https://www.instagram.com/reel/DcF1qNmi_1S/
+   learn: Measured on 720x1280 (01): Before x 87–287, y 470–811 (28 % of width); After x 274–645, y 298–955 (52 % of width). Cards have ~4 % corner radius + soft drop shadow (blur ≈ 30 px, 25 % black).
+   TAKE — used in the topic recipe
+02. Video Editing Before vs After | The Ultimate Transformation — Revuteck
+   https://www.pinterest.com/pin/1149403136184229928/
+   original: https://www.instagram.com/revuteck_it_solutions/
+   learn: Backgrounds: **(a)** white #f9f9f9 with two orange #fea101 organic blobs in opposite corners + creator handle at the bottom (01, Motion Pet); **(b)** dark blurred copy of the clip at ~30 % brightness 
+   TAKE — used in the topic recipe
+03. Omi.me Edits Breakdown by Pixallow  Raw footage in. Scroll-stopping content out.  #VideoEd — Pixallow
+   https://www.pinterest.com/pin/591660469841407331/
+   original: https://www.instagram.com/reel/DXN9YE6iGVw/
+   learn: Backgrounds: **(a)** white #f9f9f9 with two orange #fea101 organic blobs in opposite corners + creator handle at the bottom (01, Motion Pet); **(b)** dark blurred copy of the clip at ~30 % brightness 
+   TAKE — used in the topic recipe
+04. Ranveer Podcast into short form Content — PerfectShots
+   https://www.pinterest.com/pin/879820477207025790/
+   TAKE: before/after framed cards [before/after podcast cut, black bg with cards] (reviewed Nov 4: cover thumbnail viewed)
+05. Before & After home office at the Arlenh House 😍 — tom
+   https://www.pinterest.com/pin/22306960650024141/
+   original: https://www.instagram.com/reel/C7kKQUHOZZU/
+   TAKE: warm room plate + title ['BEFORE & AFTER' home-office title, warm room] (reviewed Nov 4: cover thumbnail viewed)
+06. Before and after editing with a 3D camera and AI images — Matthew Ventigan
+   https://www.pinterest.com/pin/187321665744746997/
+   TAKE: before/after + timeline panel [before/after fitness, orange labels, timeline strip] (reviewed Nov 4: cover thumbnail viewed)
+07. Download After Effects Project Files Built for Video Editors — EarnEdits.com
+   https://www.pinterest.com/pin/1086986060079822211/
+   original: http://earnedits.com/
+   TAKE: dark editorial cards (add texture) [dark editorial cards on black] (reviewed Nov 4: cover thumbnail viewed)
+08. 🎬 Before vs After | Video Editing Transformation  Just finished editing this sample from @ — Idro Video Editor
+   https://www.pinterest.com/pin/987132812086003657/
+   original: https://www.instagram.com/reel/DPwVVPMAUxI/
+   learn: 6. End on a "Hire me / DM" card (ref 4 does this; pins 08, 14 do it in the caption). — 08 https://www.pinterest.com/pin/987132812086003657/ , 14 https://www.pinterest.com/pin/1135681231028821248/
+   TAKE — used in the topic recipe
+09. Before After video Editing Timeline — PerfectShots
+   https://www.pinterest.com/pin/879820477206944267/
+   TAKE: card swap layout [before/after with yellow card and timeline] (reviewed Nov 4: cover thumbnail viewed)
+10. Before vs After: Automotive Commercial Video Editing & Motion Graphics Showcase — Tanzil Creations
+   https://www.pinterest.com/pin/941252390894821479/
+   original: https://www.instagram.com/tanzil_creations
+   TAKE: framed cards on dark plate [before/after automotive, cards on dark] (reviewed Nov 4: cover thumbnail viewed)
+11. The Secret's in the Edit 🎨 | Watch the Process Unfold — Snipix | Creative Agency | Video Editing
+   https://www.pinterest.com/pin/920704717577291075/
+   SKIP: violet tint + glow labels [before/after with pink-violet cards and neon labels] (reviewed Nov 4: cover thumbnail viewed)
+12. Mosaic Logo Reveal — EdgarAFMedia
+   https://www.pinterest.com/pin/810999845416130081/
+   original: https://1.envato.market/c/1274348/298927/4662?u=https://elements.envato.com/mosaic-logo-reveal-RTE4BY9&subid1=Pin&subid2=a23
+   TAKE: mosaic reveal idea [mosaic logo reveal photo wall] (reviewed Nov 4: cover thumbnail viewed)
+13. Who doesn’t love a good before, during and after? . . . Follow for more bridal and beauty  — Blended Babe MUA
+   https://www.pinterest.com/pin/456622849739263524/
+   original: https://www.instagram.com/reel/DQNLGPMEZ-E/
+   TAKE: stacked before/after [3-step makeup before/during/after stack] (reviewed Nov 4: cover thumbnail viewed)
+14. See the magic of editing! Before vs After edit of our client — Abdul Karim Juneja
+   https://www.pinterest.com/pin/1135681231028821248/
+   original: https://www.instagram.com/abdulkarimcreates/
+   TAKE: stacked framed cards [before/after warehouse with timeline] (reviewed Nov 4: cover thumbnail viewed)
+15. Before vs. After 🎬 | The Power of Editing Revealed! — Snipix | Creative Agency | Video Editing
+   https://www.pinterest.com/pin/920704717577135673/
+   TAKE: framed-card + timeline [podcast before/after cards with edit timeline] (reviewed Nov 4: cover thumbnail viewed)
+16. Aprenda a fazer edição de qualidade usando apenas o Capcut, comente “conversa” que eu vou  — Atila Nobre
+   https://www.pinterest.com/pin/654640495884010181/
+   original: https://www.instagram.com/reel/DO9YTdLDQLg/
+   TAKE: sand/cream editorial cards [before/final cards on sand bg (Portuguese)] (reviewed Nov 4: cover thumbnail viewed)
+
+== Motion Kit v4 research / blender 3d motion graphics ==
+01. Blender 3D Architecture #blender #blender3d — 1314MM 1314MM
+   https://www.pinterest.com/pin/8585055532940183/
+   original: https://www.youtube.com/@WonderCraft1/videos
+   learn: Audio onsets 2.4–2.9 per second on the music-driven pins (01, 02, 04, 14); median onset gap 0.25–0.33 s (≈ 1/8 notes at 90–120 BPM). Cuts land on an onset: measured onset−cut offsets −0.17…+0.11 s (04
+   TAKE — used in the topic recipe
+02. Follow us on instagram @motiondesigners.pro #3d #vfx #cgi #digitalart #blender #motion — Jungmi Kim
+   https://www.pinterest.com/pin/3940718419920753/
+   learn: AirPods #c4c3c6/#d0cfd2 (02), keyboard lilac #a29ab5 + #d3c8c6 (09), coffee beige #aaa095/#c1b8b0 (10), gummies cream #f0d5ce (14), green-on-white #266022/#c8cdcc (08), dark grey #7c7d80/#282728 (04).
+   TAKE — used in the topic recipe
+03. Follow us on instagram @motiondesigners.pro @piri3d #3d #vfx #cgi #digitalart #blender #mo — MotionDesigners.Pro
+   https://www.pinterest.com/pin/127578601937749602/
+   TAKE: floating product on paper bg [floating tubes on beige, Blender viewport below] (reviewed Nov 4: cover thumbnail viewed)
+04. Motion inspiration - Fluid — MotionDesigners.Pro
+   https://www.pinterest.com/pin/127578601938525446/
+   learn: AirPods #c4c3c6/#d0cfd2 (02), keyboard lilac #a29ab5 + #d3c8c6 (09), coffee beige #aaa095/#c1b8b0 (10), gummies cream #f0d5ce (14), green-on-white #266022/#c8cdcc (08), dark grey #7c7d80/#282728 (04).
+   TAKE — used in the topic recipe
+05. I will do 3d product animation video, 3d industrial animation, and rendering in blender — voxedra3dstudio
+   https://www.pinterest.com/pin/1104015296153803014/
+   original: https://www.fiverr.com/s/Ay7pN85
+   TAKE: product close-up (muted blue-grey bg: recolour) [close-up luxury watch on blue-grey] (reviewed Nov 4: cover thumbnail viewed)
+06. Motion inspiration - Build — MotionDesigners.Pro
+   https://www.pinterest.com/pin/127578601938739672/
+   TAKE: neutral 3D object plate [grey bricks arc on soft grey] (reviewed Nov 4: cover thumbnail viewed)
+07. Here’s how a simple concept becomes a sleek 3D product video in Blender —   modeling, shad — BinaryCGI
+   https://www.pinterest.com/pin/1042090801287384337/
+   original: https://www.instagram.com/reel/DO3NxLICYpt/
+   TAKE: floating product on soft bg (pink-magenta ok, not neon) [pink soda can floating on pink] (reviewed Nov 4: cover thumbnail viewed)
+08. Motion inspiration - Joe — MotionDesigners.Pro
+   https://www.pinterest.com/pin/127578601938165446/
+   learn: AirPods #c4c3c6/#d0cfd2 (02), keyboard lilac #a29ab5 + #d3c8c6 (09), coffee beige #aaa095/#c1b8b0 (10), gummies cream #f0d5ce (14), green-on-white #266022/#c8cdcc (08), dark grey #7c7d80/#282728 (04).
+   TAKE — used in the topic recipe
+09. Motion inspiration - Keyboard — MotionDesigners.Pro
+   https://www.pinterest.com/pin/127578601939340367/
+   learn: AirPods #c4c3c6/#d0cfd2 (02), keyboard lilac #a29ab5 + #d3c8c6 (09), coffee beige #aaa095/#c1b8b0 (10), gummies cream #f0d5ce (14), green-on-white #266022/#c8cdcc (08), dark grey #7c7d80/#282728 (04).
+   TAKE — used in the topic recipe
+10. Motion inspiration - Coffee — Ahmed Apo Elnil
+   https://www.pinterest.com/pin/3025924744030594/
+   learn: AirPods #c4c3c6/#d0cfd2 (02), keyboard lilac #a29ab5 + #d3c8c6 (09), coffee beige #aaa095/#c1b8b0 (10), gummies cream #f0d5ce (14), green-on-white #266022/#c8cdcc (08), dark grey #7c7d80/#282728 (04).
+   TAKE — used in the topic recipe
+11. Motion inspiration - Circles — Kevin Y
+   https://www.pinterest.com/pin/984177324840512259/
+   learn: Materials: soft glossy plastic (AirPods 02, keyboard keycaps 09), translucent jelly/gummy with subsurface (14, 15), matte clay/foam spheres (11), brushed/clean metal (12 suitcase). Reflections are sof
+   TAKE — used in the topic recipe
+12. Motion inspiration - Suitcase — MotionDesigners.Pro
+   https://www.pinterest.com/pin/127578601938644350/
+   learn: Materials: soft glossy plastic (AirPods 02, keyboard keycaps 09), translucent jelly/gummy with subsurface (14, 15), matte clay/foam spheres (11), brushed/clean metal (12 suitcase). Reflections are sof
+   TAKE — used in the topic recipe
+13. is there anyone who still doesn’t know?  check out my 2D VFX Pack in the shop — synccreation
+   https://www.pinterest.com/pin/998110336164424454/
+   original: https://www.instagram.com/reel/DCkDo2CI17B/
+   TAKE: Blender tutorial UI idea ['you can draw 2D in Blender' viewport + camera] (reviewed Nov 4: cover thumbnail viewed)
+14. Motion inspiration - Particles — MotionDesigners.Pro
+   https://www.pinterest.com/pin/127578601938401996/
+   learn: AirPods #c4c3c6/#d0cfd2 (02), keyboard lilac #a29ab5 + #d3c8c6 (09), coffee beige #aaa095/#c1b8b0 (10), gummies cream #f0d5ce (14), green-on-white #266022/#c8cdcc (08), dark grey #7c7d80/#282728 (04).
+   TAKE — used in the topic recipe
+15. Follow us on instagram @motiondesigners.pro @clim_studio #3d #vfx #cgi #digitalart #blende — Eesa pochee
+   https://www.pinterest.com/pin/774124930015351/
+   TAKE: warm 3D object plate [red helmet-like 3D object on orange] (reviewed Nov 4: cover thumbnail viewed)
+16. Follow us on instagram @motiondesigners.pro @robin_lochmann #3d #vfx #cgi #digitalart #ble — 우진 한
+   https://www.pinterest.com/pin/5207355813965039/
+   TAKE: neutral 3D object plate [grey stone on soft grey gradient] (reviewed Nov 4: cover thumbnail viewed)
+
+== Motion Kit v4 research / instagram reel edit captions transitions ==
+01. Talking head video — Motion Pet
+   https://www.pinterest.com/pin/671599363236245110/
+   original: https://www.instagram.com/reel/DcIqF-EupQ0/
+   learn: **Captions:** 1–3 words at a time, centred in the upper-middle or right under the face, never bottom-of-screen subtitles. Big bold white sans with a soft shadow (01 "you", 16 "you"), or the "modern re
+   TAKE framed-card talking head + script accent
+02. June - a portal. Half way through the year and a complete change of life.   Highlights:  - — Little Whimsey Press
+   https://www.pinterest.com/pin/868913321870037337/
+   original: https://www.instagram.com/reel/DLhRh3ypYq0/
+   learn: Note: Pinterest's results for this query lean lifestyle/fashion/aesthetic (02, 03, 05, 08, 12). The ones that matter for Zyqor's talking-head / tutorial reels are 01, 04, 06, 09, 10, 13, 14, 16.
+   TAKE — used in the topic recipe
+03. Modern talking head — Motion Pet
+   https://www.pinterest.com/pin/671599363236283537/
+   original: https://www.instagram.com/reel/DcOdCYOuaQU/
+   TAKE subtitle style
+04. Real estate video editing inspiration. — Motion Pet
+   https://www.pinterest.com/pin/671599363236225503/
+   original: https://www.instagram.com/reel/DcF1qNmi_1S/
+   learn: Measured on 01–08: talking-head pieces have 0–3 hard cuts (04, 05: none — the energy comes from captions/zoom, not cuts); montage pieces cut every 1.0–1.5 s (02, 03, 07). All mixes −14 to −15 LUFS exc
+   TAKE — used in the topic recipe
+05. Want captions that actually pop? Here’s my quick guide! — Azhai Boggs
+   https://www.pinterest.com/pin/966514770053414471/
+   TAKE caption font guide
+06. Make your video captions pop with this trick 🔥  #designtips #designinspiration #personaliz — Made and Styled
+   https://www.pinterest.com/pin/1112037333001680247/
+   original: https://www.instagram.com/reel/DHlT6zaPb4i/
+   learn: **CTA:** "Comment 'Intro' to get the template" in the caption/description (06), "save this", follow — keyword-comment CTA is the standard.
+   TAKE — used in the topic recipe
+07. Лето уходит тихо, как друг, с которым не успел наговориться. — KITEREO
+   https://www.pinterest.com/pin/671458625736063835/
+   original: https://www.instagram.com/reel/DOnrJG0jJBk/
+   learn: **Transitions:** match cut / object-wipe (09 coffee transition), speed ramp with motion blur (14, 06), mask reveal through text or panels (07), zoom punch-in on the key word; hard cuts land on the bea
+   TAKE — used in the topic recipe
+08. Aprenda a fazer edição de qualidade usando apenas o Capcut, comente “conversa” que eu vou  — Atila Nobre
+   https://www.pinterest.com/pin/654640495884010181/
+   original: https://www.instagram.com/reel/DO9YTdLDQLg/
+   learn: **Title cards:** a script/handwritten title over the clip for tutorials ("How To Do This" — 06, 14), or a stacked serif quote in yellow/white (08).
+   TAKE — used in the topic recipe
+09. Motion inspiration - 2025 — MotionDesigners.Pro
+   https://www.pinterest.com/pin/933230354045109691/
+   learn: **Transitions:** match cut / object-wipe (09 coffee transition), speed ramp with motion blur (14, 06), mask reveal through text or panels (07), zoom punch-in on the key word; hard cuts land on the bea
+   TAKE cream paper editorial serif + brush
+10. ❤️‍🩹 — 11.11_vibessss
+   https://www.pinterest.com/pin/801359327489002464/
+   original: https://www.instagram.com/reel/DUoi_Uxkwxr/
+   learn: **Framing:** talking head shrunk into a rounded card on a clean background with blurred brand shapes (10, Motion_pet), split screens 2–3 panels (02, 03, 05, 07 "LIFE IN JUNE" panel reveal).
+   TAKE — used in the topic recipe
+11. Just learn it from @karanaujla atp — kaur_moh
+   https://www.pinterest.com/pin/690317449174580866/
+   original: https://www.instagram.com/reel/DWMXw77jr30/
+   TAKE: mirror-selfie caption style [girl mirror selfie in hallway, yellow caption] (reviewed Nov 4: cover thumbnail viewed)
+12. She was right ig  [Mom said, wear something traditional you will look like a princess, des — Vanshika
+   https://www.pinterest.com/pin/946389309207556125/
+   original: https://www.instagram.com/reel/DS0KtkGk8U4/
+   TAKE: warm portrait + serif caption ['Mom said, wear something traditional' warm portrait] (reviewed Nov 4: cover thumbnail viewed)
+13. Thomas shelby...  #thomasshelby #filmes #edits #cortes #fyy #fouyou — ㅤ𝐌𝐈𝐂𝐇𝐀𝐄𝐋ㅤ
+   https://www.pinterest.com/pin/1023794927798348621/
+   original: https://www.instagram.com/reel/DMu_cCSun9C/
+   SKIP
+14.  — Coco
+   https://www.pinterest.com/pin/1090715603482767751/
+   learn: **Transitions:** match cut / object-wipe (09 coffee transition), speed ramp with motion blur (14, 06), mask reveal through text or panels (07), zoom punch-in on the key word; hard cuts land on the bea
+   TAKE — used in the topic recipe
+15. 🌟🫠   (Fits , outfit , traditional, western , trending reels , viral )   #fyppppppppppppppp — Aayid
+   https://www.pinterest.com/pin/758575131031606894/
+   original: https://www.instagram.com/reel/DVYgDz8jwjn/
+   TAKE: small caption style [mirror selfie, caption 'maybe I look better in traditional'] (reviewed Nov 4: cover thumbnail viewed)
+16. Motion inspiration - Frames — MotionDesigners.Pro
+   https://www.pinterest.com/pin/933230354043913635/
+   TAKE grey editorial bold + script
+
+== Motion Kit v4 research / instagram reel editing effects ==
+01. Modern talking head — Motion Pet
+   https://www.pinterest.com/pin/671599363236283537/
+   original: https://www.instagram.com/reel/DcOdCYOuaQU/
+   learn: **Framed talking head** (01, 09, 16): the speaker sits inside a rounded vertical card (~60 % frame width, radius ~8 %), white/cream page #f8f8f8 with an orange #f5a000-ish corner blob, small "Before/A
+   TAKE subtitle style
+02. #capcut #vnedits #weekndedits #viral #reels — nitish
+   https://www.pinterest.com/pin/1082904672928593839/
+   original: https://www.instagram.com/reel/DXy3LyOT1Zw/
+   learn: 16 video pins: talking-head templates (01/09 Motion_pet "Modern talking head", 16 antes/final CapCut), Hormozi-style breakdown (05), motion-design promo (13 webrankstudio), reel tips (08), fan edits (
+   TAKE — used in the topic recipe
+03. Thomas shelby...  #thomasshelby #filmes #edits #cortes #fyy #fouyou — ㅤ𝐌𝐈𝐂𝐇𝐀𝐄𝐋ㅤ
+   https://www.pinterest.com/pin/1023794927798348621/
+   original: https://www.instagram.com/reel/DMu_cCSun9C/
+   learn: **Dark cinematic fan edit** (03): teal-black #1e272b / #030b0e, 14 cuts in 20 s after a 9.8 s slow intro (shots 0.2–3.3 s), flicker clusters (1–2 frame luma jumps) before the drop at 8.0–8.3 s.
+   SKIP
+04.  — Coco
+   https://www.pinterest.com/pin/1090715603482767751/
+   learn: Overlays: light-leak bursts on black (14: bursts +49…+92 luma at 4.90/5.53/6.20 and 10.90/11.47 → pairs ~0.6 s apart, screen-blend them), embers/sparks on black (04, 15), film dust/scratches (07).
+   TAKE — used in the topic recipe
+05. Alex Hormozi Video Editing Style Breakdown | Viral Retention Strategy #VideoEditing — Rami.Visualz
+   https://www.pinterest.com/pin/1147643917677607792/
+   original: https://www.instagram.com/rami.visualz1/
+   learn: 16 video pins: talking-head templates (01/09 Motion_pet "Modern talking head", 16 antes/final CapCut), Hormozi-style breakdown (05), motion-design promo (13 webrankstudio), reel tips (08), fan edits (
+   TAKE Hormozi-style hierarchy
+06. For Template👇🏻 First things first, FOLLOW me & save this reel🤍  Then comment “template” an — Safa Varin
+   https://www.pinterest.com/pin/611504455695637591/
+   original: https://www.instagram.com/reel/DROo1MdDQUj/
+   TAKE: moody portrait (dark; no glow) [dark portrait with pink flower, soft] (reviewed Nov 4: cover thumbnail viewed)
+07. Old Film Overlay — A r s e n i c
+   https://www.pinterest.com/pin/1030057745993566220/
+   learn: Overlays: light-leak bursts on black (14: bursts +49…+92 luma at 4.90/5.53/6.20 and 10.90/11.47 → pairs ~0.6 s apart, screen-blend them), embers/sparks on black (04, 15), film dust/scratches (07).
+   TAKE old film overlay
+08. Free Reel Editing Guide | Essential Video Editing Resources for Instagram Reels — Valentina Moreira
+   https://www.pinterest.com/pin/30117891252303371/
+   original: https://www.instagram.com/reel/C2cSW9-uRMm/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA%3D%3D
+   learn: 16 video pins: talking-head templates (01/09 Motion_pet "Modern talking head", 16 antes/final CapCut), Hormozi-style breakdown (05), motion-design promo (13 webrankstudio), reel tips (08), fan edits (
+   TAKE — used in the topic recipe
+09. Talking head video — Motion Pet
+   https://www.pinterest.com/pin/671599363236245110/
+   original: https://www.instagram.com/reel/DcIqF-EupQ0/
+   TAKE framed-card talking head + script accent
+10. ❤️ . . #reelsinstagram#viralreels#trendingreels#trending #explorepage — Om.
+   https://www.pinterest.com/pin/690387817907263305/
+   original: https://www.instagram.com/reel/C5VvCwtytI3/
+   TAKE: warm talking-head plate [boy portrait in warm lit room] (reviewed Nov 4: cover thumbnail viewed)
+11. Chalrey Chalrey waal — Bella
+   https://www.pinterest.com/pin/875809458808455591/
+   original: https://www.wishlink.com/mys.bella/post/9689854?utm_source=pinterest&utm_medium=pinterest&utm_campaign=pinterest
+   TAKE: sticker + name caption idea [girl in frame with star stickers, name caption] (reviewed Nov 4: cover thumbnail viewed)
+12. Blur Effect Video Editing In 1 Click 😱 . . . #videoediting #viralreels #photoediting #port — Ankit Maurya Editz
+   https://www.pinterest.com/pin/1141873680511251897/
+   original: https://www.instagram.com/reel/C4ZyAlsxj_R/
+   TAKE: blur effect idea (loud text: do not copy) ['VIDEO EDITING 1 CLICK' blur-effect thumbnail] (reviewed Nov 4: cover thumbnail viewed)
+13. Why do unforgettable brands stick in your mind? 🤯 It's not luck.It's strategy in motion. ♟ — Web Rank Studio
+   https://www.pinterest.com/pin/924363892282992611/
+   original: https://www.instagram.com/reel/DSiDOEIkY7b/
+   learn: 16 video pins: talking-head templates (01/09 Motion_pet "Modern talking head", 16 antes/final CapCut), Hormozi-style breakdown (05), motion-design promo (13 webrankstudio), reel tips (08), fan edits (
+   TAKE — used in the topic recipe
+14. ❤❤❤ — 🌹🌹🌹
+   https://www.pinterest.com/pin/603200943843150335/
+   learn: 6. Light-leak overlay in screen mode on transitions, 15–20 frames per burst, warm red→orange (#ff3b00 → #ffb000). — 14 https://www.pinterest.com/pin/603200943843150335/
+   TAKE — used in the topic recipe
+15.  — ปรวี ทัพซ้าย
+   https://www.pinterest.com/pin/700943129512917383/
+   TAKE: ember/smoke overlay [dark smoke with orange embers overlay] (reviewed Nov 4: cover thumbnail viewed)
+16. Aprenda a fazer edição de qualidade usando apenas o Capcut, comente “conversa” que eu vou  — Atila Nobre
+   https://www.pinterest.com/pin/654640495884010181/
+   original: https://www.instagram.com/reel/DO9YTdLDQLg/
+   TAKE: framed cards + timeline [before/after cards on dark with editor timeline (Portuguese)] (reviewed Nov 4: cover thumbnail viewed)
+
+== Motion Kit v4 research / kinetic typography 3d ==
+01. The Designers List by @slobzheninov⁠ TYPEONE Magazine #06⁠ ⁠ Continuing our insight into i — TYPE01
+   https://www.pinterest.com/pin/771593348681235758/
+   learn: 16 video pins: inflated/balloon 3D type (05 Olive Young "site drop"), retro extruded slam type (06 "Show up for yourself"), type tunnels (02 After Effects tunnel, 03 Svmn "FOCUS"), type on 3D forms (0
+   TAKE — used in the topic recipe
+02. 3d Typography Tunnel — Priyangi Desai
+   https://www.pinterest.com/pin/796363146629224816/
+   original: https://bento.me/jatin
+   learn: 16 video pins: inflated/balloon 3D type (05 Olive Young "site drop"), retro extruded slam type (06 "Show up for yourself"), type tunnels (02 After Effects tunnel, 03 Svmn "FOCUS"), type on 3D forms (0
+   TAKE — used in the topic recipe
+03. Focus — Svmn
+   https://www.pinterest.com/pin/42080577759067462/
+   original: https://svmn.world/kinetic-typography
+   learn: **Infinite tunnel loop** (03): perfectly constant −18 %/s scale + +8°/s roll for 20 s (seamless loop); red #fc141c on lilac #d9bcf5. Fly-through version (02): +84…+129 %/s with ±7–10°/s roll, teal #4d
+   TAKE — used in the topic recipe
+04.  — George
+   https://www.pinterest.com/pin/3518505950578167/
+   TAKE: repeating type pattern [black/white diagonal repeating studio-name text] (reviewed Nov 4: cover thumbnail viewed)
+05. the official @oliveyoung_us site drop is... 👀 — Ginni
+   https://www.pinterest.com/pin/924645367271311940/
+   original: https://www.instagram.com/reel/DYCnkY-JcRa/
+   learn: 16 video pins: inflated/balloon 3D type (05 Olive Young "site drop"), retro extruded slam type (06 "Show up for yourself"), type tunnels (02 After Effects tunnel, 03 Svmn "FOCUS"), type on 3D forms (0
+   TAKE — used in the topic recipe
+06. Show up for YOURSELF ✌️  Had a busy couple of weeks and had to slow down on my own project — Paula Baines
+   https://www.pinterest.com/pin/636766834850915635/
+   original: https://www.instagram.com/p/DIKFc8Mi2jL/
+   learn: 16 video pins: inflated/balloon 3D type (05 Olive Young "site drop"), retro extruded slam type (06 "Show up for yourself"), type tunnels (02 After Effects tunnel, 03 Svmn "FOCUS"), type on 3D forms (0
+   TAKE — used in the topic recipe
+07. Rockwell — Holke79
+   https://www.pinterest.com/pin/402368547964791124/
+   original: http://www.domestika.org/es/courses/806-animacion-para-composiciones-tipograficas/holke79
+   learn: 16 video pins: inflated/balloon 3D type (05 Olive Young "site drop"), retro extruded slam type (06 "Show up for yourself"), type tunnels (02 After Effects tunnel, 03 Svmn "FOCUS"), type on 3D forms (0
+   TAKE — used in the topic recipe
+08. Animated Poster & Glass Effect Tutorial — P A N T E R
+   https://www.pinterest.com/pin/550354016977306736/
+   original: https://patreon.com/pantervision?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=creatorshare_creator&utm_content=join_link
+   learn: 16 video pins: inflated/balloon 3D type (05 Olive Young "site drop"), retro extruded slam type (06 "Show up for yourself"), type tunnels (02 After Effects tunnel, 03 Svmn "FOCUS"), type on 3D forms (0
+   TAKE — used in the topic recipe
+09. Kinetic Typography — LABASAD
+   https://www.pinterest.com/pin/1142155155497577371/
+   original: https://www.labasad.com/en/master/online-master-in-motion-graphics/
+   SKIP: blue/pink neon graffiti [graffiti 'PUNK' in blue/pink] (reviewed Nov 4: cover thumbnail viewed)
+10. kinetic typography on a spinning sphere — 3d type loop — doppio | your designs, served strong.
+   https://www.pinterest.com/pin/1112248439254245210/
+   original: https://doppio.design/?utm_source=pinterest&utm_medium=social&utm_campaign=lab&utm_content=lab-globe
+   learn: **Type on a rotating form** (10 sphere, 07 cylinder): rotation 2–8°/s (sphere), up to 20–30°/s swings (cylinder); white/grey sphere #ffffff/#dedede, black-on-white type.
+   TAKE — used in the topic recipe
+11. H O P E #c4d #motiongraphics #redshift #hope #3dletters #3danimation #c4dart #motion #moti — Camilo Ciprian
+   https://www.pinterest.com/pin/549298485822291332/
+   original: https://www.instagram.com/reel/DDeqiNFRp3p/
+   learn: 7. Heavy material word: concrete/stone with engraved letters on a twisting ribbon, blue gradient sky — for "premium" title cards. — 11 https://www.pinterest.com/pin/549298485822291332/
+   TAKE — used in the topic recipe
+12. KINETISM VOL 1 — 66 Type Animated templates in after effects to bring your animations to a — Zsófi Munkácsi
+   https://www.pinterest.com/pin/4644405860371807/
+   original: https://www.instagram.com/reel/C_NdfbUN0Il/
+   learn: 16 video pins: inflated/balloon 3D type (05 Olive Young "site drop"), retro extruded slam type (06 "Show up for yourself"), type tunnels (02 After Effects tunnel, 03 Svmn "FOCUS"), type on 3D forms (0
+   TAKE — used in the topic recipe
+13. Dia Studio — https://dia.tv/ — work_play_think
+   https://www.pinterest.com/pin/362258363782294374/
+   TAKE: warped type poster idea [pink poster 'NO NO NO' warped type] (reviewed Nov 4: cover thumbnail viewed)
+14. Follow us on instagram @motiondesigners.pro @2d.pete #3d #vfx #cgi #digitalart #blender #m — MotionDesigners.Pro
+   https://www.pinterest.com/pin/127578601937147569/
+   TAKE: type distortion idea (muted) [grey blurred floor-text distortion] (reviewed Nov 4: cover thumbnail viewed)
+15. H O P E What is the word that represents you lately? #c4d #motiongraphics #redshift #hope  — Camilo Ciprian
+   https://www.pinterest.com/pin/549298485821832510/
+   original: https://www.instagram.com/reel/DBd-nTqx8Fn/
+   learn: 16 video pins: inflated/balloon 3D type (05 Olive Young "site drop"), retro extruded slam type (06 "Show up for yourself"), type tunnels (02 After Effects tunnel, 03 Svmn "FOCUS"), type on 3D forms (0
+   TAKE — used in the topic recipe
+16. “EXTEND” Kinetic Typography Experiment • • • • • #motion #motiongraphics #motiondesign #ki — Marjeta Lloshi
+   https://www.pinterest.com/pin/630715122858762422/
+   original: https://www.instagram.com/reel/C5dpsYisGds/
+   learn: 16 video pins: inflated/balloon 3D type (05 Olive Young "site drop"), retro extruded slam type (06 "Show up for yourself"), type tunnels (02 After Effects tunnel, 03 Svmn "FOCUS"), type on 3D forms (0
+   TAKE — used in the topic recipe
+
+== Motion Kit v4 research / kinetic typography reels ==
+01. Лето уходит тихо, как друг, с которым не успел наговориться. — KITEREO
+   https://www.pinterest.com/pin/671458625736063835/
+   original: https://www.instagram.com/reel/DOnrJG0jJBk/
+   learn: **Type as a window (01 KITEREO)**: huge lowercase heavy sans words ("to end / oh no") on black, the *video plays inside the letters* (track matte), then the word expands to full-frame footage. Warm fi
+   TAKE — used in the topic recipe
+02. Motion inspiration - 2025 — MotionDesigners.Pro
+   https://www.pinterest.com/pin/933230354045109691/
+   learn: **Talking head + collage inserts (02 MotionDesigners "2025")**: speaker shots with small white sans captions mid-frame ("tell you why", "and gives"), intercut every 1.5–3 s with cream #cabcad paper co
+   TAKE cream paper editorial serif + brush
+03. You’re not out of time 🕐 You’re out of focus ⚡  This After Effects project transforms a si — EarnEdits.com
+   https://www.pinterest.com/pin/1086986060090383822/
+   original: https://www.instagram.com/reel/DcQh-yhO93J/
+   learn: **3D-object metaphors + serif type (03 EarnEdits)**: glowing puzzle pieces, a retro OS progress window ("…doesn't happen overnight"), desk flat-lay ("WATCHING FEELS PRODUCTIVE" in orange serif), spark
+   TAKE textured collage
+04. Typography Kinetic Motion Design by roku® studio — Roku Studio | AI-Driven Agency Based in Indonesia
+   https://www.pinterest.com/pin/1137721924626055700/
+   original: https://www.instagram.com/p/DN4Ra03gfAq/
+   learn: **Swiss red/white agency type (04 Roku Studio)**: red #bb0000 and white #f3f3f3 alternating full-screen, black bold sans + italic serif mix ("good taste", "An Agency Based in Jakarta"), words slide in
+   TAKE — used in the topic recipe
+05. Create stylish kinetic lyric video — lvlaaa
+   https://www.pinterest.com/pin/1142647736744200273/
+   original: https://go.fiverr.com/visit/?bta=134006&brand=fiverrhybrid&landingPage=https://www.fiverr.com/motion_people/create-stylish-kinetic-lyric-video
+   TAKE: bold type card (red/yellow) [red/yellow bold type card 'WORK DOESN'T'] (reviewed Nov 4: cover thumbnail viewed)
+06. Uno spazio creativo, tante possibilità.  ▶ Produzione video ◉ Fotografia ✦ Motion graphics — NEST COLLECTIVE srl
+   https://www.pinterest.com/pin/823947694370694770/
+   original: https://www.instagram.com/reel/DZXpOERG52U/
+   TAKE: colour-block type (sky-blue block: recolour) [4-colour block 'THIS IS WHAT WE DO'] (reviewed Nov 4: cover thumbnail viewed)
+07.  — Alison Dyer
+   https://www.pinterest.com/pin/650629477434121932/
+   TAKE: stacked type on black [white stacked type on black 'THE RIVER STOLE THE GOODS'] (reviewed Nov 4: cover thumbnail viewed)
+08. stacilicious.design ✦ kinetic typography animation — stacy • multidisciplinary designer
+   https://www.pinterest.com/pin/935763628808246220/
+   original: https://www.instagram.com/stacilicious_design/
+   TAKE: focus-pull type ['FOCUS' blur-to-sharp stacked type] (reviewed Nov 4: cover thumbnail viewed)
+09. Kinetic Typography — Jatin.in.motion
+   https://www.pinterest.com/pin/636696466092164265/
+   original: https://bento.me/jatin
+   TAKE: coral word on black [coral 'CHALO' on black] (reviewed Nov 4: cover thumbnail viewed)
+10. 11/31 days of motion.   Learning AE by doing. #animation #aftereffects #logoanimation #des — fogonglass
+   https://www.pinterest.com/pin/1083749098160412740/
+   original: https://www.instagram.com/reel/DNISyi7omMg/
+   TAKE: sage-green card [green card with 'live' dot] (reviewed Nov 4: cover thumbnail viewed)
+11. KINETISM VOL 1 — 66 Type Animated templates in after effects to bring your animations to a — Zsófi Munkácsi
+   https://www.pinterest.com/pin/4644405860371807/
+   original: https://www.instagram.com/reel/C_NdfbUN0Il/
+   TAKE: type template idea ['KINETISM' stacked type on dark] (reviewed Nov 4: cover thumbnail viewed)
+12. “EXTEND” Kinetic Typography Experiment • • • • • #motion #motiongraphics #motiondesign #ki — Marjeta Lloshi
+   https://www.pinterest.com/pin/630715122858762422/
+   original: https://www.instagram.com/reel/C5dpsYisGds/
+   TAKE: stacked type ['EXTEND' stacked white type on black] (reviewed Nov 4: cover thumbnail viewed)
+13. Some days you ship great work. Some days you stare at the screen and nothing clicks.  Both — Sarah Trummer | web designer & devloper
+   https://www.pinterest.com/pin/965388870219004987/
+   original: https://www.instagram.com/reel/DSx03RAkgqQ/
+   TAKE: single-word type ['Some' white bold on black] (reviewed Nov 4: cover thumbnail viewed)
+14. #graphicdesign #typography — Artsiom Dashkevich | Graphic Designer for Brands & Businesses
+   https://www.pinterest.com/pin/957366833301398698/
+   original: https://www.instagram.com/reel/DId6fRwiMS7/
+   TAKE: red poster type [red poster with black grotesk type] (reviewed Nov 4: cover thumbnail viewed)
+15. Some feel good vibes to ride into Friday and the weekend 💛   Got a whole new batch written — Paula Baines
+   https://www.pinterest.com/pin/636766834854265776/
+   original: https://www.instagram.com/p/DMgMoflMEdm/
+   SKIP palette (AI colour)
+16. Rumble *Flash warning* Flowdan, Fred Again & Skrillex typographic animation — Symbol
+   https://www.pinterest.com/pin/927811960715111799/
+   original: https://www.instagram.com/p/CoDCGktghlP/
+   TAKE: hand-cut type idea ['RUMBLE' hand-cut white type on black] (reviewed Nov 4: cover thumbnail viewed)
+
+== Motion Kit v4 research / saas product promo 3d ==
+01. Motion inspiration - Glass — MotionDesigners.Pro
+   https://www.pinterest.com/pin/127578601939225224/
+   learn: 16 video pins: 3D SaaS/agency promos (05 Sellix web3 UI+3D, 12 Acuity Studios floating UI cards, 13 Zelios AI app-builder demo, 11 EarnEdits SpatialFlow explainer), 3D brand pieces (01 doo "Glass"/Blu
+   TAKE — used in the topic recipe
+02. Perfect Scroll Animation Lighting effect Figma File Webflow Showcasing Your SaaS App — Over Sight Webflow
+   https://www.pinterest.com/pin/926052742129752155/
+   original: https://webflow.com/templates/html/redsun-website-template?ref=pinterest.com-wt
+   TAKE: orange arc hero (dark site: recolour bg) [black SaaS hero with orange arc 'Intelligent Solutions'] (reviewed Nov 4: cover thumbnail viewed)
+03. Motion Design for Explainer Video with Clean UI Animation and 3D SaaS Demo Elements — PING Studio
+   https://www.pinterest.com/pin/1152077148463396779/
+   original: https://theping.me/cases/rivet-explainer-video
+   learn: 16 video pins: 3D SaaS/agency promos (05 Sellix web3 UI+3D, 12 Acuity Studios floating UI cards, 13 Zelios AI app-builder demo, 11 EarnEdits SpatialFlow explainer), 3D brand pieces (01 doo "Glass"/Blu
+   TAKE — used in the topic recipe
+04.  — Zsombor Nagy
+   https://www.pinterest.com/pin/492649952344602/
+   learn: **Pastel float** (12 Acuity): sky #8ec9f8 / #61a8e9 / #c4e0f7, hot pink #f29ec6-ish (04 pink #f29ec6/#dc76a3); UI cards as thick rounded slabs with soft drop shadows floating in space at different dep
+   TAKE — used in the topic recipe
+05. Sellix - UI & 3D for web3 eCommerce platform by @rennesis See more designs like these in o — Santhi Rajendran
+   https://www.pinterest.com/pin/774124930781997/
+   original: https://www.instagram.com/reel/C_m1WhXBszq/
+   learn: 16 video pins: 3D SaaS/agency promos (05 Sellix web3 UI+3D, 12 Acuity Studios floating UI cards, 13 Zelios AI app-builder demo, 11 EarnEdits SpatialFlow explainer), 3D brand pieces (01 doo "Glass"/Blu
+   TAKE — used in the topic recipe
+06. Designing a 3D carrusel on Spline Hana! You can project your layers into 3D while maintain — Spline
+   https://www.pinterest.com/pin/816629344972222825/
+   original: https://www.instagram.com/reel/DNYMisDgwaF/
+   learn: 16 video pins: 3D SaaS/agency promos (05 Sellix web3 UI+3D, 12 Acuity Studios floating UI cards, 13 Zelios AI app-builder demo, 11 EarnEdits SpatialFlow explainer), 3D brand pieces (01 doo "Glass"/Blu
+   TAKE — used in the topic recipe
+07. Control your emotions = stability and happiness   #forex #fx #trading #trader — R3_FUND
+   https://www.pinterest.com/pin/997477017477596607/
+   original: https://www.instagram.com/reel/DFUdQZ6PHTP/
+   SKIP: glow bar on black [black bg, green progress bar '$53,818'] (reviewed Nov 4: cover thumbnail viewed)
+08. Motion inspiration - Frames — MotionDesigners.Pro
+   https://www.pinterest.com/pin/933230354043913635/
+   TAKE grey editorial bold + script
+09. Motion inspiration - Moolah — MotionDesigners.Pro
+   https://www.pinterest.com/pin/933230354041679411/
+   learn: **Fast cut montage** (09 Moolah): 14 cuts in 7 s → 0.43–0.6 s shots (13–18 frames), black #121212 bg + white #bbb5b6 UI.
+   TAKE — used in the topic recipe
+10. Motion inspiration - Sony Ericsson — MotionDesigners.Pro
+   https://www.pinterest.com/pin/127578601938953096/
+   TAKE: desk top-down b-roll plate [green cutting mat, phone, pencils, top-down] (reviewed Nov 4: cover thumbnail viewed)
+11. SaaS Explainer Style – SpatialFlow UI  Emma App After Effects Project File (AEP) Built wit — EarnEdits.com
+   https://www.pinterest.com/pin/1086986060078349776/
+   original: https://www.instagram.com/reel/DVbUt7JCH78/
+   SKIP: purple gradient screen [AE project promo, purple-pink gradient screen on dark green] (reviewed Nov 4: cover thumbnail viewed)
+12. Acuity Studios — Will Taylor
+   https://www.pinterest.com/pin/688769336769270909/
+   original: https://www.behance.net/gallery/110084511/Acuity-Studios
+   learn: **Pastel float** (12 Acuity): sky #8ec9f8 / #61a8e9 / #c4e0f7, hot pink #f29ec6-ish (04 pink #f29ec6/#dc76a3); UI cards as thick rounded slabs with soft drop shadows floating in space at different dep
+   TAKE — used in the topic recipe
+13. Ai App Builder Product Demo Video 🔥  Need a similar a video? Just send us a message and ge — Zelios
+   https://www.pinterest.com/pin/1008595279068679614/
+   original: https://www.instagram.com/reel/DbYiOiugY90/
+   learn: **Device-in-context** (13 Zelios): the product UI playing on a real monitor in a warm desk scene (#d7bda3 / #776053 / #0b0a0a), camera static, UI does the motion.
+   TAKE — used in the topic recipe
+14. Motion inspiration - Orange — MotionDesigners.Pro
+   https://www.pinterest.com/pin/933230354048290966/
+   TAKE: orange banner + timeline ['selling digital products' orange banner over timeline] (reviewed Nov 4: cover thumbnail viewed)
+15. Motion inspiration - Clip — MotionDesigners.Pro
+   https://www.pinterest.com/pin/933230354044647413/
+   SKIP: teal/blue neon cards [AE card promo on pale-blue with teal cards] (reviewed Nov 4: cover thumbnail viewed)
+16. Motion inspiration - Clip — MotionDesigners.Pro
+   https://www.pinterest.com/pin/933230354048220904/
+   TAKE: white card layout (pale-blue bg: recolour) [white 'we've all been there' card on pale blue] (reviewed Nov 4: cover thumbnail viewed)
+
+== Motion Kit v4 research / saas product promo motion graphics ==
+01. Motion inspiration - Moolah — MotionDesigners.Pro
+   https://www.pinterest.com/pin/933230354041679411/
+   learn: Measured on 01–08: avg shot 0.5–3.4 s (01 Moolah = 29 cuts in 15.8 s; 04 Glass / 05 Frames / 06 Budget ≈ 1.8–2.4 s); 02 and 08 have NO hard cuts (one continuous move). Audio: music-only beds at −13 to
+   TAKE — used in the topic recipe
+02. Best Animated Explainer: Promote your SaaS Product — ericles FIDELL
+   https://www.pinterest.com/pin/358247345374839664/
+   original: https://vidico.com/our-videos/?industry=saas&type=explainer-videos&utm_source=Pinterest&utm_medium=social#droppoint
+   learn: **Colour:** ONE bold brand colour per video filling the whole frame: violet/indigo (02, 03, 07, 16), cobalt blue on white/grey (04, 09, 12), flat pink → yellow → red full-frame swaps (01), or dark UI 
+   TAKE — used in the topic recipe
+03. Perfect Scroll Animation Lighting effect Figma File Webflow Showcasing Your SaaS App — Over Sight Webflow
+   https://www.pinterest.com/pin/926052742129752155/
+   original: https://webflow.com/templates/html/redsun-website-template?ref=pinterest.com-wt
+   learn: **Motion:** every beat is a move, not a cut — scale-up reveals, cards sliding in on springy ease-out, 3D rotate/tilt of the screen, camera dolly into a UI detail, mask/wipe reveals of words (03 "Every
+   TAKE — used in the topic recipe
+04. This is how we cook 🔥 Turning ideas into motion. Turning brands into experiences.  - Motio — WizArt Studios
+   https://www.pinterest.com/pin/925700898420097801/
+   learn: **Colour:** ONE bold brand colour per video filling the whole frame: violet/indigo (02, 03, 07, 16), cobalt blue on white/grey (04, 09, 12), flat pink → yellow → red full-frame swaps (01), or dark UI 
+   TAKE — used in the topic recipe
+05. Motion inspiration - Glass — MotionDesigners.Pro
+   https://www.pinterest.com/pin/127578601939225224/
+   learn: **Typography:** clean geometric/grotesk sans (Inter / General Sans / Satoshi type), 2–4 words per card, very large ("Invest effortlessly", "Tailored to you", "AMAZING"), tight leading, left- or top-al
+   TAKE — used in the topic recipe
+06. Motion inspiration - Frames — MotionDesigners.Pro
+   https://www.pinterest.com/pin/933230354043913635/
+   TAKE grey editorial bold + script
+07. Motion Design for Explainer Video with Clean UI Animation and 3D SaaS Demo Elements — PING Studio
+   https://www.pinterest.com/pin/1152077148463396779/
+   original: https://theping.me/cases/rivet-explainer-video
+   learn: Measured on 01–08: avg shot 0.5–3.4 s (01 Moolah = 29 cuts in 15.8 s; 04 Glass / 05 Frames / 06 Budget ≈ 1.8–2.4 s); 02 and 08 have NO hard cuts (one continuous move). Audio: music-only beds at −13 to
+   TAKE — used in the topic recipe
+08. Motion inspiration - Flow — MotionDesigners.Pro
+   https://www.pinterest.com/pin/933230354044475708/
+   learn: **Colour:** ONE bold brand colour per video filling the whole frame: violet/indigo (02, 03, 07, 16), cobalt blue on white/grey (04, 09, 12), flat pink → yellow → red full-frame swaps (01), or dark UI 
+   TAKE — used in the topic recipe
+09. Bring Your Vision to Life with Softwarewow | Let’s Build the Future Together — SoftwareWOW!
+   https://www.pinterest.com/pin/978195981569272143/
+   learn: **Layout:** product UI is the hero, never a flat screenshot — phone mockups floating at an angle (01), account/feature rows as floating cards (13), UI cards fanned or stacked in 3D (01 "Slow & Steady 
+   TAKE — used in the topic recipe
+10. | Project File link in Bio 📂🔗 - #saasmotiondesign #motiondesign #2danimation #aftereffects — Thayse Duarte Alcântara
+   https://www.pinterest.com/pin/1118511257484283377/
+   original: https://www.instagram.com/reel/DWTfK84E7Xy/
+   TAKE: toast-card UI idea [blurred landscape + notification toast cards] (reviewed Nov 4: cover thumbnail viewed)
+11. Control your emotions = stability and happiness   #forex #fx #trading #trader — R3_FUND
+   https://www.pinterest.com/pin/997477017477596607/
+   original: https://www.instagram.com/reel/DFUdQZ6PHTP/
+   SKIP: glow bar on black [black bg, green progress bar '$53,818'] (reviewed Nov 4: cover thumbnail viewed)
+12.  — Zsombor Nagy
+   https://www.pinterest.com/pin/492649952344602/
+   SKIP palette (AI colour)
+13. Most people aren’t trading — they’re gambling. — GatesFX
+   https://www.pinterest.com/pin/1102185708837441139/
+   original: https://gatesfx.com/
+   learn: **Layout:** product UI is the hero, never a flat screenshot — phone mockups floating at an angle (01), account/feature rows as floating cards (13), UI cards fanned or stacked in 3D (01 "Slow & Steady 
+   TAKE — used in the topic recipe
+14. 1M+ impressions - all from turning a complex product into a simple story. That’s what clea — WizArt Studios
+   https://www.pinterest.com/pin/925700898419824694/
+   SKIP: neon green glow on black [green neon desktop/mobile UI] (reviewed Nov 4: cover thumbnail viewed)
+15. I will create saas explainer video, saas animation, explainer video, saas — rajan
+   https://www.pinterest.com/pin/4855512094743889/
+   original: https://www.fiverr.com/adeyeyecommerce/saas-explainer-video-saas-explainer-saas-video-saas-animation-saas-demo
+   SKIP: violet gradient ['She's An SDR' violet gradient card] (reviewed Nov 4: cover thumbnail viewed)
+16. SaaS Explainer Style – SpatialFlow UI  Emma App After Effects Project File (AEP) Built wit — EarnEdits.com
+   https://www.pinterest.com/pin/1086986060078349776/
+   original: https://www.instagram.com/reel/DVbUt7JCH78/
+   SKIP: purple gradient screen [AE project promo, purple-pink gradient screen] (reviewed Nov 4: cover thumbnail viewed)
+
+== Motion Kit v4 research / saas promo video after effects ==
+01. This is how we cook 🔥 Turning ideas into motion. Turning brands into experiences.  - Motio — WizArt Studios
+   https://www.pinterest.com/pin/925700898420097801/
+   learn: Two camps: **(a) bright purple/white brand promo** (01 WizArt: #4f00af / #5702b5 purple, #fdfdfd white, #140937 ink; huge bold sans words "More reach", "ANDS", tilted screens) and **(b) dark-mode UI o
+   TAKE — used in the topic recipe
+02. Perfect Scroll Animation Lighting effect Figma File Webflow Showcasing Your SaaS App — Over Sight Webflow
+   https://www.pinterest.com/pin/926052742129752155/
+   original: https://webflow.com/templates/html/redsun-website-template?ref=pinterest.com-wt
+   learn: Two camps: **(a) bright purple/white brand promo** (01 WizArt: #4f00af / #5702b5 purple, #fdfdfd white, #140937 ink; huge bold sans words "More reach", "ANDS", tilted screens) and **(b) dark-mode UI o
+   TAKE — used in the topic recipe
+03. Motion inspiration - Orange — MotionDesigners.Pro
+   https://www.pinterest.com/pin/933230354048290966/
+   learn: POV / headline frames: one short claim in a bold grotesk (Inter/Satoshi-like), 2–4 words, centred, with the UI card under or behind it (03 MotionDesigners "Orange": "POV: your SaaS explainer ADS").
+   TAKE — used in the topic recipe
+04. SaaS Explainer Style – SpatialFlow UI  Emma App After Effects Project File (AEP) Built wit — EarnEdits.com
+   https://www.pinterest.com/pin/1086986060078349776/
+   original: https://www.instagram.com/reel/DVbUt7JCH78/
+   learn: 2. Put every screenshot on a rounded card (radius 3–4 %), tilt 8–15° in Y, add rim light / glow on the top edge. — 04 https://www.pinterest.com/pin/1086986060078349776/ , 07 https://www.pinterest.com/
+   TAKE — used in the topic recipe
+05. Motion inspiration - Frames — MotionDesigners.Pro
+   https://www.pinterest.com/pin/933230354043913635/
+   TAKE grey editorial bold + script
+06. Best Animated Explainer: Promote your SaaS Product — ericles FIDELL
+   https://www.pinterest.com/pin/358247345374839664/
+   original: https://vidico.com/our-videos/?industry=saas&type=explainer-videos&utm_source=Pinterest&utm_medium=social#droppoint
+   SKIP: purple illustration [purple van/map flat illustration] (reviewed Nov 4: cover thumbnail viewed)
+07. Motion inspiration - Glass — MotionDesigners.Pro
+   https://www.pinterest.com/pin/127578601939225224/
+   SKIP: blue glass tint [glass slats object, blue tint, 'Strategy Content Design'] (reviewed Nov 4: cover thumbnail viewed)
+08. Motion inspiration - Clip — MotionDesigners.Pro
+   https://www.pinterest.com/pin/933230354044647413/
+   SKIP: teal/blue neon cards [AE card promo, teal cards on pale blue] (reviewed Nov 4: cover thumbnail viewed)
+09. Motion inspiration - Clip — MotionDesigners.Pro
+   https://www.pinterest.com/pin/933230354048220904/
+   TAKE: white card layout (pale-blue bg: recolour) [white 'we've all been there' card on pale blue] (reviewed Nov 4: cover thumbnail viewed)
+10. Control your emotions = stability and happiness   #forex #fx #trading #trader — R3_FUND
+   https://www.pinterest.com/pin/997477017477596607/
+   original: https://www.instagram.com/reel/DFUdQZ6PHTP/
+   SKIP: glow bar on black [black bg, green progress bar] (reviewed Nov 4: cover thumbnail viewed)
+11. Motion inspiration - Green — MotionDesigners.Pro
+   https://www.pinterest.com/pin/933230354045897861/
+   TAKE: ring-framed photo idea (sage/lime) [green gradient ring around photo of woman] (reviewed Nov 4: cover thumbnail viewed)
+12. Bring Your Vision to Life with Softwarewow | Let’s Build the Future Together — SoftwareWOW!
+   https://www.pinterest.com/pin/978195981569272143/
+   SKIP palette (AI colour)
+13. Motion inspiration - Moolah — MotionDesigners.Pro
+   https://www.pinterest.com/pin/933230354041679411/
+   TAKE: crisp app UI idea (pink/coral, no brand) [pink phone UI 'Budgeting' app] (reviewed Nov 4: cover thumbnail viewed)
+14. SaaS Product Explainer Video Example | HR Tech & AI App Demo — Quantum Motions | SaaS Explainer videos
+   https://www.pinterest.com/pin/934778466529837183/
+   SKIP palette (AI colour)
+15. Motion inspiration - Flow — MotionDesigners.Pro
+   https://www.pinterest.com/pin/933230354044475708/
+   TAKE: clean list-card UI (no brand) [white cards with green amounts (Wise-style)] (reviewed Nov 4: cover thumbnail viewed)
+16. 🔥 Controlled motion that feels premium. AE mastery on display.  . . Website :- https://zur — Kulveer
+   https://www.pinterest.com/pin/192106740352738272/
+   SKIP: cyan glow on black [dark fintech UI with cyan glowing orb] (reviewed Nov 4: cover thumbnail viewed)
+
+== Motion Kit v4 research / soft 3d explainer animation ==
+01.  — Zsombor Nagy
+   https://www.pinterest.com/pin/492649952344602/
+   learn: **Pastel UI-in-3D** (01, Zsombor Nagy "3D Mograph"): floating rounded panels + 3D icons on a lilac→sky gradient. Palette #926bdf violet, #87abee sky, #2c40a6 deep blue accent, #efe2df blush-white, #f2
+   TAKE — used in the topic recipe
+02. Follow us on instagram @motiondesigners.pro #3d #vfx #cgi #digitalart #blender #motion — Jungmi Kim
+   https://www.pinterest.com/pin/3940718419920753/
+   learn: **Neutral studio grey** (02 AirPods, Jungmi Kim): #c2c2c4 / #cacacb / #d2d2d4 with shadow #878889, saturation 0.01 — the "Apple" monochrome cyc, product is the only form.
+   TAKE — used in the topic recipe
+03. Follow us on instagram @motiondesigners.pro @piri3d #3d #vfx #cgi #digitalart #blender #mo — MotionDesigners.Pro
+   https://www.pinterest.com/pin/127578601937749602/
+   learn: **Warm clay beige** (03 tubes, @piri3d; 12 IOPE cream): #ccbdb2, #a69e96, #e3d1c8 with deep #3b3835 — matte clay, soft contact shadows.
+   TAKE — used in the topic recipe
+04. How your main goal can effect how you use animation for marketing. — Ben Newton | Anico Animation Studio
+   https://www.pinterest.com/pin/937452478676022034/
+   original: https://anico.studio/
+   learn: **Flat-ish 2.5D balance toy** (04, Anico "balancing tower"): dark plum #1b052e bg with lilac #d5a1df shapes — calm, looping sway.
+   TAKE — used in the topic recipe
+05. Motion inspiration - Forest — MotionDesigners.Pro
+   https://www.pinterest.com/pin/933230354037717705/
+   TAKE: flat illustration on cream [cream card, flat forest illustration] (reviewed Nov 4: cover thumbnail viewed)
+06. Motion inspiration - Shapes — MotionDesigners.Pro
+   https://www.pinterest.com/pin/933230354039234433/
+   TAKE: warm geometric motif [kaleidoscope diamond, terracotta/green, cream] (reviewed Nov 4: cover thumbnail viewed)
+07. Patreon - Social Media 3D Visuals — ARKI Studio
+   https://www.pinterest.com/pin/653584964689103750/
+   original: https://www.behance.net/gallery/154600025/Patreon-Social-Media-Visuals
+   SKIP palette (AI colour)
+08. Motion inspiration - Antitox — MotionDesigners.Pro
+   https://www.pinterest.com/pin/127578601938414775/
+   TAKE: product-in-bubbles hero [skincare bottle among bubbles, grey] (reviewed Nov 4: cover thumbnail viewed)
+09. Motion Inspiration - Viva — MotionDesigners.Pro
+   https://www.pinterest.com/pin/933230354036027525/
+   TAKE: flat object illustration (mint/pale blue ok) [red cup, mint/blue flat illustration] (reviewed Nov 4: cover thumbnail viewed)
+10. Motion inspiration - Windows — MotionDesigners.Pro
+   https://www.pinterest.com/pin/933230354036831703/
+   SKIP: blue gradient UI [white folders with blue gradient] (reviewed Nov 4: cover thumbnail viewed)
+11. SaaS Explainer Style – SpatialFlow UI  Emma App After Effects Project File (AEP) Built wit — EarnEdits.com
+   https://www.pinterest.com/pin/1086986060078349776/
+   original: https://www.instagram.com/reel/DVbUt7JCH78/
+   SKIP: purple gradient screen [AE project promo, purple-pink gradient screen on dark] (reviewed Nov 4: cover thumbnail viewed)
+12. 2021 IOPE Super Vital Bio Potential Cream — aBodega CC
+   https://www.pinterest.com/pin/3025924743419579/
+   original: https://design.amorepacific.com/work/2021/iope/supervitalbio/
+   SKIP: blue bubbles [pale blue bubbles 3D render] (reviewed Nov 4: cover thumbnail viewed)
+13. This is how we cook 🔥 Turning ideas into motion. Turning brands into experiences.  - Motio — WizArt Studios
+   https://www.pinterest.com/pin/925700898420097801/
+   SKIP palette (AI colour)
+14.  — Danielin
+   https://www.pinterest.com/pin/140806233306755/
+   TAKE: green brand card ['nosh' on green gradient brand card] (reviewed Nov 4: cover thumbnail viewed)
+15. "No time to explain" — César Fabricio Neira Noa
+   https://www.pinterest.com/pin/735846026639562950/
+   TAKE: character-in-set idea (third-party character: do not copy) [cartoon cowboy 3D character in desert] (reviewed Nov 4: cover thumbnail viewed)
+16. #FridayInspo ✨  Can you see sound? 🔊👀 In design, sound doesn’t always need to be heard — i — Lazoh Design
+   https://www.pinterest.com/pin/869617009322395442/
+   original: https://www.instagram.com/reel/DYqHdVLka2e/
+   SKIP: blue dot focal (weak) [cream bg with one blue dot] (reviewed Nov 4: cover thumbnail viewed)
+
+== Motion Kit v4 research / sound design sfx video editing ==
+01. The magic of sound effects.   Director/ Editor /VFX/SFX 🙋🏽@yeyofilms Art 3D @tripton.xyz   — YeyoFilms
+   https://www.pinterest.com/pin/1027454102536837052/
+   original: https://www.instagram.com/reel/DN3Yw_aYv9b/
+   learn: 16 video pins; ~half are on-topic: timeline breakdowns (01 yeyofilmss "The magic of sound effects", 02 mhdi00o "Timeline Sound Effects"), foley-stack edit (03 dsousaedits), SFX-pack previews (04/06/10
+   TAKE — used in the topic recipe
+02. Timeline Sound Effects — mhdi
+   https://www.pinterest.com/pin/714383559673250251/
+   original: https://www.influxdigitalmedia.net/
+   TAKE: macro b-roll idea [macro lizard eye over timeline] (reviewed Nov 4: cover thumbnail viewed)
+03. Comente “SFX” para receber nosso pacote de efeitos sonoros para elevar a edição dos seus v — D Sousa edits
+   https://www.pinterest.com/pin/1133147956255443620/
+   original: https://www.instagram.com/reel/DP1pENRkZ16/
+   learn: 16 video pins; ~half are on-topic: timeline breakdowns (01 yeyofilmss "The magic of sound effects", 02 mhdi00o "Timeline Sound Effects"), foley-stack edit (03 dsousaedits), SFX-pack previews (04/06/10
+   TAKE — used in the topic recipe
+04. Comment SFX1 to get our SFX Pack 🎥  #edit #videoediting #soundeffects #sounddesign #explor — Via Masi I Video Marketing Strategies I Montreal Filmmaking
+   https://www.pinterest.com/pin/936959897489127391/
+   original: https://www.instagram.com/reel/DFYnn3zpz7I/
+   learn: 5. Meme/punctuation SFX only on a held beat (0.5–1.0 s of space around it). — 04 https://www.pinterest.com/pin/936959897489127391/ , 06 https://www.pinterest.com/pin/936959897490431063/ , 10 https://w
+   TAKE — used in the topic recipe
+05.  — ปรวี ทัพซ้าย
+   https://www.pinterest.com/pin/700943129512917383/
+   SKIP: teal tint on dark [dark embers and smoke, teal] (reviewed Nov 4: cover thumbnail viewed)
+06. Comment SFX1 to get our SFX Pack 🎥  #edit #videoediting #soundeffects #sounddesign #explor — Via Masi I Video Marketing Strategies I Montreal Filmmaking
+   https://www.pinterest.com/pin/936959897490431063/
+   original: https://www.instagram.com/reel/DFjieThxPDa/
+   TAKE: sfx pack cover (green) ['SOUND EFFECTS Part - 04 Popping Bubble' green/grey] (reviewed Nov 4: cover thumbnail viewed)
+07. Sound Waves Frequency in Blue, 4k video — rawpixel
+   https://www.pinterest.com/pin/293508100735013660/
+   original: http://www.rawpixel.com/
+   learn: 16 video pins; ~half are on-topic: timeline breakdowns (01 yeyofilmss "The magic of sound effects", 02 mhdi00o "Timeline Sound Effects"), foley-stack edit (03 dsousaedits), SFX-pack previews (04/06/10
+   TAKE — used in the topic recipe
+08. - Trajectory  #touchdesigner#newmediaart#creativecoding#modularsynth#vcvrack — Kaito Asai
+   https://www.pinterest.com/pin/935482153875524125/
+   original: https://www.instagram.com/reel/DP4nRlxj44p/
+   TAKE: B&W ink texture [B&W fluid ink on black] (reviewed Nov 4: cover thumbnail viewed)
+09. 🎆 Untitled ・Alex Guevara Credits : @alex.g.u.e.v.a.r.a ・⁠ ・⁠ ・⁠ #abstract #touchdesigner # — 36 degrés
+   https://www.pinterest.com/pin/684054630910559450/
+   TAKE: B&W smoke texture [B&W smoke wisps] (reviewed Nov 4: cover thumbnail viewed)
+10. Comment SFX1 to get our SFX Pack 🎥  #edit #videoediting #soundeffects #sounddesign #explor — Via Masi I Video Marketing Strategies I Montreal Filmmaking
+   https://www.pinterest.com/pin/936959897490930138/
+   original: https://www.instagram.com/reel/DF7oNZlxf30/
+   TAKE: sfx pack cover (green) ['Cartoon Running' green waveform on dark] (reviewed Nov 4: cover thumbnail viewed)
+11.  — Jubs;
+   https://www.pinterest.com/pin/482940760054796644/
+   SKIP: cyan glow [cyan glowing energy ball] (reviewed Nov 4: cover thumbnail viewed)
+12. THE LUNATIC Prod by @websterxwinston Visual by @sozenka #design #graphicdesign #album #cov — Ian AG
+   https://www.pinterest.com/pin/1196337403686577/
+   original: https://www.instagram.com/reel/DAoasTjvpyD/
+   SKIP: purple glitch [purple-white glitch silhouette] (reviewed Nov 4: cover thumbnail viewed)
+13. This is not news to you.  You already know this.   Wake up.  Download Alterd. — STB OFFICIAL
+   https://www.pinterest.com/pin/774478467210938065/
+   original: https://www.instagram.com/reel/DQ9xXY_CYxF/
+   learn: 16 video pins; ~half are on-topic: timeline breakdowns (01 yeyofilmss "The magic of sound effects", 02 mhdi00o "Timeline Sound Effects"), foley-stack edit (03 dsousaedits), SFX-pack previews (04/06/10
+   TAKE — used in the topic recipe
+14.  — Coco
+   https://www.pinterest.com/pin/1090715603482767751/
+   TAKE: spark overlay [black with small orange sparks] (reviewed Nov 4: cover thumbnail viewed)
+15. Discontinued. … Music by YZA Voku #surreal #digitalart #35mm #negative #motion — Agustina Araujo
+   https://www.pinterest.com/pin/3588874697336847/
+   original: https://www.instagram.com/p/DBeJiUSI4hX/?img_index=7
+   TAKE: B&W grain/blur texture [B&W motion-blur crowd texture] (reviewed Nov 4: cover thumbnail viewed)
+16. Yapımı hesabımda var🤍 — mauro rodrigues
+   https://www.pinterest.com/pin/52424783156545427/
+   TAKE: waveform on green key [green screen with white waveform] (reviewed Nov 4: cover thumbnail viewed)
+
+== Motion Kit v4 research / talking head reel editing ==
+01. Modern talking head — Motion Pet
+   https://www.pinterest.com/pin/671599363236283537/
+   original: https://www.instagram.com/reel/DcOdCYOuaQU/
+   learn: **Kinetic words**: one word at a time, small white sans in the lower middle, with a bigger italic/serif accent word for emphasis ("largest relocation", "15%") (01).
+   TAKE subtitle style
+02. Real estate video editing inspiration. — Motion Pet
+   https://www.pinterest.com/pin/671599363236225503/
+   original: https://www.instagram.com/reel/DcF1qNmi_1S/
+   learn: **Full-card B-roll cutaways** every 2–3 s: architecture stills, city shots, crowds, a clock — black-and-white or desaturated, matching the sentence (02, 03).
+   TAKE — used in the topic recipe
+03. Talking head video — Motion Pet
+   https://www.pinterest.com/pin/671599363236245110/
+   original: https://www.instagram.com/reel/DcIqF-EupQ0/
+   TAKE framed-card talking head + script accent
+04. Another talking head video project done😉 — RivoZen
+   https://www.pinterest.com/pin/875176140111922304/
+   original: https://www.instagram.com/reel/DV4c7N-Ezt8/
+   learn: White #f7f7f7–#fafafa world, two orange #fea101 blobs (Motion Pet), small raw "Before" card + big "After" card (see the before/after STYLE for pixel rects); or plain white with black "Before / After" 
+   TAKE — used in the topic recipe
+05. 🔱‼️#imangadzi — Syed Zainul
+   https://www.pinterest.com/pin/1074390054841549815/
+   SKIP: purple edge light [talking head, dark room with purple edge light] (reviewed Nov 4: cover thumbnail viewed)
+06. This is the cleanest editing style you’ll see — Prakhar Parsai
+   https://www.pinterest.com/pin/865887465889683398/
+   TAKE: framed cards on yellow/grey ['cleanest editing style' framed cards, yellow-grey bg] (reviewed Nov 4: cover thumbnail viewed)
+07. Make your video captions pop with this trick 🔥  #designtips #designinspiration #personaliz — Made and Styled
+   https://www.pinterest.com/pin/1112037333001680247/
+   original: https://www.instagram.com/reel/DHlT6zaPb4i/
+   TAKE: pointing subject (recolour teal bg) [guy pointing 'you', teal bg] (reviewed Nov 4: cover thumbnail viewed)
+08. Um post não vai fazer teu cliente vender mais. Sem base, sem estrutura e sem funil, não ex — João Mendes - Studio Astreon
+   https://www.pinterest.com/pin/730849845820418679/
+   original: https://www.instagram.com/reel/DQzB6tPkYcW/
+   SKIP: green neon room light + glow [creator with green neon room light, serif caption] (reviewed Nov 4: cover thumbnail viewed)
+09. Truth is honest. Lies are strategic. That’s why humans love them. — shiftspark
+   https://www.pinterest.com/pin/996140011343797595/
+   TAKE: podcast framed + bold type [podcast guest + big yellow 'Build' text] (reviewed Nov 4: cover thumbnail viewed)
+10. Ranveer Podcast into short form Content — PerfectShots
+   https://www.pinterest.com/pin/879820477207025790/
+   TAKE: before/after talking head [before/after talking head on black] (reviewed Nov 4: cover thumbnail viewed)
+11. Overthinking kills more deals than money ever will. #MainRealty #SmartInvestment #DubaiRea — Main Realty
+   https://www.pinterest.com/pin/1123859282030926332/
+   TAKE: warm talking-head plate [woman, warm office, soft light] (reviewed Nov 4: cover thumbnail viewed)
+12. Meet Alasdair, Associate at Peak.  Architecture has been a long-standing interest for Alas — Peak Architects
+   https://www.pinterest.com/pin/859835753921598972/
+   original: https://www.instagram.com/reel/DZ4eZxUjbi7/
+   TAKE: warm talking-head plate [man in warm room, filament lamp] (reviewed Nov 4: cover thumbnail viewed)
+13. Miami vibes. Dubai prestige.  Flow Residences blends both into one modern coastal living.  — Main Realty
+   https://www.pinterest.com/pin/1123859282023678675/
+   TAKE: presenter plate [woman presenter in real-estate lobby] (reviewed Nov 4: cover thumbnail viewed)
+14. Nobody Is Coming to Save You. Read That Again. — Karan Sharma | Video Editor | YouTube Manager |
+   https://www.pinterest.com/pin/692358142757858672/
+   SKIP: deep blue gradient bg [before/after cards on navy-blue gradient, 'DM NOW'] (reviewed Nov 4: cover thumbnail viewed)
+15. Your Brain Is Controlling You (And You Don’t Even Know It) — Karan Sharma | Video Editor | YouTube Manager |
+   https://www.pinterest.com/pin/692358142757858063/
+   TAKE: before/after cards + DM strip (sage-grey) [before/after cards on sage-grey, 'DM NOW'] (reviewed Nov 4: cover thumbnail viewed)
+16. Let’s be honest… “post and pray” is not marketing 😅  There’s a strategy behind every listi — Bailey Pate | Maine Realtor
+   https://www.pinterest.com/pin/486318459783896293/
+   original: https://www.instagram.com/reel/DXN9WUSANN1/
+   TAKE: bright presenter plate [woman in bright kitchen] (reviewed Nov 4: cover thumbnail viewed)
+
+== Ref 1 research — soft-3D faceless explainer ==
+Easy 3D Icon in Blender! (Tutorial) — Daniel Marqusee
+   https://www.youtube.com/watch?v=c8tZwsxQ1IQ
+   learn: SVG logo/icon -> Blender curve -> extrude + bevel -> soft 3D app icon.
+   TAKE
+Easy Claymorphism Asset Pack with Geometry Nodes - Blender Tutorial — Alexandre Albisser
+   https://www.youtube.com/watch?v=xfwDB5eYS2U
+   learn: Geometry-nodes 'inflate any 2D shape' setup for claymorphism compositions.
+   TAKE
+Make Claymation Style Renders In Blender With Shader Nodes — PlanetaryLuke
+   https://www.youtube.com/watch?v=nqy-dxAadIY
+   learn: Clay/claymation shader with shader nodes (noise bump, soft roughness, subsurface).
+   TAKE
+Create a 3D art illustration that looks like Clay (Blender Tutorial) — Jean-Marc Denis
+   https://www.youtube.com/watch?v=3ry_sSzmAfo
+   learn: Full clay-look illustration: material, lighting and composition.
+   TAKE
+Clay-ish Creatures in Blender — Motion Design School
+   https://www.youtube.com/watch?v=uWUy4ytP0XY
+   learn: Cute 'clay-ish' creatures: modeling, shading, lighting, animation, compositing.
+   TAKE
+How to Animate Floating Objects ⛵ (Blender Tutorial) — Ryan King Art
+   https://www.youtube.com/watch?v=bC3guogt9n0
+   learn: Animating floating/bobbing objects.
+   TAKE
+How to Use Depth of Field in Blender (Tutorial) — Ryan King Art
+   https://www.youtube.com/watch?v=ahT3P274EMw
+   learn: Depth of field in Blender (focus object, f-stop).
+   TAKE
+How to create animated captions for work videos (word-by-word highlighting) — Microsoft Clipchamp
+   https://www.youtube.com/watch?v=IuEwCbpDmA8
+   learn: Word-by-word highlighted auto captions (Clipchamp).
+   TAKE
+Word Highlight Auto Captions in Capcut — The Poser Animates
+   https://www.youtube.com/watch?v=2LSoEH4s6BI
+   learn: CapCut word-highlight auto captions.
+   TAKE
+Animating Numbers Counting Up In After Effects | Beginner Tutorial — Learnin5
+   https://www.youtube.com/watch?v=RQPwWZuyzZk
+   learn: Numbers counting up in After Effects (Slider Control + expression).
+   TAKE
+How to Create A Typing Effect in After Effects — Motion Array Tutorials
+   https://www.youtube.com/watch?v=IMtMYu_jyNU
+   learn: Typing/typewriter text effect in After Effects.
+   TAKE
+
+== Ref 2 research — Premiere plugin promo (glossy 3D type + tilted UI panel) ==
+How To Make Shiny Chiseled Bevel Chrome Text With Glow In Blender! — P A N T E R
+   https://www.youtube.com/watch?v=kiM38QdbCa0
+   learn: Chiseled-bevel chrome text with glow in Blender.
+   SKIP — glow is off in v5 (learn the motion only)
+Blender 3D Chrome Text Tutorial | Realistic Metal Material Guide — Cosme
+   https://www.youtube.com/watch?v=FxYJH7q5Iqo
+   learn: Realistic chrome/metal material for 3D text.
+   SKIP — v5: no Blender for text (EffectCraft does text)
+3D Text in Blender — What Make Art
+   https://www.youtube.com/watch?v=Wa6yMXE0RZk
+   learn: Blender 3D text basics: add, extrude, bevel, convert.
+   SKIP — v5: no Blender for text (EffectCraft does text)
+Beveling text with Geometry Nodes — Blendergrid
+   https://blendergrid.com/articles/beveling-blender-text-with-geometry-nodes
+   learn: string → curves → mesh → extrude → bevel, all procedural.
+   TAKE
+iPhone 3D Mockup Scene  [1/2] |  Blender Beginner Tutorial — ThreeDee
+   https://www.youtube.com/watch?v=WkHPkQmj56Q
+   learn: iPhone 3D mockup scene in Blender (part 1).
+   TAKE
+iPhone 3D Mockup Animation [2/2] | Blender Beginner Tutorial — ThreeDee
+   https://www.youtube.com/watch?v=iBxewYbBgQI
+   learn: iPhone 3D mockup animation in Blender (part 2).
+   TAKE
+How to Use the 3D Camera in After Effects | Motion Design Tutorial — Envato
+   https://www.youtube.com/watch?v=C4fS3nVcPww
+   learn: Using the 3D camera in After Effects (Envato).
+   TAKE
+Real 3D Phone Mockup in After Effects | Tutorial — Manuel does Motion
+   https://www.youtube.com/watch?v=W5wzyQ1sy54
+   learn: Real 3D phone mockup in After Effects.
+   TAKE
+You Can Now Animate in Premiere — Jake In Motion
+   https://www.youtube.com/watch?v=OHN354DMzz0
+   learn: Animating directly inside Premiere with a plugin (Motion State).
+   TAKE
+The BEST Free Animation Plugin for Premiere Pro (BadFX Tutorial & Review) — Kasper Garam
+   https://www.youtube.com/watch?v=EFG9qNAm2JI
+   learn: A free Premiere animation plugin (BadFX) for text/logo animation.
+   TAKE
+I Tested Over 100 Premiere Pro Plugins. These 21 Turned Me into a Faster Editor — Costin Modoianu
+   https://www.youtube.com/watch?v=CB31ss2kCvs
+   learn: 21 Premiere plugins tested (Costin Modoianu).
+   TAKE
+How to Make Eye-Catching Anime Thumbnails for YouTube (Step-by-Step Tutorial!) — Aniprop
+   https://www.youtube.com/watch?v=RCnTQ5f5hcM
+   learn: Making eye-catching anime-style thumbnails.
+   TAKE
+
+== Ref 3 research — framed talking head, effect + sfx every ~0.5 s ==
+How to Edit Your Talking Head Videos (Fast, Clean, Professional) — Denz Creates
+   https://www.youtube.com/watch?v=6JcrJzLOe-g
+   learn: Editing talking-head videos fast and clean (cuts, zooms, captions, b-roll).
+   TAKE
+How to Edit Viral Talking Head Videos Like Devin Jatho (2026 Guide) — Joseph | Video Editing
+   https://www.youtube.com/watch?v=FvhgJSWQ4ps
+   learn: Viral talking-head style like Devin Jatho (punch-ins, captions, sfx).
+   TAKE
+How to Edit Viral Alex Hormozi Reels in Premiere Pro! (2025 Step-by-Step Guide) — Joseph | Video Editing
+   https://www.youtube.com/watch?v=pelJlYOkn7s
+   learn: Hormozi-style reels in Premiere (bold captions, emojis, sfx per cut).
+   TAKE
+How To Create Captions Like Alex Hormozi & Grant Cardone - Part 2 | Creator Master Class | — CapCut
+   https://www.youtube.com/watch?v=KSdk7FbaO3Q
+   learn: Hormozi/Cardone-style captions in CapCut.
+   TAKE
+How to Make Hormozi Style Videos (captions, editing, structure) — Riverside blog
+   https://riverside.com/blog/hormozi-style-videos
+   learn: caption styling, pacing and structure of the 'every second something changes' style.
+   TAKE
+How To Blur A Video Background In CapCut — Ben Claremont
+   https://www.youtube.com/watch?v=284Ogep5hao
+   learn: Blurring a video background in CapCut.
+   TAKE
+How to Make Talking Head Videos with Background Clips Using CapCut (Step-by-Step Tutorial  — Jerad Larkin, Chicago Title
+   https://www.youtube.com/watch?v=qnSlg_-vOB4
+   learn: Talking-head videos with background clips.
+   TAKE
+Easy 1 Minute Animated Scribble Effect in Premiere Pro | Tutorial — DuckTUT
+   https://www.youtube.com/watch?v=Of1i4nRfWYg
+   learn: Animated scribble effect in Premiere in 1 minute.
+   TAKE
+Glowing Scribble Animation in After Effects - After Effects Tutorial - Easy Method — Avnish Parker
+   https://www.youtube.com/watch?v=Y2ZZHaRgJSA
+   learn: Glowing scribble animation in After Effects.
+   SKIP — glow is off in v5 (learn the motion only)
+Create the RGB Split Effect in After Effects | Glitch Splitting Effect — DuckTUT
+   https://www.youtube.com/watch?v=xwgKr-CYFP4
+   learn: RGB split / glitch in After Effects.
+   TAKE
+How I SOUND DESIGN For Animation (walkthrough) — Simon Haglund Sounds
+   https://www.youtube.com/watch?v=r3dmywRy3ns
+   learn: How a sound designer builds sfx for animation (walkthrough).
+   TAKE
+
+== Ref 4 research — "Original vs Edited" editor showcase ==
+The 9 Minute Before/After Template That Gets You Hired — Patrik Key
+   https://www.youtube.com/watch?v=cNPgXC9o8Gw
+   learn: A before/after template built to get editing clients (Patrik Key).
+   TAKE
+How to Create a Before and After Effect in CapCut — Michael Brig
+   https://www.youtube.com/watch?v=mkRjoEZRoiI
+   learn: Before/after effect in CapCut.
+   TAKE
+How to Make a SPLIT SCREEN Effect in Davinci Resolve — Technically Trent
+   https://www.youtube.com/watch?v=Qse_a_1EvKA
+   learn: Split-screen effect in DaVinci Resolve.
+   TAKE
+you're gonna build your video editing demo reel in 7 days — Colleen Edits
+   https://www.youtube.com/watch?v=j7JutjVqxww
+   learn: Building a video-editing demo reel in 7 days (Colleen Edits).
+   TAKE
+Video Editor Portfolio Guide with Real Examples — Vimeo blog
+   https://vimeo.com/blog/post/video-editor-portfolio
+   learn: what a strong editor portfolio shows (variety, short reels, credits).
+   TAKE
+How I SOUND DESIGN For Animation (walkthrough) — Simon Haglund Sounds
+   https://www.youtube.com/watch?v=r3dmywRy3ns
+   learn: Sound design walkthrough for animation.
+   TAKE
+
+== Ref 5 research — After Effects SaaS card promo ==
+Vedant | Motion Designer — portfolio site madebyveduboi (lists "SaaS Explainers" as a service)
+   https://madebyveduboi.framer.website/
+   learn: SaaS motion graphics in After Effects, beginner masterclass part 1 (VeduBoi).
+   TAKE
+SaaS Motion Graphics in After Effects | Beginner Friendly Masterclass | PART 1 — VeduBoi
+   https://www.youtube.com/watch?v=07rjdeP0Nzg
+   learn: SaaS motion graphics in After Effects, beginner masterclass part 1 (VeduBoi).
+   TAKE
+SaaS Motion Graphics in After Effects | Beginner Friendly Masterclass | PART 2 — VeduBoi
+   https://www.youtube.com/watch?v=BLUFOYXjKLA
+   learn: continuation of the same masterclass (only the title was confirmed; contents not opened).
+   TAKE
+How To Make $1000 SaaS Explainers | After Effects | Beginner Friendly — Snipzyae
+   https://www.youtube.com/watch?v=LYY5hXNiDC0
+   learn: '$1000 SaaS explainers' in After Effects, beginner friendly (Snipzyae).
+   TAKE
+Master SaaS Motion Graphics in 30 Minutes (After Effects) — TomsProject
+   https://www.youtube.com/watch?v=Jccbzpicst8
+   learn: SaaS motion graphics in 30 minutes (TomsProject).
+   TAKE
+How to Create a Full SaaS Animation in After Effects | Step by Step — Mojtaba Sorbi
+   https://www.youtube.com/watch?v=GmWuQYFmEt0
+   learn: Full SaaS animation step by step (Mojtaba Sorbi).
+   TAKE
+SaaS Motion Graphics in After Effects: Product UI Workflow — Demotion blog
+   https://trydemotion.com/blog/saas-motion-graphics-masterclass
+   learn: prepping UI screens as layers, card animation, pacing.
+   TAKE
+3D UI Card Animation in After Effects (Glassmorphism Style) — Emmanuel Motions
+   https://www.youtube.com/watch?v=XIO_Dv6_Ujk
+   learn: 3D UI card animation, glassmorphism style.
+   TAKE
+Glossy Card Animation in After Effects | Motion Animation Tutorial — Designer Family 21
+   https://www.youtube.com/watch?v=Usf3vPZ1WO8
+   learn: Glossy card animation in After Effects.
+   TAKE
+CC Light Sweep | Effects of After Effects — Jake In Motion
+   https://www.youtube.com/watch?v=0n0pZp_BA2w
+   learn: CC Light Sweep explained (Jake In Motion).
+   TAKE
+CC Light Rays | Effects of After Effects — Jake In Motion
+   https://www.youtube.com/watch?v=lUyIpM4aRwU
+   learn: CC Light Rays explained (Jake In Motion).
+   TAKE
+Rainbow Rays in After Effects with Colorama — neon motions
+   https://www.youtube.com/watch?v=T1onjPO7UoI
+   learn: Rainbow rays with Colorama in After Effects.
+   TAKE
+After effects Tutorial | Light Streak Line — Just After Effects
+   https://www.youtube.com/watch?v=kahILmYOXIU
+   learn: Light streak line in After Effects.
+   TAKE
+Light Streaks 2 — Video Copilot
+   https://www.videocopilot.net/tutorials/light_streaks_2
+   learn: classic streak building (stroke + glow + motion blur).
+   TAKE
+Repeater Grids - Adobe After Effects tutorial — ECAbrams
+   https://www.youtube.com/watch?v=0oJ1Ipa_cdM
+   learn: Repeater grids in After Effects.
+   TAKE
+How to Create a Viral Toggle Switch Animation in After Effects Tutorial — MaTch CuT StudiO
+   https://www.youtube.com/watch?v=2SdIG3RZ93E
+   learn: Toggle switch animation in After Effects.
+   TAKE
+
+== Ref 6 research — gaming "Editing Timeline" reveal ==
+The ULTIMATE Editing Guide for Gaming Videos [Premiere Pro Tutorial] — JamFam
+   https://www.youtube.com/watch?v=zZZ4kkmFP0c
+   learn: Gaming video edit, full workflow (Premiere).
+   TAKE
+Gaming Montage Intro Tutorial | An Adobe Premiere Tutorial — Quenched Gaming
+   https://www.youtube.com/watch?v=jwNZH1eVNOE
+   learn: Gaming montage intro (Premiere).
+   TAKE
+How To Edit Gaming Videos For Beginners… — MortarMarv
+   https://www.youtube.com/watch?v=9Pn7uGmIU9E
+   learn: Beginner gaming edit (Premiere, 2026).
+   TAKE
+How to Make Word by Word Captions in Premiere Pro 2026 — Adobe Basics
+   https://www.youtube.com/watch?v=qFqcQXBmyzU
+   learn: Word-by-word captions (Premiere 2026).
+   TAKE
+How to Make One Word Captions Like TikTok in Adobe Premiere Pro — Merle Becker
+   https://www.youtube.com/watch?v=pEceQ163MKQ
+   learn: One-word TikTok captions (Premiere).
+   TAKE
+5 Easy Ways to Animate Captions WORD BY WORD in Premiere Pro CC | No Keyframing — Shawn Dolinski
+   https://www.youtube.com/watch?v=e6ZloD-aINE
+   learn: 5 ways to animate captions word by word (Premiere).
+   TAKE
+How to Make Viral Captions in CapCut | Auto Captions Tutorial — Queen keren
+   https://www.youtube.com/watch?v=YEGvEm5AtTU
+   learn: Viral captions in CapCut (auto captions).
+   TAKE
+Add Motion Blur to 3D Layers in After Effects — Wicky
+   https://www.youtube.com/watch?v=26yNz6zbcoY
+   learn: Motion blur on 3D layers (After Effects).
+   TAKE
+Create Fluid Text Animations Using Motion Blur and Easing in After Effects | Adobe Video — Adobe Video
+   https://www.youtube.com/watch?v=GHul3YX35rw
+   learn: Fluid text animation with motion blur + easing (After Effects).
+   TAKE
+How to make split screen videos | Clipchamp Blog — 
+   https://clipchamp.com/en/blog/how-to-make-split-screen-videos/
+   learn: How to make split-screen videos (Clipchamp blog).
+   TAKE
+
+
+== Motion Kit v5.3 / new pin lists (music, b-roll, subject, sfx/effects) ==
+Full lists with titles, verdicts and review flags: pins/INDEX.md, pins/*.md, pins/*.json (168 pins).

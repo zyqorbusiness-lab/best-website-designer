@@ -1,7 +1,7 @@
 // pinterest_refs.mjs — Pinterest reference research for Tab's motion kit (READ ONLY on Pinterest).
 //
 // USAGE
-//   cd /home/user/tools/motion-kit
+//   (box-only) cd <kit>/tools
 //   TAB_TASK_ID=<any task id> nice -n 10 timeout -k 10 900 node pinterest_refs.mjs "<topic>" [count=16] [--scope=videos|pins] [--videos=8] [--no-video]
 //   → references/<topic_slug>/ : pins.json, thumbs/NN.jpg, vids/NN.mp4 (≤720p, ≤30 s, kept only if small),
 //     frames/NN_k.jpg (6 per video), sheet.jpg (all thumbnails, numbered), frames_sheet.jpg (6 frames per video, one row each)
@@ -19,7 +19,12 @@
 import fs from "node:fs";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
-import { withBrowserStep } from "/home/user/tab/browser-step.mjs";
+// BOX-ONLY: this script drives Tab's own signed-in Pinterest browser session (browser-step.mjs lives on Tab's box).
+// It does NOT run from a downloaded kit. Elsewhere: use pin_download.py <pin url> for a pin you already have, or ask Tab to run it.
+if (process.argv.includes("--help") || process.argv.includes("-h")) { console.log("pinterest_refs.mjs - BOX-ONLY (needs Tab's browser helper). usage: node pinterest_refs.mjs \"<topic>\" [count] [--scope=videos|pins] [--videos=8] [--no-video]\nOutside Tab's box use pin_download.py <pin url> instead."); process.exit(0); }
+let withBrowserStep;
+try { ({ withBrowserStep } = await import("/home/user/tab/browser-step.mjs")); }
+catch (e) { console.error("pinterest_refs.mjs is BOX-ONLY (Tab's browser helper not found here). Use pin_download.py <pin url>, or ask Tab to run the search."); process.exit(3); }
 
 const args = process.argv.slice(2);
 const topic = args.find(a => !a.startsWith("--") && isNaN(Number(a)));

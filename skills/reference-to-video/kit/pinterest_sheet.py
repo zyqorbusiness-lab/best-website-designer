@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Contact sheets for a pinterest_refs.mjs output folder: sheet.jpg (all thumbnails, numbered) and frames_sheet.jpg (6 frames per video, one row each)."""
+import sys as _s
+if any(a in ('-h','--help') for a in _s.argv[1:]): print(__doc__); raise SystemExit(0)
 import json, sys, os
 from PIL import Image, ImageDraw, ImageFont
 out = sys.argv[1]; meta = json.load(open(os.path.join(out, "pins.json"))); pins = meta["pins"]
-try: font = ImageFont.truetype(__import__("os").path.join(__import__("os").path.dirname(__import__("os").path.abspath(__file__)), "blender", "fonts", "DejaVuSans-Bold.ttf"), 22)
+try: font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 22)
 except Exception: font = ImageFont.load_default()
 def tile(im, w, h):
     im = im.convert("RGB"); r = min(w / im.width, h / im.height); im = im.resize((max(1, int(im.width * r)), max(1, int(im.height * r))))

@@ -10,6 +10,8 @@ events.json: [{"t": 0.30, "sfx": "pop", "db": 0}, {"t": 1.2, "sfx": "whoosh", "d
   dur  = optional max seconds to play (typing loops are long).
 House levels (relative to a -14 LUFS voice): pops/clicks -6..-10 dB under voice, whooshes -8, impacts/bass -4, risers -10.
 """
+import sys as _s
+if any(a in ('-h','--help') for a in _s.argv[1:]): print(__doc__); raise SystemExit(0)
 import sys, json, os, subprocess, numpy as np, wave
 KIT = os.path.dirname(os.path.abspath(__file__))
 SR = 48000

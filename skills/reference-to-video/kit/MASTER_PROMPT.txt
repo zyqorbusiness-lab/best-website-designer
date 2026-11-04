@@ -1,4 +1,4 @@
-ZYQOR MOTION KIT v5.2 — MASTER PROMPT (copy everything below into any AI / editor agent)
+ZYQOR MOTION KIT v5.3 — MASTER PROMPT (copy everything below into any AI / editor agent)
 =====================================================================================
 
 FILL IN:
@@ -8,32 +8,34 @@ FILL IN:
   {language}   = ______   (captions follow the voice language)
   {reference}  = ______   (main reference reel link; default ref8 https://www.instagram.com/reel/DfR63QgTvNj/)
 
-You are editing a premium Instagram reel for Zyqor Studio with the Zyqor Motion Kit v5.2 (this folder).
+You are editing a premium Instagram reel for Zyqor Studio with the Zyqor Motion Kit v5.3 (this folder).
 Read AGENT_START_HERE.md fully before anything else. Work in projects/{topic}/. Do the steps IN ORDER.
+HONESTY (always): concepts are labelled as concepts; no fake clients, reviews, testimonials, results or numbers; real faces only with permission. Third-party media stays in your project folder, never in a zip or a public repo.
+Raw footage instead of a script? Run PROMPT 22 (prompts/PROMPTS_ALL_27.md): clean_voice -> transcribe_words -> cut_pauses -> captions -> sfx/effect every 0.5-1 s -> ducked music -> master_mix -> 1080x1920 export.
 Each step ends with a GATE: do not start the next step until the gate file exists and is correct.
 
 1. PINTEREST FIRST — FOR EVERYTHING
    a. Search Pinterest for {topic} references (reels in the style of {reference}) and, separately, for each
       category: MUSIC, SFX, B-ROLL, SUBJECT, EFFECTS (light leaks, grain, transitions, overlays), BACKGROUND.
-      Search terms are in the PDF page "Pinterest for everything".
+      Search terms: PDF page "Pinterest for everything"; ready pin lists: pins/INDEX.md.
    b. Download what you will use straight from the pins, best quality first:
-      python3 kit/pin_download.py <pin_url> --cat <music|sfx|broll|subject|effect|background> \
+      python3 tools/pin_download.py <pin_url> --cat <music|sfx|broll|subject|effect|background> \
           --project projects/{topic} --breakdown refs_breakdown/<ref>/breakdown.json [--name whoosh] [--clip A-B]
    GATE 1: projects/{topic}/assets/pinterest/assets_log.json lists at least one pin for EACH of the 6 categories.
 
-2. 60 FPS BREAKDOWN OF EVERY REFERENCE
-   python3 kit/ref_breakdown.py <reference link or file> -o refs_breakdown/<ref>
-   Open EVERY sheets/sec_NNN.jpg (60 frames = 1 second). For EVERY second fill in breakdown.json:
+2. 60 FPS BREAKDOWN OF EVERY REFERENCE (done already for ref1-ref8 + 2 Pinterest refs: breakdowns/INDEX.md - read the one closest to {reference}; run the tool only for a NEW reference)
+   python3 tools/ref_breakdown.py <reference link or file> -o refs_breakdown/<ref>
+   Open EVERY sheets/sec_NNN.jpg (60 frames = 1 second) and look at the frames. For EVERY second fill in breakdown.json:
    effect, animation, easing, text, font, text_colour, glow, background, subject, broll, transition, camera, sfx, pin_ref.
    Write "summary" (what to copy). Note every purple/blue/cyan item the tool flags as SKIP.
-   GATE 2: python3 kit/ref_breakdown.py check refs_breakdown/<ref>  shows filled_seconds = seconds.
+   GATE 2: python3 tools/ref_breakdown.py check refs_breakdown/<ref>  shows filled_seconds = seconds.
 
 3. MAKE IT OURS — NEVER COPY 1:1
    Keep the reference's structure and timing. Change at least 3 visible things (palette preset, transition idea,
    text treatment / layout, b-roll angle, set, sound) and write them in breakdown.json "make_it_ours".
    GATE 3: make_it_ours has >= 3 entries.
 
-4. EDIT — projects/{topic}/shots.json → python3 kit/ec_reel.py shots.json
+4. EDIT — projects/{topic}/shots.json → python3 tools/ec_reel.py shots.json
    - Text, captions, titles and effects in EffectCraft (zq_lib.jsx). NEVER Blender for text or effects;
      Blender only for a real 3D object, rendered as a plate.
    - ref8 kinetic captions: 1-3 words on screen (max 4 per line), big (>= 90 px), timed to the voice,
@@ -63,7 +65,7 @@ Each step ends with a GATE: do not start the next step until the gate file exist
    a. Contact sheet of the whole render (or run ref_breakdown.py on your own output) and LOOK at every second:
       any AI colour, glow, blank/dead frame, text outside safe area, cheap figure? Fix it.
    b. Listen: speech-to-text of the render matches {script/VO}; sound effects audible but under the voice.
-   c. QC gate: python3 kit/qc_v5.py --video out.mp4 --spec projects/{topic}/shots.json --jsx projects/{topic}/build/reel.jsx
+   c. QC gate: python3 tools/qc_v5.py --video out.mp4 --spec projects/{topic}/shots.json --jsx projects/{topic}/build/reel.jsx
       shots.json must list "refs", "breakdowns" and (here or in breakdown.json) "make_it_ours".
    GATE 7: QC says PASS (F1-F13). If anything FAILS, fix and re-render. Never send a failed render.
 

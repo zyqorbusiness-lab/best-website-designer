@@ -1,30 +1,11 @@
 {
  "duration": 8.2,
- "title": "face-lock hook \u2014 v5 demo",
+ "title": "face-lock hook — v5 demo",
  "refs": [
-  "../../../references/ref8_ig_DfR63QgTvNj",
-  "../../../references/premium_kinetic_typography_reel"
+  "breakdowns/ref8_breakdown",
+  "breakdowns/pin_kinetic03"
  ],
- "voice": [
-  {
-   "file": "vo/vo_hindi_bunty.mp3",
-   "from": 0.0,
-   "to": 3.15,
-   "at": 0.25
-  },
-  {
-   "file": "vo/vo_hindi_bunty.mp3",
-   "from": 3.25,
-   "to": 5.56,
-   "at": 3.6
-  },
-  {
-   "file": "vo/vo_hindi_bunty.mp3",
-   "from": 22.52,
-   "to": 24.09,
-   "at": 6.1
-  }
- ],
+ "voice": [],
  "music": {
   "file": "../../music/digital_clouds_175.mp3",
   "db": -12
@@ -388,5 +369,81 @@
   "size": 108,
   "gap": 30
  },
- "_note": "Voice: put your VO at vo/vo_hindi_bunty.mp3 (the demo used the face-lock Hindi VO: 0-3.15 s, 3.25-5.56 s, 22.52-24.09 s). Music: run ../../get_audio.sh first."
+ "_note": "Portable demo: `python3 tools/ec_reel.py tools/templates/ec_kinetic_v5/demo_shots.json --dry-run` then `python3 tools/qc_v5.py --spec <this file> --jsx tools/templates/ec_kinetic_v5/build/reel.jsx` (no EffectCraft needed). Add your own voice file under 'voice'; run tools/get_audio.sh for the music bed. 'refs'/'breakdowns' point at this kit's breakdowns/ folders; pinterest_sources here is the example plan from ref8.",
+ "breakdowns": [
+  "breakdowns/ref8_breakdown"
+ ],
+ "make_it_ours": [
+  "Palette: kit gradient presets instead of the reference's blue/cyan",
+  "Set: paper/studio background instead of the white void",
+  "Text: Inter + Instrument Serif italic accent, gradient keyword"
+ ],
+ "pinterest_sources": {
+  "music": [
+   {
+    "pin_url": "https://www.pinterest.com/pin/848365648600477893/",
+    "note": "music bed idea (track credited on the pin)",
+    "creator": "Jeen Realer 🎙",
+    "file": ""
+   }
+  ],
+  "sfx": [
+   {
+    "pin_url": "https://www.pinterest.com/pin/998321442477942360/",
+    "note": "5 essential sfx (whoosh/pop/click set)",
+    "creator": "Echo Grafix",
+    "file": ""
+   },
+   {
+    "pin_url": "https://www.pinterest.com/pin/1138214505863761721/",
+    "note": "hook sfx pack",
+    "creator": "Graphic House | Branding & Marketing Agency",
+    "file": ""
+   }
+  ],
+  "broll": [
+   {
+    "pin_url": "https://www.pinterest.com/pin/805792558372903371/",
+    "note": "magazine flip b-roll",
+    "creator": "POLÈNE",
+    "file": ""
+   }
+  ],
+  "subject": [
+   {
+    "pin_url": "https://www.pinterest.com/pin/671599363236245110/",
+    "note": "framed-card talking head layout",
+    "creator": "Motion Pet",
+    "file": ""
+   }
+  ],
+  "effect": [
+   {
+    "pin_url": "https://www.pinterest.com/pin/706854104018611568/",
+    "note": "warm light leak for the 26.6 s burn",
+    "creator": "ايساك a.",
+    "file": ""
+   },
+   {
+    "pin_url": "https://www.pinterest.com/pin/1030057745993566220/",
+    "note": "old film overlay / grain",
+    "creator": "A r s e n i c",
+    "file": ""
+   }
+  ],
+  "background": [
+   {
+    "pin_url": "https://www.pinterest.com/pin/982629212453903851/",
+    "note": "peach grid background",
+    "creator": "Internet Wala Aadil",
+    "file": ""
+   },
+   {
+    "pin_url": "https://www.pinterest.com/pin/1024217140226877046/",
+    "note": "paper texture plate",
+    "creator": "Charli<3",
+    "file": ""
+   }
+  ]
+ }
 }

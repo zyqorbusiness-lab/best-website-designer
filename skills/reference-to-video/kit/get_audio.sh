@@ -1,6 +1,6 @@
 #!/bin/bash
 # get_audio.sh — download the licensed Mixkit sound effects + music the kit uses (Mixkit's licence lets you use them in videos,
-# but not re-share the files themselves, so the kit ships this list instead of the files). Run from the zyqor-kit folder.
+# but not re-share the files themselves, so the kit ships this list instead of the files). Run: bash tools/get_audio.sh (from anywhere; it writes tools/sfx_v2 and tools/music).
 # Licences: https://mixkit.co/license/#sfxFree (sfx) · https://mixkit.co/license/#musicFree (music). Checked byte-for-byte on Nov 3 2026.
 set -e; cd "$(dirname "$0")"; mkdir -p sfx_v2 music
 get() { [ -s "$1" ] || curl -fsSL -o "$1" "$2"; echo "ok $1"; }

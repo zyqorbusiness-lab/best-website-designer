@@ -1,6 +1,8 @@
 """Word-level timestamps with faster-whisper (tiny.en, ~75 MB, already cached).
 Run with a Python that has faster-whisper:  python3 transcribe_words.py clip.mp4 out.json [model]
 Writes [{"text","start","end"}...]. Use base.en / small.en if tiny mishears (bigger download; check disk)."""
+import sys as _s
+if any(a in ('-h','--help') for a in _s.argv[1:]): print(__doc__); raise SystemExit(0)
 import sys, json
 from faster_whisper import WhisperModel
 src, out = sys.argv[1], sys.argv[2]

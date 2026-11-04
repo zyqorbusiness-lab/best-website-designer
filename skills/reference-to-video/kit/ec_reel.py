@@ -19,7 +19,7 @@ import sys, os, json, argparse, subprocess, shutil
 KIT = os.path.dirname(os.path.abspath(__file__))
 EC = os.environ.get("EFFECTCRAFT_CLI", "effectcraft-cli")   # Windows: %LOCALAPPDATA%\\Programs\\ArtCraft\\EffectCraft\\effectcraft-cli.exe
 RUN = ["nice", "-n", "10", "timeout", "-k", "10"]
-ap = argparse.ArgumentParser(); ap.add_argument("spec"); ap.add_argument("--out"); ap.add_argument("--frames-only"); ap.add_argument("--no-render", action="store_true")
+ap = argparse.ArgumentParser(); ap.add_argument("spec"); ap.add_argument("--out"); ap.add_argument("--frames-only"); ap.add_argument("--no-render", action="store_true"); ap.add_argument("--dry-run", action="store_true", help="write build/reel.jsx and stop (no EffectCraft needed) - then run qc_v5.py --spec <spec> --jsx build/reel.jsx")
 a = ap.parse_args()
 spec_path = os.path.abspath(a.spec); SD = os.path.dirname(spec_path); S = json.load(open(spec_path))
 CFG = json.load(open(os.path.join(KIT, "zq_config.json")))
@@ -63,6 +63,7 @@ proj = os.path.join(WORK, "reel.ecproj"); cues = os.path.join(WORK, "cues.json")
 body.append('writeLn("ZQCUES "+JSON.stringify(ZQ.cues));')
 body.append(f'app.project.save(new File({J(proj)})); writeLn("built "+comp.numLayers+" layers, "+ZQ.cues.length+" sfx cues");')
 jsx = os.path.join(WORK, "reel.jsx"); open(jsx, "w").write(LIB + "\n// ---- generated from " + os.path.basename(spec_path) + " ----\n" + "\n".join(body) + "\n")
+if a.dry_run: print("dry run: wrote", jsx); sys.exit(0)
 r = subprocess.run(RUN + ["300", EC, "script", jsx], capture_output=True, text=True, cwd=WORK); print('\n'.join(l for l in r.stdout.splitlines() if not l.startswith('ZQCUES'))[-3000:], r.stderr[-2000:])
 if r.returncode != 0: sys.exit("EffectCraft script failed")
 # sfx cues come back on stdout (EffectCraft scripts may not write files unless that preference is on)

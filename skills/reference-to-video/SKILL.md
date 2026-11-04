@@ -1,12 +1,12 @@
 ---
 name: reference-to-video
-description: (v5.2) Make a premium vertical reel from any reference or topic with the Zyqor Motion Kit — Pinterest first for everything (refs + actual files), 60 fps frame breakdown of the reference, make it ours (3+ changes), EffectCraft text/effects (never Blender text), ref8 kinetic captions, glow off, no AI colours, QC gate F1-F13.
+description: (v5.3) Make a premium vertical reel from any reference or topic with the Zyqor Motion Kit — Pinterest first for everything (refs + actual files), 60 fps frame breakdown of the reference, make it ours (3+ changes), EffectCraft text/effects (never Blender text), ref8 kinetic captions, glow off, no AI colours, QC gate F1-F13.
 when_to_use: "make a video like this reel", "copy this style", "edit my reel", "use this reference", any short vertical video
 license: MIT (text + code). References stay links; downloaded pin media stays in the user's project, never in this repo.
-version: 5.2.0
+version: 5.3.0
 ---
 
-# Reference → video (Zyqor Motion Kit v5.2)
+# Reference → video (Zyqor Motion Kit v5.3)
 
 Read `kit/AGENT_START_HERE.md` and follow it step by step. Give other agents `kit/MASTER_PROMPT.txt`.
 Each step has a gate; do not start the next step until it is true.
@@ -50,5 +50,25 @@ Lessons from the face-lock v4 reel (Nov 3 2026, `recipes/08_face_lock_real_photo
   `--clip A-B --name whoosh|pop2|click|riser|impact|bass|typing|ding` so ec_reel's sfx names resolve to your pins.
 - Paper-tear transition pins: most frames have a blue key area - scan for clean frames and tone them warm for a plate.
 
-Changelog: 5.2.0 (Nov 3 2026) face-lock v4 lessons + pin_download.py takes the pin's own original image. 5.1.0 (Nov 3 2026, kit v5.2) Step 0 = Pinterest for everything + 60 fps breakdown + make-it-ours; new
+Lessons from building kit v5.3 (Nov 4 2026) — what the user said was missing after v5.2 "slimmed" the kit:
+- Slim the CODE, never the RULES. v5.2 dropped the 27 prompts, recipes, ref notes, tick checklist and honesty rule to get small
+  and the user had to ask for them back. Text is cheap (the whole restored set is < 0.6 MB); media is what is heavy and what must
+  not ship. Keep `kit/RULES_COVERAGE.md` (every rule the user ever gave -> where it lives; 49 rows, 0 without a home) and re-check
+  it before every release.
+- A kit ships FILLED breakdowns for every reference, not one example: `kit/breakdowns/` (10, text + json). Each row says how it was
+  viewed (`viewed` flag). Contact sheets are not shipped (130 MB) - regenerate with ref_breakdown.py.
+- Pin lists ship as links, never files: `kit/pins/` = music / b-roll / subject / sfx-effects, each pin URL + title + TAKE/SKIP + a
+  `reviewed` flag, with the meaning of "reviewed" written in INDEX.md. Every older pin must have a verdict too (214 unreviewed
+  ones were reviewed from their covers).
+- Pinterest is READ ONLY for us (search, open, read). No saves, boards, follows or comments.
+- Portability = test from a CLEAN UNZIP, not from the working folder: every tool `--help` exits 0, `ec_reel.py --dry-run` +
+  `qc_v5.py --spec ... --jsx ...` give PASS, `ref_breakdown.py check` on every shipped breakdown, `get_audio.sh` run for real,
+  no machine paths in shipped scripts (box-only scripts say BOX-ONLY at the top and fail with a clear message elsewhere),
+  requirements.txt lists only what the shipped scripts import. See `kit-packaging-and-handoff`.
+- Do not write "all links live" unless you checked: v5.3 re-checked the 66 tutorial links (HTTP 200) and opened only a sample
+  of pins; the sentence says exactly that.
+
+Changelog: 5.3.0 (Nov 4 2026) restored prompts/recipes/notes/checklist/honesty rule; 10 filled 60 fps breakdowns; pins/ lists
+(168) + 214 older pins reviewed; portability fixes (ec_reel --dry-run, --help everywhere, pinterest_refs box-only marker,
+get_audio header, demo_shots paths); RULES_COVERAGE 49 rows. 5.2.0 (Nov 3 2026) face-lock v4 lessons + pin_download.py takes the pin's own original image. 5.1.0 (Nov 3 2026, kit v5.2) Step 0 = Pinterest for everything + 60 fps breakdown + make-it-ours; new
 ref_breakdown.py, pin_download.py, QC F11-F13, F7 = source logged; banned hue 175-320°; skill made lean. 5.0.0 v5 rules.
