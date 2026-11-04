@@ -1,3 +1,6 @@
+import sys as _s
+if any(a in ("-h","--help") for a in _s.argv[1:]):
+    print('mask_birefnet_lite.py THREADS  - recipe 11: subject masks per frame with BiRefNet-general-lite (ONNX).\nEnv BH = project root; expects work/src25/fNNNN.jpg frames and work/u2net/models/birefnet-general-lite/*.onnx; writes work/masks/mNNNN.png. Needs onnxruntime, numpy, pillow (see recipes/11_word_behind_head.md).'); raise SystemExit(0)
 
 import os,sys,time
 import numpy as np, onnxruntime as ort

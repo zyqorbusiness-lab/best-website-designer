@@ -14,7 +14,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "15 s vertical; text promo in caption, footage clean"
+"notes": "15 s vertical; text promo in caption, footage clean",
+"colour_recheck_v55": "video measured 47 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 2,
@@ -48,7 +49,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "thumbnail mostly black; Figma/Webflow template ad"
+"notes": "thumbnail mostly black; Figma/Webflow template ad",
+"colour_recheck_v55": "cover measured: 0% banned hue (video not measured)"
 },
 {
 "n": 4,
@@ -65,7 +67,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "warm neutral, pack-an-order shot"
+"notes": "warm neutral, pack-an-order shot",
+"colour_recheck_v55": "video measured 49 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 5,
@@ -82,7 +85,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "moody warm, 14 s"
+"notes": "moody warm, 14 s",
+"colour_recheck_v55": "video measured 42 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 6,
@@ -99,7 +103,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "warm teal-orange grade, mild; vertical"
+"notes": "warm teal-orange grade, mild; vertical",
+"colour_recheck_v55": "video measured 55 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 7,
@@ -116,7 +121,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "18 s overhead"
+"notes": "18 s overhead",
+"colour_recheck_v55": "video measured 54 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 8,
@@ -133,7 +139,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "clean neutral light"
+"notes": "clean neutral light",
+"colour_recheck_v55": "video measured 60 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 9,
@@ -167,7 +174,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "warm natural colours"
+"notes": "warm natural colours",
+"colour_recheck_v55": "video measured 20 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 11,
@@ -184,7 +192,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "moody brown, clean"
+"notes": "moody brown, clean",
+"colour_recheck_v55": "video measured 36 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 12,
@@ -201,7 +210,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "landscape, slow-shutter blur; crop to vertical"
+"notes": "landscape, slow-shutter blur; crop to vertical",
+"colour_recheck_v55": "video measured 45 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 13,
@@ -218,7 +228,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "19 s; dark-warm, screen shows a pop-up UI"
+"notes": "19 s; dark-warm, screen shows a pop-up UI",
+"colour_recheck_v55": "video measured 57 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 14,
@@ -235,7 +246,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "very clean neutral, 17 s"
+"notes": "very clean neutral, 17 s",
+"colour_recheck_v55": "video measured 51 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 15,
@@ -269,7 +281,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "39 s boutique; neutral bright"
+"notes": "39 s boutique; neutral bright",
+"colour_recheck_v55": "video measured 117 frames: peak 2%, mean 0%, 0 over limit"
 },
 {
 "n": 17,
@@ -286,7 +299,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "warm low-key"
+"notes": "warm low-key",
+"colour_recheck_v55": "video measured 25 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 18,
@@ -303,7 +317,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "landscape; warm amber dusk"
+"notes": "landscape; warm amber dusk",
+"colour_recheck_v55": "video measured 79 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 19,
@@ -320,7 +335,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "7.5 s warm natural"
+"notes": "7.5 s warm natural",
+"colour_recheck_v55": "video measured 22 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 20,
@@ -337,7 +353,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "52 s, warm bokeh"
+"notes": "52 s, warm bokeh",
+"colour_recheck_v55": "video measured 156 frames: peak 3%, mean 0%, 0 over limit"
 },
 {
 "n": 21,
@@ -354,7 +371,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "clean editorial layout; 9 s; shows site layout only"
+"notes": "clean editorial layout; 9 s; shows site layout only",
+"colour_recheck_v55": "video measured 27 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 22,
@@ -388,7 +406,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "live (pin page loaded signed-in, HTTP 200, video present)",
-"notes": "excellent warm macro"
+"notes": "excellent warm macro",
+"colour_recheck_v55": "video measured 42 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 24,
@@ -422,7 +441,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "20 s; green/warm; caption is a side-hustle promo but footage clean"
+"notes": "20 s; green/warm; caption is a side-hustle promo but footage clean",
+"colour_recheck_v55": "video measured 63 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 26,
@@ -439,7 +459,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "landscape; soft warm-neutral"
+"notes": "landscape; soft warm-neutral",
+"colour_recheck_v55": "video measured 67 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 27,
@@ -473,7 +494,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "CGI/3D cart render, text overlay; fits shop concept"
+"notes": "CGI/3D cart render, text overlay; fits shop concept",
+"colour_recheck_v55": "video measured 58 frames: peak 3%, mean 0%, 0 over limit"
 },
 {
 "n": 29,
@@ -490,7 +512,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "moody monochrome, fits barber/tailor concepts"
+"notes": "moody monochrome, fits barber/tailor concepts",
+"colour_recheck_v55": "video measured 47 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 30,
@@ -524,7 +547,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "neutral bright, 10 s"
+"notes": "neutral bright, 10 s",
+"colour_recheck_v55": "video measured 32 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 32,
@@ -575,7 +599,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "live (pin page loaded signed-in, HTTP 200, video present)",
-"notes": "neutral warm; 8 s"
+"notes": "neutral warm; 8 s",
+"colour_recheck_v55": "video measured 25 frames: peak 1%, mean 0%, 0 over limit"
 },
 {
 "n": 35,
@@ -592,7 +617,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "landscape; warm; Mindful promo watermark small"
+"notes": "landscape; warm; Mindful promo watermark small",
+"colour_recheck_v55": "video measured 18 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 36,
@@ -609,6 +635,7 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "monochrome; use as texture cut"
+"notes": "monochrome; use as texture cut",
+"colour_recheck_v55": "video measured 39 frames: peak 0%, mean 0%, 0 over limit"
 }
 ]

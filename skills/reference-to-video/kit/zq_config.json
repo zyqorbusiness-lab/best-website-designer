@@ -1,5 +1,5 @@
 {
- "_about": "Zyqor Motion Kit v5 house style. ec_reel.py and qc_v5.py read this. Change colours HERE, not in scripts.",
+ "_about": "Zyqor Motion Kit v5.5 house style. ec_reel.py, qc_v5.py, audio_gap.py and the fx_*.py tools read/obey this. Change colours HERE, not in scripts.",
  "gradients": {
   "ember": {
    "stops": [
@@ -203,5 +203,115 @@
  "loudness": {
   "lufs": -14,
   "true_peak_max": -1.0
+ },
+ "glow": {
+  "allowed": true,
+  "warm_only": true,
+  "where": "big words, gradient keywords, extruded words (soft outer bloom 0.35-0.6, radius ~9 % of letter height)",
+  "never": "blanket glow on a full-frame/adjustment layer; purple/violet/blue/cyan glow (banned hue 175-320 deg); glow on every caption word",
+  "colours": [
+   "#FF7A2F",
+   "#FFB347",
+   "#FFC94D",
+   "#FF5A3C"
+  ],
+  "source": "Sujon Nov 4 2026 12:11 PM: 'Glow hoga human beast edit jaisa ai feel kaisa nahi' (verbatim, WhatsApp). Replaces the v5 'glow OFF' rule."
+ },
+ "display_fonts": {
+  "intent": "fonts like the references: HEAVY bold display, mixed with a clean bold sans and one small serif/script accent",
+  "big_words": [
+   "ArchivoBlack (kit fonts/, OFL)",
+   "Anton (condensed, OFL, install from Google Fonts)",
+   "Archivo ExtraBold/SemiBold"
+  ],
+  "captions": [
+   "Inter-Bold",
+   "Inter-Black"
+  ],
+  "accent": [
+   "InstrumentSerif-Italic",
+   "a handwritten script for one connector word"
+  ],
+  "rule": "big word 85 % frame width max, caps, tracking -2..-6 %; one accent colour family per reel (red OR gold/yellow) plus white; <= 3 font families"
+ },
+ "human_made": {
+  "timing_jitter_frames": [
+   -1,
+   1
+  ],
+  "rotation_deg": [
+   -3,
+   3
+  ],
+  "scale_jitter_pct": 6,
+  "letter_stagger_frames": [
+   2,
+   4
+  ],
+  "grain": [
+   0.03,
+   0.06
+  ],
+  "dust": true,
+  "vignette": true,
+  "overshoot_pct": [
+   103,
+   108
+  ],
+  "rule": "nothing perfectly centred, symmetric or on the same millisecond: refs rotate words 2-8 deg, vary sizes inside one sentence, add paper/film texture, hand-wobble cursors"
+ },
+ "sound_design": {
+  "measured_on": "12 Nov-4 references + our behind-head reel (audio_gap.py)",
+  "targets": {
+   "lufs": -14,
+   "true_peak_dbtp": -1.0,
+   "crest_db": 15.8,
+   "sub_share_db": -7.3,
+   "air_vs_mid_db": -15.8,
+   "events_per_s": [
+    0.5,
+    1.5
+   ],
+   "sfx_under_voice_db_max": 18
+  },
+  "bus": {
+   "sfx_vs_voice_rms_db": -12,
+   "impact_peak_vs_voice_peak_db": -4,
+   "pop_click_vs_voice_rms_db": -10,
+   "music_vs_voice_rms_db": -9
+  },
+  "rules": [
+   "sound only on big words, cuts/transitions and emphasis zooms (not a click+pop on every caption word)",
+   "max one sound per cut; whoosh starts 100-200 ms BEFORE the cut/pop, hit lands on it (practice, not measured from refs)",
+   "add a continuous sub-heavy bed or a 45-60 Hz sine swell under big words to reach sub share ~ -8 dB",
+   "noise swell (4-11 kHz) on whooshes for air",
+   "limit to -1.0 dBTP at -14 LUFS",
+   "+-15 ms timing jitter, +-1.5 dB gain jitter, +-3 % pitch, 3-4 variants per type, never the same sample twice in a row",
+   "run audio_gap.py and qc F15 (sfx <= 18 dB under the voice); nobody here can listen, so Sujon's ears are the final judge"
+  ],
+  "status": "targets (loudness, sub, air, density) are MEASURED from the refs; the 'bus' mix numbers and timing rules are PROPOSED and not yet validated by a re-mix"
+ },
+ "extrude_presets": {
+  "red": [
+   "#FF5A3C",
+   "#C4161C"
+  ],
+  "gold": [
+   "#FFE27A",
+   "#E0A12A"
+  ],
+  "yellow": [
+   "#FFE45C",
+   "#FFC21A"
+  ],
+  "orange": [
+   "#FFB066",
+   "#F26A1B"
+  ],
+  "cream": [
+   "#FFF6E6",
+   "#EAD7B5"
+  ],
+  "note": "fx_extrude_text.py presets (warm only)"
  }
 }

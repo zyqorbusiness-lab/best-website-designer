@@ -13,7 +13,7 @@
 //     Plain curl/requests to that endpoint answers 403 "Invalid Resource Request"; the HTML has no pins (JS-rendered).
 //   - Logged out, Pinterest gates pin pages: ids come back as "e1_…" tokens and there is no public /pin/<id>/ URL.
 //     We record the creator, the creator's board URL and outbound link instead. With a signed-in context
-//     (env PINTEREST_CONTEXT=<browserbase context id>, see /home/user/tab/browser-notes/pinterest.md) numeric ids → real pin URLs.
+//     (env PINTEREST_CONTEXT=<browserbase context id>, see your browser notes) numeric ids → real pin URLs.
 //   - Video files: v1.pinimg.com HLS (.m3u8) is fetchable straight from this box (no cookies) → ffmpeg picks the ≤720p variant.
 //   - The session is one-shot (keepAlive:false) and ends when the search step returns. Nothing is clicked, saved, pinned or followed.
 import fs from "node:fs";
@@ -23,7 +23,7 @@ import { spawnSync } from "node:child_process";
 // It does NOT run from a downloaded kit. Elsewhere: use pin_download.py <pin url> for a pin you already have, or ask Tab to run it.
 if (process.argv.includes("--help") || process.argv.includes("-h")) { console.log("pinterest_refs.mjs - BOX-ONLY (needs Tab's browser helper). usage: node pinterest_refs.mjs \"<topic>\" [count] [--scope=videos|pins] [--videos=8] [--no-video]\nOutside Tab's box use pin_download.py <pin url> instead."); process.exit(0); }
 let withBrowserStep;
-try { ({ withBrowserStep } = await import("/home/user/tab/browser-step.mjs")); }
+try { ({ withBrowserStep } = await import(process.env.TAB_BROWSER_STEP || "./browser-step.mjs")); }
 catch (e) { console.error("pinterest_refs.mjs is BOX-ONLY (Tab's browser helper not found here). Use pin_download.py <pin url>, or ask Tab to run the search."); process.exit(3); }
 
 const args = process.argv.slice(2);
@@ -113,7 +113,7 @@ async function bestHls(master) {
   const ok = vars.filter(v => short(v) <= 720).sort((a, b) => short(b) - short(a) || b.bw - a.bw);
   return { video: (ok[0] || vars.sort((a, b) => short(a) - short(b))[0]).url, audio: am ? new URL(am[1], master).href : null };
 }
-function freeGB() { const r = run("df", ["-BG", "--output=avail", "/home/user"], 10); return parseInt(r.stdout.split("\n")[1]); }
+function freeGB() { const r = run("df", ["-BG", "--output=avail", "."], 10); return parseInt(r.stdout.split("\n")[1]); }
 
 // ---------- main ----------
 log(`topic="${topic}" scope=${scope} count=${count} videos=${maxVideos} context=${ctxId || "public (logged out)"}`);

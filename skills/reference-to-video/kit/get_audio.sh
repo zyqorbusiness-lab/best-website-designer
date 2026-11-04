@@ -2,6 +2,7 @@
 # get_audio.sh — download the licensed Mixkit sound effects + music the kit uses (Mixkit's licence lets you use them in videos,
 # but not re-share the files themselves, so the kit ships this list instead of the files). Run: bash tools/get_audio.sh (from anywhere; it writes tools/sfx_v2 and tools/music).
 # Licences: https://mixkit.co/license/#sfxFree (sfx) · https://mixkit.co/license/#musicFree (music). Checked byte-for-byte on Nov 3 2026.
+case "${1:-}" in -h|--help) sed -n '2,4p' "$0"; exit 0;; esac
 set -e; cd "$(dirname "$0")"; mkdir -p sfx_v2 music
 get() { [ -s "$1" ] || curl -fsSL -o "$1" "$2"; echo "ok $1"; }
 get sfx_v2/whoosh.mp3         https://assets.mixkit.co/active_storage/sfx/1490/1490-preview.mp3   # #1490 Fast whoosh transition

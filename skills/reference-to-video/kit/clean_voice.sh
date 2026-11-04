@@ -10,6 +10,7 @@
 #   rnn               RNNoise neural model (audio/models/bd.rnnn) -> for traffic/crowd/keyboard; slightly more "processed"
 #   fft / anlm / off
 set -euo pipefail
+case "${1:-}" in -h|--help|"") sed -n '2,6p' "$0"; exit 0;; esac
 IN="$1"; OUT="$2"; shift 2
 NR="fft+anlm"; MUSIC=""; MDB="-16"; LUFS="-14"; TP="-1.5"
 while [ $# -gt 0 ]; do case "$1" in

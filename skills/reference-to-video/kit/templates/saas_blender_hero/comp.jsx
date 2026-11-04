@@ -4,7 +4,7 @@
 // Same object model as After Effects ExtendScript: app.project, items.addComp, layers.addSolid, property("Effects").addProperty("Glow")...
 // Layer stack (bottom -> top): 4-colour gradient world, light leak (Add), Blender 3D render (Glow + CC Light Sweep + impact shake),
 // FX adjustment layers (zoom blur, whip blur, RGB split, flash, grain, vignette), 2D overlays (PIL-made PNG pills).
-var HERE = "/home/user/tools/motion-kit/templates/saas_blender_hero";   // CHANGE to this folder on your PC (EffectCraft JSX cannot find its own path)   // folder of this template (edit when you copy it)
+var HERE = "CHANGE_ME/templates/saas_blender_hero";   // CHANGE to this folder on your PC (EffectCraft JSX cannot find its own path)   // folder of this template (edit when you copy it)
 try { if ($.fileName && File($.fileName).parent && File($.fileName).parent.fsName.length > 1) HERE = File($.fileName).parent.fsName; } catch (e) {}
 var W = 1080, H = 1920, FPS = 30, DUR = 16;
 var RENDER_SEQ = HERE + "/renders/f/f_0001.webp";   // Blender output (RGBA WebP)

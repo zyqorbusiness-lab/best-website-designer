@@ -48,7 +48,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "calm green, 60 s footage plate; no subject"
+"notes": "calm green, 60 s footage plate; no subject",
+"colour_recheck_v55": "video measured 180 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 4,
@@ -116,7 +117,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "neutral grey studio render, 11 s"
+"notes": "neutral grey studio render, 11 s",
+"colour_recheck_v55": "video measured 33 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 8,
@@ -133,7 +135,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "clean neutral white, 5 s loop; Apple product"
+"notes": "clean neutral white, 5 s loop; Apple product",
+"colour_recheck_v55": "video measured 15 frames: peak 5%, mean 2%, 0 over limit"
 },
 {
 "n": 9,
@@ -150,7 +153,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "warm brown wall, neutral; finance promo caption ignored"
+"notes": "warm brown wall, neutral; finance promo caption ignored",
+"colour_recheck_v55": "video measured 83 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 10,
@@ -184,7 +188,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "warm cream paper, premium textured; 5 s"
+"notes": "warm cream paper, premium textured; 5 s",
+"colour_recheck_v55": "video measured 15 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 12,
@@ -196,12 +201,13 @@
 "topic_query": "phone mockup floating 3d",
 "what_it_is": "Pink phone UI mockup Budgeting app",
 "use_for": "phone mockup floating 3d",
-"colour_flag": false,
-"take_skip": "TAKE",
+"colour_flag": true,
+"take_skip": "SKIP (v5.5 colour recheck - video: 14 of 47 sampled frames over the 6% banned-hue limit (peak 79% of frame, mean 10%))",
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "pink/green UI on white; 15 s"
+"notes": "pink/green UI on white; 15 s",
+"colour_recheck_v55": "video measured 47 frames: peak 79%, mean 10%, 14 over limit"
 },
 {
 "n": 13,
@@ -218,7 +224,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "neutral warm; 20 s"
+"notes": "neutral warm; 20 s",
+"colour_recheck_v55": "video measured 60 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 14,
@@ -252,7 +259,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "neutral grey, premium minimal; 26 s"
+"notes": "neutral grey, premium minimal; 26 s",
+"colour_recheck_v55": "video measured 79 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 16,
@@ -286,7 +294,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "warm natural; 50 s"
+"notes": "warm natural; 50 s",
+"colour_recheck_v55": "video measured 150 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 18,
@@ -320,7 +329,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "warm cream silk, clean plate; 8 s"
+"notes": "warm cream silk, clean plate; 8 s",
+"colour_recheck_v55": "video measured 24 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 20,
@@ -388,7 +398,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "warm wood on grey; premium"
+"notes": "warm wood on grey; premium",
+"colour_recheck_v55": "video measured 26 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 24,
@@ -417,12 +428,13 @@
 "topic_query": "content creator talking head reel",
 "what_it_is": "Woman at podcast mic, blush wall, black blazer",
 "use_for": "content creator talking head",
-"colour_flag": false,
-"take_skip": "TAKE",
+"colour_flag": true,
+"take_skip": "SKIP (v5.5 colour recheck - video: 10 of 117 sampled frames over the 6% banned-hue limit (peak 36% of frame, mean 3%))",
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "warm neutral; 39 s bloopers"
+"notes": "warm neutral; 39 s bloopers",
+"colour_recheck_v55": "video measured 117 frames: peak 36%, mean 3%, 10 over limit"
 },
 {
 "n": 26,
@@ -451,12 +463,13 @@
 "topic_query": "product on clean paper background",
 "what_it_is": "Black and brown 3D sculpture, \"Introducing\" serif text",
 "use_for": "premium product reveal ref",
-"colour_flag": false,
-"take_skip": "TAKE",
+"colour_flag": true,
+"take_skip": "SKIP (v5.5 colour recheck - video: 13 of 156 sampled frames over the 6% banned-hue limit (peak 37% of frame, mean 2%))",
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "dark warm brown, serif intro text; 52 s"
+"notes": "dark warm brown, serif intro text; 52 s",
+"colour_recheck_v55": "video measured 156 frames: peak 37%, mean 2%, 13 over limit"
 },
 {
 "n": 28,
@@ -485,12 +498,13 @@
 "topic_query": "person pointing at screen reel",
 "what_it_is": "Blurred finger touching grid of magazine covers",
 "use_for": "hand/touch subject",
-"colour_flag": false,
-"take_skip": "TAKE",
+"colour_flag": true,
+"take_skip": "SKIP (v5.5 colour recheck - video: 20 of 88 sampled frames over the 6% banned-hue limit (peak 80% of frame, mean 4%))",
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "neutral motion-blur, editorial; 29 s"
+"notes": "neutral motion-blur, editorial; 29 s",
+"colour_recheck_v55": "video measured 88 frames: peak 80%, mean 4%, 20 over limit"
 },
 {
 "n": 30,
@@ -524,7 +538,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "neutral, premium; matches \"product on clean paper\""
+"notes": "neutral, premium; matches \"product on clean paper\"",
+"colour_recheck_v55": "video measured 33 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 32,
@@ -541,7 +556,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "warm yellow/peach UI; premium"
+"notes": "warm yellow/peach UI; premium",
+"colour_recheck_v55": "video measured 29 frames: peak 2%, mean 1%, 0 over limit"
 },
 {
 "n": 33,
@@ -558,7 +574,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "warm neutral; realtor branding small"
+"notes": "warm neutral; realtor branding small",
+"colour_recheck_v55": "video measured 67 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 34,
@@ -575,7 +592,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "warm beige; shows viewport, useful for 3D recipe"
+"notes": "warm beige; shows viewport, useful for 3D recipe",
+"colour_recheck_v55": "video measured 24 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 35,
@@ -592,7 +610,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "peach + green; clean"
+"notes": "peach + green; clean",
+"colour_recheck_v55": "video measured 19 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 36,

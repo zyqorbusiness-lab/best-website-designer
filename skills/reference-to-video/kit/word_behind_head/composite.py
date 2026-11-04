@@ -1,3 +1,6 @@
+import sys as _s
+if any(a in ("-h","--help") for a in _s.argv[1:]):
+    print('composite.py OUT.mp4 [START_FRAME END_FRAME]  - recipe 11: composite the extruded big word behind the subject (BiRefNet masks) over the plate.\nEnv BH = project root; expects work/masks, ec/bigs.json, ec/wseq, ec/cseq, work/assets/... (see recipes/11_word_behind_head.md and the worked example in this folder). Needs numpy, opencv-python, ffmpeg.'); raise SystemExit(0)
 
 import os,sys,json,subprocess,numpy as np,cv2,time
 cv2.setNumThreads(4)

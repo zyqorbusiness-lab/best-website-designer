@@ -1,5 +1,16 @@
 > In this repo the kit folder is `skills/reference-to-video/kit/` (the zip calls it `tools/`). Run commands from `skills/reference-to-video/`.
 
+## NEW IN v5.5 (Nov 4 2026) - overrides older lines below
+In this repo the zip's `tools/` live flat in this folder (`python3 audio_gap.py`, `python3 fx_extrude_text.py` ...); the zip is Zyqor_Motion_Kit_v5.5.zip.
+- **Glow is ALLOWED and wanted - warm only - on big words** (never blanket, never purple/violet/blue/cyan). **Heavy bold display fonts** like the refs (<= 3 families). **Human-made, not AI** (jitter, grain, dust, torn edges). `STYLE_RULES_v5.5.md`.
+- **Measured SFX gap** (ours 27.6 dB under the voice, 7x too dense, no low end): `SOUND_DESIGN_v5.5.md`, `audio_gap.py`, QC F15 (`qc_v5.py --vo --sfx`). Nobody can listen here: numbers only.
+- **Recipes 11-18** (`../recipes/`) and new tools `fx_extrude_text.py`, `fx_torn_reveal.py`, `fx_phone_frame.py`, `fx_cut_fx.py`, `audio_gap.py`, `get_references.py`.
+- **12 new reference reels** (links only in `REFERENCE_LINKS.csv`; `python3 get_references.py --list`), joint breakdown in `breakdowns/nov4_12refs/`. Before/after refs: EDIT side only.
+- **Pin colour fix:** verdicts re-measured on the pin VIDEOS; the purple/blue-bokeh light-leak pin 603200943843150335 is SKIP (`pins/INDEX.md`).
+- Honest claims: [measured] vs [eyeballed]; tests in `TEST_REPORT_v5.5.md`.
+
+
+
 # AGENT_START_HERE — Zyqor Motion Kit v5.3
 
 Read this whole file before you touch anything. Do the steps in order. Each step has a GATE:

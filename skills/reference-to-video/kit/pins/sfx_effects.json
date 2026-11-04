@@ -14,7 +14,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "dark green UI tutorial; free pack via comment gate"
+"notes": "dark green UI tutorial; free pack via comment gate",
+"colour_recheck_v55": "video measured 60 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 2,
@@ -26,12 +27,13 @@
 "topic_query": "light leak transition",
 "what_it_is": "Full-frame orange-red gradient light leak",
 "use_for": "light leak overlay",
-"colour_flag": false,
-"take_skip": "TAKE",
+"colour_flag": true,
+"take_skip": "SKIP (v5.5 colour recheck - video: 49 of 135 sampled frames over the 6% banned-hue limit (peak 100% of frame, mean 21%))",
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "warm orange leak, 33 s; screen-blend"
+"notes": "warm orange leak, 33 s; screen-blend",
+"colour_recheck_v55": "video measured 135 frames: peak 100%, mean 21%, 49 over limit"
 },
 {
 "n": 3,
@@ -48,7 +50,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "10 s, dust & scratches; screen-blend"
+"notes": "10 s, dust & scratches; screen-blend",
+"colour_recheck_v55": "video measured 30 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 4,
@@ -65,7 +68,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "warm edge leak, 15 s"
+"notes": "warm edge leak, 15 s",
+"colour_recheck_v55": "video measured 60 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 5,
@@ -77,12 +81,13 @@
 "topic_query": "zoom transition reel",
 "what_it_is": "Tourist at Marina Bay; 2x→0.5x zoom transition tutorial clip",
 "use_for": "zoom transition",
-"colour_flag": false,
-"take_skip": "TAKE",
+"colour_flag": true,
+"take_skip": "SKIP (v5.5 colour recheck - video: 4 of 32 sampled frames over the 6% banned-hue limit (peak 20% of frame, mean 3%))",
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "zoom trend reference; footage is the demo"
+"notes": "zoom trend reference; footage is the demo",
+"colour_recheck_v55": "video measured 32 frames: peak 20%, mean 3%, 4 over limit"
 },
 {
 "n": 6,
@@ -99,7 +104,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "live (pin page loaded signed-in, HTTP 200, video present)",
-"notes": "warm orange subway + green sticker; sticker over footage"
+"notes": "warm orange subway + green sticker; sticker over footage",
+"colour_recheck_v55": "video measured 18 frames: peak 1%, mean 0%, 0 over limit"
 },
 {
 "n": 7,
@@ -116,7 +122,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "mono black/white focus-pull text"
+"notes": "mono black/white focus-pull text",
+"colour_recheck_v55": "video measured 36 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 8,
@@ -133,7 +140,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "warm light-streak, dark; abstract"
+"notes": "warm light-streak, dark; abstract",
+"colour_recheck_v55": "video measured 23 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 9,
@@ -184,7 +192,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "warm leak, 15 s"
+"notes": "warm leak, 15 s",
+"colour_recheck_v55": "video measured 61 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 12,
@@ -201,7 +210,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "12 s specks; screen-blend"
+"notes": "12 s specks; screen-blend",
+"colour_recheck_v55": "video measured 44 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 13,
@@ -218,7 +228,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "amber/gold scan lines; no cyan"
+"notes": "amber/gold scan lines; no cyan",
+"colour_recheck_v55": "video measured 37 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 14,
@@ -230,12 +241,13 @@
 "topic_query": "zoom transition reel",
 "what_it_is": "Man with cap, falling-zoom transition tutorial, rounded forest clip",
 "use_for": "zoom transition",
-"colour_flag": false,
-"take_skip": "TAKE",
+"colour_flag": true,
+"take_skip": "SKIP (v5.5 colour recheck - video: 10 of 109 sampled frames over the 6% banned-hue limit (peak 32% of frame, mean 2%))",
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "tutorial; warm skin tones"
+"notes": "tutorial; warm skin tones",
+"colour_recheck_v55": "video measured 109 frames: peak 32%, mean 2%, 10 over limit"
 },
 {
 "n": 15,
@@ -252,7 +264,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "cream + red, editorial type; 18 s"
+"notes": "cream + red, editorial type; 18 s",
+"colour_recheck_v55": "video measured 53 frames: peak 1%, mean 0%, 0 over limit"
 },
 {
 "n": 16,
@@ -269,7 +282,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "clean white sans, one word per beat"
+"notes": "clean white sans, one word per beat",
+"colour_recheck_v55": "video measured 69 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 17,
@@ -286,7 +300,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "free pack via comment gate"
+"notes": "free pack via comment gate",
+"colour_recheck_v55": "video measured 34 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 18,
@@ -320,7 +335,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "gold leak 15 s"
+"notes": "gold leak 15 s",
+"colour_recheck_v55": "video measured 45 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 20,
@@ -337,7 +353,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "26 s dust/scratch"
+"notes": "26 s dust/scratch",
+"colour_recheck_v55": "video measured 77 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 21,
@@ -371,7 +388,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": ""
+"notes": "",
+"colour_recheck_v55": "cover measured: 10% banned hue (video not measured)"
 },
 {
 "n": 23,
@@ -405,7 +423,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "premium serif-sans stack; image-in-text"
+"notes": "premium serif-sans stack; image-in-text",
+"colour_recheck_v55": "video measured 62 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 25,
@@ -439,7 +458,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "muted blue-grey sky but mostly green-neutral; pack promo"
+"notes": "muted blue-grey sky but mostly green-neutral; pack promo",
+"colour_recheck_v55": "video measured 28 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 27,
@@ -456,7 +476,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "warm, 15 s"
+"notes": "warm, 15 s",
+"colour_recheck_v55": "video measured 61 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 28,
@@ -473,7 +494,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "60 s scratches"
+"notes": "60 s scratches",
+"colour_recheck_v55": "video measured 180 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 29,
@@ -490,7 +512,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "red/black glitch tile, warm, no cyan"
+"notes": "red/black glitch tile, warm, no cyan",
+"colour_recheck_v55": "video measured 33 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 30,
@@ -524,7 +547,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "peach/cream, cut-out collage; teal statue small"
+"notes": "peach/cream, cut-out collage; teal statue small",
+"colour_recheck_v55": "video measured 60 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 32,
@@ -541,7 +565,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": ""
+"notes": "",
+"colour_recheck_v55": "cover measured: 0% banned hue (video not measured)"
 },
 {
 "n": 33,
@@ -558,7 +583,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "free pack via comment gate"
+"notes": "free pack via comment gate",
+"colour_recheck_v55": "video measured 31 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 34,
@@ -575,7 +601,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "same series, dark-green UI"
+"notes": "same series, dark-green UI",
+"colour_recheck_v55": "video measured 17 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 35,
@@ -592,7 +619,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "live (pin page loaded signed-in, HTTP 200, video present)",
-"notes": "warm red leak 20 s"
+"notes": "warm red leak 20 s",
+"colour_recheck_v55": "video measured 82 frames: peak 0%, mean 0%, 0 over limit"
 },
 {
 "n": 36,
@@ -609,6 +637,7 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "neutral dark noise, 31 s"
+"notes": "neutral dark noise, 31 s",
+"colour_recheck_v55": "video measured 93 frames: peak 0%, mean 0%, 0 over limit"
 }
 ]

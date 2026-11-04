@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""qc_v5.py — Zyqor Motion Kit v5.2 QUALITY GATE. A render that fails here is NOT sent to anyone. (Sujon, Nov 3 2026: "strictly")
+"""qc_v5.py — Zyqor Motion Kit v5.5 QUALITY GATE. A render that fails here is NOT sent to anyone. (Sujon, Nov 3 2026: "strictly")
   python3 qc_v5.py --video out.mp4 --spec shots.json [--jsx build/reel.jsx]
   python3 qc_v5.py --jsx some_comp.jsx            (audit an old/hand-made comp for glow + banned colours only)
 HARD FAILS (exit code 1):
   F1 no Pinterest references pulled first (spec "refs" must name a references/<topic>/ folder that has pins.json, or a ref you analysed)
-  F2 glow: any Glow on text, more than ONE Glow per shot, or a Glow on an adjustment/full-frame layer (blanket glow)
+  F2 glow (v5.5 rule, Sujon Nov 4 2026 12:11 PM 'Glow hoga, human beast edit jaisa'): WARM glow on big words/keywords is wanted; this check now fails only a blanket Glow on an
+     adjustment/full-frame layer, or a glow/text colour in the banned purple/violet/blue/cyan hue range (F4/F5 also catch colour)
   F3 caption colour system missing: no gradient-keyword token ("s":"g") in the captions, or two highlight systems mixed (g + m)
   F4 a gradient preset that is not in zq_config.json, or one whose colours fall in the banned purple/blue/cyan range
   F5 banned "AI" palette on screen: purple/blue/cyan neon covers more than 6 % of any sampled frame
@@ -19,12 +20,13 @@ HARD FAILS (exit code 1):
   F13 (v5.2) fewer than 3 "make_it_ours" changes written (never copy a reference 1:1)
   F14 (v5.5, needs --vo vo.mp3) the voice is in the final mix more than once (cross-correlation of the mix with the single VO file
       shows a second peak > 0.15 of the main one, 0.05-1.5 s away from it) - the Nov 4 2026 'two voices at the same time' bug
-WARNINGS: a dead-still second (no motion), more than 4 sfx per second, captions longer than 4 words per line.
+  F15 (v5.5, needs --vo and --sfx = the dry sfx track) the sfx are more than 18 dB under the voice in the final mix (audio_gap.py regression; v5.3 behind-head reel: 27.6 dB)
+WARNINGS: a dead-still second (no motion), more than 2 sfx per second, captions longer than 4 words per line.
 """
 import sys, os, json, re, argparse, subprocess, colorsys, glob
 import numpy as np
 KIT = os.path.dirname(os.path.abspath(__file__)); CFG = json.load(open(os.path.join(KIT, "zq_config.json")))
-ap = argparse.ArgumentParser(); ap.add_argument("--video"); ap.add_argument("--spec"); ap.add_argument("--jsx"); ap.add_argument("--vo", help="the single clean voice-over file (F14: voice must be in the mix exactly once)"); a = ap.parse_args()
+ap = argparse.ArgumentParser(); ap.add_argument("--video"); ap.add_argument("--spec"); ap.add_argument("--jsx"); ap.add_argument("--sfx", help="the dry sfx track that was mixed (F15 sfx audibility: with --vo and --video)"); ap.add_argument("--events", help="sfx_events.json for per-event margins (F15)"); ap.add_argument("--vo", help="the single clean voice-over file (F14: voice must be in the mix exactly once)"); a = ap.parse_args()
 fails, warns, passes = [], [], []
 def F(code, msg): fails.append(f"{code} {msg}")
 def ok(code, msg): passes.append(f"{code} {msg}")
@@ -45,10 +47,8 @@ if S is not None:
 if a.jsx and os.path.exists(a.jsx):
     js = open(a.jsx).read(); body = js.split("// ---- generated from")[-1] if "// ---- generated from" in js else js
     n_glow = len(re.findall(r'["\']Glow["\']', body)); n_shots = len(S["shots"]) if S else 1
-    if re.search(r'txt[^\n]*Glow|Glow[^\n]*txt|text[^\n]*["\']Glow', body, re.I): F("F2", "Glow applied to text")
-    elif re.search(r'adjustmentLayer\s*=\s*true[^\n]*\n?[^\n]*["\']Glow', body): F("F2", "blanket Glow on an adjustment layer (glow on everything)")
-    elif n_glow > n_shots: F("F2", f"{n_glow} Glow effects for {n_shots} shots (max one subtle accent glow per shot)")
-    else: ok("F2", f"glow: {n_glow} (allowed <= {n_shots}, never on text/captions/cards/backgrounds)")
+    if re.search(r'adjustmentLayer\s*=\s*true[^\n]*\n?[^\n]*["\']Glow', body): F("F2", "blanket Glow on an adjustment layer (glow on everything is the AI look; glow belongs on big words)")
+    else: ok("F2", f"glow: {n_glow} Glow effects; warm glow on big words/keywords is allowed in v5.5 (never blanket, never purple/blue/cyan)")
     for h in re.findall(r'#[0-9A-Fa-f]{6}', body):
         if banned_hex(h): F("F4", f"banned AI colour {h} in the comp"); break
 # F3/F4/F10 captions
@@ -141,6 +141,16 @@ if a.video:
         (F if ratio > 0.15 else ok)("F14", f"voice-over in the mix: main peak at +{lags[k]:.3f} s, strongest other peak {ratio:.2f} of it" + (f" at +{lags[k2]:.3f} s = VOICE IS IN THE MIX TWICE (found offset {lags[k2]-lags[k]:+.3f} s)" if ratio > 0.15 else " (one voice)"))
     elif a.spec and S.get("voice"):
         warns.append("W F14 not run: pass --vo <the single clean VO file> to prove the voice is in the mix exactly once")
+    if a.sfx and a.vo:
+        gp = subprocess.run([sys.executable, os.path.join(KIT, "audio_gap.py"), a.video, "--vo", a.vo, "--sfx", a.sfx, "--json"] + (["--events", a.events] if a.events else []), capture_output=True, text=True)
+        try:
+            g = json.loads(gp.stdout)
+            (F if g["sfx_under_voice_db"] > 18 else ok)("F15", f"sfx are {g['sfx_under_voice_db']} dB under the voice, {g['sfx_under_music_db']} dB under the music (limit 18 dB under the voice; refs: audible, our v5.3 reel was 27.6)")
+            for w_ in g.get("warnings", []): warns.append("W F15 " + w_)
+        except Exception as e:
+            warns.append("W F15 audio_gap.py failed: " + (gp.stderr or str(e))[-120:])
+    elif a.spec and S.get("sfx") is not None:
+        warns.append("W F15 not run: pass --sfx <dry sfx track> with --vo to prove the sfx are audible in the final mix")
     raw = subprocess.run(["ffmpeg", "-v", "error", "-i", a.video, "-vf", "fps=4,scale=108:192", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], capture_output=True).stdout
     fr = np.frombuffer(raw, np.uint8).reshape(-1, 192, 108, 3).astype(np.float32) / 255
     mx = fr.max(3); mn = fr.min(3); sat = np.where(mx > 0, (mx - mn) / np.maximum(mx, 1e-6), 0)
@@ -155,7 +165,7 @@ if a.video:
     if longest >= 4: warns.append(f"W {longest/4:.1f} s with no motion (dead-still)")
     if a.spec and os.path.exists(os.path.join(SD, "build", "sfx_events.json")):
         n = len(json.load(open(os.path.join(SD, "build", "sfx_events.json"))))
-        if n / max(dur, 1) > 4: warns.append(f"W {n/dur:.1f} sfx per second (busy; 1-3 reads premium)")
+        if n / max(dur, 1) > 2: warns.append(f"W {n/dur:.1f} sfx per second (refs measured ~0.5-1.5/s: sound only big words, cuts, transitions)")
 rep = {"pass": not fails, "fails": fails, "warnings": warns, "passed": passes}
 out = os.path.join(SD, "build", "qc_report.json") if a.spec else None
 if out: os.makedirs(os.path.dirname(out), exist_ok=True); json.dump(rep, open(out, "w"), indent=1)

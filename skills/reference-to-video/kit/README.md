@@ -1,4 +1,15 @@
 # zyqor-kit v5 — EffectCraft text + effects pipeline (default)
+
+## NEW IN v5.5 (Nov 4 2026) - overrides older lines below
+In this repo the zip's `tools/` live flat in this folder (`python3 audio_gap.py`, `python3 fx_extrude_text.py` ...); the zip is Zyqor_Motion_Kit_v5.5.zip.
+- **Glow is ALLOWED and wanted - warm only - on big words** (never blanket, never purple/violet/blue/cyan). **Heavy bold display fonts** like the refs (<= 3 families). **Human-made, not AI** (jitter, grain, dust, torn edges). `STYLE_RULES_v5.5.md`.
+- **Measured SFX gap** (ours 27.6 dB under the voice, 7x too dense, no low end): `SOUND_DESIGN_v5.5.md`, `audio_gap.py`, QC F15 (`qc_v5.py --vo --sfx`). Nobody can listen here: numbers only.
+- **Recipes 11-18** (`../recipes/`) and new tools `fx_extrude_text.py`, `fx_torn_reveal.py`, `fx_phone_frame.py`, `fx_cut_fx.py`, `audio_gap.py`, `get_references.py`.
+- **12 new reference reels** (links only in `REFERENCE_LINKS.csv`; `python3 get_references.py --list`), joint breakdown in `breakdowns/nov4_12refs/`. Before/after refs: EDIT side only.
+- **Pin colour fix:** verdicts re-measured on the pin VIDEOS; the purple/blue-bokeh light-leak pin 603200943843150335 is SKIP (`pins/INDEX.md`).
+- Honest claims: [measured] vs [eyeballed]; tests in `TEST_REPORT_v5.5.md`.
+
+
 | file | job |
 |---|---|
 | ec_reel.py | shots.json -> EffectCraft comp (zq_lib.jsx) -> render -> sfx cues -> sfx_mix + master_mix -> qc_v5.py |

@@ -14,7 +14,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "track name given; audio not listened"
+"notes": "track name given; audio not listened",
+"colour_recheck_v55": "cover measured: 0% banned hue (video not measured)"
 },
 {
 "n": 2,
@@ -31,7 +32,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "list of track names only; trends date fast"
+"notes": "list of track names only; trends date fast",
+"colour_recheck_v55": "cover measured: 0% banned hue (video not measured)"
 },
 {
 "n": 3,
@@ -99,7 +101,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "free-for-videos wording on pin; check licence at source"
+"notes": "free-for-videos wording on pin; check licence at source",
+"colour_recheck_v55": "cover measured: 2% banned hue (video not measured)"
 },
 {
 "n": 7,
@@ -133,7 +136,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "60 s chill beats"
+"notes": "60 s chill beats",
+"colour_recheck_v55": "cover measured: 0% banned hue (video not measured)"
 },
 {
 "n": 9,
@@ -184,7 +188,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "172 s long track, trim"
+"notes": "172 s long track, trim",
+"colour_recheck_v55": "cover measured: 0% banned hue (video not measured)"
 },
 {
 "n": 12,
@@ -201,7 +206,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": ""
+"notes": "",
+"colour_recheck_v55": "video measured 47 frames: peak 79%, mean 10%, 14 over limit"
 },
 {
 "n": 13,
@@ -252,7 +258,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "731 s; warm autumn tones; audio not listened"
+"notes": "731 s; warm autumn tones; audio not listened",
+"colour_recheck_v55": "cover measured: 0% banned hue (video not measured)"
 },
 {
 "n": 16,
@@ -269,7 +276,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "orange/neutral palette; Minecraft character in thumb, use the audio only"
+"notes": "orange/neutral palette; Minecraft character in thumb, use the audio only",
+"colour_recheck_v55": "cover measured: 3% banned hue (video not measured)"
 },
 {
 "n": 17,
@@ -286,7 +294,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "5 s teaser only, find full track at source"
+"notes": "5 s teaser only, find full track at source",
+"colour_recheck_v55": "cover measured: 0% banned hue (video not measured)"
 },
 {
 "n": 18,
@@ -303,7 +312,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": ""
+"notes": "",
+"colour_recheck_v55": "cover measured: 0% banned hue (video not measured)"
 },
 {
 "n": 19,
@@ -388,7 +398,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "25 s clip of a longer YouTube video; neutral green"
+"notes": "25 s clip of a longer YouTube video; neutral green",
+"colour_recheck_v55": "cover measured: 0% banned hue (video not measured)"
 },
 {
 "n": 24,
@@ -422,7 +433,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "live (pin page loaded signed-in, HTTP 200, video present)",
-"notes": "red/black thumbnail; audio only"
+"notes": "red/black thumbnail; audio only",
+"colour_recheck_v55": "cover measured: 0% banned hue (video not measured)"
 },
 {
 "n": 26,
@@ -439,7 +451,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "list pin; check names at source"
+"notes": "list pin; check names at source",
+"colour_recheck_v55": "cover measured: 0% banned hue (video not measured)"
 },
 {
 "n": 27,
@@ -524,7 +537,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "no-copyright label on pin; thumbnail sky partly lavender (audio only used); 193 s"
+"notes": "no-copyright label on pin; thumbnail sky partly lavender (audio only used); 193 s",
+"colour_recheck_v55": "cover measured: 0% banned hue (video not measured)"
 },
 {
 "n": 32,
@@ -541,7 +555,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "warm orange palette"
+"notes": "warm orange palette",
+"colour_recheck_v55": "cover measured: 0% banned hue (video not measured)"
 },
 {
 "n": 33,
@@ -643,7 +658,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "\"no copyright\" is the uploader's claim, licence not verified"
+"notes": "\"no copyright\" is the uploader's claim, licence not verified",
+"colour_recheck_v55": "cover measured: 0% banned hue (video not measured)"
 },
 {
 "n": 39,
@@ -660,7 +676,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "live (pin page loaded signed-in, HTTP 200, video present)",
-"notes": "\"no copyright\" is the uploader's claim, licence not verified; 6 min"
+"notes": "\"no copyright\" is the uploader's claim, licence not verified; 6 min",
+"colour_recheck_v55": "cover measured: 0% banned hue (video not measured)"
 },
 {
 "n": 40,
@@ -677,7 +694,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "\"no copyright\" is the uploader's claim, licence not verified; vertical 86 s"
+"notes": "\"no copyright\" is the uploader's claim, licence not verified; vertical 86 s",
+"colour_recheck_v55": "cover measured: 0% banned hue (video not measured)"
 },
 {
 "n": 41,
@@ -711,7 +729,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "\"no copyright\" is the uploader's claim, licence not verified"
+"notes": "\"no copyright\" is the uploader's claim, licence not verified",
+"colour_recheck_v55": "cover measured: 0% banned hue (video not measured)"
 },
 {
 "n": 43,
@@ -779,7 +798,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "tip video listing sources; watermark TikTok"
+"notes": "tip video listing sources; watermark TikTok",
+"colour_recheck_v55": "cover measured: 0% banned hue (video not measured)"
 },
 {
 "n": 47,
@@ -830,7 +850,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "list/tip pin; warm cream, gold; \"no copyright\" is the uploader's claim, licence not verified"
+"notes": "list/tip pin; warm cream, gold; \"no copyright\" is the uploader's claim, licence not verified",
+"colour_recheck_v55": "cover measured: 0% banned hue (video not measured)"
 },
 {
 "n": 50,
@@ -898,7 +919,8 @@
 "reviewed": true,
 "review_method": "thumbnail viewed on numbered contact sheet (attach_image); audio/video not played",
 "live_checked": "not checked",
-"notes": "green natural; \"no copyright\" is the uploader's claim, licence not verified"
+"notes": "green natural; \"no copyright\" is the uploader's claim, licence not verified",
+"colour_recheck_v55": "cover measured: 0% banned hue (video not measured)"
 },
 {
 "n": 54,

@@ -22,3 +22,7 @@ The tool's cut counter uses a fixed threshold on 180 px thumbnails and misses cu
 Each folder: `breakdown.md` (read this), `breakdown.json` (same data), `motion_graph.png` (frame-difference over time). Banned colours (purple/violet/blue neon/cyan) in a reference are flagged TAKE/SKIP in the folder's summary: copy the structure, never the palette.
 
 Make-it-ours (min 3 changes) is written per reference in `make_it_ours`.
+
+
+## v5.5 - 12 new reference reels (Nov 4 2026)
+One joint breakdown: `nov4_12refs/BREAKDOWN_ALL12.pdf` + raw numbers (see its README). Median over the 12: 24.7 hard cuts/min, 2.3 s average shot, -14.2 LUFS, -0.7 dBTP. Refs 5 and 6: edit panel only.

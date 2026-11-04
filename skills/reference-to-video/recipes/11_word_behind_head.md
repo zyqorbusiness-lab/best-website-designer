@@ -26,7 +26,7 @@ One person, head and shoulders, space above the head, plain wall, warm/neutral (
 8. Composite (`composite.py`): plate through ffmpeg at the clip's real colour matrix (untagged HD clips need in_color_matrix=bt709, in_range=tv, and bt709 tags on the output); per frame: grade -> sunburst rays (fade in with each word) -> word layer (own push scale) -> cut-out person restored on top -> caption scrim -> captions (own push scale) -> handheld wobble, gate weave, dust, grain -> encode crf 18.
 9. Audio: reuse the clean voice once (+0.35 s), master_mix.sh with bed and quiet sfx; then run qc F14 / `voice_once.py`-style cross-correlation (ONE dominant peak) and an ASR pass. Measured: peak at +0.387 s, second peak 0.038 of it.
 
-## Human, not AI (Sujon, Nov 4 2026 12:11 PM: "Glow hoga, human beast edit jaisa, AI feel nahi", fonts like the reference)
+## Human, not AI (Sujon, Nov 4 2026 12:11 PM: "Glow hoga human beast edit jaisa ai feel kaisa nahi", fonts like the reference)
 Warm glow ON for big words and gradient keywords (warm red/amber only - this lifts the kit's glow-off rule for this reel, so qc F2 reports it); per-word imperfect overshoot (103-108 %), rotation kick that settles, +-1 frame timing jitter, tiny rotation offsets (-1.3..+1.5 deg), irregular handheld wobble, gate weave, dust specks, grain. Fonts: heavy wide display face for the big word, clean bold sans for captions.
 
 ## Gotchas

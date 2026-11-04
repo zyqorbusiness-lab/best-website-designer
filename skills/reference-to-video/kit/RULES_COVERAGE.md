@@ -1,4 +1,4 @@
-# RULES_COVERAGE — Zyqor Motion Kit v5.3
+# RULES_COVERAGE — Zyqor Motion Kit v5.5
 
 Every rule and feature from v5, v5.1 and Sujon's Nov 3, 2026 requests, and where it lives in the lean kit.
 P = page of Zyqor_Motion_Kit_v5.3.pdf · Prompt = step in MASTER_PROMPT.txt · AGENT = step in AGENT_START_HERE.md · Tool/check = file or QC code.
@@ -9,13 +9,13 @@ P = page of Zyqor_Motion_Kit_v5.3.pdf · Prompt = step in MASTER_PROMPT.txt · A
 | 2 | v5 | Blender only for a real 3D object (as a plate), never text | P1 NEVER · P6 | Prompt 4 | AGENT Step 4 | QC F6 |
 | 3 | v5 | Premium kinetic typography (word pop on voice, per-letter title cascade, mixed weights, motion blur, soft settle) | P6 | Prompt 4 | AGENT Step 4 | zq_lib.jsx captionLine/title |
 | 4 | v5 | ref8 caption style: 1–3 words, big, ONE gradient keyword + italic serif accent, one highlight style | P1 · P6 · P8 | Prompt 4 | AGENT Step 4 | QC F3/F4 |
-| 5 | v5 | Two font families only (Inter + Instrument Serif Italic); 1–4 words a line, line < 0.78 width, ≥ 90 px | P6 | Prompt 4 | AGENT Step 4 | QC F10 (≥40 px hard), warn > 4 words |
-| 6 | v5 | Glow OFF; max one subtle glow on one object per scene; never on captions/cards/bg | P1 · P6 | Prompt 4 | AGENT Step 4 | QC F2 |
+| 5 | v5 | **SUPERSEDED in v5.5 by row 52** (was: Two font families only (Inter + Instrument Serif Italic)); 1–4 words a line, line < 0.78 width, ≥ 90 px still applies | P6 | Prompt 4 | AGENT Step 4 | QC F10 (≥40 px hard), warn > 4 words |
+| 6 | v5 | **SUPERSEDED in v5.5 by row 50** (was: Glow OFF; max one subtle glow on one object per scene; never on captions/cards/bg) | P1 · P6 | Prompt 4 | AGENT Step 4 | QC F2 (relaxed in v5.5) |
 | 7 | v5 + Nov 3 9:06 PM | No purple / violet / purple-blue neon / blue neon / cyan glow / AI palettes — anywhere | P1 · P5 | Prompt 5 | AGENT Step 5 | zq_config banned 175–320°; QC F4/F5; ref_breakdown flags per second |
 | 8 | v5 | 8 curated gradient presets for keywords | P5 | Prompt 4 | AGENT Step 4 | zq_config.json gradients; QC F4 |
 | 9 | v5 | Premium textured backgrounds (paper, studio, plate), always moving 4–5 %, never flat black | P1 · P6 | Prompt 4 | AGENT Step 4 | zq_lib.jsx bg |
 | 10 | v5 | Warm restrained grade + grain + vignette | P6 | Prompt 4 | AGENT Step 4 | zq_lib.jsx grade |
-| 11 | v5 | Premium sfx: pop/card, click/tap, whoosh early + low hit/transition, riser to payoff, 1–3/s, voice on top, music ducked | P6 | Prompt 4 | AGENT Step 4 | sfx_mix.py; QC warn > 4/s |
+| 11 | v5 | **Density/levels SUPERSEDED in v5.5 by row 59** (was: Premium sfx: pop/card, click/tap, whoosh early + low hit/transition, riser to payoff, 1–3/s, voice on top, music ducked) | P6 | Prompt 4 | AGENT Step 4 | sfx_mix.py; QC warn > 2/s (v5.5) |
 | 12 | v5 | Hook: something moves before 0.5 s, first word by 0.3 s; no dead-still second; no blank frames | P6 | Prompt 4 | AGENT Step 4 | QC warning (dead-still) |
 | 13 | v5 | Layout grid: subject 40–60 % height, captions lower third (y 1380–1690) | — | — | AGENT Step 4 | zq_config safe_area; QC F10 |
 | 14 | v5 | Motion: soft-settle ease + motion blur, overshoot only on pops, cards float, cursor taps | P6 | Prompt 4 | AGENT Step 4 | zq_lib.jsx |
@@ -56,5 +56,22 @@ P = page of Zyqor_Motion_Kit_v5.3.pdf · Prompt = step in MASTER_PROMPT.txt · A
 | 47 | Nov 4 | Kit runs outside Tab's box: no machine paths, requirements.txt = shipped scripts only, pinterest_refs.mjs marked BOX-ONLY, ec_reel.py --dry-run | — | — | README | tools/ (tested from a clean unzip) |
 | 48 | Nov 3 9:16 PM | No third-party media in the zip or public repo (links + downloader only) | P3 | — | AGENT Step 0 | zip contains no pin media / reference video |
 | 49 | v5 | Contact sheet of own render, ref8 'unique' standard: nothing 1:1 | P5 | Prompt 3 | AGENT Step 3 | make_it_ours per breakdown |
+| 50 | Sujon Nov 4 12:11 PM | Glow ALLOWED and wanted on big words/keywords, warm colours only (supersedes row 6) | v5.5 | see MASTER_PROMPT | AGENT 'NEW IN v5.5' | STYLE_RULES S1 · zq_config glow · QC F2 relaxed (fails only blanket adjustment-layer glow) |
+| 51 | Sujon Nov 4 | Still no purple/violet/blue/cyan/magenta glow or colour, even when a reference uses it (5 of 12 refs do) | v5.5 | see MASTER_PROMPT | AGENT 'NEW IN v5.5' | STYLE_RULES S2/S3 · QC F4/F5; fx_extrude_text.py + fx_phone_frame.py refuse banned hues |
+| 52 | Sujon Nov 4 | Heavy bold display fonts like the refs; up to 3 families, one accent colour family (supersedes row 5) | v5.5 | see MASTER_PROMPT | AGENT 'NEW IN v5.5' | STYLE_RULES S4 · zq_config display_fonts · fonts/ArchivoBlack-400.woff2; fx_extrude_text.py |
+| 53 | Sujon Nov 4 | Human-made imperfection: jitter, rotated words, varied sizes, grain, dust, torn edges, jittered sound | v5.5 | see MASTER_PROMPT | AGENT 'NEW IN v5.5' | STYLE_RULES S6 · zq_config human_made · fx_extrude_text --jitter; fx_torn_reveal --seed; audio jitter in SOUND_DESIGN |
+| 54 | Sujon Nov 4 | One joint frame-by-frame breakdown of 12 references, PDF <= 8 pages | v5.5 | see MASTER_PROMPT | AGENT 'NEW IN v5.5' | breakdowns/nov4_12refs/BREAKDOWN_ALL12.pdf (5 pages) · raw numbers next to it |
+| 55 | Sujon Nov 4 | Before/after refs: use ONLY the edited/after part (refs 5, 6) | v5.5 | see MASTER_PROMPT | AGENT 'NEW IN v5.5' | recipe 13 · breakdown crops · get_references.py --edit-only; fx_phone_frame.py (no raw panel) |
+| 56 | Sujon Nov 4 | Merged 'human-made, not AI' section; effects ranked by frequency with recipes | v5.5 | see MASTER_PROMPT | AGENT 'NEW IN v5.5' | BREAKDOWN_ALL12.pdf · recipes 11-18 |
+| 57 | Sujon Nov 4 | Honest claims: every number tagged measured vs eyeballed; tool named only where visible; no 'undetectable as AI' | v5.5 | see MASTER_PROMPT | AGENT 'NEW IN v5.5' | STYLE_RULES S9 · breakdowns README · MASTER_PROMPT step 8 |
+| 58 | Sujon Nov 4 | SFX gap measured on 12 refs vs our reel (cannot listen; numbers only) | v5.5 | see MASTER_PROMPT | AGENT 'NEW IN v5.5' | SOUND_DESIGN_v5.5.md · audio_gap.py |
+| 59 | Sujon Nov 4 | Sound design update: density 0.5-1.5/s, sfx bus +18 dB, sub-bass + air, limiter -1 dBTP, jitter (supersedes row 11) | v5.5 | see MASTER_PROMPT | AGENT 'NEW IN v5.5' | SOUND_DESIGN_v5.5.md · zq_config sound_design · master_mix.sh --tp; QC F15; audio_gap.py |
+| 60 | Sujon Nov 4 | Recipe 11 word behind the head included | v5.5 | see MASTER_PROMPT | AGENT 'NEW IN v5.5' | recipes/11_word_behind_head.md · tools/word_behind_head/ |
+| 61 | Sujon Nov 4 | New recipes: text-as-UI cursor click (12), edit-only phone frame (13), torn paper (14), photo-card stack (15), extruded warm text (16), sunburst/whip/B&W flash/punch-in (17), extras (18) | v5.5 | see MASTER_PROMPT | AGENT 'NEW IN v5.5' | recipes/12..18 · fx_extrude_text · fx_torn_reveal · fx_phone_frame · fx_cut_fx |
+| 62 | Sujon Nov 4 | Pin colour bug: purple/blue-bokeh light-leak pin 603200943843150335 TAKE -> SKIP; pin videos colour-measured, 21 pins flipped to SKIP | v5.5 | see MASTER_PROMPT | AGENT 'NEW IN v5.5' | pins/INDEX.md · colour_recheck_v55 in the pin JSON · REFERENCE_LINKS.* updated |
+| 63 | Sujon Nov 4 | 12 reference links + downloader; no third-party media in zip or repo | v5.5 | see MASTER_PROMPT | AGENT 'NEW IN v5.5' | REFERENCE_LINKS.csv/.html/.txt (kind instagram_reference_reel) · tools/get_references.py |
+| 64 | Sujon Nov 4 | One-page master prompt + checklist | v5.5 | see MASTER_PROMPT | AGENT 'NEW IN v5.5' | MASTER_PROMPT.txt · CHECKLIST.md · PDF page 3 · - |
+| 65 | Nov 4 | No machine paths in legacy_v4 (and prompts / pinterest_refs.mjs) | v5.5 | see MASTER_PROMPT | AGENT 'NEW IN v5.5' | CHANGE_ME placeholders · grep shows none |
+| 66 | Nov 4 | Tests: clean unzip, every tool --help, requirements install check | v5.5 | see MASTER_PROMPT | AGENT 'NEW IN v5.5' | TEST_REPORT_v5.5.md · - |
 
-Rules listed: 49 · rules with no home: 0. (P1-P10 = page numbers of the v5.2 PDF layout; the v5.3 PDF keeps that order and appends the restored content, see its contents page.)
+Rules listed: 66 (49 from v5.3 + 17 added in v5.5) · rules with no home: 0. Rows 5, 6 and 11 are superseded and kept for history. P1-P10 in rows 1-49 = page numbers of the v5.2 PDF layout; rows 50+ point to files and to the v5.5 PDF pages (1 cheat sheet, 2 style rules, 3 master prompt + checklist, 4 sound design, 5-6 recipes, 7 the 12 refs, 8 pin fixes).

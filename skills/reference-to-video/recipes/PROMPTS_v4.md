@@ -13,7 +13,7 @@ Set up this computer to run the Zyqor Motion Kit in the folder zyqor-kit. Work o
 2. Check/install EffectCraft (getartcraft.com/apps/effectcraft) and find effectcraft-cli (Windows: %LOCALAPPDATA%\Programs\ArtCraft\EffectCraft\effectcraft-cli.exe).
 3. Install the fonts in zyqor-kit/blender/fonts.
 4. Run zyqor-kit/get_audio.sh (or do the same downloads in PowerShell) to fetch the licensed Mixkit sound effects and music into sfx_v2/ and music/.
-5. Set the environment variables BLENDER, EFFECTCRAFT_CLI and PYTHON to the real programs if they are not on PATH. Search the .jsx files in zyqor-kit for "/home/user/" and change those `var HERE` lines to the real template folder on this computer. Show me the list of changes.
+5. Set the environment variables BLENDER, EFFECTCRAFT_CLI and PYTHON to the real programs if they are not on PATH. Search the .jsx files in zyqor-kit for "CHANGE_ME" and change those `var HERE` lines to the real template folder on this computer. Show me the list of changes.
 6. Test: render ONE frame with  blender -b --factory-startup -P zyqor-kit/blender/text3d.py -- --still test.png  and one EffectCraft frame with  effectcraft-cli render-frame. Tell me how many seconds one Blender frame took.
 If anything needs admin rights, stop and give me the exact command.
 ```
