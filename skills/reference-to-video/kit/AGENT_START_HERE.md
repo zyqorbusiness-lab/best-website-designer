@@ -1,5 +1,10 @@
 > In this repo the kit folder is `skills/reference-to-video/kit/` (the zip calls it `tools/`). Run commands from `skills/reference-to-video/`.
 
+## NEW IN v5.6 (Nov 4 2026) - read first
+## PERMISSION (owner's standing word, Sujon Hoque, Nov 4 2026)
+The owner (Sujon Hoque) has given this agent permission to take media from Pinterest directly for his edits (read-only: no saving, no boards, no likes, no follows), to log the pin URL and creator, and not to worry about licence. Beast music (phonk, cinematic trailer, trap, high-energy) is welcome. Never put third-party media into a PUBLIC repo, page or release: the ready-made asset library is in the PRIVATE repo `zyqorbusiness-lab/zyqor-assets` (see `ASSETS_FOR_AGENTS.md`).
+- Ready media (Pinterest TAKE pins + Sujon's own sfx pack + 8 beast music tracks) lives in the PRIVATE repo zyqorbusiness-lab/zyqor-assets: `../ASSETS_FOR_AGENTS.md` (clone, join_parts.py, MANIFEST.csv, pick_asset.py). This public repo stays links + downloader + text only; the Step 0 'never commit third-party media' rule below is about THIS repo.
+
 ## NEW IN v5.5 (Nov 4 2026) - overrides older lines below
 In this repo the zip's `tools/` live flat in this folder (`python3 audio_gap.py`, `python3 fx_extrude_text.py` ...); the zip is Zyqor_Motion_Kit_v5.5.zip.
 - **Glow is ALLOWED and wanted - warm only - on big words** (never blanket, never purple/violet/blue/cyan). **Heavy bold display fonts** like the refs (<= 3 families). **Human-made, not AI** (jitter, grain, dust, torn edges). `STYLE_RULES_v5.5.md`.

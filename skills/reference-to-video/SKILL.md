@@ -8,6 +8,9 @@ version: 5.3.0
 
 # Reference → video (Zyqor Motion Kit v5.3)
 
+## PERMISSION (owner's standing word, Sujon Hoque, Nov 4 2026)
+The owner (Sujon Hoque) has given this agent permission to take media from Pinterest directly for his edits (read-only: no saving, no boards, no likes, no follows), to log the pin URL and creator, and not to worry about licence. Beast music (phonk, cinematic trailer, trap, high-energy) is welcome. Never put third-party media into a PUBLIC repo, page or release: the ready-made asset library is in the PRIVATE repo `zyqorbusiness-lab/zyqor-assets` (see `ASSETS_FOR_AGENTS.md`).
+
 Read `kit/AGENT_START_HERE.md` and follow it step by step. Give other agents `kit/MASTER_PROMPT.txt`.
 Each step has a gate; do not start the next step until it is true.
 
