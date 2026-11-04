@@ -15,9 +15,10 @@ python3 tools/pick_asset.py music --beast   # rank by measured numbers
 ```
 Single file without cloning: `https://raw.githubusercontent.com/zyqorbusiness-lab/zyqor-assets/main/assets/<path>` (needs auth because the repo is private; parts must be fetched and joined).
 
-## Layout (150 assets, ~178 MB)
+## Layout (174 assets, ~193 MB)
 - `assets/pinterest/music/<pin id>.m4a` (28: 20 older TAKE beds + 8 beast tracks from a read-only search: 3 'MrBeast + phonk', NEXT!, a Montagem phonk remix, 2 cinematic trailer, 1 epic-trap beat)
 - `assets/pinterest/broll/<pin id>.mp4` (26), `assets/pinterest/subject/<pin id>.mp4` (15), `assets/pinterest/sfx/<pin id>.mp4` (24: light leaks, overlays, glitch, zoom, sticker pops, sound-fx). Video: <= 720p h264 crf 28, trimmed to the first 20 s.
+- `assets/pinterest/transitions/<pin id>.mp4` (24: transition clips from Pinterest, added Nov 4 2026, each <= 8 s, <= 720p; 5 from the kit pin lists + 19 from a read-only search: green-screen transitions (key them out), dark overlays (blend screen/add), shake/zoom/whip, ink/paint wipes, flash/blast; colour-measured, not judged by eye).
 - `assets/sfx_sujon/<folder>/<name>.wav`: Sujon's own pack (57 wav, 48 kHz 16-bit): whoosh, Whoosh hits, Epic Braams, Buttons, Impact, violin, Transitions, Foley, Glitch, Zap, vocal, Count.
 - `assets/MANIFEST.csv` columns: pin_id, url, category, kind, duration_s, resolution, size_mb, verdict, banned_hue_mean_pct, banned_hue_peak_pct, local_filename (relative to assets/), status, creator, title, source_list, note, parts.
 - `assets/MUSIC_SPECTRUM.csv` (per music track: dur, mean RMS dB, low<150 Hz share, sub<80 share, centroid Hz, bpm guess, loudness range) and `assets/sfx_sujon/INDEX.csv` (per sample: dur, peak, rms, time to -20/-30 dB, centroid, low<200 / sub<100 / 2-5 kHz shares, kit_gain_db).
