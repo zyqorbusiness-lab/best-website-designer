@@ -87,3 +87,12 @@ Lessons from the face-lock v5 reel (Nov 4 2026, `recipes/09_ref8_motion_transiti
 - The kit's QC passes things a viewer still notices (flat white at a leak peak, empty frame 0): look at the contact sheet AND the transition bursts.
 
 Changelog: 5.4.0 (Nov 4 2026) face-lock v5 lessons, recipe 09, ec_transitions_v5 helpers, ui_screen_v5 playwright port + typing_states.py.
+
+Lessons from the word-behind-head reel (Nov 4 2026, `recipes/11_word_behind_head.md`, helpers `kit/word_behind_head/`):
+- Cut-out on CPU: BiRefNet-general-lite through onnxruntime directly (fixed 1024x1024 input, ~4-6.5 s/frame, 1.5 GB steady; the rembg wrapper held 12 GB and a 2nd parallel worker was OOM-killed). One worker, even frames first.
+- Big word = EffectCraft layers (gradient face + 12 extrusion copies + blurred glow copy); stack with the cut-out in numpy/OpenCV, not in the editor. Place words in screen space from the mask's crown row; check letter coverage >= 15 %.
+- Unknown font names fall back silently in EffectCraft: compare `sourceRectAtTime` widths. Keep big words inside 90 % AFTER push and punch-in scales.
+- Sujon (Nov 4 12:11 PM) lifted glow-off for this reel (warm only) and wants "human, not AI": imperfect pops, tiny rotations, wobble, dust, grain; qc F2 flags the glow on purpose.
+- Verify the final mix has the voice once (F14 cross-correlation) and the contact sheet AND hair-edge crops before sending.
+
+Changelog: 5.5.0 (Nov 4 2026) recipe 11 word-behind-head + kit/word_behind_head helpers.
