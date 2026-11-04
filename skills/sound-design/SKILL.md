@@ -62,3 +62,10 @@ impact + bass at 0.00 (hook) · whoosh into line 2 · 3 pops for the sticky note
 - 66 cues in 24 s was fine because they are de-cluttered (same sound never twice within 0.12 s, max 2 layered at one moment); whoosh on every move,
   pop on keyword/sticker, soft typing bed (-19 dB) while letters land, riser into the light leak, impact on the zoom-through. Loudness -14.1 LUFS / -2.2 dBTP.
 - sfx names in a cue list must exist in the sfx_map of zq_config.json (`whoosh2` was missing and its cues were silently dropped until added).
+
+## Final-mix check: the voice must be in the mix exactly ONCE (Nov 4 2026)
+- Bug: the editor-hiring reel shipped with the Bunty voice twice, 0.35 s apart (one copy with the 0.35 s caption offset, one without, from two paths into the final mix). Loudness, silence and true-peak checks all passed; the person heard "two voices at once".
+- Rule: after the final mix, cross-correlate the mix with the single clean VO file (both mono 16 kHz, FFT). One dominant peak near the intended offset (+ the cleaning filters' ~0.04 s delay); any second peak > 0.15 of it, 0.05-1.5 s away, means a duplicate voice. Kit gate: `python3 qc_v5.py --video out.mp4 --vo vo_raw.mp3` -> F14.
+- Second check: speech-to-text on the mix, not only on the VO. The same five sentences must come out as on the clean VO; garbled words and stuttered repeats = a doubled or smeared voice (the doubled mix came out as nonsense, the fixed mix as the script).
+- Build the voice into the mix once: clean_voice.sh -> adelay (the caption offset) -> master_mix.sh --voice. Never also put the VO in the EffectCraft comp audio or run the offset twice; keep the video render silent and mux with -c:v copy.
+- Say plainly that the audio was checked by correlation and speech-to-text, not listened to.

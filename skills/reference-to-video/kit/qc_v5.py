@@ -17,12 +17,14 @@ HARD FAILS (exit code 1):
   F12 (v5.2) a category with no Pinterest pin logged: music, sfx, broll, subject, effect, background each need >= 1 pin URL
       (spec "pinterest_sources", the breakdown.json files, or assets/pinterest/assets_log.json written by pin_download.py)
   F13 (v5.2) fewer than 3 "make_it_ours" changes written (never copy a reference 1:1)
+  F14 (v5.5, needs --vo vo.mp3) the voice is in the final mix more than once (cross-correlation of the mix with the single VO file
+      shows a second peak > 0.15 of the main one, 0.05-1.5 s away from it) - the Nov 4 2026 'two voices at the same time' bug
 WARNINGS: a dead-still second (no motion), more than 4 sfx per second, captions longer than 4 words per line.
 """
 import sys, os, json, re, argparse, subprocess, colorsys, glob
 import numpy as np
 KIT = os.path.dirname(os.path.abspath(__file__)); CFG = json.load(open(os.path.join(KIT, "zq_config.json")))
-ap = argparse.ArgumentParser(); ap.add_argument("--video"); ap.add_argument("--spec"); ap.add_argument("--jsx"); a = ap.parse_args()
+ap = argparse.ArgumentParser(); ap.add_argument("--video"); ap.add_argument("--spec"); ap.add_argument("--jsx"); ap.add_argument("--vo", help="the single clean voice-over file (F14: voice must be in the mix exactly once)"); a = ap.parse_args()
 fails, warns, passes = [], [], []
 def F(code, msg): fails.append(f"{code} {msg}")
 def ok(code, msg): passes.append(f"{code} {msg}")
@@ -128,6 +130,17 @@ if a.video:
     L = subprocess.run(["ffmpeg", "-nostats", "-i", a.video, "-af", "ebur128=peak=true", "-f", "null", "-"], capture_output=True, text=True).stderr
     I = float(re.findall(r"I:\s+(-?[\d.]+) LUFS", L)[-1]); TP = float(re.findall(r"Peak:\s+(-?[\d.]+) dBFS", L)[-1])
     (ok if abs(I - CFG["loudness"]["lufs"]) <= 1 and TP <= CFG["loudness"]["true_peak_max"] + 0.05 else F)("F8", f"loudness {I} LUFS, true peak {TP} dBTP")
+    if a.vo:
+        def _mono(path):
+            return np.frombuffer(subprocess.run(["ffmpeg", "-v", "error", "-i", path, "-ac", "1", "-ar", "16000", "-f", "f32le", "-"], capture_output=True).stdout, np.float32)
+        mixa, vo = _mono(a.video), _mono(a.vo); n = len(mixa) + len(vo); N = 1 << (n - 1).bit_length()
+        cc = np.fft.irfft(np.fft.rfft(mixa, N) * np.conj(np.fft.rfft(vo, N)), N); cc = np.concatenate([cc[-(len(vo) - 1):], cc[:len(mixa)]])
+        lags = np.arange(-len(vo) + 1, len(mixa)) / 16000.0; sel = (lags >= -0.2) & (lags <= 2.5); cc, lags = cc[sel], lags[sel]
+        cc = cc / max(np.abs(cc).max(), 1e-9); k = int(np.argmax(cc)); far = np.abs(lags - lags[k]) >= 0.05
+        far &= np.abs(lags - lags[k]) <= 1.5; k2 = int(np.argmax(np.where(far, cc, -1))); ratio = float(cc[k2])
+        (F if ratio > 0.15 else ok)("F14", f"voice-over in the mix: main peak at +{lags[k]:.3f} s, strongest other peak {ratio:.2f} of it" + (f" at +{lags[k2]:.3f} s = VOICE IS IN THE MIX TWICE (found offset {lags[k2]-lags[k]:+.3f} s)" if ratio > 0.15 else " (one voice)"))
+    elif a.spec and S.get("voice"):
+        warns.append("W F14 not run: pass --vo <the single clean VO file> to prove the voice is in the mix exactly once")
     raw = subprocess.run(["ffmpeg", "-v", "error", "-i", a.video, "-vf", "fps=4,scale=108:192", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], capture_output=True).stdout
     fr = np.frombuffer(raw, np.uint8).reshape(-1, 192, 108, 3).astype(np.float32) / 255
     mx = fr.max(3); mn = fr.min(3); sat = np.where(mx > 0, (mx - mn) / np.maximum(mx, 1e-6), 0)
