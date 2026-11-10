@@ -46,7 +46,7 @@ const tpl = document.getElementById('credits');
 const foot = document.createElement('footer');
 foot.className = 'zl-foot';
 foot.innerHTML = `<div class="zl-foot-in">
- <p class="zl-honest"><b>Concept ${c.n} &middot; ${c.brand}</b> is not a real company. Sujon at Zyqor Studio designed and hand-coded this page to test one idea: ${c.pattern.toLowerCase()}. Nothing here is for sale.</p>
+ <p class="zl-honest"><b>Concept ${c.n} &middot; ${c.brand}</b> is a fictional concept by Zyqor Studio. Nothing here is for sale.</p>
  ${tpl ? `<details class="zl-cred"><summary class="lg lg--dark lg-pill">Credits &amp; licences</summary><ul>${tpl.innerHTML}</ul></details>` : ''}
  <div class="zl-contact" style="display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 2px">
   <a class="zl-pill lg lg--dark lg-btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=zyqorbusiness@gmail.com&su=Website%20enquiry" target="_blank" rel="noopener"><span>Email</span></a>
@@ -54,9 +54,7 @@ foot.innerHTML = `<div class="zl-foot-in">
   <a class="zl-pill lg lg--dark lg-btn" href="https://www.instagram.com/zyqor_syudo/" target="_blank" rel="noopener"><span>Instagram</span></a>
  </div>
  <nav class="zl-nav" aria-label="More concepts">
-  <a class="zl-pill lg lg--dark lg-btn" href="${page(prev.slug)}">${arrow('M15 18l-6-6 6-6')}<span><small>Previous</small>${prev.brand}</span></a>
   <a class="zl-pill zl-all lg lg--dark lg-btn" href="${lab}"><span>All ${CONCEPTS.length} concepts</span></a>
-  <a class="zl-pill" href="${page(next.slug)}"><span><small>Next concept &middot; ${next.n}</small>${next.brand}</span>${arrow('M9 18l6-6-6-6')}</a>
  </nav>
 </div>`;
 document.body.append(foot);
