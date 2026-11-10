@@ -63,7 +63,7 @@ dlg.setAttribute('aria-labelledby', 'zk-sheet-h');
 dlg.innerHTML = `<div class="zk-sheet-in">
   <div class="zk-sheet-top"><p class="zk-mono">Concept ${id} &middot; ${TIER}</p><button class="zk-x" type="button" aria-label="Close credits">${svg('close')}</button></div>
   <h2 id="zk-sheet-h" class="zk-sheet-h">${esc(name)} <span>is a fictional brand.</span></h2>
-  <p class="zk-sheet-p">Designed and hand-coded by Sujon Hoque at Zyqor Studio to test one idea. Not a real company, not a client, nothing for sale. Code: MIT licence.</p>
+  <p class="zk-sheet-p">Designed and built by Sujon Hoque at Zyqor Studio to test one idea. Not a real company, not a client, nothing for sale. Code: MIT licence.</p>
   <ul class="zk-cred" role="list"><li class="zk-cred-wait">Loading credits</li></ul></div>`;
 body.append(dlg);
 const open = () => { if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open', ''); };
@@ -76,7 +76,8 @@ dlg.addEventListener('click', (e) => { if (e.target === dlg) close(); });
 const foot = document.createElement('footer');
 foot.className = 'zk-foot';
 foot.innerHTML = `<div class="zk-foot-in">
-  <p class="zk-honest"><b>${esc(name)}</b> is a fictional concept by Zyqor Studio. Licences in the Credits sheet, top right.</p>
+  <p class="zk-honest"><b>${esc(name)}</b> is not a real company. Concept ${id} is ${TIER === 'Advanced' ? 'an' : 'a'} ${TIER.toLowerCase()} study from the Zyqor Library, designed and coded by Sujon Hoque at Zyqor Studio. ${esc(body.dataset.assets || 'Real 3D assets')}, credited below; no AI imagery.</p>
+  <ul class="zk-cred zk-cred--foot" role="list"></ul>
   <div class="zk-contact" aria-label="Hire Zyqor Studio">
     <p class="zk-mono">Want a site like this? Hire Zyqor Studio</p>
     <ul class="zk-contact-list" role="list">
@@ -86,7 +87,9 @@ foot.innerHTML = `<div class="zk-foot-in">
     </ul>
   </div>
   <nav class="zk-nav" aria-label="More concepts">
+    <a class="zk-pill zk-prev lg lg--dark lg-pill lg-btn" href="${libHome}" hidden>${svg('back')}<span><small>Previous</small><em></em></span></a>
     <a class="zk-pill zk-all lg lg--dark lg-pill lg-btn" href="${libHome}">${svg('grid')}<span>All concepts</span></a>
+    <a class="zk-pill zk-next lg lg--dark lg-pill lg-btn" href="${libHome}" hidden><span><small>Next</small><em></em></span>${svg('next')}</a>
   </nav>
   <p class="zk-small"><span>Zyqor Studio &middot; Library</span><span>Concept ${id}</span></p>
 </div>`;
@@ -112,6 +115,27 @@ fetch(new URL('credits.json', location.href)).then((r) => (r.ok ? r.json() : nul
   const htmlList = [codeLine, ...items].map(credLine).join('');
   document.querySelectorAll('.zk-cred').forEach((ul) => { ul.innerHTML = htmlList; });
 }).catch(() => { document.querySelectorAll('.zk-cred').forEach((ul) => { ul.innerHTML = '<li><span class="zk-mono">Credits</span><span>See credits.json in this folder.</span></li>'; }); });
+
+/* previous / next among BUILT concepts. kit v2: reads the slim _data/nav.json ([id, name, path] of built concepts, a few KB)
+   that tools/library-build.mjs writes, instead of the ~135 KB library.json; falls back to library.json if nav.json is missing. */
+const idle = window.requestIdleCallback || ((f) => setTimeout(f, 900));
+const getNav = () => fetch(new URL('_data/nav.json', ROOT)).then((r) => (r.ok ? r.json() : Promise.reject(new Error('no nav.json'))))
+  .then((n) => n.built.map(([i, nm, p]) => ({ id: i, name: nm, path: p })))
+  .catch(() => fetch(new URL('library.json', ROOT)).then((r) => (r.ok ? r.json() : null)).then((lib) => (lib && lib.items ? lib.items.filter((it) => it.status === 'built').map((it) => ({ id: it.id, name: it.name, path: it.path })) : [])));
+idle(() => {
+  getNav().then((list) => {
+    let built = list.slice();
+    if (!built.some((it) => it.id === id)) {          // a concept still building sits between its id neighbours
+      const self = { id, name, path: location.pathname.replace(/^.*\/library\//, '').replace(/[^/]*$/, '') };
+      const at = built.findIndex((it) => it.id > id); built.splice(at < 0 ? built.length : at, 0, self);
+    }
+    const i = built.findIndex((it) => it.id === id);
+    if (i < 0 || built.length < 2) return;
+    const set = (sel, it) => { const a = foot.querySelector(sel); a.href = pageOf(it); a.querySelector('em').textContent = `${it.id} · ${it.name}`; a.hidden = false; };
+    set('.zk-prev', built[(i - 1 + built.length) % built.length]);
+    set('.zk-next', built[(i + 1) % built.length]);
+  }).catch(() => {});
+});
 
 /* the bar tucks away while scrolling down a long page, returns on scroll up (desktop + phone) */
 let lastY = scrollY, ticking = false;

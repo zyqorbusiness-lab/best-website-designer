@@ -198,7 +198,7 @@ html.fx-on .cur-reveal.is-in{clip-path:inset(0 0 0 0)}
 .gal-ui button{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--panel);display:grid;place-items:center;color:var(--ink);padding:0}
 .gal-ui button svg{width:18px;height:18px}
 .gal-ui button:active{transform:scale(.92)}
-.is-mobile .btt{width:50px;height:50px;right:16px;bottom:calc(96px + env(safe-area-inset-bottom))}
+.is-mobile .btt{width:50px;height:50px;right:16px;bottom:16px}
 
 @media (prefers-reduced-motion: reduce){
  .grain{animation:none!important}

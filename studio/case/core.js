@@ -68,7 +68,7 @@
     f.addEventListener('submit',function(e){
       e.preventDefault();
       var ok=/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(inp.value);
-      msg.textContent=ok?'Held. You are on the list for Firing 08 (concept, nothing is sent).':'That email looks incomplete.';
+      msg.textContent=ok?'Held. You are on the list for Firing 08 (demo, nothing is sent).':'That email looks incomplete.';
     });
   });
 
