@@ -12,7 +12,7 @@ const home = m ? '../../m/#lab' : '../../#lab';
 if (!document.querySelector('link[href*="lab-ui.css"]')) {
   const l = document.createElement('link');
   l.rel = 'stylesheet';
-  l.href = new URL('./lab-ui.css', import.meta.url).href;
+  l.href = new URL('./lab-ui.css', import.meta.url).href + '?v=20261110b';
   l.onerror = () => l.remove();
   document.head.append(l);
 }
