@@ -144,8 +144,20 @@ export const CONCEPTS = [
   ]
  },
  {
-  "slug": "rise",
+  "slug": "longway",
   "n": "13",
+  "brand": "Longway",
+  "kind": "Overland road trips",
+  "pattern": "Video flow: scroll-scrubbed real footage",
+  "palette": [
+   "#E9EDF0",
+   "#16212D",
+   "#F2B42F"
+  ]
+ },
+ {
+  "slug": "rise",
+  "n": "14",
   "brand": "Rise No.3",
   "kind": "Sparkling strawberry water",
   "pattern": "Video flow: scroll-scrubbed real footage",
@@ -157,7 +169,7 @@ export const CONCEPTS = [
  },
  {
   "slug": "fumee",
-  "n": "14",
+  "n": "15",
   "brand": "Fumée",
   "kind": "Perfume house",
   "pattern": "WebGL smoke field, pinned liquid scent swap, kinetic type",
@@ -169,7 +181,7 @@ export const CONCEPTS = [
  },
  {
   "slug": "plinth",
-  "n": "15",
+  "n": "16",
   "brand": "Plinth",
   "kind": "Architecture quarterly",
   "pattern": "Editorial grid, variable-font type, clip reveals, horizontal gallery",
@@ -181,7 +193,7 @@ export const CONCEPTS = [
  },
  {
   "slug": "halde",
-  "n": "16",
+  "n": "17",
   "brand": "HALDE R1",
   "kind": "Rangefinder camera",
   "pattern": "Real scanned camera, finish switch, light modes, exploded lens",
@@ -193,7 +205,7 @@ export const CONCEPTS = [
  },
  {
   "slug": "cadence",
-  "n": "17",
+  "n": "18",
   "brand": "TALUS Ridge C1",
   "kind": "Carbon trail bike",
   "pattern": "Real scanned bike, scroll explode, colourway + dusk light modes",

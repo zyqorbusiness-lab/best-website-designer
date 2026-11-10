@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- phone build of the library index; wide desktop -> index.html. ?phone=1 keeps this page -->
 <script>document.documentElement.classList.add('js');(function(){var q=location.search;if(/[?&]phone=1/.test(q))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width;if(w>1024&&!c)location.replace('./'+q+location.hash);})();</script>
-<title>Zyqor Library &middot; 20 live concepts &middot; Zyqor Studio</title>
-<meta name="description" content="Zyqor Library: a growing set of web and 3D concepts by Zyqor Studio  in three tiers, Normal, Advanced and Premium. Every concept is a fictional brand built with real CC0 and CC-BY assets, on desktop and phone.">
+<title>Zyqor Library &middot; 18 of 300 concepts built &middot; Zyqor Studio</title>
+<meta name="description" content="Zyqor Library: a growing set of web and 3D concepts by Zyqor Studio (18 of a planned 300 built) in three tiers, Normal, Advanced and Premium. Every concept is a fictional brand built with real CC0 and CC-BY assets, on desktop and phone.">
 <meta name="theme-color" content="#EFE7D6">
-<meta property="og:title" content="Zyqor Library &middot; 20 live 3D concepts">
-<meta property="og:description" content="20 live fictional-brand 3D web concepts by Zyqor Studio are built. Normal, Advanced, Premium.">
+<meta property="og:title" content="Zyqor Library &middot; 18 of 300 3D concepts built">
+<meta property="og:description" content="18 of a planned 300 fictional-brand 3D web concepts by Zyqor Studio are built. Normal, Advanced, Premium.">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="preload" href="library.json" as="fetch" crossorigin>
 <link rel="stylesheet" href="_kit/concept.css">
@@ -22,9 +22,9 @@
 <body class="grain lib">
 <a class="skip" href="#index">Skip to the concepts</a>
 <header class="lib-top">
-  <a class="brand" href="https://zyqor-portfolio.vercel.app/m/" aria-label="Zyqor Studio home"><span class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h12L6 18h12"/></svg></span>Zyqor <span class="mono">Library</span></a>
+  <a class="brand" href="https://zyqor-portfolio.sites.tab.bot/m/" aria-label="Zyqor Studio home"><span class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h12L6 18h12"/></svg></span>Zyqor <span class="mono">Library</span></a>
   <nav class="top-links" aria-label="Site">
-    <a class="top-link" href="https://zyqor-portfolio.vercel.app/m/"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>Portfolio</a>
+    <a class="top-link" href="https://zyqor-portfolio.sites.tab.bot/m/"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>Portfolio</a>
     
   </nav>
 </header>
@@ -32,17 +32,17 @@
   <section class="hero" aria-labelledby="h1">
     <div class="hero-copy">
       <p class="tag">Zyqor Studio &middot; the library</p>
-      <h1 id="h1">Twenty <span class="serif">ways</span> to build in 3D.</h1>
-      <p class="lead">Twenty live concepts across three tiers - Normal, Advanced and Premium. Each is a real page with a real 3D object, built for desktop and for phone with the same models.</p>
+      <h1 id="h1">Three hundred <span class="serif">ways</span> to build in 3D.</h1>
+      <p class="lead">A hundred Normal, a hundred Advanced and a hundred Premium concepts. Each is a real page with a real 3D object, built for desktop and for phone with the same models. <span id="n-built">0</span> are live; the rest are on their way.</p>
     </div>
     <div class="hero-side">
-      <p class="big-n" aria-label="Concepts live"><b id="big-n">0</b><span>live<br>concepts</span></p>
+      <p class="big-n" aria-label="Concepts live"><b id="big-n">0</b><span>of 300<br>live now</span></p>
       <div class="ledger" id="ledger" aria-label="Progress by tier"></div>
     </div>
   </section>
 
   <section class="feat" id="feat" aria-labelledby="feat-h">
-    <div class="sec-head"><h2 id="feat-h">Live <span class="serif">now</span></h2><span class="mono">19 of 20 passed QA at 1440 / 390 / 360</span></div>
+    <div class="sec-head"><h2 id="feat-h">Live <span class="serif">now</span></h2><span class="mono">Passed QA at 1440 / 390 / 360</span></div>
     <div class="feat-grid" id="feat-grid"></div>
   </section>
 
@@ -61,6 +61,7 @@
       
       <div class="f-group"><span class="mono">Category</span><div class="chips" id="f-cat"></div></div>
       <div class="f-group"><span class="mono">Technique</span><div class="chips" id="f-tech"></div></div>
+      <div class="f-group"><span class="mono">Status</span><div class="chips"><label class="switch"><input type="checkbox" id="coming" checked><span class="tr" aria-hidden="true"></span>Show concepts that are still coming</label></div></div>
       <button class="f-clear" type="button" id="f-clear">Clear all filters</button>
     </div>
   </dialog>
@@ -78,9 +79,10 @@
     <p>Every concept here is a fictional brand, labelled Concept. No clients, reviews or numbers are invented. 3D models, textures and HDRIs are real CC0 or CC-BY assets, credited on each page.</p>
   </div>
   <div class="foot-links">
-    <a class="top-link" href="https://zyqor-portfolio.vercel.app/m/">Zyqor Studio</a>
+    <a class="top-link" href="https://zyqor-portfolio.sites.tab.bot/m/">Zyqor Studio</a>
+    <a class="top-link" href="https://github.com/zyqorbusiness-lab/best-website-designer/tree/main/site/library" rel="noopener">How a concept is built</a>
   </div>
 </footer>
-<script type="module" src="lib.js?v=555f286"></script>
+<script type="module" src="lib.js"></script>
 </body>
 </html>
