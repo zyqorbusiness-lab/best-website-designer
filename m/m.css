@@ -59,3 +59,6 @@ html body .hd .nav a.nav-best{display:inline-flex;justify-content:center;width:4
 .nav .m-menu .m-menu-panel{position:absolute;left:0;top:calc(100% + 10px);display:grid;min-width:180px;padding:8px;background:var(--panel);border:1px solid var(--line);border-radius:16px;box-shadow:0 14px 34px rgba(24,18,8,.16);z-index:80}
 .nav .m-menu .m-menu-panel a{display:block;padding:10px 14px;border-radius:10px;font-size:.95rem;color:var(--ink);text-decoration:none}
 .nav .m-menu .m-menu-panel a:hover{background:var(--bg);color:var(--teal)}
+
+/* Anchor offset (2026-11-10): land section jumps below the fixed header on the phone build */
+[id]{scroll-margin-top:84px}
