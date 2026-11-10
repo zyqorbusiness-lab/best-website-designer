@@ -47,8 +47,14 @@ h1 em{font-style:italic;color:var(--ochre)}
 .open2{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 18px;border-radius:999px;box-shadow:inset 0 0 0 1.5px rgba(23,66,60,.3);text-decoration:none;font-weight:650;font-size:.92rem}
 .open2:hover{background:rgba(23,66,60,.06)}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.mini{display:flex;flex-direction:column;background:var(--panel);border-radius:20px;overflow:hidden;box-shadow:0 0 0 1px var(--line);text-decoration:none;transition:transform .3s var(--ease),box-shadow .3s}
+.mini{display:flex;flex-direction:column;background:var(--panel);border-radius:20px;overflow:hidden;box-shadow:0 0 0 1px var(--line);transition:transform .3s var(--ease),box-shadow .3s}
 .mini:hover{transform:translateY(-3px);box-shadow:0 0 0 1.5px var(--ochre)}
+.mini-main{display:flex;flex-direction:column;flex:1;text-decoration:none;color:inherit}
+.pic{aspect-ratio:16/9;overflow:hidden;background:#E8E0D0}
+.pic img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.xlink{display:block;padding:0 18px 14px;font-size:.84rem;font-weight:600}
+.xlink a{color:var(--ochre);text-decoration:none}
+.xlink a:hover{text-decoration:underline}
 .pal{display:flex;height:74px}
 .pal i{flex:1}
 .mini .body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
