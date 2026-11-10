@@ -179,3 +179,12 @@ html body .hd .nav a.nav-best:hover,html body .hd .nav a.nav-best:focus-visible{
 .best-link a{display:inline-flex;align-items:center;gap:8px;font-weight:650;color:var(--teal);text-decoration:none;border-bottom:1.5px solid currentColor;padding-bottom:2px}
 .best-link a span{transition:transform .25s ease}.best-link a:hover span{transform:translateX(4px)}
 @media (prefers-reduced-motion:reduce){.nav-best .star4,.best-link a span{transition:none}}
+
+/* ---- button eyes + press feedback (Nov 2026) ---- */
+.btn-eye{flex:none;display:inline-block;width:16px;height:16px;border-radius:50%;background:#FAF6EE;position:relative;vertical-align:middle;transition:transform .15s ease}
+.btn-eye-p{position:absolute;left:4.5px;top:4.5px;width:7px;height:7px;border-radius:50%;background:#17423C;will-change:transform}
+.btn--ghost .btn-eye,.sw-btn--ghost .btn-eye,.btn-line .btn-eye{background:#17423C}
+.btn--ghost .btn-eye-p,.sw-btn--ghost .btn-eye-p,.btn-line .btn-eye-p{background:#FAF6EE}
+.btn:active,.btn-line:active,.sw-btn--primary:active,.sw-btn--ghost:active,.way:active{transform:scale(.96)}
+.btn:active .btn-eye,.btn-line:active .btn-eye,.sw-btn--primary:active .btn-eye,.sw-btn--ghost:active .btn-eye{transform:scaleY(.3)}
+.btn-line{transition-property:transform,color,border-color,background-color}
