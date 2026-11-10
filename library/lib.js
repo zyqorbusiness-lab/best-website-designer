@@ -33,7 +33,7 @@ const tierMax = Math.max(1, ...Object.values(tierN));
 led.innerHTML = ['normal', 'advanced', 'premium'].map((t) => {
   const pct = (tierN[t] / tierMax) * 100;
   return `<button class="led-row" type="button" data-tier="${t}" data-press><span class="led-name">${data.tiers[t]}</span><span class="led-bar" style="--b:${pct.toFixed(1)}"><i></i></span><span class="led-n"><b>${tierN[t]}</b> concepts</span></button>`;
-}).join('') + `<p class="led-note">${items.length} live concepts, each QA-checked at 1440, 390 and 360 px. Each one is a fictional brand, labelled Concept.</p>`;
+}).join('') + `<p class="led-note">${items.length} live concepts; 19 of 20 passed the 1440 / 390 / 360 px QA runs. Each one is a fictional brand, labelled Concept.</p>`;
 $$('.led-row', led).forEach((b) => b.addEventListener('click', () => { setTier(b.dataset.tier); $('#index').scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' }); }));
 $('#big-n').textContent = String(items.length).padStart(3, '0');
 
