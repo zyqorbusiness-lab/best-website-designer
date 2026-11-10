@@ -76,14 +76,13 @@ dlg.addEventListener('click', (e) => { if (e.target === dlg) close(); });
 const foot = document.createElement('footer');
 foot.className = 'zk-foot';
 foot.innerHTML = `<div class="zk-foot-in">
-  <p class="zk-honest"><b>${esc(name)}</b> is not a real company. Concept ${id} is ${TIER === 'Advanced' ? 'an' : 'a'} ${TIER.toLowerCase()} study from the Zyqor Library, designed and coded by Sujon Hoque at Zyqor Studio. ${esc(body.dataset.assets || 'Real 3D assets')}, credited below; no AI imagery.</p>
-  <ul class="zk-cred zk-cred--foot" role="list"></ul>
+  <p class="zk-honest"><b>${esc(name)}</b> is not a real company. Concept ${id} is ${TIER === 'Advanced' ? 'an' : 'a'} ${TIER.toLowerCase()} study from the Zyqor Library, designed and coded by Sujon Hoque at Zyqor Studio. ${esc(body.dataset.assets || 'Real 3D assets')}; licences in the Credits sheet, top right. No AI imagery.</p>
   <div class="zk-contact" aria-label="Hire Zyqor Studio">
     <p class="zk-mono">Want a site like this? Hire Zyqor Studio</p>
     <ul class="zk-contact-list" role="list">
       <li><a class="zk-pill zk-mail lg lg--dark lg-pill lg-btn" href="mailto:zyqorbusiness@gmail.com" target="_blank" rel="noopener noreferrer">${svg('mail')}<span><small>Email</small><em>zyqorbusiness@gmail.com</em></span></a></li>
       <li><a class="zk-pill lg lg--dark lg-pill lg-btn" href="https://wa.me/919547908593" target="_blank" rel="noopener noreferrer">${svg('wa')}<span><small>WhatsApp</small><em>+91 95479 08593</em></span></a></li>
-      <li><a class="zk-pill lg lg--dark lg-pill lg-btn" href="https://www.instagram.com/zyqor_og/" target="_blank" rel="noopener noreferrer">${svg('ig')}<span><small>Instagram</small><em>@zyqor_og</em></span></a></li>
+      <li><a class="zk-pill lg lg--dark lg-pill lg-btn" href="https://www.instagram.com/zyqor_syudo/" target="_blank" rel="noopener noreferrer">${svg('ig')}<span><small>Instagram</small><em>@zyqor_syudo</em></span></a></li>
     </ul>
   </div>
   <nav class="zk-nav" aria-label="More concepts">
