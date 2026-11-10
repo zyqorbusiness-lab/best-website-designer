@@ -1,6 +1,6 @@
 /* Zyqor Library index: one script for index.html (desktop) and m.html (phone).
-   Reads library.json (written by tools/library-build.mjs). Filters: tier, category, technique, search, show coming.
-   State lives in the URL (?tier=premium&cat=food&tech=Glass&q=moon&coming=0), so every filtered view is a deep link.
+   Reads library.json (written by tools/library-build.mjs). Filters: tier, category, technique, search. Only built (live) concepts are listed.
+   State lives in the URL (?tier=premium&cat=food&tech=Glass&q=moon), so every filtered view is a deep link.
    Honest by design: only concepts whose qa.json says PASS are "built" and linked; the rest are palette cards marked Coming. */
 import { press } from './_kit/fx/press.js';
 const isM = document.documentElement.dataset.build === 'm';
@@ -14,7 +14,7 @@ const ICON = {
 const PAGE = isM ? 36 : 48;
 
 const data = await fetch('library.json', { cache: 'no-cache' }).then((r) => r.json());
-const items = data.items;
+const items = data.items.filter((i) => i.status === 'built'); // only live concepts are listed
 const built = items.filter((i) => i.status === 'built');
 const url = new URL(location.href);
 const st = {
@@ -22,21 +22,21 @@ const st = {
   cat: url.searchParams.get('cat') || '',
   tech: url.searchParams.get('tech') || '',
   q: url.searchParams.get('q') || '',
-  coming: url.searchParams.get('coming') !== '0',
   shown: PAGE,
 };
 const conceptHref = (it) => it.path + (isM ? 'm.html' : 'index.html');
 
 /* ---------- hero ledger ---------- */
 const led = $('#ledger');
+const tierN = Object.fromEntries(['normal', 'advanced', 'premium'].map((t) => [t, items.filter((i) => i.tier === t).length]));
+const tierMax = Math.max(1, ...Object.values(tierN));
 led.innerHTML = ['normal', 'advanced', 'premium'].map((t) => {
-  const c = data.counts[t];
-  const pct = c.total ? (c.built / c.total) * 100 : 0;
-  return `<button class="led-row" type="button" data-tier="${t}" data-press><span class="led-name">${data.tiers[t]}</span><span class="led-bar" style="--b:${pct.toFixed(1)}"><i></i></span><span class="led-n"><b>${c.built}</b> built / ${c.total}</span></button>`;
-}).join('') + `<p class="led-note">${data.total.built} of ${data.total.all} concepts are built and pass QA at 1440, 390 and 360 px. The rest are planned and marked <em>Coming</em>; each one is a fictional brand, labelled Concept.</p>`;
+  const pct = (tierN[t] / tierMax) * 100;
+  return `<button class="led-row" type="button" data-tier="${t}" data-press><span class="led-name">${data.tiers[t]}</span><span class="led-bar" style="--b:${pct.toFixed(1)}"><i></i></span><span class="led-n"><b>${tierN[t]}</b> concepts</span></button>`;
+}).join('') + `<p class="led-note">${items.length} live concepts, each QA-checked at 1440, 390 and 360 px. Each one is a fictional brand, labelled Concept.</p>`;
 $$('.led-row', led).forEach((b) => b.addEventListener('click', () => { setTier(b.dataset.tier); $('#index').scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' }); }));
-$('#n-built').textContent = data.total.built;
-$('#big-n').textContent = String(data.total.built).padStart(3, '0');
+$('#n-built').textContent = items.length;
+$('#big-n').textContent = String(items.length).padStart(3, '0');
 
 /* ---------- featured: the built ones, newest qa first ---------- */
 const feat = $('#feat-grid');
@@ -70,9 +70,7 @@ chipRow($('#f-cat'), data.categories, 'cat');
 chipRow($('#f-tech'), data.techniques, 'tech');
 const search = $('#q'); search.value = st.q;
 let qT; search.addEventListener('input', () => { clearTimeout(qT); qT = setTimeout(() => { st.q = search.value.trim(); st.shown = PAGE; render(); }, 120); });
-const comingBox = $('#coming'); comingBox.checked = st.coming;
-comingBox.addEventListener('change', () => { st.coming = comingBox.checked; st.shown = PAGE; render(); });
-$('#f-clear').addEventListener('click', () => { Object.assign(st, { tier: 'all', cat: '', tech: '', q: '', coming: true, shown: PAGE }); search.value = ''; comingBox.checked = true; render(); });
+$('#f-clear').addEventListener('click', () => { Object.assign(st, { tier: 'all', cat: '', tech: '', q: '', shown: PAGE }); search.value = ''; render(); });
 $('#more').addEventListener('click', () => { st.shown += PAGE; render(true); });
 
 /* filters panel: inline panel on desktop, bottom sheet (<dialog>) on phone */
@@ -98,12 +96,12 @@ function card(it) {
   const isB = it.status === 'built';
   const vars = `--k1:${it.pal[0]};--k2:${it.pal[1]};--k3:${it.pal[2]}`;
   const art = isB && it.thumb ? `<img src="${esc(it.path)}thumb.webp" alt="" loading="lazy" decoding="async" width="640" height="400">` : swatch(it);
-  const badge = isB ? '<span class="pill pill--dark"><span class="dot dot--live"></span>Live</span>' : (it.status === 'building' ? '<span class="pill coming">In QA</span>' : '<span class="pill coming">Coming</span>');
+  const badge = '<span class="pill pill--dark"><span class="dot dot--live"></span>Live</span>';
   const inner = `
     <div class="card-art" style="${vars}">${art}<span class="art-tags">${badge}</span></div>
     <div class="card-body">
       <div class="card-id"><span class="t">${esc(it.id)} &middot; ${esc(data.tiers[it.tier])}</span><span>${esc(it.catLabel)}</span></div>
-      <h3 class="card-name">${esc(it.name)}<span class="sr-only">${isB ? ', live concept' : ', coming soon'}</span></h3>
+      <h3 class="card-name">${esc(it.name)}<span class="sr-only">, live concept, live concept</span></h3>
       <p class="card-idea">${esc(it.idea)}</p>
       <div class="card-tags">${it.tags.slice(0, 3).map((t) => `<span>${esc(t)}</span>`).join('')}</div>
     </div>`;
@@ -119,7 +117,6 @@ function matches(it) {
   if (st.tier !== 'all' && it.tier !== st.tier) return false;
   if (st.cat && it.cat !== st.cat) return false;
   if (st.tech && !it.tags.includes(st.tech)) return false;
-  if (!st.coming && it.status !== 'built') return false;
   if (st.q) { const q = st.q.toLowerCase(); if (!(`${it.id} ${it.name} ${it.idea} ${it.tech} ${it.catLabel} ${it.tags.join(' ')}`.toLowerCase().includes(q))) return false; }
   return true;
 }
@@ -139,12 +136,12 @@ function render(append) {
   $$('button', seg).forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.tier === st.tier)));
   $$('#f-cat button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.k === st.cat)));
   $$('#f-tech button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.k === st.tech)));
-  const nf = (st.cat ? 1 : 0) + (st.tech ? 1 : 0) + (st.coming ? 0 : 1);
+  const nf = (st.cat ? 1 : 0) + (st.tech ? 1 : 0);
   $('#f-badge').textContent = nf ? String(nf) : '';
   moveThumb();
   press('[data-press]');
   const u = new URL(location.href);
-  [['tier', st.tier !== 'all' && st.tier], ['cat', st.cat], ['tech', st.tech], ['q', st.q], ['coming', !st.coming && '0']].forEach(([k, v]) => v ? u.searchParams.set(k, v) : u.searchParams.delete(k));
+  [['tier', st.tier !== 'all' && st.tier], ['cat', st.cat], ['tech', st.tech], ['q', st.q]].forEach(([k, v]) => v ? u.searchParams.set(k, v) : u.searchParams.delete(k));
   history.replaceState(null, '', u);
 }
 render();

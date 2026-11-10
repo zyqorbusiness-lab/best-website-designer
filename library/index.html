@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- phone -> m.html (separate phone build). ?desktop=1 keeps this page -->
 <script>document.documentElement.classList.add('js');(function(){var q=location.search;if(/[?&]desktop=1/.test(q))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height,phone=w<=860||(c&&h>w);if(phone)location.replace('m.html'+q+location.hash);})();</script>
-<title>Zyqor Library &middot; 18 of 300 concepts built &middot; Zyqor Studio</title>
-<meta name="description" content="Zyqor Library: a growing set of web and 3D concepts by Zyqor Studio (18 of a planned 300 built) in three tiers, Normal, Advanced and Premium. Every concept is a fictional brand built with real CC0 and CC-BY assets, on desktop and phone.">
+<title>Zyqor Library &middot; 20 live concepts &middot; Zyqor Studio</title>
+<meta name="description" content="Zyqor Library: a growing set of web and 3D concepts by Zyqor Studio  in three tiers, Normal, Advanced and Premium. Every concept is a fictional brand built with real CC0 and CC-BY assets, on desktop and phone.">
 <meta name="theme-color" content="#EFE7D6">
-<meta property="og:title" content="Zyqor Library &middot; 18 of 300 3D concepts built">
-<meta property="og:description" content="18 of a planned 300 fictional-brand 3D web concepts by Zyqor Studio are built. Normal, Advanced, Premium.">
+<meta property="og:title" content="Zyqor Library &middot; 20 live 3D concepts">
+<meta property="og:description" content="20 live fictional-brand 3D web concepts by Zyqor Studio are built. Normal, Advanced, Premium.">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="preload" href="library.json" as="fetch" crossorigin>
 <link rel="stylesheet" href="_kit/concept.css">
@@ -37,7 +37,7 @@
       <p class="lead">A hundred Normal, a hundred Advanced and a hundred Premium concepts. Each is a real page with a real 3D object, built for desktop and for phone with the same models. <span id="n-built">0</span> are live; the rest are on their way.</p>
     </div>
     <div class="hero-side">
-      <p class="big-n" aria-label="Concepts live"><b id="big-n">0</b><span>of 300<br>live now</span></p>
+      <p class="big-n" aria-label="Concepts live"><b id="big-n">0</b><span>live<br>concepts</span></p>
       <div class="ledger" id="ledger" aria-label="Progress by tier"></div>
     </div>
   </section>
@@ -57,7 +57,6 @@
     <div class="f-panel" id="f-panel" hidden>
       <div class="f-group"><span class="mono">Category</span><div class="chips" id="f-cat"></div></div>
       <div class="f-group"><span class="mono">Technique</span><div class="chips" id="f-tech"></div></div>
-      <div class="f-group"><span class="mono">Status</span><div class="chips"><label class="switch"><input type="checkbox" id="coming" checked><span class="tr" aria-hidden="true"></span>Show concepts that are still coming</label></div></div>
       <button class="f-clear" type="button" id="f-clear">Clear all filters</button>
     </div>
   </div>
