@@ -50,3 +50,12 @@ h2{font-size:2.2rem}
 html body .hd .nav a.nav-best{display:inline-flex;justify-content:center;width:40px;min-height:40px;padding:0;font-size:.84rem}
 .nav-best span{display:none}
 @media (min-width:421px){html body .hd .nav a.nav-best{width:auto;padding:0 12px}.nav-best span{display:inline}}
+
+/* Phone section menu (audit fix 2026-11-10): desktop nav links are hidden on this build, so the header gets a 40px round menu button with anchor links; panel links override the .nav a:not(.btn) hide rule */
+.m-menu{position:relative}
+.m-menu>summary{list-style:none;display:inline-flex;align-items:center;justify-content:center;width:40px;min-height:40px;border-radius:999px;cursor:pointer;color:var(--ink)}
+.m-menu>summary::-webkit-details-marker{display:none}
+.m-menu>summary:hover{color:var(--teal)}
+.nav .m-menu .m-menu-panel{position:absolute;left:0;top:calc(100% + 10px);display:grid;min-width:180px;padding:8px;background:var(--panel);border:1px solid var(--line);border-radius:16px;box-shadow:0 14px 34px rgba(24,18,8,.16);z-index:80}
+.nav .m-menu .m-menu-panel a{display:block;padding:10px 14px;border-radius:10px;font-size:.95rem;color:var(--ink);text-decoration:none}
+.nav .m-menu .m-menu-panel a:hover{background:var(--bg);color:var(--teal)}
