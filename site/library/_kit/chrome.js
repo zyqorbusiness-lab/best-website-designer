@@ -113,8 +113,6 @@ fetch(new URL('credits.json', location.href)).then((r) => (r.ok ? r.json() : nul
   document.querySelectorAll('.zk-cred').forEach((ul) => { ul.innerHTML = htmlList; });
 }).catch(() => { document.querySelectorAll('.zk-cred').forEach((ul) => { ul.innerHTML = '<li><span class="zk-mono">Credits</span><span>See credits.json in this folder.</span></li>'; }); });
 
-});
-
 /* the bar tucks away while scrolling down a long page, returns on scroll up (desktop + phone) */
 let lastY = scrollY, ticking = false;
 addEventListener('scroll', () => {
