@@ -35,7 +35,6 @@ led.innerHTML = ['normal', 'advanced', 'premium'].map((t) => {
   return `<button class="led-row" type="button" data-tier="${t}" data-press><span class="led-name">${data.tiers[t]}</span><span class="led-bar" style="--b:${pct.toFixed(1)}"><i></i></span><span class="led-n"><b>${tierN[t]}</b> concepts</span></button>`;
 }).join('') + `<p class="led-note">${items.length} live concepts, each QA-checked at 1440, 390 and 360 px. Each one is a fictional brand, labelled Concept.</p>`;
 $$('.led-row', led).forEach((b) => b.addEventListener('click', () => { setTier(b.dataset.tier); $('#index').scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' }); }));
-$('#n-built').textContent = items.length;
 $('#big-n').textContent = String(items.length).padStart(3, '0');
 
 /* ---------- featured: the built ones, newest qa first ---------- */
