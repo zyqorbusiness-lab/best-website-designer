@@ -62,3 +62,6 @@ html body .hd .nav a.nav-best{display:inline-flex;justify-content:center;width:4
 
 /* Anchor offset (2026-11-10): land section jumps below the fixed header on the phone build */
 [id]{scroll-margin-top:84px}
+
+/* Phone: keep the floating back-to-top clear of full-width CTAs at the bottom edge (final-review fix) */
+.is-mobile .btt{right:16px;bottom:calc(96px + env(safe-area-inset-bottom));width:46px;height:46px}
