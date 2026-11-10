@@ -415,7 +415,7 @@ function labGrid() {
     const href = isM ? `../lab/${c.slug}/m.html` : `../lab/${c.slug}/`;
     const poster = `../lab/${c.slug}/${isM ? "poster-m" : "poster"}.webp`;
     const sw = c.palette.map((h, i) => `<div style="background:${h};color:${readable(h, "#17423C", "#F8F4EC")}">${h}</div>`).join("");
-    return `<a class="lp" href="${href}" data-rv aria-label="${c.brand}, concept ${c.n}: open the demo">
+    return `<a class="lp" href="${href}" data-rv aria-label="${c.brand}, concept ${c.n}: open the concept">
       <div class="lp-sw">${sw}</div>
       <span class="lp-go" aria-hidden="true">${arrow}</span>
       <div class="lp-body">
