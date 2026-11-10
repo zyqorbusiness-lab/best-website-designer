@@ -54,7 +54,7 @@ if (built.length) {
 
 /* ---------- filter controls ---------- */
 const seg = $('#seg');
-const tc = (t) => t === 'all' ? items.length : data.counts[t].total;
+const tc = (t) => t === 'all' ? items.length : tierN[t];
 seg.innerHTML = '<span class="seg-thumb" aria-hidden="true"></span>' + TIERS.map(([k, l]) => `<button type="button" data-tier="${k}" aria-pressed="false">${l}<small>${tc(k)}</small></button>`).join('');
 const segThumb = $('.seg-thumb', seg);
 $$('button', seg).forEach((b) => b.addEventListener('click', () => setTier(b.dataset.tier)));
@@ -66,8 +66,9 @@ const chipRow = (el, list, key) => {
   el.innerHTML = list.map((c) => `<button class="chip-b" type="button" data-k="${esc(c.key)}" aria-pressed="false">${esc(c.label)}<small>${c.count}</small></button>`).join('');
   $$('button', el).forEach((b) => b.addEventListener('click', () => { st[key] = st[key] === b.dataset.k ? '' : b.dataset.k; st.shown = PAGE; render(); }));
 };
-chipRow($('#f-cat'), data.categories, 'cat');
-chipRow($('#f-tech'), data.techniques, 'tech');
+const liveCount = (list, has) => list.map((c) => ({ ...c, count: items.filter(has(c)).length })).filter((c) => c.count > 0);
+chipRow($('#f-cat'), liveCount(data.categories, (c) => (i) => i.cat === c.key), 'cat');
+chipRow($('#f-tech'), liveCount(data.techniques, (c) => (i) => i.tags.includes(c.key)), 'tech');
 const search = $('#q'); search.value = st.q;
 let qT; search.addEventListener('input', () => { clearTimeout(qT); qT = setTimeout(() => { st.q = search.value.trim(); st.shown = PAGE; render(); }, 120); });
 $('#f-clear').addEventListener('click', () => { Object.assign(st, { tier: 'all', cat: '', tech: '', q: '', shown: PAGE }); search.value = ''; render(); });
