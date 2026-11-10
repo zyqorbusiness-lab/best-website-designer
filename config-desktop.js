@@ -17,7 +17,7 @@ mountScrollWorld(document.getElementById('world'), {
    "eyebrow": "Sujon Hoque \u00b7 Zyqor Studio \u00b7 West Bengal",
    "title": "Websites that feel like a brand.",
    "body": "I'm Sujon. I design and hand-code every site on this page myself: scroll stories, 3D product pages and fast sites for small shops.",
-   "cta": { "primary": { "label": "See the work", "href": "#work" }, "secondary": { "label": "WhatsApp me", "href": "https://wa.me/919547908593?text=Hi%20Sujon%2C%20I%20saw%20your%20portfolio%20and%20I%20want%20a%20website." } },
+   "cta": { "primary": { "label": "See the work", "href": "#websites" }, "secondary": { "label": "WhatsApp me", "href": "https://wa.me/919547908593?text=Hi%20Sujon%2C%20I%20saw%20your%20portfolio%20and%20I%20want%20a%20website." } },
    "tags": [
     "Design",
     "Development",
@@ -55,7 +55,7 @@ mountScrollWorld(document.getElementById('world'), {
    "cta": {
     "primary": {
      "label": "See the work",
-     "href": "#work"
+     "href": "#websites"
     },
     "secondary": {
      "label": "WhatsApp me",
