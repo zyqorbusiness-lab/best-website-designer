@@ -43,7 +43,7 @@ $$('.top-btn').forEach(b=>b.addEventListener('click',()=>{ const on=b.getAttribu
   } else { const d=$$('.drop',drops).find(x=>x.dataset.t===t); if(d){ if(RM) d.remove(); else d.animate([{opacity:1},{opacity:0,transform:'translate(-50%,-90%)'}],{duration:240}).onfinish=()=>{d.remove();layoutDrops();}; if(RM) layoutDrops(); } }
 }));
 $$('.drop',drops).forEach(d=>d.style.transform='translate(-50%,-50%)');
-$('#addBtn').addEventListener('click',()=>{ const ex=$$('.drop',drops).map(d=>d.dataset.t); toast(`${size} ${name}${ex.length?' + '+ex.join(', '):''} — concept demo, nothing is ordered.`); });
+$('#addBtn').addEventListener('click',()=>{ const ex=$$('.drop',drops).map(d=>d.dataset.t); toast(`${size} ${name}${ex.length?' + '+ex.join(', '):''} — concept only, nothing is ordered.`); });
 // tracker
 const steps=$$('#steps li'), fill=$('#barFill'), timg=$('#trackImg'), tcred=$('#trackCredit');
 const IMG=[['img/prep.webp','Hands spreading tomato sauce over fresh pizza dough','Photo: Nenad Stojkovic (CC BY 2.0)'],['img/bake.webp','A cook sliding a pizza into a glowing wood-fired oven','Photo: Dale Cruse (CC BY 2.0)'],['img/box.webp','A sliced pepperoni pizza in an open corrugated box','Photo: Dale Cruse (CC BY 2.0)'],['img/ontheway.webp','A pepperoni and basil pizza in an open delivery box, ready to go','Photo: Dale Cruse (CC BY 2.0)']];
