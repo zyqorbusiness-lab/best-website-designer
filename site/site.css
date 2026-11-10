@@ -188,3 +188,4 @@ html body .hd .nav a.nav-best:hover,html body .hd .nav a.nav-best:focus-visible{
 .btn:active,.btn-line:active,.sw-btn--primary:active,.sw-btn--ghost:active,.way:active{transform:scale(.96)}
 .btn:active .btn-eye,.btn-line:active .btn-eye,.sw-btn--primary:active .btn-eye,.sw-btn--ghost:active .btn-eye{transform:scaleY(.3)}
 .btn-line{transition-property:transform,color,border-color,background-color}
+.sw-btn .btn-eye{margin-right:9px}
