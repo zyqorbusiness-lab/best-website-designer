@@ -1,0 +1,84 @@
+{
+  "brand": "Quarry Type Foundry",
+  "id": "N006",
+  "items": [
+    {
+      "what": "Typeface",
+      "title": "Roboto Flex",
+      "author": "The Roboto Flex Project Authors",
+      "source": "Google Fonts / GitHub",
+      "url": "https://github.com/googlefonts/roboto-flex",
+      "licence": "SIL OFL 1.1",
+      "note": "Variable font; subset to Latin with fontTools, the wght, wdth, GRAD and opsz axes kept and the parametric axes pinned at their defaults (139 KB woff2). Quarry is fictional and did not draw it. Self-hosted woff2; OFL text in OFL-RobotoFlex.txt.",
+      "files": [
+        "robotoflex.woff2"
+      ]
+    },
+    {
+      "what": "3D glyph",
+      "title": "Q extruded from Roboto Flex outlines at 100/300/400/700/1000",
+      "author": "Zyqor Studio",
+      "note": "Outlines read from the font file with fontTools, extruded and bevelled in three.js (code-made geometry).",
+      "files": [],
+      "licence": "MIT"
+    },
+    {
+      "what": "Texture",
+      "title": "Marble Rock 02",
+      "author": "Amal Kumar",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/marble_rock_02",
+      "licence": "CC0 1.0",
+      "note": "1K diffuse, normal and roughness as WebP. Same files on phone and desktop.",
+      "files": [
+        "stone_nor_1k.webp",
+        "stone_rough_1k.webp",
+        "stone_diff_1k.webp"
+      ]
+    },
+    {
+      "what": "HDRI",
+      "title": "Studio Small 09",
+      "author": "Sergej Majboroda",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/studio_small_09",
+      "licence": "CC0 1.0",
+      "note": "Shared kit lighting (site/assets/hdri).",
+      "files": [
+        "../../../assets/hdri/studio_1k.hdr",
+        "../../../assets/hdri/studio_512.hdr"
+      ]
+    },
+    {
+      "what": "Type",
+      "title": "JetBrains Mono",
+      "author": "The JetBrains Mono Project Authors",
+      "source": "GitHub",
+      "url": "https://github.com/JetBrains/JetBrainsMono",
+      "licence": "SIL OFL 1.1",
+      "files": []
+    },
+    {
+      "what": "Engine",
+      "title": "three.js r170, GSAP, Lenis",
+      "author": "their authors",
+      "source": "threejs.org",
+      "url": "https://threejs.org",
+      "licence": "MIT / GSAP Standard Licence",
+      "files": []
+    },
+    {
+      "what": "Images (code-made)",
+      "title": "Poster and library thumbnail",
+      "author": "Zyqor Studio",
+      "source": "frames of this page",
+      "url": "",
+      "licence": "MIT",
+      "note": "WebGL-fallback poster and index thumbnail, rendered from this page by tools/qa-library.mjs. No AI imagery.",
+      "files": [
+        "poster.webp",
+        "thumb.webp"
+      ]
+    }
+  ]
+}

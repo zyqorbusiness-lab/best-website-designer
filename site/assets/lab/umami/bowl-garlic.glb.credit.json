@@ -1,0 +1,11 @@
+{
+ "title": "Scan 2023-05-08T18:29:29.661Z",
+ "author": "EGFoodScans",
+ "author_url": "https://sketchfab.com/Exuberance1323",
+ "source_url": "https://sketchfab.com/3d-models/scan-2023-05-08t182929661z-db8cbb282c044c4ca0b3c910158f3ec7",
+ "licence": "CC BY 4.0",
+ "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+ "attribution": "\"Scan 2023-05-08T18:29:29.661Z\" by EGFoodScans (https://sketchfab.com/3d-models/scan-2023-05-08t182929661z-db8cbb282c044c4ca0b3c910158f3ec7), Sketchfab, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Modified: cropped, scaled, simplified and compressed.",
+ "changes": "re-centred and scaled (rim radius 1), table/ground cropped, decimated to ~45k triangles with meshoptimizer, colour map resized to 1536 px WebP, meshopt-compressed glTF (gltf-transform); used as the \"Black Garlic\" bowl",
+ "downloaded": "2026-10-28"
+}

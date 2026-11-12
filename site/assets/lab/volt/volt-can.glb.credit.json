@@ -1,0 +1,11 @@
+{
+ "title": "Aluminium can 500ml",
+ "author": "YouniqueĪdeaStudio",
+ "author_url": "https://sketchfab.com/sinnervoncrawsz",
+ "source_url": "https://sketchfab.com/3d-models/aluminium-can-500ml-510892f099614171bb6167ab88de03d4",
+ "licence": "CC BY 4.0",
+ "licence_url": "http://creativecommons.org/licenses/by/4.0/",
+ "attribution": "\"Aluminium can 500ml\" by YouniqueĪdeaStudio (https://sketchfab.com/3d-models/aluminium-can-500ml-510892f099614171bb6167ab88de03d4), licensed under CC BY 4.0 (http://creativecommons.org/licenses/by/4.0/). Modified by Zyqor Studio.",
+ "downloaded": "2026-10-28",
+ "changes": "Aligned upright, rotated so the opening faces front, scaled to scene units, split into wall / shell / lid / tab meshes, straight wall and shell re-UV-mapped (cylindrical, seam split) with radial normals so a fictional print can sit on it, original untextured materials replaced in code, meshopt-compressed with 16/12/14-bit quantisation (1.86 MB -> 334 KB). No logos or textures were in the source; geometry is the author's."
+}

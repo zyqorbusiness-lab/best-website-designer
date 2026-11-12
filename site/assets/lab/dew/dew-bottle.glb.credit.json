@@ -1,0 +1,13 @@
+{
+ "title": "Treatment serum dropper bottle",
+ "author": "Ideekay_012",
+ "author_url": "https://sketchfab.com/ideekay_012",
+ "source_url": "https://sketchfab.com/3d-models/treatment-serum-dropper-bottle-99487445fdb94cd68f6183978e00ff4a",
+ "licence": "CC BY 4.0",
+ "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+ "attribution": "\"Treatment serum dropper bottle\" (https://sketchfab.com/3d-models/treatment-serum-dropper-bottle-99487445fdb94cd68f6183978e00ff4a) by Ideekay_012 (https://sketchfab.com/ideekay_012), licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Changed by Zyqor Studio.",
+ "changes": "Paper label mesh and one tiny decal removed; transforms baked, rescaled to 1.67 units tall and centred; glass wall and bulb simplified with meshoptimizer (ratio 0.6); UVs dropped; positions/normals quantised and meshopt-compressed into one GLB (530 KB, same file on desktop and phone); original materials replaced in code with the demo's glass, champagne-gold, polished-gold, frosted-base and plum-rubber materials. No logo on the model.",
+ "downloaded": "2026-10-28",
+ "sketchfab_uid": "99487445fdb94cd68f6183978e00ff4a",
+ "used_in": "site/lab/dew (index.html + m.html)"
+}

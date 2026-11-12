@@ -1,0 +1,11 @@
+{
+ "title": "Cup of Cappuccino (cup + saucer) + Coffee beans (bean scan) — combined in ember.glb",
+ "author": "Krzysztof Mazia (cup, saucer); kouitimizuno (coffee bean scan)",
+ "author_url": "https://sketchfab.com/mazia ; https://sketchfab.com/kouitimizuno",
+ "source_url": "https://sketchfab.com/3d-models/cup-of-cappuccino-2beccb20ab744cabaeaddb36487f5cd7 ; https://sketchfab.com/3d-models/coffee-beans-8146e99925fb4b49839e4fa7ace83f0f",
+ "licence": "CC BY 4.0",
+ "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+ "attribution": "\"Cup of Cappuccino\" by Krzysztof Mazia (https://sketchfab.com/3d-models/cup-of-cappuccino-2beccb20ab744cabaeaddb36487f5cd7), licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/); \"Coffee beans\" by kouitimizuno (https://sketchfab.com/3d-models/coffee-beans-8146e99925fb4b49839e4fa7ace83f0f), licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Modified by Zyqor Studio.",
+ "changes": "Cup: coffee and latte-art foam meshes removed (Ember draws its own crema in code), body split into handle/outer shell (roast glaze) and white lip/well, kept the inner-wall stain texture and saucer, all 40,738 remaining triangles kept. Bean: centred and axis-aligned, 8K colour+normal maps resized to 2048 px, recoloured per roast in a shader at runtime. Both: textures to WebP, meshopt-compressed glTF (gltf-transform); one file for desktop and phone (1,716,972 bytes).",
+ "downloaded": "2026-10-28"
+}

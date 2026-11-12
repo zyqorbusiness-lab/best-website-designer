@@ -1,0 +1,161 @@
+{
+  "brand": "Tranquility Base",
+  "id": "A018",
+  "items": [
+    {
+      "what": "3D model",
+      "title": "Moon Rock 01",
+      "author": "Greg Zaal, Rico Cilliers, Jenelle van Heerden, Dario Barresi",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/moon_rock_01",
+      "licence": "CC0 1.0",
+      "note": "Photo-scanned. Optimised with gltf-transform (meshopt, WebP 1K). Same file on phone and desktop.",
+      "credit_file": "../../_assets/models/moon_rock_01.glb.credit.json",
+      "files": [
+        "../../_assets/models/moon_rock_01.glb"
+      ]
+    },
+    {
+      "what": "3D model",
+      "title": "Moon Rock 05",
+      "author": "Greg Zaal, Rico Cilliers, Jenelle van Heerden",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/moon_rock_05",
+      "licence": "CC0 1.0",
+      "note": "Photo-scanned. Optimised with gltf-transform (meshopt, WebP 1K). Same file on phone and desktop.",
+      "credit_file": "../../_assets/models/moon_rock_05.glb.credit.json",
+      "files": [
+        "../../_assets/models/moon_rock_05.glb"
+      ]
+    },
+    {
+      "what": "3D model",
+      "title": "Moon Rock 07",
+      "author": "Greg Zaal, Rico Cilliers, Jenelle van Heerden",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/moon_rock_07",
+      "licence": "CC0 1.0",
+      "note": "Photo-scanned. Optimised with gltf-transform (meshopt, WebP 1K). Same file on phone and desktop.",
+      "credit_file": "../../_assets/models/moon_rock_07.glb.credit.json",
+      "files": [
+        "../../_assets/models/moon_rock_07.glb"
+      ]
+    },
+    {
+      "what": "Textures",
+      "title": "Moon Dusted 02 (ground), Moon Footprints 01 (landing decal)",
+      "author": "Poly Haven",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/moon_dusted_02",
+      "licence": "CC0 1.0",
+      "note": "Colour, normal and ARM maps resized to 1K WebP; the footprint scan is feathered into a round decal.",
+      "files": [
+        "../../_assets/tex/moon_dusted_02_arm_1k.webp",
+        "../../_assets/tex/moon_dusted_02_diff_1k.webp",
+        "../../_assets/tex/moon_dusted_02_nor_1k.webp",
+        "../../_assets/tex/moon_footprints_01_decal_1k.webp",
+        "../../_assets/tex/moon_footprints_01_nor_1k.webp"
+      ]
+    },
+    {
+      "what": "Earth",
+      "title": "Blue Marble: Land Surface, Shallow Water, and Shaded Topography",
+      "author": "NASA Goddard Space Flight Center (Reto Stöckli)",
+      "source": "NASA Visible Earth",
+      "url": "https://visibleearth.nasa.gov/images/57752",
+      "licence": "Public domain (NASA)",
+      "files": [
+        "../../_assets/tex/earth_bluemarble_2k.webp"
+      ]
+    },
+    {
+      "what": "Scene",
+      "title": "Crater terrain, starfield, sky dome, atmosphere",
+      "author": "Zyqor Studio",
+      "note": "Made in code. Own work, made in code (MIT).",
+      "files": [],
+      "licence": "MIT",
+      "source": "Zyqor Studio (code)"
+    },
+    {
+      "what": "Type",
+      "title": "Instrument Serif",
+      "author": "Rodrigo Fuenzalida, Jordan Egstad",
+      "source": "GitHub",
+      "url": "https://github.com/Instrument/instrument-serif",
+      "licence": "SIL OFL 1.1",
+      "files": []
+    },
+    {
+      "what": "Type",
+      "title": "JetBrains Mono",
+      "author": "The JetBrains Mono Project Authors",
+      "source": "GitHub",
+      "url": "https://github.com/JetBrains/JetBrainsMono",
+      "licence": "SIL OFL 1.1",
+      "files": []
+    },
+    {
+      "what": "Engine",
+      "title": "three.js r170, GSAP + ScrollTrigger, Lenis",
+      "author": "their authors",
+      "source": "threejs.org",
+      "url": "https://threejs.org",
+      "licence": "MIT / GSAP Standard Licence",
+      "files": []
+    },
+    {
+      "what": "Images (code-made)",
+      "title": "Poster and library thumbnail",
+      "author": "Zyqor Studio",
+      "source": "frames of this page",
+      "url": "",
+      "licence": "MIT",
+      "note": "WebGL-fallback poster and index thumbnail, rendered from this page by tools/qa-library.mjs. No AI imagery.",
+      "files": [
+        "poster.webp",
+        "thumb.webp"
+      ]
+    },
+    {
+      "what": "Photo",
+      "title": "Earthrise (Apollo 8, AS8-14-2383)",
+      "author": "NASA / Bill Anders",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:NASA-Apollo8-Dec24-Earthrise.jpg",
+      "licence": "Public domain (NASA)",
+      "note": "Cropped to 4:5 around the Earth and horizon; intro window.",
+      "credit_file": "img/earthrise-d.webp.credit.json",
+      "files": [
+        "img/earthrise-d.webp",
+        "img/earthrise-m.webp"
+      ]
+    },
+    {
+      "what": "Type",
+      "title": "Space Grotesk",
+      "author": "Florian Karsten",
+      "source": "Google Fonts",
+      "url": "https://fonts.google.com/specimen/Space+Grotesk",
+      "licence": "SIL OFL 1.1",
+      "note": "Shared self-hosted file.",
+      "files": [
+        "../../../assets/font/spacegrotesk-300-700.woff2"
+      ]
+    },
+    {
+      "what": "Type",
+      "title": "IBM Plex Mono",
+      "author": "Mike Abbink, IBM",
+      "source": "Google Fonts",
+      "url": "https://fonts.google.com/specimen/IBM+Plex+Mono",
+      "licence": "SIL OFL 1.1",
+      "note": "Self-hosted Latin subset via Fontsource.",
+      "credit_file": "font/ibmplexmono-400.woff2.credit.json",
+      "files": [
+        "font/ibmplexmono-400.woff2",
+        "font/ibmplexmono-500.woff2"
+      ]
+    }
+  ]
+}

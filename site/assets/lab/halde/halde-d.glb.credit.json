@@ -1,0 +1,13 @@
+{
+ "title": "Camera 01",
+ "author": "Rajil Jose Macatangay",
+ "author_url": "https://polyhaven.com/all?a=Rajil%20Jose%20Macatangay",
+ "source_url": "https://polyhaven.com/a/Camera_01",
+ "licence": "CC0 1.0",
+ "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+ "attribution": "\"Camera 01\" by Rajil Jose Macatangay, Poly Haven (https://polyhaven.com/a/Camera_01), CC0 1.0 (courtesy credit; no attribution required)",
+ "changes": "4K-texture glTF; original maker markings removed (inpainted in colour + normal maps) and replaced with the fictional HALDE engraving; textures resized to WebP, meshopt geometry",
+ "downloaded": "2026-10-27",
+ "file": "halde-d.glb",
+ "credit_written_by": "credits backfill 2026-10-28 (work/beast/credits/backfill)"
+}

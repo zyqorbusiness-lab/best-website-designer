@@ -1,0 +1,13 @@
+{
+ "title": "Manrope",
+ "author": "Mikhail Sharanda",
+ "author_url": "https://github.com/sharanda/manrope",
+ "source_url": "https://fonts.google.com/specimen/Manrope",
+ "licence": "SIL OFL 1.1",
+ "licence_url": "https://openfontlicense.org/open-font-license-official-text/",
+ "attribution": "Manrope by Mikhail Sharanda, SIL Open Font License 1.1 (https://github.com/sharanda/manrope)",
+ "changes": "self-hosted variable woff2, Latin subset (via Fontsource); OFL permits subsetting and conversion; family name unchanged",
+ "downloaded": "2026-10-31",
+ "file": "manrope-var.woff2",
+ "credit_written_by": "portfolio fixes round 1, 2026-10-31"
+}

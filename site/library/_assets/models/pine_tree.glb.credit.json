@@ -1,0 +1,11 @@
+{
+  "title": "Pine Tree",
+  "author": "evolveduk",
+  "author_url": "https://sketchfab.com/evolveduk",
+  "source_url": "https://sketchfab.com/3d-models/pine-tree-d45218a3fab349e5b1de040f29e7b6f9",
+  "licence": "CC BY 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "\"Pine Tree\" by evolveduk (https://sketchfab.com/3d-models/pine-tree-d45218a3fab349e5b1de040f29e7b6f9), licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Changes: Optimised for web (textures WebP, trunk maps 128 px, needles 1024 px, normal maps dropped, meshopt, all 5,627 triangles kept), packed as one GLB; tinted and snow-dusted by a shader in the page.",
+  "changes": "Optimised for web (textures WebP, trunk maps 128 px, needles 1024 px, normal maps dropped, meshopt, all 5,627 triangles kept), packed as one GLB; tinted and snow-dusted by a shader in the page.",
+  "downloaded": "2026-10-29"
+}

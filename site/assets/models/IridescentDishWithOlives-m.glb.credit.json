@@ -1,0 +1,13 @@
+{
+ "title": "IridescentDishWithOlives",
+ "author": "Eric Chadwick (Wayfair, LLC, 2020, Everything, CC-BY-4.0)",
+ "author_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/IridescentDishWithOlives",
+ "source_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/IridescentDishWithOlives",
+ "licence": "CC BY 4.0",
+ "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+ "attribution": "\"IridescentDishWithOlives\" © 2020 Wayfair, LLC (artist Eric Chadwick), licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), via Khronos glTF Sample Assets (https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/IridescentDishWithOlives). Changed by Zyqor Studio.",
+ "changes": "recompressed (meshopt + WebP, smaller textures) phone variant; currently only referenced by lab/_test (not shipped on a public page)",
+ "downloaded": "2026-10-27",
+ "file": "IridescentDishWithOlives-m.glb",
+ "credit_written_by": "credits backfill 2026-10-28 (work/beast/credits/backfill)"
+}

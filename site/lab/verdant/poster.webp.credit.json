@@ -1,0 +1,13 @@
+{
+ "title": "Potted Plant 02",
+ "author": "Rico Cilliers",
+ "author_url": "https://polyhaven.com/all?a=Rico%20Cilliers",
+ "source_url": "https://polyhaven.com/a/potted_plant_02",
+ "licence": "CC0 1.0",
+ "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+ "attribution": "\"Potted Plant 02\" by Rico Cilliers, Poly Haven (https://polyhaven.com/a/potted_plant_02), CC0 1.0 (courtesy credit; no attribution required)",
+ "changes": "render of the scanned plant in Chrome (no AI); rebuilt from the 4K source at 2048 px (leaf alpha merged into colour, normal, ARM), WebP q90 + meshopt; same file on phone and desktop",
+ "downloaded": "2026-10-27",
+ "file": "poster.webp",
+ "credit_written_by": "credits backfill 2026-10-28 (work/beast/credits/backfill)"
+}

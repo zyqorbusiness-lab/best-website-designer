@@ -1,0 +1,13 @@
+{
+ "title": "DM Sans",
+ "author": "Colophon Foundry, Jonny Pinhorn, Indian Type Foundry",
+ "author_url": "https://github.com/googlefonts/dm-fonts",
+ "source_url": "https://fonts.google.com/specimen/DM+Sans",
+ "licence": "SIL OFL 1.1",
+ "licence_url": "https://openfontlicense.org/open-font-license-official-text/",
+ "attribution": "DM Sans by Colophon Foundry, Jonny Pinhorn, Indian Type Foundry, SIL Open Font License 1.1 (https://github.com/googlefonts/dm-fonts)",
+ "changes": "self-hosted variable woff2, Latin subset (via Fontsource); OFL permits subsetting and conversion; family name unchanged",
+ "downloaded": "2026-10-31",
+ "file": "dmsans-var.woff2",
+ "credit_written_by": "portfolio fixes round 1, 2026-10-31"
+}

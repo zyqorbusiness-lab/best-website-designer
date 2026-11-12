@@ -1,0 +1,146 @@
+{
+ "id": "P041",
+ "date": "2026-10-31T13:57:13.277Z",
+ "kit": 2,
+ "verdict": "PASS",
+ "tier": "premium",
+ "budgetKB": 6144,
+ "ownKB": 2151,
+ "sharedKB": 763,
+ "phoneOwnKB": 2136,
+ "phoneSharedKB": 763,
+ "weightKB": 2914,
+ "phoneWeightKB": 2899,
+ "sameAssets": true,
+ "assetDiff": {
+  "desktopOnly": [],
+  "phoneOnly": []
+ },
+ "assets3d": [
+  "img/base-baked.webp",
+  "img/base-cheese.webp",
+  "img/base-raw.webp",
+  "img/basil-raw-1.webp",
+  "img/basil-raw-3.webp",
+  "img/basil-raw-4.webp",
+  "img/board.webp",
+  "img/dough.webp",
+  "img/mush-raw-1.webp",
+  "img/mush-raw-2.webp",
+  "img/onion-raw-1.webp",
+  "img/onion-raw-2.webp",
+  "img/pep-raw-1.webp",
+  "img/pep-raw-3.webp",
+  "img/pepper-raw-1.webp",
+  "img/pepper-raw-2.webp"
+ ],
+ "sameEffects": true,
+ "effectDiff": [],
+ "effects": {
+  "toneMapping": "ACESFilmic",
+  "exposure": 1.05,
+  "shadows": true,
+  "antialias": true,
+  "passes": [],
+  "dprCap": [
+   null,
+   null
+  ]
+ },
+ "nowebgl": true,
+ "credit": {
+  "pass": true,
+  "files": 26,
+  "missing": [],
+  "incomplete": [],
+  "ccby": [
+   "/library/p/P041/img/base-baked.webp",
+   "/library/p/P041/img/base-cheese.webp",
+   "/library/p/P041/img/base-raw.webp",
+   "/library/p/P041/img/basil-raw-1.webp",
+   "/library/p/P041/img/basil-raw-3.webp",
+   "/library/p/P041/img/basil-raw-4.webp",
+   "/library/p/P041/img/hero-pizza-m.webp",
+   "/library/p/P041/img/mozz-raw-1.webp",
+   "/library/p/P041/img/oven-fire-m.webp",
+   "/library/p/P041/img/pepper-raw-1.webp",
+   "/library/p/P041/img/pepper-raw-2.webp"
+  ],
+  "ccbyNotVisible": [],
+  "unlisted": []
+ },
+ "runs": {
+  "d1440": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": true,
+   "ownKB": 2151,
+   "sharedKB": 763
+  },
+  "m390": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": true,
+   "ownKB": 2136,
+   "sharedKB": 763
+  },
+  "m360": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": true,
+   "ownKB": 2152,
+   "sharedKB": 763
+  },
+  "rd1440": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": true,
+   "ownKB": 2152,
+   "sharedKB": 763
+  },
+  "rm390": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": true,
+   "ownKB": 2152,
+   "sharedKB": 763
+  },
+  "nd1440": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": false,
+   "poster": true,
+   "ownKB": 1095,
+   "sharedKB": 763
+  },
+  "nm390": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": false,
+   "poster": true,
+   "ownKB": 1095,
+   "sharedKB": 763
+  }
+ }
+}

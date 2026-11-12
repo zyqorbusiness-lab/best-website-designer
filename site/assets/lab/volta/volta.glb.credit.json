@@ -1,0 +1,17 @@
+{
+ "title": "Car Concept",
+ "author": "Eric Chadwick (Darmstadt Graphics Group GmbH, 2024, Model and textures, CC-BY-4.0)",
+ "author_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/CarConcept",
+ "source_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/CarConcept",
+ "licence": "CC BY 4.0",
+ "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+ "attribution": "\"Car Concept\" © 2024 Darmstadt Graphics Group GmbH (artist Eric Chadwick), licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), via Khronos glTF Sample Assets (https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/CarConcept). Changed by Zyqor Studio.",
+ "changes": "full-detail version (213k triangles) recompressed (meshopt + WebP); licence plate removed; tyre sidewall artwork replaced with fictional 'VOLTA CONCEPT' lettering; Khronos/3D Commerce logos removed (trademarks)",
+ "downloaded": "2026-10-27",
+ "trademarks": [
+  "Khronos logo",
+  "3D Commerce logo"
+ ],
+ "file": "volta.glb",
+ "credit_written_by": "credits backfill 2026-10-28 (work/beast/credits/backfill)"
+}

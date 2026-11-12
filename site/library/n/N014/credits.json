@@ -1,0 +1,108 @@
+{
+  "brand": "Glint Eyewear",
+  "id": "N014",
+  "items": [
+    {
+      "what": "3D model",
+      "title": "Round Spectacles",
+      "author": "Sean Buckley",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/round_spectacles",
+      "licence": "CC0 1.0",
+      "note": "Hero glasses, the exploded frame and the finishes. 2K glTF re-encoded once (meshopt, WebP), all 11,810 triangles kept. The page splits it into its own connected pieces and measures them; the wire is shown in warm gold and the four finishes, the lens glass is replaced by our refraction shader. Same file on phone and desktop.",
+      "files": [
+        "../../_assets/models/round_spectacles.glb"
+      ]
+    },
+    {
+      "what": "3D model",
+      "title": "Magnifying Glass 01",
+      "author": "Nazar Borodavka",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/magnifying_glass_01",
+      "licence": "CC0 1.0",
+      "note": "The two '1 or 2' lenses in #exam. 1K glTF packed once (meshopt, WebP 512 px), all 7,240 triangles kept; ring and handle shown in warm tortoise brown, lens glass replaced by our refraction shader.",
+      "files": [
+        "../../_assets/models/magnifying_glass_01.glb"
+      ]
+    },
+    {
+      "what": "3D model",
+      "title": "Vintage Wooden Drawer 01",
+      "author": "James Ray Cock",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/vintage_wooden_drawer_01",
+      "licence": "CC0 1.0",
+      "note": "The frame drawer the glasses rest on in #finishes, scaled to a tabletop size; its top middle drawer slides open. 1K glTF packed once (meshopt, WebP 512 px), all 5,184 triangles kept.",
+      "files": [
+        "../../_assets/models/vintage_wooden_drawer_01.glb"
+      ]
+    },
+    {
+      "what": "HDRI",
+      "title": "Studio Small 09",
+      "author": "Sergej Majboroda",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/studio_small_09",
+      "licence": "CC0 1.0",
+      "note": "Shared kit lighting and lens reflections (site/assets/hdri)."
+    },
+    {
+      "what": "Poster and thumbnail",
+      "title": "Glint Eyewear poster (WebGL fallback still) and thumbnail",
+      "author": "Zyqor Studio",
+      "licence": "MIT",
+      "files": [
+        "poster.webp",
+        "thumb.webp"
+      ],
+      "note": "Screenshots of this page's own real-time render of the CC0 models. Real-time render, no generated imagery."
+    },
+    {
+      "what": "Eye chart",
+      "title": "Snellen-style eye chart",
+      "author": "Zyqor Studio",
+      "licence": "MIT",
+      "note": "Drawn in code on a canvas (chart.js): eight rows, each 0.8x the one above."
+    },
+    {
+      "what": "Fit drawing and tortoise pattern",
+      "title": "Frame fit drawing, tortoise finish",
+      "author": "Zyqor Studio",
+      "licence": "MIT",
+      "note": "Drawn in code (SVG from the model's measured parts; canvas pattern)."
+    },
+    {
+      "what": "Type",
+      "title": "Archivo",
+      "author": "Omnibus-Type",
+      "source": "Google Fonts",
+      "url": "https://fonts.google.com/specimen/Archivo",
+      "licence": "SIL OFL 1.1"
+    },
+    {
+      "what": "Type",
+      "title": "Inter Tight",
+      "author": "The Inter Project Authors",
+      "source": "Google Fonts",
+      "url": "https://fonts.google.com/specimen/Inter+Tight",
+      "licence": "SIL OFL 1.1"
+    },
+    {
+      "what": "Type",
+      "title": "JetBrains Mono",
+      "author": "The JetBrains Mono Project Authors",
+      "source": "GitHub",
+      "url": "https://github.com/JetBrains/JetBrainsMono",
+      "licence": "SIL OFL 1.1"
+    },
+    {
+      "what": "Engine",
+      "title": "three.js r170",
+      "author": "three.js authors",
+      "source": "npm",
+      "url": "https://threejs.org",
+      "licence": "MIT"
+    }
+  ]
+}

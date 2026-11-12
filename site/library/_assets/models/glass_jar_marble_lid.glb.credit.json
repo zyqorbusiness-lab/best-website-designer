@@ -1,0 +1,11 @@
+{
+  "title": "Glass Jar with Marble Lid 2.0",
+  "author": "InGameStudio",
+  "author_url": "https://sketchfab.com/ingamestudio",
+  "source_url": "https://sketchfab.com/3d-models/glass-jar-with-marble-lid-20-f5383b6b32eb4439b874473b6d52df0c",
+  "licence": "CC BY 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "\"Glass Jar with Marble Lid 2.0\" by InGameStudio (https://sketchfab.com/3d-models/glass-jar-with-marble-lid-20-f5383b6b32eb4439b874473b6d52df0c), licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Changes: Spec/gloss material converted to metal/rough; optimised for web (texture resized 2048->1024 px WebP, meshopt, all 24,334 triangles kept), packed as one GLB; in the page only the middle jar of the set is shown and its materials are replaced in code (palette-tinted marble lid, transmission glass).",
+  "changes": "Spec/gloss material converted to metal/rough; optimised for web (texture resized 2048->1024 px WebP, meshopt, all 24,334 triangles kept), packed as one GLB; in the page only the middle jar of the set is shown and its materials are replaced in code (palette-tinted marble lid, transmission glass).",
+  "downloaded": "2026-10-29"
+}

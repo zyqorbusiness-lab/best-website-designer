@@ -1,0 +1,13 @@
+{
+ "title": "SheenChair",
+ "author": "Eric Chadwick (Wayfair, LLC, 2020, Everything, CC0-1.0)",
+ "author_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/SheenChair",
+ "source_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/SheenChair",
+ "licence": "CC0 1.0",
+ "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+ "attribution": "\"SheenChair\" by Eric Chadwick (Wayfair, LLC), Khronos glTF Sample Assets (https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/SheenChair), CC0 1.0 (courtesy credit)",
+ "changes": "recompressed (meshopt + WebP, smaller textures) phone variant; currently only referenced by lab/_test (not shipped on a public page)",
+ "downloaded": "2026-10-27",
+ "file": "SheenChair-m.glb",
+ "credit_written_by": "credits backfill 2026-10-28 (work/beast/credits/backfill)"
+}
