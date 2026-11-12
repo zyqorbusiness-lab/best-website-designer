@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+<meta name="robots" content="noindex, nofollow">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- phone -> light build (m.html). ?desktop=1 keeps this page. -->
@@ -16,7 +17,7 @@
 <link rel="stylesheet" href="../../assets/glass/liquid-glass.css">
 <script type="application/json" id="lg-map">{".rs-copy .vf-tag": "lg lg-pill", ".vf-ctas .vf-pill.solid": "lg lg-btn lg--ink", ".vf-ctas .vf-pill:not(.solid)": "lg lg-btn"}</script>
 <script src="../../assets/glass/liquid-glass.js" defer></script>
-<link rel="canonical" href="https://zyqor-portfolio.vercel.app/lab/rise/">
+<link rel="canonical" href="index.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Zyqor Studio">
 <meta property="og:title" content="Rise No.3 &middot; Concept 14 &middot; Zyqor Lab">
@@ -24,7 +25,7 @@
 <meta property="og:url" content="https://zyqor-portfolio.vercel.app/lab/rise/">
 <meta property="og:image" content="https://zyqor-portfolio.vercel.app/lab/rise/poster.webp">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="alternate" media="only screen and (max-width: 640px)" href="https://zyqor-portfolio.vercel.app/lab/rise/m.html">
+<link rel="alternate" media="only screen and (max-width: 640px)" href="m.html">
 </head>
 <body data-slug="rise">
 <main id="main" class="vf rs-page">
@@ -37,7 +38,7 @@
         <h1 id="rs-h1" class="vf-d">Rise</h1>
         <p class="rs-kick vf-d">Pop. Fizz. Rise.</p>
         <p class="rs-sub">Strawberry water and a lot of bubbles. Scroll and the camera circles the can.</p>
-        <div class="vf-ctas"><a class="vf-pill solid vf-mag" href="#" data-noop><span>Find a can</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="vf-pill vf-mag" href="#inside"><span>What's inside</span></a></div>
+        <div class="vf-ctas"><a class="vf-pill solid vf-mag" href="index.html#" data-noop><span>Find a can</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="vf-pill vf-mag" href="index.html#inside"><span>What's inside</span></a></div>
         <ol class="rs3d-steps" aria-label="Scroll story"><li class="on"><b>01</b><span>Whole berries, cold-steeped</span></li><li><b>02</b><span>Pop the tab</span></li><li><b>03</b><span>Fine, slow fizz</span></li></ol>
       </div>
       <div class="rs-cue" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Scroll</span></div>
@@ -71,7 +72,7 @@
     <p class="vf-eyebrow" style="justify-content:center" data-rv>Rise No.3</p>
     <h2 id="vf-cta-h" class="vf-d vf-h" data-rv data-rv-d="1">Taste<br>the rise</h2>
     <p data-rv data-rv-d="2">A concept can for a fictional drinks brand. Nothing is for sale; the fizz is code.</p>
-    <div class="vf-ctas" data-rv data-rv-d="3"><a class="vf-pill solid vf-mag" href="#" data-noop><span>Find a can</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="vf-pill  vf-mag" href="#main"><span>Back to the can</span></a></div>
+    <div class="vf-ctas" data-rv data-rv-d="3"><a class="vf-pill solid vf-mag" href="index.html#" data-noop><span>Find a can</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="vf-pill  vf-mag" href="index.html#main"><span>Back to the can</span></a></div>
     <small class="vf-note" data-rv data-rv-d="4">Zyqor Lab concept. Fictional brand, real-time 3D.</small>
   </section>
 </main>
@@ -84,5 +85,6 @@
 <script type="module" src="../_kit/chrome.js"></script>
 <script type="module" src="can3d.js"></script>
 <script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-noop]');if(a){e.preventDefault();var t=document.getElementById('cta');if(t&&!a.closest('#cta'))t.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});}});</script>
+<script src="../../review-floor.js"></script>
 </body>
 </html>
