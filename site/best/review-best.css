@@ -1,0 +1,6 @@
+
+/* Review fixes: best-page captions and chips (2026-11-10) */
+.chip{font-size:12px!important;color:#1E4D46}
+.chip--concept{color:#F3EDE1!important}
+.num{color:#6E4C14!important;font-size:1.05rem!important}
+.info .line{font-size:1.15rem!important;color:#17423C}
