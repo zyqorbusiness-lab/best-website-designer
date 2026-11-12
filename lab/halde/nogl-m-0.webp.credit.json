@@ -1,0 +1,13 @@
+{
+ "title": "Halde camera still (phone; shown on the 3D canvas when WebGL is unavailable)",
+ "author": "Zyqor Studio",
+ "author_url": "https://zyqor-portfolio-v3.sites.tab.bot/",
+ "source_url": "https://zyqor-portfolio-v3.sites.tab.bot/lab/halde/",
+ "licence": "MIT",
+ "licence_url": "https://opensource.org/licenses/MIT",
+ "attribution": "Zyqor Studio (render of this demo's own 3D scene) — models: \"Camera 01\" by Rajil Jose Macatangay, Poly Haven (https://polyhaven.com/a/Camera_01), CC0 1.0 (courtesy credit; no attribution required)",
+ "changes": "one frame of the live 3D canvas at its first-screen state, canvas only, transparent where the canvas is; rendered in the live demo (three.js) with the page hidden, captured by Zyqor Studio, WebP",
+ "downloaded": "2026-10-28",
+ "file": "nogl-m-0.webp",
+ "credit_written_by": "v3 gaps 2026-10-28 (work/beast/v3gaps)"
+}

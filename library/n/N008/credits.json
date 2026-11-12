@@ -1,0 +1,196 @@
+{
+  "brand": "Northpine Cabins",
+  "id": "N008",
+  "items": [
+    {
+      "what": "3D model",
+      "title": "Wooden Cabin",
+      "author": "donnichols",
+      "source": "Sketchfab",
+      "url": "https://sketchfab.com/3d-models/wooden-cabin-c90674a377864ac1b8fd141ad1917ee3",
+      "licence": "CC BY 4.0",
+      "note": "Optimised (WebP maps, meshopt, all triangles kept); snow added by a shader in the page. Licence: https://creativecommons.org/licenses/by/4.0/",
+      "credit_file": "../../_assets/models/wooden_cabin.glb.credit.json",
+      "files": [
+        "../../_assets/models/wooden_cabin.glb"
+      ]
+    },
+    {
+      "what": "3D model",
+      "title": "Pine Tree",
+      "author": "evolveduk",
+      "source": "Sketchfab",
+      "url": "https://sketchfab.com/3d-models/pine-tree-d45218a3fab349e5b1de040f29e7b6f9",
+      "licence": "CC BY 4.0",
+      "note": "Optimised (WebP maps, meshopt, all triangles kept); tinted and snow-dusted by a shader; one model placed ten times. Licence: https://creativecommons.org/licenses/by/4.0/",
+      "credit_file": "../../_assets/models/pine_tree.glb.credit.json",
+      "files": [
+        "../../_assets/models/pine_tree.glb"
+      ]
+    },
+    {
+      "what": "Texture",
+      "title": "Snow 02 (normal map)",
+      "author": "Rob Tuytel",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/snow_02",
+      "licence": "CC0 1.0",
+      "note": "Surface relief on the ground. 512 px WebP.",
+      "files": [
+        "../../_assets/tex/snow_02_nor_512.webp"
+      ]
+    },
+    {
+      "what": "3D model",
+      "title": "Stone Fire Pit",
+      "author": "Sebastian Platen",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/stone_fire_pit",
+      "licence": "CC0 1.0",
+      "note": "gltf-transform: meshopt + WebP 512 px (2.54 MB to 158 KB).",
+      "files": [
+        "../../_assets/models/stone_fire_pit.glb"
+      ]
+    },
+    {
+      "what": "3D model",
+      "title": "Tree Stump 01",
+      "author": "Rob Tuytel",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/tree_stump_01",
+      "licence": "CC0 1.0",
+      "note": "gltf-transform: simplified to 15%, meshopt + WebP 256 px (3.94 MB to 145 KB).",
+      "files": [
+        "../../_assets/models/tree_stump_01.glb"
+      ]
+    },
+    {
+      "what": "3D model",
+      "title": "Wooden Axe",
+      "author": "Ulan Cabanilla",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/wooden_axe",
+      "licence": "CC0 1.0",
+      "note": "gltf-transform: meshopt + WebP 256 px (2.03 MB to 52 KB).",
+      "files": [
+        "../../_assets/models/wooden_axe.glb"
+      ]
+    },
+    {
+      "what": "3D",
+      "title": "Rocks, pond, woodpile, snow shader",
+      "author": "Zyqor Studio",
+      "source": "code-made three.js",
+      "url": "",
+      "licence": "MIT",
+      "files": [],
+      "note": "made in code"
+    },
+    {
+      "what": "HDRI",
+      "title": "Studio Small 09",
+      "author": "Sergej Majboroda",
+      "source": "Poly Haven",
+      "url": "https://polyhaven.com/a/studio_small_09",
+      "licence": "CC0 1.0",
+      "note": "Shared kit lighting (site/assets/hdri).",
+      "files": [
+        "../../../assets/hdri/studio_1k.hdr",
+        "../../../assets/hdri/studio_512.hdr"
+      ]
+    },
+    {
+      "what": "Type",
+      "title": "Fraunces, Inter Tight",
+      "author": "Undercase Type, Mikhail Sharanda",
+      "source": "Google Fonts",
+      "url": "https://fonts.google.com",
+      "licence": "SIL Open Font License 1.1",
+      "files": [],
+      "note": " Body switched from Manrope to Inter Tight on Oct 31."
+    },
+    {
+      "what": "Type",
+      "title": "JetBrains Mono",
+      "author": "The JetBrains Mono Project Authors",
+      "source": "GitHub",
+      "url": "https://github.com/JetBrains/JetBrainsMono",
+      "licence": "SIL OFL 1.1",
+      "files": []
+    },
+    {
+      "what": "Engine",
+      "title": "three.js r170, GSAP, Lenis",
+      "author": "their authors",
+      "source": "npm",
+      "url": "https://threejs.org",
+      "licence": "MIT / GSAP Standard Licence",
+      "files": []
+    },
+    {
+      "what": "Images (code-made)",
+      "title": "Poster and library thumbnail",
+      "author": "Zyqor Studio",
+      "source": "frames of this page",
+      "url": "",
+      "licence": "MIT",
+      "note": "WebGL-fallback poster and index thumbnail, rendered from this page by tools/qa-library.mjs. No AI imagery.",
+      "files": [
+        "poster.webp",
+        "thumb.webp"
+      ]
+    },
+    {
+      "what": "Photo",
+      "title": "The Bond Cabin in winter. (c949ec4b-1500-4972-92c3-a995790ffdee).JPG",
+      "author": "NPS",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:The_Bond_Cabin_in_winter._(c949ec4b-1500-4972-92c3-a995790ffdee).JPG",
+      "licence": "Public domain",
+      "note": "Seasons card 'Getting in'. Cropped 4:5, 720x900 WebP.",
+      "credit_file": "img/season-path.webp.credit.json",
+      "files": [
+        "img/season-path.webp"
+      ]
+    },
+    {
+      "what": "Photo",
+      "title": "Davidof Cabin-Tongass-DJS-02 (52503137245).jpg",
+      "author": "Forest Service Alaska Region, USDA",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Davidof_Cabin-Tongass-DJS-02_(52503137245).jpg",
+      "licence": "Public domain",
+      "note": "Seasons card 'Light'. Cropped 4:5, 720x900 WebP.",
+      "credit_file": "img/season-light.webp.credit.json",
+      "files": [
+        "img/season-light.webp"
+      ]
+    },
+    {
+      "what": "Photo",
+      "title": "Haskell Hut is complete with a wood stove, perfect for warming up by the fire. (71b7b094-3d61-4426-a432-3b883a47cdd9).JPG",
+      "author": "NPS",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Haskell_Hut_is_complete_with_a_wood_stove,_perfect_for_warming_up_by_the_fire._(71b7b094-3d61-4426-a432-3b883a47cdd9).JPG",
+      "licence": "Public domain",
+      "note": "Seasons card 'Warmth'. Cropped 4:5, 720x900 WebP.",
+      "credit_file": "img/season-stove.webp.credit.json",
+      "files": [
+        "img/season-stove.webp"
+      ]
+    },
+    {
+      "what": "Photo",
+      "title": "Lake Creek in snow, Oregon - Flickr - Bonnie Moreland (free images).jpg",
+      "author": "Bonnie Moreland",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Lake_Creek_in_snow,_Oregon_-_Flickr_-_Bonnie_Moreland_(free_images).jpg",
+      "licence": "Public domain",
+      "note": "Seasons card 'The pond'. Cropped 4:5, 720x900 WebP.",
+      "credit_file": "img/season-pond.webp.credit.json",
+      "files": [
+        "img/season-pond.webp"
+      ]
+    }
+  ]
+}

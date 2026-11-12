@@ -1,0 +1,11 @@
+{
+ "title": "Dew Theory phone poster (no-WebGL fallback)",
+ "author": "Zyqor Studio",
+ "author_url": "https://zyqor-portfolio-v3.sites.tab.bot/",
+ "source_url": "https://zyqor-portfolio-v3.sites.tab.bot/lab/dew/",
+ "licence": "MIT",
+ "licence_url": "https://opensource.org/licenses/MIT",
+ "attribution": "Zyqor Studio (made in code)",
+ "changes": "render of this demo's own 3D scene (real Ideekay_012 bottle, CC BY 4.0, plus code-made parts), captured by Zyqor Studio; the bottle's CC BY 4.0 attribution applies",
+ "downloaded": "2026-10-28"
+}

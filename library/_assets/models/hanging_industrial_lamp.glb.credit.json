@@ -1,0 +1,12 @@
+{
+ "title": "Hanging Industrial Lamp",
+ "author": "Kuutti Siitonen",
+ "author_url": "https://polyhaven.com/all?a=Kuutti%20Siitonen",
+ "source_url": "https://polyhaven.com/a/hanging_industrial_lamp",
+ "licence": "CC0 1.0",
+ "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+ "attribution": "\"Hanging Industrial Lamp\" by Kuutti Siitonen, Poly Haven (https://polyhaven.com/a/hanging_industrial_lamp), CC0 1.0 (courtesy credit; no attribution required)",
+ "changes": "1K glTF from Poly Haven packed once for phone and desktop: textures WebP at 512 px max (a background prop; keeps the page inside its weight budget), meshopt compression, all triangles kept (no simplification), one GLB",
+ "downloaded": "2026-10-30",
+ "file": "hanging_industrial_lamp.glb"
+}

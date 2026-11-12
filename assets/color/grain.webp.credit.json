@@ -1,0 +1,13 @@
+{
+ "title": "Film grain tile (256 px)",
+ "author": "Zyqor Studio",
+ "author_url": "https://zyqor-portfolio-v3.sites.tab.bot/",
+ "source_url": "https://zyqor-portfolio-v3.sites.tab.bot/",
+ "licence": "MIT",
+ "licence_url": "https://opensource.org/licenses/MIT",
+ "attribution": "Zyqor Studio (made in code)",
+ "changes": "generated in Python (NumPy + Pillow) by Zyqor Studio",
+ "downloaded": "2026-10-27",
+ "file": "grain.webp",
+ "credit_written_by": "credits backfill 2026-10-28 (work/beast/credits/backfill)"
+}

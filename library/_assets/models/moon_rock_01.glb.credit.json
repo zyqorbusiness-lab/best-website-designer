@@ -1,0 +1,13 @@
+{
+ "title": "Moon Rock 01",
+ "author": "Greg Zaal, Rico Cilliers, Jenelle van Heerden, Dario Barresi",
+ "author_url": "https://polyhaven.com/all?a=Greg%20Zaal",
+ "source_url": "https://polyhaven.com/a/moon_rock_01",
+ "licence": "CC0 1.0",
+ "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+ "attribution": "\"Moon Rock 01\" by Greg Zaal, Rico Cilliers, Jenelle van Heerden, Dario Barresi, Poly Haven (https://polyhaven.com/a/moon_rock_01), CC0 1.0 (courtesy credit; no attribution required)",
+ "changes": "glTF optimised with gltf-transform (meshopt geometry, WebP textures 1K-2K) and packed as one GLB; same file on desktop and phone",
+ "downloaded": "2026-10-28",
+ "file": "moon_rock_01.glb",
+ "credit_written_by": "credits backfill 2026-10-28 (work/beast/credits/backfill)"
+}

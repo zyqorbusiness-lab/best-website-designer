@@ -1,0 +1,12 @@
+{
+ "downloaded": "2026-11-02",
+ "title": "Sunglasses Khronos",
+ "author": "Eric Chadwick, Darmstadt Graphics Group GmbH",
+ "author_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/SunglassesKhronos",
+ "source_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/SunglassesKhronos/glTF-Binary/SunglassesKhronos.glb",
+ "licence": "CC BY 4.0",
+ "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+ "attribution": "\"Sunglasses Khronos\" by Eric Chadwick, Darmstadt Graphics Group GmbH (Khronos glTF Sample Assets), CC BY 4.0",
+ "changes": "GLB unchanged on disk; at runtime only the geometry is used: every material is replaced in code (acetate finishes, tinted lenses), and the earhook texture carrying the Khronos and 3D Commerce logos (Khronos trademarks, not part of this credit) is never shown",
+ "file": "frame.glb"
+}

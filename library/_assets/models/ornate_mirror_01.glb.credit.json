@@ -1,0 +1,12 @@
+{
+ "title": "Ornate Mirror 01",
+ "author": "James Ray Cock",
+ "author_url": "https://polyhaven.com/all?a=James%20Ray%20Cock",
+ "source_url": "https://polyhaven.com/a/ornate_mirror_01",
+ "licence": "CC0 1.0",
+ "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+ "attribution": "\"Ornate Mirror 01\" by James Ray Cock, Poly Haven (https://polyhaven.com/a/ornate_mirror_01), CC0 1.0 (courtesy credit; no attribution required)",
+ "changes": "1K glTF from Poly Haven packed once for phone and desktop: textures WebP at 1024 px max, meshopt compression, all triangles kept (no simplification), one GLB",
+ "downloaded": "2026-10-30",
+ "file": "ornate_mirror_01.glb"
+}

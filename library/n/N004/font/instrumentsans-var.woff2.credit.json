@@ -1,0 +1,12 @@
+{
+ "title": "Instrument Sans",
+ "author": "Rodrigo Fuenzalida, Jordan Egstad",
+ "author_url": "https://github.com/Instrument/instrument-sans",
+ "source_url": "https://fonts.google.com/specimen/Instrument+Sans",
+ "licence": "SIL OFL 1.1",
+ "licence_url": "https://openfontlicense.org/open-font-license-official-text/",
+ "attribution": "Instrument Sans by Rodrigo Fuenzalida, Jordan Egstad, SIL Open Font License 1.1 (https://github.com/Instrument/instrument-sans)",
+ "changes": "self-hosted variable woff2, Latin subset (Fontsource build of the Google Fonts release); family name unchanged",
+ "downloaded": "2026-10-31",
+ "file": "instrumentsans-var.woff2"
+}

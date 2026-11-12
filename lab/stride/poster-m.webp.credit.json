@@ -1,0 +1,13 @@
+{
+ "title": "Materials Variants Shoe",
+ "author": "Shopify (Shopify, 2021, Everthing, CC-BY-4.0)",
+ "author_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/MaterialsVariantsShoe",
+ "source_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/MaterialsVariantsShoe",
+ "licence": "CC BY 4.0",
+ "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+ "attribution": "\"Materials Variants Shoe\" © 2021 Shopify (artist Shopify), licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), via Khronos glTF Sample Assets (https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/MaterialsVariantsShoe). Changed by Zyqor Studio.",
+ "changes": "real-time render of the model on the Stride page; rebuilt from the original 2048 px textures (WebP q92 + meshopt), resized; colourway names and STRIDE branding are fictional; no real brand mark",
+ "downloaded": "2026-10-27",
+ "file": "poster-m.webp",
+ "credit_written_by": "credits backfill 2026-10-28 (work/beast/credits/backfill)"
+}

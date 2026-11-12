@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- phone -> m.html (separate phone build). ?desktop=1 keeps this page -->
+<script>document.documentElement.classList.add('js');(function(){var q=location.search;if(/[?&]desktop=1/.test(q))return;var c=matchMedia('(hover: none) and (pointer: coarse)').matches,w=innerWidth||screen.width,h=innerHeight||screen.height,phone=w<=860||(c&&h>w);if(phone)location.replace('m.html'+q+location.hash);})();</script>
+<title>{{NAME}} &middot; Concept {{ID}} &middot; Zyqor Library</title>
+<meta name="description" content="{{NAME}} is a fictional brand: a {{TIER_LOWER}} 3D web concept by Zyqor Studio. {{IDEA}}">
+<meta name="theme-color" content="{{C1}}">
+<meta property="og:title" content="{{NAME}} &middot; Concept {{ID}} &middot; Zyqor Library">
+<meta property="og:description" content="A fictional-brand 3D concept by Zyqor Studio.">
+<meta property="og:image" content="thumb.webp">
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../_kit/stage.js" as="script" crossorigin>
+<link rel="stylesheet" href="../../_kit/concept.css">
+<link rel="stylesheet" href="style.css">
+<style>:root{--c1:{{C1}};--c2:{{C2}};--c3:{{C3}}}</style>
+<script type="importmap">{"imports":{"three":"../../../vendor/three/three.module.min.js","three/addons/":"../../../vendor/three/addons/"}}</script>
+</head>
+<body class="grain" data-id="{{ID}}" data-tier="{{TIER}}" data-name="{{NAME}}">
+<a class="skip" href="#main">Skip to content</a>
+<main id="main">
+  <!-- Pick ONE of the 14 named structures (brief.md). This template is structure 03 (scroll-driven 3D showcase) at its smallest. -->
+  <section class="hero">
+    <div class="hero-copy wrap">
+      <p class="tag" data-rv>{{CATEGORY}} &middot; Concept {{ID}}</p>
+      <h1 class="display" data-rv data-split>{{NAME}}</h1>
+      <p class="lead" data-rv>{{IDEA}}</p>
+      <div class="hero-cta" data-rv>
+        <button class="btn btn--accent" type="button" data-press data-action="primary">Turn it
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.34-5.66M20 4v4h-4"/></svg></button>
+        <span class="mono hint">Drag the object</span>
+      </div>
+    </div>
+    <div class="hero-stage" data-stage>
+      <noscript><img class="poster" src="poster.webp" alt=""></noscript>
+    </div>
+  </section>
+  <section class="section detail">
+    <div class="wrap detail-in">
+      <p class="tag" data-rv>Signature detail</p>
+      <h2 class="h2" data-rv>Say what the interaction proves, in one line.</h2>
+      <p class="body" data-rv>Concrete copy only. No "unlock the power of", no em dashes, no fake numbers, no testimonials.</p>
+    </div>
+  </section>
+</main>
+<script src="../../../vendor/gsap.min.js" defer></script>
+<script src="../../../vendor/ScrollTrigger.min.js" defer></script>
+<script src="../../../vendor/lenis.min.js" defer></script>
+<script type="module" src="../../_kit/chrome.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

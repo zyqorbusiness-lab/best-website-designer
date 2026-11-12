@@ -1,0 +1,15 @@
+{
+ "title": "Earthrise (Apollo 8, AS8-14-2383)",
+ "author": "NASA / Bill Anders",
+ "author_url": "https://www.nasa.gov/",
+ "source_url": "https://commons.wikimedia.org/wiki/File:NASA-Apollo8-Dec24-Earthrise.jpg",
+ "licence": "Public domain (NASA)",
+ "licence_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+ "attribution": "\"Earthrise\" by Bill Anders, NASA (Apollo 8, 24 December 1968), Wikimedia Commons (https://commons.wikimedia.org/wiki/File:NASA-Apollo8-Dec24-Earthrise.jpg), public domain",
+ "changes": "cropped to 4:5 around the Earth and horizon, resized, converted to WebP",
+ "downloaded": "2026-10-31",
+ "verified": true,
+ "verified_note": "licence read from the Wikimedia Commons file page API on 2026-10-31",
+ "file": "earthrise-m.webp",
+ "credit_written_by": "portfolio fixes round 1, 2026-10-31"
+}

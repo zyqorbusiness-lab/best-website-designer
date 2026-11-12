@@ -1,0 +1,12 @@
+{
+ "title": "Bricolage Grotesque",
+ "author": "Mathieu Triay",
+ "author_url": "https://github.com/ateliertriay/bricolage",
+ "source_url": "https://fonts.google.com/specimen/Bricolage+Grotesque",
+ "licence": "SIL OFL 1.1",
+ "licence_url": "https://openfontlicense.org/open-font-license-official-text/",
+ "attribution": "Bricolage Grotesque by Mathieu Triay, SIL Open Font License 1.1 (https://github.com/ateliertriay/bricolage)",
+ "changes": "downloaded from Google Fonts (latin woff2), variable font instanced to opsz 96, weight 700-800, subset to Latin with fontTools; family name unchanged",
+ "downloaded": "2026-10-31",
+ "file": "bricolage-hd.woff2"
+}

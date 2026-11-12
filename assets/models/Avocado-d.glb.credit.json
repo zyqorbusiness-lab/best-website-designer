@@ -1,0 +1,13 @@
+{
+ "title": "Avocado",
+ "author": "Microsoft (Public, 2017, Everything, CC0-1.0)",
+ "author_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/Avocado",
+ "source_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/Avocado",
+ "licence": "CC0 1.0",
+ "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+ "attribution": "\"Avocado\" by Microsoft (Public), Khronos glTF Sample Assets (https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/Avocado), CC0 1.0 (courtesy credit)",
+ "changes": "recompressed (meshopt + WebP) desktop variant; currently only referenced by lab/_test (not shipped on a public page)",
+ "downloaded": "2026-10-27",
+ "file": "Avocado-d.glb",
+ "credit_written_by": "credits backfill 2026-10-28 (work/beast/credits/backfill)"
+}

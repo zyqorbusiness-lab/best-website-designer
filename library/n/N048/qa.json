@@ -1,0 +1,131 @@
+{
+ "id": "N048",
+ "date": "2026-10-30T21:16:14.608Z",
+ "kit": 2,
+ "verdict": "PASS",
+ "tier": "normal",
+ "budgetKB": 1536,
+ "ownKB": 1301,
+ "sharedKB": 1467,
+ "phoneOwnKB": 1286,
+ "phoneSharedKB": 1467,
+ "weightKB": 3557,
+ "phoneWeightKB": 3542,
+ "sameAssets": true,
+ "assetDiff": {
+  "desktopOnly": [],
+  "phoneOnly": []
+ },
+ "assets3d": [
+  "/assets/hdri/studio_512.hdr",
+  "/library/_assets/models/barbershopchair_01.glb",
+  "/library/_assets/models/hanging_industrial_lamp.glb",
+  "/library/_assets/models/metal_stool_01.glb",
+  "/library/_assets/models/ornate_mirror_01.glb",
+  "/library/_assets/models/shelf_01.glb",
+  "/library/_assets/models/standing_chalkboard_01.glb"
+ ],
+ "sameEffects": true,
+ "effectDiff": [],
+ "effects": {
+  "toneMapping": 4,
+  "exposure": 1,
+  "outputColorSpace": "srgb",
+  "shadows": true,
+  "shadowType": 2,
+  "antialias": true,
+  "envIntensity": 0.8,
+  "background": "color",
+  "passes": [],
+  "contactShadows": 1,
+  "demand": true,
+  "dprCap": [
+   2,
+   2
+  ]
+ },
+ "nowebgl": true,
+ "credit": {
+  "pass": true,
+  "files": 11,
+  "missing": [],
+  "incomplete": [],
+  "ccby": [],
+  "ccbyNotVisible": [],
+  "unlisted": []
+ },
+ "runs": {
+  "d1440": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": true,
+   "ownKB": 1301,
+   "sharedKB": 1467
+  },
+  "m390": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": true,
+   "ownKB": 1286,
+   "sharedKB": 1467
+  },
+  "m360": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": true,
+   "ownKB": 1305,
+   "sharedKB": 1467
+  },
+  "rd1440": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": true,
+   "ownKB": 1301,
+   "sharedKB": 1467
+  },
+  "rm390": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": true,
+   "ownKB": 1305,
+   "sharedKB": 1467
+  },
+  "nd1440": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": false,
+   "poster": true,
+   "ownKB": 135,
+   "sharedKB": 787
+  },
+  "nm390": {
+   "pass": true,
+   "errors": 0,
+   "warnings": 0,
+   "failed": 0,
+   "overflow": 0,
+   "webgl": false,
+   "poster": true,
+   "ownKB": 140,
+   "sharedKB": 787
+  }
+ }
+}
