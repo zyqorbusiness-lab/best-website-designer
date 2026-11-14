@@ -230,6 +230,10 @@ html:not(.cur-on) .lab-card:hover .lab-shot::before,.lab-card:focus-visible .lab
 
 /* phones: stack section heads instead of the 12-column desktop grid */
 @media (max-width:860px){
+ .proj,.proj:nth-child(even){grid-template-columns:1fr;gap:26px}
+ .proj .shot{order:0}.proj .info{order:1}
+ .v4-slot--feature{aspect-ratio:auto}
+ .v4-feature-frame{flex:none;aspect-ratio:16/10}
  .is-desktop .sec-head{display:flex!important;flex-direction:column;align-items:stretch;gap:20px}
  .is-desktop .sec-head>div[data-reveal]{display:flex;flex-direction:column;align-items:stretch}
  .is-desktop .sec-head>div[data-reveal]>.kicker{padding-top:0}

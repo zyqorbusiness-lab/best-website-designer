@@ -17,6 +17,7 @@
   .v4-hero-grid{grid-template-columns:1fr}
   .v4-hero{padding:118px 0 56px}
   .v4-slot{aspect-ratio:16/10}
+  .v4-slot--feature{aspect-ratio:auto}
 }
 @media (max-width:640px){
   .v4-hero h1{font-size:clamp(38px,11vw,54px)}
