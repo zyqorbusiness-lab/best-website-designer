@@ -15,7 +15,7 @@ html.lenis,html.lenis body{height:auto}
 .ld::before{top:0}.ld::after{bottom:0}
 .ld .ld-box{position:relative;z-index:2;transition:opacity .35s ease,transform .6s cubic-bezier(.76,0,.24,1)}
 .ld-count{position:absolute;right:4vw;bottom:3vh;z-index:2;font:500 clamp(64px,13vw,190px)/.8 var(--sw-font-display);color:#17423C;letter-spacing:-.04em;font-variant-numeric:tabular-nums;transition:opacity .3s ease,transform .6s cubic-bezier(.76,0,.24,1)}
-.ld-count small{font-size:.28em;vertical-align:top;margin-left:.08em;color:#B5832F}
+.ld-count small{font-size:.28em;vertical-align:top;margin-left:.08em;color:#8A5F1C}
 .ld-tag{position:absolute;left:4vw;bottom:4vh;z-index:2;font:600 12px/1.4 var(--sw-font-body);letter-spacing:.18em;text-transform:uppercase;color:#4D6863;transition:opacity .3s ease}
 .ld-line{position:absolute;left:0;top:50%;height:2px;width:100%;z-index:1;background:#B5832F;transform-origin:0 50%;transform:scaleX(var(--p,0));transition:transform .25s linear,opacity .3s ease}
 .ld.is-out{opacity:1!important;visibility:visible!important;pointer-events:none}
@@ -142,7 +142,7 @@ html.is-dragging .hs-track a{pointer-events:none}
 .is-mobile .aur-css{animation:aur 14s ease-in-out infinite alternate}
 @keyframes aur{to{transform:translate3d(6%,-4%,0) rotate(8deg) scale(1.1)}}
 .contact.fin::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#17423C 0%,transparent 22%,transparent 78%,#17423C 100%);pointer-events:none}
-.way .cp{margin-left:auto;flex:none;display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:rgba(217,181,106,.16);color:#D9B56A;font-size:0}
+.way .cp{margin-left:auto;flex:none;display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;background:rgba(217,181,106,.16);color:#D9B56A;font-size:0}
 .is-desktop .contact.fin .ways{grid-template-columns:1fr 1.3fr 1fr}
 .way.em strong{word-break:normal;overflow-wrap:anywhere}
 .way .cp svg{width:14px;height:14px}
@@ -248,15 +248,15 @@ html.fx-on .cur-reveal.is-in{clip-path:inset(0 0 0 0)}
 .way .ico{transition:transform .45s cubic-bezier(.19,1,.22,1),background-color .3s}
 /* project card: info lifts when its card is hovered */
 .is-desktop .proj .info h3{transition:color .35s ease}
-.is-desktop .proj:hover .info h3{color:#B5832F}
+.is-desktop .proj:hover .info h3{color:#8A5F1C}
 .is-desktop .proj .info .num{transition:letter-spacing .5s cubic-bezier(.19,1,.22,1)}
 .is-desktop .proj:hover .info .num{letter-spacing:.24em}
 /* phone tap targets (40px minimum) */
 .is-mobile .sw-route{gap:4px;right:0}
 .is-mobile .sw-route__dot{width:40px;height:40px}
-.is-mobile .shot .vctl,.is-mobile .vctl{height:40px;min-height:40px;padding:0 14px}
-.is-mobile .way .cp{width:40px;height:40px}
-.is-mobile .nav .btn{min-height:40px}
+.is-mobile .shot .vctl,.is-mobile .vctl{height:44px;min-height:44px;padding:0 14px}
+.is-mobile .way .cp{width:44px;height:44px}
+.is-mobile .nav .btn{min-height:44px}
 .is-mobile .ft a{min-height:44px}
 .is-mobile .hs-bar button{width:44px;height:44px}
 .cp:active{transform:scale(.92)}

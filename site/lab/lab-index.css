@@ -3,7 +3,7 @@
 @font-face{font-family:"Manrope";src:url("../assets/font/manrope-var.woff2") format("woff2");font-weight:400;font-display:swap}
 @font-face{font-family:"Manrope";src:url("../assets/font/manrope-var.woff2") format("woff2");font-weight:500;font-display:swap}
 @font-face{font-family:"Manrope";src:url("../assets/font/manrope-var.woff2") format("woff2");font-weight:700;font-display:swap}
-:root{--iv:#F3EDE1;--pine:#17423C;--ochre:#B5832F;--ink-2:#4D6863;--rule:color-mix(in srgb,var(--pine) 22%,transparent);
+:root{--iv:#F3EDE1;--pine:#17423C;--ochre:#8A5F1C;--ink-2:#4D6863;--rule:color-mix(in srgb,var(--pine) 22%,transparent);
  --d:"Bricolage Grotesque","Manrope",system-ui,sans-serif;--s:"Fraunces",Georgia,serif;--t:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
  --e:cubic-bezier(.2,.8,.2,1);--g:clamp(20px,3.4vw,56px)}
 *,*::before,*::after{box-sizing:border-box}
