@@ -229,7 +229,7 @@ html.fx-on .cur-reveal.is-in{clip-path:inset(0 0 0 0)}
 .sprog{position:fixed;left:0;top:0;right:0;height:2px;z-index:95;pointer-events:none;background:linear-gradient(90deg,#B5832F,#D9B56A);transform-origin:0 50%;transform:scaleX(0);will-change:transform}
 /* header turns pine glass over dark sections */
 .hd.is-solid.on-dk{background:rgba(23,66,60,.86);box-shadow:0 1px 0 rgba(243,237,225,.1)}
-.hd.is-solid.on-dk .logo{color:#F3EDE1}.hd.is-solid.on-dk .logo b{color:#D9B56A}.hd.is-solid.on-dk .logo-mark{background:#B5832F}.logo-mark{transition:background-color .35s ease}
+.hd.on-dk .logo{color:#F3EDE1}.hd.on-dk .logo b{color:#D9B56A}.hd.on-dk .logo-mark{background:#B5832F}.logo-mark{transition:background-color .35s ease}
 .hd.is-solid.on-dk .nav a:not(.btn){color:rgba(243,237,225,.78)}
 .hd.is-solid.on-dk .nav a:not(.btn):hover,.hd.is-solid.on-dk .nav a.is-act{color:#F3EDE1}
 .hd.is-solid.on-dk .nav .btn{background:#B5832F}

@@ -227,3 +227,11 @@ html:not(.cur-on) .lab-card:hover .lab-shot::before,.lab-card:focus-visible .lab
 .is-desktop .sw-copy{isolation:isolate}
 .is-desktop .sw-copy::before{content:"";position:absolute;z-index:-1;pointer-events:none;inset:-18% -22% -20% -16%;background:radial-gradient(60% 58% at 38% 52%,rgba(243,237,225,.78),rgba(243,237,225,.5) 48%,rgba(243,237,225,0) 78%)}
 @media (prefers-reduced-transparency: reduce){.is-desktop .sw-copy::before{background:rgba(243,237,225,.86)}}
+
+/* phones: stack section heads instead of the 12-column desktop grid */
+@media (max-width:860px){
+ .is-desktop .sec-head{display:flex!important;flex-direction:column;align-items:stretch;gap:20px}
+ .is-desktop .sec-head>div[data-reveal]{display:flex;flex-direction:column;align-items:stretch}
+ .is-desktop .sec-head>div[data-reveal]>.kicker{padding-top:0}
+ .is-desktop .sec-head>.note{order:2;align-self:stretch;justify-self:auto;max-width:100%;grid-column:auto;grid-row:auto;border-top:1px solid var(--hair);border-left:0;padding:12px 0 0}
+}
