@@ -34,7 +34,7 @@ body,.menu,.broth,.hours,.cta,.ubar,.mrow,.note{transition:background-color .9s 
  animation:flick 2.4s ease-in-out infinite;animation-delay:calc(var(--k)*-.31s);transform-origin:50% 100%}
 @keyframes flick{0%,100%{scale:1 1}35%{scale:1 1.05}60%{scale:1.01 .98}}
 .dname{transition:filter .9s var(--ease)}
-.fire .dname{filter:url(spice.css) drop-shadow(0 0 26px rgba(255,90,30,.5))}
+.fire .dname{filter:url(#haze) drop-shadow(0 0 26px rgba(255,90,30,.5))}
 /* hero glow */
 .spot{transition:background .9s var(--ease)}
 .fire .spot{background:radial-gradient(closest-side,rgba(255,110,50,.34),transparent)}
