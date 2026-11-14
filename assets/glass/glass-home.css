@@ -6,7 +6,7 @@
 .hd .nav.lg{border-radius:999px;padding:5px 5px 5px 20px}
 .hd .logo.lg{border-radius:999px;padding:5px 14px 5px 5px}
 .hd.on-dk .lg:not(.lg--accent){--lg-tint:#17423C;--lg-alpha:56%;--_spec:rgba(255,255,255,calc(.2*var(--lg-hl)));--_rim:rgba(255,255,255,.32);--_edge:rgba(255,255,255,.12)}
-.hd .nav .btn.lg{min-height:40px}
+.hd .nav .btn.lg{min-height:44px}
 html.lg-on .nav a:not(.btn){color:#24463F}
 .hd.on-dk .nav a:not(.btn){color:rgba(243,237,225,.86)!important}
 
