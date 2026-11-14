@@ -260,7 +260,7 @@ var PAIR = [
     if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(t).then(done, done);
     else { var ta = document.createElement('textarea'); ta.value = t; ta.setAttribute('readonly',''); ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); } catch(e){} ta.remove(); done(); }
   });
-  H.addEventListener('keydown', function(e){ if (e.isComposing) return; if (e.key === 'Enter'){ e.preventDefault(); H.blur(); } });
+  H.addEventListener('keydown', function(e){ if (e.key === 'Enter'){ e.preventDefault(); H.blur(); } });
   pick(0);
 })();
 
