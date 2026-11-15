@@ -1,4 +1,4 @@
-/* TALUS Ridge C1 - phone 3D: the SAME model (talus-d.glb), SAME materials and maps (detail.js) and SAME HDRI as desktop.
+/* TALUS Ridge C1 - phone 3D: lighter phone model (talus-m.glb, 1024px textures), same materials pipeline (detail.js) and HDRI as desktop.
    One WebGL canvas that moves into whichever bike figure is on screen (hero, teardown, paint, dusk).
    Lazy-loaded by m.js; renders only while a bike figure is visible; the webp stills are only loading posters. */
 import * as THREE from 'three';
@@ -39,7 +39,7 @@ export function start({ figs, state, reduced }) {
   const L = { env: 1, key: 1.2, rim: 0, exp: 1 }; let ex = 0, yawUser = 0, yawVel = 0, t0 = 0;
   const setAnim = (t) => { if (!action) return; action.time = t; mixer.update(0); };
 
-  new GLTFLoader().setMeshoptDecoder(MeshoptDecoder).load('../../assets/lab/cadence/talus-d.glb', (gl) => {
+  new GLTFLoader().setMeshoptDecoder(MeshoptDecoder).load('../../assets/lab/cadence/talus-m.glb', (gl) => {
     model = gl.scene;
     const b = new THREE.Box3().setFromObject(model), s = b.getSize(new THREE.Vector3());
     model.scale.setScalar(2.6 / s.x);

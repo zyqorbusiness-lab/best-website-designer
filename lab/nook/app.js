@@ -37,12 +37,14 @@ if (odo) roll(odo, '01');
 /* ---------- the chair (shared by hero + room) ----------
    "Modern Arm Chair 01" photoscan by Poly Haven (CC0). The cushion texture was converted to a neutral
    grey so the collection colour tints the fabric; the solid oak frame keeps its own maps. */
-// one asset set for every screen: the phone loads the same -d models and textures as desktop (meshopt + webp keep it light)
-const ASSETS = '../../assets/lab/nook/', SUF = '-d.glb', WEAVE = 22, SH = true;
-// renderer with full quality on every screen (AA on, DPR up to 2, ACES, sRGB): no phone-only cuts
+// phone build (isM): lighter -m models/textures, shadows off; desktop keeps -d
+const ASSETS = '../../assets/lab/nook/', SUF = isM ? '-m.glb' : '-d.glb', WEAVE = 22, SH = !isM;
+/* accessories have no -m variant yet: every build loads the -d file (they are small) */
+const accGLB = (n) => loadGLB(ASSETS + n + '-d.glb');
+// renderer: desktop full quality (AA, DPR up to 2); phone build DPR 1.5, AA off
 function mkRenderer(canvas, opts = {}) {
-  const r = glRenderer({ canvas, antialias: true, alpha: opts.alpha ?? true, powerPreference: 'high-performance' });
-  r.setPixelRatio(Math.min(devicePixelRatio || 1, 2)); r.outputColorSpace = THREE.SRGBColorSpace;
+  const r = glRenderer({ canvas, antialias: !isM, alpha: opts.alpha ?? true, powerPreference: 'high-performance' });
+  r.setPixelRatio(Math.min(devicePixelRatio || 1, isM ? 1.5 : 2)); r.outputColorSpace = THREE.SRGBColorSpace;
   r.toneMapping = THREE.ACESFilmicToneMapping; r.toneMappingExposure = opts.exposure ?? 1; return r;
 }
 let fabric = null, woodMesh = null, woodBrown = null, woodBlack = null, chairSrc = null;
@@ -105,7 +107,7 @@ const hr = mkRenderer(hc, { alpha: true, exposure: 1.0 });
 hr.shadowMap.enabled = SH; hr.shadowMap.type = THREE.VSMShadowMap;
 const hs = new THREE.Scene(); hs.environment = studioEnv(hr, 0.04); hs.environmentIntensity = 0.75;
 // studio HDRI ("Studio Small 09", Poly Haven, CC0) swaps in after first paint on desktop; phones keep the free fallback
-useHDRI(hr, hs, { size: 512, intensity: 0.9, rotation: 0.6 });
+useHDRI(hr, hs, { size: isM ? 256 : 512, intensity: 0.9, rotation: 0.6 });
 const hcam = new THREE.PerspectiveCamera(30, 1, 0.1, 50);
 const hkey = new THREE.DirectionalLight(0xfff1dc, 1.15); hkey.position.set(-0.9, 6, 1.6); hkey.castShadow = SH;
 hkey.shadow.mapSize.set(1024, 1024); hkey.shadow.camera.near = 1; hkey.shadow.camera.far = 14; hkey.shadow.radius = 14; hkey.shadow.blurSamples = 16; hkey.shadow.bias = -0.0004;
@@ -254,10 +256,10 @@ function buildRoom() {
   const r = mkRenderer(rc, { alpha: false, exposure: 1.0 });
   r.shadowMap.enabled = SH; r.shadowMap.type = THREE.PCFSoftShadowMap;
   const s = new THREE.Scene(); s.background = new THREE.Color('#E9DFCF'); s.environment = studioEnv(r, 0.04);
-  useHDRI(r, s, { size: 512, rotation: 0.6 });
+  useHDRI(r, s, { size: isM ? 256 : 512, rotation: 0.6 });
   const cam = new THREE.PerspectiveCamera(isM ? 46 : 36, 1, 0.1, 60);
   // real surfaces: herringbone oak floor, plastered walls (Poly Haven textures, CC0), loaded as webp
-  const tl = new THREE.TextureLoader(), TS = '-d.webp';
+  const tl = new THREE.TextureLoader(), TS = isM ? '-m.webp' : '-d.webp';
   const tex = (n, srgb, rep) => { const t = tl.load(ASSETS + n + TS, () => { if (R) R.dirty = true; }); if (srgb) t.colorSpace = THREE.SRGBColorSpace; t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(rep, rep); t.anisotropy = 8; return t; };
   const wallMat = new THREE.MeshStandardMaterial({ color: '#E7DCC8', roughness: 0.95 });
   { wallMat.normalMap = tex('wall_nor', false, 3); wallMat.normalScale.set(0.6, 0.6); }
@@ -312,10 +314,10 @@ function buildRoom() {
       });
       books.userData.h = y;
     }).catch(() => {});
-    loadGLB(ASSETS + 'vase' + SUF).then((gv) => { const v = gv.scene; v.position.set(1.05, top, -0.72); shad(v); s.add(v); }).catch(() => {});
+    accGLB('vase').then((gv) => { const v = gv.scene; v.position.set(1.05, top, -0.72); shad(v); s.add(v); }).catch(() => {});
   }).catch(() => {});
   // floor plant beside the chair: "Potted Plant 02", Poly Haven (CC0)
-  loadGLB(ASSETS + 'plant' + SUF).then((gp) => { const pl = gp.scene; pl.position.set(-1.75, 0, -1.35); pl.rotation.y = 0.8; pl.scale.setScalar(1.2); shad(pl); s.add(pl); }).catch(() => {});
+  accGLB('plant').then((gp) => { const pl = gp.scene; pl.position.set(-1.75, 0, -1.35); pl.rotation.y = 0.8; pl.scale.setScalar(1.2); shad(pl); s.add(pl); }).catch(() => {});
   // framed art on the back wall (code-made abstract)
   const art = texCanvas(400, 520, (g, w, h) => { g.fillStyle = '#F2EADB'; g.fillRect(0, 0, w, h); g.fillStyle = '#B5512E'; g.beginPath(); g.arc(w * 0.38, h * 0.42, w * 0.22, 0, 7); g.fill(); g.fillStyle = '#5B6B3A'; g.fillRect(w * 0.18, h * 0.6, w * 0.64, h * 0.16); g.fillStyle = '#D6C3A0'; g.beginPath(); g.arc(w * 0.66, h * 0.3, w * 0.12, 0, 7); g.fill(); });
   const fr = new THREE.Mesh(new THREE.BoxGeometry(0.86, 1.1, 0.04), new THREE.MeshStandardMaterial({ color: '#2C3020', roughness: 0.5 })); fr.position.set(-0.45, 2.0, -1.97); s.add(fr);
@@ -324,7 +326,7 @@ function buildRoom() {
   const chairGroup = new THREE.Group(); s.add(chairGroup);
   chairReady.then((sc) => { const c = sc.clone(true); c.position.set(0, 0, 0); c.rotation.set(0, 0.55, 0); c.scale.set(1, 1, 1); chairGroup.add(c); chairGroup.position.set(0.15, 0, 0.05); 
     // one scatter cushion on the seat: "Throw Pillows 01", Poly Haven (CC0)
-    loadGLB(ASSETS + 'pillows' + SUF).then((gq) => {
+    accGLB('pillows').then((gq) => {
       let m = null; gq.scene.traverse((o) => { if (o.isMesh && !m) m = o; }); if (!m) return; gq.scene.updateMatrixWorld(true);
       const geo = m.geometry.clone().applyMatrix4(m.matrixWorld); geo.computeBoundingBox(); const ce = new THREE.Vector3(); geo.boundingBox.getCenter(ce); geo.translate(-ce.x, -ce.y, -ce.z);
       const qm = m.material.clone(); qm.map = null; qm.color = new THREE.Color('#E4D8C4'); qm.roughness = 1; // cream boucle cover (Poly Haven "Wool Boucle", CC0) instead of the scan's loud chevron print
@@ -335,7 +337,7 @@ function buildRoom() {
   const lampLight = new THREE.PointLight('#FFB35C', 0, 5, 1.6); lampLight.position.set(1.0, 1.75, -0.6); s.add(lampLight);
   const bulb = new THREE.Mesh(new THREE.SphereGeometry(0.045, 16, 12), new THREE.MeshBasicMaterial({ color: '#FFD9A0', toneMapped: false, transparent: true, opacity: 0 })); bulb.position.copy(lampLight.position); s.add(bulb);
   const cord = new THREE.Mesh(new THREE.CylinderGeometry(0.004, 0.004, 1, 6), new THREE.MeshStandardMaterial({ color: '#2b2520', roughness: 0.6 })); s.add(cord);
-  loadGLB(ASSETS + 'lamp' + SUF).then((g) => {
+  accGLB('lamp').then((g) => {
     const l = g.scene, k = 0.85; l.scale.setScalar(k); l.position.set(1.0, 1.75 - 0.22 * k, -0.6);
     l.traverse((o) => {
       if (!o.isMesh) return; o.castShadow = false; const mt = o.material;

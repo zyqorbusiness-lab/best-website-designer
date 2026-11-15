@@ -50,7 +50,7 @@ const setAnim = (t) => { if (!action) return; action.time = t; mixer.update(0); 
 const loader = new GLTFLoader(); loader.setMeshoptDecoder(MeshoptDecoder);
 const bar = $('#load .load-bar i');
 function load() {
-  loader.load('../../assets/lab/cadence/talus-d.glb', (g) => {
+  loader.load('../../assets/lab/cadence/talus' + (Q.model === '-m.glb' ? '-m' : '-d') + '.glb', (g) => {
     model = g.scene;
     // normalise: wheelbase-length 2.6 units, sit on the floor, centred
     const b = new THREE.Box3().setFromObject(model), s = b.getSize(new THREE.Vector3());
