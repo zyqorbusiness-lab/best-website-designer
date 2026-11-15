@@ -176,6 +176,6 @@ html body .hd .nav a.nav-best:hover,html body .hd .nav a.nav-best:focus-visible{
 .hd .nav .btn{white-space:nowrap}
 @media (max-width:1380px){.nav-best .nb-w{display:none}}
 .best-link{display:block;margin-top:14px}
-.best-link a{display:inline-flex;align-items:center;gap:8px;font-weight:650;color:var(--teal);text-decoration:none;border-bottom:1.5px solid currentColor;padding-bottom:2px}
+.best-link a{display:inline-flex;align-items:center;gap:8px;font-weight:650;color:var(--teal);text-decoration:none;border-bottom:1.5px solid currentColor;padding:8px 0 6px}
 .best-link a span{transition:transform .25s ease}.best-link a:hover span{transform:translateX(4px)}
 @media (prefers-reduced-motion:reduce){.nav-best .star4,.best-link a span{transition:none}}

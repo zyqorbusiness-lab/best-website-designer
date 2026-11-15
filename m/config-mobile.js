@@ -34,9 +34,9 @@ mountScrollWorld(document.getElementById('world'), {
    "accent": "#8F6420",
    "eyebrow": "The work",
    "title": "Real websites. Real craft.",
-   "body": "Seven live sites, five 3D worlds and eighteen Lab concepts: colourway morphs, giant type, exploded products, orbit menus. Concepts and my own projects, all live.",
+   "body": "Five live sites with five 3D worlds, plus eighteen Lab concepts: colourway morphs, giant type, exploded products, orbit menus. Concepts and my own projects, all live.",
    "tags": [
-    "7 live sites",
+    "5 live sites",
     "5 worlds",
     "18 Lab concepts"
    ],

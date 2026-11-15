@@ -37,6 +37,7 @@ h2{font-size:2.2rem}
 .sw-stage{transform:translateY(-12vh)}
 .sw-copylayer::before{height:58%!important;background:linear-gradient(0deg,var(--sw-bg) 34%,color-mix(in srgb,var(--sw-bg) 82%,transparent) 62%,transparent 100%)!important}
 .sw-copy__eyebrow{color:#8F6420!important}
+.sw-copy__num{display:inline-block;color:#3A332A!important;background:rgba(243,237,225,.78);padding:3px 9px;border-radius:999px}
 
 .contact.fin .ways{grid-template-columns:1fr}
 .is-mobile .sw-gal>.mproj .info{margin-top:20px}

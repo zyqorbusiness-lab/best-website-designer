@@ -111,7 +111,7 @@ html:not(.cur-on) .lab-card:hover .lab-shot::before,.lab-card:focus-visible .lab
 .info .tag{font:600 .7rem/1 var(--sw-font-body)!important;letter-spacing:.16em!important;color:var(--ochre-d)!important}
 .chips li{border-radius:0!important;background:transparent!important;border:0!important;border-top:1px solid var(--hair)!important;padding:8px 0 0!important;margin-right:16px;font-size:.78rem!important;letter-spacing:.04em}
 .info .more-links{display:flex;flex-wrap:wrap;gap:6px 20px;margin-top:16px}
-.info .more-links a,.case .dl{display:inline-flex;align-items:center;gap:7px;font:600 .86rem/1.3 var(--sw-font-body);color:var(--ink);text-decoration:none;border-bottom:1px solid var(--hair);padding:4px 0;transition:border-color .3s ease,color .3s ease}
+.info .more-links a,.case .dl{display:inline-flex;align-items:center;gap:7px;font:600 .86rem/1.3 var(--sw-font-body);color:var(--ink);text-decoration:none;border-bottom:1px solid var(--hair);padding:10px 0;transition:border-color .3s ease,color .3s ease}
 .info .more-links a:hover,.case .dl:hover{border-color:var(--ochre);color:var(--ochre-d)}
 .info .more-links svg,.case .dl svg{width:15px;height:15px;flex:none}
 
@@ -159,7 +159,7 @@ html:not(.cur-on) .lab-card:hover .lab-shot::before,.lab-card:focus-visible .lab
 .is-mobile .contact.fin .way strong{font-size:1.12rem!important}
 .is-mobile .way.em strong{font-size:1rem!important;letter-spacing:-.02em}
 .alt-links{display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:26px;font-size:.9rem}
-.alt-links a{color:#F3EDE1;text-decoration:none;border-bottom:1px solid rgba(243,237,225,.3);padding:4px 0;display:inline-flex;align-items:center;gap:8px;transition:border-color .3s ease,color .3s ease}
+.alt-links a{color:#F3EDE1;text-decoration:none;border-bottom:1px solid rgba(243,237,225,.3);padding:10px 0;display:inline-flex;align-items:center;gap:8px;transition:border-color .3s ease,color .3s ease}
 .alt-links a:hover{border-color:#D9B56A;color:#D9B56A}
 .alt-links svg{width:16px;height:16px}
 
