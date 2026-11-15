@@ -47,7 +47,7 @@ export function pricing(root) {
     tabs.forEach((t, k) => { const on = k === i; t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1; });
     panels.forEach((p, k) => { const on = k === i; p.hidden = !on; if (on) { p.style.setProperty('--pr-dir', dir); p.classList.remove('is-in'); void p.offsetWidth; p.classList.add('is-in'); } });
     movePill(tabs[i], true); od.set(+tabs[i].dataset.price);
-    if (unit) unit.textContent = tabs[i].dataset.unit || 'starting price';
+    if (unit) unit.textContent = tabs[i].dataset.unit || 'sample price';
     if (focus) tabs[i].focus();
   };
   tabs.forEach((t, i) => {
