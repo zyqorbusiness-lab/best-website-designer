@@ -63,31 +63,40 @@
     push('pv', location.pathname); // path only, never query strings
 
     var io = null;
+    var SEC = { about: 1, contact: 1, lab: 1, pricing: 1, real: 1, work: 1, world: 1, worlds: 1 };
     try {
       var seen = {};
       io = new IntersectionObserver(function (entries) {
         entries.forEach(function (en) {
           var id = en.target && en.target.id;
-          if (en.isIntersecting && id && !seen[id]) { seen[id] = 1; push('sec', '#' + id); }
+          if (en.isIntersecting && id && SEC[id] && !seen[id]) { seen[id] = 1; push('sec', '#' + id); }
         });
       }, { threshold: 0.35 });
-      document.querySelectorAll('section[id]').forEach(function (s) { io.observe(s); });
+      document.querySelectorAll('section[id]').forEach(function (s) { if (SEC[s.id]) io.observe(s); });
     } catch (e) {}
 
     function onClick(ev) {
       var el = ev.target && ev.target.closest ? ev.target.closest('a[href],button') : null;
       if (!el) return;
       if (el.closest('form, input, textarea, select')) return; // never near form values
-      if (el.id === 'zan-yes' || el.id === 'zan-no' || el.closest('#zan-bar,#zan-ctl,#zan-panel')) return; // not our own UI
-      var label = (el.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 40) || el.getAttribute('aria-label') || '(unnamed)';
-      var dest = '';
+      if (el.closest('#zan-bar,#zan-ctl,#zan-panel')) return; // not our own UI
+      // Generic targets only: no element text, no arbitrary hashes (both can carry private tokens).
+      var k = null;
       if (el.tagName === 'A') {
         try {
           var u = new URL(el.getAttribute('href'), location.href);
-          dest = u.pathname + (u.hash || ''); // path + hash only, never query strings
+          if (u.origin !== location.origin) {
+            k = 'ext:' + u.host;
+          } else if (u.hash && u.pathname === location.pathname) {
+            k = 'nav:' + (SEC[u.hash.slice(1)] ? '#' + u.hash.slice(1) : 'other');
+          } else {
+            k = 'link:' + u.pathname; // own static paths only, never query strings
+          }
         } catch (e) {}
+      } else {
+        k = 'button';
       }
-      push('click', label + (dest ? ' -> ' + dest : ''));
+      if (k) push('click', k);
     }
     function onVis() { if (document.visibilityState === 'hidden') flush(); }
     function onHide() { flush(); }
