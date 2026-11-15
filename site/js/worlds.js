@@ -41,10 +41,10 @@ function init() {
   /* ---------- three ---------- */
   let renderer;
   try {
-    renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
+    renderer = new THREE.WebGLRenderer({ canvas, antialias: !M, alpha: true, powerPreference: 'high-performance' });
   } catch (e) { root.classList.add('wd-nogl'); return; }
-  /* round 2: phone renders exactly like desktop (same DPR cap, AA, HDRI, models, textures) */
-  renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 2));
+  /* phone build (M): lighter profile - DPR 1.5, AA off, -ph models; desktop unchanged */
+  renderer.setPixelRatio(Math.min(devicePixelRatio || 1, M ? 1.5 : 2));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 0.95;
@@ -84,7 +84,7 @@ function init() {
 
   const loader = new GLTFLoader(); loader.setMeshoptDecoder(MeshoptDecoder);
   /* round 2: one asset set for both builds: full-res Khronos sources, 2048px webp q92 textures, meshopt (12-bit normals) */
-  const SUF = '-hd.glb';
+  const SUF = M ? '-ph.glb' : '-hd.glb';
   const P = {}; // product groups
   function fit(obj, size) {
     const b = new THREE.Box3().setFromObject(obj), s = b.getSize(new THREE.Vector3());
@@ -126,7 +126,13 @@ function init() {
     G.shoe = await get('MaterialsVariantsShoe');
     if (G.shoe) { P.shoe = holder(G.shoe.scene, 1.7, [0, 0, 0]); shoeVar = await variantsOf(G.shoe); if (shoeVar) await shoeVar.select(Math.max(cwI, 0)); }
     ready = true; root.classList.add('wd-ready'); loop();
-    const rest = await Promise.all([...want.slice(1), ...ring].map(([k, n]) => get(n).then((g) => [k, g])));
+    let rest;
+    if (M) { /* phone: sequential decode with a yield between models so scrolling stays responsive */
+      rest = [];
+      for (const [k, n] of [...want.slice(1), ...ring]) { rest.push([k, await get(n)]); await new Promise((r) => setTimeout(r, 0)); }
+    } else {
+      rest = await Promise.all([...want.slice(1), ...ring].map(([k, n]) => get(n).then((g) => [k, g])));
+    }
     for (const [k, g] of rest) G[k] = g;
     for (const [k, , size, rot] of want.slice(1)) if (G[k]) P[k] = holder(G[k].scene, size, rot);
     /* ring: clones of the hero products + three more */
