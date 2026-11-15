@@ -51,8 +51,9 @@ function init() {
   const scene = new THREE.Scene();
   const pm = new THREE.PMREMGenerator(renderer);
   scene.environment = pm.fromScene(new RoomEnvironment(), 0.04).texture; pm.dispose();
-  /* real studio HDRI (Poly Haven, CC0) on BOTH builds after first paint; 1k map for crisp reflections on the gloss parts */
-  import('../assets/hdri/hdri.js').then((m) => m.useHDRI(renderer, scene, { size: 1024, intensity: 1.0 })).catch(() => {});
+  /* real studio HDRI (Poly Haven, CC0) after first paint; 512 on desktop (crisp reflections), 256 on the phone build (light) */
+  const hdrSize = document.body.classList.contains('is-mobile') ? 256 : 512;
+  import('../assets/hdri/hdri.js').then((m) => m.useHDRI(renderer, scene, { size: hdrSize, intensity: 1.0 })).catch(() => {});
   const key = new THREE.DirectionalLight(0xfff6ea, 1.05); key.position.set(2.5, 4, 3); scene.add(key);
   const rim = new THREE.DirectionalLight(0xdfe9ff, 0.9); rim.position.set(-3, 2.2, -3.5); scene.add(rim);
   scene.add(new THREE.HemisphereLight(0xfff4e6, 0x30403c, 0.3));
