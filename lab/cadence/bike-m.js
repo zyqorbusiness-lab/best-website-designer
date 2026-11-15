@@ -20,7 +20,7 @@ export function start({ figs, state, reduced }) {
   renderer.outputColorSpace = THREE.SRGBColorSpace; renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1;
   const scene = new THREE.Scene();
   const pm = new THREE.PMREMGenerator(renderer); scene.environment = pm.fromScene(new RoomEnvironment(), 0.04).texture; pm.dispose();
-  useHDRI(renderer, scene, { size: 512, rotation: 0.6, onReady: () => { dirty = 2; } });     // same HDRI file as desktop
+  useHDRI(renderer, scene, { size: 256, rotation: 0.6, onReady: () => { dirty = 2; } });     // phone: 256px HDRI (lighter), desktop uses 512
   const camera = new THREE.PerspectiveCamera(26, 1.46, 0.1, 60);
   const key = new THREE.DirectionalLight(0xfff4e6, 1.2); key.position.set(3, 5, 4); scene.add(key);
   const rim = new THREE.DirectionalLight(0xff9a5a, 0); rim.position.set(-4, 2.2, -3); scene.add(rim);

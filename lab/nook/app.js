@@ -39,8 +39,7 @@ if (odo) roll(odo, '01');
    grey so the collection colour tints the fabric; the solid oak frame keeps its own maps. */
 // phone build (isM): lighter -m models/textures, shadows off; desktop keeps -d
 const ASSETS = '../../assets/lab/nook/', SUF = isM ? '-m.glb' : '-d.glb', WEAVE = 22, SH = !isM;
-/* accessories have no -m variant yet: every build loads the -d file (they are small) */
-const accGLB = (n) => loadGLB(ASSETS + n + '-d.glb');
+const accGLB = (n) => loadGLB(ASSETS + n + (isM ? '-m.glb' : '-d.glb'));
 // renderer: desktop full quality (AA, DPR up to 2); phone build DPR 1.5, AA off
 function mkRenderer(canvas, opts = {}) {
   const r = glRenderer({ canvas, antialias: !isM, alpha: opts.alpha ?? true, powerPreference: 'high-performance' });
@@ -68,7 +67,7 @@ const chairReady = loadGLB(ASSETS + 'chair' + SUF).then((g) => {
         // fine linen weave (Poly Haven "Rough Linen", CC0), tiled at its own scale over the scanned cushions:
         // tints the albedo, breaks the roughness and adds a micro bump, so the fabric reads woven, not satin
         const wl = new THREE.TextureLoader();
-        const wt = (n, srgb) => { const t = wl.load(ASSETS + n + '-d.webp'); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(WEAVE, WEAVE); t.anisotropy = 8; if (srgb) t.colorSpace = THREE.SRGBColorSpace; return t; };
+        const wt = (n, srgb) => { const t = wl.load(ASSETS + n + (isM ? '-m.webp' : '-d.webp')); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(WEAVE, WEAVE); t.anisotropy = 8; if (srgb) t.colorSpace = THREE.SRGBColorSpace; return t; };
         f.roughnessMap = wt('weave_rough', false); f.roughness = 1.0;
         const weave = wt('weave_h', false); // linen displacement used as a fine height field
         f.sheenColorMap = weave;
