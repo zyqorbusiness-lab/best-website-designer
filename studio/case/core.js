@@ -49,28 +49,7 @@
     });
   });
 
-  /* stock counter demo */
-  var buy=d.querySelector('[data-buy]'), cn=d.querySelector('.cnt-n'), cbar=d.querySelector('.b-count .bar i');
-  if(buy&&cn){
-    var left=12;
-    buy.addEventListener('click',function(){
-      left=left<=0?12:left-1;
-      cn.textContent=left===0?'0':String(left);
-      if(cbar)cbar.style.setProperty('--p',(left/40*2.33).toFixed(3));
-      buy.textContent=left===0?'Sold out. Reset':'Simulate a sale';
-      if(!reduced&&cn.animate)cn.animate([{transform:'translateY(-10px)',opacity:.2},{transform:'none',opacity:1}],{duration:420,easing:'cubic-bezier(.22,1,.36,1)'});
-    });
-  }
 
-  /* waitlist field */
-  d.querySelectorAll('.wl').forEach(function(f){
-    var inp=f.querySelector('input'), msg=f.querySelector('.wl-msg');
-    f.addEventListener('submit',function(e){
-      e.preventDefault();
-      var ok=/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(inp.value);
-      msg.textContent=ok?'Held. You are on the list for Firing 08 (demo, nothing is sent).':'That email looks incomplete.';
-    });
-  });
 
   /* firing scrubber: the signature interaction */
   d.querySelectorAll('.fire').forEach(function(box){
