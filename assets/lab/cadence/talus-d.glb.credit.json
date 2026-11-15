@@ -9,7 +9,7 @@
   "changes": [
     "tyre sidewall text and maker logo replaced with fictional TALUS marks; AR shadow planes and tangents removed; pruned, deduplicated, welded, simplified; textures re-encoded (2048 px WebP), meshopt; recoloured at runtime",
     "2026-11-15: phone variant (-ph.glb / -m.glb / -m.webp; 1024px webp textures, reduced geometry, meshopt) added for the phone build; the -hd/-d file and desktop rendering are unchanged.",
-    "2026-11-15 (update): the phone -m variant was rebuilt with material names and the explode animation preserved (dedup + conservative simplify + meshopt, textures untouched) after the first -m merged materials and broke colourway switching; 3.27 -> 3.16 MB."
+    "2026-11-15 (update): the phone -m variant was rebuilt after the first -m palette-merged the 29 named materials and broke name-keyed colourway recolouring (black frame in every colourway). New -m: 1024px WebP textures + 50% simplify + meshopt with palette merge disabled; all material names and the explode animation preserved; 3.27 -> 2.01 MB."
   ],
   "downloaded": "2026-10-27",
   "licence_flag": "CC BY-SA 4.0 (share-alike) is not on Sujon's allow-list; the derivative must stay CC BY-SA. Needs a decision (keep with exception or replace).",
