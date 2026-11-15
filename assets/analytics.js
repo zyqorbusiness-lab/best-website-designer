@@ -64,6 +64,7 @@
 
     var io = null;
     var SEC = { about: 1, contact: 1, lab: 1, pricing: 1, real: 1, work: 1, world: 1, worlds: 1 };
+    if (window.ZAN_SECTIONS && window.ZAN_SECTIONS.length) { SEC = {}; window.ZAN_SECTIONS.forEach(function (id) { SEC[id] = 1; }); }
     try {
       var seen = {};
       io = new IntersectionObserver(function (entries) {
