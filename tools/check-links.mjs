@@ -43,7 +43,7 @@ for (const page of pages()) {
     let target = clean.startsWith('/') ? join(SITE, clean) : join(dirname(page), clean);
     if (existsSync(target) && statSync(target).isDirectory()) target = join(target, 'index.html');
     internalCount++;
-    if (!existsSync(target)) missing.push(`${rel} -> ${u}`);
+    if (!existsSync(target) && !existsSync(target + '.part1')) missing.push(`${rel} -> ${u}`); // .part1: joined at build by tools/join-parts.mjs
   }
 }
 

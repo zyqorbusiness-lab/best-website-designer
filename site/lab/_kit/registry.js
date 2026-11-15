@@ -48,20 +48,8 @@ export const CONCEPTS = [
   ]
  },
  {
-  "slug": "verdant",
-  "n": "05",
-  "brand": "Verdant",
-  "kind": "Plant studio",
-  "pattern": "Organic mask reveal, arched window",
-  "palette": [
-   "#EEF0E4",
-   "#2F5D3A",
-   "#C8643B"
-  ]
- },
- {
   "slug": "dew",
-  "n": "06",
+  "n": "05",
   "brand": "Dew Theory",
   "kind": "Skincare",
   "pattern": "Cloud world, podium, ingredient orbit",
@@ -73,7 +61,7 @@ export const CONCEPTS = [
  },
  {
   "slug": "volt",
-  "n": "07",
+  "n": "06",
   "brand": "VOLT",
   "kind": "Sparkling energy",
   "pattern": "Can into wordmark, flavour flood",
@@ -85,7 +73,7 @@ export const CONCEPTS = [
  },
  {
   "slug": "umami",
-  "n": "08",
+  "n": "07",
   "brand": "Umami Ring",
   "kind": "Ramen bar",
   "pattern": "Orbit carousel menu",
@@ -97,7 +85,7 @@ export const CONCEPTS = [
  },
  {
   "slug": "signal",
-  "n": "09",
+  "n": "08",
   "brand": "Signal Studio",
   "kind": "Creative agency",
   "pattern": "Radial card fan, bento, physics",
@@ -109,7 +97,7 @@ export const CONCEPTS = [
  },
  {
   "slug": "volta",
-  "n": "10",
+  "n": "09",
   "brand": "Volta One",
   "kind": "Electric car",
   "pattern": "Giant name swap, night mode, spec track",
@@ -121,7 +109,7 @@ export const CONCEPTS = [
  },
  {
   "slug": "nook",
-  "n": "11",
+  "n": "10",
   "brand": "Nook",
   "kind": "Furniture",
   "pattern": "Accordion colour bars, odometer counter",
@@ -132,32 +120,8 @@ export const CONCEPTS = [
   ]
  },
  {
-  "slug": "carmine",
-  "n": "12",
-  "brand": "Carmine No.7",
-  "kind": "Fountain pen ink",
-  "pattern": "Video flow: scroll-scrubbed real footage",
-  "palette": [
-   "#F4EFE9",
-   "#2B0A0E",
-   "#D81E2C"
-  ]
- },
- {
-  "slug": "longway",
-  "n": "13",
-  "brand": "Longway",
-  "kind": "Overland road trips",
-  "pattern": "Video flow: scroll-scrubbed real footage",
-  "palette": [
-   "#E9EDF0",
-   "#16212D",
-   "#F2B42F"
-  ]
- },
- {
   "slug": "rise",
-  "n": "14",
+  "n": "11",
   "brand": "Rise No.3",
   "kind": "Sparkling strawberry water",
   "pattern": "Video flow: scroll-scrubbed real footage",
@@ -169,7 +133,7 @@ export const CONCEPTS = [
  },
  {
   "slug": "fumee",
-  "n": "15",
+  "n": "12",
   "brand": "Fumée",
   "kind": "Perfume house",
   "pattern": "WebGL smoke field, pinned liquid scent swap, kinetic type",
@@ -180,20 +144,8 @@ export const CONCEPTS = [
   ]
  },
  {
-  "slug": "plinth",
-  "n": "16",
-  "brand": "Plinth",
-  "kind": "Architecture quarterly",
-  "pattern": "Editorial grid, variable-font type, clip reveals, horizontal gallery",
-  "palette": [
-   "#EDE8DE",
-   "#19233B",
-   "#DA4A2A"
-  ]
- },
- {
   "slug": "halde",
-  "n": "17",
+  "n": "13",
   "brand": "HALDE R1",
   "kind": "Rangefinder camera",
   "pattern": "Real scanned camera, finish switch, light modes, exploded lens",
@@ -205,7 +157,7 @@ export const CONCEPTS = [
  },
  {
   "slug": "cadence",
-  "n": "18",
+  "n": "14",
   "brand": "TALUS Ridge C1",
   "kind": "Carbon trail bike",
   "pattern": "Real scanned bike, scroll explode, colourway + dusk light modes",

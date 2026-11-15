@@ -2,8 +2,8 @@
    (work/beast/v3gaps: stills shot from each live scene with the page hidden, transparent where the canvas is).
    slug -> { d: desktop, m: phone } -> [{ sel: CSS selector, n: index among matches, src: relative to this file,
    fit: background-size, pos: background-position }]. A demo not listed here handles its own fallback
-   (dew, ember, umami, volt, verdant, cadence phone, fumee liquid swap, stride, signal tiles) or has no WebGL
-   (carmine, longway, plinth, rise). hush and meridian are being remodelled: re-shoot after merge and add them. */
+   (dew, ember, umami, volt, cadence phone, fumee liquid swap, stride, signal tiles) or has no WebGL
+   (rise). hush and meridian are being remodelled: re-shoot after merge and add them. */
 export const STILLS = {
  "cadence": {
   "d": [

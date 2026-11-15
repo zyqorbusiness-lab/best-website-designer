@@ -241,7 +241,7 @@ function wheel() {
 /* ================= 02 proportion ================= */
 function proportion() {
   const mock = $("#mock"), bar = $("#bar"), cap = $("#barCap"), ver = $("#verdict"), pick = $("#propPal");
-  const pals = [{ slug: "studio", brand: "Zyqor Studio", palette: ["#F3EDE1", "#17423C", "#B5832F"] }, ...CONCEPTS.filter(c => ["stride", "signal", "verdant", "dew", "volta"].includes(c.slug))];
+  const pals = [{ slug: "studio", brand: "Zyqor Studio", palette: ["#F3EDE1", "#17423C", "#B5832F"] }, ...CONCEPTS.filter(c => ["stride", "signal", "volt", "dew", "volta"].includes(c.slug))];
   let pal = pals[0].palette, preset = "good";
   const V = {
     good: ["Calm, and it looks expensive.", "The ground does the work, the ink carries the words, and the accent is the first thing your eye finds: the button."],
@@ -392,19 +392,16 @@ const WHY = {
   meridian: "Parchment and bottle green come off a watchmaker's bench. Brass sits a third of the wheel from the green and is too light to read on parchment, so it is kept for hairlines and indices, never for words.",
   hush: "Quiet is cool. Mist and slate navy hold the calm; amber, straight across the wheel, is the single warm note, saved for the one control that matters.",
   ember: "The only palette in the Lab led by a dark ground. Roast brown, crema and burnt copper all sit within a few degrees of hue: analogous, like looking into the cup.",
-  verdant: "Leaf and terracotta: the plant and its pot. They sit about a third of the wheel apart, and the pale sage ground stops it turning into a garden-centre flyer.",
   dew: "Skin, not sugar. Blush and dusty rose stay in one hue family; cocoa replaces black for the type, so the page never goes clinical.",
   volt: "The loud one, on purpose. Midnight navy lets the acid lime glow as if it were backlit, and orange is the flavour flood. High chroma is the product here.",
   umami: "Ramen counter colours. Chilli red and scallion green sit near-opposite; the green is deep enough to carry small text, so the red is free to shout in big type.",
   signal: "An agency should look decisive. Ultramarine and safety orange are a split-complementary pair; the warm off-white stops it reading as a flag.",
   volta: "Engineering calm. Pale cool grey, deep teal for trust, and a coral almost opposite the teal for the charge state and the night switch.",
   nook: "Furniture lives in rooms. Linen, olive and rust are earth pigments; keeping the chroma low across all three reads as material rather than screen.",
-  carmine: "Ink is the product, so the accent is the ink: carmine at full strength on paper white, with oxblood doing the type. One red family, three depths.",
-  longway: "Road and sun. Night-slate ink on a pale sky ground, with a road-sign amber straight across the wheel, used the way a road uses it: as a marker.",
   rise: "Strawberry on cream. A vanilla ground, berry-skin dark and a bright strawberry red: one warm family, so the footage stays the hero.",
 };
 // Posters that exist on disk (checked at build time) so a concept registered before its poster never 404s.
-const POSTERS = new Set(["carmine", "dew", "ember", "hush", "longway", "meridian", "nook", "rise", "signal", "stride", "umami", "verdant", "volt", "volta"]);
+const POSTERS = new Set(["dew", "ember", "hush", "meridian", "nook", "rise", "signal", "stride", "umami", "volt", "volta"]);
 function relation(gap) { return gap < 45 ? "Analogous" : gap < 100 ? "Near neighbours" : gap < 135 ? "Triadic spacing" : gap < 165 ? "Split complementary" : "Complementary"; }
 function labGrid() {
   const grid = $("#labGrid"), arrow = icon("arrow");
