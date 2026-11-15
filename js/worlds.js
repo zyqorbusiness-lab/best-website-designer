@@ -10,7 +10,8 @@ import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
 const M = !!window.__WORLDS_M;
 const root = document.getElementById('worlds');
-if (root) init();
+/* Worlds sits well below the fold; start its WebGL setup in idle time so DOMContentLoaded and the consent banner are not blocked. The canvas is invisible until the section nears. */
+if (root) { const go = () => init(); const idle = () => ('requestIdleCallback' in window ? requestIdleCallback(go, { timeout: 2000 }) : setTimeout(go, 400)); if (document.readyState === 'complete') idle(); else addEventListener('load', idle); }
 
 function init() {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
