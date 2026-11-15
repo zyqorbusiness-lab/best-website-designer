@@ -97,7 +97,7 @@
   var btt=d.createElement('button'); btt.type='button'; btt.className='btt'; btt.setAttribute('aria-label','Back to top');
   btt.innerHTML='<svg class="ring" viewBox="0 0 60 60" aria-hidden="true" focusable="false"><circle cx="30" cy="30" r="27" stroke="rgba(243,237,225,.18)"/><circle class="rp" cx="30" cy="30" r="27" stroke="#D9B56A" stroke-dasharray="169.6" stroke-dashoffset="169.6" stroke-linecap="round"/></svg><span class="ar">'+SVG(IC.up)+SVG(IC.up)+'</span>';
   d.body.appendChild(btt); var rp=btt.querySelector('.rp'), on=false, tk2=0;
-  function onS(){ tk2=0; var y=w.scrollY||0, max=(d.documentElement.scrollHeight-innerHeight)||1; rp.setAttribute('stroke-dashoffset',(169.6*(1-Math.min(1,y/max))).toFixed(1)); var s=y>innerHeight*2.2; if(s!==on){ on=s; btt.classList.toggle('is-on',s);} }
+  function onS(){ tk2=0; var y=w.scrollY||0, max=(d.documentElement.scrollHeight-innerHeight)||1; rp.setAttribute('stroke-dashoffset',(169.6*(1-Math.min(1,y/max))).toFixed(1)); var s=y>innerHeight*2.2&&(max-y)>innerHeight*2.8; if(s!==on){ on=s; btt.classList.toggle('is-on',s);} }
   w.addEventListener('scroll',function(){ if(!tk2){ tk2=1; requestAnimationFrame(onS); } },{passive:true}); onS();
   function toTop(e){ if(e) e.preventDefault(); btt.classList.add('is-fly'); setTimeout(function(){btt.classList.remove('is-fly')},1500); w.scrollTo({top:0,behavior:RM?'auto':'smooth'}); }
   btt.addEventListener('click',toTop); $$('.ft a[href="#top"]').forEach(function(a){ a.addEventListener('click',toTop); });
