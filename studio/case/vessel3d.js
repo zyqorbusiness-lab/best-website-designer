@@ -5,7 +5,8 @@ import * as THREE from 'three';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
 const fig = document.querySelector('.hero-3d');
-if (fig) init(fig);
+/* Start after load: WebGL + PMREM setup can take a moment on slower GPUs; the poster stays visible until h3-ready. */
+if (fig) { const go = () => init(fig); if (document.readyState === 'complete') setTimeout(go, 0); else addEventListener('load', () => setTimeout(go, 0)); }
 
 function hasGL() { try { const c = document.createElement('canvas'); return !!(c.getContext('webgl2') || c.getContext('webgl')); } catch (e) { return false; } }
 
