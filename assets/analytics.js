@@ -48,7 +48,7 @@
       sent += batch.length;
       var body;
       try {
-        body = JSON.stringify({ vid: vid, dev: dev, ref: ref, events: batch });
+        body = JSON.stringify({ vid: vid, dev: dev, ref: ref, pg: location.pathname, events: batch });
       } catch (e) { return; }
       if (body.length > 8000) return;
       try {
