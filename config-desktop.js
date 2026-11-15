@@ -34,11 +34,11 @@ mountScrollWorld(document.getElementById('world'), {
    "accent": "#8F6420",
    "eyebrow": "The work",
    "title": "Real websites. Real craft.",
-   "body": "Five live sites with five 3D worlds, plus eighteen Lab concept pages: colour, type and motion ideas you can open and try. All live.",
+   "body": "Five live sites with five 3D worlds, plus fourteen Lab concept pages: colour, type and motion ideas you can open and try. All live.",
    "tags": [
     "5 live sites",
     "5 worlds",
-    "18 Lab concepts"
+    "14 Lab concepts"
    ],
    "still": "assets/hero/d-concepts.webp"
   },
