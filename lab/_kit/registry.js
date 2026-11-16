@@ -144,20 +144,8 @@ export const CONCEPTS = [
   ]
  },
  {
-  "slug": "halde",
-  "n": "13",
-  "brand": "HALDE R1",
-  "kind": "Rangefinder camera",
-  "pattern": "Real scanned camera, finish switch, light modes, exploded lens",
-  "palette": [
-   "#E9E2D6",
-   "#20241F",
-   "#A85537"
-  ]
- },
- {
   "slug": "cadence",
-  "n": "14",
+  "n": "13",
   "brand": "TALUS Ridge C1",
   "kind": "Carbon trail bike",
   "pattern": "Real scanned bike, scroll explode, colourway + dusk light modes",
