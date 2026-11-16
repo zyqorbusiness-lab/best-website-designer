@@ -27,26 +27,6 @@ export const STILLS = {
    }
   ]
  },
- "halde": {
-  "d": [
-   {
-    "sel": "canvas#gl",
-    "n": 0,
-    "src": "../halde/nogl-d-0.webp",
-    "fit": "auto 100%",
-    "pos": "center"
-   }
-  ],
-  "m": [
-   {
-    "sel": "canvas#gl",
-    "n": 0,
-    "src": "../halde/nogl-m-0.webp",
-    "fit": "auto 100%",
-    "pos": "center"
-   }
-  ]
- },
  "nook": {
   "d": [
    {
