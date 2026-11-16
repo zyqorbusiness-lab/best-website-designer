@@ -4,13 +4,14 @@
   "source_url": "https://hotcoal-kitchen.vercel.app/",
   "licence": "All rights reserved (own work)",
   "licence_url": "https://github.com/zyqorbusiness-lab/best-website-designer/blob/main/LICENSE.md",
-  "attribution": "\u00a9 2026 Sujon Hoque (Zyqor Studio). All rights reserved; not covered by the MIT licence (see LICENSE.md).",
+  "attribution": "© 2026 Sujon Hoque (Zyqor Studio). All rights reserved; not covered by the MIT licence (see LICENSE.md).",
   "downloaded": "2026-11-16",
   "credit_written_by": "card restore 2026-11-16 (hotcoal restore flow)",
   "title": "Case-study poster: hotcoal (720x450 card thumb)",
   "changes": [
     "screen recording / poster of Sujon Hoque's own project, re-encoded (personal content per LICENSE.md: 'the case-study videos')",
-    "2026-11-16: cropped/scaled from the desktop hero capture of the restored live site."
+    "2026-11-16: cropped/scaled from the desktop hero capture of the restored live site.",
+    "2026-11-16: recaptured from live after the 861-1400px hero copy reflow (clean gap from peel rim)."
   ],
   "file": "hotcoal-sm.webp"
 }

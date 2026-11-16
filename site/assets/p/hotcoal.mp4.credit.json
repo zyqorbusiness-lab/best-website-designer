@@ -4,14 +4,15 @@
   "source_url": "https://hotcoal-kitchen.vercel.app/",
   "licence": "All rights reserved (own work)",
   "licence_url": "https://github.com/zyqorbusiness-lab/best-website-designer/blob/main/LICENSE.md",
-  "attribution": "\u00a9 2026 Sujon Hoque (Zyqor Studio). All rights reserved; not covered by the MIT licence (see LICENSE.md).",
+  "attribution": "© 2026 Sujon Hoque (Zyqor Studio). All rights reserved; not covered by the MIT licence (see LICENSE.md).",
   "downloaded": "2026-11-16",
   "credit_written_by": "card restore 2026-11-16 (hotcoal restore flow)",
   "title": "Case-study clip: hotcoal (desktop 1280x800)",
   "changes": [
     "screen recording / poster of Sujon Hoque's own project, re-encoded (personal content per LICENSE.md: 'the case-study videos')",
     "2026-11-16: screen recording of the restored live Hotcoal Kitchen site, settled hero.",
-    "2026-11-16: re-encoded clip trimmed to the settled hero segment (load/intro frames removed) after the guardText contact-fade fix."
+    "2026-11-16: re-encoded clip trimmed to the settled hero segment (load/intro frames removed) after the guardText contact-fade fix.",
+    "2026-11-16: re-recorded settled hero segment after the 861-1400px hero copy reflow (genuine gap from peel rim at 1280 and nearby widths)."
   ],
   "file": "hotcoal.mp4"
 }
