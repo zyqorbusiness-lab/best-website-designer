@@ -10,7 +10,8 @@
   "title": "Case-study clip: hotcoal (desktop 1280x800)",
   "changes": [
     "screen recording / poster of Sujon Hoque's own project, re-encoded (personal content per LICENSE.md: 'the case-study videos')",
-    "2026-11-16: screen recording of the restored live Hotcoal Kitchen site, settled hero."
+    "2026-11-16: screen recording of the restored live Hotcoal Kitchen site, settled hero.",
+    "2026-11-16: re-encoded clip trimmed to the settled hero segment (load/intro frames removed) after the guardText contact-fade fix."
   ],
   "file": "hotcoal.mp4"
 }
