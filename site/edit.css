@@ -126,8 +126,8 @@ html:not(.cur-on) .lab-card:hover .lab-shot::before,.lab-card:focus-visible .lab
 .steps{counter-reset:st}
 .step{background:transparent!important;border:0!important;border-top:1px solid var(--hair)!important;border-radius:0!important;padding:16px 0 0!important;counter-increment:st;position:relative}
 .step .ic{display:none!important}
-.step h4{font:800 1.3rem/1 var(--sw-font-display)!important;letter-spacing:-.03em;margin:0 0 8px!important}
-.step h4::before{content:"0" counter(st);display:block;font:500 .72rem/1 ui-monospace,Menlo,monospace;color:var(--ochre-d);margin-bottom:12px;letter-spacing:.04em}
+.step h3{font:800 1.3rem/1 var(--sw-font-display)!important;letter-spacing:-.03em;margin:0 0 8px!important}
+.step h3::before{content:"0" counter(st);display:block;font:500 .72rem/1 ui-monospace,Menlo,monospace;color:var(--ochre-d);margin-bottom:12px;letter-spacing:.04em}
 .portrait{border-radius:4px!important}
 .portrait figcaption{font:600 .7rem/1.3 var(--sw-font-body)!important;letter-spacing:.14em;text-transform:uppercase}
 
@@ -227,3 +227,14 @@ html:not(.cur-on) .lab-card:hover .lab-shot::before,.lab-card:focus-visible .lab
 .is-desktop .sw-copy{isolation:isolate}
 .is-desktop .sw-copy::before{content:"";position:absolute;z-index:-1;pointer-events:none;inset:-18% -22% -20% -16%;background:radial-gradient(60% 58% at 38% 52%,rgba(243,237,225,.78),rgba(243,237,225,.5) 48%,rgba(243,237,225,0) 78%)}
 @media (prefers-reduced-transparency: reduce){.is-desktop .sw-copy::before{background:rgba(243,237,225,.86)}}
+
+/* ---- Audit fixes 2026-11-17 (Beast Website Builder QA) ---- */
+/* Readable text: nothing visible under 12px */
+.kicker,.kicker .idx,.sw-copy__eyebrow,.sw-copy__num,.ft .ft-h .idx{font-size:.75rem!important}
+.info .tag,.case .tag,.sw-copy__tags li,.wd-hud span,.vctl span,.bar span{font-size:max(.75rem,12px)!important}
+/* Colourway dots: 24x24 hit area, same 10px look */
+.wd-dots{gap:2px}
+.wd-dots button{box-sizing:content-box;padding:7px;background-clip:content-box;min-width:10px}
+.portrait figcaption,.pull cite,.tiers li>span,.way small,.ft-ch{font-size:max(.75rem,12px)!important}
+.ld-count small{color:#8A5F1C!important}
+@media (max-width:640px){.sw-copy__eyebrow{letter-spacing:.1em!important}}
