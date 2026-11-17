@@ -20,7 +20,7 @@ h2{font-size:2.2rem}
 .portrait{max-width:300px;margin:0 auto;width:100%}
 .steps{grid-template-columns:1fr;gap:10px;margin-top:24px}
 .step{display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:start;padding:16px}
-.step h4{margin:0 0 4px}
+.step h3{margin:0 0 4px}
 .step .ic{grid-row:span 2}
 .price{grid-template-columns:1fr;padding:34px 24px;border-radius:24px;gap:24px}
 .price .side{width:100%}
@@ -63,3 +63,14 @@ html body .hd .nav a.nav-best{display:inline-flex;justify-content:center;width:4
 
 /* Anchor offset (2026-11-10): land section jumps below the fixed header on the phone build */
 [id]{scroll-margin-top:84px}
+
+/* ---- Audit fixes 2026-11-17: 44px touch targets on phone ---- */
+.m-menu>summary{width:44px;min-height:44px}
+.nav .btn{min-height:44px}
+.hd .logo{min-height:44px;box-sizing:border-box}
+.wd-dots button{padding:17px 7px!important}
+
+.wd-sw button{position:relative}
+.wd-sw button::after{content:"";position:absolute;inset:-6px;border-radius:50%}
+.hd .nav .btn,.hd .nav .btn.lg{min-height:44px!important}
+.is-mobile .sw-route__dot{width:44px!important;height:44px!important}

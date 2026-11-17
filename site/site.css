@@ -101,7 +101,7 @@ h2{font:600 clamp(2.2rem,5vw,4.1rem)/1.02 var(--sw-font-display);letter-spacing:
 .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:34px}
 .step{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px}
 .step .ic{width:26px;height:26px;color:var(--teal)}
-.step h4{margin:14px 0 6px;font:600 1.05rem/1.2 var(--sw-font-display)}
+.step h3{margin:14px 0 6px;font:600 1.05rem/1.2 var(--sw-font-display)}
 .step p{margin:0;font-size:.9rem;color:var(--mut)}
 /* pricing */
 .price{border-radius:30px;background:linear-gradient(135deg,#1E4D46,#17423C 60%,#123832);color:#FAF6EE;padding:clamp(40px,6vw,80px);display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:36px;align-items:center;position:relative;overflow:hidden}
